@@ -89,4 +89,9 @@ public class ELC_PlayerMoves : MonoBehaviour
         if (downHit) isTouchingDown = true;
         else isTouchingDown = false;
     }
+
+    public Vector3 getPlayerMoves()
+    {
+        return playerMoves;
+    }
 }
