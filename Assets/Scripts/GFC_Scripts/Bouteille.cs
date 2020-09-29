@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class Bouteille : MonoBehaviour
 {
-    public Slider slideux;
+    public Slider bottleSlider;
 
     //tout ça c'est pour que le slider marche bien, commence avec les bonnes valeurs (et qu'on puisse le tweeker dans playerhealth)
     public void SetMaxOlive(int olive)
     {
-        slideux.maxValue = olive;
-        slideux.value = olive;
+        bottleSlider.maxValue = olive;
+        bottleSlider.value = olive;
     }
 
     public void SetOlive(float olive)
     {
-        slideux.value = olive;
+        bottleSlider.value = olive;
     }
 }

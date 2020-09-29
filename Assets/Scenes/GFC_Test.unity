@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a941858352789c4e917b714b9a1c019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 517522347}
+  healthSlider: {fileID: 517522347}
   lifeLost: 5
   stopLosing: 10
 --- !u!114 &517522347
@@ -538,6 +538,7 @@ MonoBehaviour:
   currentHealth: 0
   maxOlive: 30
   currentOlive: 0
+  healing: 1
   healthBar: {fileID: 517522346}
   bouteille: {fileID: 1677678020}
 --- !u!1 &1677678017
@@ -622,9 +623,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 30
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 30
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -640,7 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3379fcf8e812174f91ee9f9b20b08a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slideux: {fileID: 1677678019}
+  bottleSlider: {fileID: 1677678019}
 --- !u!1 &1728295040
 GameObject:
   m_ObjectHideFlags: 0
