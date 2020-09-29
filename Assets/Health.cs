@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
 {
     public Slider slider;
     public float lifeLost;
+    public float stopLosing;
 
     public void SetMaxHealth(int health)
     {
@@ -22,6 +23,10 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slider.value -= Time.deltaTime * lifeLost;
+        if(slider.value > stopLosing)
+        {
+            slider.value -= Time.deltaTime * lifeLost;
+        }
+        
     }
 }
