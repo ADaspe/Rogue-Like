@@ -5,27 +5,60 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Enemy", menuName = "ScriptableObjects/EnemyScriptableObject", order = 1)]
 public class ELC_Enemy : ScriptableObject
 {
-    public float maxHeal;
-    public float strenght;
-    public float speed;
-    public float moneyWhenHit;
-    public float moneyWhenDead;
+    //Name
+    public string Name;
 
-    public bool followPlayer;
-    public bool fleePlayer;
-    public bool stayAtDistance;
-    public float distance;
+    //Health
+    public float MaxHealth;
 
-    public bool fireBullets;
-    public GameObject bullet;
+    //Movements
+    public float MovementSpeed;
+    public bool FollowPlayer;
+    public bool FleePlayer;
+    public bool StayAtDistance;
+    public bool FleeWhenPlayerIsNear;
+    public bool ApproachWhenPlayerIsFar;
+    public float LimitDistanceToStay;
+    public bool IsImmobile;
+    public bool FollowPath;
+    public bool NeedTimeToTurn;
+    public float TurnSpeed;
 
-    public bool instantiateSomethingAtDeath;
-    public GameObject objectToInstantiate;
+    //AttackCapacity
 
-    public bool dash;
-    public float dashSpeed;
-    public float dashTime;
+    public bool FriendlyFire;
 
+    public bool DistanceAttack;
+    public GameObject Projectile; //Le projectile doit avoir un ScriptableObject
+    public float DistanceAttackArea;
+    public float DistanceCooldown;
+
+    public bool CorpseAttack;
+    public float AttackCooldown;
+    public float AttackRange;
+    public float WaitBeforeAttack;
+    public float AttackStrenght;
+    public bool AttackStun;
+
+    //Dash
+    public bool DashOnPlayer;
+    public float DashSpeed;
+    public float DistanceToRun;
+    public float DashStrenght;
+    public bool DashStun;
+
+    //Spawn Entities
+    public bool SpawnEntitiesRegulary;
+    public bool SpawnEntitiesAtDeath;
+    public float SpawnCooldown;
+    public float NumberOfEntitiesToSpawn;
+    public GameObject EntitiesToSpawn;
+
+    //Money
+    public float MoneyEarnWhenHit;
+    public float MoneyEarnWhenDead;
+
+    //Essential for instantiate Enemy
     public Sprite sprite;
     public MonoBehaviour AIScript;
     public Animator Animator;

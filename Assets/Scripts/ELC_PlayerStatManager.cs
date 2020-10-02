@@ -7,15 +7,11 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float Speed;
     public float MaxHealth;
     public float Resistance;
+    public float AttackMultiplicator;
+    public float DashDistance;
 
 
-    void Start()
-    {
-        
-    }
+    public float LifeDecreaseSpeed;
+    public float LifeStopDecrease;
 
-    void Update()
-    {
-        
-    }
 }
