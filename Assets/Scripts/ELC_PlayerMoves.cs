@@ -16,6 +16,8 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     private Vector3 lastDirection;
 
+    public AXD_PlayerAttack playerAttack;
+
     
     [SerializeField]
     private LayerMask bodyHitMask;
@@ -36,9 +38,11 @@ public class ELC_PlayerMoves : MonoBehaviour
     public float dashDistance;
     public float dashTime;
     public bool isDashing;
+    public bool isGashDashing;
+    public bool isThrustDashing;
     private float nextDash;
     public float dashCooldown;
-    private float stopDash;
+    public float stopDash;
 
     void Update()
     {
@@ -47,14 +51,21 @@ public class ELC_PlayerMoves : MonoBehaviour
             Moves();
         }
         
-        if(Input.GetAxisRaw("Dash") == 1 && Time.time > nextDash)
+        if(Input.GetAxisRaw("Dash") == 1 && Time.time > nextDash && canMove)
         {
             canMove = false;
             isDashing = true;
             nextDash = Time.time + dashCooldown;
             stopDash = Time.time + dashTime;
         }
+        if (isGashDashing)
+        {
+            AttackDash(playerAttack.gashDashDistance, playerAttack.gashDashTime);
 
+        }else if (isThrustDashing)
+        {
+            AttackDash(playerAttack.thrustDashDistance, playerAttack.thrustDashTime);
+        }
         if (isDashing)
         {
             Dash();
@@ -132,6 +143,18 @@ public class ELC_PlayerMoves : MonoBehaviour
         if(Time.time > stopDash)
         {
             isDashing = false;
+            canMove = true;
+        }
+    }
+
+    public void AttackDash(float distance, float time)
+    {
+        player.Translate(lastDirection.normalized * (distance / time) * Time.deltaTime);
+        Debug.Log("Dash Attack CD : " + (stopDash - Time.time));
+        if (Time.time > stopDash)
+        {
+            isGashDashing = false;
+            isThrustDashing = false;
             canMove = true;
         }
     }
