@@ -6,7 +6,7 @@ using UnityEngine;
 public class ELC_PowerUp : ScriptableObject
 {
     //Pour le type de Power Up
-    public enum Type {Attack, Speed, Heal};
+    public enum Type {Attack, Speed, Heal, MoneyEarn};
     public Type type;
 
     //Pour son niveau de puissance
