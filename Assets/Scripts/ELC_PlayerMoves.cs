@@ -12,6 +12,10 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     private Vector3 playerMoves;
 
+    public Transform player;
+
+    private Vector3 lastDirection;
+
     
     [SerializeField]
     private LayerMask bodyHitMask;
@@ -27,11 +31,33 @@ public class ELC_PlayerMoves : MonoBehaviour
     private bool isTouchingTop;
     private bool isTouchingDown;
 
+    [Header("Dash Characteristics")]
+
+    public float dashDistance;
+    public float dashTime;
+    public bool isDashing;
+    private float nextDash;
+    public float dashCooldown;
+    private float stopDash;
+
     void Update()
     {
         if (canMove)
         {
             Moves();
+        }
+        
+        if(Input.GetAxisRaw("Dash") == 1 && Time.time > nextDash)
+        {
+            canMove = false;
+            isDashing = true;
+            nextDash = Time.time + dashCooldown;
+            stopDash = Time.time + dashTime;
+        }
+
+        if (isDashing)
+        {
+            Dash();
         }
 
         Raycasts();
@@ -42,6 +68,11 @@ public class ELC_PlayerMoves : MonoBehaviour
         playerMoves.x = Input.GetAxis("Horizontal") * speed;
         playerMoves.y = Input.GetAxis("Vertical") * speed;
         playerMoves = Vector3.ClampMagnitude(playerMoves, speed);
+
+        if (playerMoves != Vector3.zero)
+        {
+            lastDirection = playerMoves;
+        }
 
         IsPlayerCollidingWalls();
 
@@ -93,5 +124,15 @@ public class ELC_PlayerMoves : MonoBehaviour
     public Vector3 getPlayerMoves()
     {
         return playerMoves;
+    }
+    public void Dash()
+    {
+        player.Translate(lastDirection.normalized * (dashDistance / dashTime) * Time.deltaTime);
+
+        if(Time.time > stopDash)
+        {
+            isDashing = false;
+            canMove = true;
+        }
     }
 }
