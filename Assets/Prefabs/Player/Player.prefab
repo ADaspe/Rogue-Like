@@ -47,11 +47,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   canMove: 1
+  player: {fileID: 3282318346991483595}
+  playerAttack: {fileID: 2124271741732407899}
   bodyHitMask:
     serializedVersion: 2
     m_Bits: 0
   raycastLenght: 0
   raycastWidth: 0
+  dashDistance: 2.5
+  dashTime: 0.2
+  isDashing: 0
+  isGashDashing: 0
+  isThrustDashing: 0
+  dashCooldown: 0.5
+  stopDash: 0
 --- !u!114 &2124271741732407899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,14 +73,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5a14030eadef24384f197b5f9f287f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackPoint: {fileID: 0}
+  attackPoint: {fileID: 6585792741827100353}
   player: {fileID: 3081472017539436263}
   GashDamage: 100
   ThrustDamage: 100
+  Combos: 0
   gashAreaRadius: 1.2
+  gashDashDistance: 0.5
+  gashDashTime: 0.05
   thrustWidth: 1
+  thrustDashDistance: 1
+  thrustDashTime: 0.2
   thrustlength: 2.5
-  attackRate: 2
+  attackRate: 6
   nextAttackTime: 0
 --- !u!1 &7407932525945116823
 GameObject:
