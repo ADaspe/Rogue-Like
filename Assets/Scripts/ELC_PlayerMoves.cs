@@ -8,8 +8,6 @@ public class ELC_PlayerMoves : MonoBehaviour
     [SerializeField]
     private float speed;
 
-    public bool canMove;
-
     private Vector3 playerMoves;
 
     public Transform player;
@@ -18,6 +16,8 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     public AXD_PlayerAttack playerAttack;
 
+    private Animator playerAnimator;
+    private SpriteRenderer playerSpriteRenderer;
     
     [SerializeField]
     private LayerMask bodyHitMask;
@@ -28,10 +28,19 @@ public class ELC_PlayerMoves : MonoBehaviour
     [Range(0f, 1.5f)][SerializeField]
     private float raycastWidth;
 
+    private enum Sides { Front, RightFront, LeftFront, Back, RightBack, LeftBack, Left, Right};
+    [SerializeField]
+    private Sides PlayerSide;
+
     private bool isTouchingLeft;
     private bool isTouchingRight;
     private bool isTouchingTop;
     private bool isTouchingDown;
+
+    public bool canMove;
+    [SerializeField]
+    private bool playerIsImmobile;
+
 
     [Header("Dash Characteristics")]
 
@@ -43,6 +52,12 @@ public class ELC_PlayerMoves : MonoBehaviour
     private float nextDash;
     public float dashCooldown;
     public float stopDash;
+
+    private void Start()
+    {
+        playerAnimator = this.GetComponent<Animator>();
+        playerSpriteRenderer = this.GetComponent<SpriteRenderer>();
+    }
 
     void Update()
     {
@@ -71,6 +86,8 @@ public class ELC_PlayerMoves : MonoBehaviour
             Dash();
         }
 
+        AnimationsManagement();
+
         Raycasts();
     }
 
@@ -79,6 +96,31 @@ public class ELC_PlayerMoves : MonoBehaviour
         playerMoves.x = Input.GetAxis("Horizontal") * speed;
         playerMoves.y = Input.GetAxis("Vertical") * speed;
         playerMoves = Vector3.ClampMagnitude(playerMoves, speed);
+
+        //Déterminer dans quelle direction le joueur est
+        //if (Input.GetAxis("Vertical") > Input.GetAxis("Horizontal") && Input.GetAxis("Vertical") > -Input.GetAxis("Horizontal")) PlayerSide = Sides.Back;
+        //else if (Input.GetAxis("Vertical") < Input.GetAxis("Horizontal") && Input.GetAxis("Vertical") < -Input.GetAxis("Horizontal")) PlayerSide = Sides.Front;
+        //else if (Input.GetAxis("Horizontal") > Input.GetAxis("Vertical") && Input.GetAxis("Horizontal") > -Input.GetAxis("Vertical")) PlayerSide = Sides.Right;
+        //else if (Input.GetAxis("Horizontal") < Input.GetAxis("Vertical") && Input.GetAxis("Horizontal") < -Input.GetAxis("Vertical")) PlayerSide = Sides.Left;
+
+        float playerDirectionAngle = Vector3.Angle(Vector3.right, playerMoves);
+
+        if(playerMoves.y >= 0 && playerIsImmobile == false && playerMoves.sqrMagnitude > 0.05f)
+        {
+            if (playerDirectionAngle <= 22.5f) PlayerSide = Sides.Right;
+            else if (playerDirectionAngle <= 67.5f) PlayerSide = Sides.RightBack;
+            else if (playerDirectionAngle <= 112.5f) PlayerSide = Sides.Back;
+            else if (playerDirectionAngle <= 157.5f) PlayerSide = Sides.LeftBack;
+            else if (playerDirectionAngle <= 180f) PlayerSide = Sides.Left;
+        }
+        else if(playerMoves.y < 0 && playerIsImmobile == false && playerMoves.sqrMagnitude > 0.05f)
+        {
+            if (playerDirectionAngle <= 22.5f) PlayerSide = Sides.Right;
+            else if (playerDirectionAngle <= 67.5f) PlayerSide = Sides.RightFront;
+            else if (playerDirectionAngle <= 112.5f) PlayerSide = Sides.Front;
+            else if (playerDirectionAngle <= 157.5f) PlayerSide = Sides.LeftFront;
+            else if (playerDirectionAngle <= 180f) PlayerSide = Sides.Left;
+        }
 
         if (playerMoves != Vector3.zero)
         {
@@ -130,6 +172,37 @@ public class ELC_PlayerMoves : MonoBehaviour
         Debug.DrawRay(downRaycastStart, transform.TransformDirection(Vector2.left) * raycastLenght, Color.red);
         if (downHit) isTouchingDown = true;
         else isTouchingDown = false;
+    }
+
+    void AnimationsManagement()
+    {
+        if (playerMoves.sqrMagnitude < 0.005f) playerIsImmobile = true;
+        else playerIsImmobile = false;
+        playerAnimator.SetBool("IsImmobile", playerIsImmobile);
+
+        //Le numéro 1 de PlayerSide correspond aux anim de Front, le 2 aux anims de SideFront, le 3 aux anims de Back, le 4 aux anims de Sideback et le 5 aux anims de Sides
+        if (PlayerSide == Sides.Front) playerAnimator.SetInteger("PlayerSide", 1);
+        else if (PlayerSide == Sides.RightFront || PlayerSide == Sides.LeftFront) playerAnimator.SetInteger("PlayerSide", 2);
+        else if (PlayerSide == Sides.Back) playerAnimator.SetInteger("PlayerSide", 3);
+        else if (PlayerSide == Sides.RightBack || PlayerSide == Sides.LeftBack) playerAnimator.SetInteger("PlayerSide", 4);
+        else playerAnimator.SetInteger("PlayerSide", 5);
+
+        //Vu qu'il y a qu'une anim de côté droit, il faut flip le sprite pour qu'elle fasse aussi anim du côté gauche
+        if (PlayerSide == Sides.Left || PlayerSide == Sides.LeftBack || PlayerSide == Sides.LeftFront)
+        {
+            if(playerSpriteRenderer.flipX == false)playerSpriteRenderer.flipX = true;
+        }
+        else
+        {
+            if (playerSpriteRenderer.flipX == true) playerSpriteRenderer.flipX = false;
+        }
+    }
+
+    public IEnumerator PlayAnimation(string name, float duration)
+    {
+        playerAnimator.SetBool(name, true);
+        yield return new WaitForSeconds(duration);
+        playerAnimator.SetBool(name, false);
     }
 
     public Vector3 getPlayerMoves()
