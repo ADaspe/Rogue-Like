@@ -86,6 +86,7 @@ public class ELC_PlayerMoves : MonoBehaviour
             Dash();
         }
 
+        PlayerTurnDetector();
         AnimationsManagement();
 
         Raycasts();
@@ -97,30 +98,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         playerMoves.y = Input.GetAxis("Vertical") * speed;
         playerMoves = Vector3.ClampMagnitude(playerMoves, speed);
 
-        //Déterminer dans quelle direction le joueur est
-        //if (Input.GetAxis("Vertical") > Input.GetAxis("Horizontal") && Input.GetAxis("Vertical") > -Input.GetAxis("Horizontal")) PlayerSide = Sides.Back;
-        //else if (Input.GetAxis("Vertical") < Input.GetAxis("Horizontal") && Input.GetAxis("Vertical") < -Input.GetAxis("Horizontal")) PlayerSide = Sides.Front;
-        //else if (Input.GetAxis("Horizontal") > Input.GetAxis("Vertical") && Input.GetAxis("Horizontal") > -Input.GetAxis("Vertical")) PlayerSide = Sides.Right;
-        //else if (Input.GetAxis("Horizontal") < Input.GetAxis("Vertical") && Input.GetAxis("Horizontal") < -Input.GetAxis("Vertical")) PlayerSide = Sides.Left;
-
-        float playerDirectionAngle = Vector3.Angle(Vector3.right, playerMoves);
-
-        if(playerMoves.y >= 0 && playerIsImmobile == false && playerMoves.sqrMagnitude > 0.05f)
-        {
-            if (playerDirectionAngle <= 22.5f) PlayerSide = Sides.Right;
-            else if (playerDirectionAngle <= 67.5f) PlayerSide = Sides.RightBack;
-            else if (playerDirectionAngle <= 112.5f) PlayerSide = Sides.Back;
-            else if (playerDirectionAngle <= 157.5f) PlayerSide = Sides.LeftBack;
-            else if (playerDirectionAngle <= 180f) PlayerSide = Sides.Left;
-        }
-        else if(playerMoves.y < 0 && playerIsImmobile == false && playerMoves.sqrMagnitude > 0.05f)
-        {
-            if (playerDirectionAngle <= 22.5f) PlayerSide = Sides.Right;
-            else if (playerDirectionAngle <= 67.5f) PlayerSide = Sides.RightFront;
-            else if (playerDirectionAngle <= 112.5f) PlayerSide = Sides.Front;
-            else if (playerDirectionAngle <= 157.5f) PlayerSide = Sides.LeftFront;
-            else if (playerDirectionAngle <= 180f) PlayerSide = Sides.Left;
-        }
+        
 
         if (playerMoves != Vector3.zero)
         {
@@ -130,6 +108,30 @@ public class ELC_PlayerMoves : MonoBehaviour
         IsPlayerCollidingWalls();
 
         transform.Translate(playerMoves * Time.deltaTime);
+    }
+
+    void PlayerTurnDetector()
+    {
+        //Déterminer dans quelle direction le joueur est
+
+        float playerDirectionAngle = Vector3.Angle(Vector3.right, playerMoves);
+
+        if (playerMoves.y >= 0 && playerIsImmobile == false && playerMoves.sqrMagnitude > 0.05f)
+        {
+            if (playerDirectionAngle <= 22.5f) PlayerSide = Sides.Right;
+            else if (playerDirectionAngle <= 67.5f) PlayerSide = Sides.RightBack;
+            else if (playerDirectionAngle <= 112.5f) PlayerSide = Sides.Back;
+            else if (playerDirectionAngle <= 157.5f) PlayerSide = Sides.LeftBack;
+            else if (playerDirectionAngle <= 180f) PlayerSide = Sides.Left;
+        }
+        else if (playerMoves.y < 0 && playerIsImmobile == false && playerMoves.sqrMagnitude > 0.05f)
+        {
+            if (playerDirectionAngle <= 22.5f) PlayerSide = Sides.Right;
+            else if (playerDirectionAngle <= 67.5f) PlayerSide = Sides.RightFront;
+            else if (playerDirectionAngle <= 112.5f) PlayerSide = Sides.Front;
+            else if (playerDirectionAngle <= 157.5f) PlayerSide = Sides.LeftFront;
+            else if (playerDirectionAngle <= 180f) PlayerSide = Sides.Left;
+        }
     }
 
     void IsPlayerCollidingWalls()
@@ -211,7 +213,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     }
     public void Dash()
     {
-        player.Translate(lastDirection.normalized * (dashDistance / dashTime) * Time.deltaTime);
+        transform.Translate(lastDirection.normalized * (dashDistance / dashTime) * Time.deltaTime);
 
         if(Time.time > stopDash)
         {
@@ -222,7 +224,7 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     public void AttackDash(float distance, float time)
     {
-        player.Translate(lastDirection.normalized * (distance / time) * Time.deltaTime);
+        transform.Translate(lastDirection.normalized * (distance / time) * Time.deltaTime);
         Debug.Log("Dash Attack CD : " + (stopDash - Time.time));
         if (Time.time > stopDash)
         {

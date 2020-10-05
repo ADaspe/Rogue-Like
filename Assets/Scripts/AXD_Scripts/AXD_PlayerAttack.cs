@@ -60,6 +60,7 @@ public class AXD_PlayerAttack : MonoBehaviour
             player.isGashDashing = true;
             StartCoroutine(player.PlayAnimation("SwishAttack", 0.4f));
             Debug.Log("Dash Attack CD : " + (player.stopDash - Time.time));
+            player.canMove = false;
             player.AttackDash(gashDashDistance, gashDashTime);
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, gashAreaRadius);
             foreach (Collider2D enemy in hitEnemies)
@@ -76,6 +77,7 @@ public class AXD_PlayerAttack : MonoBehaviour
             player.stopDash = Time.time + thrustDashTime;
             player.isThrustDashing = true;
             Debug.Log("Dash Attack CD : " + (player.stopDash - Time.time));
+            player.canMove = false;
             player.AttackDash(thrustDashDistance, thrustDashTime);
             Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(thrustWidth, thrustlength), Vector2.Angle(Vector2.up,lastDirection));
             foreach(Collider2D enemy in hitEnemies)
