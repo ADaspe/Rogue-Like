@@ -390,6 +390,16 @@ PrefabInstance:
       propertyPath: attackRate
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3081472017539436263, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: dashTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081472017539436263, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: raycastLenght
+      value: 0.85
+      objectReference: {fileID: 0}
     - target: {fileID: 3282318346991483589, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: m_Name
@@ -403,12 +413,12 @@ PrefabInstance:
     - target: {fileID: 3282318346991483595, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.489
+      value: -0.48
       objectReference: {fileID: 0}
     - target: {fileID: 3282318346991483595, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.482
+      value: 0.21
       objectReference: {fileID: 0}
     - target: {fileID: 3282318346991483595, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
@@ -467,12 +477,12 @@ PrefabInstance:
     - target: {fileID: 8780946386146991582, guid: a75d429217e2f574c88dcd23b455145b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5
+      value: 2.56
       objectReference: {fileID: 0}
     - target: {fileID: 8780946386146991582, guid: a75d429217e2f574c88dcd23b455145b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 1.52
       objectReference: {fileID: 0}
     - target: {fileID: 8780946386146991582, guid: a75d429217e2f574c88dcd23b455145b,
         type: 3}
