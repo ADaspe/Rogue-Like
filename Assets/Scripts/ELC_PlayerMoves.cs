@@ -214,11 +214,15 @@ public class ELC_PlayerMoves : MonoBehaviour
         }
     }
 
-    public IEnumerator PlayAnimation(string name, float duration)
+    public IEnumerator PlayAnimation(string name, float duration, bool canMoveDuringIt, bool canTurnDuringIt)
     {
         playerAnimator.SetBool(name, true);
+        canMove = canMoveDuringIt;
+        canTurn = canTurnDuringIt;
         yield return new WaitForSeconds(duration);
         playerAnimator.SetBool(name, false);
+        canMove = !canMoveDuringIt;
+        canTurn = !canTurnDuringIt;
     }
 
     public Vector3 getPlayerMoves()
