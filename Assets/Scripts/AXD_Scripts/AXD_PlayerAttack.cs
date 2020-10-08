@@ -33,7 +33,7 @@ public class AXD_PlayerAttack : MonoBehaviour
     }
     void Update()
     {
-        if (player.getPlayerMoves() != Vector3.zero)
+        if (/*player.getPlayerMoves() != Vector3.zero*/ !player.playerIsImmobile)
         {
             attackPoint.position = (transform.position + player.getPlayerMoves().normalized);
             lastDirection = player.getPlayerMoves();
@@ -48,7 +48,6 @@ public class AXD_PlayerAttack : MonoBehaviour
             {
                 Attack(AttackType.Thrust);
             }
-            
         }
     }
 

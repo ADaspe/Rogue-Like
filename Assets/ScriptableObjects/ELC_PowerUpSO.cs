@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="PowerUp", menuName = "ScriptableObjects/PowerUpScriptableObject", order = 1)]
-public class ELC_PowerUp : ScriptableObject
+public class ELC_PowerUpSO : ScriptableObject
 {
     //Pour le type de Power Up
     public enum Type {Attack, Speed, Heal, MoneyEarn};
