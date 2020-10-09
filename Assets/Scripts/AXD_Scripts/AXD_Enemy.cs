@@ -19,7 +19,7 @@ public class AXD_Enemy : MonoBehaviour
 
     public void GetHit(int Damage)
     {
-        Debug.Log("Argh");
+
         HP -= Damage;
         if (HP <= 0)
         {
