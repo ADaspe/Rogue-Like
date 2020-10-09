@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Enemy", menuName = "ScriptableObjects/EnemyScriptableObject", order = 1)]
-public class ELC_Enemy : ScriptableObject
+public class ELC_EnemySO : ScriptableObject
 {
     //Name
     public string Name;
@@ -13,14 +13,9 @@ public class ELC_Enemy : ScriptableObject
 
     //Movements
     public float MovementSpeed;
-    public bool FollowPlayer;
-    public bool FleePlayer;
-    public bool StayAtDistance;
-    public bool FleeWhenPlayerIsNear;
-    public bool ApproachWhenPlayerIsFar;
+    public enum PathBehaviour { FollowPlayer, FleePlayer, StayAtDistance, FollowPath, IsImmobile };
+    public PathBehaviour EnemyPath;
     public float LimitDistanceToStay;
-    public bool IsImmobile;
-    public bool FollowPath;
     public bool NeedTimeToTurn;
     public float TurnSpeed;
 
@@ -60,6 +55,6 @@ public class ELC_Enemy : ScriptableObject
 
     //Essential for instantiate Enemy
     public Sprite sprite;
-    public MonoBehaviour AIScript;
+    //public MonoBehaviour AIScript;
     public Animator Animator;
 }
