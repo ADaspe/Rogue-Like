@@ -95,3 +95,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: af37899cb8f689d4a83254235ca84dfd, type: 2}
+  canSeePlayer: 0
+  obstaclesLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  fieldOfViewLayerMask:
+    serializedVersion: 2
+    m_Bits: 768
