@@ -14,6 +14,7 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     public Vector3 lastDirection;
     public Vector3 attackPoint;
+    public const float animationTime = 0.4f;
 
     public AXD_PlayerAttack playerAttack;
     public ELC_PlayerStatManager playerStats;
@@ -56,6 +57,8 @@ public class ELC_PlayerMoves : MonoBehaviour
     public float dashCooldown;
     public float stopDash;
     private bool isDashingInWall;
+    public float currentDistance;
+    public float currentTime;
 
     private Vector3 dashVector;
 
@@ -69,16 +72,17 @@ public class ELC_PlayerMoves : MonoBehaviour
     {
         attackPoint = transform.position + lastDirection.normalized;
 
-        if ((Input.GetKeyDown(KeyCode.A) && !isDashing) || isDashing) Dash(dashDistance, dashTime); // Utilise l'input manager bordel à couille O'Clavier 
+        if (Input.GetAxisRaw("Dash") == 1 && !isDashing || isDashing) Dash(dashDistance, dashTime); // Utilise l'input manager bordel à couille O'Clavier 
         if(Input.GetAxisRaw("Swich") == 1 && Time.time > nextAttackTime)
         {
-            Dash(playerStats.ThrustDashDistance, playerStats.ThrustDashTime);
-            StartCoroutine(PlayAnimation("SwishAttack", 0.4f, false, false));
+            Dash(playerStats.SwichDashDistance, playerStats.SwichDashTime);
+            StartCoroutine(PlayAnimation("SwishAttack", animationTime, false, false));
             nextAttackTime = Time.time + 1f / playerStats.AttackRate;
+
         }else if(Input.GetAxisRaw("Thrust") == 1 && Time.time > nextAttackTime)
         {
-            Dash(playerStats.SwichDashDistance, playerStats.SwichDashTime);
-            StartCoroutine(PlayAnimation("TrhustAttack", 0.4f, false, false));
+            Dash(playerStats.ThrustDashDistance, playerStats.ThrustDashTime);
+            StartCoroutine(PlayAnimation("ThrustAttack", animationTime, false, false));
             nextAttackTime = Time.time + 1f / playerStats.AttackRate;
         }
         if (canMove) Walk();
@@ -235,29 +239,27 @@ public class ELC_PlayerMoves : MonoBehaviour
         canTurn = !canTurnDuringIt;
     }
 
-    public Vector3 getPlayerMoves()
-    {
-        //return playerMoves;
-        return lastDirection;
-    }
     public void Dash(float distance, float time)
     {
         //On règle la durée du dash ici, cette valeur sera enclenchée qu'une fois par appel de la fonction
+        
         if (!isDashing)
         {
             //Debug.Log("Start dash");
+            currentDistance = distance;
+            currentTime = time;
             stopDash = Time.time + time;
             isDashing = true;
             canMove = false;
         }
 
         //Calcul du vecteur du dash
-        dashVector = lastDirection.normalized * (distance / time) * Time.deltaTime;
+        dashVector = lastDirection.normalized * (currentDistance / currentTime) * Time.deltaTime;
 
         //On détecte si y'a un mur
         Raycasts();
         PlayerTurnDetector();
-        MovementClampIfCollidingWalls(distance/time, "dashVector");
+        MovementClampIfCollidingWalls(distance / time, "dashVector");
         MovementClampIfCollidingWalls(speed, "playerMoves");
 
         //Conditions d'arrêt du dash
@@ -266,7 +268,7 @@ public class ELC_PlayerMoves : MonoBehaviour
             isDashing = false;
             canMove = true;
         }
-        else if(isDashing) player.Translate(dashVector); //Ici on bouge si tout va bien
+        else if (isDashing) player.Translate(dashVector); //Ici on bouge si tout va bien
     }
 
 }
