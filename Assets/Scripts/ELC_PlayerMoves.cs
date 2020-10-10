@@ -12,7 +12,7 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     public Transform player;
 
-    private Vector3 lastDirection;
+    public readonly Vector3 lastDirection;
 
     public AXD_PlayerAttack playerAttack;
 
