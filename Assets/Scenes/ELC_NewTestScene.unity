@@ -619,7 +619,7 @@ PrefabInstance:
     - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: AttackRate
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
@@ -685,11 +685,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3282318346991483589, guid: c582c890f15ac5345a4f3c531ee31b90,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3282318346991483595, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
