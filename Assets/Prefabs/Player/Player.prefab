@@ -73,6 +73,8 @@ MonoBehaviour:
   isDashing: 0
   dashCooldown: 0.5
   stopDash: 0
+  currentDistance: 0
+  currentTime: 0
 --- !u!114 &2124271741732407899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +287,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: SwichDashDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: ThrustDashDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: AttackRate
+      value: 2.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6958aa080a4c5439913b983ac56050, type: 3}
 --- !u!4 &782464527650891042 stripped
@@ -293,15 +310,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6943791553136533036}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &782464527650891043 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
-    type: 3}
-  m_PrefabInstance: {fileID: 6943791553136533036}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43ad867dd064cf844b7bafb45355bfb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
