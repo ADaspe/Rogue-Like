@@ -65,9 +65,11 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     void Update()
     {
-        if (canMove)Walk();
+        
 
-        if (Input.GetKeyDown(KeyCode.A) || isDashing) Dash(dashDistance, dashTime);
+        if ((Input.GetKeyDown(KeyCode.A) && !isDashing) || isDashing) Dash(dashDistance, dashTime);
+
+        if (canMove) Walk();
 
         PlayerTurnDetector();
         AnimationsManagement();
@@ -231,6 +233,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         //On règle la durée du dash ici, cette valeur sera enclenchée qu'une fois par appel de la fonction
         if (!isDashing)
         {
+            Debug.Log("Start dash");
             stopDash = Time.time + time;
             isDashing = true;
             canMove = false;
@@ -242,7 +245,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         //On détecte si y'a un mur
         Raycasts();
         PlayerTurnDetector();
-            MovementClampIfCollidingWalls(distance / time, "dashVector");
+        MovementClampIfCollidingWalls(distance/time, "dashVector");
         MovementClampIfCollidingWalls(speed, "playerMoves");
 
         //Conditions d'arrêt du dash

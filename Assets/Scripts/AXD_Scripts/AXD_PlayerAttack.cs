@@ -10,8 +10,11 @@ public class AXD_PlayerAttack : MonoBehaviour
     private Vector3 lastDirection;
     public Transform attackPoint;
     public ELC_PlayerMoves player;
+    [SerializeField]
+    private LayerMask attackLayerMask;
     public int GashDamage, ThrustDamage;
     public int Combos = 0;
+    public bool PlayerIsAttacking;
     [Header ("Attack Settings")]
     [Range (0,5)]
     public float gashAreaRadius;
@@ -58,9 +61,10 @@ public class AXD_PlayerAttack : MonoBehaviour
             //player.stopDash = Time.time + gashDashTime;
             //player.isGashDashing = true;
             StartCoroutine(player.PlayAnimation("SwishAttack", 0.4f, false, false));
-            Debug.Log("Dash Attack CD : " + (player.stopDash - Time.time));
+            //Debug.Log("Dash Attack CD : " + (player.stopDash - Time.time));
+            Debug.Log("Dash Attack");
             player.Dash(gashDashDistance, gashDashTime);
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, gashAreaRadius);
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, gashAreaRadius, attackLayerMask);
             foreach (Collider2D enemy in hitEnemies)
             {
                 enemy.GetComponent<AXD_Enemy>().GetHit(CalculateDamage(AttackType.Gash));
