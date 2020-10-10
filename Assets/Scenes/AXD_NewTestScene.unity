@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: AttackRate
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6958aa080a4c5439913b983ac56050, type: 3}
 --- !u!1 &405426144 stripped
@@ -461,6 +466,11 @@ PrefabInstance:
     - target: {fileID: 3081472017539436263, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: playerStat
+      value: 
+      objectReference: {fileID: 1649485529}
+    - target: {fileID: 3081472017539436263, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: playerStats
       value: 
       objectReference: {fileID: 1649485529}
     - target: {fileID: 3282318346991483589, guid: c582c890f15ac5345a4f3c531ee31b90,

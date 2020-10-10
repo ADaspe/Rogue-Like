@@ -16,7 +16,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     public Vector3 attackPoint;
 
     public AXD_PlayerAttack playerAttack;
-    public ELC_PlayerStatManager playerStat;
+    public ELC_PlayerStatManager playerStats;
 
     private Animator playerAnimator;
     private SpriteRenderer playerSpriteRenderer;
@@ -72,13 +72,14 @@ public class ELC_PlayerMoves : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.A) && !isDashing) || isDashing) Dash(dashDistance, dashTime); // Utilise l'input manager bordel à couille O'Clavier 
         if(Input.GetAxisRaw("Swich") == 1 && Time.time > nextAttackTime)
         {
-            Dash(playerStat.ThrustDashDistance, playerStat.ThrustDashTime);
+            Dash(playerStats.ThrustDashDistance, playerStats.ThrustDashTime);
             StartCoroutine(PlayAnimation("SwishAttack", 0.4f, false, false));
-
+            nextAttackTime = Time.time + 1f / playerStats.AttackRate;
         }else if(Input.GetAxisRaw("Thrust") == 1 && Time.time > nextAttackTime)
         {
-            Dash(playerStat.SwichDashDistance, playerStat.SwichDashTime);
+            Dash(playerStats.SwichDashDistance, playerStats.SwichDashTime);
             StartCoroutine(PlayAnimation("TrhustAttack", 0.4f, false, false));
+            nextAttackTime = Time.time + 1f / playerStats.AttackRate;
         }
         if (canMove) Walk();
 
