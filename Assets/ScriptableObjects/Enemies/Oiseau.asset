@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e1e575d17b71b948acad78b5eb5db09, type: 3}
-  m_Name: Hoplite
+  m_Name: Oiseau
   m_EditorClassIdentifier: 
-  Name: Hoplite
-  MaxHealth: 20
-  MovementSpeed: 2
+  Name: Oiso
+  MaxHealth: 2
+  MovementSpeed: 3
   EnemyPath: 0
-  LimitDistanceToStay: 1.2
+  LimitDistanceToStay: 2
   NeedTimeToTurn: 0
   TurnSpeed: 0
   FriendlyFire: 0
@@ -25,14 +25,14 @@ MonoBehaviour:
   DistanceAttackArea: 0
   DistanceCooldown: 0
   CorpseAttack: 1
-  AttackCooldown: 1
-  AttackRange: 0.5
-  WaitBeforeAttack: 1
-  AttackStrenght: 2
+  AttackCooldown: 3
+  AttackRange: 0
+  WaitBeforeAttack: 0.2
+  AttackStrenght: 0
   AttackStun: 0
-  DashOnPlayer: 0
-  DashSpeed: 0
-  DistanceToRun: 0
+  DashOnPlayer: 1
+  DashTime: 0.2
+  DistanceToRun: 4
   DashStrenght: 0
   DashStun: 0
   SpawnEntitiesRegulary: 0
@@ -42,5 +42,5 @@ MonoBehaviour:
   EntitiesToSpawn: {fileID: 0}
   MoneyEarnWhenHit: 0
   MoneyEarnWhenDead: 0
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: 0}
   Animator: {fileID: 0}

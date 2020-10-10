@@ -245,7 +245,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         //On règle la durée du dash ici, cette valeur sera enclenchée qu'une fois par appel de la fonction
         if (!isDashing)
         {
-            //Debug.Log("Start dash");
+            Debug.Log("Start dash");
             stopDash = Time.time + time;
             isDashing = true;
             canMove = false;
