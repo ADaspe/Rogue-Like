@@ -48,19 +48,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  canMove: 1
   player: {fileID: 3282318346991483595}
   playerAttack: {fileID: 2124271741732407899}
   bodyHitMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 512
   raycastLenght: 0.8
   raycastWidth: 1
+  PlayerSide: 0
+  isTouchingLeft: 0
+  isTouchingRight: 0
+  isTouchingTop: 0
+  isTouchingDown: 0
+  canMove: 1
+  playerIsImmobile: 0
   dashDistance: 2.5
   dashTime: 0.2
   isDashing: 0
-  isGashDashing: 0
-  isThrustDashing: 0
   dashCooldown: 0.5
   stopDash: 0
 --- !u!114 &2124271741732407899

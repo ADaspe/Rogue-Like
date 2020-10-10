@@ -33,7 +33,7 @@ public class AXD_PlayerAttack : MonoBehaviour
     }
     void Update()
     {
-        if (player.getPlayerMoves() != Vector3.zero)
+        if (/*player.getPlayerMoves() != Vector3.zero*/ !player.playerIsImmobile)
         {
             attackPoint.position = (transform.position + player.getPlayerMoves().normalized);
             lastDirection = player.getPlayerMoves();
@@ -48,7 +48,6 @@ public class AXD_PlayerAttack : MonoBehaviour
             {
                 Attack(AttackType.Thrust);
             }
-            
         }
     }
 
@@ -56,11 +55,11 @@ public class AXD_PlayerAttack : MonoBehaviour
     {
         if (type == AttackType.Gash)
         {
-            player.stopDash = Time.time + gashDashTime;
-            player.isGashDashing = true;
-            StartCoroutine(player.PlayAnimation("SwishAttack", 0.4f));
+            //player.stopDash = Time.time + gashDashTime;
+            //player.isGashDashing = true;
+            StartCoroutine(player.PlayAnimation("SwishAttack", 0.4f, false, false));
             Debug.Log("Dash Attack CD : " + (player.stopDash - Time.time));
-            player.AttackDash(gashDashDistance, gashDashTime);
+            player.Dash(gashDashDistance, gashDashTime);
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, gashAreaRadius);
             foreach (Collider2D enemy in hitEnemies)
             {
@@ -73,10 +72,10 @@ public class AXD_PlayerAttack : MonoBehaviour
 
         } else if (type == AttackType.Thrust)
         {
-            player.stopDash = Time.time + thrustDashTime;
-            player.isThrustDashing = true;
+            //player.stopDash = Time.time + thrustDashTime;
+            //player.isThrustDashing = true;
             Debug.Log("Dash Attack CD : " + (player.stopDash - Time.time));
-            player.AttackDash(thrustDashDistance, thrustDashTime);
+            player.Dash(thrustDashDistance, thrustDashTime);
             Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(thrustWidth, thrustlength), Vector2.Angle(Vector2.up,lastDirection));
             foreach(Collider2D enemy in hitEnemies)
             {

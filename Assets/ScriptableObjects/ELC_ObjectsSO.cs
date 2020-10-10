@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Objects", menuName = "ScriptableObjects/ObjectsScriptableObject", order = 1)]
-public class ELC_Objects : ScriptableObject
+public class ELC_ObjectsSO : ScriptableObject
 {
     public string Name;
     public float Strenght;
