@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3282318346991483595}
   - component: {fileID: 3081472017539436263}
   - component: {fileID: 2124271741732407899}
-  - component: {fileID: 5083334866861958287}
   - component: {fileID: 1478753435661380681}
+  - component: {fileID: 5083334866861958287}
   - component: {fileID: 1154282071691469226}
   m_Layer: 0
   m_Name: Player
@@ -54,7 +54,7 @@ MonoBehaviour:
   lastDirection: {x: 0, y: 0, z: 0}
   attackPoint: {x: 0, y: 0, z: 0}
   playerAttack: {fileID: 2124271741732407899}
-  playerStats: {fileID: 0}
+  playerStats: {fileID: 782464527650891043}
   bodyHitMask:
     serializedVersion: 2
     m_Bits: 512
@@ -106,6 +106,20 @@ MonoBehaviour:
   thrustlength: 2.5
   attackRate: 6
   nextAttackTime: 0
+--- !u!114 &1478753435661380681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3282318346991483589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b6a018d8d6ca7478c13acef376629b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3081472017539436263}
+  playerStats: {fileID: 782464527650891043}
 --- !u!95 &5083334866861958287
 Animator:
   serializedVersion: 3
@@ -125,20 +139,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1478753435661380681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3282318346991483589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41b6a018d8d6ca7478c13acef376629b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 3081472017539436263}
-  playerStats: {fileID: 0}
 --- !u!212 &1154282071691469226
 SpriteRenderer:
   m_ObjectHideFlags: 0
