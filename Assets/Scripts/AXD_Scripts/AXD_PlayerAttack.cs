@@ -35,25 +35,7 @@ public class AXD_PlayerAttack : MonoBehaviour
     {
         nextAttackTime = Time.time;
     }
-    void Update()
-    {
-        if (/*player.getPlayerMoves() != Vector3.zero*/ !player.playerIsImmobile)
-        {
-            attackPoint.position = (transform.position + player.getPlayerMoves().normalized);
-            lastDirection = player.getPlayerMoves();
-        }
-        if (Time.time >= nextAttackTime)
-        {
-            if (Input.GetAxisRaw("Gash") != 0)
-            {
-                Attack(AttackType.Gash);
-            }
-            else if (Input.GetAxisRaw("Thrust") != 0)
-            {
-                Attack(AttackType.Thrust);
-            }
-        }
-    }
+    
 
     private void Attack(AttackType type)
     {
@@ -64,9 +46,6 @@ public class AXD_PlayerAttack : MonoBehaviour
             StartCoroutine(player.PlayAnimation("SwishAttack", 0.4f, false, false));
             //Debug.Log("Dash Attack CD : " + (player.stopDash - Time.time));
             Debug.Log("Dash Attack");
-            player.Dash(gashDashDistance, gashDashTime);
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, gashAreaRadius, attackLayerMask);
-            Debug.Log("Dash Attack CD : " + (player.stopDash - Time.time));
             player.Dash(swichDashDistance, swichDashTime);
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, gashAreaRadius);
             foreach (Collider2D enemy in hitEnemies)
