@@ -26,10 +26,13 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float MaxCombo;
     [Header ("Swich Stats")]
     public float SwichDamage;
+    [Range(0, 5)]
     public float SwichAreaRadius;
     [Header ("Thrust Stats")]
     public float ThrustDamage;
+    [Range(0, 5)]
     public float ThrustWidth;
+    [Range(0, 5)]
     public float Thrustlength;
 
 

@@ -12,9 +12,11 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     public Transform player;
 
-    public readonly Vector3 lastDirection;
+    public Vector3 lastDirection;
+    public Vector3 attackPoint;
 
     public AXD_PlayerAttack playerAttack;
+    public ELC_PlayerStatManager playerStat;
 
     private Animator playerAnimator;
     private SpriteRenderer playerSpriteRenderer;
@@ -41,7 +43,7 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     public bool canMove;
     public bool playerIsImmobile;
-
+    public float nextAttackTime;
 
     [Header("Dash Characteristics")]
 
@@ -65,10 +67,19 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     void Update()
     {
-        
+        attackPoint = transform.position + lastDirection.normalized;
 
-        if ((Input.GetKeyDown(KeyCode.A) && !isDashing) || isDashing) Dash(dashDistance, dashTime);
+        if ((Input.GetKeyDown(KeyCode.A) && !isDashing) || isDashing) Dash(dashDistance, dashTime); // Utilise l'input manager bordel à couille O'Clavier 
+        if(Input.GetAxisRaw("Swich") == 1 && Time.time > nextAttackTime)
+        {
+            Dash(playerStat.ThrustDashDistance, playerStat.ThrustDashTime);
+            StartCoroutine(PlayAnimation("SwishAttack", 0.4f, false, false));
 
+        }else if(Input.GetAxisRaw("Thrust") == 1 && Time.time > nextAttackTime)
+        {
+            Dash(playerStat.SwichDashDistance, playerStat.SwichDashTime);
+            StartCoroutine(PlayAnimation("TrhustAttack", 0.4f, false, false));
+        }
         if (canMove) Walk();
 
         PlayerTurnDetector();
@@ -178,7 +189,7 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     void IsPlayerImmobile()
     {
-        if (playerMoves.sqrMagnitude < 0.005f) playerIsImmobile = true;
+        if (playerMoves.sqrMagnitude < 0.005f) playerIsImmobile = true; // mettre une variable plutôt qu'un chiffre en dur
         else
         {
             playerIsImmobile = false;
@@ -233,7 +244,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         //On règle la durée du dash ici, cette valeur sera enclenchée qu'une fois par appel de la fonction
         if (!isDashing)
         {
-            Debug.Log("Start dash");
+            //Debug.Log("Start dash");
             stopDash = Time.time + time;
             isDashing = true;
             canMove = false;
@@ -257,15 +268,4 @@ public class ELC_PlayerMoves : MonoBehaviour
         else if(isDashing) player.Translate(dashVector); //Ici on bouge si tout va bien
     }
 
-    //public void AttackDash(float distance, float time)
-    //{
-    //    player.Translate(lastDirection.normalized * (distance / time) * Time.deltaTime);
-    //    Debug.Log("Dash Attack CD : " + (stopDash - Time.time));
-    //    if (Time.time > stopDash)
-    //    {
-    //        isGashDashing = false;
-    //        isThrustDashing = false;
-    //        canMove = true;
-    //    }
-    //}
 }
