@@ -62,16 +62,13 @@ public class AXD_PlayerAttack : MonoBehaviour
             //player.stopDash = Time.time + gashDashTime;
             //player.isGashDashing = true;
             StartCoroutine(player.PlayAnimation("SwishAttack", 0.4f, false, false));
-<<<<<<< Updated upstream
             //Debug.Log("Dash Attack CD : " + (player.stopDash - Time.time));
             Debug.Log("Dash Attack");
             player.Dash(gashDashDistance, gashDashTime);
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, gashAreaRadius, attackLayerMask);
-=======
             Debug.Log("Dash Attack CD : " + (player.stopDash - Time.time));
             player.Dash(swichDashDistance, swichDashTime);
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, gashAreaRadius);
->>>>>>> Stashed changes
             foreach (Collider2D enemy in hitEnemies)
             {
                 enemy.GetComponent<AXD_Enemy>().GetHit(CalculateDamage(AttackType.Gash));
@@ -116,8 +113,8 @@ public class AXD_PlayerAttack : MonoBehaviour
     {
         if (attackPoint != null)
         {
-            //Gizmos.DrawWireCube(attackPoint.position, new Vector3(thrustWidth, thrustlength, 0));
-            Gizmos.DrawWireSphere(attackPoint.position, gashAreaRadius);
+            //Gizmos.DrawWireCube(attackPoint, new Vector3(thrustWidth, thrustlength, 0));
+            Gizmos.DrawWireSphere(player.attackPoint, gashAreaRadius);
         }
     }
 
