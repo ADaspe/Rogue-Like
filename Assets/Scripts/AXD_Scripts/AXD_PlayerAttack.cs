@@ -10,13 +10,17 @@ public class AXD_PlayerAttack : MonoBehaviour
     private Vector3 lastDirection;
     public Transform attackPoint;
     public ELC_PlayerMoves player;
+    [SerializeField]
+    private LayerMask attackLayerMask;
     public int GashDamage, ThrustDamage;
+    public int maxCombo;
     public int Combos = 0;
+    public bool PlayerIsAttacking;
     [Header ("Attack Settings")]
     [Range (0,5)]
     public float gashAreaRadius;
-    public float gashDashDistance;
-    public float gashDashTime;
+    public float swichDashDistance;
+    public float swichDashTime;
     [Range(0, 5)]
     public float thrustWidth;
     public float thrustDashDistance;
@@ -31,25 +35,7 @@ public class AXD_PlayerAttack : MonoBehaviour
     {
         nextAttackTime = Time.time;
     }
-    void Update()
-    {
-        if (/*player.getPlayerMoves() != Vector3.zero*/ !player.playerIsImmobile)
-        {
-            attackPoint.position = (transform.position + player.getPlayerMoves().normalized);
-            lastDirection = player.getPlayerMoves();
-        }
-        if (Time.time >= nextAttackTime)
-        {
-            if (Input.GetAxisRaw("Gash") != 0)
-            {
-                Attack(AttackType.Gash);
-            }
-            else if (Input.GetAxisRaw("Thrust") != 0)
-            {
-                Attack(AttackType.Thrust);
-            }
-        }
-    }
+    
 
     private void Attack(AttackType type)
     {
@@ -58,13 +44,14 @@ public class AXD_PlayerAttack : MonoBehaviour
             //player.stopDash = Time.time + gashDashTime;
             //player.isGashDashing = true;
             StartCoroutine(player.PlayAnimation("SwishAttack", 0.4f, false, false));
-            Debug.Log("Dash Attack CD : " + (player.stopDash - Time.time));
-            player.Dash(gashDashDistance, gashDashTime);
+            //Debug.Log("Dash Attack CD : " + (player.stopDash - Time.time));
+            Debug.Log("Dash Attack");
+            player.Dash(swichDashDistance, swichDashTime);
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, gashAreaRadius);
             foreach (Collider2D enemy in hitEnemies)
             {
                 enemy.GetComponent<AXD_Enemy>().GetHit(CalculateDamage(AttackType.Gash));
-                if (Combos < 200)
+                if (Combos < maxCombo)
                 {
                     Combos++;
                 }
@@ -80,7 +67,7 @@ public class AXD_PlayerAttack : MonoBehaviour
             foreach(Collider2D enemy in hitEnemies)
             {
                 enemy.GetComponent<AXD_Enemy>().GetHit(CalculateDamage(AttackType.Thrust));
-                if (Combos < 200)
+                if (Combos < maxCombo)
                 {
                     Combos++;
                 }
@@ -105,8 +92,8 @@ public class AXD_PlayerAttack : MonoBehaviour
     {
         if (attackPoint != null)
         {
-            //Gizmos.DrawWireCube(attackPoint.position, new Vector3(thrustWidth, thrustlength, 0));
-            Gizmos.DrawWireSphere(attackPoint.position, gashAreaRadius);
+            //Gizmos.DrawWireCube(attackPoint, new Vector3(thrustWidth, thrustlength, 0));
+            Gizmos.DrawWireSphere(player.attackPoint, gashAreaRadius);
         }
     }
 

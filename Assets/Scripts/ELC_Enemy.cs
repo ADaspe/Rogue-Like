@@ -15,8 +15,8 @@ public class ELC_Enemy : MonoBehaviour
     private Vector3 enemyMoves;
 
 
-    [Header ("StayAtDistanceFromPlayer")]
 
+    [Header ("StayAtDistanceFromPlayer")]
     private float distanceToStay;
     private float marginForDistanceToStay = 0.02f; //La marge dans laquelle peut être l'ennemi avant de s'approcher ou de reculer
     private enum EnemyDistance { TooFar, AtDistance, TooClose };
