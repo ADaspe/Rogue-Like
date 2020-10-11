@@ -323,6 +323,7 @@ public class ELC_Enemy : MonoBehaviour
 
         if(actualLives <= 0)
         {
+            this.gameObject.SetActive(false);
             enemyCollider.enabled = false;
             spriteRenderer.enabled = false;
             Debug.Log(enemyStats.Name + " is dead, so saaaaad :(");

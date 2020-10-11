@@ -237,8 +237,14 @@ public class ELC_PlayerMoves : MonoBehaviour
         }
         
         playerAnimator.SetBool(name, false);
-        canMove = !canMoveDuringIt;
-        canTurn = !canTurnDuringIt;
+        canMove = true;
+        canTurn = true;
+    }
+    public void StopAnimation(string name)
+    {
+        playerAnimator.SetBool(name, false);
+        canMove = true;
+        canTurn = true;
     }
 
     public void Dash(float distance, float time)
@@ -267,6 +273,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         //Conditions d'arrêt du dash
         if (Time.time > stopDash || isDashingInWall)
         {
+            StopAnimation("isDashing");
             isDashing = false;
             canMove = true;
             playerStats.invulnerabilty = false;

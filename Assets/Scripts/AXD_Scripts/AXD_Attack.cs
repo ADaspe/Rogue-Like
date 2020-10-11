@@ -9,7 +9,7 @@ public class AXD_Attack : MonoBehaviour
     private enum AttackType { Swich, Thrust }
     public void SwichAttack()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(player.attackPoint, playerStats.SwichAreaRadius, LayerMask.GetMask("Enemy"));
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(player.attackPoint, playerStats.SwichAreaRadius, LayerMask.GetMask("Enemies"));
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<ELC_Enemy>().GetHit(CalculateDamage(AttackType.Swich));
@@ -21,7 +21,7 @@ public class AXD_Attack : MonoBehaviour
     }
     public void ThrustAttack()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(player.attackPoint, new Vector2(playerStats.ThrustWidth,playerStats.Thrustlength), Vector2.Angle(Vector2.up, player.lastDirection), LayerMask.GetMask("Enemy"));
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(player.attackPoint, new Vector2(playerStats.ThrustWidth,playerStats.Thrustlength), Vector2.Angle(Vector2.up, player.lastDirection), LayerMask.GetMask("Enemies"));
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<ELC_Enemy>().GetHit(CalculateDamage(AttackType.Thrust));
