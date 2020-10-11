@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 499305e6564d210459ec85a2e8893fcb
+guid: e5f440fcfc9504f47a7d4e44e6543827
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9042506511877448973
-    second: IdlePersoBackSide_0
+      213: -5563476096830672884
+    second: idle front_0
   - first:
-      213: -8307630223874202951
-    second: IdlePersoBackSide_1
+      213: 7316893496391720997
+    second: idle front_1
   - first:
-      213: 6653227459571889171
-    second: IdlePersoBackSide_2
+      213: -2262246403202141289
+    second: idle front_2
   - first:
-      213: -3602910617152536337
-    second: IdlePersoBackSide_3
+      213: 1215914777354705071
+    second: idle front_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -44,7 +44,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: 2
+    aniso: 1
     mipBias: -100
     wrapU: 1
     wrapV: 1
@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 25
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,10 +109,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -135,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IdlePersoBackSide_0
+      name: idle front_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 13
-        height: 21
+        width: 115
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d05ac9763cf6d7d70800000000000000
-      internalID: 9042506511877448973
+      spriteID: c00f70c67ff8ac2b0800000000000000
+      internalID: -5563476096830672884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdlePersoBackSide_1
+      name: idle front_1
       rect:
         serializedVersion: 2
-        x: 13
+        x: 115
         y: 0
-        width: 13
-        height: 21
+        width: 115
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,20 +170,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b2edacb35e55bc80800000000000000
-      internalID: -8307630223874202951
+      spriteID: 5206bcf4ed3da8560800000000000000
+      internalID: 7316893496391720997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdlePersoBackSide_2
+      name: idle front_2
       rect:
         serializedVersion: 2
-        x: 26
+        x: 230
         y: 0
-        width: 13
-        height: 21
+        width: 115
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,20 +191,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31438a9cf13055c50800000000000000
-      internalID: 6653227459571889171
+      spriteID: 7933bb6d1e2ea90e0800000000000000
+      internalID: -2262246403202141289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdlePersoBackSide_3
+      name: idle front_3
       rect:
         serializedVersion: 2
-        x: 39
+        x: 345
         y: 0
-        width: 13
-        height: 21
+        width: 115
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,8 +212,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe0c32bf1e3effdc0800000000000000
-      internalID: -3602910617152536337
+      spriteID: fa8106d3c0ccfd010800000000000000
+      internalID: 1215914777354705071
       vertices: []
       indices: 
       edges: []
@@ -221,7 +221,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b99dfff3b01d28a40b348d691c31a1a8
+    spriteID: 5a6f6c4f88cae8b49b06c00991cc55ae
     internalID: 0
     vertices: []
     indices: 
