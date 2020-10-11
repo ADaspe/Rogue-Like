@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+
 using UnityEngine;
 
 public class ELC_PlayerMoves : MonoBehaviour
@@ -18,6 +18,7 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     public AXD_PlayerAttack playerAttack;
     public ELC_PlayerStatManager playerStats;
+    public PlayerHealth playerHealth;
 
     private Animator playerAnimator;
     private SpriteRenderer playerSpriteRenderer;
@@ -51,8 +52,6 @@ public class ELC_PlayerMoves : MonoBehaviour
     public float dashDistance;
     public float dashTime;
     public bool isDashing;
-    //public bool isGashDashing;
-    //public bool isThrustDashing;
     private float nextDash;
     public float dashCooldown;
     public float stopDash;
@@ -84,6 +83,10 @@ public class ELC_PlayerMoves : MonoBehaviour
             Dash(playerStats.ThrustDashDistance, playerStats.ThrustDashTime);
             StartCoroutine(PlayAnimation("ThrustAttack", animationTime, false, false));
             nextAttackTime = Time.time + 1f / playerStats.AttackRate;
+        }
+        if(Input.GetAxisRaw("Heal") != 0)
+        {
+            playerHealth.Heal(playerStats.healingRate * Input.GetAxisRaw("Heal"));
         }
         if (canMove) Walk();
 
@@ -236,7 +239,8 @@ public class ELC_PlayerMoves : MonoBehaviour
         canTurn = canTurnDuringIt;
         if (name.Equals("SwishAttack") || name.Equals("ThrustAttack"))
         {
-            yield return new WaitForSeconds(duration/playerAnimator.GetFloat("AnimationSpeedMultiplier"));
+            yield return new WaitForSeconds(duration/playerAnimator.GetFloat("AnimationSpeedMultiplier")); // Sert à arrêter l'animation au bon moment, peu importe sa vitesse
+
         }else
         {
             yield return new WaitForSeconds(duration);
