@@ -6,6 +6,7 @@ public class ELC_PlayerStatManager : MonoBehaviour
 {
     [Header ("Move Stats")]
     public float Speed;
+    public bool invulnerabilty;
     [Header ("Life Stats")]
     public float LifeDecreaseSpeed;
     public float LifeStopDecrease;

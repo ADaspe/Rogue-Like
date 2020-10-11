@@ -5,27 +5,18 @@ using UnityEngine;
 
 public class ELC_PlayerMoves : MonoBehaviour
 {
-    [SerializeField]
-    private float speed;
 
     private Vector3 playerMoves;
-
     public Transform player;
-
     public Vector3 lastDirection;
     public Vector3 attackPoint;
     public const float animationTime = 0.4f;
-
-    public AXD_PlayerAttack playerAttack;
     public ELC_PlayerStatManager playerStats;
     public PlayerHealth playerHealth;
-
     private Animator playerAnimator;
     private SpriteRenderer playerSpriteRenderer;
-    
     [SerializeField]
     private LayerMask bodyHitMask;
-
     //Sliders pour régler les raycasts
     [Range(0f, 1.5f)][SerializeField]
     private float raycastLenght;
@@ -97,14 +88,14 @@ public class ELC_PlayerMoves : MonoBehaviour
     void Walk()
     {
         //détecte les inputs
-        playerMoves.x = Input.GetAxis("Horizontal") * speed;
-        playerMoves.y = Input.GetAxis("Vertical") * speed;
+        playerMoves.x = Input.GetAxis("Horizontal") * playerStats.Speed;
+        playerMoves.y = Input.GetAxis("Vertical") * playerStats.Speed;
 
         //traite la vitesse
-        playerMoves = Vector3.ClampMagnitude(playerMoves, speed);
+        playerMoves = Vector3.ClampMagnitude(playerMoves, playerStats.Speed);
 
         //Empêche le joueur de traverser les murs
-        MovementClampIfCollidingWalls(speed, "playerMoves");
+        MovementClampIfCollidingWalls(playerStats.Speed, "playerMoves");
 
         IsPlayerImmobile();
 
@@ -257,7 +248,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         
         if (!isDashing)
         {
-            //Debug.Log("Start dash");
+            playerStats.invulnerabilty = true;
             currentDistance = distance;
             currentTime = time;
             stopDash = Time.time + time;
@@ -272,13 +263,14 @@ public class ELC_PlayerMoves : MonoBehaviour
         Raycasts();
         PlayerTurnDetector();
         MovementClampIfCollidingWalls(distance / time, "dashVector");
-        MovementClampIfCollidingWalls(speed, "playerMoves");
+        MovementClampIfCollidingWalls(playerStats.Speed, "playerMoves");
 
         //Conditions d'arrêt du dash
         if (Time.time > stopDash || isDashingInWall)
         {
             isDashing = false;
             canMove = true;
+            playerStats.invulnerabilty = false;
         }
         else if (isDashing) player.Translate(dashVector); //Ici on bouge si tout va bien
     }

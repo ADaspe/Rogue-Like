@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public ELC_PlayerStatManager playerStats;
 
+    public bool isDead = false;
     public Health healthBar;
     public Bouteille bouteille;
     
@@ -20,10 +21,16 @@ public class PlayerHealth : MonoBehaviour
     //ça c'est comment il prend des dégâts, et ça synchronise en live la barre de vie pour être sûr qu'elle suive 
     void GetHit(int damage)
     {
-        playerStats.currentHealth = healthBar.healthSlider.value;
-        playerStats.currentHealth -= damage;
-
-        healthBar.SetHealth(playerStats.currentHealth);
+        if (!playerStats.invulnerabilty)
+        {
+            playerStats.currentHealth = healthBar.healthSlider.value;
+            playerStats.currentHealth -= damage;
+            healthBar.SetHealth(playerStats.currentHealth);
+            if(playerStats.currentHealth <= 0)
+            {
+                isDead = true;
+            }
+        }
     }
     //ça c'est la manière dont il se heal, tout en diminuant la réserve d'olives. Et ça se synchronise avec les deux jauges.
     public void Heal(float heal)
