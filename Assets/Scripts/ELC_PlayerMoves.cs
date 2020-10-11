@@ -230,10 +230,18 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     public IEnumerator PlayAnimation(string name, float duration, bool canMoveDuringIt, bool canTurnDuringIt)
     {
+        
         playerAnimator.SetBool(name, true);
         canMove = canMoveDuringIt;
         canTurn = canTurnDuringIt;
-        yield return new WaitForSeconds(duration);
+        if (name.Equals("SwishAttack") || name.Equals("ThrustAttack"))
+        {
+            yield return new WaitForSeconds(duration/playerAnimator.GetFloat("AnimationSpeedMultiplier"));
+        }else
+        {
+            yield return new WaitForSeconds(duration);
+        }
+        
         playerAnimator.SetBool(name, false);
         canMove = !canMoveDuringIt;
         canTurn = !canTurnDuringIt;

@@ -347,11 +347,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1478753435661380681, guid: c582c890f15ac5345a4f3c531ee31b90,
+    - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
-      propertyPath: playerStats
-      value: 
-      objectReference: {fileID: 1674249992}
+      propertyPath: AttackRate
+      value: 4.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2124271741732407899, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: swichDashDistance
