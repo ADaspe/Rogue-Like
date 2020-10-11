@@ -2343,6 +2343,8 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+<<<<<<< HEAD
+=======
     - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: AttackRate
@@ -2358,6 +2360,7 @@ PrefabInstance:
       propertyPath: SwichDashDistance
       value: 0.5
       objectReference: {fileID: 0}
+>>>>>>> Alexandre
     - target: {fileID: 1154282071691469226, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: m_SortingOrder
