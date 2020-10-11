@@ -39,9 +39,6 @@ public class ELC_PlayerMoves : MonoBehaviour
     public float nextAttackTime;
 
     [Header("Dash Characteristics")]
-
-    public float dashDistance;
-    public float dashTime;
     public bool isDashing;
     private float nextDash;
     public float dashCooldown;
@@ -62,7 +59,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     {
         attackPoint = transform.position + lastDirection.normalized;
 
-        if (Input.GetAxisRaw("Dash") == 1 && !isDashing || isDashing) Dash(dashDistance, dashTime); // Utilise l'input manager bordel à couille O'Clavier 
+        if (Input.GetAxisRaw("Dash") == 1 && !isDashing || isDashing) Dash(playerStats.DashDistance, playerStats.DashTime); // Utilise l'input manager bordel à couille O'Clavier 
         if(Input.GetAxisRaw("Swich") == 1 && Time.time > nextAttackTime)
         {
             Dash(playerStats.SwichDashDistance, playerStats.SwichDashTime);
@@ -245,9 +242,9 @@ public class ELC_PlayerMoves : MonoBehaviour
     public void Dash(float distance, float time)
     {
         //On règle la durée du dash ici, cette valeur sera enclenchée qu'une fois par appel de la fonction
-        
         if (!isDashing)
         {
+            StartCoroutine(PlayAnimation("isDashing", time, false, false));
             playerStats.invulnerabilty = true;
             currentDistance = distance;
             currentTime = time;

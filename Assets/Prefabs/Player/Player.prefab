@@ -50,12 +50,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dde27100aac8cc42b246d26532370c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   player: {fileID: 3282318346991483595}
   lastDirection: {x: 0, y: 0, z: 0}
   attackPoint: {x: 0, y: 0, z: 0}
-  playerAttack: {fileID: 0}
   playerStats: {fileID: 782464527650891043}
+  playerHealth: {fileID: 0}
   bodyHitMask:
     serializedVersion: 2
     m_Bits: 512
@@ -103,11 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 782464527650891043}
-  maxHealth: 100
-  currentHealth: 0
-  maxOlive: 30
-  currentOlive: 0
-  healing: 0
+  isDead: 0
   healthBar: {fileID: 0}
   bouteille: {fileID: 0}
 --- !u!95 &5083334866861958287
@@ -317,6 +312,11 @@ PrefabInstance:
         type: 3}
       propertyPath: AttackRate
       value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: DashDistance
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6958aa080a4c5439913b983ac56050, type: 3}
