@@ -7,9 +7,11 @@ public class ELC_Enemy : MonoBehaviour
     [SerializeField]
     private ELC_EnemySO enemyStats;
 
-    
+    private Collider2D enemyCollider;
+    private SpriteRenderer spriteRenderer;
     private Transform playerTransform;
 
+    [SerializeField]
     private float actualLives;
     private float speed;
     private bool canMove = true;
@@ -20,16 +22,14 @@ public class ELC_Enemy : MonoBehaviour
     private Vector3 fleePlayer;
     private Vector3 directionToDash;
 
-    [SerializeField]
+
     private bool isTouchingRight;
-    [SerializeField]
     private bool isTouchingLeft;
-    [SerializeField]
     private bool isTouchingTop;
-    [SerializeField]
     private bool isTouchingDown;
     [SerializeField]
     private bool isTouchingSomething;
+    private bool playerIsInWall;
     [SerializeField]
     private bool canSeePlayer; //regardes si il y a un mur entre l'ennemi et le player
     
@@ -50,6 +50,9 @@ public class ELC_Enemy : MonoBehaviour
 
     void Start()
     {
+        enemyCollider = GetComponent<Collider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         actualLives = enemyStats.MaxHealth;
         speed = enemyStats.MovementSpeed;
         distanceToStay = enemyStats.LimitDistanceToStay;
@@ -62,14 +65,15 @@ public class ELC_Enemy : MonoBehaviour
         VerifyIfIsAtDistance();
         EnemyAttackCheck();
 
-        if(isTouchingDown && isTouchingRight || isTouchingDown && isTouchingLeft || isTouchingTop && isTouchingRight || isTouchingTop && isTouchingLeft)
+        if (isTouchingDown && isTouchingRight || isTouchingDown && isTouchingLeft || isTouchingTop && isTouchingRight || isTouchingTop && isTouchingLeft)
         {
             EscapeWhenIsInWall();
         }
+        else playerIsInWall = false;
 
         if (canSeePlayer || !isTouchingSomething) tryToGo = Direction.Nowhere;
         
-        if (isTouchingSomething && !canSeePlayer)
+        if (isTouchingSomething && !canSeePlayer && !playerIsInWall)
         {
             Raycasts();
             TryToGetOutOfWall(movesTowardPlayer);
@@ -107,6 +111,7 @@ public class ELC_Enemy : MonoBehaviour
 
     void EscapeWhenIsInWall()
     {
+        playerIsInWall = true;
         Debug.Log(enemyStats.Name + " is trying to escape from a wall.");
         Vector3 vectorDirection = new Vector3(0,0);
         if (isTouchingRight) vectorDirection.x = -speed;
@@ -311,5 +316,16 @@ public class ELC_Enemy : MonoBehaviour
         }
 
         transform.Translate(directionVector * Time.deltaTime);
+    }
+    public void GetHit(int Damage)
+    {
+        actualLives -= Damage;
+
+        if(actualLives <= 0)
+        {
+            enemyCollider.enabled = false;
+            spriteRenderer.enabled = false;
+            Debug.Log(enemyStats.Name + " is dead, so saaaaad :(");
+        }
     }
 }

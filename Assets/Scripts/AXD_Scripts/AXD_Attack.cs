@@ -12,7 +12,7 @@ public class AXD_Attack : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(player.attackPoint, playerStats.SwichAreaRadius, LayerMask.GetMask("Enemy"));
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<AXD_Enemy>().GetHit(CalculateDamage(AttackType.Swich));
+            enemy.GetComponent<ELC_Enemy>().GetHit(CalculateDamage(AttackType.Swich));
             if (playerStats.CurrentCombo < playerStats.MaxCombo)
             {
                 playerStats.CurrentCombo++;
@@ -24,7 +24,7 @@ public class AXD_Attack : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(player.attackPoint, new Vector2(playerStats.ThrustWidth,playerStats.Thrustlength), Vector2.Angle(Vector2.up, player.lastDirection), LayerMask.GetMask("Enemy"));
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<AXD_Enemy>().GetHit(CalculateDamage(AttackType.Thrust));
+            enemy.GetComponent<ELC_Enemy>().GetHit(CalculateDamage(AttackType.Thrust));
             if (playerStats.CurrentCombo < playerStats.MaxCombo)
             {
                 playerStats.CurrentCombo++;
