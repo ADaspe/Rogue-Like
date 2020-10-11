@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class ELC_PlayerStatManager : MonoBehaviour
 {
     [Header ("Move Stats")]
     public float Speed;
+    public bool invulnerabilty;
     [Header ("Life Stats")]
     public float LifeDecreaseSpeed;
     public float LifeStopDecrease;
-    public float MaxHealth;
+    public int MaxHealth;
     public float Resistance;
+    public float currentHealth;
+    public float maxStock;
+    public float currentStock;
+    public float healingRate;
     [Header ("Dash Stats")]
     public float DashDistance;
     public float DashSpeed;

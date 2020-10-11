@@ -1,30 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+
 using UnityEngine;
 
 public class ELC_PlayerMoves : MonoBehaviour
 {
-    [SerializeField]
-    private float speed;
 
     private Vector3 playerMoves;
-
     public Transform player;
-
     public Vector3 lastDirection;
     public Vector3 attackPoint;
     public const float animationTime = 0.4f;
-
-    public AXD_PlayerAttack playerAttack;
     public ELC_PlayerStatManager playerStats;
-
+    public PlayerHealth playerHealth;
     private Animator playerAnimator;
     private SpriteRenderer playerSpriteRenderer;
-    
     [SerializeField]
     private LayerMask bodyHitMask;
-
     //Sliders pour régler les raycasts
     [Range(0f, 1.5f)][SerializeField]
     private float raycastLenght;
@@ -51,8 +43,6 @@ public class ELC_PlayerMoves : MonoBehaviour
     public float dashDistance;
     public float dashTime;
     public bool isDashing;
-    //public bool isGashDashing;
-    //public bool isThrustDashing;
     private float nextDash;
     public float dashCooldown;
     public float stopDash;
@@ -85,6 +75,10 @@ public class ELC_PlayerMoves : MonoBehaviour
             StartCoroutine(PlayAnimation("ThrustAttack", animationTime, false, false));
             nextAttackTime = Time.time + 1f / playerStats.AttackRate;
         }
+        if(Input.GetAxisRaw("Heal") != 0)
+        {
+            playerHealth.Heal(playerStats.healingRate * Input.GetAxisRaw("Heal"));
+        }
         if (canMove) Walk();
 
         PlayerTurnDetector();
@@ -94,14 +88,14 @@ public class ELC_PlayerMoves : MonoBehaviour
     void Walk()
     {
         //détecte les inputs
-        playerMoves.x = Input.GetAxis("Horizontal") * speed;
-        playerMoves.y = Input.GetAxis("Vertical") * speed;
+        playerMoves.x = Input.GetAxis("Horizontal") * playerStats.Speed;
+        playerMoves.y = Input.GetAxis("Vertical") * playerStats.Speed;
 
         //traite la vitesse
-        playerMoves = Vector3.ClampMagnitude(playerMoves, speed);
+        playerMoves = Vector3.ClampMagnitude(playerMoves, playerStats.Speed);
 
         //Empêche le joueur de traverser les murs
-        MovementClampIfCollidingWalls(speed, "playerMoves");
+        MovementClampIfCollidingWalls(playerStats.Speed, "playerMoves");
 
         IsPlayerImmobile();
 
@@ -230,10 +224,19 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     public IEnumerator PlayAnimation(string name, float duration, bool canMoveDuringIt, bool canTurnDuringIt)
     {
+        
         playerAnimator.SetBool(name, true);
         canMove = canMoveDuringIt;
         canTurn = canTurnDuringIt;
-        yield return new WaitForSeconds(duration);
+        if (name.Equals("SwishAttack") || name.Equals("ThrustAttack"))
+        {
+            yield return new WaitForSeconds(duration/playerAnimator.GetFloat("AnimationSpeedMultiplier")); // Sert à arrêter l'animation au bon moment, peu importe sa vitesse
+
+        }else
+        {
+            yield return new WaitForSeconds(duration);
+        }
+        
         playerAnimator.SetBool(name, false);
         canMove = !canMoveDuringIt;
         canTurn = !canTurnDuringIt;
@@ -245,7 +248,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         
         if (!isDashing)
         {
-            //Debug.Log("Start dash");
+            playerStats.invulnerabilty = true;
             currentDistance = distance;
             currentTime = time;
             stopDash = Time.time + time;
@@ -260,13 +263,14 @@ public class ELC_PlayerMoves : MonoBehaviour
         Raycasts();
         PlayerTurnDetector();
         MovementClampIfCollidingWalls(distance / time, "dashVector");
-        MovementClampIfCollidingWalls(speed, "playerMoves");
+        MovementClampIfCollidingWalls(playerStats.Speed, "playerMoves");
 
         //Conditions d'arrêt du dash
         if (Time.time > stopDash || isDashingInWall)
         {
             isDashing = false;
             canMove = true;
+            playerStats.invulnerabilty = false;
         }
         else if (isDashing) player.Translate(dashVector); //Ici on bouge si tout va bien
     }
