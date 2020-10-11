@@ -18,7 +18,7 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float healingRate;
     [Header ("Dash Stats")]
     public float DashDistance;
-    public float DashSpeed;
+    public float DashTime;
     public float SwichDashDistance;
     public float SwichDashTime;
     public float ThrustDashDistance;
