@@ -1,19 +1,22 @@
 fileFormatVersion: 2
-guid: 499305e6564d210459ec85a2e8893fcb
+guid: c05db16198b7a974284d4afb7a40ab68
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9042506511877448973
-    second: IdlePersoBackSide_0
+      213: -8428732128815766180
+    second: dash 34front_0
   - first:
-      213: -8307630223874202951
-    second: IdlePersoBackSide_1
+      213: 367894473735902468
+    second: dash 34front_1
   - first:
-      213: 6653227459571889171
-    second: IdlePersoBackSide_2
+      213: -8640030045670054850
+    second: dash 34front_2
   - first:
-      213: -3602910617152536337
-    second: IdlePersoBackSide_3
+      213: -6965873805925865509
+    second: dash 34front_3
+  - first:
+      213: -2849618136548949593
+    second: dash 34front_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -57,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 25
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,10 +112,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -135,13 +138,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IdlePersoBackSide_0
+      name: dash 34front_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 13
-        height: 21
+        width: 115
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d05ac9763cf6d7d70800000000000000
-      internalID: 9042506511877448973
+      spriteID: c55a30349c0270b80800000000000000
+      internalID: -8428732128815766180
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdlePersoBackSide_1
+      name: dash 34front_1
       rect:
         serializedVersion: 2
-        x: 13
+        x: 115
         y: 0
-        width: 13
-        height: 21
+        width: 115
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b2edacb35e55bc80800000000000000
-      internalID: -8307630223874202951
+      spriteID: 4059bdd13160b1500800000000000000
+      internalID: 367894473735902468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdlePersoBackSide_2
+      name: dash 34front_2
       rect:
         serializedVersion: 2
-        x: 26
+        x: 230
         y: 0
-        width: 13
-        height: 21
+        width: 115
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31438a9cf13055c50800000000000000
-      internalID: 6653227459571889171
+      spriteID: e3462274372781880800000000000000
+      internalID: -8640030045670054850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdlePersoBackSide_3
+      name: dash 34front_3
       rect:
         serializedVersion: 2
-        x: 39
+        x: 345
         y: 0
-        width: 13
-        height: 21
+        width: 115
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,8 +215,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe0c32bf1e3effdc0800000000000000
-      internalID: -3602910617152536337
+      spriteID: bd727972eae345f90800000000000000
+      internalID: -6965873805925865509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dash 34front_4
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 0
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a14d79176f1478d0800000000000000
+      internalID: -2849618136548949593
       vertices: []
       indices: 
       edges: []
@@ -221,7 +245,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: b99dfff3b01d28a40b348d691c31a1a8
+    spriteID: f633c0c551abb8346a88493297c2b370
     internalID: 0
     vertices: []
     indices: 

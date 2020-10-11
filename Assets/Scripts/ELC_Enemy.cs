@@ -136,9 +136,6 @@ public class ELC_Enemy : MonoBehaviour
 
         if (isTouchingLeft)
         {
-
-            //if (vectorToClamp.y > 0 && !isTouchingTop) vectorToClamp.y = Mathf.Clamp(vectorToClamp.y, 0.05f, speed / 2);
-            //else if (vectorToClamp.y < 0 && !isTouchingDown) vectorToClamp.y = Mathf.Clamp(vectorToClamp.y, -speed / 2, -0.05f);
             vectorToClamp.x = Mathf.Clamp(vectorToClamp.x, 0, speed / 2);
             //if(!isTouchingDown && !isTouchingTop) vectorToClamp.x = vectorToClamp.normalized.y * speed;
         }
@@ -146,27 +143,18 @@ public class ELC_Enemy : MonoBehaviour
 
         if (isTouchingRight)
         {
-
-            //if (vectorToClamp.y > 0 && !isTouchingTop) vectorToClamp.y = Mathf.Clamp(vectorToClamp.y, 0.05f, speed / 2);
-            //else if(vectorToClamp.y < 0 && !isTouchingDown) vectorToClamp.y = Mathf.Clamp(vectorToClamp.y, -speed / 2, -0.05f);
             vectorToClamp.x = Mathf.Clamp(vectorToClamp.x, -speed / 2, 0);
             //if (!isTouchingDown && !isTouchingTop) vectorToClamp.x = vectorToClamp.normalized.y * speed;
         }
 
         if (isTouchingDown)
         {
-
-            //if (vectorToClamp.x > 0 && !isTouchingRight) vectorToClamp.x = Mathf.Clamp(vectorToClamp.x, 0.05f, speed / 2);
-            //else if (vectorToClamp.x < 0 && !isTouchingLeft) vectorToClamp.x = Mathf.Clamp(vectorToClamp.x, -speed / 2, -0.05f);
             vectorToClamp.y = Mathf.Clamp(vectorToClamp.y, 0, speed / 2);
             //if(!isTouchingRight && !isTouchingLeft)vectorToClamp.x = vectorToClamp.normalized.x * speed;
         }
 
         if (isTouchingTop)
         {
-
-            //if (vectorToClamp.x > 0 && !isTouchingRight) vectorToClamp.x = Mathf.Clamp(vectorToClamp.x, 0.05f, speed / 2);
-            //else if (vectorToClamp.x < 0 && !isTouchingLeft) vectorToClamp.x = Mathf.Clamp(vectorToClamp.x, -speed / 2, -0.05f);
             vectorToClamp.y = Mathf.Clamp(vectorToClamp.y, -speed / 2, 0);
             //if (!isTouchingRight && !isTouchingLeft) vectorToClamp.x =  vectorToClamp.normalized.x * speed;
         }
