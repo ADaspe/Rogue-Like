@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Hoplite
   MaxHealth: 20
-  MovementSpeed: 1
+  MovementSpeed: 3
   EnemyPath: 0
   LimitDistanceToStay: 1.5
   NeedTimeToTurn: 0

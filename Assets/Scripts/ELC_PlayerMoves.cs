@@ -56,6 +56,10 @@ public class ELC_PlayerMoves : MonoBehaviour
     {
         playerAnimator = this.GetComponent<Animator>();
         playerSpriteRenderer = this.GetComponent<SpriteRenderer>();
+
+        lastDirection = new Vector3(0, -1);
+        playerAnimator.SetFloat("DirectionAxeX", 0);
+        playerAnimator.SetFloat("DirectionAxeY", -1);
     }
 
     void Update()

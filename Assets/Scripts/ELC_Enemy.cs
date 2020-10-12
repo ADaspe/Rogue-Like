@@ -28,6 +28,7 @@ public class ELC_Enemy : MonoBehaviour
     private float currentDashTime;
 
     private const float knockbackTime = 0.2f;
+    private bool isStun;
 
     private bool isTouchingRight;
     private bool isTouchingLeft;
@@ -70,25 +71,31 @@ public class ELC_Enemy : MonoBehaviour
     void Update()
     {
         VerifyIfIsAtDistance();
-        EnemyAttackCheck();
+        
 
-        if (canSeePlayer || !isTouchingSomething) tryToGo = Direction.Nowhere;
+        if (!isStun)
+        {
+            EnemyAttackCheck();
 
-        if (isTouchingDown && isTouchingRight || isTouchingDown && isTouchingLeft || isTouchingTop && isTouchingRight || isTouchingTop && isTouchingLeft || isTouchingRight && isTouchingLeft || isTouchingTop && isTouchingDown)
-        {
-            EscapeWhenIsInWall();
+            if (canSeePlayer || !isTouchingSomething) tryToGo = Direction.Nowhere;
+
+            if (isTouchingDown && isTouchingRight || isTouchingDown && isTouchingLeft || isTouchingTop && isTouchingRight || isTouchingTop && isTouchingLeft || isTouchingRight && isTouchingLeft || isTouchingTop && isTouchingDown)
+            {
+                EscapeWhenIsInWall();
+            }
+            else if (isTouchingSomething && !canSeePlayer && !playerIsInWall)
+            {
+                Raycasts();
+                TryToGetOutOfWall(movesTowardPlayer);
+                playerIsInWall = false;
+            }
+            else if (canMove && !isDashing)
+            {
+                EnemyMoves(enemyStats.EnemyPath.ToString());
+                playerIsInWall = false;
+            }
         }
-        else if (isTouchingSomething && !canSeePlayer && !playerIsInWall)
-        {
-            Raycasts();
-            TryToGetOutOfWall(movesTowardPlayer);
-            playerIsInWall = false;
-        }
-        else if (canMove && !isDashing)
-        { 
-            EnemyMoves(enemyStats.EnemyPath.ToString());
-            playerIsInWall = false;
-        }
+
         if (isDashing) Dash(currentDashDirection, currentDashTime, currentDashDistance);
 
 
@@ -351,13 +358,21 @@ public class ELC_Enemy : MonoBehaviour
 
         transform.Translate(directionVector * Time.deltaTime);
     }
+
+    IEnumerator Stun(float time)
+    {
+        isStun = true;
+        yield return new WaitForSeconds(time);
+        isStun = false;
+
+    }
     public void GetHit(int Damage, float knockbackDistance, float stunTime)
     {
         Debug.Log(enemyStats.Name + " a pris " + Damage + " dégâts");
         actualLives -= Damage;
 
         Dash(-movesTowardPlayer, knockbackTime, knockbackDistance);
-
+        Stun(stunTime);
         if(actualLives <= 0)
         {
             this.gameObject.SetActive(false);
