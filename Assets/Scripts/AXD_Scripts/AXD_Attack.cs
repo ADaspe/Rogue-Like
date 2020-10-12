@@ -9,6 +9,7 @@ public class AXD_Attack : MonoBehaviour
     private enum AttackType { Swich, Sponk }
     public void SwichAttack()
     {
+        Debug.Log("Swich Fonction");
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(player.attackPoint, playerStats.SwichAreaRadius, LayerMask.GetMask("Enemies"));
         foreach (Collider2D enemy in hitEnemies)
         {
@@ -24,7 +25,7 @@ public class AXD_Attack : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(player.attackPoint, new Vector2(playerStats.ThrustWidth,playerStats.Thrustlength), Vector2.Angle(Vector2.up, player.lastDirection), LayerMask.GetMask("Enemies"));
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<ELC_Enemy>().GetHit(CalculateDamage(AttackType.Thrust), playerStats.SponkKnockbackDistance, playerStats.SponkStunTime);
+            enemy.GetComponent<ELC_Enemy>().GetHit(CalculateDamage(AttackType.Sponk), playerStats.SponkKnockbackDistance, playerStats.SponkStunTime);
             if (playerStats.CurrentCombo < playerStats.MaxCombo)
             {
                 playerStats.CurrentCombo++;

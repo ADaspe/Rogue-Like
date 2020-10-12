@@ -337,6 +337,7 @@ public class ELC_Enemy : MonoBehaviour
     }
     public void GetHit(int Damage, float knockbackDistance, float stunTime)
     {
+        Debug.Log(enemyStats.Name + " a pris " + Damage + " dégâts");
         actualLives -= Damage;
 
         Dash(-movesTowardPlayer, knockbackTime, knockbackDistance);

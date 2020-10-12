@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Oiseau
   m_EditorClassIdentifier: 
   Name: Oiso
-  MaxHealth: 2
+  MaxHealth: 10
   MovementSpeed: 3
   EnemyPath: 0
   LimitDistanceToStay: 2
