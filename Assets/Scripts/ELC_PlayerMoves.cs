@@ -8,7 +8,7 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     private Vector3 playerMoves;
     public Transform player;
-    public Vector3 lastDirection;
+    public Vector3 lastDirection = new Vector3(0, -1);
     public Vector3 attackPoint;
     public const float animationTime = 0.4f;
     public ELC_PlayerStatManager playerStats;
@@ -189,7 +189,7 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     void IsPlayerImmobile()
     {
-        if (playerMoves.sqrMagnitude < 0.005f) playerIsImmobile = true; // mettre une variable plutôt qu'un chiffre en dur
+        if (playerMoves.sqrMagnitude < 0.01f) playerIsImmobile = true; // mettre une variable plutôt qu'un chiffre en dur
         else
         {
             playerIsImmobile = false;
