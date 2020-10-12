@@ -6,7 +6,18 @@ public class AXD_Attack : MonoBehaviour
 {
     public ELC_PlayerMoves player;
     public ELC_PlayerStatManager playerStats;
+    public float nextResetCombo;
     private enum AttackType { Swich, Sponk }
+
+    private void Update()
+    {
+        if(Time.time >= nextResetCombo)
+        {
+            playerStats.CurrentCombo = 0;
+        }
+    }
+
+    
     public void SwichAttack()
     {
         Debug.Log("Swich Fonction");
@@ -17,6 +28,7 @@ public class AXD_Attack : MonoBehaviour
             if (playerStats.CurrentCombo < playerStats.MaxCombo)
             {
                 playerStats.CurrentCombo++;
+                nextResetCombo = Time.time + playerStats.ComboResetTime;
             }
         }
     }
@@ -29,6 +41,7 @@ public class AXD_Attack : MonoBehaviour
             if (playerStats.CurrentCombo < playerStats.MaxCombo)
             {
                 playerStats.CurrentCombo++;
+                nextResetCombo = Time.time + playerStats.ComboResetTime;
             }
         }
     }

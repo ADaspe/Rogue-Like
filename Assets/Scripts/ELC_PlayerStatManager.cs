@@ -36,6 +36,7 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float AttackMultiplicator;
     public float CurrentCombo;
     public float MaxCombo;
+    public float ComboResetTime;
 
     [Header ("Swich Stats")]
     public float SwichDamage;
