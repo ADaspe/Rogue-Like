@@ -68,7 +68,8 @@ MonoBehaviour:
   isTouchingDown: 0
   canMove: 1
   playerIsImmobile: 0
-  nextAttackTime: 0
+  nextSwichAttackTime: 0
+  nextSponkAttackTime: 0
   isDashing: 0
   dashCooldown: 0.5
   stopDash: 0
@@ -88,6 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 3081472017539436263}
   playerStats: {fileID: 782464527650891043}
+  nextResetCombo: 0
 --- !u!114 &8934949276138899172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,6 +343,21 @@ PrefabInstance:
         type: 3}
       propertyPath: AnimationSponkTime
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: ComboResetTime
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: SwichDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: ThrustDamage
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6958aa080a4c5439913b983ac56050, type: 3}
