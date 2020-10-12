@@ -6,7 +6,18 @@ public class AXD_Attack : MonoBehaviour
 {
     public ELC_PlayerMoves player;
     public ELC_PlayerStatManager playerStats;
+    public float nextResetCombo;
     private enum AttackType { Swich, Sponk }
+
+    private void Update()
+    {
+        if(Time.time >= nextResetCombo)
+        {
+            playerStats.CurrentCombo = 0;
+        }
+    }
+
+    
     public void SwichAttack()
     {
         Debug.Log("Swich Fonction");
@@ -17,18 +28,24 @@ public class AXD_Attack : MonoBehaviour
             if (playerStats.CurrentCombo < playerStats.MaxCombo)
             {
                 playerStats.CurrentCombo++;
+                nextResetCombo = Time.time + playerStats.ComboResetTime;
             }
         }
     }
-    public void ThrustAttack()
+    public void SponkAttack()
     {
+        Debug.Log("Je passe par là");
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(player.attackPoint, new Vector2(playerStats.ThrustWidth,playerStats.Thrustlength), Vector2.Angle(Vector2.up, player.lastDirection), LayerMask.GetMask("Enemies"));
-        foreach (Collider2D enemy in hitEnemies)
+        if (hitEnemies != null)
         {
-            enemy.GetComponent<ELC_Enemy>().GetHit(CalculateDamage(AttackType.Sponk), playerStats.SponkKnockbackDistance, playerStats.SponkStunTime);
-            if (playerStats.CurrentCombo < playerStats.MaxCombo)
+            foreach (Collider2D enemy in hitEnemies)
             {
-                playerStats.CurrentCombo++;
+                enemy.GetComponent<ELC_Enemy>().GetHit(CalculateDamage(AttackType.Sponk), playerStats.SponkKnockbackDistance, playerStats.SponkStunTime);
+                if (playerStats.CurrentCombo < playerStats.MaxCombo)
+                {
+                    playerStats.CurrentCombo++;
+                    nextResetCombo = Time.time + playerStats.ComboResetTime;
+                }
             }
         }
     }
