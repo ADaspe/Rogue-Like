@@ -1933,6 +1933,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1692105058505104581, guid: 0583945f9ccc0ca49b96f730862947ba,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 24.400024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692105058505104581, guid: 0583945f9ccc0ca49b96f730862947ba,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -51.100006
+      objectReference: {fileID: 0}
     - target: {fileID: 1692105058882529353, guid: 0583945f9ccc0ca49b96f730862947ba,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2426,16 +2436,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
-      propertyPath: DashTime
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
-        type: 3}
-      propertyPath: AttackMultiplicator
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
-        type: 3}
       propertyPath: ThrustDamage
       value: 10
       objectReference: {fileID: 0}
@@ -2443,6 +2443,46 @@ PrefabInstance:
         type: 3}
       propertyPath: SwichDamage
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: SwichAttackRate
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: SponkAttackRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: AnimationSwichTime
+      value: 0.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: ThrustDashDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: SwichKnockbackDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: SwichStunTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: SponkKnockbackDistance
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: SponkStunTime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1154282071691469226, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
