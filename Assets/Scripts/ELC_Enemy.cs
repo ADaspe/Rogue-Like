@@ -10,6 +10,7 @@ public class ELC_Enemy : MonoBehaviour
     private Collider2D enemyCollider;
     private SpriteRenderer spriteRenderer;
     private Transform playerTransform;
+    private Animator enemyAnimator;
 
     [SerializeField]
     private float actualLives;
@@ -57,6 +58,7 @@ public class ELC_Enemy : MonoBehaviour
     {
         enemyCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        enemyAnimator = GetComponent<Animator>();
 
         actualLives = enemyStats.MaxHealth;
         speed = enemyStats.MovementSpeed;
@@ -101,10 +103,12 @@ public class ELC_Enemy : MonoBehaviour
             if (distanceFromPlayer == EnemyDistance.TooFar)
             {
                 transform.Translate(movesTowardPlayer);
+                CalculateDirectionForAnimator(movesTowardPlayer);
             }
             else if(distanceFromPlayer == EnemyDistance.TooClose)
             {
                 transform.Translate(fleePlayer);
+                CalculateDirectionForAnimator(fleePlayer);
             }
         }
         else if (EnemyPathBehaviour == "FleePlayer")
@@ -113,8 +117,16 @@ public class ELC_Enemy : MonoBehaviour
             if (distanceFromPlayer == EnemyDistance.TooClose)
             {
                 transform.Translate(fleePlayer);
+                CalculateDirectionForAnimator(fleePlayer);
             }
         }
+    }
+
+    void CalculateDirectionForAnimator(Vector3 vectorToUse)
+    {
+        enemyAnimator.SetFloat("MovesX", Mathf.Clamp(vectorToUse.x, -1, 1));
+        enemyAnimator.SetFloat("MovesY", Mathf.Clamp(vectorToUse.y, -1, 1));
+
     }
 
     void EscapeWhenIsInWall()
@@ -258,11 +270,15 @@ public class ELC_Enemy : MonoBehaviour
 
     private IEnumerator Attack()
     {
+        enemyAnimator.SetBool("IsPreparingForAttack", true);
         yield return new WaitForSeconds(enemyStats.WaitBeforeAttack);
         //Debug.Log(enemyStats.name + " attaque !");
-
+        enemyAnimator.SetBool("IsPreparingForAttack", false);
+        enemyAnimator.SetBool("IsAttacking", true);
         if (enemyStats.DashOnPlayer) Dash(directionToDash, enemyStats.DashTime, enemyStats.DistanceToRun);
         canMove = true;
+        yield return new WaitForSeconds(enemyStats.AttackAnimationTime);
+        enemyAnimator.SetBool("IsAttacking", false);
     }
 
     private void VerifyIfIsAtDistance()
