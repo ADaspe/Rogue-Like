@@ -34,6 +34,7 @@ public class ELC_EnemySO : ScriptableObject
     public float WaitBeforeAttack;
     public float AttackStrenght;
     public bool AttackStun;
+    public float AttackAnimationTime;
 
     [Header("Dash")]
     public bool DashOnPlayer;
