@@ -72,7 +72,9 @@ public class ELC_PlayerMoves : MonoBehaviour
 
         }else if(Input.GetAxisRaw("Thrust") == 1 && Time.time > nextSponkAttackTime)
         {
-            StartCoroutine("SponkAttack");
+            
+            StartCoroutine("SponkAttackAnimation");
+            
         }
 
         if(Input.GetAxisRaw("Heal") != 0)
@@ -286,8 +288,9 @@ public class ELC_PlayerMoves : MonoBehaviour
     }
 
 
-    IEnumerator SponkAttack()
+    IEnumerator SponkAttackAnimation()
     {
+
         StartCoroutine(PlayAnimation("SponkAttack", playerStats.AnimationSponkTime, false, false));
         nextSponkAttackTime = Time.time + 1f / playerStats.SponkAttackRate;
         yield return new WaitForSeconds(playerAnimator.GetCurrentAnimatorStateInfo(0).length * 1 / 4);
