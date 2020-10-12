@@ -80,9 +80,10 @@ public class ELC_PlayerMoves : MonoBehaviour
             StartCoroutine("SponkAttackAnimation");
             
         }
-
+        
         if(Input.GetAxisRaw("Heal") != 0)
         {
+            Debug.Log("Heal ? "+ playerStats.healingRate * Input.GetAxisRaw("Heal"));
             playerHealth.Heal(playerStats.healingRate * Input.GetAxisRaw("Heal"));
         }
 

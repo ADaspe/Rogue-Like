@@ -14,7 +14,7 @@ public class Bouteille : MonoBehaviour
         bottleSlider.value = olive;
     }
 
-    public void SetOlive(float olive)
+    public void SetStock(float olive)
     {
         bottleSlider.value = olive;
     }

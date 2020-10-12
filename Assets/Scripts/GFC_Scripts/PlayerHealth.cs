@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     {
         playerStats.currentHealth = playerStats.MaxHealth;
         healthBar.SetMaxHealth(playerStats.MaxHealth);
+        playerStats.currentStock = playerStats.maxStock;
     }
 
     //ça c'est comment il prend des dégâts, et ça synchronise en live la barre de vie pour être sûr qu'elle suive 
@@ -35,14 +36,16 @@ public class PlayerHealth : MonoBehaviour
     //ça c'est la manière dont il se heal, tout en diminuant la réserve d'olives. Et ça se synchronise avec les deux jauges.
     public void Heal(float heal)
     {
-        playerStats.currentHealth = healthBar.healthSlider.value;
-        playerStats.currentStock = bouteille.bottleSlider.value;
-        playerStats.currentHealth += heal;
-        playerStats.currentStock -= heal;
+        if (playerStats.currentStock > 0)
+        {
+            playerStats.currentHealth = healthBar.healthSlider.value;
+            playerStats.currentStock = bouteille.bottleSlider.value;
+            playerStats.currentHealth += heal;
+            playerStats.currentStock -= heal;
 
-        healthBar.SetHealth(playerStats.currentHealth);
+            healthBar.SetHealth(playerStats.currentHealth);
 
-        bouteille.SetOlive(playerStats.currentStock);
-
+            bouteille.SetStock(playerStats.currentStock);
+        }
     }
 }
