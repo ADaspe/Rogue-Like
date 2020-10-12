@@ -32,16 +32,20 @@ public class AXD_Attack : MonoBehaviour
             }
         }
     }
-    public void ThrustAttack()
+    public void SponkAttack()
     {
+        Debug.Log("Je passe par là");
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(player.attackPoint, new Vector2(playerStats.ThrustWidth,playerStats.Thrustlength), Vector2.Angle(Vector2.up, player.lastDirection), LayerMask.GetMask("Enemies"));
-        foreach (Collider2D enemy in hitEnemies)
+        if (hitEnemies != null)
         {
-            enemy.GetComponent<ELC_Enemy>().GetHit(CalculateDamage(AttackType.Sponk), playerStats.SponkKnockbackDistance, playerStats.SponkStunTime);
-            if (playerStats.CurrentCombo < playerStats.MaxCombo)
+            foreach (Collider2D enemy in hitEnemies)
             {
-                playerStats.CurrentCombo++;
-                nextResetCombo = Time.time + playerStats.ComboResetTime;
+                enemy.GetComponent<ELC_Enemy>().GetHit(CalculateDamage(AttackType.Sponk), playerStats.SponkKnockbackDistance, playerStats.SponkStunTime);
+                if (playerStats.CurrentCombo < playerStats.MaxCombo)
+                {
+                    playerStats.CurrentCombo++;
+                    nextResetCombo = Time.time + playerStats.ComboResetTime;
+                }
             }
         }
     }
