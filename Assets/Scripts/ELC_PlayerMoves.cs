@@ -69,7 +69,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         }else if(Input.GetAxisRaw("Thrust") == 1 && Time.time > nextAttackTime)
         {
             Dash(playerStats.ThrustDashDistance, playerStats.ThrustDashTime);
-            StartCoroutine(PlayAnimation("ThrustAttack", animationTime, false, false));
+            StartCoroutine(PlayAnimation("SponkAttack", animationTime, false, false));
             nextAttackTime = Time.time + 1f / playerStats.AttackRate;
         }
         if(Input.GetAxisRaw("Heal") != 0)

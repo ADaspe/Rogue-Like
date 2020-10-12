@@ -65,20 +65,23 @@ public class ELC_Enemy : MonoBehaviour
         VerifyIfIsAtDistance();
         EnemyAttackCheck();
 
-        if (isTouchingDown && isTouchingRight || isTouchingDown && isTouchingLeft || isTouchingTop && isTouchingRight || isTouchingTop && isTouchingLeft)
+        if (canSeePlayer || !isTouchingSomething) tryToGo = Direction.Nowhere;
+
+        if (isTouchingDown && isTouchingRight || isTouchingDown && isTouchingLeft || isTouchingTop && isTouchingRight || isTouchingTop && isTouchingLeft || isTouchingRight && isTouchingLeft || isTouchingTop && isTouchingDown)
         {
             EscapeWhenIsInWall();
         }
-        else playerIsInWall = false;
-
-        if (canSeePlayer || !isTouchingSomething) tryToGo = Direction.Nowhere;
-        
-        if (isTouchingSomething && !canSeePlayer && !playerIsInWall)
+        else if (isTouchingSomething && !canSeePlayer && !playerIsInWall)
         {
             Raycasts();
             TryToGetOutOfWall(movesTowardPlayer);
+            playerIsInWall = false;
         }
-        else if(canMove && !isDashing) EnemyMoves(enemyStats.EnemyPath.ToString());
+        else if (canMove && !isDashing)
+        { 
+            EnemyMoves(enemyStats.EnemyPath.ToString());
+            playerIsInWall = false;
+        }
         if (isDashing) Dash(directionToDash);
 
 
@@ -111,6 +114,7 @@ public class ELC_Enemy : MonoBehaviour
 
     void EscapeWhenIsInWall()
     {
+        Raycasts();
         playerIsInWall = true;
         Debug.Log(enemyStats.Name + " is trying to escape from a wall.");
         Vector3 vectorDirection = new Vector3(0,0);
@@ -118,6 +122,11 @@ public class ELC_Enemy : MonoBehaviour
         if (isTouchingLeft) vectorDirection.x = speed;
         if (isTouchingTop) vectorDirection.y = -speed;
         if (isTouchingDown) vectorDirection.y = speed;
+
+        if (isTouchingTop && isTouchingLeft && isTouchingRight) vectorDirection = new Vector3(0, speed);
+        if (isTouchingDown && isTouchingLeft && isTouchingRight) vectorDirection = new Vector3(0, speed);
+        if (isTouchingLeft && isTouchingDown && isTouchingTop) vectorDirection = new Vector3(speed, 0);
+        if (isTouchingRight && isTouchingDown && isTouchingTop) vectorDirection = new Vector3(-speed, 0);
         transform.Translate(vectorDirection * Time.deltaTime);
     }
 
@@ -265,6 +274,7 @@ public class ELC_Enemy : MonoBehaviour
 
     private void Dash(Vector3 direction)
     {
+        Raycasts();
         if (!isDashing)
         {
             stopDashing = Time.time + enemyStats.DashTime;
