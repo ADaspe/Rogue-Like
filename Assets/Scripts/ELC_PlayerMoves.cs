@@ -284,12 +284,23 @@ public class ELC_PlayerMoves : MonoBehaviour
         else if (isDashing) player.Translate(dashVector); //Ici on bouge si tout va bien
     }
 
+
     IEnumerator SponkAttack()
     {
         StartCoroutine(PlayAnimation("SponkAttack", playerStats.AnimationSponkTime, false, false));
         nextSponkAttackTime = Time.time + 1f / playerStats.SponkAttackRate;
-        yield return new WaitForSeconds(playerAnimator.GetCurrentAnimatorStateInfo(0).length * 1/4);
+        yield return new WaitForSeconds(playerAnimator.GetCurrentAnimatorStateInfo(0).length * 1 / 4);
         Dash(playerStats.ThrustDashDistance, playerStats.ThrustDashTime);
-        
+
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Debug.Log("AttackPoint : "+attackPoint.ToString());
+        if (attackPoint != null)
+        {
+            //Gizmos.DrawWireCube(attackPoint, new Vector3(thrustWidth, thrustlength, 0));
+            Gizmos.DrawWireSphere(attackPoint, playerStats.SwichAreaRadius);
+        }
+
     }
 }

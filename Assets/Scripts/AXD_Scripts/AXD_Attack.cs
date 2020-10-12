@@ -6,7 +6,7 @@ public class AXD_Attack : MonoBehaviour
 {
     public ELC_PlayerMoves player;
     public ELC_PlayerStatManager playerStats;
-    private enum AttackType { Swich, Thrust }
+    private enum AttackType { Swich, Sponk }
     public void SwichAttack()
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(player.attackPoint, playerStats.SwichAreaRadius, LayerMask.GetMask("Enemies"));
@@ -38,7 +38,7 @@ public class AXD_Attack : MonoBehaviour
         {
             totalDamage = Mathf.RoundToInt((playerStats.SwichDamage + (playerStats.SwichDamage  * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator);
         }
-        else if (type == AttackType.Thrust)
+        else if (type == AttackType.Sponk)
         {
             totalDamage = Mathf.RoundToInt((playerStats.ThrustDamage + (playerStats.ThrustDamage * (playerStats.CurrentCombo / 100)))* playerStats.AttackMultiplicator);
         }
