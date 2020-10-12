@@ -197,9 +197,11 @@ public class ELC_PlayerMoves : MonoBehaviour
     {
 
         playerAnimator.SetBool("IsImmobile", playerIsImmobile);
-
+        playerAnimator.SetFloat("DirectionAxeX", Mathf.Clamp(lastDirection.x, -1, 1));
+        playerAnimator.SetFloat("DirectionAxeY", Mathf.Clamp(lastDirection.y, -1, 1));
         if (canTurn)
         {
+
             //Le numéro 1 de PlayerSide correspond aux anim de Front, le 2 aux anims de SideFront, le 3 aux anims de Back, le 4 aux anims de Sideback et le 5 aux anims de Sides
             if (PlayerSide == Sides.Front) playerAnimator.SetInteger("PlayerSide", 1);
             else if (PlayerSide == Sides.RightFront || PlayerSide == Sides.LeftFront) playerAnimator.SetInteger("PlayerSide", 2);
@@ -235,8 +237,14 @@ public class ELC_PlayerMoves : MonoBehaviour
         }
         
         playerAnimator.SetBool(name, false);
-        canMove = !canMoveDuringIt;
-        canTurn = !canTurnDuringIt;
+        canMove = true;
+        canTurn = true;
+    }
+    public void StopAnimation(string name)
+    {
+        playerAnimator.SetBool(name, false);
+        canMove = true;
+        canTurn = true;
     }
 
     public void Dash(float distance, float time)
@@ -265,6 +273,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         //Conditions d'arrêt du dash
         if (Time.time > stopDash || isDashingInWall)
         {
+            StopAnimation("isDashing");
             isDashing = false;
             canMove = true;
             playerStats.invulnerabilty = false;

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2148857145838052529}
   - component: {fileID: 2148857145838052528}
   - component: {fileID: 2148857145838052543}
-  - component: {fileID: 498542505475933040}
   - component: {fileID: 514788055772963350}
   m_Layer: 10
   m_Name: Hoplite
@@ -107,27 +106,6 @@ MonoBehaviour:
   obstaclesLayerMask:
     serializedVersion: 2
     m_Bits: 512
---- !u!50 &498542505475933040
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2148857145838052542}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &514788055772963350
 BoxCollider2D:
   m_ObjectHideFlags: 0

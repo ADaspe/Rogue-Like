@@ -43,11 +43,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ad867dd064cf844b7bafb45355bfb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
+  Speed: 5
+  invulnerabilty: 0
   LifeDecreaseSpeed: 1
   LifeStopDecrease: 10
   MaxHealth: 100
   Resistance: 0
+  currentHealth: 0
+  maxStock: 0
+  currentStock: 0
+  healingRate: 0
   DashDistance: 2.5
   DashSpeed: 0.2
   SwichDashDistance: 0.5

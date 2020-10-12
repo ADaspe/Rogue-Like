@@ -174,12 +174,12 @@ TextureImporter:
       name: dash side_1
       rect:
         serializedVersion: 2
-        x: 140
+        x: 114
         y: 0
         width: 115
         height: 115
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.937435, y: 0.47773296}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -199,8 +199,8 @@ TextureImporter:
         y: 0
         width: 115
         height: 115
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.62718743, y: 0.4942187}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
