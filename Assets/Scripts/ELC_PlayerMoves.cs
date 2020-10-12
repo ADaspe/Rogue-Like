@@ -65,6 +65,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         if (Input.GetAxisRaw("Dash") == 1 && !isDashing || isDashing) Dash(playerStats.DashDistance, playerStats.DashTime); // Utilise l'input manager bordel à couille O'Clavier 
         if(Input.GetAxisRaw("Swich") == 1 && Time.time > nextSwichAttackTime)
         {
+            Debug.Log("Swich Attack");
             Dash(playerStats.SwichDashDistance, playerStats.SwichDashTime);
             StartCoroutine(PlayAnimation("SwishAttack", playerStats.AnimationSwichTime, false, false));
             nextSwichAttackTime = Time.time + 1f / playerStats.SwichAttackRate;
@@ -200,11 +201,11 @@ public class ELC_PlayerMoves : MonoBehaviour
     {
 
         playerAnimator.SetBool("IsImmobile", playerIsImmobile);
-        playerAnimator.SetFloat("DirectionAxeX", Mathf.Clamp(lastDirection.x, -1, 1));
-        playerAnimator.SetFloat("DirectionAxeY", Mathf.Clamp(lastDirection.y, -1, 1));
+        
         if (canTurn)
         {
-
+            playerAnimator.SetFloat("DirectionAxeX", Mathf.Clamp(lastDirection.x, -1, 1));
+            playerAnimator.SetFloat("DirectionAxeY", Mathf.Clamp(lastDirection.y, -1, 1));
             //Le numéro 1 de PlayerSide correspond aux anim de Front, le 2 aux anims de SideFront, le 3 aux anims de Back, le 4 aux anims de Sideback et le 5 aux anims de Sides
             if (PlayerSide == Sides.Front) playerAnimator.SetInteger("PlayerSide", 1);
             else if (PlayerSide == Sides.RightFront || PlayerSide == Sides.LeftFront) playerAnimator.SetInteger("PlayerSide", 2);
@@ -284,12 +285,23 @@ public class ELC_PlayerMoves : MonoBehaviour
         else if (isDashing) player.Translate(dashVector); //Ici on bouge si tout va bien
     }
 
+
     IEnumerator SponkAttack()
     {
         StartCoroutine(PlayAnimation("SponkAttack", playerStats.AnimationSponkTime, false, false));
         nextSponkAttackTime = Time.time + 1f / playerStats.SponkAttackRate;
-        yield return new WaitForSeconds(playerAnimator.GetCurrentAnimatorStateInfo(0).length * 1/4);
+        yield return new WaitForSeconds(playerAnimator.GetCurrentAnimatorStateInfo(0).length * 1 / 4);
         Dash(playerStats.ThrustDashDistance, playerStats.ThrustDashTime);
-        
+
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Debug.Log("AttackPoint : "+attackPoint.ToString());
+        if (attackPoint != null)
+        {
+            //Gizmos.DrawWireCube(attackPoint, new Vector3(thrustWidth, thrustlength, 0));
+            Gizmos.DrawWireSphere(attackPoint, playerStats.SwichAreaRadius);
+        }
+
     }
 }
