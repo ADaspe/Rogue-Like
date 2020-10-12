@@ -22,6 +22,11 @@ public class ELC_Enemy : MonoBehaviour
     private Vector3 fleePlayer;
     private Vector3 directionToDash;
 
+    private Vector3 currentDashDirection;
+    private float currentDashDistance;
+    private float currentDashTime;
+
+    private const float knockbackTime = 0.2f;
 
     private bool isTouchingRight;
     private bool isTouchingLeft;
@@ -82,7 +87,7 @@ public class ELC_Enemy : MonoBehaviour
             EnemyMoves(enemyStats.EnemyPath.ToString());
             playerIsInWall = false;
         }
-        if (isDashing) Dash(directionToDash);
+        if (isDashing) Dash(currentDashDirection, currentDashTime, currentDashDistance);
 
 
     }
@@ -136,7 +141,7 @@ public class ELC_Enemy : MonoBehaviour
         {
             canMove = false;
             attackCooldown = Time.time + enemyStats.AttackCooldown;
-            Debug.Log(enemyStats.Name + " charge son attaque");
+            //Debug.Log(enemyStats.Name + " charge son attaque");
             StartCoroutine("Attack");
 
             if(enemyStats.DashOnPlayer) directionToDash = movesTowardPlayer;
@@ -254,9 +259,9 @@ public class ELC_Enemy : MonoBehaviour
     private IEnumerator Attack()
     {
         yield return new WaitForSeconds(enemyStats.WaitBeforeAttack);
-        Debug.Log(enemyStats.name + " attaque !");
+        //Debug.Log(enemyStats.name + " attaque !");
 
-        if (enemyStats.DashOnPlayer) Dash(directionToDash);
+        if (enemyStats.DashOnPlayer) Dash(directionToDash, enemyStats.DashTime, enemyStats.DistanceToRun);
         canMove = true;
     }
 
@@ -272,17 +277,20 @@ public class ELC_Enemy : MonoBehaviour
         else distanceFromPlayer = EnemyDistance.AtDistance;
     }
 
-    private void Dash(Vector3 direction)
+    private void Dash(Vector3 direction, float dashTime, float dashDistance)
     {
         Raycasts();
         if (!isDashing)
         {
-            stopDashing = Time.time + enemyStats.DashTime;
+            stopDashing = Time.time + dashTime;
             isDashing = true;
+            currentDashDirection = direction;
+            currentDashDistance = dashDistance;
+            currentDashTime = dashTime;
         }
-        direction = direction.normalized * (enemyStats.DistanceToRun / enemyStats.DashTime) * Time.deltaTime;
+        direction = direction.normalized * (dashDistance / dashTime) * Time.deltaTime;
         
-        direction = ClampIfTouchSomething(direction, enemyStats.DistanceToRun / enemyStats.DashTime);
+        direction = ClampIfTouchSomething(direction, dashDistance / dashTime);
 
         if (Time.time >= stopDashing) isDashing = false;
         else transform.Translate(direction);
@@ -327,9 +335,11 @@ public class ELC_Enemy : MonoBehaviour
 
         transform.Translate(directionVector * Time.deltaTime);
     }
-    public void GetHit(int Damage)
+    public void GetHit(int Damage, float knockbackDistance, float stunTime)
     {
         actualLives -= Damage;
+
+        Dash(-movesTowardPlayer, knockbackTime, knockbackDistance);
 
         if(actualLives <= 0)
         {

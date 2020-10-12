@@ -55,6 +55,7 @@ MonoBehaviour:
   attackPoint: {x: 0, y: 0, z: 0}
   playerStats: {fileID: 782464527650891043}
   playerHealth: {fileID: 0}
+  sponkAnimation: {fileID: 0}
   bodyHitMask:
     serializedVersion: 2
     m_Bits: 512
@@ -68,8 +69,6 @@ MonoBehaviour:
   canMove: 1
   playerIsImmobile: 0
   nextAttackTime: 0
-  dashDistance: 2.5
-  dashTime: 0.2
   isDashing: 0
   dashCooldown: 0.5
   stopDash: 0
@@ -306,7 +305,7 @@ PrefabInstance:
     - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
         type: 3}
       propertyPath: ThrustDashDistance
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
         type: 3}
@@ -317,6 +316,31 @@ PrefabInstance:
         type: 3}
       propertyPath: DashDistance
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: DashTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: AttackMultiplicator
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: AnimationSwichTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: AnimationDashTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: AnimationSponkTime
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6958aa080a4c5439913b983ac56050, type: 3}
