@@ -23,6 +23,40 @@ public class ELC_RandomObjectGenerator : MonoBehaviour
         }
 
         float randomNumber = Random.value;
+
+        float count = 0;
+        for (int i = 0; i < spawnChance.Count; i++)
+        {
+            count += spawnChance[i];
+
+            if (count >= randomNumber)
+            {
+                Object.Instantiate(objectsList[i], this.transform.position, Quaternion.identity);
+                break;
+            }
+        }
+
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.W)) SpawnEntity();
+    }
+
+    void SpawnEntity()
+    {
+        float totalChances = 0;
+        for (int i = 0; i < spawnChance.Count; i++)
+        {
+            totalChances += spawnChance[i];
+        }
+
+        for (int i = 0; i < spawnChance.Count; i++)
+        {
+            spawnChance[i] /= totalChances;
+        }
+
+        float randomNumber = Random.value;
         Debug.Log(randomNumber);
 
         float count = 0;
@@ -38,6 +72,5 @@ public class ELC_RandomObjectGenerator : MonoBehaviour
                 break;
             }
         }
-
     }
 }
