@@ -1,0 +1,812 @@
+fileFormatVersion: 2
+guid: 22d7d44716ed88b4caa114198b8e030c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8298770503554320908
+    second: hoplite walk front_0
+  - first:
+      213: 4783576578872000682
+    second: hoplite walk front_1
+  - first:
+      213: 686329787749160207
+    second: hoplite walk front_2
+  - first:
+      213: 1518960208977932870
+    second: hoplite walk front_3
+  - first:
+      213: 6008810252732000266
+    second: hoplite walk front_4
+  - first:
+      213: 7063597005552757559
+    second: hoplite walk front_5
+  - first:
+      213: -3998438969347726608
+    second: hoplite walk front_6
+  - first:
+      213: -5391227249345881555
+    second: hoplite walk front_7
+  - first:
+      213: 5670249321366317435
+    second: hoplite walk front_8
+  - first:
+      213: 8615255642149708273
+    second: hoplite walk front_9
+  - first:
+      213: 88812772490133882
+    second: hoplite walk front_10
+  - first:
+      213: -1407060651070309523
+    second: hoplite walk front_11
+  - first:
+      213: -7025750908403371813
+    second: hoplite walk front_12
+  - first:
+      213: -2918588009068594179
+    second: hoplite walk front_13
+  - first:
+      213: 6130414615097013161
+    second: hoplite walk front_14
+  - first:
+      213: 6335870061063475302
+    second: hoplite walk front_15
+  - first:
+      213: 1153179105816504385
+    second: hoplite walk front_16
+  - first:
+      213: -6136977448466373452
+    second: hoplite walk front_17
+  - first:
+      213: -2793128401460709911
+    second: hoplite walk front_18
+  - first:
+      213: -1072911498544646951
+    second: hoplite walk front_19
+  - first:
+      213: 9026259334863954991
+    second: hoplite walk front_20
+  - first:
+      213: -2714441868294598789
+    second: hoplite walk front_21
+  - first:
+      213: -284962100608615536
+    second: hoplite walk front_22
+  - first:
+      213: -5092358744600756129
+    second: hoplite walk front_23
+  - first:
+      213: 6049955573218410193
+    second: hoplite walk front_24
+  - first:
+      213: -1067279492575827512
+    second: hoplite walk front_25
+  - first:
+      213: -309920676590543395
+    second: hoplite walk front_26
+  - first:
+      213: 1014439415373033886
+    second: hoplite walk front_27
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 2
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hoplite walk front_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5b72f1238d4dc80800000000000000
+      internalID: -8298770503554320908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa04b83dd8da26240800000000000000
+      internalID: 4783576578872000682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_2
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f05de8d3e45568900800000000000000
+      internalID: 686329787749160207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_3
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6423514234e641510800000000000000
+      internalID: 1518960208977932870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_4
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08e0dcb615936350800000000000000
+      internalID: 6008810252732000266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_5
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b2c705d00f60260800000000000000
+      internalID: 7063597005552757559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_6
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f223f721f0b288c0800000000000000
+      internalID: -3998438969347726608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_7
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2a155371638e25b0800000000000000
+      internalID: -5391227249345881555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_8
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7960fb27b5c0be40800000000000000
+      internalID: 5670249321366317435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_9
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f163876c598f8770800000000000000
+      internalID: 8615255642149708273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_10
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a71cacbfeb68b3100800000000000000
+      internalID: 88812772490133882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_11
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b3683facd197ce0800000000000000
+      internalID: -1407060651070309523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_12
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd03d38d5c48f7e90800000000000000
+      internalID: -7025750908403371813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_13
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb70c94ba71f77d0800000000000000
+      internalID: -2918588009068594179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_14
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a378b2bc9b931550800000000000000
+      internalID: 6130414615097013161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_15
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66098bc60488de750800000000000000
+      internalID: 6335870061063475302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_16
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1486894794ae00010800000000000000
+      internalID: 1153179105816504385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_17
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b42495968315daa0800000000000000
+      internalID: -6136977448466373452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_18
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e531ea7480dc39d0800000000000000
+      internalID: -2793128401460709911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_19
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d470d53da04c11f0800000000000000
+      internalID: -1072911498544646951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_20
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f24ae19ba07b34d70800000000000000
+      internalID: 9026259334863954991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_21
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f4ad4a08d545ad0800000000000000
+      internalID: -2714441868294598789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_22
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b36c2ba7c9b0cf0800000000000000
+      internalID: -284962100608615536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_23
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f50c737c3be4459b0800000000000000
+      internalID: -5092358744600756129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_24
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1def3903a82c5f350800000000000000
+      internalID: 6049955573218410193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_25
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c965f8c4f24031f0800000000000000
+      internalID: -1067279492575827512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_26
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddd954369c0f2bbf0800000000000000
+      internalID: -309920676590543395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplite walk front_27
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 0
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e91f6770643041e00800000000000000
+      internalID: 1014439415373033886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: e42a40af09ec35643ac1865dc66ff889
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
