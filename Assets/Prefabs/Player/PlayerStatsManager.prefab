@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7675984205208501004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7675984205208501006}
+  - component: {fileID: 7675984205208501007}
+  m_Layer: 0
+  m_Name: PlayerStatsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7675984205208501006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7675984205208501004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.343322, y: 1.9932857, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7675984205208501007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7675984205208501004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ad867dd064cf844b7bafb45355bfb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 5
+  invulnerabilty: 0
+  LifeDecreaseSpeed: 1
+  LifeStopDecrease: 10
+  MaxHealth: 100
+  Resistance: 0
+  currentHealth: 0
+  maxStock: 0
+  currentStock: 0
+  healingRate: 0
+  DashDistance: 2.5
+  DashSpeed: 0.2
+  SwichDashDistance: 0.5
+  SwichDashTime: 0.1
+  ThrustDashDistance: 1
+  ThrustDashTime: 0.15
+  AttackRate: 6
+  AttackMultiplicator: 0
+  CurrentCombo: 0
+  MaxCombo: 200
+  SwichDamage: 50
+  SwichAreaRadius: 1.2
+  ThrustDamage: 50
+  ThrustWidth: 0.8
+  Thrustlength: 2
