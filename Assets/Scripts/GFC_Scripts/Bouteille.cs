@@ -18,4 +18,16 @@ public class Bouteille : MonoBehaviour
     {
         bottleSlider.value = olive;
     }
+
+    public void AddStock(int stockToAdd)
+    {
+        if(bottleSlider.value + stockToAdd >= bottleSlider.maxValue)
+        {
+            bottleSlider.value = bottleSlider.maxValue;
+        }
+        else
+        {
+            bottleSlider.value += stockToAdd;
+        }
+    }
 }

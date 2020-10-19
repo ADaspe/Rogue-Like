@@ -33,6 +33,19 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
+    public void AddStock(int stockToAdd)
+    {
+        if (bouteille.bottleSlider.value + stockToAdd >= bouteille.bottleSlider.maxValue)
+        {
+            bouteille.bottleSlider.value = bouteille.bottleSlider.maxValue;
+            playerStats.currentStock = bouteille.bottleSlider.value;
+        }
+        else
+        {
+            bouteille.bottleSlider.value += stockToAdd;
+            playerStats.currentStock = bouteille.bottleSlider.value;
+        }
+    }
     //ça c'est la manière dont il se heal, tout en diminuant la réserve d'olives. Et ça se synchronise avec les deux jauges.
     public void Heal(float heal)
     {

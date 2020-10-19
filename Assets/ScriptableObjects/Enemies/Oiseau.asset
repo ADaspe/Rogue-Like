@@ -30,6 +30,7 @@ MonoBehaviour:
   WaitBeforeAttack: 0.2
   AttackStrenght: 0
   AttackStun: 0
+  AttackAnimationTime: 0
   DashOnPlayer: 1
   DashTime: 0.2
   DistanceToRun: 4
@@ -40,7 +41,7 @@ MonoBehaviour:
   SpawnCooldown: 0
   NumberOfEntitiesToSpawn: 0
   EntitiesToSpawn: {fileID: 0}
-  MoneyEarnWhenHit: 0
-  MoneyEarnWhenDead: 0
+  MoneyEarnWhenHit: 50
+  MoneyEarnWhenDead: 200
   sprite: {fileID: 0}
   Animator: {fileID: 0}
