@@ -5,7 +5,7 @@ using UnityEngine;
 public class ELC_Enemy : MonoBehaviour
 {
     [SerializeField]
-    private ELC_EnemySO enemyStats;
+    public ELC_EnemySO enemyStats;
 
     private Collider2D enemyCollider;
     private SpriteRenderer spriteRenderer;
@@ -13,7 +13,7 @@ public class ELC_Enemy : MonoBehaviour
     private Animator enemyAnimator;
 
     [SerializeField]
-    private float actualLives;
+    public float currentHealth;
     private float speed;
     private bool canMove = true;
     private bool isDashing;
@@ -61,7 +61,7 @@ public class ELC_Enemy : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyAnimator = GetComponent<Animator>();
 
-        actualLives = enemyStats.MaxHealth;
+        currentHealth = enemyStats.MaxHealth;
         speed = enemyStats.MovementSpeed;
         distanceToStay = enemyStats.LimitDistanceToStay;
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -368,17 +368,17 @@ public class ELC_Enemy : MonoBehaviour
     }
     public void GetHit(int Damage, float knockbackDistance, float stunTime)
     {
-        Debug.Log(enemyStats.Name + " a pris " + Damage + " dégâts");
-        actualLives -= Damage;
+
+        currentHealth -= Damage;
 
         Dash(-movesTowardPlayer, knockbackTime, knockbackDistance);
         Stun(stunTime);
-        if(actualLives <= 0)
+        if(currentHealth <= 0)
         {
             this.gameObject.SetActive(false);
             enemyCollider.enabled = false;
             spriteRenderer.enabled = false;
-            Debug.Log(enemyStats.Name + " is dead, so saaaaad :(");
+            
         }
     }
 }

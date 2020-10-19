@@ -41,7 +41,13 @@ public class ELC_PlayerMoves : MonoBehaviour
     public float nextSwichAttackTime;
     public float nextSponkAttackTime;
 
+    //Anti spam variables
+    private bool dashButtonDown;
+    private bool swichButtonDown;
+    private bool sponkButtonDown;
+
     [Header("Dash Characteristics")]
+    
     public bool isDashing;
     private float nextDash;
     public float dashCooldown;
@@ -65,25 +71,40 @@ public class ELC_PlayerMoves : MonoBehaviour
     void Update()
     {
         attackPoint = transform.position + lastDirection.normalized;
-
-        if (Input.GetAxisRaw("Dash") == 1 && !isDashing || isDashing) Dash(playerStats.DashDistance, playerStats.DashTime); // Utilise l'input manager bordel à couille O'Clavier 
-        if(Input.GetAxisRaw("Swich") == 1 && Time.time > nextSwichAttackTime)
+        if (Input.GetAxisRaw("Dash") != 1)
         {
-            Debug.Log("Swich Attack");
+            dashButtonDown = false;
+        }
+        if (Input.GetAxisRaw("Swich") != 1)
+        {
+            swichButtonDown = false;
+        }
+        if (Input.GetAxisRaw("Sponk") != 1)
+        {
+            sponkButtonDown = false;
+        }
+
+        if ((Input.GetAxisRaw("Dash") == 1 && !isDashing && !dashButtonDown) || isDashing)
+        {
+            Dash(playerStats.DashDistance, playerStats.DashTime); // Utilise l'input manager bordel à couille O'Clavier 
+            dashButtonDown = true;
+        }
+        if(Input.GetAxisRaw("Swich") == 1 && Time.time > nextSwichAttackTime && !swichButtonDown)
+        {
+            swichButtonDown = true;
             Dash(playerStats.SwichDashDistance, playerStats.SwichDashTime);
             StartCoroutine(PlayAnimation("SwishAttack", playerStats.AnimationSwichTime, false, false));
             nextSwichAttackTime = Time.time + 1f / playerStats.SwichAttackRate;
 
-        }else if(Input.GetAxisRaw("Thrust") == 1 && Time.time > nextSponkAttackTime)
+        }else if(Input.GetAxisRaw("Sponk") == 1 && Time.time > nextSponkAttackTime && !sponkButtonDown)
         {
-            
+            sponkButtonDown = true;
             StartCoroutine("SponkAttackAnimation");
             
         }
         
         if(Input.GetAxisRaw("Heal") != 0)
         {
-            Debug.Log("Heal ? "+ playerStats.healingRate * Input.GetAxisRaw("Heal"));
             playerHealth.Heal(playerStats.healingRate * Input.GetAxisRaw("Heal"));
         }
 
@@ -304,7 +325,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     }
     private void OnDrawGizmosSelected()
     {
-        Debug.Log("AttackPoint : "+attackPoint.ToString());
+
         if (attackPoint != null)
         {
             //Gizmos.DrawWireCube(attackPoint, new Vector3(thrustWidth, thrustlength, 0));
