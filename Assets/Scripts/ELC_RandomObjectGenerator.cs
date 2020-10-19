@@ -11,30 +11,7 @@ public class ELC_RandomObjectGenerator : MonoBehaviour
 
     void Start()
     {
-        float totalChances = 0;
-        for (int i = 0; i < spawnChance.Count; i++)
-        {
-            totalChances += spawnChance[i];
-        }
-
-        for (int i = 0; i < spawnChance.Count; i++)
-        {
-            spawnChance[i] /= totalChances;
-        }
-
-        float randomNumber = Random.value;
-
-        float count = 0;
-        for (int i = 0; i < spawnChance.Count; i++)
-        {
-            count += spawnChance[i];
-
-            if (count >= randomNumber)
-            {
-                Object.Instantiate(objectsList[i], this.transform.position, Quaternion.identity);
-                break;
-            }
-        }
+        SpawnEntity();
 
     }
 
@@ -67,8 +44,11 @@ public class ELC_RandomObjectGenerator : MonoBehaviour
 
             if (count >= randomNumber)
             {
-                Object.Instantiate(objectsList[i], this.transform.position, Quaternion.identity);
-                Debug.Log(objectsList[i] + " has been instantiate.");
+                if(objectsList[i] != null)
+                {
+                    Object.Instantiate(objectsList[i], this.transform.position, Quaternion.identity);
+                    Debug.Log(objectsList[i] + " has been instantiate.");
+                }
                 break;
             }
         }
