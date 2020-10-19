@@ -6,6 +6,9 @@ public class AXD_Attack : MonoBehaviour
 {
     public ELC_PlayerMoves player;
     public ELC_PlayerStatManager playerStats;
+    public AXD_PlayerMoney playerMoney;
+    public PlayerHealth playerHealth;
+
     public float nextResetCombo;
     private enum AttackType { Swich, Sponk }
 
@@ -20,11 +23,21 @@ public class AXD_Attack : MonoBehaviour
     
     public void SwichAttack()
     {
-        Debug.Log("Swich Fonction");
+
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(player.attackPoint, playerStats.SwichAreaRadius, LayerMask.GetMask("Enemies"));
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<ELC_Enemy>().GetHit(CalculateDamage(AttackType.Swich), playerStats.SwichKnockbackDistance, playerStats.SwichStunTime);
+            ELC_Enemy tempEnemy = enemy.GetComponent<ELC_Enemy>();
+            if(CalculateDamage(AttackType.Swich) >= tempEnemy.currentHealth)
+            {
+                playerMoney.AddMoney(tempEnemy.enemyStats.MoneyEarnWhenDead);
+                playerHealth.AddStock(tempEnemy.enemyStats.ambrosiaEarnedWhenDead);
+            }
+            else
+            {
+                playerMoney.AddMoney(tempEnemy.enemyStats.MoneyEarnWhenHit);
+            }
+            tempEnemy.GetHit(CalculateDamage(AttackType.Swich), playerStats.SwichKnockbackDistance, playerStats.SwichStunTime);
             if (playerStats.CurrentCombo < playerStats.MaxCombo)
             {
                 playerStats.CurrentCombo++;
@@ -40,7 +53,17 @@ public class AXD_Attack : MonoBehaviour
         {
             foreach (Collider2D enemy in hitEnemies)
             {
-                enemy.GetComponent<ELC_Enemy>().GetHit(CalculateDamage(AttackType.Sponk), playerStats.SponkKnockbackDistance, playerStats.SponkStunTime);
+                ELC_Enemy tempEnemy = enemy.GetComponent<ELC_Enemy>();
+                if (CalculateDamage(AttackType.Sponk) >= tempEnemy.currentHealth)
+                {
+                    playerMoney.AddMoney(enemy.GetComponent<ELC_Enemy>().enemyStats.MoneyEarnWhenDead);
+                    playerHealth.AddStock(tempEnemy.enemyStats.ambrosiaEarnedWhenDead);
+                }
+                else
+                {
+                    playerMoney.AddMoney(enemy.GetComponent<ELC_Enemy>().enemyStats.MoneyEarnWhenHit);
+                }
+                tempEnemy.GetHit(CalculateDamage(AttackType.Sponk), playerStats.SponkKnockbackDistance, playerStats.SponkStunTime);
                 if (playerStats.CurrentCombo < playerStats.MaxCombo)
                 {
                     playerStats.CurrentCombo++;
