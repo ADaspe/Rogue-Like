@@ -10,12 +10,12 @@ PrefabInstance:
     - target: {fileID: 3551846454233943801, guid: ef0fb53a7977cad459e914116453865e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.257119
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3551846454233943801, guid: ef0fb53a7977cad459e914116453865e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.826728
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3551846454233943801, guid: ef0fb53a7977cad459e914116453865e,
         type: 3}
@@ -87,7 +87,7 @@ PrefabInstance:
     - target: {fileID: 3551846454233943803, guid: ef0fb53a7977cad459e914116453865e,
         type: 3}
       propertyPath: m_Name
-      value: PowerUps Generator
+      value: PowerUps Generator Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef0fb53a7977cad459e914116453865e, type: 3}

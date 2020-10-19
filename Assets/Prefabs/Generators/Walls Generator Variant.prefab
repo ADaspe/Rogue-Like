@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &328800958832080220
+--- !u!1001 &5418527359316605539
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -76,18 +76,62 @@ PrefabInstance:
         type: 3}
       propertyPath: objectsList.Array.data[0]
       value: 
-      objectReference: {fileID: 3456645754019736596, guid: 690e085c5fac56248b4bf550d707dd5a,
+      objectReference: {fileID: 8780946386146991583, guid: a75d429217e2f574c88dcd23b455145b,
         type: 3}
+    - target: {fileID: 3551846454233943802, guid: ef0fb53a7977cad459e914116453865e,
+        type: 3}
+      propertyPath: spawnChance.Array.data[3]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551846454233943802, guid: ef0fb53a7977cad459e914116453865e,
+        type: 3}
+      propertyPath: spawnChance.Array.data[4]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551846454233943802, guid: ef0fb53a7977cad459e914116453865e,
+        type: 3}
+      propertyPath: spawnChance.Array.data[5]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551846454233943802, guid: ef0fb53a7977cad459e914116453865e,
+        type: 3}
+      propertyPath: spawnChance.Array.data[6]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551846454233943802, guid: ef0fb53a7977cad459e914116453865e,
+        type: 3}
+      propertyPath: spawnChance.Array.data[7]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551846454233943802, guid: ef0fb53a7977cad459e914116453865e,
+        type: 3}
+      propertyPath: spawnChance.Array.data[8]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551846454233943802, guid: ef0fb53a7977cad459e914116453865e,
+        type: 3}
+      propertyPath: spawnChance.Array.data[9]
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551846454233943802, guid: ef0fb53a7977cad459e914116453865e,
+        type: 3}
+      propertyPath: spawnChance.Array.data[10]
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3551846454233943802, guid: ef0fb53a7977cad459e914116453865e,
         type: 3}
       propertyPath: objectsList.Array.data[1]
       value: 
-      objectReference: {fileID: 2148857145838052542, guid: e92a72e0dcedde944886188f85b5d608,
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551846454233943802, guid: ef0fb53a7977cad459e914116453865e,
         type: 3}
+      propertyPath: spawnChance.Array.data[1]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3551846454233943803, guid: ef0fb53a7977cad459e914116453865e,
         type: 3}
       propertyPath: m_Name
-      value: EnemyGenerator Variant
+      value: Walls Generator Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef0fb53a7977cad459e914116453865e, type: 3}
