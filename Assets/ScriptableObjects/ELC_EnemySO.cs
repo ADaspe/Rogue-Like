@@ -51,10 +51,12 @@ public class ELC_EnemySO : ScriptableObject
     public GameObject EntitiesToSpawn;
 
     [Header("Money")]
-    public float MoneyEarnWhenHit;
-    public float MoneyEarnWhenDead;
+    public int MoneyEarnWhenHit;
+    public int MoneyEarnWhenDead;
 
-    //Essential for instantiate Enemy
+    [Header("Ambrosia")]
+    public int ambrosiaEarnedWhenDead;
+    //Mandatory to instantiate Enemy
     public Sprite sprite;
     //public MonoBehaviour AIScript;
     public Animator Animator;

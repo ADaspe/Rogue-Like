@@ -41,7 +41,7 @@ MonoBehaviour:
   SpawnCooldown: 0
   NumberOfEntitiesToSpawn: 0
   EntitiesToSpawn: {fileID: 0}
-  MoneyEarnWhenHit: 0
-  MoneyEarnWhenDead: 0
+  MoneyEarnWhenHit: 35
+  MoneyEarnWhenDead: 125
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   Animator: {fileID: 0}
