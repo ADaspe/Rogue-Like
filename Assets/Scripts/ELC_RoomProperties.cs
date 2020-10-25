@@ -10,6 +10,8 @@ public class ELC_RoomProperties : MonoBehaviour
     public bool openTopDoor;
     public bool openDownDoor;
 
+    public bool thereIsRoom;
+
     public Vector2 positionNumber;
 
 }
