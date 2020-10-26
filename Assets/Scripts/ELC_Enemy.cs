@@ -366,7 +366,7 @@ public class ELC_Enemy : MonoBehaviour
         isStun = false;
 
     }
-    public void GetHit(int Damage, float knockbackDistance, float stunTime)
+    public void GetHit(int Damage, float knockbackDistance = 0, float stunTime = 0)
     {
 
         currentHealth -= Damage;
@@ -376,8 +376,6 @@ public class ELC_Enemy : MonoBehaviour
         if(currentHealth <= 0)
         {
             this.gameObject.SetActive(false);
-            enemyCollider.enabled = false;
-            spriteRenderer.enabled = false;
             
         }
     }

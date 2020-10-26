@@ -6,7 +6,7 @@ public class ELC_PlayerStatManager : MonoBehaviour
 {
     [Header ("Move Stats")]
     public float Speed;
-    public bool invulnerabilty;
+    public bool invulnerability;
 
     [Header ("Life Stats")]
     public float LifeDecreaseSpeed;
@@ -37,6 +37,10 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float CurrentCombo;
     public float MaxCombo;
     public float ComboResetTime;
+    [Range(0, 100)]
+    public int colateralDamage;
+    [Range(0, 100)]
+    public float mainTargetKnockBack;
 
     [Header ("Swich Stats")]
     public float SwichDamage;
