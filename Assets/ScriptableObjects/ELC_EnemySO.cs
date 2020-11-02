@@ -5,13 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Enemy", menuName = "ScriptableObjects/EnemyScriptableObject", order = 1)]
 public class ELC_EnemySO : ScriptableObject
 {
-    //Name
+    [Header ("Name")]
     public string Name;
 
-    //Health
+    [Header("Health")]
     public float MaxHealth;
 
-    //Movements
+    [Header("Movements")]
     public float MovementSpeed;
     public enum PathBehaviour { FollowPlayer, FleePlayer, StayAtDistance, FollowPath, IsImmobile };
     public PathBehaviour EnemyPath;
@@ -19,7 +19,7 @@ public class ELC_EnemySO : ScriptableObject
     public bool NeedTimeToTurn;
     public float TurnSpeed;
 
-    //AttackCapacity
+    [Header("Attack Capacity")]
 
     public bool FriendlyFire;
 
@@ -34,26 +34,29 @@ public class ELC_EnemySO : ScriptableObject
     public float WaitBeforeAttack;
     public float AttackStrenght;
     public bool AttackStun;
+    public float AttackAnimationTime;
 
-    //Dash
+    [Header("Dash")]
     public bool DashOnPlayer;
-    public float DashSpeed;
+    public float DashTime;
     public float DistanceToRun;
     public float DashStrenght;
     public bool DashStun;
 
-    //Spawn Entities
+    [Header("Spawn Entities")]
     public bool SpawnEntitiesRegulary;
     public bool SpawnEntitiesAtDeath;
     public float SpawnCooldown;
     public float NumberOfEntitiesToSpawn;
     public GameObject EntitiesToSpawn;
 
-    //Money
-    public float MoneyEarnWhenHit;
-    public float MoneyEarnWhenDead;
+    [Header("Money")]
+    public int MoneyEarnWhenHit;
+    public int MoneyEarnWhenDead;
 
-    //Essential for instantiate Enemy
+    [Header("Ambrosia")]
+    public int ambrosiaEarnedWhenDead;
+    //Mandatory to instantiate Enemy
     public Sprite sprite;
     //public MonoBehaviour AIScript;
     public Animator Animator;

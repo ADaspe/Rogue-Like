@@ -11,6 +11,17 @@ public class ELC_RandomObjectGenerator : MonoBehaviour
 
     void Start()
     {
+        SpawnEntity();
+
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.W)) SpawnEntity();
+    }
+
+    void SpawnEntity()
+    {
         float totalChances = 0;
         for (int i = 0; i < spawnChance.Count; i++)
         {
@@ -23,21 +34,23 @@ public class ELC_RandomObjectGenerator : MonoBehaviour
         }
 
         float randomNumber = Random.value;
-        Debug.Log(randomNumber);
+        //Debug.Log(randomNumber);
 
         float count = 0;
         for (int i = 0; i < spawnChance.Count; i++)
         {
             count += spawnChance[i];
-            Debug.Log(count);
+            //Debug.Log(count);
 
             if (count >= randomNumber)
             {
-                Object.Instantiate(objectsList[i], this.transform.position, Quaternion.identity);
-                Debug.Log(objectsList[i] + " has been instantiate.");
+                if(objectsList[i] != null)
+                {
+                    Object.Instantiate(objectsList[i], this.transform.position, Quaternion.identity);
+                    Debug.Log(objectsList[i] + " has been instantiate.");
+                }
                 break;
             }
         }
-
     }
 }

@@ -14,8 +14,20 @@ public class Bouteille : MonoBehaviour
         bottleSlider.value = olive;
     }
 
-    public void SetOlive(float olive)
+    public void SetStock(float olive)
     {
         bottleSlider.value = olive;
+    }
+
+    public void AddStock(int stockToAdd)
+    {
+        if(bottleSlider.value + stockToAdd >= bottleSlider.maxValue)
+        {
+            bottleSlider.value = bottleSlider.maxValue;
+        }
+        else
+        {
+            bottleSlider.value += stockToAdd;
+        }
     }
 }

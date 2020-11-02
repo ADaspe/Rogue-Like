@@ -4,53 +4,65 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public float currentHealth;
-    public float maxOlive = 30;
-    public float currentOlive;
-    public float healing;
+    public ELC_PlayerStatManager playerStats;
+
+    public bool isDead = false;
     public Health healthBar;
     public Bouteille bouteille;
-    
+
+    private void Update()
+    {
+        playerStats.currentHealth = healthBar.healthSlider.value;
+    }
 
     // ça c'est pour dire que la vie commence au max (pour le joueur et sur la barre de vie
     void Start()
     {
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        playerStats.currentHealth = playerStats.MaxHealth;
+        healthBar.SetMaxHealth(playerStats.MaxHealth);
+        playerStats.currentStock = playerStats.maxStock;
     }
 
-    // ça c'est les inputs pour infliger des dégâts au joueur (normalement ça va tej) et pour le soigner s'il a de l'olive en réserve
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Damage(20);
-        }
-        if (Input.GetKey(KeyCode.H) && bouteille.bottleSlider.value > 0)
-        {
-            Heal(healing);
-        }
-    }
     //ça c'est comment il prend des dégâts, et ça synchronise en live la barre de vie pour être sûr qu'elle suive 
-    void Damage(int damage)
+    void GetHit(int damage)
     {
-        currentHealth = healthBar.healthSlider.value;
-        currentHealth -= damage;
-
-        healthBar.SetHealth(currentHealth);
+        if (!playerStats.invulnerability)
+        {
+            playerStats.currentHealth = healthBar.healthSlider.value;
+            playerStats.currentHealth -= damage;
+            healthBar.SetHealth(playerStats.currentHealth);
+            if(playerStats.currentHealth <= 0)
+            {
+                isDead = true;
+            }
+        }
+    }
+    public void AddStock(int stockToAdd)
+    {
+        if (bouteille.bottleSlider.value + stockToAdd >= bouteille.bottleSlider.maxValue)
+        {
+            bouteille.bottleSlider.value = bouteille.bottleSlider.maxValue;
+            playerStats.currentStock = bouteille.bottleSlider.value;
+        }
+        else
+        {
+            bouteille.bottleSlider.value += stockToAdd;
+            playerStats.currentStock = bouteille.bottleSlider.value;
+        }
     }
     //ça c'est la manière dont il se heal, tout en diminuant la réserve d'olives. Et ça se synchronise avec les deux jauges.
     public void Heal(float heal)
     {
-        currentHealth = healthBar.healthSlider.value;
-        currentOlive = bouteille.bottleSlider.value;
-        currentHealth += heal;
-        currentOlive -= heal;
+        if (playerStats.currentStock > 0)
+        {
+            playerStats.currentHealth = healthBar.healthSlider.value;
+            playerStats.currentStock = bouteille.bottleSlider.value;
+            playerStats.currentHealth += heal;
+            playerStats.currentStock -= heal;
 
-        healthBar.SetHealth(currentHealth);
+            healthBar.SetHealth(playerStats.currentHealth);
 
-        bouteille.SetOlive(currentOlive);
-
+            bouteille.SetStock(playerStats.currentStock);
+        }
     }
 }
