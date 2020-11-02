@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -349,6 +349,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8934949276138899172, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: bouteille
+      value: 
+      objectReference: {fileID: 1677678020}
+    - target: {fileID: 8934949276138899172, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 517522346}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c582c890f15ac5345a4f3c531ee31b90, type: 3}
 --- !u!1 &1094988539 stripped
@@ -603,6 +613,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692105058505104581, guid: 0583945f9ccc0ca49b96f730862947ba,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 24.400024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692105058505104581, guid: 0583945f9ccc0ca49b96f730862947ba,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -51.100006
       objectReference: {fileID: 0}
     - target: {fileID: 1692105058882529353, guid: 0583945f9ccc0ca49b96f730862947ba,
         type: 3}
