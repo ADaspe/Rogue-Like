@@ -45,7 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrayDimentionX: 5
   arrayDimentionY: 5
-  distanceBtwRoomsX: 0
-  distanceBtwRoomsY: 0
+  distanceBtwRoomsX: 30
+  distanceBtwRoomsY: 20
   roomChecker: {fileID: 8046243752104760217, guid: cdad448189e8fb74b9793710f61815ed,
     type: 3}
+  roomsList: []
+  testsRoomsList: []
+  randomPoints: 

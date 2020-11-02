@@ -347,16 +347,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
         type: 3}
-      propertyPath: distanceBtwRoomsX
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
-        type: 3}
-      propertyPath: distanceBtwRoomsY
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
-        type: 3}
       propertyPath: entryPosition.x
       value: 1
       objectReference: {fileID: 0}
@@ -396,6 +386,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8016669876711721645, guid: d430637bff79d07499d330f94ff00ab6,
         type: 3}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: timeToWait
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7843894060409563433, guid: 96964a2b1920f9a469b78a90ac676262,
         type: 3}
       propertyPath: m_Name
