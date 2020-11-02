@@ -34,13 +34,13 @@ public class ELC_RandomObjectGenerator : MonoBehaviour
         }
 
         float randomNumber = Random.value;
-        Debug.Log(randomNumber);
+        //Debug.Log(randomNumber);
 
         float count = 0;
         for (int i = 0; i < spawnChance.Count; i++)
         {
             count += spawnChance[i];
-            Debug.Log(count);
+            //Debug.Log(count);
 
             if (count >= randomNumber)
             {
