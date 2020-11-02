@@ -26,11 +26,18 @@ public class ELC_RoomsGenerator : MonoBehaviour
     public GameObject[,] checkersArray; //Liste des checkers et leur position
 
     public List<int> randomPoints = new List<int>(); //L'index correspond au Y et le nombre dans cet index correspond au X
+    public List<int> secondaryRandomPoints = new List<int>();//L'index correspond au Y et le nombre dans cet index correspond au X
+    public List<int> numberOfEmptyRooms = new List<int>();//L'index correspond au Y et le nombre dans cet index correspond au X, si le nombre est -1 alors c'est que la room peut pas être posée
 
 
-    
+
     void Start()
     {
+        for (int i = 0; i < arrayDimentionY; i++) //Pour instancier la Liste des rooms libres
+        {
+            numberOfEmptyRooms.Add(arrayDimentionX);
+        }
+
         StartCoroutine("Generator");
     }
 
@@ -60,6 +67,12 @@ public class ELC_RoomsGenerator : MonoBehaviour
 
         StartCoroutine("JunctionsBtwRandomPoints");
 
+        yield return new WaitWhile(() => isInACoroutine == true);
+        StartCoroutine("PlaceSecondaryRandomPoints");
+
+        yield return new WaitWhile(() => isInACoroutine == true);
+        StartCoroutine("JunctionBtwSecondaryPoints");
+
         yield return new WaitWhile(() => isInACoroutine == true); //Tant que isInACoroutine = true, on met la fonction en suspens
         StartCoroutine("DoorsCheck");
 
@@ -71,7 +84,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
     {
         for (int i = 0; i < arrayDimentionY; i++) //A chaque ligne
         {
-            int randomNumber = UnityEngine.Random.Range(0, arrayDimentionX); //Prendre un nombre aléatoire
+            int randomNumber = UnityEngine.Random.Range(0, arrayDimentionY); //Prendre un nombre aléatoire entre 0 et le nombre de rooms vides disponibles sur la ligne
 
 
             if (!checkersArray[randomNumber, i].GetComponent<ELC_RoomProperties>().thereIsRoom)//Vérifier si une salle n'existe pas déjà sur la ligne à l'emplacement du nombre aléatoire
@@ -94,7 +107,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
 
             if (distance < 0)
             {
-                numberOfRoomsToInstanciate = -distance; //Pour que la valeur soit toujours positive
+                numberOfRoomsToInstanciate = -distance; //Pour que la numberOfRoomsToInstanciate soit toujours positive
                 direction = -1; //Si la distance est < 0 ça veut dire que le prochain point est sur la gauche donc on passe la direction en négatif
             }
 
@@ -104,8 +117,68 @@ public class ELC_RoomsGenerator : MonoBehaviour
                 SpawnRandomRoom(checkersArray[randomPoints[i] + direction * (e + 1), i], testsRoomsList, true, true, true, true, false); //On fait spawner une salle sur le checker qui a en x : le random point (qui constitue le point de départ), auquel on ajoute e pour avancer de 1 case à chaque fois (et il nous faut décaler de 1 case au début pour éviter d'instancier sur la room déjà existante d'où le (e+1)) et on multiplie par la valeur direction pour indiquer si on se déplace d'une case vers la gauche ou la droite
             }
         }
+
         isInACoroutine = false;
     } //Construit les salles entre chaque points
+
+    IEnumerator JunctionBtwSecondaryPoints()
+    {
+        isInACoroutine = true;
+
+        for (int i = 0; i < secondaryRandomPoints.Count; i++)
+        {
+            int distance = randomPoints[i] - secondaryRandomPoints[i];
+            int dir = 1;
+            if (distance < 0)//Si la salle du random point principal de la ligne est à gauche on passe la dir en négatif
+            {
+                dir = -1;
+                distance = -distance; //Si distance est négative on la mets en positif, pas fou
+            }
+
+            for (int e = 0; e < distance - 1; e++)
+            {
+                if (!checkersArray[secondaryRandomPoints[i] + dir * (e + 1), i].GetComponent<ELC_RoomProperties>().thereIsRoom)
+                {
+                    yield return new WaitForSeconds(timeToWait);
+                    SpawnRandomRoom(checkersArray[secondaryRandomPoints[i] + dir * (e + 1), i], testsRoomsList, true, true, true, true, false);
+                }
+            }
+
+        }
+
+        isInACoroutine = false;
+    } //Construit les salles pour relier les salles secondaires
+    IEnumerator PlaceSecondaryRandomPoints() //Placer les seconds poins aléatoirement dans les zones vides et ensuite les relier
+    {
+        isInACoroutine = true;
+        for (int i = 0; i < arrayDimentionY; i++)
+        {
+            if (numberOfEmptyRooms[i] > 0)
+            {
+                int randomNum = UnityEngine.Random.Range(0, numberOfEmptyRooms[i]);
+                int checkPositionX;
+                checkPositionX = 0;
+                yield return new WaitForSeconds(1f);
+                for (int e = randomNum; e >= 0; e--)//Prends le nombre pris aléatoirement pour faire tourner un certain nombre de fois la boucle
+                {
+                    if (checkersArray[checkPositionX, i].GetComponent<ELC_RoomProperties>().thereIsRoom) //Si y'a une room à l'endroit où tu dois check, on decrease pas e pour qu'on relance le check mais avec une position x+1 (qu'on détermine après), c'est un peu comme si on sautait la case
+                    {
+                        e++;
+                    }
+                    else if (e == 0) //Si on arrive à 0 c'est qu'on a parcourus le nombre de cases qu'on voulait parmis les cases vides
+                    {
+                        secondaryRandomPoints.Add(checkPositionX); //Du coup on add la coordonnée à laquelle on veut le nouveau point
+                    }
+                    checkPositionX += 1;
+                }
+                SpawnRandomRoom(checkersArray[secondaryRandomPoints[i], i], roomsList, true, true, true, true, false);
+            }
+            else secondaryRandomPoints.Add(-1);
+            
+        }
+        isInACoroutine = false;
+        
+    }
 
     private void SpawnRandomRoom(GameObject checkerObject, List<GameObject> rl, bool openRight, bool openLeft, bool openTop, bool openDown, bool isRoomFromRandomNumber)
     {
@@ -115,6 +188,8 @@ public class ELC_RoomsGenerator : MonoBehaviour
 
         if (!roomScript.thereIsRoom) //vérifie si une salle n'a pas déjà été enregistrée ici
         {
+            numberOfEmptyRooms[arrayY]--;
+
             int randomNumber = UnityEngine.Random.Range(0, rl.Count); //prend un nombre aléatoire dans la List
             GameObject.Instantiate(rl[randomNumber], checkerObject.transform).transform.SetParent(checkerObject.transform); //Met la salle aléatoire en fonction du nombre donné, et la fait enfant du checker
             roomScript.thereIsRoom = true; //Dit au checker de l'emplacement de la salle qu'il y a une salle maintenant
@@ -126,7 +201,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
             roomScript.openLeftDoor = openLeft;
             roomScript.openRightDoor = openRight;
         }
-        else Debug.Log("Script is trying to create a room at " + arrayX + ", " + arrayY + " but a room already exist here.");
+        //else Debug.Log("Script is trying to create a room at " + arrayX + ", " + arrayY + " but a room already exist here.");
     } //Pour faire spawner une room prise aléatoirement dans une List, à un emplacement défini
 
     private GameObject ReturnAdjacentChecker(int refPosX, int refPosY, Directions direction) //Va servir à récupérer et renvoyer le checker ajdacent (de droite/gauche/haut/bas au choix)
@@ -139,13 +214,13 @@ public class ELC_RoomsGenerator : MonoBehaviour
             else if (direction == Directions.Left && refPosX - 1 >= 0) return checkersArray[refPosX - 1, refPosY];
             else
             {
-                Debug.Log("(LOOKS LIKE A PROBLEM BUT THIS IS NOT, LEAVE ME ALONE) Trying to return a value in function ReturnAdjacentChecker but there is no checker at the " + direction + " of " + checkersArray[refPosX,refPosY].name + "");
+                //Debug.Log("(LOOKS LIKE A PROBLEM BUT THIS IS NOT, LEAVE ME ALONE) Trying to return a value in function ReturnAdjacentChecker but there is no checker at the " + direction + " of " + checkersArray[refPosX,refPosY].name + "");
                 return null;
             }
         }
         else
         {
-            Debug.Log("Error when trying to return a value in function ReturnAdjacentChecker : refPosY or refPosX are greater than the arrayDimentions");
+            //Debug.Log("Error when trying to return a value in function ReturnAdjacentChecker : refPosY or refPosX are greater than the arrayDimentions");
             return null;
         }
     }
@@ -167,7 +242,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
                     GameObject adjacentChecker = ReturnAdjacentChecker(checkerPosX, checkerPosY, dir); //On prend le checker qui est dans direction désirée
                     if (adjacentChecker != null) //S'il y a un checker dans la direction
                     {
-                        Debug.Log("Room detected at the " + dir + " of " + checker.name);
+                        //Debug.Log("Room detected at the " + dir + " of " + checker.name);
                         //Dans la direction voulue : s'il y a une room ET si c'est à gauche ou droite ou que (la room actuelle a "isAnAngleRoom" en true et (que la room dans la direction a "isAnAngleRoom" en true ou qu'on soit en train de vérifier le Top)) alors on ouvre, ça permet de pas avoir d'ouverture en haut/bas lorque c'est un couloir
                         if (adjacentChecker.GetComponent<ELC_RoomProperties>().thereIsRoom && (dir == Directions.Left || dir == Directions.Right || (adjacentChecker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && dir == Directions.Down) ||(checker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && (dir == Directions.Top || adjacentChecker.GetComponent<ELC_RoomProperties>().isAnAngleRoom)))) DoorState(checker, true, dir); 
                         else DoorState(checker, false, dir); //On supprime la porte à cet endroit
@@ -175,7 +250,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
                     else //S'il n'y a pas de checker
                     {
                         DoorState(checker, false, dir); //On supprime la porte à cet endroit
-                        Debug.Log("There is no checker at the " + dir + " of " + checker.name);
+                        //Debug.Log("There is no checker at the " + dir + " of " + checker.name);
                     }
                 }
             }
