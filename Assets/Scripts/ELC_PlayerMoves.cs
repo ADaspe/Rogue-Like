@@ -285,7 +285,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         if (!isDashing)
         {
             StartCoroutine(PlayAnimation("isDashing", playerStats.AnimationDashTime, false, false));
-            playerStats.invulnerabilty = true;
+            playerStats.invulnerability = true;
             currentDistance = distance;
             currentTime = time;
             stopDash = Time.time + time;
@@ -308,7 +308,7 @@ public class ELC_PlayerMoves : MonoBehaviour
             StopAnimation("isDashing");
             isDashing = false;
             canMove = true;
-            playerStats.invulnerabilty = false;
+            playerStats.invulnerability = false;
         }
         else if (isDashing) player.Translate(dashVector); //Ici on bouge si tout va bien
     }
