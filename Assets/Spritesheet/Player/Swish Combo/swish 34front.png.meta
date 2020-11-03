@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 53b33397aef855241b9908ca325a4ded
+guid: e93a38ec71904bf4e9220b247397cb5b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7409754472364972666
-    second: IdlePersoBack_0
+      213: -3183479786913686285
+    second: swish 34front_0
   - first:
-      213: 3968550229961783879
-    second: IdlePersoBack_1
+      213: 6230241051437647182
+    second: swish 34front_1
   - first:
-      213: 933058321710289168
-    second: IdlePersoBack_2
+      213: -2156236885433616776
+    second: swish 34front_2
   - first:
-      213: 87983014453926168
-    second: IdlePersoBack_3
+      213: -8837303005737129698
+    second: swish 34front_3
+  - first:
+      213: -4688095048634476413
+    second: swish 34front_4
+  - first:
+      213: -8739760299650571429
+    second: swish 34front_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -109,10 +115,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -131,17 +137,29 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IdlePersoBack_0
+      name: swish 34front_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 19
-        height: 21
+        width: 115
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7a1d2e1f6cb4d660800000000000000
-      internalID: 7409754472364972666
+      spriteID: 3fc9f57200202d3d0800000000000000
+      internalID: -3183479786913686285
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdlePersoBack_1
+      name: swish 34front_1
       rect:
         serializedVersion: 2
-        x: 19
+        x: 115
         y: 0
-        width: 19
-        height: 21
+        width: 115
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,20 +188,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74aba2a686f131730800000000000000
-      internalID: 3968550229961783879
+      spriteID: e454fff1a33467650800000000000000
+      internalID: 6230241051437647182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdlePersoBack_2
+      name: swish 34front_2
       rect:
         serializedVersion: 2
-        x: 38
+        x: 230
         y: 0
-        width: 19
-        height: 21
+        width: 115
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 011934c9993e2fc00800000000000000
-      internalID: 933058321710289168
+      spriteID: 87672281af18312e0800000000000000
+      internalID: -2156236885433616776
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IdlePersoBack_3
+      name: swish 34front_3
       rect:
         serializedVersion: 2
-        x: 57
+        x: 345
         y: 0
-        width: 19
-        height: 21
+        width: 115
+        height: 115
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,8 +230,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8195bc2e514983100800000000000000
-      internalID: 87983014453926168
+      spriteID: e19eb820db79b5580800000000000000
+      internalID: -8837303005737129698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swish 34front_4
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 0
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 388dfd0546a80feb0800000000000000
+      internalID: -4688095048634476413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swish 34front_5
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 0
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b53244d005226b680800000000000000
+      internalID: -8739760299650571429
       vertices: []
       indices: 
       edges: []
@@ -221,7 +281,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 06239d432df7de1439d3bc8260c22a4e
+    spriteID: 95bb39aa153ed28438dfa5aba5c02591
     internalID: 0
     vertices: []
     indices: 
