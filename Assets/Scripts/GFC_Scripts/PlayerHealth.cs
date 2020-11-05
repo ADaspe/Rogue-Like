@@ -9,7 +9,11 @@ public class PlayerHealth : MonoBehaviour
     public bool isDead = false;
     public Health healthBar;
     public Bouteille bouteille;
-    
+
+    private void Update()
+    {
+        playerStats.currentHealth = healthBar.healthSlider.value;
+    }
 
     // ça c'est pour dire que la vie commence au max (pour le joueur et sur la barre de vie
     void Start()
