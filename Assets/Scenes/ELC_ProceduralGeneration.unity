@@ -391,6 +391,16 @@ PrefabInstance:
       propertyPath: timeToWait
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: arrayDimentionX
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: arrayDimentionY
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7843894060409563433, guid: 96964a2b1920f9a469b78a90ac676262,
         type: 3}
       propertyPath: m_Name
