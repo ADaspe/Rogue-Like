@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class AXD_Attack : MonoBehaviour
     public PlayerHealth playerHealth;
 
     public float nextResetCombo;
-    private enum AttackType { Swich, Sponk }
+    public enum AttackType { Swich, Sponk }
 
     private void Update()
     {
@@ -20,12 +21,21 @@ public class AXD_Attack : MonoBehaviour
         }
     }
 
-    
-    public void SwichAttack()
+    public void Attack(string type)
     {
 
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(player.attackPoint, playerStats.SwichAreaRadius, LayerMask.GetMask("Enemies"));
-        List<ELC_Enemy> colateralVictims = null;
+        Collider2D[] hitEnemies = null;
+        if (type.Equals(AttackType.Swich.ToString()))
+        {
+            hitEnemies = Physics2D.OverlapCircleAll(player.attackPoint, playerStats.SwichAreaRadius, LayerMask.GetMask("Enemies"));
+
+        }else if(type.Equals(AttackType.Sponk.ToString()))
+        {
+            hitEnemies = Physics2D.OverlapBoxAll(player.attackPoint, new Vector2(playerStats.SponkWidth, playerStats.Sponklength), Vector2.Angle(Vector2.up, player.lastDirection), LayerMask.GetMask("Enemies"));
+
+        }
+        
+        List<ELC_Enemy> colateralVictims = new List<ELC_Enemy>();
         ELC_Enemy closestEnemy = null;
         //Get all enemies to attack
         if (hitEnemies != null)
@@ -45,52 +55,22 @@ public class AXD_Attack : MonoBehaviour
 
             }
             //Attack main target
-
-            CalculateReward(closestEnemy);
-            closestEnemy.GetHit(CalculateDamage(AttackType.Swich), playerStats.SwichKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SwichStunTime);
-
+            if (closestEnemy != null)
+            {
+                CalculateReward(closestEnemy);
+                closestEnemy.GetHit(CalculateDamage(AttackType.Swich), playerStats.SwichKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SwichStunTime);
+            }
             //Attack all secondary targets
-            foreach (ELC_Enemy enemy in colateralVictims)
+            if (colateralVictims.Count > 0)
             {
-                CalculateReward(enemy);
-                enemy.GetHit(CalculateDamage(AttackType.Swich), playerStats.SwichKnockbackDistance);
-            }
-
-        }
-    }
-    public void SponkAttack()
-    {
-        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(player.attackPoint, new Vector2(playerStats.ThrustWidth,playerStats.Thrustlength), Vector2.Angle(Vector2.up, player.lastDirection), LayerMask.GetMask("Enemies"));
-        List<ELC_Enemy> colateralVictims = null;
-        ELC_Enemy closestEnemy = null;
-        if (hitEnemies != null)
-        {
-            foreach (Collider2D enemy in hitEnemies)
-            {
-                //Get all enemies to attack
-                ELC_Enemy tempEnemy = enemy.GetComponent<ELC_Enemy>();
-                if (closestEnemy == null || (Vector3.Distance(player.transform.position, tempEnemy.transform.position) < Vector3.Distance(player.transform.position, closestEnemy.transform.position)))
+                foreach (ELC_Enemy enemy in colateralVictims)
                 {
-                    closestEnemy = tempEnemy;
-                }
-                else
-                {
-                    colateralVictims.Add(tempEnemy);
+                    CalculateReward(enemy);
+                    Debug.Log(enemy.name+" est une victime colatérale");
+                    enemy.GetHit(CalculateDamage(AttackType.Swich, true), playerStats.SwichKnockbackDistance);
                 }
             }
-                //Attack main target
 
-            CalculateReward(closestEnemy);
-            closestEnemy.GetHit(CalculateDamage(AttackType.Sponk), playerStats.SponkKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SponkStunTime);
-
-            //Attack colateral victims
-
-            foreach (ELC_Enemy enemy in colateralVictims)
-            {
-                CalculateReward(enemy);
-                enemy.GetHit(CalculateDamage(AttackType.Sponk), playerStats.SponkKnockbackDistance);
-            }
-            
         }
     }
     private int CalculateDamage(AttackType type, bool colateral = false)
@@ -98,13 +78,23 @@ public class AXD_Attack : MonoBehaviour
         int totalDamage = 0;
         if (type == AttackType.Swich)
         {
-            totalDamage = Mathf.RoundToInt((playerStats.SwichDamage + (playerStats.SwichDamage  * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator);
+            if (colateral == false)
+            {
+                totalDamage = Mathf.RoundToInt((playerStats.SwichDamage + (playerStats.SwichDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator);
+            }else if(colateral == true)
+            {
+                totalDamage = Mathf.RoundToInt(((playerStats.SwichDamage + (playerStats.SwichDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator)*playerStats.colateralDamage/100);
+            }
         }
         else if (type == AttackType.Sponk)
         {
-            totalDamage = Mathf.RoundToInt((playerStats.ThrustDamage + (playerStats.ThrustDamage * (playerStats.CurrentCombo / 100)))* playerStats.AttackMultiplicator);
+            if (colateral == false) {
+                totalDamage = Mathf.RoundToInt((playerStats.ThrustDamage + (playerStats.ThrustDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator);
+            } else if (colateral == true)
+            {
+                totalDamage = Mathf.RoundToInt(((playerStats.ThrustDamage + (playerStats.ThrustDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator)*playerStats.colateralDamage/100);
+            }
         }
-        Debug.Log("Damage dealt : " + totalDamage);
         return totalDamage;
     }
 
