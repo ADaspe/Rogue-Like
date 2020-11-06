@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hoplite
   m_EditorClassIdentifier: 
   Name: Hoplite
-  MaxHealth: 20
+  MaxHealth: 2000
   MovementSpeed: 3
   EnemyPath: 0
   LimitDistanceToStay: 1.5
@@ -43,5 +43,6 @@ MonoBehaviour:
   EntitiesToSpawn: {fileID: 0}
   MoneyEarnWhenHit: 35
   MoneyEarnWhenDead: 125
+  ambrosiaEarnedWhenDead: 0
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   Animator: {fileID: 0}

@@ -127,8 +127,8 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.23333333
-    functionName: SponkAttack
-    data: 
+    functionName: Attack
+    data: Sponk
     objectReferenceParameter: {fileID: 11500000, guid: 41b6a018d8d6ca7478c13acef376629b,
       type: 3}
     floatParameter: 0
