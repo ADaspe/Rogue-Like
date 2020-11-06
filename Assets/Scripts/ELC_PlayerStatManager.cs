@@ -49,9 +49,9 @@ public class ELC_PlayerStatManager : MonoBehaviour
     [Header ("Thrust Stats")]
     public float ThrustDamage;
     [Range(0, 5)]
-    public float ThrustWidth;
+    public float SponkWidth;
     [Range(0, 5)]
-    public float Thrustlength;
+    public float Sponklength;
 
     [Header("Animations Times")]
     public float AnimationDashTime;
