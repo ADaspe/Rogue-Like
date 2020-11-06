@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4610685752025799638}
   m_Layer: 0
-  m_Name: Surrounding walls
+  m_Name: SurroundingWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,12 +181,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8194952239710414724}
   m_Layer: 0
-  m_Name: Power ups
+  m_Name: PowerUps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8194952239710414724
 Transform:
   m_ObjectHideFlags: 0
@@ -214,12 +214,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2566211986786340412}
   m_Layer: 0
-  m_Name: Destroyables Objects
+  m_Name: DestroyablesObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2566211986786340412
 Transform:
   m_ObjectHideFlags: 0
@@ -273,7 +273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1608617456482274707
 Transform:
   m_ObjectHideFlags: 0

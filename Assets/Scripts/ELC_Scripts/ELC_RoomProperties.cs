@@ -12,6 +12,7 @@ public class ELC_RoomProperties : MonoBehaviour
 
     public bool RoomIsClosed;
     public bool HasBeenInitialised;
+    public bool Loaded;
 
     public bool isAnAngleRoom; //Si c'est une room qui correspond aux rooms aléatoires du début, ce sont les seules qui permettent de relier avec la ligne d'au dessus
 
@@ -27,6 +28,9 @@ public class ELC_RoomProperties : MonoBehaviour
 
     private List<GameObject> doors = new List<GameObject>(); //Liste des portes : 0 = Left, 1 = Right, 2 = Top, 3 = Down
     private List<bool> openSides = new List<bool>(); //Liste des cotés ouverts : 0 = Left, 1 = Right, 2 = Top, 3 = Down
+    private List<GameObject> enemiesAlive = new List<GameObject>();
+    public List<GameObject> enemiesGenerators = new List<GameObject>();
+    public List<GameObject> powerUpsGenerators = new List<GameObject>();
 
 
     private void Update()
@@ -35,16 +39,22 @@ public class ELC_RoomProperties : MonoBehaviour
         {
             if(!HasBeenInitialised) Initialisation();
 
+            if(Loaded)
+            {
+                if (areaObject.GetComponent<ELC_Detector>().playerIsInside)
+                {
+                    DoorsState(true);
+                }
 
-            if (areaObject.GetComponent<ELC_Detector>().playerIsInside) DoorsState(true);
 
-            if (Input.GetKeyDown(KeyCode.F)) DoorsState(!RoomIsClosed);
+                if (Input.GetKeyDown(KeyCode.F)) DoorsState(!RoomIsClosed);
+            }
         }
     }
 
     void DoorsState(bool close) //Permet d'ouvrir/fermer les portes qui ont un couloir
     {
-        for (int i = 0; i < doors.Count; i++)
+        for (int i = 0; i < doors.Count ; i++)
         {
             if (openSides[i]) doors[i].SetActive(close);
         }
@@ -69,7 +79,11 @@ public class ELC_RoomProperties : MonoBehaviour
         TopCorridor = corridorsObject.transform.Find("Top Corridor").gameObject;
         DownCorridor = corridorsObject.transform.Find("Down Corridor").gameObject;
 
+        enemiesGenerators = GetAllChilds(roomObject.transform.Find("EnemiesGenerators").gameObject);
+        powerUpsGenerators = GetAllChilds(roomObject.transform.Find("PowerUps").gameObject);
 
+
+        
 
         doors.Add(LeftDoor);
         doors.Add(RightDoor);
@@ -79,6 +93,16 @@ public class ELC_RoomProperties : MonoBehaviour
 
         HasBeenInitialised = true;
     }
+
+    private List<GameObject> GetAllChilds(GameObject parent)
+    {
+        List<GameObject> childsList = new List<GameObject>();
+        for (int i = 0; i < parent.transform.childCount; i++)
+        {
+            childsList.Add(parent.transform.GetChild(i).gameObject);
+        }
+        return childsList;
+    } //récupérer tous les enfants d'un GameObject dans une list et la return
 
     public void UpdateCorridors()
     {

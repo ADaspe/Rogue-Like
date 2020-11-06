@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4177127742557127223}
   m_Layer: 0
-  m_Name: Destroyable Objects
+  m_Name: DestroyableObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4177127742557127223
 Transform:
   m_ObjectHideFlags: 0
@@ -56,12 +56,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4136143982250151109}
   m_Layer: 0
-  m_Name: Enemies
+  m_Name: EnemiesGenerators
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4136143982250151109
 Transform:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5140347477241966057}
   m_Layer: 0
-  m_Name: Surrounding walls
+  m_Name: SurroundingWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,12 +215,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3259115513881827361}
   m_Layer: 0
-  m_Name: power Ups
+  m_Name: PowerUps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3259115513881827361
 Transform:
   m_ObjectHideFlags: 0

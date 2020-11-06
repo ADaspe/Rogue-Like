@@ -254,6 +254,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
                     }
                 }
                 checker.GetComponent<ELC_RoomProperties>().UpdateCorridors(); //On demande au script d'update ses couloirs
+                checker.GetComponent<ELC_RoomProperties>().Loaded = true;
             }
         }
         isInACoroutine = false;

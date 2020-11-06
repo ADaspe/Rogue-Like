@@ -11,7 +11,7 @@ public class ELC_RandomObjectGenerator : MonoBehaviour
 
     void Start()
     {
-        SpawnEntity();
+        //SpawnEntity();
     }
 
     private void Update()
