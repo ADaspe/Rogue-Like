@@ -14,6 +14,10 @@ public class ELC_RoomProperties : MonoBehaviour
     public bool HasBeenInitialised;
     public bool Loaded;
 
+    public int WavesLimit = 2;
+    public int ActualWave;
+    private bool roomIsClear;
+
     public bool isAnAngleRoom; //Si c'est une room qui correspond aux rooms aléatoires du début, ce sont les seules qui permettent de relier avec la ligne d'au dessus
 
     public bool thereIsRoom;
@@ -28,7 +32,7 @@ public class ELC_RoomProperties : MonoBehaviour
 
     private List<GameObject> doors = new List<GameObject>(); //Liste des portes : 0 = Left, 1 = Right, 2 = Top, 3 = Down
     private List<bool> openSides = new List<bool>(); //Liste des cotés ouverts : 0 = Left, 1 = Right, 2 = Top, 3 = Down
-    private List<GameObject> enemiesAlive = new List<GameObject>();
+    public List<GameObject> enemiesAlive = new List<GameObject>();
     public List<GameObject> enemiesGenerators = new List<GameObject>();
     public List<GameObject> powerUpsGenerators = new List<GameObject>();
 
@@ -43,7 +47,7 @@ public class ELC_RoomProperties : MonoBehaviour
             {
                 if (areaObject.GetComponent<ELC_Detector>().playerIsInside)
                 {
-                    DoorsState(true);
+                    PlayerEnterInRoom();
                 }
 
 
@@ -62,6 +66,54 @@ public class ELC_RoomProperties : MonoBehaviour
         RoomIsClosed = close;
     }
     
+    void PlayerEnterInRoom()
+    {
+        if (ActualWave < WavesLimit) //Si on est à une vague en dessous de la limite de vagues qu'on veut
+        {
+            if (!RoomIsClosed) //On ferme les portes si elles ne l'étaient pas déjà
+            {
+                DoorsState(true);
+                foreach (GameObject PUGenerators in powerUpsGenerators) PUGenerators.GetComponent<ELC_RandomObjectGenerator>().SpawnEntity();
+
+            }
+
+            if (enemiesAlive.Count == 0) //Si la List d'ennemis en vie est vide
+            {
+                foreach (GameObject enemiesGenerator in enemiesGenerators) enemiesGenerator.GetComponent<ELC_RandomObjectGenerator>().SpawnEntity();
+                foreach (GameObject generators in enemiesGenerators)
+                {
+                    enemiesAlive.Add(generators.transform.GetChild(0).gameObject);
+                }
+                ActualWave++;
+            }
+            EnemiesCheck();
+        }
+        else
+        {
+            EnemiesCheck();
+            if(enemiesAlive.Count == 0)
+            {
+                Debug.Log("Room clear !");
+                DoorsState(false);
+            }
+        }
+
+    }
+
+    void EnemiesCheck() //Check s'il reste des ennemis dans la list
+    {
+        int remainingEnemies = enemiesAlive.Count;
+        for (int i = 0; i < enemiesAlive.Count; i++)
+        {
+            if(enemiesGenerators[i].transform.childCount == 0)
+            {
+                remainingEnemies--;
+                if(remainingEnemies == 0) enemiesAlive.Clear(); //Clear la list d'ennemis pour la remettre à 0
+            }
+        }
+
+    }
+
     void Initialisation()
     {
         roomObject = this.transform.GetChild(0).gameObject;

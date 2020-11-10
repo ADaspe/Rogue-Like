@@ -243,8 +243,8 @@ public class ELC_RoomsGenerator : MonoBehaviour
                     if (adjacentChecker != null) //S'il y a un checker dans la direction
                     {
                         //Debug.Log("Room detected at the " + dir + " of " + checker.name);
-                        //Dans la direction voulue : s'il y a une room ET si c'est à gauche ou droite ou que (la room actuelle a "isAnAngleRoom" en true et (que la room dans la direction a "isAnAngleRoom" en true ou qu'on soit en train de vérifier le Top)) alors on ouvre, ça permet de pas avoir d'ouverture en haut/bas lorque c'est un couloir
-                        if (adjacentChecker.GetComponent<ELC_RoomProperties>().thereIsRoom && (dir == Directions.Left || dir == Directions.Right || (adjacentChecker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && dir == Directions.Down) ||(checker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && (dir == Directions.Top || adjacentChecker.GetComponent<ELC_RoomProperties>().isAnAngleRoom)))) DoorState(checker, true, dir); 
+                        //Dans la direction voulue : s'il y a une room ET si c'est à gauche OU droite OU que la room adjacente a "isAnAngleRoom" en true et qu'on vérifie le bas OU que la room actuelle est une AngleRoom et qu'on vérifie la direction Top alors on ouvre, ça permet de pas avoir d'ouverture en haut/bas lorque c'est un couloir
+                        if (adjacentChecker.GetComponent<ELC_RoomProperties>().thereIsRoom && (dir == Directions.Left || dir == Directions.Right || (adjacentChecker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && dir == Directions.Down) || (checker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && dir == Directions.Top)/*(checker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && (dir == Directions.Top || adjacentChecker.GetComponent<ELC_RoomProperties>().isAnAngleRoom))*/)) DoorState(checker, true, dir); 
                         else DoorState(checker, false, dir); //On supprime la porte à cet endroit
                     }
                     else //S'il n'y a pas de checker
