@@ -43,3 +43,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 977bbc88f41b5524aae1a628fc328490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openLeftDoor: 0
+  openRightDoor: 0
+  openTopDoor: 0
+  openDownDoor: 0
+  RoomIsClosed: 0
+  HasBeenInitialised: 0
+  Loaded: 0
+  WavesLimit: 2
+  ActualWave: 0
+  isAnAngleRoom: 0
+  thereIsRoom: 0
+  DoorPlayerDetectionDistance: 2
+  positionNumber: {x: 0, y: 0}
+  roomObject: {fileID: 0}
+  corridorsObject: {fileID: 0}
+  areaObject: {fileID: 0}
+  LeftDoor: {fileID: 0}
+  RightDoor: {fileID: 0}
+  TopDoor: {fileID: 0}
+  DownDoor: {fileID: 0}
+  LeftCorridor: {fileID: 0}
+  RightCorridor: {fileID: 0}
+  TopCorridor: {fileID: 0}
+  DownCorridor: {fileID: 0}
+  enemiesAlive: []
+  enemiesGenerators: []
+  powerUpsGenerators: []
