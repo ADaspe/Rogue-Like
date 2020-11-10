@@ -190,7 +190,7 @@ SpriteRenderer:
   m_Size: {x: 0.19, y: 0.21}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &207646746971977973
@@ -385,6 +385,16 @@ PrefabInstance:
         type: 3}
       propertyPath: healingRate
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: colateralDamage
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: mainTargetKnockBack
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6958aa080a4c5439913b983ac56050, type: 3}

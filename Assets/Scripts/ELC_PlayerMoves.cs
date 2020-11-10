@@ -70,7 +70,7 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     void Update()
     {
-        attackPoint = transform.position + lastDirection.normalized;
+        attackPoint = transform.position + lastDirection.normalized*playerStats.SwichAreaRadius;
         if (Input.GetAxisRaw("Dash") != 1)
         {
             dashButtonDown = false;
