@@ -57,6 +57,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     public float currentTime;
 
     private Vector3 dashVector;
+    public float timeToResetChain;
 
     private void Start()
     {
@@ -70,6 +71,10 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     void Update()
     {
+        if(Time.time >= timeToResetChain && playerStats.currentChain != ELC_PlayerStatManager.Chain.Blue)
+        {
+            ResetChain();
+        }
         attackPoint = transform.position + lastDirection.normalized*playerStats.SwichAreaRadius;
         if (Input.GetAxisRaw("Dash") != 1)
         {
@@ -313,14 +318,47 @@ public class ELC_PlayerMoves : MonoBehaviour
         else if (isDashing) player.Translate(dashVector); //Ici on bouge si tout va bien
     }
 
+    public void ResetChain(ELC_PlayerStatManager.Chain chain = ELC_PlayerStatManager.Chain.Blue)
+    {
+        playerStats.currentChain = chain;
+        if (chain == ELC_PlayerStatManager.Chain.Blue)
+        {
+            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorBlue;
+        }
+        else if (chain == ELC_PlayerStatManager.Chain.Orange)
+        {
+            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorOrange;
+        }
+        else if (chain == ELC_PlayerStatManager.Chain.Red)
+        {
+            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorRed;
+        }
+        playerStats.currentHitChain = 0;
+    }
 
     IEnumerator SponkAttackAnimation()
     {
-
+        float dashDistanceMultiplicator = 1;
+        if(playerStats.currentChain == ELC_PlayerStatManager.Chain.Blue)
+        {
+            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorBlue;
+            dashDistanceMultiplicator = playerStats.DashMultiplicatorBlue;
+        }else if(playerStats.currentChain == ELC_PlayerStatManager.Chain.Orange)
+        {
+            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorOrange;
+            dashDistanceMultiplicator = playerStats.DashMultiplicatorOrange;
+        }
+        else if(playerStats.currentChain == ELC_PlayerStatManager.Chain.Red)
+        {
+            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorRed;
+            dashDistanceMultiplicator = playerStats.DashMultiplicatorRed;
+        }
         StartCoroutine(PlayAnimation("SponkAttack", playerStats.AnimationSponkTime, false, false));
         nextSponkAttackTime = Time.time + 1f / playerStats.SponkAttackRate;
         yield return new WaitForSeconds(playerAnimator.GetCurrentAnimatorStateInfo(0).length * 1 / 4);
-        Dash(playerStats.ThrustDashDistance, playerStats.ThrustDashTime);
+        Dash(playerStats.SponkDashDistance * dashDistanceMultiplicator, playerStats.SponkDashTime);
+        ResetChain();
+
 
     }
     private void OnDrawGizmosSelected()
@@ -328,7 +366,7 @@ public class ELC_PlayerMoves : MonoBehaviour
 
         if (attackPoint != null)
         {
-            //Gizmos.DrawWireCube(attackPoint, new Vector3(thrustWidth, thrustlength, 0));
+            //Gizmos.DrawWireCube(attackPoint, new Vector3(playerStats.SponkWidth, playerStats.Sponklength, 0));
             Gizmos.DrawWireSphere(attackPoint, playerStats.SwichAreaRadius);
         }
 

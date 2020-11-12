@@ -34,12 +34,17 @@ public class AXD_Attack : MonoBehaviour
             hitEnemies = Physics2D.OverlapBoxAll(player.attackPoint, new Vector2(playerStats.SponkWidth, playerStats.Sponklength), Vector2.Angle(Vector2.up, player.lastDirection), LayerMask.GetMask("Enemies"));
 
         }
-        
-        List<ELC_Enemy> colateralVictims = new List<ELC_Enemy>();
-        ELC_Enemy closestEnemy = null;
         //Get all enemies to attack
-        if (hitEnemies != null)
+        if (hitEnemies != null && hitEnemies.Length != 0)
         {
+            List<ELC_Enemy> colateralVictims = new List<ELC_Enemy>();
+            ELC_Enemy closestEnemy = null;
+            playerStats.currentHitChain++;
+            player.timeToResetChain = Time.time + playerStats.chainTime;
+            if (playerStats.currentHitChain % playerStats.hitToNextChain == 0 && playerStats.currentChain != ELC_PlayerStatManager.Chain.Red)
+            {
+                playerStats.currentChain++;
+            }
             foreach (Collider2D enemy in hitEnemies)
             {
 
@@ -58,7 +63,15 @@ public class AXD_Attack : MonoBehaviour
             if (closestEnemy != null)
             {
                 CalculateReward(closestEnemy);
-                closestEnemy.GetHit(CalculateDamage(AttackType.Swich), playerStats.SwichKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SwichStunTime);
+                if (type.Equals(AttackType.Swich.ToString()))
+                {
+                    closestEnemy.GetHit(CalculateDamage(AttackType.Swich), playerStats.SwichKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SwichStunTime);
+                }
+                else if (type.Equals(AttackType.Sponk.ToString()))
+                {
+                    closestEnemy.GetHit(CalculateDamage(AttackType.Sponk), playerStats.SponkKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SponkStunTime);
+                }
+                
             }
             //Attack all secondary targets
             if (colateralVictims.Count > 0)
@@ -66,8 +79,16 @@ public class AXD_Attack : MonoBehaviour
                 foreach (ELC_Enemy enemy in colateralVictims)
                 {
                     CalculateReward(enemy);
-                    Debug.Log(enemy.name+" est une victime colatérale");
-                    enemy.GetHit(CalculateDamage(AttackType.Swich, true), playerStats.SwichKnockbackDistance);
+                    //Debug.Log(enemy.name+" est une victime colatérale");
+                    
+                    if (type.Equals(AttackType.Swich.ToString()))
+                    {
+                        enemy.GetHit(CalculateDamage(AttackType.Swich, true), playerStats.SwichKnockbackDistance);
+                    }
+                    else if (type.Equals(AttackType.Sponk.ToString()))
+                    {
+                        enemy.GetHit(CalculateDamage(AttackType.Sponk, true), playerStats.SponkKnockbackDistance);
+                    }
                 }
             }
 
@@ -89,10 +110,10 @@ public class AXD_Attack : MonoBehaviour
         else if (type == AttackType.Sponk)
         {
             if (colateral == false) {
-                totalDamage = Mathf.RoundToInt((playerStats.ThrustDamage + (playerStats.ThrustDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator);
+                totalDamage = Mathf.RoundToInt((playerStats.SponkDamage + (playerStats.SponkDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator);
             } else if (colateral == true)
             {
-                totalDamage = Mathf.RoundToInt(((playerStats.ThrustDamage + (playerStats.ThrustDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator)*playerStats.colateralDamage/100);
+                totalDamage = Mathf.RoundToInt(((playerStats.SponkDamage + (playerStats.SponkDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator)*playerStats.colateralDamage/100);
             }
         }
         return totalDamage;

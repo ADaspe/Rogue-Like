@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ELC_PlayerStatManager : MonoBehaviour
 {
+
+    public enum Chain { Blue, Orange, Red}
     [Header ("Move Stats")]
     public float Speed;
     public bool invulnerability;
@@ -23,8 +25,8 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float DashTime;
     public float SwichDashDistance;
     public float SwichDashTime;
-    public float ThrustDashDistance;
-    public float ThrustDashTime;
+    public float SponkDashDistance;
+    public float SponkDashTime;
 
     [Header ("General Attack Stats")]
     public float SwichAttackRate;
@@ -42,12 +44,42 @@ public class ELC_PlayerStatManager : MonoBehaviour
     [Range(0, 100)]
     public float mainTargetKnockBack;
 
+
+    [Header("Chain")]
+    public Chain currentChain;
+    public int hitToNextChain;
+    public int currentHitChain;
+    public float chainTime;
+    [Header("Blue")]
+    [Range(1, 5)]
+    public float damageMultiplicatorBlue;
+    [Range(1, 5)]
+    public float KnockbackMultiplicatorBlue;
+    [Range(1, 5)]
+    public float DashMultiplicatorBlue;
+    [Header("Orange")]
+    [Range(1, 5)]
+    public float damageMultiplicatorOrange;
+    [Range(1, 5)]
+    public float KnockbackMultiplicatorOrange;
+    [Range(1, 5)]
+    public float DashMultiplicatorOrange;
+    [Header("Red")]
+    [Range(1, 5)]
+    public float damageMultiplicatorRed;   
+    [Range(1, 5)]
+    public float KnockbackMultiplicatorRed;
+    [Range(1, 5)]
+    public float DashMultiplicatorRed;
+
+
+
     [Header ("Swich Stats")]
     public float SwichDamage;
     [Range(0, 5)]
     public float SwichAreaRadius;
     [Header ("Thrust Stats")]
-    public float ThrustDamage;
+    public float SponkDamage;
     [Range(0, 5)]
     public float SponkWidth;
     [Range(0, 5)]
