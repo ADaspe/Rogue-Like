@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1e575d17b71b948acad78b5eb5db09, type: 3}
+  m_Name: Minotaure
+  m_EditorClassIdentifier: 
+  Name: Minotaure
+  MaxHealth: 35
+  MovementSpeed: 2
+  EnemyPath: 0
+  LimitDistanceToStay: 2
+  NeedTimeToTurn: 1
+  TurnSpeed: 1
+  FriendlyFire: 0
+  DistanceAttack: 0
+  Projectile: {fileID: 0}
+  DistanceAttackArea: 0
+  DistanceCooldown: 0
+  CorpseAttack: 1
+  AttackCooldown: 5
+  AttackRange: 0
+  WaitBeforeAttack: 1
+  AttackStrenght: 0
+  AttackStun: 0
+  AttackAnimationTime: 0
+  DashOnPlayer: 1
+  DashTime: 0.3
+  DistanceToRun: 6
+  DashStrenght: 0
+  DashStun: 0
+  SpawnEntitiesRegulary: 0
+  SpawnEntitiesAtDeath: 0
+  SpawnCooldown: 0
+  NumberOfEntitiesToSpawn: 0
+  EntitiesToSpawn: {fileID: 0}
+  MoneyEarnWhenHit: 25
+  MoneyEarnWhenDead: 200
+  ambrosiaEarnedWhenDead: 0
+  sprite: {fileID: 0}
+  Animator: {fileID: 0}

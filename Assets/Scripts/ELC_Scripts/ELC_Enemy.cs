@@ -375,7 +375,7 @@ public class ELC_Enemy : MonoBehaviour
         Stun(stunTime);
         if(currentHealth <= 0)
         {
-            this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
             
         }
     }

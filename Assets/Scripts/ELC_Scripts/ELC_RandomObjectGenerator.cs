@@ -11,8 +11,7 @@ public class ELC_RandomObjectGenerator : MonoBehaviour
 
     void Start()
     {
-        SpawnEntity();
-
+        //SpawnEntity();
     }
 
     private void Update()
@@ -20,7 +19,7 @@ public class ELC_RandomObjectGenerator : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W)) SpawnEntity();
     }
 
-    void SpawnEntity()
+    public void SpawnEntity()
     {
         float totalChances = 0;
         for (int i = 0; i < spawnChance.Count; i++)
@@ -46,7 +45,7 @@ public class ELC_RandomObjectGenerator : MonoBehaviour
             {
                 if(objectsList[i] != null)
                 {
-                    Object.Instantiate(objectsList[i], this.transform.position, Quaternion.identity);
+                    Object.Instantiate(objectsList[i], this.transform.position, Quaternion.identity).transform.SetParent(this.transform);
                     Debug.Log(objectsList[i] + " has been instantiate.");
                 }
                 break;

@@ -158,7 +158,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
                 int randomNum = UnityEngine.Random.Range(0, numberOfEmptyRooms[i]);
                 int checkPositionX;
                 checkPositionX = 0;
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(timeToWait);
                 for (int e = randomNum; e >= 0; e--)//Prends le nombre pris aléatoirement pour faire tourner un certain nombre de fois la boucle
                 {
                     if (checkersArray[checkPositionX, i].GetComponent<ELC_RoomProperties>().thereIsRoom) //Si y'a une room à l'endroit où tu dois check, on decrease pas e pour qu'on relance le check mais avec une position x+1 (qu'on détermine après), c'est un peu comme si on sautait la case
@@ -238,13 +238,13 @@ public class ELC_RoomsGenerator : MonoBehaviour
                 yield return new WaitForSeconds(timeToWait);
                 foreach (Directions dir in Enum.GetValues(typeof(Directions))) //Pour chacun des directions présentes dans Directions (haut/bas/droite/gauche)
                 {
-                    yield return new WaitForSeconds(timeToWait/2); //On veut qu'entre les 4 checks il y ait 2 fois moins de temps que d'habitude
+                    yield return new WaitForSeconds(timeToWait/4); //On veut qu'entre les 4 checks il y ait 4 fois moins de temps que d'habitude
                     GameObject adjacentChecker = ReturnAdjacentChecker(checkerPosX, checkerPosY, dir); //On prend le checker qui est dans direction désirée
                     if (adjacentChecker != null) //S'il y a un checker dans la direction
                     {
                         //Debug.Log("Room detected at the " + dir + " of " + checker.name);
-                        //Dans la direction voulue : s'il y a une room ET si c'est à gauche ou droite ou que (la room actuelle a "isAnAngleRoom" en true et (que la room dans la direction a "isAnAngleRoom" en true ou qu'on soit en train de vérifier le Top)) alors on ouvre, ça permet de pas avoir d'ouverture en haut/bas lorque c'est un couloir
-                        if (adjacentChecker.GetComponent<ELC_RoomProperties>().thereIsRoom && (dir == Directions.Left || dir == Directions.Right || (adjacentChecker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && dir == Directions.Down) ||(checker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && (dir == Directions.Top || adjacentChecker.GetComponent<ELC_RoomProperties>().isAnAngleRoom)))) DoorState(checker, true, dir); 
+                        //Dans la direction voulue : s'il y a une room ET si c'est à gauche OU droite OU que la room adjacente a "isAnAngleRoom" en true et qu'on vérifie le bas OU que la room actuelle est une AngleRoom et qu'on vérifie la direction Top alors on ouvre, ça permet de pas avoir d'ouverture en haut/bas lorque c'est un couloir
+                        if (adjacentChecker.GetComponent<ELC_RoomProperties>().thereIsRoom && (dir == Directions.Left || dir == Directions.Right || (adjacentChecker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && dir == Directions.Down) || (checker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && dir == Directions.Top)/*(checker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && (dir == Directions.Top || adjacentChecker.GetComponent<ELC_RoomProperties>().isAnAngleRoom))*/)) DoorState(checker, true, dir); 
                         else DoorState(checker, false, dir); //On supprime la porte à cet endroit
                     }
                     else //S'il n'y a pas de checker
@@ -253,6 +253,8 @@ public class ELC_RoomsGenerator : MonoBehaviour
                         //Debug.Log("There is no checker at the " + dir + " of " + checker.name);
                     }
                 }
+                checker.GetComponent<ELC_RoomProperties>().UpdateCorridors(); //On demande au script d'update ses couloirs
+                checker.GetComponent<ELC_RoomProperties>().Loaded = true;
             }
         }
         isInACoroutine = false;

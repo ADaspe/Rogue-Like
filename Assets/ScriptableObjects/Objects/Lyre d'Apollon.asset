@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f4d29f9cff7f034584e2895ca4cd7c5, type: 3}
+  m_Name: Lyre d'Apollon
+  m_EditorClassIdentifier: 
+  Name: Lyre d'Apollon
+  Strenght: 0
+  cooldown: 10
+  quantity: 3
+  thrownableObject: 0
+  speedOfTheObject: 0
+  timeBeforeTouchingGround: 0
+  placableObject: 0
+  FriendlyFire: 0
+  stun: 1
+  knockback: 0
+  timeBeforeDestruct: 0
+  destructWhenSomeoneTouchIt: 0
+  explodeOnDestruct: 0
+  instantiateSomething: 0
+  objectToInstantiate: {fileID: 0}
+  numberOfObjectsToInstantiate: 0
+  damageAreaConstantly: 0
+  rangeOfDamages: 0
+  ObjectsScript: {fileID: 0}
+  HUDSprite: {fileID: 0}
+  Animator: {fileID: 0}
