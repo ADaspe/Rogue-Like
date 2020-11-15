@@ -37,14 +37,12 @@ public class AXD_Attack : MonoBehaviour
         //Get all enemies to attack
         if (hitEnemies != null && hitEnemies.Length != 0)
         {
+            player.attackLanded = true;
             List<ELC_Enemy> colateralVictims = new List<ELC_Enemy>();
             ELC_Enemy closestEnemy = null;
             playerStats.currentHitChain++;
+            player.attackLanded = true;
             player.timeToResetChain = Time.time + playerStats.chainTime;
-            if (playerStats.currentHitChain % playerStats.hitToNextChain == 0 && playerStats.currentChain != ELC_PlayerStatManager.Chain.Red)
-            {
-                playerStats.currentChain++;
-            }
             foreach (Collider2D enemy in hitEnemies)
             {
 
