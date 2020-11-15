@@ -10,28 +10,18 @@ public class ELC_ObjectsSO : ScriptableObject
     public float cooldown;
     public int quantity;
 
-    public bool thrownableObject;
-    public float speedOfTheObject;
-    public float timeBeforeTouchingGround;
-    public bool placableObject;
-
     public bool FriendlyFire;
     public bool stun;
     public bool knockback;
 
-    public bool timeBeforeDestruct;
+    public float timeBeforeTouchGround;
+    public float distanceToThrown;
+    public float timeBeforeDestruct;
     public bool destructWhenSomeoneTouchIt;
 
     public bool explodeOnDestruct;
 
-    public bool instantiateSomething;
-    public GameObject objectToInstantiate;
-    public float numberOfObjectsToInstantiate;
-
-    public bool damageAreaConstantly;
-    public float rangeOfDamages;
-
-
+    public float actionArea;
 
     public MonoBehaviour ObjectsScript;
     public Sprite HUDSprite;
