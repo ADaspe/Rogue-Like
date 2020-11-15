@@ -57,6 +57,9 @@ public class ELC_PlayerMoves : MonoBehaviour
     public float currentTime;
 
     private Vector3 dashVector;
+    public float timeToResetChain;
+
+    public bool attackLanded;
 
     private void Start()
     {
@@ -70,6 +73,11 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     void Update()
     {
+        if(Time.time >= timeToResetChain && playerStats.currentChain != ELC_PlayerStatManager.Chain.Blue)
+        {
+            
+            ResetChain();
+        }
         attackPoint = transform.position + lastDirection.normalized*playerStats.SwichAreaRadius;
         if (Input.GetAxisRaw("Dash") != 1)
         {
@@ -234,12 +242,14 @@ public class ELC_PlayerMoves : MonoBehaviour
         {
             playerAnimator.SetFloat("DirectionAxeX", Mathf.Clamp(lastDirection.x, -1, 1));
             playerAnimator.SetFloat("DirectionAxeY", Mathf.Clamp(lastDirection.y, -1, 1));
+            playerAnimator.SetInteger("Color", (int)playerStats.currentChain);
             //Le numéro 1 de PlayerSide correspond aux anim de Front, le 2 aux anims de SideFront, le 3 aux anims de Back, le 4 aux anims de Sideback et le 5 aux anims de Sides
             if (PlayerSide == Sides.Front) playerAnimator.SetInteger("PlayerSide", 1);
             else if (PlayerSide == Sides.RightFront || PlayerSide == Sides.LeftFront) playerAnimator.SetInteger("PlayerSide", 2);
             else if (PlayerSide == Sides.Back) playerAnimator.SetInteger("PlayerSide", 3);
             else if (PlayerSide == Sides.RightBack || PlayerSide == Sides.LeftBack) playerAnimator.SetInteger("PlayerSide", 4);
             else playerAnimator.SetInteger("PlayerSide", 5);
+
 
             //Vu qu'il y a qu'une anim de côté droit, il faut flip le sprite pour qu'elle fasse aussi anim du côté gauche
             if (PlayerSide == Sides.Left || PlayerSide == Sides.LeftBack || PlayerSide == Sides.LeftFront)
@@ -262,8 +272,16 @@ public class ELC_PlayerMoves : MonoBehaviour
         if (name.Equals("SwishAttack") || name.Equals("SponkAttack"))
         {
             yield return new WaitForSeconds(time /playerAnimator.GetFloat("AnimationSpeedMultiplier")); // Sert à arrêter l'animation au bon moment, peu importe sa vitesse
-
-        }else
+            if (attackLanded && playerStats.currentHitChain % playerStats.hitToNextChain == 0 && playerStats.currentHitChain != 0)
+            {
+                if (playerStats.currentChain != ELC_PlayerStatManager.Chain.Red)
+                {
+                    playerStats.currentChain++;
+                }
+                attackLanded = false;
+            }
+        }
+        else
         {
             yield return new WaitForSeconds(time);
         }
@@ -313,14 +331,58 @@ public class ELC_PlayerMoves : MonoBehaviour
         else if (isDashing) player.Translate(dashVector); //Ici on bouge si tout va bien
     }
 
+    public void ResetChain(ELC_PlayerStatManager.Chain chain = ELC_PlayerStatManager.Chain.Blue)
+    {
+        playerStats.currentChain = chain;
+        if (chain == ELC_PlayerStatManager.Chain.Blue)
+        {
+            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorBlue;
+        }
+        else if (chain == ELC_PlayerStatManager.Chain.Orange)
+        {
+            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorOrange;
+        }
+        else if (chain == ELC_PlayerStatManager.Chain.Red)
+        {
+            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorRed;
+        }
+        playerStats.currentHitChain = 0;
+    }
 
     IEnumerator SponkAttackAnimation()
     {
-
+        float dashDistanceMultiplicator = 1;
+        if(playerStats.currentChain == ELC_PlayerStatManager.Chain.Blue)
+        {
+            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorBlue;
+            dashDistanceMultiplicator = playerStats.DashMultiplicatorBlue;
+        }else if(playerStats.currentChain == ELC_PlayerStatManager.Chain.Orange)
+        {
+            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorOrange;
+            dashDistanceMultiplicator = playerStats.DashMultiplicatorOrange;
+        }
+        else if(playerStats.currentChain == ELC_PlayerStatManager.Chain.Red)
+        {
+            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorRed;
+            dashDistanceMultiplicator = playerStats.DashMultiplicatorRed;
+        }
         StartCoroutine(PlayAnimation("SponkAttack", playerStats.AnimationSponkTime, false, false));
         nextSponkAttackTime = Time.time + 1f / playerStats.SponkAttackRate;
         yield return new WaitForSeconds(playerAnimator.GetCurrentAnimatorStateInfo(0).length * 1 / 4);
-        Dash(playerStats.ThrustDashDistance, playerStats.ThrustDashTime);
+        Dash(playerStats.SponkDashDistance * dashDistanceMultiplicator, playerStats.SponkDashTime);
+        yield return new WaitForSeconds(playerAnimator.GetCurrentAnimatorStateInfo(0).length);
+        if (attackLanded && playerStats.currentHitChain % playerStats.hitToNextChain == 0 && playerStats.currentHitChain !=0)
+        {
+            if (playerStats.currentChain != ELC_PlayerStatManager.Chain.Red)
+            {
+                playerStats.currentChain++;
+            }
+            attackLanded = false;
+        }
+
+        Debug.Log("Coucou");
+        ResetChain();
+
 
     }
     private void OnDrawGizmosSelected()
@@ -328,7 +390,7 @@ public class ELC_PlayerMoves : MonoBehaviour
 
         if (attackPoint != null)
         {
-            //Gizmos.DrawWireCube(attackPoint, new Vector3(thrustWidth, thrustlength, 0));
+            //Gizmos.DrawWireCube(attackPoint, new Vector3(playerStats.SponkWidth, playerStats.Sponklength, 0));
             Gizmos.DrawWireSphere(attackPoint, playerStats.SwichAreaRadius);
         }
 
