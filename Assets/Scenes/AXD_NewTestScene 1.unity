@@ -2649,6 +2649,11 @@ PrefabInstance:
       propertyPath: SponkDashDistance
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: chainTime
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 1154282071691469226, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: m_SortingOrder
@@ -2667,7 +2672,7 @@ PrefabInstance:
     - target: {fileID: 1154282071691469226, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: m_WasSpriteAssigned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2124271741732407899, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
@@ -9111,7 +9116,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1687691763
 Transform:
   m_ObjectHideFlags: 0
