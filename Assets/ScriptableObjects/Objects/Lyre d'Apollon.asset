@@ -16,21 +16,15 @@ MonoBehaviour:
   Strenght: 0
   cooldown: 10
   quantity: 3
-  thrownableObject: 0
-  speedOfTheObject: 0
-  timeBeforeTouchingGround: 0
-  placableObject: 0
   FriendlyFire: 0
   stun: 1
   knockback: 0
-  timeBeforeDestruct: 0
+  timeBeforeTouchGround: 3
+  distanceToThrown: 2
+  timeBeforeDestruct: 10
   destructWhenSomeoneTouchIt: 0
   explodeOnDestruct: 0
-  instantiateSomething: 0
-  objectToInstantiate: {fileID: 0}
-  numberOfObjectsToInstantiate: 0
-  damageAreaConstantly: 0
-  rangeOfDamages: 0
+  actionArea: 0
   ObjectsScript: {fileID: 0}
   HUDSprite: {fileID: 0}
   Animator: {fileID: 0}

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Wall
+  - PowerUp
+  - Object
+  - Collectible
   layers:
   - Default
   - TransparentFX
