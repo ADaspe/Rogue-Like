@@ -14,7 +14,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     public ELC_PlayerStatManager playerStats;
     public PlayerHealth playerHealth;
     [SerializeField]
-    private Animation sponkAnimation;
+    private GameObject DashParticles;
     private Animator playerAnimator;
     private SpriteRenderer playerSpriteRenderer;
     [SerializeField]
@@ -303,6 +303,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         if (!isDashing)
         {
             StartCoroutine(PlayAnimation("isDashing", playerStats.AnimationDashTime, false, false));
+            DashParticles.GetComponent<ParticleSystem>().Play();
             playerStats.invulnerability = true;
             currentDistance = distance;
             currentTime = time;
@@ -324,6 +325,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         if (Time.time > stopDash || isDashingInWall)
         {
             StopAnimation("isDashing");
+            DashParticles.GetComponent<ParticleSystem>().Stop();
             isDashing = false;
             canMove = true;
             playerStats.invulnerability = false;
