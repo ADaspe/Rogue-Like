@@ -10,6 +10,7 @@ public class ELC_RoomProperties : MonoBehaviour
     public bool openTopDoor;
     public bool openDownDoor;
 
+    public bool IsStartRoom;
     public bool RoomIsClosed;
     public bool HasBeenInitialised;
     public bool Loaded;
@@ -91,10 +92,11 @@ public class ELC_RoomProperties : MonoBehaviour
         else
         {
             EnemiesCheck();
-            if(enemiesAlive.Count == 0)
+            if(enemiesAlive.Count == 0 && !roomIsClear)
             {
                 Debug.Log("Room clear !");
                 DoorsState(false);
+                roomIsClear = true;
             }
         }
 

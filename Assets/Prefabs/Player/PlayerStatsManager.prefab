@@ -44,27 +44,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  invulnerabilty: 0
+  invulnerability: 0
   LifeDecreaseSpeed: 1
   LifeStopDecrease: 10
   MaxHealth: 100
   Resistance: 0
   currentHealth: 0
-  maxStock: 0
+  maxStock: 100
   currentStock: 0
-  healingRate: 0
-  DashDistance: 2.5
-  DashSpeed: 0.2
-  SwichDashDistance: 0.5
+  healingRate: 1
+  DashDistance: 5
+  DashTime: 0.2
+  SwichDashDistance: 1
   SwichDashTime: 0.1
-  ThrustDashDistance: 1
-  ThrustDashTime: 0.15
-  AttackRate: 6
-  AttackMultiplicator: 0
+  SponkDashDistance: 5
+  SponkDashTime: 0.1
+  SwichAttackRate: 4
+  SponkAttackRate: 0.5
+  SwichKnockbackDistance: 1
+  SwichStunTime: 0.5
+  SponkKnockbackDistance: 1.5
+  SponkStunTime: 1
+  AttackMultiplicator: 1
   CurrentCombo: 0
   MaxCombo: 200
-  SwichDamage: 50
+  ComboResetTime: 15
+  colateralDamage: 30
+  mainTargetKnockBack: 100
+  currentChain: 0
+  hitToNextChain: 3
+  currentHitChain: 0
+  chainTime: 2
+  damageMultiplicatorBlue: 1
+  KnockbackMultiplicatorBlue: 1
+  DashMultiplicatorBlue: 1
+  damageMultiplicatorOrange: 2
+  KnockbackMultiplicatorOrange: 2
+  DashMultiplicatorOrange: 2
+  damageMultiplicatorRed: 3
+  KnockbackMultiplicatorRed: 3
+  DashMultiplicatorRed: 3
+  SwichDamage: 200
   SwichAreaRadius: 1.2
-  ThrustDamage: 50
-  ThrustWidth: 0.8
-  Thrustlength: 2
+  SponkDamage: 350
+  SponkWidth: 0
+  Sponklength: 0
+  AnimationDashTime: 0.4
+  AnimationSwichTime: 0.4
+  AnimationSponkTime: 1.5
