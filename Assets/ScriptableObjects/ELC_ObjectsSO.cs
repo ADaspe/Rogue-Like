@@ -10,10 +10,13 @@ public class ELC_ObjectsSO : ScriptableObject
     public float cooldown;
     public int quantity;
 
-    public bool FriendlyFire;
+    public LayerMask LayerMask;
     public bool stun;
+    public float stunTime;
     public bool knockback;
+    public float knockbackDistance;
 
+    public float numberOfTriggers;
     public float timeBeforeTouchGround;
     public float distanceToThrown;
     public float timeBeforeDestruct;
