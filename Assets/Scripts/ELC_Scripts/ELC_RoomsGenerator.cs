@@ -9,16 +9,18 @@ public class ELC_RoomsGenerator : MonoBehaviour
     public int arrayDimentionX;
     public int arrayDimentionY;
 
-
     public int distanceBtwRoomsX;
     public int distanceBtwRoomsY;
 
     public float timeToWait;
     public bool isInACoroutine;
 
+    public GameObject CoreElements;
+
     private enum Directions { Right, Left, Top, Down};
 
     public GameObject roomChecker;
+    public GameObject startRoom;
 
     public List<GameObject> roomsList;
     public List<GameObject> testsRoomsList;
@@ -63,6 +65,11 @@ public class ELC_RoomsGenerator : MonoBehaviour
         {
             yield return new WaitForSeconds(timeToWait);
             SpawnRandomRoom(checkersArray[randomPoints[i], i], roomsList, true, true, true, true, true);
+            if (i == 0) //La première room
+            {
+                startRoom = checkersArray[randomPoints[i], i]; //On assigne la première room en tant que startRoom
+                startRoom.GetComponent<ELC_RoomProperties>().IsStartRoom = true;
+            }
         }
 
         StartCoroutine("JunctionsBtwRandomPoints");
@@ -77,6 +84,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
         StartCoroutine("DoorsCheck");
 
         yield return new WaitWhile(() => isInACoroutine == true);
+        Instantiate(CoreElements, startRoom.transform.position + new Vector3(0, distanceBtwRoomsY / 2), Quaternion.identity);
         Debug.Log("Finish !");
     }
 
@@ -244,9 +252,10 @@ public class ELC_RoomsGenerator : MonoBehaviour
                     {
                         //Debug.Log("Room detected at the " + dir + " of " + checker.name);
                         //Dans la direction voulue : s'il y a une room ET si c'est à gauche OU droite OU que la room adjacente a "isAnAngleRoom" en true et qu'on vérifie le bas OU que la room actuelle est une AngleRoom et qu'on vérifie la direction Top alors on ouvre, ça permet de pas avoir d'ouverture en haut/bas lorque c'est un couloir
-                        if (adjacentChecker.GetComponent<ELC_RoomProperties>().thereIsRoom && (dir == Directions.Left || dir == Directions.Right || (adjacentChecker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && dir == Directions.Down) || (checker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && dir == Directions.Top)/*(checker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && (dir == Directions.Top || adjacentChecker.GetComponent<ELC_RoomProperties>().isAnAngleRoom))*/)) DoorState(checker, true, dir); 
+                        if (adjacentChecker.GetComponent<ELC_RoomProperties>().thereIsRoom && (dir == Directions.Left || dir == Directions.Right || (adjacentChecker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && dir == Directions.Down) || (checker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && dir == Directions.Top))) DoorState(checker, true, dir); 
                         else DoorState(checker, false, dir); //On supprime la porte à cet endroit
                     }
+                    else if (checker.GetComponent<ELC_RoomProperties>().IsStartRoom && dir == Directions.Top) DoorState(checker, true, dir); //SI c'est la salle Start on laisse la porte nord ouverte
                     else //S'il n'y a pas de checker
                     {
                         DoorState(checker, false, dir); //On supprime la porte à cet endroit
