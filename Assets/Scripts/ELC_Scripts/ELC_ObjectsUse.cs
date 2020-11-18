@@ -5,17 +5,21 @@ using UnityEngine;
 public class ELC_ObjectsUse : MonoBehaviour
 {
     public ELC_ObjectsSO ObjectsScriptableObject;
+    public ELC_ObjectsProperties ObjectPropScript;
 
     private GameObject player;
 
-    private bool isThrowingObject;
+    public bool isThrowingObject;
     public bool ObjectIsActivated;
 
     private Vector2 directionToThrown;
 
-    private int quantity;
+    private LayerMask layerMask;
 
-    
+    private void Start()
+    {
+        layerMask = ObjectsScriptableObject.LayerMask;
+    }
 
     private void Update()
     {
@@ -29,6 +33,7 @@ public class ELC_ObjectsUse : MonoBehaviour
         StartCoroutine("ThrownObject");
 
         yield return new WaitWhile(() => isThrowingObject == false);
+        ObjectPropScript.Use(ObjectsScriptableObject.Name);
         StartCoroutine("LifeDuration");
     }
 
@@ -45,6 +50,22 @@ public class ELC_ObjectsUse : MonoBehaviour
         yield return new WaitForSeconds(ObjectsScriptableObject.timeBeforeDestruct);
         ObjectIsActivated = false;
         Destroy(this.gameObject);
+    }
+
+    public List<GameObject> DetectionArea(LayerMask layerMask, float radius) //Retourne une List des gameObjects qui sont dans la zone de détection
+    {
+        List<GameObject> TargetsList = new List<GameObject>();
+        Collider2D[] colliders;
+
+        colliders = Physics2D.OverlapCircleAll(this.transform.position, radius, layerMask);
+
+        int i = 0;
+        foreach (Collider2D cl in colliders)
+        {
+            TargetsList.Add(cl.gameObject);
+            i++;
+        }
+        return TargetsList;
     }
 
 }
