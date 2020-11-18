@@ -63,7 +63,7 @@ MonoBehaviour:
   SponkAttackRate: 0.5
   SwichKnockbackDistance: 1
   SwichStunTime: 0.5
-  SponkKnockbackDistance: 1.5
+  SponkKnockbackDistance: 3
   SponkStunTime: 1
   AttackMultiplicator: 1
   CurrentCombo: 0
@@ -81,9 +81,9 @@ MonoBehaviour:
   damageMultiplicatorOrange: 2
   KnockbackMultiplicatorOrange: 2
   DashMultiplicatorOrange: 2
-  damageMultiplicatorRed: 3
-  KnockbackMultiplicatorRed: 3
-  DashMultiplicatorRed: 3
+  damageMultiplicatorRed: 2
+  KnockbackMultiplicatorRed: 2
+  DashMultiplicatorRed: 2
   SwichDamage: 200
   SwichAreaRadius: 1.2
   SponkDamage: 350

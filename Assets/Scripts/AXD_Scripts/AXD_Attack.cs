@@ -67,7 +67,7 @@ public class AXD_Attack : MonoBehaviour
                 }
                 else if (type.Equals(AttackType.Sponk.ToString()))
                 {
-                    closestEnemy.GetHit(CalculateDamage(AttackType.Sponk), closestEnemy.movesTowardPlayer, playerStats.SponkKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SponkStunTime);
+                    closestEnemy.GetHit(CalculateDamage(AttackType.Sponk), closestEnemy.movesTowardPlayer, playerStats.SponkKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SponkStunTime, true);
                 }
                 
             }

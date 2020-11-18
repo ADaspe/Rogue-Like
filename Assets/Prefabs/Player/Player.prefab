@@ -103,6 +103,7 @@ MonoBehaviour:
   attackPoint: {x: 0, y: 0, z: 0}
   playerStats: {fileID: 782464527650891043}
   playerHealth: {fileID: 8934949276138899172}
+  attack: {fileID: 1478753435661380681}
   DashParticles: {fileID: 7084529617503343625}
   bodyHitMask:
     serializedVersion: 2
@@ -465,6 +466,21 @@ PrefabInstance:
         type: 3}
       propertyPath: ThrustDamage
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: damageMultiplicatorOrange
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: KnockbackMultiplicatorOrange
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: DashMultiplicatorOrange
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6958aa080a4c5439913b983ac56050, type: 3}
