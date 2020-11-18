@@ -19,7 +19,7 @@ public class ELC_Enemy : MonoBehaviour
     private bool isDashing;
     private float stopDashing;
     private float attackCooldown; // le cooldown entre chaque attaque
-    private Vector3 movesTowardPlayer;
+    public Vector3 movesTowardPlayer;
     private Vector3 fleePlayer;
     private Vector3 directionToDash;
 
@@ -28,7 +28,7 @@ public class ELC_Enemy : MonoBehaviour
     private float currentDashTime;
 
     private const float knockbackTime = 0.2f;
-    private bool isStun;
+    public bool isStun;
 
     private bool isTouchingRight;
     private bool isTouchingLeft;
@@ -366,13 +366,20 @@ public class ELC_Enemy : MonoBehaviour
         isStun = false;
 
     }
-    public void GetHit(int Damage, float knockbackDistance = 0, float stunTime = 0)
+    public void GetHit(int Damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0)
     {
 
         currentHealth -= Damage;
 
-        Dash(-movesTowardPlayer, knockbackTime, knockbackDistance);
-        Stun(stunTime);
+        Dash(-directionToFlee, knockbackTime, knockbackDistance);
+        if (!isStun)
+        {
+            StartCoroutine(Stun(stunTime));
+            StopCoroutine("Attack");
+            enemyAnimator.SetBool("IsPreparingForAttack", false);
+            enemyAnimator.SetBool("IsAttacking", false);
+            canMove = true;
+        }
         if(currentHealth <= 0)
         {
             Destroy(this.gameObject);

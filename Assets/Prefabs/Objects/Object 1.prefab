@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4f2f091ae56bb54a8769292c7ac81b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectsScriptableObject: {fileID: 11400000, guid: ee894ebe485ffbc4c87ad12e733d7e7d,
+  ObjectsScriptableObject: {fileID: 11400000, guid: 979bd28d70ed36248b9c8ee1364c4e05,
     type: 2}
+  ObjectPropScript: {fileID: 8769378639941674493}
   ObjectIsActivated: 0
 --- !u!114 &8769378639941674493
 MonoBehaviour:
