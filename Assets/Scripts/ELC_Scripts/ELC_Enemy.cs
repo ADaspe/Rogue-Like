@@ -29,7 +29,7 @@ public class ELC_Enemy : MonoBehaviour
 
     private const float knockbackTime = 0.2f;
     public bool isStun;
-
+    public bool isInvulnerable;
     private bool isTouchingRight;
     private bool isTouchingLeft;
     private bool isTouchingTop;
@@ -359,26 +359,36 @@ public class ELC_Enemy : MonoBehaviour
         transform.Translate(directionVector * Time.deltaTime);
     }
 
-    IEnumerator Stun(float time)
+    IEnumerator Stun(float time, bool invulnerable = false)
     {
         isStun = true;
+        if (invulnerable)
+        {
+            isInvulnerable = true;
+        }
         yield return new WaitForSeconds(time);
+        if (isInvulnerable)
+        {
+            isInvulnerable = false;
+        }
         isStun = false;
 
     }
-    public void GetHit(int Damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0)
+    public void GetHit(int Damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0, bool invulnerable = false)
     {
-
-        currentHealth -= Damage;
-
-        Dash(-directionToFlee, knockbackTime, knockbackDistance);
-        if (!isStun)
+        if (!isInvulnerable)
         {
-            StartCoroutine(Stun(stunTime));
-            StopCoroutine("Attack");
-            enemyAnimator.SetBool("IsPreparingForAttack", false);
-            enemyAnimator.SetBool("IsAttacking", false);
-            canMove = true;
+            currentHealth -= Damage;
+
+            Dash(-directionToFlee, knockbackTime, knockbackDistance);
+            if (!isStun)
+            {
+                StartCoroutine(Stun(stunTime, invulnerable));
+                StopCoroutine("Attack");
+                enemyAnimator.SetBool("IsPreparingForAttack", false);
+                enemyAnimator.SetBool("IsAttacking", false);
+                canMove = true;
+            }
         }
         if(currentHealth <= 0)
         {
