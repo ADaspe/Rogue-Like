@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4605,7 +4605,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 29.974983, y: 20.012793}
+  m_Size: {x: 31.115505, y: 24.223951}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4619,7 +4619,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111523752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.927, y: 0.012, z: 0}
+  m_LocalPosition: {x: 5.498, y: 2.118, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9066,6 +9066,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1986045552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6591578456805706473, guid: f523f809c561ee54dac7c3e8ae7438f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1107614495669798716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1993967421 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8780946386146991583, guid: a75d429217e2f574c88dcd23b455145b,
@@ -9927,6 +9933,41 @@ PrefabInstance:
       propertyPath: SponkStunTime
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 397678874362256133, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: SwichSlowMotionValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 397678874362256133, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: SwichSlowMotionDuration
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 397678874362256133, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: SponkSlowMotionValue
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 397678874362256133, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: SponkSlowMotionDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 397678874362256133, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: SwitchChainSlowMotionValue
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 397678874362256133, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: SwitchChainSwlowMotionDuration
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 397678874362256133, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: SwitchChainSlowMotionDuration
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1107614495702916056, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10037,6 +10078,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2710216975825318081, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1986045552}
     - target: {fileID: 3309051798516484456, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_AnchorMax.x

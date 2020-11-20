@@ -13,6 +13,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     public ELC_PlayerStatManager playerStats;
     public PlayerHealth playerHealth;
     public AXD_Attack attack;
+    public GameObject gameManager;
 
     [SerializeField]
     private GameObject DashParticles;
@@ -280,6 +281,7 @@ public class ELC_PlayerMoves : MonoBehaviour
             {
                 if (playerStats.currentChain != ELC_PlayerStatManager.Chain.Red)
                 {
+                    gameManager.GetComponent<ELC_TimeScale>().ScaleTime(playerStats.SwitchChainSlowMotionValue, playerStats.SwitchChainSlowMotionDuration);
                     playerStats.currentChain++;
                 }
                 attackLanded = false;
