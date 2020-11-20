@@ -16,7 +16,7 @@ MonoBehaviour:
   MaxHealth: 2000
   MovementSpeed: 3
   EnemyPath: 0
-  LimitDistanceToStay: 1.5
+  LimitDistanceToStay: 1.2
   NeedTimeToTurn: 0
   TurnSpeed: 0
   FriendlyFire: 0

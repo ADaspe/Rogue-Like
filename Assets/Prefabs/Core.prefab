@@ -34,19 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5058672617927314387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6591578456805706473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f972b56ef636ac64b9c12afe1354aada, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CinemachineCam: {fileID: 4856428381395182597}
 --- !u!1001 &1107614495140986406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -84,6 +71,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1478753435661380681, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: GameManager
+      value: 
+      objectReference: {fileID: 6591578456805706473}
     - target: {fileID: 2124271741732407899, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: attackRate
@@ -139,6 +131,11 @@ PrefabInstance:
       propertyPath: currentTime
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3081472017539436263, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 6591578456805706473}
     - target: {fileID: 3282318346991483589, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: m_Name
@@ -593,6 +590,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9015936277933386134, guid: 7be7f9b4c063d3f43bfc8fd714b8fdb8,
+        type: 3}
+      propertyPath: CinemachineCam
+      value: 
+      objectReference: {fileID: 4856428381395182597}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be7f9b4c063d3f43bfc8fd714b8fdb8, type: 3}
 --- !u!1 &6591578456805706473 stripped

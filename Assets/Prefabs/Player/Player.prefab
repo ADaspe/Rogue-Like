@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RightHandObject: {fileID: 0}
+  quantityObject1: 0
   LeftHandObject: {fileID: 0}
+  quantityObject2: 0
 --- !u!1 &2688090400881246045
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,10 +291,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41b6a018d8d6ca7478c13acef376629b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slowMotionValue: 0.2
+  slowMotionDuration: 0.5
   player: {fileID: 3081472017539436263}
   playerStats: {fileID: 782464527650891043}
   playerMoney: {fileID: 6115952892813048268}
   playerHealth: {fileID: 8934949276138899172}
+  GameManager: {fileID: 0}
   nextResetCombo: 0
 --- !u!114 &8934949276138899172
 MonoBehaviour:
@@ -432,7 +437,7 @@ GameObject:
   - component: {fileID: 3136084026634944863}
   - component: {fileID: 1801891529247809857}
   m_Layer: 0
-  m_Name: CM vcam1
+  m_Name: Cinemachine Cam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

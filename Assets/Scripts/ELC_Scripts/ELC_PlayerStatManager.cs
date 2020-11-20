@@ -33,8 +33,12 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float SponkAttackRate;
     public float SwichKnockbackDistance;
     public float SwichStunTime;
+    public float SwichSlowMotionValue;
+    public float SwichSlowMotionDuration;
     public float SponkKnockbackDistance;
     public float SponkStunTime;
+    public float SponkSlowMotionValue;
+    public float SponkSlowMotionDuration;
     public float AttackMultiplicator;
     public float CurrentCombo;
     public float MaxCombo;
@@ -71,6 +75,8 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float KnockbackMultiplicatorRed;
     [Range(1, 5)]
     public float DashMultiplicatorRed;
+    public float SwitchChainSlowMotionValue;
+    public float SwitchChainSlowMotionDuration;
 
 
 
