@@ -25,20 +25,18 @@ public class ELC_ObjectsProperties : MonoBehaviour
     {
         if (name == "Trident de Poséidon")
         {
-            StartCoroutine("Poseidon");
+            Poseidon();
         }
     }
 
-    IEnumerator Poseidon()
+    void Poseidon()
     {
         List<GameObject> Targets = ObjectsUseScript.DetectionArea(ObjectSO.LayerMask, ObjectSO.actionArea);
         foreach (GameObject t in Targets)
         {
             Vector3 direction = this.transform.position - t.transform.position;
             t.GetComponent<ELC_Enemy>().GetHit(0, direction, ObjectSO.knockbackDistance, ObjectSO.stunTime);
-        }
-        yield return new WaitForSeconds(ObjectSO.timeBeforeDestruct / ObjectSO.numberOfTriggers);
-        StartCoroutine("Poseidon");
+        }        
     }
 
 

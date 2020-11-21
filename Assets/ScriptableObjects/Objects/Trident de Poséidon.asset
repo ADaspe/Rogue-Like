@@ -15,18 +15,18 @@ MonoBehaviour:
   Name: "Trident de Pos\xE9idon"
   Strenght: 0
   cooldown: 0
-  quantity: 0
+  quantity: 2
   LayerMask:
     serializedVersion: 2
     m_Bits: 1024
   stun: 1
-  stunTime: 5
+  stunTime: 1
   knockback: 1
   knockbackDistance: 3
   numberOfTriggers: 1
-  timeBeforeTouchGround: 1
-  distanceToThrown: 0
-  timeBeforeDestruct: 10
+  timeBeforeTouchGround: 0.1
+  distanceToThrown: 1
+  timeBeforeDestruct: 0
   destructWhenSomeoneTouchIt: 0
   explodeOnDestruct: 0
   actionArea: 5
