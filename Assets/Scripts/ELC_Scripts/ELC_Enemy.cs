@@ -142,16 +142,19 @@ public class ELC_Enemy : MonoBehaviour
         playerIsInWall = true;
         Debug.Log(enemyStats.Name + " is trying to escape from a wall.");
         Vector3 vectorDirection = new Vector3(0,0);
-        if (isTouchingRight) vectorDirection.x = -speed;
-        if (isTouchingLeft) vectorDirection.x = speed;
-        if (isTouchingTop) vectorDirection.y = -speed;
-        if (isTouchingDown) vectorDirection.y = speed;
+        //if (isTouchingRight) vectorDirection.x = -speed;
+        //if (isTouchingLeft) vectorDirection.x = speed;
+        //if (isTouchingTop) vectorDirection.y = -speed;
+        //if (isTouchingDown) vectorDirection.y = speed;
 
-        if (isTouchingTop && isTouchingLeft && isTouchingRight) vectorDirection = new Vector3(0, speed);
-        if (isTouchingDown && isTouchingLeft && isTouchingRight) vectorDirection = new Vector3(0, speed);
-        if (isTouchingLeft && isTouchingDown && isTouchingTop) vectorDirection = new Vector3(speed, 0);
-        if (isTouchingRight && isTouchingDown && isTouchingTop) vectorDirection = new Vector3(-speed, 0);
-        transform.Translate(vectorDirection * Time.deltaTime);
+        //if (isTouchingTop && isTouchingLeft && isTouchingRight) vectorDirection = new Vector3(0, speed);
+        //if (isTouchingDown && isTouchingLeft && isTouchingRight) vectorDirection = new Vector3(0, speed);
+        //if (isTouchingLeft && isTouchingDown && isTouchingTop) vectorDirection = new Vector3(speed, 0);
+        //if (isTouchingRight && isTouchingDown && isTouchingTop) vectorDirection = new Vector3(-speed, 0);
+
+        CalculateVectorTowardPlayer();
+
+        transform.Translate(movesTowardPlayer /** Time.deltaTime*/);
     }
 
     void EnemyAttackCheck()
@@ -271,7 +274,7 @@ public class ELC_Enemy : MonoBehaviour
 
         fleePlayer = -movesTowardPlayer;
 
-        movesTowardPlayer = ClampIfTouchSomething(movesTowardPlayer, speed);
+        if(!playerIsInWall) movesTowardPlayer = ClampIfTouchSomething(movesTowardPlayer, speed);
         fleePlayer = ClampIfTouchSomething(fleePlayer, speed);
     }
 
@@ -282,10 +285,23 @@ public class ELC_Enemy : MonoBehaviour
         //Debug.Log(enemyStats.name + " attaque !");
         enemyAnimator.SetBool("IsPreparingForAttack", false);
         enemyAnimator.SetBool("IsAttacking", true);
+        if (enemyStats.DistanceAttack) DistanceAttack();
         if (enemyStats.DashOnPlayer) Dash(directionToDash, enemyStats.DashTime, enemyStats.DistanceToRun);
         canMove = true;
         yield return new WaitForSeconds(enemyStats.AttackAnimationTime);
         enemyAnimator.SetBool("IsAttacking", false);
+    }
+
+    private void DistanceAttack()
+    {
+        CalculateVectorTowardPlayer();
+        GameObject projectile;
+        projectile = Instantiate(enemyStats.Projectile, this.transform.position, Quaternion.identity);
+        projectile.GetComponent<ELC_Projectiles>().direction = movesTowardPlayer;
+        projectile.GetComponent<ELC_Projectiles>().lifeDuration = enemyStats.ProjectileDurability;
+        projectile.GetComponent<ELC_Projectiles>().strenght = enemyStats.ProjectileStrenght;
+        projectile.GetComponent<ELC_Projectiles>().speed = enemyStats.ProjectileSpeed;
+        projectile.GetComponent<ELC_Projectiles>().StartCoroutine("LifeDuration");
     }
 
     private void VerifyIfIsAtDistance()
