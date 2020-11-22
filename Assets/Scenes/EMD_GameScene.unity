@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3766,6 +3766,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ObjectGenerator (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3551846454233943803, guid: ef0fb53a7977cad459e914116453865e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef0fb53a7977cad459e914116453865e, type: 3}
 --- !u!1001 &813978539
@@ -3889,6 +3894,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1692105058426714500, guid: 0583945f9ccc0ca49b96f730862947ba,
+        type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1692105058426714503, guid: 0583945f9ccc0ca49b96f730862947ba,
         type: 3}
@@ -5397,6 +5407,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ObjectGenerator (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3551846454233943803, guid: ef0fb53a7977cad459e914116453865e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef0fb53a7977cad459e914116453865e, type: 3}
@@ -9163,19 +9178,20 @@ PrefabInstance:
         type: 3}
       propertyPath: objectsList.Array.data[0]
       value: 
-      objectReference: {fileID: 2148857145838052542, guid: e92a72e0dcedde944886188f85b5d608,
+      objectReference: {fileID: 8045569436985633229, guid: 4b4915f0c67061e45a7af3b85f8507c1,
         type: 3}
     - target: {fileID: 3551846454233943802, guid: ef0fb53a7977cad459e914116453865e,
         type: 3}
       propertyPath: objectsList.Array.data[1]
       value: 
-      objectReference: {fileID: 3456645754019736596, guid: 690e085c5fac56248b4bf550d707dd5a,
+      objectReference: {fileID: 8045569436985633229, guid: 4b4915f0c67061e45a7af3b85f8507c1,
         type: 3}
     - target: {fileID: 3551846454233943802, guid: ef0fb53a7977cad459e914116453865e,
         type: 3}
       propertyPath: objectsList.Array.data[2]
       value: 
-      objectReference: {fileID: 205484606}
+      objectReference: {fileID: 8045569436985633229, guid: 4b4915f0c67061e45a7af3b85f8507c1,
+        type: 3}
     - target: {fileID: 3551846454233943802, guid: ef0fb53a7977cad459e914116453865e,
         type: 3}
       propertyPath: spawnChance.Array.data[2]
