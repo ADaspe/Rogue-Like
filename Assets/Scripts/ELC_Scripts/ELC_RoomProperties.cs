@@ -160,41 +160,42 @@ public class ELC_RoomProperties : MonoBehaviour
 
     public void UpdateCorridors()
     {
-        if(openLeftDoor)
-        {
-            LeftCorridor.SetActive(true);
-        }
-        else
-        {
-            LeftCorridor.SetActive(false);
-        }
+        //Ouvrir/fermer les corridors
+        //if(openLeftDoor)
+        //{
+        //    LeftCorridor.SetActive(true);
+        //}
+        //else
+        //{
+        //    LeftCorridor.SetActive(false);
+        //}
 
-        if(openRightDoor)
-        {
-            RightCorridor.SetActive(true);
-        }
-        else
-        {
-            RightCorridor.SetActive(false);
-        }
+        //if(openRightDoor)
+        //{
+        //    RightCorridor.SetActive(true);
+        //}
+        //else
+        //{
+        //    RightCorridor.SetActive(false);
+        //}
 
-        if(openTopDoor)
-        {
-            TopCorridor.SetActive(true);
-        }
-        else
-        {
-            TopCorridor.SetActive(false);
-        }
+        //if(openTopDoor)
+        //{
+        //    TopCorridor.SetActive(true);
+        //}
+        //else
+        //{
+        //    TopCorridor.SetActive(false);
+        //}
 
-        if(openDownDoor)
-        {
-            DownCorridor.SetActive(true);
-        }
-        else
-        {
-            DownCorridor.SetActive(false);
-        }
+        //if(openDownDoor)
+        //{
+        //    DownCorridor.SetActive(true);
+        //}
+        //else
+        //{
+        //    DownCorridor.SetActive(false);
+        //}
 
         openSides.Add(openLeftDoor);
         openSides.Add(openRightDoor);

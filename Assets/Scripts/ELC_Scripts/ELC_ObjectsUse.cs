@@ -32,7 +32,7 @@ public class ELC_ObjectsUse : MonoBehaviour
         directionToThrown = player.GetComponent<ELC_PlayerMoves>().lastDirection.normalized;
         StartCoroutine("ThrownObject");
 
-        yield return new WaitWhile(() => isThrowingObject == false);
+        yield return new WaitWhile(() => isThrowingObject == true);
         ObjectPropScript.Use(ObjectsScriptableObject.Name);
         StartCoroutine("LifeDuration");
     }

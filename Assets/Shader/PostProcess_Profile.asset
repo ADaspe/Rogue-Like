@@ -345,11 +345,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81180773991d8724ab7f2d216912b564, type: 3}
   m_Name: ChromaticAberration
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0.195
     min: 0
     max: 1
 --- !u!114 &1408907845838755064
@@ -368,15 +368,15 @@ MonoBehaviour:
   m_AdvancedMode: 0
   threshold:
     m_OverrideState: 1
-    m_Value: 0.69
+    m_Value: 0.62
     min: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.12
+    m_Value: 0.93
     min: 0
   scatter:
     m_OverrideState: 1
-    m_Value: 0.655
+    m_Value: 0.61
     min: 0
     max: 1
   clamp:
@@ -385,7 +385,7 @@ MonoBehaviour:
     min: 0
   tint:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 0.5794894, b: 0.3066038, a: 1}
+    m_Value: {r: 0.10346207, g: 0.75980157, b: 0.8773585, a: 1}
     hdr: 0
     showAlpha: 0
     showEyeDropper: 1
@@ -393,11 +393,11 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   dirtTexture:
-    m_OverrideState: 1
-    m_Value: {fileID: 2800000, guid: dd91d06b39ab6db48974409beafe5d94, type: 3}
+    m_OverrideState: 0
+    m_Value: {fileID: 2800000, guid: b8a9b34d2ad99e941b31110ca4b4aa29, type: 3}
   dirtIntensity:
-    m_OverrideState: 1
-    m_Value: 3.99
+    m_OverrideState: 0
+    m_Value: 7.18
     min: 0
 --- !u!114 &4290860179860813150
 MonoBehaviour:
@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f335fb1ffd8684294ad653bf1c7564, type: 3}
   m_Name: ColorAdjustments
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
