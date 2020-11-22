@@ -26,6 +26,12 @@ TextureImporter:
   - first:
       213: -4183377209313042184
     second: Shadow_3
+  - first:
+      213: -914827505574848917
+    second: Shadow_4
+  - first:
+      213: 306969897189985313
+    second: Shadow_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -69,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 25
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -192,10 +198,10 @@ TextureImporter:
       name: Shadow_2
       rect:
         serializedVersion: 2
-        x: 281
-        y: 45
-        width: 13
-        height: 7
+        x: 180
+        y: 44
+        width: 21
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,6 +219,48 @@ TextureImporter:
       name: Shadow_3
       rect:
         serializedVersion: 2
+        x: 205
+        y: 44
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f06e65b798a1f5c0800000000000000
+      internalID: -4183377209313042184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow_4
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 45
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b66547b0b31ed43f0800000000000000
+      internalID: -914827505574848917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shadow_5
+      rect:
+        serializedVersion: 2
         x: 396
         y: 45
         width: 13
@@ -224,8 +272,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f06e65b798a1f5c0800000000000000
-      internalID: -4183377209313042184
+      spriteID: 12c4fbebe73924400800000000000000
+      internalID: 306969897189985313
       vertices: []
       indices: 
       edges: []
