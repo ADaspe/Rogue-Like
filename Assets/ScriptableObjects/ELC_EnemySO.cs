@@ -27,6 +27,9 @@ public class ELC_EnemySO : ScriptableObject
     public GameObject Projectile; //Le projectile doit avoir un ScriptableObject
     public float DistanceAttackArea;
     public float DistanceCooldown;
+    public float ProjectileSpeed;
+    public float ProjectileDurability;
+    public float ProjectileStrenght;
 
     public bool CorpseAttack;
     public float AttackCooldown;
