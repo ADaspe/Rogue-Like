@@ -1,55 +1,37 @@
 fileFormatVersion: 2
-guid: 267f0c44b9e8cd043afd6f114677a0a5
+guid: f24b1a2d792158943a9b726b12654fd4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4634888610540058185
-    second: hopliteSwishfront_0
+      213: 4093480436322176185
+    second: Shadow_0
   - first:
-      213: 6923148213057741704
-    second: hopliteSwishfront_1
+      213: -6472874401326232
+    second: Shadow_1
   - first:
-      213: 7231631775606217654
-    second: hopliteSwishfront_2
+      213: -2578634290482498685
+    second: Shadow_2
   - first:
-      213: 6458670844827099797
-    second: hopliteSwishfront_3
+      213: -2452145078486519950
+    second: Shadow_3
   - first:
-      213: 7353944951648663508
-    second: hopliteSwishfront_4
+      213: -1476207470431283674
+    second: Shadow_0
   - first:
-      213: 1598698879937290219
-    second: hopliteSwishfront_5
+      213: 4299592059245355686
+    second: Shadow_1
   - first:
-      213: -7177473847185837397
-    second: hopliteSwishfront_6
+      213: 318167667041975584
+    second: Shadow_2
   - first:
-      213: -8361948390147455687
-    second: hopliteSwishfront_7
+      213: -4183377209313042184
+    second: Shadow_3
   - first:
-      213: -6050179185782456678
-    second: hopliteSwishfront_0
+      213: -914827505574848917
+    second: Shadow_4
   - first:
-      213: -8814489230495872074
-    second: hopliteSwishfront_1
-  - first:
-      213: 3354818316485232916
-    second: hopliteSwishfront_2
-  - first:
-      213: 4165328169253773710
-    second: hopliteSwishfront_3
-  - first:
-      213: -5794544063056250564
-    second: hopliteSwishfront_4
-  - first:
-      213: 7304545191962301807
-    second: hopliteSwishfront_5
-  - first:
-      213: -492320650943994641
-    second: hopliteSwishfront_6
-  - first:
-      213: 3832625824405706443
-    second: hopliteSwishfront_7
+      213: 306969897189985313
+    second: Shadow_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -171,13 +153,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hopliteSwishfront_0
+      name: Shadow_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 215
-        height: 215
+        x: 51
+        y: 45
+        width: 13
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9e79f3f512790ca0800000000000000
-      internalID: -6050179185782456678
+      spriteID: 6265a2e7025738be0800000000000000
+      internalID: -1476207470431283674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishfront_1
+      name: Shadow_1
       rect:
         serializedVersion: 2
-        x: 215
-        y: 0
-        width: 215
-        height: 215
+        x: 166
+        y: 45
+        width: 13
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +188,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bb89cbfeb4aca580800000000000000
-      internalID: -8814489230495872074
+      spriteID: 6a2e86a92383bab30800000000000000
+      internalID: 4299592059245355686
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishfront_2
+      name: Shadow_2
       rect:
         serializedVersion: 2
-        x: 430
-        y: 0
-        width: 215
-        height: 215
+        x: 180
+        y: 44
+        width: 21
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +209,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4198318fb75be8e20800000000000000
-      internalID: 3354818316485232916
+      spriteID: 02d3d05becb5a6400800000000000000
+      internalID: 318167667041975584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishfront_3
+      name: Shadow_3
       rect:
         serializedVersion: 2
-        x: 645
-        y: 0
-        width: 215
-        height: 215
+        x: 205
+        y: 44
+        width: 18
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +230,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e81ac4da6e73ec930800000000000000
-      internalID: 4165328169253773710
+      spriteID: 8f06e65b798a1f5c0800000000000000
+      internalID: -4183377209313042184
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishfront_4
+      name: Shadow_4
       rect:
         serializedVersion: 2
-        x: 860
-        y: 0
-        width: 215
-        height: 215
+        x: 281
+        y: 45
+        width: 13
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +251,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c39fe2e10e4a59fa0800000000000000
-      internalID: -5794544063056250564
+      spriteID: b66547b0b31ed43f0800000000000000
+      internalID: -914827505574848917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishfront_5
+      name: Shadow_5
       rect:
         serializedVersion: 2
-        x: 1075
-        y: 0
-        width: 215
-        height: 215
+        x: 396
+        y: 45
+        width: 13
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,50 +272,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6553b4a625fe5560800000000000000
-      internalID: 7304545191962301807
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hopliteSwishfront_6
-      rect:
-        serializedVersion: 2
-        x: 1290
-        y: 0
-        width: 215
-        height: 215
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe4e4e4f9fcea29f0800000000000000
-      internalID: -492320650943994641
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hopliteSwishfront_7
-      rect:
-        serializedVersion: 2
-        x: 1505
-        y: 0
-        width: 215
-        height: 215
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc6d0b491e8303530800000000000000
-      internalID: 3832625824405706443
+      spriteID: 12c4fbebe73924400800000000000000
+      internalID: 306969897189985313
       vertices: []
       indices: 
       edges: []
@@ -341,7 +281,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5291850ca31a92a49b5e620106696181
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

@@ -1,31 +1,7 @@
 fileFormatVersion: 2
-guid: f24b1a2d792158943a9b726b12654fd4
+guid: 8a45bc55f0ace534a90954a9e11149b4
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 4093480436322176185
-    second: Shadow_0
-  - first:
-      213: -6472874401326232
-    second: Shadow_1
-  - first:
-      213: -2578634290482498685
-    second: Shadow_2
-  - first:
-      213: -2452145078486519950
-    second: Shadow_3
-  - first:
-      213: -1476207470431283674
-    second: Shadow_0
-  - first:
-      213: 4299592059245355686
-    second: Shadow_1
-  - first:
-      213: 318167667041975584
-    second: Shadow_2
-  - first:
-      213: -4183377209313042184
-    second: Shadow_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -64,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -88,7 +64,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,7 +76,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -145,91 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Shadow_0
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 45
-        width: 13
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6265a2e7025738be0800000000000000
-      internalID: -1476207470431283674
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_1
-      rect:
-        serializedVersion: 2
-        x: 166
-        y: 45
-        width: 13
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a2e86a92383bab30800000000000000
-      internalID: 4299592059245355686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_2
-      rect:
-        serializedVersion: 2
-        x: 281
-        y: 45
-        width: 13
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 02d3d05becb5a6400800000000000000
-      internalID: 318167667041975584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Shadow_3
-      rect:
-        serializedVersion: 2
-        x: 396
-        y: 45
-        width: 13
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8f06e65b798a1f5c0800000000000000
-      internalID: -4183377209313042184
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

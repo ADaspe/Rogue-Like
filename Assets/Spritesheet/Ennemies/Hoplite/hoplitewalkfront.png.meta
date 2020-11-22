@@ -1,55 +1,55 @@
 fileFormatVersion: 2
-guid: 267f0c44b9e8cd043afd6f114677a0a5
+guid: 5788fc4fbebf0b64391734fb0fc74028
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4634888610540058185
-    second: hopliteSwishfront_0
+      213: 7114055467822902434
+    second: hoplitewalkfront_0
   - first:
-      213: 6923148213057741704
-    second: hopliteSwishfront_1
+      213: 563826187842612148
+    second: hoplitewalkfront_1
   - first:
-      213: 7231631775606217654
-    second: hopliteSwishfront_2
+      213: 8560435987491164624
+    second: hoplitewalkfront_2
   - first:
-      213: 6458670844827099797
-    second: hopliteSwishfront_3
+      213: -7409407113728773901
+    second: hoplitewalkfront_3
   - first:
-      213: 7353944951648663508
-    second: hopliteSwishfront_4
+      213: -2090946374021322771
+    second: hoplitewalkfront_4
   - first:
-      213: 1598698879937290219
-    second: hopliteSwishfront_5
+      213: -2971284813136960069
+    second: hoplitewalkfront_5
   - first:
-      213: -7177473847185837397
-    second: hopliteSwishfront_6
+      213: -9015617717154083663
+    second: hoplitewalkfront_6
   - first:
-      213: -8361948390147455687
-    second: hopliteSwishfront_7
+      213: 7515949154674627943
+    second: hoplitewalkfront_7
   - first:
-      213: -6050179185782456678
-    second: hopliteSwishfront_0
+      213: -6690314336022398994
+    second: hoplitewalkfront_0
   - first:
-      213: -8814489230495872074
-    second: hopliteSwishfront_1
+      213: 2724760036968067143
+    second: hoplitewalkfront_1
   - first:
-      213: 3354818316485232916
-    second: hopliteSwishfront_2
+      213: 1890515357411561979
+    second: hoplitewalkfront_2
   - first:
-      213: 4165328169253773710
-    second: hopliteSwishfront_3
+      213: -6176449166387652295
+    second: hoplitewalkfront_3
   - first:
-      213: -5794544063056250564
-    second: hopliteSwishfront_4
+      213: 8679115166244044095
+    second: hoplitewalkfront_4
   - first:
-      213: 7304545191962301807
-    second: hopliteSwishfront_5
+      213: 2591363576674652305
+    second: hoplitewalkfront_5
   - first:
-      213: -492320650943994641
-    second: hopliteSwishfront_6
+      213: -1905482126589620712
+    second: hoplitewalkfront_6
   - first:
-      213: 3832625824405706443
-    second: hopliteSwishfront_7
+      213: -4191189493027060905
+    second: hoplitewalkfront_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -171,7 +171,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hopliteSwishfront_0
+      name: hoplitewalkfront_0
       rect:
         serializedVersion: 2
         x: 0
@@ -185,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9e79f3f512790ca0800000000000000
-      internalID: -6050179185782456678
+      spriteID: ee77ea5ee8a3723a0800000000000000
+      internalID: -6690314336022398994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishfront_1
+      name: hoplitewalkfront_1
       rect:
         serializedVersion: 2
         x: 215
@@ -206,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bb89cbfeb4aca580800000000000000
-      internalID: -8814489230495872074
+      spriteID: 74079a531da40d520800000000000000
+      internalID: 2724760036968067143
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishfront_2
+      name: hoplitewalkfront_2
       rect:
         serializedVersion: 2
         x: 430
@@ -227,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4198318fb75be8e20800000000000000
-      internalID: 3354818316485232916
+      spriteID: bf1dfe083b57c3a10800000000000000
+      internalID: 1890515357411561979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishfront_3
+      name: hoplitewalkfront_3
       rect:
         serializedVersion: 2
         x: 645
@@ -248,14 +248,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e81ac4da6e73ec930800000000000000
-      internalID: 4165328169253773710
+      spriteID: 939d4381538d84aa0800000000000000
+      internalID: -6176449166387652295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishfront_4
+      name: hoplitewalkfront_4
       rect:
         serializedVersion: 2
         x: 860
@@ -269,14 +269,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c39fe2e10e4a59fa0800000000000000
-      internalID: -5794544063056250564
+      spriteID: f3d7ea08249627870800000000000000
+      internalID: 8679115166244044095
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishfront_5
+      name: hoplitewalkfront_5
       rect:
         serializedVersion: 2
         x: 1075
@@ -290,14 +290,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6553b4a625fe5560800000000000000
-      internalID: 7304545191962301807
+      spriteID: 190149f717f56f320800000000000000
+      internalID: 2591363576674652305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishfront_6
+      name: hoplitewalkfront_6
       rect:
         serializedVersion: 2
         x: 1290
@@ -311,14 +311,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe4e4e4f9fcea29f0800000000000000
-      internalID: -492320650943994641
+      spriteID: 81e05cef91e5e85e0800000000000000
+      internalID: -1905482126589620712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishfront_7
+      name: hoplitewalkfront_7
       rect:
         serializedVersion: 2
         x: 1505
@@ -332,8 +332,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc6d0b491e8303530800000000000000
-      internalID: 3832625824405706443
+      spriteID: 753c5c9ac57e5d5c0800000000000000
+      internalID: -4191189493027060905
       vertices: []
       indices: 
       edges: []
@@ -341,7 +341,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5291850ca31a92a49b5e620106696181
+    spriteID: 5841b0f4701209e40891bad7f92775ce
     internalID: 0
     vertices: []
     indices: 
