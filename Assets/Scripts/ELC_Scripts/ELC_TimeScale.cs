@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class ELC_TimeScale : MonoBehaviour
 {
+    public bool isPaused;
     private float lastActiveValue;
     private float lastDuration;
     [SerializeField]
     private int activesCoroutines;
+
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Pause")) PauseGame();
+    }
+
 
     public void ScaleTime(float scaleValue, float durationInSeconds)
     {
@@ -19,6 +27,13 @@ public class ELC_TimeScale : MonoBehaviour
 
     }
 
+    public void PauseGame()
+    {
+        isPaused = !isPaused;
+        if (isPaused) Time.timeScale = 0;
+        else Time.timeScale = 1;
+    }
+
     private IEnumerator RescaleTime(float scale,float duration)
     {
         if(scale != 0 && duration != 0 && activesCoroutines ==0)
@@ -26,7 +41,7 @@ public class ELC_TimeScale : MonoBehaviour
             activesCoroutines++;
             Time.timeScale = scale;
             yield return new WaitForSecondsRealtime(duration);
-            Time.timeScale = 1;
+            if(!isPaused) Time.timeScale = 1;
             activesCoroutines--;
         }
     }

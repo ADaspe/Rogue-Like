@@ -21,6 +21,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
 
     public GameObject roomChecker;
     public GameObject startRoom;
+    public GameObject endRoom;
 
     public List<GameObject> roomsList;
     public List<GameObject> testsRoomsList;
@@ -69,6 +70,11 @@ public class ELC_RoomsGenerator : MonoBehaviour
             {
                 startRoom = checkersArray[randomPoints[i], i]; //On assigne la première room en tant que startRoom
                 startRoom.GetComponent<ELC_RoomProperties>().IsStartRoom = true;
+            }
+            else if(i == randomPoints.Count -1)
+            {
+                endRoom = checkersArray[randomPoints[i], i];
+                endRoom.GetComponent<ELC_RoomProperties>().IsEndRoom = true;
             }
         }
 
@@ -255,7 +261,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
                         if (adjacentChecker.GetComponent<ELC_RoomProperties>().thereIsRoom && (dir == Directions.Left || dir == Directions.Right || (adjacentChecker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && dir == Directions.Down) || (checker.GetComponent<ELC_RoomProperties>().isAnAngleRoom && dir == Directions.Top))) DoorState(checker, true, dir); 
                         else DoorState(checker, false, dir); //On supprime la porte à cet endroit
                     }
-                    else if (checker.GetComponent<ELC_RoomProperties>().IsStartRoom && dir == Directions.Top) DoorState(checker, true, dir); //SI c'est la salle Start on laisse la porte nord ouverte
+                    else if (checker.GetComponent<ELC_RoomProperties>().IsStartRoom && dir == Directions.Top || checker.GetComponent<ELC_RoomProperties>().IsEndRoom && dir == Directions.Down) DoorState(checker, true, dir); //SI c'est la salle Start on laisse la porte nord ouverte ou si c'est la salle End on laisse la porte sud ouverte
                     else //S'il n'y a pas de checker
                     {
                         DoorState(checker, false, dir); //On supprime la porte à cet endroit
