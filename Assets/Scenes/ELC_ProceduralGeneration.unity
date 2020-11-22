@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -203,12 +203,12 @@ PrefabInstance:
     - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
         type: 3}
       propertyPath: roomsList.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
         type: 3}
       propertyPath: testsRoomsList.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
         type: 3}
@@ -231,25 +231,25 @@ PrefabInstance:
         type: 3}
       propertyPath: roomsList.Array.data[2]
       value: 
-      objectReference: {fileID: 4991117145046242260, guid: 7b226b24a7f53c44291091a2c2654973,
+      objectReference: {fileID: 3627668831802546656, guid: f6e578f0c8e049e4888104f749f31f9d,
         type: 3}
     - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
         type: 3}
       propertyPath: roomsList.Array.data[3]
       value: 
-      objectReference: {fileID: 4991117145046242260, guid: 7b226b24a7f53c44291091a2c2654973,
+      objectReference: {fileID: 2627324928097260012, guid: 358b98ddc8078934788a1d4e8562816d,
         type: 3}
     - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
         type: 3}
       propertyPath: testsRoomsList.Array.data[0]
       value: 
-      objectReference: {fileID: 3627668831802546656, guid: f6e578f0c8e049e4888104f749f31f9d,
+      objectReference: {fileID: 8016669876711721645, guid: d430637bff79d07499d330f94ff00ab6,
         type: 3}
     - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
         type: 3}
       propertyPath: testsRoomsList.Array.data[1]
       value: 
-      objectReference: {fileID: 8016669876711721645, guid: d430637bff79d07499d330f94ff00ab6,
+      objectReference: {fileID: 2627324928097260012, guid: f4f19ab80755a4a469e3c11f0fef5b24,
         type: 3}
     - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
         type: 3}
@@ -266,6 +266,18 @@ PrefabInstance:
       propertyPath: arrayDimentionY
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: testsRoomsList.Array.data[2]
+      value: 
+      objectReference: {fileID: 2627324928097260012, guid: b64f27c586ae2e44a83535a7638ebcc0,
+        type: 3}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: testsRoomsList.Array.data[3]
+      value: 
+      objectReference: {fileID: 2627324928097260012, guid: 3c2b9d98711a00b48a93fd4429783c0c,
+        type: 3}
     - target: {fileID: 7843894060409563433, guid: 96964a2b1920f9a469b78a90ac676262,
         type: 3}
       propertyPath: m_Name
