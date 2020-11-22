@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b2e9c26f4eb0b468184e2ce49f0f31, type: 3}
   m_Name: SanteBoost2
   m_EditorClassIdentifier: 
-  type: 0
+  type: 2
   level: 2
   multiplicator: 3
   time: 20

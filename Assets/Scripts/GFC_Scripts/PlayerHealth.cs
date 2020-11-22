@@ -24,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
     }
 
     //ça c'est comment il prend des dégâts, et ça synchronise en live la barre de vie pour être sûr qu'elle suive 
-    void GetHit(int damage)
+    void GetHit(int damage, float knockack = 0, float stun = 0)
     {
         if (!playerStats.invulnerability)
         {

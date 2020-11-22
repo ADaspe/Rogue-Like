@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class AXD_Attack : MonoBehaviour
 {
+
     public ELC_PlayerMoves player;
     public ELC_PlayerStatManager playerStats;
     public AXD_PlayerMoney playerMoney;
     public PlayerHealth playerHealth;
+    public GameObject GameManager;
 
     public float nextResetCombo;
     public enum AttackType { Swich, Sponk }
@@ -23,7 +25,6 @@ public class AXD_Attack : MonoBehaviour
 
     public void Attack(string type)
     {
-
         Collider2D[] hitEnemies = null;
         if (type.Equals(AttackType.Swich.ToString()))
         {
@@ -63,11 +64,13 @@ public class AXD_Attack : MonoBehaviour
                 CalculateReward(closestEnemy);
                 if (type.Equals(AttackType.Swich.ToString()))
                 {
-                    closestEnemy.GetHit(CalculateDamage(AttackType.Swich), playerStats.SwichKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SwichStunTime);
+                    GameManager.GetComponent<ELC_TimeScale>().ScaleTime(playerStats.SwichSlowMotionValue, playerStats.SwichSlowMotionDuration);
+                    closestEnemy.GetHit(CalculateDamage(AttackType.Swich), closestEnemy.movesTowardPlayer, playerStats.SwichKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SwichStunTime);
                 }
                 else if (type.Equals(AttackType.Sponk.ToString()))
                 {
-                    closestEnemy.GetHit(CalculateDamage(AttackType.Sponk), playerStats.SponkKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SponkStunTime);
+                    GameManager.GetComponent<ELC_TimeScale>().ScaleTime(playerStats.SponkSlowMotionValue, playerStats.SponkSlowMotionDuration);
+                    closestEnemy.GetHit(CalculateDamage(AttackType.Sponk), closestEnemy.movesTowardPlayer, playerStats.SponkKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SponkStunTime, true);
                 }
                 
             }
@@ -81,11 +84,11 @@ public class AXD_Attack : MonoBehaviour
                     
                     if (type.Equals(AttackType.Swich.ToString()))
                     {
-                        enemy.GetHit(CalculateDamage(AttackType.Swich, true), playerStats.SwichKnockbackDistance);
+                        enemy.GetHit(CalculateDamage(AttackType.Swich, true), enemy.movesTowardPlayer, playerStats.SwichKnockbackDistance);
                     }
                     else if (type.Equals(AttackType.Sponk.ToString()))
                     {
-                        enemy.GetHit(CalculateDamage(AttackType.Sponk, true), playerStats.SponkKnockbackDistance);
+                        enemy.GetHit(CalculateDamage(AttackType.Sponk, true), enemy.movesTowardPlayer, playerStats.SponkKnockbackDistance);
                     }
                 }
             }

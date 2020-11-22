@@ -12,6 +12,8 @@ public class ELC_PlayerMoves : MonoBehaviour
     public const float animationTime = 0.4f;
     public ELC_PlayerStatManager playerStats;
     public PlayerHealth playerHealth;
+    public AXD_Attack attack;
+    public GameObject gameManager;
 
     [SerializeField]
     private GameObject DashParticles;
@@ -279,6 +281,7 @@ public class ELC_PlayerMoves : MonoBehaviour
             {
                 if (playerStats.currentChain != ELC_PlayerStatManager.Chain.Red)
                 {
+                    gameManager.GetComponent<ELC_TimeScale>().ScaleTime(playerStats.SwitchChainSlowMotionValue, playerStats.SwitchChainSlowMotionDuration);
                     playerStats.currentChain++;
                 }
                 attackLanded = false;
@@ -376,8 +379,19 @@ public class ELC_PlayerMoves : MonoBehaviour
         StartCoroutine(PlayAnimation("SponkAttack", playerStats.AnimationSponkTime, false, false));
         nextSponkAttackTime = Time.time + 1f / playerStats.SponkAttackRate;
         yield return new WaitForSeconds(playerAnimator.GetCurrentAnimatorStateInfo(0).length * 1 / 4);
+        float timeToStopSponk = Time.time + playerStats.SponkDashTime; 
         Dash(playerStats.SponkDashDistance * dashDistanceMultiplicator, playerStats.SponkDashTime);
-        yield return new WaitForSeconds(playerAnimator.GetCurrentAnimatorStateInfo(0).length);
+
+        //Tant que le dash time n'est pas expirer, taper tous les ennemis devant
+        
+        while (Time.time <= timeToStopSponk)
+        {
+            attack.Attack("Sponk");
+            yield return null;
+        }
+
+
+        yield return new WaitForSeconds(playerAnimator.GetCurrentAnimatorStateInfo(0).length - playerStats.SponkDashTime);
         if (attackLanded && playerStats.currentHitChain % playerStats.hitToNextChain == 0 && playerStats.currentHitChain != 0)
         {
             if (playerStats.currentChain != ELC_PlayerStatManager.Chain.Red)
@@ -386,8 +400,6 @@ public class ELC_PlayerMoves : MonoBehaviour
             }
             attackLanded = false;
         }
-
-        Debug.Log("Coucou");
         ResetChain();
     }
 
