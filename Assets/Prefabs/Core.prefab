@@ -73,12 +73,12 @@ PrefabInstance:
     - target: {fileID: 956150124270750358, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 956150124270750358, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -5.22
       objectReference: {fileID: 0}
     - target: {fileID: 956150124270750358, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
@@ -235,6 +235,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8296766066609136033, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: RightHandHUD
+      value: 
+      objectReference: {fileID: 3309051798871957101}
+    - target: {fileID: 8296766066609136033, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: LeftHandHUD
+      value: 
+      objectReference: {fileID: 3309051798290657450}
     - target: {fileID: 8934949276138899172, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: healthBar
@@ -506,6 +516,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3309051798290657450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7582643586908977246, guid: 374aac9d3ae2f844ea0fa95b440229d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 4960410694947244276}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3309051798871957101 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7582643586424919705, guid: 374aac9d3ae2f844ea0fa95b440229d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 4960410694947244276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8459468426774197827 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3580637166367358647, guid: 374aac9d3ae2f844ea0fa95b440229d6,
