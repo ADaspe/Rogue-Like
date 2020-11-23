@@ -9,6 +9,7 @@ public class ELC_TimeScale : MonoBehaviour
     private float lastDuration;
     [SerializeField]
     private int activesCoroutines;
+    public GameObject PauseButtons;
 
 
     private void Update()
@@ -30,8 +31,16 @@ public class ELC_TimeScale : MonoBehaviour
     public void PauseGame()
     {
         isPaused = !isPaused;
-        if (isPaused) Time.timeScale = 0;
-        else Time.timeScale = 1;
+        if (isPaused)
+        {
+            PauseButtons.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            PauseButtons.SetActive(false);
+            Time.timeScale = 1;
+        }
     }
 
     private IEnumerator RescaleTime(float scale,float duration)
