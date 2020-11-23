@@ -14,7 +14,10 @@ public class ELC_TimeScale : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Pause")) PauseGame();
+        if (Input.GetButtonDown("Pause"))
+        {
+            PauseGame();
+        }
     }
 
 
@@ -30,6 +33,7 @@ public class ELC_TimeScale : MonoBehaviour
 
     public void PauseGame()
     {
+        
         isPaused = !isPaused;
         if (isPaused)
         {
