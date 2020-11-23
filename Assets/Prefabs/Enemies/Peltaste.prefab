@@ -98,6 +98,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: 798043f288e6f6f4c8a3873c1fd784ec, type: 2}
   currentHealth: 0
+  movesTowardPlayer: {x: 0, y: 0, z: 0}
+  isStun: 0
+  isInvulnerable: 0
   isTouchingSomething: 0
   canSeePlayer: 0
   tryToGo: 4
@@ -140,7 +143,7 @@ Animator:
   m_GameObject: {fileID: 588049578264953656}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d164033a49f585345bf5f4a39586d0b3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
