@@ -5,36 +5,35 @@ using TMPro;
 public class EMD_DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
+    public bool DialogueIsActive;
+    [SerializeField]
     private int index;
-    [TextArea(3,10)]
-    public string[] sentences;
+    // récuperer les données du npc (phrase et nom)
     public float DelayTime;
-    public bool QuitTime;
     // récuperer la variable DialogueOn du script trigger
-    public bool DialogueOn = false;
+    private bool IsWriting;
     public GameObject DialogueCanvas;
     public GameObject ContinueButton;
     public GameObject QuitButton;
     public List<EMD_NPCIsTrigger> NPCsList;
+    public string[] sentences;
+    public GameObject ActualNPC;
     
 
     
     private void Update()
     {
-        if (DialogueOn == true)
-        {
-            DialogueCanvas.SetActive(true);
-            StartCoroutine(Type());
-            //besoin de stopper le jeux en arrière plan
-        }
-
-        ChangeButton();
-
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Dash"))
         {
             QuitDialogue();
         }
+        if ( DialogueIsActive && Input.GetButtonDown("Interact"))
+        {
+            Debug.Log("yes");
+            NextSentence();
+        }
     }
+
 
     IEnumerator Type()
     {
@@ -43,36 +42,51 @@ public class EMD_DialogueManager : MonoBehaviour
             textDisplay.text += letter;
             yield return new WaitForSeconds(DelayTime);
         }
+        IsWriting = false;
     }
     
     public void ChangeButton()
     {
-        if (QuitTime == true)
-        {
-            ContinueButton.SetActive(false);
-            QuitButton.SetActive(true);
-        }
+        ContinueButton.SetActive(false);
+        QuitButton.SetActive(true);
     }
 
     public void QuitDialogue()
     {
         DialogueCanvas.SetActive(false);
-        DialogueOn = false;
-        //besoin de redemarrer le jeux en arrière plan
+        index = 0;
+        textDisplay.text = "";
+        DialogueIsActive = false;
+        //besoin de remettre les inputs du joueur
     }
 
     public void NextSentence()
     {
-        if (index < sentences.Length - 1)
+        if (!IsWriting)
         {
-            index++;
-            textDisplay.text = "";
-            StartCoroutine(Type());
+            if (index < sentences.Length - 1)
+            {
+                index++;
+                textDisplay.text = "";
+                StartCoroutine("StartDialogue");
+            }
+            else
+            {
+                //textDisplay.text = "";
+                //ChangeButton();
+                QuitDialogue();
+            }
         }
-        else
-        {
-            textDisplay.text = "";
-            QuitTime = true;
-        }
+    }
+
+    public IEnumerator StartDialogue()
+    {
+        DialogueCanvas.SetActive(true);
+        sentences = ActualNPC.GetComponent<EMD_Sentences>().sentences;
+        DialogueIsActive = true;
+        StartCoroutine("Type");
+        IsWriting = true;
+        //yield return new WaitWhile(() => IsWriting == true);
+        yield return null;
     }
 }

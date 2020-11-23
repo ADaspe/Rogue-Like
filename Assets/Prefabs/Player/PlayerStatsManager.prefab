@@ -62,9 +62,13 @@ MonoBehaviour:
   SwichAttackRate: 4
   SponkAttackRate: 0.5
   SwichKnockbackDistance: 1
-  SwichStunTime: 0.5
+  SwichStunTime: 0.7
+  SwichSlowMotionValue: 0
+  SwichSlowMotionDuration: 0
   SponkKnockbackDistance: 3
-  SponkStunTime: 1
+  SponkStunTime: 0.7
+  SponkSlowMotionValue: 0.3
+  SponkSlowMotionDuration: 0.5
   AttackMultiplicator: 1
   CurrentCombo: 0
   MaxCombo: 200
@@ -84,6 +88,8 @@ MonoBehaviour:
   damageMultiplicatorRed: 2
   KnockbackMultiplicatorRed: 2
   DashMultiplicatorRed: 2
+  SwitchChainSlowMotionValue: 0.3
+  SwitchChainSlowMotionDuration: 0.3
   SwichDamage: 200
   SwichAreaRadius: 1.2
   SponkDamage: 350
