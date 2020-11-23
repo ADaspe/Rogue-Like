@@ -60,6 +60,16 @@ PrefabInstance:
       propertyPath: AnimationSponkTime
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: losingLife
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: lifeThreshold
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 956150124270750358, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -245,6 +255,11 @@ PrefabInstance:
       propertyPath: bouteille
       value: 
       objectReference: {fileID: 3309051798927605218}
+    - target: {fileID: 8934949276138899172, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 3309051799143836557}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c582c890f15ac5345a4f3c531ee31b90, type: 3}
 --- !u!4 &2509114837986903277 stripped
@@ -453,6 +468,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4960410694947244276}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3309051799143836557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7582643585618862969, guid: 374aac9d3ae2f844ea0fa95b440229d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 4960410694947244276}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3309051799143836556 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7582643585618862968, guid: 374aac9d3ae2f844ea0fa95b440229d6,

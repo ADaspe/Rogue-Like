@@ -21,13 +21,5 @@ public class Health : MonoBehaviour
         healthSlider.value = health;
     }
 
-    // Et ça c'est pour que la vie coule en continu si elle est pas trop basse
-    void Update()
-    {
-        if(healthSlider.value > stopLosing)
-        {
-            healthSlider.value -= Time.deltaTime * lifeLost;
-        }
-        
-    }
+
 }
