@@ -19,6 +19,8 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float maxStock;
     public float currentStock;
     public float healingRate;
+    public bool losingLife;
+    public float lifeThreshold;
 
     [Header ("Dash Stats")]
     public float DashDistance;
