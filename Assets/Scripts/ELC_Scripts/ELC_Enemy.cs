@@ -408,6 +408,13 @@ public class ELC_Enemy : MonoBehaviour
         }
         if(currentHealth <= 0)
         {
+            if(enemyStats.achievements!=null && enemyStats.achievements.Count >= 0)
+            {
+                foreach(AXD_AchievementSO achivement in enemyStats.achievements)
+                {
+                    achivement.AddDefeated();
+                }
+            }
             Destroy(this.gameObject);
             
         }

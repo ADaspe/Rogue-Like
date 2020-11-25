@@ -63,4 +63,7 @@ public class ELC_EnemySO : ScriptableObject
     public Sprite sprite;
     //public MonoBehaviour AIScript;
     public Animator Animator;
+
+    [Header("Related Achivements")]
+    public List<AXD_AchievementSO> achievements;
 }
