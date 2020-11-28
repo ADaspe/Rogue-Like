@@ -15,4 +15,4 @@ MonoBehaviour:
   type: 3
   level: 3
   multiplicator: 4
-  time: 10
+  duration: 10

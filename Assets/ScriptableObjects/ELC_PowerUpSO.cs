@@ -17,5 +17,5 @@ public class ELC_PowerUpSO : ScriptableObject
     public float multiplicator;
 
     //Durée du PowerUp
-    public float time;
+    public float duration;
 }
