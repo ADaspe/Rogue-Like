@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPaused: 0
   activesCoroutines: 0
+  PauseButtons: {fileID: 0}
 --- !u!114 &9015936277933386134
 MonoBehaviour:
   m_ObjectHideFlags: 0

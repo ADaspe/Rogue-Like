@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
-  m_Name: HopliteLvl2
+  m_Script: {fileID: 11500000, guid: 0c99466daf154f84ea59a9527c63b153, type: 3}
+  m_Name: "App\xE9tit De Lycaron"
   m_EditorClassIdentifier: 
-  name: Hoplite
-  achievementTier: 1
-  ennemyToDefeat: {fileID: 2148857145838052543, guid: e92a72e0dcedde944886188f85b5d608,
-    type: 3}
-  numberToDefeat: 10
-  numberDefeated: 10
-  isUnlocked: 1
+  PassiveName: "App\xE9tit De Lycaon"
+  PassivePrice: 0
+  HUDSprite: {fileID: 0}

@@ -73,12 +73,12 @@ PrefabInstance:
     - target: {fileID: 956150124270750358, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.09
+      value: 3.243132
       objectReference: {fileID: 0}
     - target: {fileID: 956150124270750358, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.22
+      value: 1.0049375
       objectReference: {fileID: 0}
     - target: {fileID: 956150124270750358, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
@@ -225,6 +225,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6055657034655676927, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: AttackScript
+      value: 
+      objectReference: {fileID: 2007092410916508271}
+    - target: {fileID: 6055657034655676927, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: InventoryScript
+      value: 
+      objectReference: {fileID: 8969764475921178503}
+    - target: {fileID: 6055657034655676927, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: LycaonMainEnemyHeal
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055657034655676927, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: LycaonCollateralEnemyHeal
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6115952892813048268, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: moneycount
@@ -245,6 +265,11 @@ PrefabInstance:
       propertyPath: LeftHandHUD
       value: 
       objectReference: {fileID: 3309051798290657450}
+    - target: {fileID: 8296766066609136033, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: PassiveHUD
+      value: 
+      objectReference: {fileID: 3309051800062072814}
     - target: {fileID: 8934949276138899172, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: healthBar
@@ -268,6 +293,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1107614495140986406}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2007092410916508271 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1478753435661380681, guid: c582c890f15ac5345a4f3c531ee31b90,
+    type: 3}
+  m_PrefabInstance: {fileID: 1107614495140986406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b6a018d8d6ca7478c13acef376629b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8403814233608239298 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8934949276138899172, guid: c582c890f15ac5345a4f3c531ee31b90,
@@ -290,6 +327,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43ad867dd064cf844b7bafb45355bfb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8969764475921178503 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8296766066609136033, guid: c582c890f15ac5345a4f3c531ee31b90,
+    type: 3}
+  m_PrefabInstance: {fileID: 1107614495140986406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb91b4ceb344aed459371880399b671b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4856428381395182597 stripped
@@ -325,6 +374,16 @@ PrefabInstance:
       propertyPath: statManager
       value: 
       objectReference: {fileID: 397678874362256133}
+    - target: {fileID: 7582643585471749915, guid: 374aac9d3ae2f844ea0fa95b440229d6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582643585471749915, guid: 374aac9d3ae2f844ea0fa95b440229d6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 7582643585545601897, guid: 374aac9d3ae2f844ea0fa95b440229d6,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -353,7 +412,7 @@ PrefabInstance:
     - target: {fileID: 7582643586553843794, guid: 374aac9d3ae2f844ea0fa95b440229d6,
         type: 3}
       propertyPath: m_Name
-      value: "Canvas plac\xE9 correctement"
+      value: HUD
       objectReference: {fileID: 0}
     - target: {fileID: 7582643586553843798, guid: 374aac9d3ae2f844ea0fa95b440229d6,
         type: 3}
@@ -525,6 +584,12 @@ GameObject:
 --- !u!1 &3309051798871957101 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7582643586424919705, guid: 374aac9d3ae2f844ea0fa95b440229d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 4960410694947244276}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3309051800062072814 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7582643585471749914, guid: 374aac9d3ae2f844ea0fa95b440229d6,
     type: 3}
   m_PrefabInstance: {fileID: 4960410694947244276}
   m_PrefabAsset: {fileID: 0}
