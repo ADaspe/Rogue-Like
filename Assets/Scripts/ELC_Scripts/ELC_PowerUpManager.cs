@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ELC_PowerUpManager : MonoBehaviour
 {
-    public List<ELC_PowerUpProperties> PowerUps = new List<ELC_PowerUpProperties>();
+    public List<GameObject> PowerUps = new List<GameObject>();
 
-    private List<int> IndexToDeleteAfterCheck = new List<int>();
+    [SerializeField]
+    private List<float> durations = new List<float>();
+    
 
     // Update is called once per frame
     void Update()
@@ -15,14 +17,16 @@ public class ELC_PowerUpManager : MonoBehaviour
         {
             for (int i = 0; i < PowerUps.Count; i++)
             {
-                if (PowerUps[i].LifeDuration <= 0)
+                if (PowerUps[i].GetComponent<ELC_PowerUpProperties>().LifeDuration <= 0)
                 {
                     DeletePowerUp(i);
+                    Debug.Log("passe ici");
                     return;
                 }
                 else
                 {
-                    PowerUps[i].LifeDuration -= Time.deltaTime;
+                    PowerUps[i].GetComponent<ELC_PowerUpProperties>().LifeDuration -= Time.deltaTime;
+                    durations[i] = PowerUps[i].GetComponent<ELC_PowerUpProperties>().LifeDuration;
                     //Debug.Log(PU.LifeDuration);
                 }
             }
@@ -31,16 +35,16 @@ public class ELC_PowerUpManager : MonoBehaviour
 
     private void DeletePowerUp(int index)
     {
-        PowerUps.RemoveAt(index);
+        PowerUps.Remove(PowerUps[index]);
+        durations.Remove(durations[index]);
         Debug.Log("PowerUp Destroyed at " + index);
     }
 
     public void AddPowerUp(GameObject PUObject)
     {
         //bool FoundPlace = false;
-
+        GameObject GO;
         ELC_PowerUpProperties PU = PUObject.GetComponent<ELC_PowerUpProperties>();
-        PU.LifeDuration = PU.PowerUpSO.duration;
 
         //for (int i = 0; i < PowerUps.Count; i++)
         //{
@@ -52,9 +56,16 @@ public class ELC_PowerUpManager : MonoBehaviour
         //        return;
         //    }
         //}
+        GO = new GameObject();
+        GO.name = "PowerUp";
+        GO.AddComponent<ELC_PowerUpProperties>();
+        GO.GetComponent<ELC_PowerUpProperties>().LifeDuration = PU.LifeDuration;
+        GO.GetComponent<ELC_PowerUpProperties>().PowerUpSO = PU.PowerUpSO;
 
-        PowerUps.Add(PU);
-        PU.index = PowerUps.Count;
+        PowerUps.Add(GO);
+        durations.Add(0);
+        PowerUps[PowerUps.Count - 1].GetComponent<ELC_PowerUpProperties>().LifeDuration = PowerUps[PowerUps.Count - 1].GetComponent<ELC_PowerUpProperties>().PowerUpSO.duration;
+        
     }
 
 }
