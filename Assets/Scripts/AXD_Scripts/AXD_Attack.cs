@@ -12,6 +12,10 @@ public class AXD_Attack : MonoBehaviour
     public PlayerHealth playerHealth;
     public GameObject GameManager;
 
+    public bool AppetitDeLycaonIsActive;
+    public float AppetitDeLycaonHealPerEnemies;
+    public float AppetitDeLycaonHealPerCollateral;
+
     public float nextResetCombo;
     public enum AttackType { Swich, Sponk }
 
@@ -112,9 +116,11 @@ public class AXD_Attack : MonoBehaviour
         {
             if (colateral == false) {
                 totalDamage = Mathf.RoundToInt((playerStats.SponkDamage + (playerStats.SponkDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator);
+                if (AppetitDeLycaonIsActive) playerStats.currentHealth += AppetitDeLycaonHealPerEnemies; //Rend de la vie avec le passif de Lycaon
             } else if (colateral == true)
             {
                 totalDamage = Mathf.RoundToInt(((playerStats.SponkDamage + (playerStats.SponkDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator)*playerStats.colateralDamage/100);
+                if (AppetitDeLycaonIsActive) playerStats.currentHealth += AppetitDeLycaonHealPerCollateral; //Rend de la vie avec le passif de Lycaon
             }
         }
         return totalDamage;

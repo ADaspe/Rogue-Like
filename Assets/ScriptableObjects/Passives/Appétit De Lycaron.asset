@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47b2e9c26f4eb0b468184e2ce49f0f31, type: 3}
-  m_Name: ArgentBoost3
+  m_Script: {fileID: 11500000, guid: 0c99466daf154f84ea59a9527c63b153, type: 3}
+  m_Name: "App\xE9tit De Lycaron"
   m_EditorClassIdentifier: 
-  type: 3
-  level: 3
-  multiplicator: 4
-  duration: 10
+  PassiveName: "App\xE9tit De Lycaon"
+  PassivePrice: 0
+  HUDSprite: {fileID: 0}
