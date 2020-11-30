@@ -8,14 +8,17 @@ public class ELC_ObjectsInventory : MonoBehaviour
     public GameObject RightHandObject;
     public GameObject RightHandHUD;
     public int quantityObject1;
+
     public GameObject LeftHandObject;
     public GameObject LeftHandHUD;
     public int quantityObject2;
+
+    public GameObject PassiveHUD;
+
     private GameObject player;
 
-
     
-
+    static public ELC_PassiveSO ActivePassif;
 
     private void Start()
     {
@@ -38,11 +41,10 @@ public class ELC_ObjectsInventory : MonoBehaviour
             quantityObject2--;
             UpdateDisplay();
         }
-
-
+        
     }
 
-    private void UpdateDisplay()
+    public void UpdateDisplay()
     {
         if (RightHandObject != null)
         {
@@ -57,6 +59,13 @@ public class ELC_ObjectsInventory : MonoBehaviour
             LeftHandHUD.GetComponent<Image>().sprite = LeftHandObject.GetComponent<ELC_ObjectsUse>().ObjectsScriptableObject.HUDSprite;
         }
         else LeftHandHUD.GetComponent<Image>().enabled = false;
+
+        if (ActivePassif != null)
+        {
+            PassiveHUD.GetComponent<Image>().enabled = true;
+            PassiveHUD.GetComponent<Image>().sprite = ActivePassif.HUDSprite;
+        }
+        else PassiveHUD.GetComponent<Image>().enabled = false;
     }
 
     public void AddObject(GameObject Object, int quantity)
