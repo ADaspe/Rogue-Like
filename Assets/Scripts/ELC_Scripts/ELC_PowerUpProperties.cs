@@ -6,5 +6,4 @@ public class ELC_PowerUpProperties : MonoBehaviour
 {
     public ELC_PowerUpSO PowerUpSO;
     public float LifeDuration;
-    public int index;
 }

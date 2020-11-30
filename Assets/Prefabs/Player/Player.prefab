@@ -510,6 +510,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c208d508d55eb84cbcc3bec2a59e5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PowerUps: []
+  playerStatsScript: {fileID: 782464527650891043}
+  durations: []
 --- !u!1 &5492832859697502755
 GameObject:
   m_ObjectHideFlags: 0
