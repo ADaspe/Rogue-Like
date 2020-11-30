@@ -98,6 +98,9 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float AnimationSwichTime;
     public float AnimationSponkTime;
 
-
-
+    [Header("Power Ups")]
+    public float AttackMultiplicatorPU = 1;
+    public float SpeedMultiplicatorPU = 1;
+    public float DefenseMultiplicatorPU = 1;
+    public float MoneyMultiplicatorPU = 1;
 }
