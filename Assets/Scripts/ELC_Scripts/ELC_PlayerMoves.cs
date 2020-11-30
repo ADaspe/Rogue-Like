@@ -138,10 +138,10 @@ public class ELC_PlayerMoves : MonoBehaviour
         playerMoves.y = Input.GetAxis("Vertical") * playerStats.Speed;
 
         //traite la vitesse
-        playerMoves = Vector3.ClampMagnitude(playerMoves, playerStats.Speed);
+        playerMoves = Vector3.ClampMagnitude(playerMoves, playerStats.Speed * playerStats.SpeedMultiplicatorPU);
 
         //Empêche le joueur de traverser les murs
-        MovementClampIfCollidingWalls(playerStats.Speed, "playerMoves");
+        MovementClampIfCollidingWalls(playerStats.Speed * playerStats.SpeedMultiplicatorPU, "playerMoves");
 
         IsPlayerImmobile();
 
@@ -326,7 +326,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         Raycasts();
         PlayerTurnDetector();
         MovementClampIfCollidingWalls(distance / time, "dashVector");
-        MovementClampIfCollidingWalls(playerStats.Speed, "playerMoves");
+        MovementClampIfCollidingWalls(playerStats.Speed * playerStats.SpeedMultiplicatorPU, "playerMoves");
 
         //Conditions d'arrêt du dash
         if (Time.time > stopDash || isDashingInWall)
