@@ -7,6 +7,6 @@ public class ELC_PassiveSO : ScriptableObject
 {
     public string PassiveName;
     public float PassivePrice;
-
+    public bool isUnlock;
     public Sprite HUDSprite;
 }
