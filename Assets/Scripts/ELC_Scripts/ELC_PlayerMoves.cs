@@ -345,15 +345,15 @@ public class ELC_PlayerMoves : MonoBehaviour
         playerStats.currentChain = chain;
         if (chain == ELC_PlayerStatManager.Chain.Blue)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorBlue;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorBlue;
         }
         else if (chain == ELC_PlayerStatManager.Chain.Orange)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorOrange;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorOrange;
         }
         else if (chain == ELC_PlayerStatManager.Chain.Red)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorRed;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorRed;
         }
         playerStats.currentHitChain = 0;
     }
@@ -363,17 +363,17 @@ public class ELC_PlayerMoves : MonoBehaviour
         float dashDistanceMultiplicator = 1;
         if (playerStats.currentChain == ELC_PlayerStatManager.Chain.Blue)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorBlue;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorBlue;
             dashDistanceMultiplicator = playerStats.DashMultiplicatorBlue;
         }
         else if (playerStats.currentChain == ELC_PlayerStatManager.Chain.Orange)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorOrange;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorOrange;
             dashDistanceMultiplicator = playerStats.DashMultiplicatorOrange;
         }
         else if (playerStats.currentChain == ELC_PlayerStatManager.Chain.Red)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorRed;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorRed;
             dashDistanceMultiplicator = playerStats.DashMultiplicatorRed;
         }
         StartCoroutine(PlayAnimation("SponkAttack", playerStats.AnimationSponkTime, false, false));

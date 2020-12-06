@@ -20,6 +20,7 @@ public class PlayerHealth : MonoBehaviour
             playerStats.currentHealth -= playerStats.LifeDecreaseSpeed * Time.deltaTime;
         }
         healthSlider.value = playerStats.currentHealth;
+        playerStats.BerserkMultiplicator = (1-(playerStats.currentHealth / playerStats.MaxHealth))+1;
     }
 
     // ça c'est pour dire que la vie commence au max (pour le joueur et sur la barre de vie

@@ -106,20 +106,20 @@ public class AXD_Attack : MonoBehaviour
         {
             if (colateral == false)
             {
-                totalDamage = Mathf.RoundToInt((playerStats.SwichDamage + (playerStats.SwichDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator);
+                totalDamage = Mathf.RoundToInt((playerStats.SwichDamage + (playerStats.SwichDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicatorChain *playerStats.BerserkMultiplicator );
             }else if(colateral == true)
             {
-                totalDamage = Mathf.RoundToInt(((playerStats.SwichDamage + (playerStats.SwichDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator)*playerStats.colateralDamage/100);
+                totalDamage = Mathf.RoundToInt(((playerStats.SwichDamage + (playerStats.SwichDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicatorChain * playerStats.BerserkMultiplicator) * playerStats.colateralDamage/100);
             }
         }
         else if (type == AttackType.Sponk)
         {
             if (colateral == false) {
-                totalDamage = Mathf.RoundToInt((playerStats.SponkDamage + (playerStats.SponkDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator);
+                totalDamage = Mathf.RoundToInt((playerStats.SponkDamage + (playerStats.SponkDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicatorChain * playerStats.BerserkMultiplicator);
                 if (AppetitDeLycaonIsActive) playerStats.currentHealth += AppetitDeLycaonHealPerEnemies; //Rend de la vie avec le passif de Lycaon
             } else if (colateral == true)
             {
-                totalDamage = Mathf.RoundToInt(((playerStats.SponkDamage + (playerStats.SponkDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator)*playerStats.colateralDamage/100);
+                totalDamage = Mathf.RoundToInt(((playerStats.SponkDamage + (playerStats.SponkDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicatorChain * playerStats.BerserkMultiplicator) * playerStats.colateralDamage/100);
                 if (AppetitDeLycaonIsActive) playerStats.currentHealth += AppetitDeLycaonHealPerCollateral; //Rend de la vie avec le passif de Lycaon
             }
         }
