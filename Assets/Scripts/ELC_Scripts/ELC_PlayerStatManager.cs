@@ -41,7 +41,8 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float SponkStunTime;
     public float SponkSlowMotionValue;
     public float SponkSlowMotionDuration;
-    public float AttackMultiplicator;
+    public float AttackMultiplicatorChain;
+    public float BerserkMultiplicator;
     public float CurrentCombo;
     public float MaxCombo;
     public float ComboResetTime;
