@@ -134,8 +134,8 @@ public class ELC_PlayerMoves : MonoBehaviour
     private void Walk()
     {
         //détecte les inputs
-        playerMoves.x = Input.GetAxis("Horizontal") * playerStats.Speed;
-        playerMoves.y = Input.GetAxis("Vertical") * playerStats.Speed;
+        playerMoves.x = Input.GetAxis("Horizontal") * playerStats.Speed * playerStats.SpeedMultiplicatorPU;
+        playerMoves.y = Input.GetAxis("Vertical") * playerStats.Speed * playerStats.SpeedMultiplicatorPU;
 
         //traite la vitesse
         playerMoves = Vector3.ClampMagnitude(playerMoves, playerStats.Speed * playerStats.SpeedMultiplicatorPU);

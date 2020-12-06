@@ -42,7 +42,7 @@ public class ELC_PowerUpManager : MonoBehaviour
         if (PUSO.type == ELC_PowerUpSO.Type.Attack) playerStatsScript.AttackMultiplicatorPU = 1;
         else if (PUSO.type == ELC_PowerUpSO.Type.Heal) playerStatsScript.DefenseMultiplicatorPU = 1;
         else if (PUSO.type == ELC_PowerUpSO.Type.MoneyEarn) playerStatsScript.MoneyMultiplicatorPU = 1;
-        else if (PUSO.type == ELC_PowerUpSO.Type.Speed) playerStatsScript.MoneyMultiplicatorPU = 1;
+        else if (PUSO.type == ELC_PowerUpSO.Type.Speed) playerStatsScript.SpeedMultiplicatorPU = 1;
 
         Destroy(PowerUps[index]);
         PowerUps.Remove(PowerUps[index]);
@@ -100,7 +100,7 @@ public class ELC_PowerUpManager : MonoBehaviour
         if (PUSO.type == ELC_PowerUpSO.Type.Attack) playerStatsScript.AttackMultiplicatorPU = multiplicatorToApply;
         else if (PUSO.type == ELC_PowerUpSO.Type.Heal) playerStatsScript.DefenseMultiplicatorPU = multiplicatorToApply;
         else if (PUSO.type == ELC_PowerUpSO.Type.MoneyEarn) playerStatsScript.MoneyMultiplicatorPU = multiplicatorToApply;
-        else if (PUSO.type == ELC_PowerUpSO.Type.Speed) playerStatsScript.MoneyMultiplicatorPU = multiplicatorToApply;
+        else if (PUSO.type == ELC_PowerUpSO.Type.Speed) playerStatsScript.SpeedMultiplicatorPU = multiplicatorToApply;
 
 
     }

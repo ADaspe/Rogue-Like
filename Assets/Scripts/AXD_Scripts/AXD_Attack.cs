@@ -106,20 +106,20 @@ public class AXD_Attack : MonoBehaviour
         {
             if (colateral == false)
             {
-                totalDamage = Mathf.RoundToInt((playerStats.SwichDamage + (playerStats.SwichDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicatorChain *playerStats.BerserkMultiplicator );
+                totalDamage = Mathf.RoundToInt((playerStats.SwichDamage + (playerStats.SwichDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicatorChain *playerStats.BerserkMultiplicator * playerStats.AttackMultiplicatorPU);
             }else if(colateral == true)
             {
-                totalDamage = Mathf.RoundToInt(((playerStats.SwichDamage + (playerStats.SwichDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicatorChain * playerStats.BerserkMultiplicator) * playerStats.colateralDamage/100);
+                totalDamage = Mathf.RoundToInt(((playerStats.SwichDamage + (playerStats.SwichDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicatorChain * playerStats.BerserkMultiplicator * playerStats.AttackMultiplicatorPU) * playerStats.colateralDamage/100);
             }
         }
         else if (type == AttackType.Sponk)
         {
             if (colateral == false) {
-                totalDamage = Mathf.RoundToInt((playerStats.SponkDamage + (playerStats.SponkDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicatorChain * playerStats.BerserkMultiplicator);
+                totalDamage = Mathf.RoundToInt((playerStats.SponkDamage + (playerStats.SponkDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicatorChain * playerStats.BerserkMultiplicator * playerStats.AttackMultiplicatorPU);
                 if (AppetitDeLycaonIsActive) playerStats.currentHealth += AppetitDeLycaonHealPerEnemies; //Rend de la vie avec le passif de Lycaon
             } else if (colateral == true)
             {
-                totalDamage = Mathf.RoundToInt(((playerStats.SponkDamage + (playerStats.SponkDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicatorChain * playerStats.BerserkMultiplicator) * playerStats.colateralDamage/100);
+                totalDamage = Mathf.RoundToInt(((playerStats.SponkDamage + (playerStats.SponkDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicatorChain * playerStats.BerserkMultiplicator * playerStats.AttackMultiplicatorPU) * playerStats.colateralDamage/100);
                 if (AppetitDeLycaonIsActive) playerStats.currentHealth += AppetitDeLycaonHealPerCollateral; //Rend de la vie avec le passif de Lycaon
             }
         }
@@ -135,12 +135,14 @@ public class AXD_Attack : MonoBehaviour
         }
         if (CalculateDamage(AttackType.Swich) >= enemy.currentHealth)
         {
-            playerMoney.AddMoney(enemy.enemyStats.MoneyEarnWhenDead);
+            int moneyEarn = (int)(enemy.enemyStats.MoneyEarnWhenDead * playerStats.MoneyMultiplicatorPU);//Pour arrondir en int
+            playerMoney.AddMoney(moneyEarn);
             playerHealth.AddStock(enemy.enemyStats.ambrosiaEarnedWhenDead);
         }
         else
         {
-            playerMoney.AddMoney(enemy.enemyStats.MoneyEarnWhenHit);
+            int moneyEarn = (int)(enemy.enemyStats.MoneyEarnWhenHit * playerStats.MoneyMultiplicatorPU); 
+            playerMoney.AddMoney( moneyEarn);
         }
     }
 }

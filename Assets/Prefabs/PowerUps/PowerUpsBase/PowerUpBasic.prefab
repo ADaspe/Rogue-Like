@@ -43,5 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e27be1e079f184691474874bf755ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PowerUpSO: {fileID: 11400000, guid: 5ae505e384e769147ba37f2d219001a6, type: 2}
+  PowerUpSO: {fileID: 0}
   LifeDuration: 0
