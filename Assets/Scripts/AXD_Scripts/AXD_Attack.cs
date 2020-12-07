@@ -133,7 +133,7 @@ public class AXD_Attack : MonoBehaviour
             playerStats.CurrentCombo++;
             nextResetCombo = Time.time + playerStats.ComboResetTime;
         }
-        if (CalculateDamage(AttackType.Swich) >= enemy.currentHealth)
+        if (CalculateDamage(AttackType.Swich) >= enemy.currentHealth || CalculateDamage(AttackType.Sponk) >= enemy.currentHealth)
         {
             int moneyEarn = (int)(enemy.enemyStats.MoneyEarnWhenDead * playerStats.MoneyMultiplicatorPU);//Pour arrondir en int
             playerMoney.AddMoney(moneyEarn);
