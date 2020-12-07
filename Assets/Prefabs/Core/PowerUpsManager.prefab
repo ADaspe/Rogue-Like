@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1860452410747611866
+--- !u!1 &1100616153688929385
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1860452410747611864}
-  - component: {fileID: 1860452410747611867}
+  - component: {fileID: 2113021030049978408}
+  - component: {fileID: 3586297074546132650}
   m_Layer: 0
-  m_Name: PowerUp
+  m_Name: PowerUpsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1860452410747611864
+--- !u!4 &2113021030049978408
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1860452410747611866}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.392168, y: 2.1344626, z: -1.7011719}
+  m_GameObject: {fileID: 1100616153688929385}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.09, y: -5.22, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1860452410747611867
+--- !u!114 &3586297074546132650
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1860452410747611866}
+  m_GameObject: {fileID: 1100616153688929385}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3e27be1e079f184691474874bf755ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c208d508d55eb84cbcc3bec2a59e5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PowerUpSO: {fileID: 11400000, guid: 5ae505e384e769147ba37f2d219001a6, type: 2}
-  LifeDuration: 0
+  PowerUps: []
+  playerStatsScript: {fileID: 0}
+  durations: []

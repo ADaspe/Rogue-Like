@@ -5,13 +5,16 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Objects", menuName = "ScriptableObjects/AchivementScriptableObject", order = 1)]
 public class AXD_AchievementSO : ScriptableObject
 {
-    public string name;
+    public string achievementName;
     public int achievementTier;
     public ELC_Enemy ennemyToDefeat;
     public int numberToDefeat;
     public int numberDefeated;
     public bool isUnlocked;
-    //public ELC_Passif passifToUnlock;
+    public ELC_PassiveSO passifToUnlock;
+    [SerializeField]
+    private AXD_AchievementManager achievementManager;
+
 
     public void AddDefeated(int defeated = 1)
     {
@@ -22,7 +25,12 @@ public class AXD_AchievementSO : ScriptableObject
             if(numberDefeated >= numberToDefeat)
             {
                 isUnlocked = true;
-                //Debug.Log("Achivement " + name + achievementTier + " unlocked !");
+                passifToUnlock.isUnlock = true;
+                if (!achievementManager.passivesList.PassivesList.Contains(passifToUnlock))
+                {
+                    achievementManager.passivesList.PassivesList.Add(passifToUnlock);
+                }
+                
             }
         }
     }
@@ -31,5 +39,10 @@ public class AXD_AchievementSO : ScriptableObject
     {
         isUnlocked = false;
         numberDefeated = 0;
+    }
+
+    public void setAchievementManager(AXD_AchievementManager manager)
+    {
+        achievementManager = manager;
     }
 }

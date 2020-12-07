@@ -27,7 +27,7 @@ MonoBehaviour:
   DistanceCooldown: 1
   ProjectileSpeed: 8
   ProjectileDurability: 4
-  ProjectileStrenght: 2
+  ProjectileStrenght: 5
   CorpseAttack: 0
   AttackCooldown: 1
   AttackRange: 1
@@ -40,6 +40,7 @@ MonoBehaviour:
   DistanceToRun: 0
   DashStrenght: 0
   DashStun: 0
+  DashColliderWidth: 0
   SpawnEntitiesRegulary: 0
   SpawnEntitiesAtDeath: 0
   SpawnCooldown: 0
@@ -50,3 +51,4 @@ MonoBehaviour:
   ambrosiaEarnedWhenDead: 0
   sprite: {fileID: 0}
   Animator: {fileID: 0}
+  achievements: []

@@ -5,6 +5,7 @@ using UnityEngine;
 public class ELC_PowerUpManager : MonoBehaviour
 {
     public List<GameObject> PowerUps = new List<GameObject>();
+    public ELC_PlayerStatManager playerStatsScript;
 
     [SerializeField]
     private List<float> durations = new List<float>();
@@ -20,7 +21,6 @@ public class ELC_PowerUpManager : MonoBehaviour
                 if (PowerUps[i].GetComponent<ELC_PowerUpProperties>().LifeDuration <= 0)
                 {
                     DeletePowerUp(i);
-                    Debug.Log("passe ici");
                     return;
                 }
                 else
@@ -28,6 +28,7 @@ public class ELC_PowerUpManager : MonoBehaviour
                     PowerUps[i].GetComponent<ELC_PowerUpProperties>().LifeDuration -= Time.deltaTime;
                     durations[i] = PowerUps[i].GetComponent<ELC_PowerUpProperties>().LifeDuration;
                     //Debug.Log(PU.LifeDuration);
+                    ApplyPowerUp(PowerUps[i]);
                 }
             }
         }
@@ -35,6 +36,15 @@ public class ELC_PowerUpManager : MonoBehaviour
 
     private void DeletePowerUp(int index)
     {
+        ELC_PowerUpSO PUSO = PowerUps[index].GetComponent<ELC_PowerUpProperties>().PowerUpSO;
+
+
+        if (PUSO.type == ELC_PowerUpSO.Type.Attack) playerStatsScript.AttackMultiplicatorPU = 1;
+        else if (PUSO.type == ELC_PowerUpSO.Type.Heal) playerStatsScript.DefenseMultiplicatorPU = 1;
+        else if (PUSO.type == ELC_PowerUpSO.Type.MoneyEarn) playerStatsScript.MoneyMultiplicatorPU = 1;
+        else if (PUSO.type == ELC_PowerUpSO.Type.Speed) playerStatsScript.SpeedMultiplicatorPU = 1;
+
+        Destroy(PowerUps[index]);
         PowerUps.Remove(PowerUps[index]);
         durations.Remove(durations[index]);
         Debug.Log("PowerUp Destroyed at " + index);
@@ -42,30 +52,57 @@ public class ELC_PowerUpManager : MonoBehaviour
 
     public void AddPowerUp(GameObject PUObject)
     {
-        //bool FoundPlace = false;
         GameObject GO;
         ELC_PowerUpProperties PU = PUObject.GetComponent<ELC_PowerUpProperties>();
 
-        //for (int i = 0; i < PowerUps.Count; i++)
-        //{
-        //    if (PowerUps[i] == null && FoundPlace == false)
-        //    {
-        //        PowerUps[i] = PU;
-        //        
-        //        FoundPlace = true;
-        //        return;
-        //    }
-        //}
         GO = new GameObject();
-        GO.name = "PowerUp";
+        GO.name = PU.PowerUpSO.type.ToString() + " niveau " + PU.PowerUpSO.level;
+        GO.transform.SetParent(this.transform);
         GO.AddComponent<ELC_PowerUpProperties>();
         GO.GetComponent<ELC_PowerUpProperties>().LifeDuration = PU.LifeDuration;
         GO.GetComponent<ELC_PowerUpProperties>().PowerUpSO = PU.PowerUpSO;
+        if (PowerUps.Count > 0)
+        {
+            for (int i = 0; i < PowerUps.Count; i++)
+            {
+                if (PowerUps[i].GetComponent<ELC_PowerUpProperties>().PowerUpSO.type == GO.GetComponent<ELC_PowerUpProperties>().PowerUpSO.type)
+                {
+                    Destroy(PowerUps[i]);
+                    PowerUps[i] = GO;
+                    PowerUps[i].GetComponent<ELC_PowerUpProperties>().LifeDuration = PowerUps[i].GetComponent<ELC_PowerUpProperties>().PowerUpSO.duration;
+                    durations[i] = GO.GetComponent<ELC_PowerUpProperties>().LifeDuration;
+                    return;
+                }
+                else if (i == PowerUps.Count - 1)
+                {
+                    PowerUps.Add(GO);
+                    PowerUps[i + 1].GetComponent<ELC_PowerUpProperties>().LifeDuration = PowerUps[i + 1].GetComponent<ELC_PowerUpProperties>().PowerUpSO.duration;
+                    durations.Add(GO.GetComponent<ELC_PowerUpProperties>().LifeDuration);
+                    return;
+                }
+            }
+        }
+        else
+        {
+            PowerUps.Add(GO);
+            PowerUps[0].GetComponent<ELC_PowerUpProperties>().LifeDuration = PowerUps[0].GetComponent<ELC_PowerUpProperties>().PowerUpSO.duration;
+            durations.Add(GO.GetComponent<ELC_PowerUpProperties>().LifeDuration);
+        }
+    }
 
-        PowerUps.Add(GO);
-        durations.Add(0);
-        PowerUps[PowerUps.Count - 1].GetComponent<ELC_PowerUpProperties>().LifeDuration = PowerUps[PowerUps.Count - 1].GetComponent<ELC_PowerUpProperties>().PowerUpSO.duration;
-        
+
+
+    private void ApplyPowerUp(GameObject PowerUp)
+    {
+        ELC_PowerUpSO PUSO = PowerUp.GetComponent<ELC_PowerUpProperties>().PowerUpSO;
+        float multiplicatorToApply = PUSO.multiplicator;
+
+        if (PUSO.type == ELC_PowerUpSO.Type.Attack) playerStatsScript.AttackMultiplicatorPU = multiplicatorToApply;
+        else if (PUSO.type == ELC_PowerUpSO.Type.Heal) playerStatsScript.DefenseMultiplicatorPU = multiplicatorToApply;
+        else if (PUSO.type == ELC_PowerUpSO.Type.MoneyEarn) playerStatsScript.MoneyMultiplicatorPU = multiplicatorToApply;
+        else if (PUSO.type == ELC_PowerUpSO.Type.Speed) playerStatsScript.SpeedMultiplicatorPU = multiplicatorToApply;
+
+
     }
 
 }

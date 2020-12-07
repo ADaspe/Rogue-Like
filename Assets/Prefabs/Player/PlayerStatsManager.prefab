@@ -53,6 +53,8 @@ MonoBehaviour:
   maxStock: 100
   currentStock: 0
   healingRate: 1
+  losingLife: 0
+  lifeThreshold: 0
   DashDistance: 5
   DashTime: 0.2
   SwichDashDistance: 1
@@ -98,3 +100,7 @@ MonoBehaviour:
   AnimationDashTime: 0.4
   AnimationSwichTime: 0.4
   AnimationSponkTime: 1.5
+  AttackMultiplicatorPU: 1
+  SpeedMultiplicatorPU: 1
+  DefenseMultiplicatorPU: 1
+  MoneyMultiplicatorPU: 1

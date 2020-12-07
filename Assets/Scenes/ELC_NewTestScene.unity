@@ -10366,6 +10366,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Archer
       objectReference: {fileID: 0}
+    - target: {fileID: 2761936931067423410, guid: 7e25a7f60c29ae94b8dc46dd02edc1c1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e25a7f60c29ae94b8dc46dd02edc1c1, type: 3}
 --- !u!1 &1785581975 stripped
@@ -12592,6 +12597,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hoplite
       objectReference: {fileID: 0}
+    - target: {fileID: 2148857145838052542, guid: e92a72e0dcedde944886188f85b5d608,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2148857145838052543, guid: e92a72e0dcedde944886188f85b5d608,
         type: 3}
       propertyPath: fieldOfViewLayerMask.m_Bits
@@ -12830,6 +12840,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Oiseau
+      objectReference: {fileID: 0}
+    - target: {fileID: 3456645754019736596, guid: 690e085c5fac56248b4bf550d707dd5a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 690e085c5fac56248b4bf550d707dd5a, type: 3}
