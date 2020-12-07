@@ -29,7 +29,7 @@ public class EMD_DialogueManager : MonoBehaviour
         }
         if ( DialogueIsActive && Input.GetButtonDown("Interact"))
         {
-            Debug.Log("yes");
+            //Debug.Log("yes");
             NextSentence();
         }
     }
