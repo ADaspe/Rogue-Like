@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EMD_OptionScene.unity
     guid: a06092b9124f2b244b7996ef48f7e6b9
+  - enabled: 1
+    path: Assets/Scenes/ELC_ProceduralGeneration.unity
+    guid: b5de85deb70242643bffd52d06f20d64
+  - enabled: 1
+    path: Assets/Scenes/EMD_HUB.unity
+    guid: 9ed4e653997d35b4492382f8471f00e4
   m_configObjects: {}

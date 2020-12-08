@@ -287,6 +287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12ba93fd10cad014983d54f7d0707d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameScene: EMD_HUB
+  OptionsScene: EMD_OptionScene
 --- !u!1 &431203093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,7 +1243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
+  m_SubmitButton: Select
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
   m_RepeatDelay: 0.5

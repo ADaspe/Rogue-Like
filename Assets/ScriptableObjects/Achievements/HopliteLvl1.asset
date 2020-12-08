@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
+  m_Name: HopliteLvl1
+  m_EditorClassIdentifier: 
+  achievementName: 
+  achievementTier: 1
+  ennemyToDefeat: {fileID: 2148857145838052543, guid: e92a72e0dcedde944886188f85b5d608,
+    type: 3}
+  numberToDefeat: 2
+  numberDefeated: 0
+  isUnlocked: 0
+  passifToUnlock: {fileID: 11400000, guid: e8365aef04281bd45b3471d2fc5b1fb6, type: 2}
+  achievementManager: {fileID: 0}

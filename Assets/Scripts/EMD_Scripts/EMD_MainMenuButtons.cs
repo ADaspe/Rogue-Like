@@ -5,14 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class EMD_MainMenuButtons : MonoBehaviour
 {
+    public string GameScene;
+    public string OptionsScene;
+
     public void PlayGame()
     {
-        SceneManager.LoadScene("EMD_GameScene");
+        SceneManager.LoadScene(GameScene);
     }
 
     public void PlayOptions()
     {
-        SceneManager.LoadScene("EMD_OptionScene");
+        SceneManager.LoadScene(OptionsScene);
     }
 
     public void QuitGame()

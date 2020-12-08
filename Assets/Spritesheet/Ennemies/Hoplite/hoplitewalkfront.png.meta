@@ -1,31 +1,55 @@
 fileFormatVersion: 2
-guid: f24b1a2d792158943a9b726b12654fd4
+guid: 5788fc4fbebf0b64391734fb0fc74028
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4093480436322176185
-    second: Shadow_0
+      213: 7114055467822902434
+    second: hoplitewalkfront_0
   - first:
-      213: -6472874401326232
-    second: Shadow_1
+      213: 563826187842612148
+    second: hoplitewalkfront_1
   - first:
-      213: -2578634290482498685
-    second: Shadow_2
+      213: 8560435987491164624
+    second: hoplitewalkfront_2
   - first:
-      213: -2452145078486519950
-    second: Shadow_3
+      213: -7409407113728773901
+    second: hoplitewalkfront_3
   - first:
-      213: -1476207470431283674
-    second: Shadow_0
+      213: -2090946374021322771
+    second: hoplitewalkfront_4
   - first:
-      213: 4299592059245355686
-    second: Shadow_1
+      213: -2971284813136960069
+    second: hoplitewalkfront_5
   - first:
-      213: 318167667041975584
-    second: Shadow_2
+      213: -9015617717154083663
+    second: hoplitewalkfront_6
   - first:
-      213: -4183377209313042184
-    second: Shadow_3
+      213: 7515949154674627943
+    second: hoplitewalkfront_7
+  - first:
+      213: -6690314336022398994
+    second: hoplitewalkfront_0
+  - first:
+      213: 2724760036968067143
+    second: hoplitewalkfront_1
+  - first:
+      213: 1890515357411561979
+    second: hoplitewalkfront_2
+  - first:
+      213: -6176449166387652295
+    second: hoplitewalkfront_3
+  - first:
+      213: 8679115166244044095
+    second: hoplitewalkfront_4
+  - first:
+      213: 2591363576674652305
+    second: hoplitewalkfront_5
+  - first:
+      213: -1905482126589620712
+    second: hoplitewalkfront_6
+  - first:
+      213: -4191189493027060905
+    second: hoplitewalkfront_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -69,7 +93,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 25
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -147,13 +171,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Shadow_0
+      name: hoplitewalkfront_0
       rect:
         serializedVersion: 2
-        x: 51
-        y: 45
-        width: 13
-        height: 7
+        x: 0
+        y: 0
+        width: 215
+        height: 215
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6265a2e7025738be0800000000000000
-      internalID: -1476207470431283674
+      spriteID: ee77ea5ee8a3723a0800000000000000
+      internalID: -6690314336022398994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shadow_1
+      name: hoplitewalkfront_1
       rect:
         serializedVersion: 2
-        x: 166
-        y: 45
-        width: 13
-        height: 7
+        x: 215
+        y: 0
+        width: 215
+        height: 215
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a2e86a92383bab30800000000000000
-      internalID: 4299592059245355686
+      spriteID: 74079a531da40d520800000000000000
+      internalID: 2724760036968067143
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shadow_2
+      name: hoplitewalkfront_2
       rect:
         serializedVersion: 2
-        x: 281
-        y: 45
-        width: 13
-        height: 7
+        x: 430
+        y: 0
+        width: 215
+        height: 215
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02d3d05becb5a6400800000000000000
-      internalID: 318167667041975584
+      spriteID: bf1dfe083b57c3a10800000000000000
+      internalID: 1890515357411561979
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shadow_3
+      name: hoplitewalkfront_3
       rect:
         serializedVersion: 2
-        x: 396
-        y: 45
-        width: 13
-        height: 7
+        x: 645
+        y: 0
+        width: 215
+        height: 215
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,8 +248,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f06e65b798a1f5c0800000000000000
-      internalID: -4183377209313042184
+      spriteID: 939d4381538d84aa0800000000000000
+      internalID: -6176449166387652295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplitewalkfront_4
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 0
+        width: 215
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d7ea08249627870800000000000000
+      internalID: 8679115166244044095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplitewalkfront_5
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 0
+        width: 215
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 190149f717f56f320800000000000000
+      internalID: 2591363576674652305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplitewalkfront_6
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 0
+        width: 215
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e05cef91e5e85e0800000000000000
+      internalID: -1905482126589620712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hoplitewalkfront_7
+      rect:
+        serializedVersion: 2
+        x: 1505
+        y: 0
+        width: 215
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 753c5c9ac57e5d5c0800000000000000
+      internalID: -4191189493027060905
       vertices: []
       indices: 
       edges: []
@@ -233,7 +341,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 5841b0f4701209e40891bad7f92775ce
     internalID: 0
     vertices: []
     indices: 

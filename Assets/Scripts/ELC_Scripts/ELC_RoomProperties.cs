@@ -11,6 +11,7 @@ public class ELC_RoomProperties : MonoBehaviour
     public bool openDownDoor;
 
     public bool IsStartRoom;
+    public bool IsEndRoom;
     public bool RoomIsClosed;
     public bool HasBeenInitialised;
     public bool Loaded;

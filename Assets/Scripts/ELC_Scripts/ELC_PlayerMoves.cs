@@ -120,9 +120,10 @@ public class ELC_PlayerMoves : MonoBehaviour
             StartCoroutine("SponkAttackAnimation");
         }
 
-        if (Input.GetAxisRaw("Heal") != 0)
+        if (Input.GetAxis("Heal") != 0)
         {
-            playerHealth.Heal(playerStats.healingRate * Input.GetAxisRaw("Heal"));
+            playerHealth.Heal(playerStats.healingRate * Input.GetAxis("Heal"));
+            Debug.Log(Input.GetAxis("Heal"));
         }
 
         if (canMove) Walk();
@@ -134,14 +135,14 @@ public class ELC_PlayerMoves : MonoBehaviour
     private void Walk()
     {
         //détecte les inputs
-        playerMoves.x = Input.GetAxis("Horizontal") * playerStats.Speed;
-        playerMoves.y = Input.GetAxis("Vertical") * playerStats.Speed;
+        playerMoves.x = Input.GetAxis("Horizontal") * playerStats.Speed * playerStats.SpeedMultiplicatorPU;
+        playerMoves.y = Input.GetAxis("Vertical") * playerStats.Speed * playerStats.SpeedMultiplicatorPU;
 
         //traite la vitesse
-        playerMoves = Vector3.ClampMagnitude(playerMoves, playerStats.Speed);
+        playerMoves = Vector3.ClampMagnitude(playerMoves, playerStats.Speed * playerStats.SpeedMultiplicatorPU);
 
         //Empêche le joueur de traverser les murs
-        MovementClampIfCollidingWalls(playerStats.Speed, "playerMoves");
+        MovementClampIfCollidingWalls(playerStats.Speed * playerStats.SpeedMultiplicatorPU, "playerMoves");
 
         IsPlayerImmobile();
 
@@ -326,7 +327,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         Raycasts();
         PlayerTurnDetector();
         MovementClampIfCollidingWalls(distance / time, "dashVector");
-        MovementClampIfCollidingWalls(playerStats.Speed, "playerMoves");
+        MovementClampIfCollidingWalls(playerStats.Speed * playerStats.SpeedMultiplicatorPU, "playerMoves");
 
         //Conditions d'arrêt du dash
         if (Time.time > stopDash || isDashingInWall)
@@ -345,15 +346,15 @@ public class ELC_PlayerMoves : MonoBehaviour
         playerStats.currentChain = chain;
         if (chain == ELC_PlayerStatManager.Chain.Blue)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorBlue;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorBlue;
         }
         else if (chain == ELC_PlayerStatManager.Chain.Orange)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorOrange;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorOrange;
         }
         else if (chain == ELC_PlayerStatManager.Chain.Red)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorRed;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorRed;
         }
         playerStats.currentHitChain = 0;
     }
@@ -363,17 +364,17 @@ public class ELC_PlayerMoves : MonoBehaviour
         float dashDistanceMultiplicator = 1;
         if (playerStats.currentChain == ELC_PlayerStatManager.Chain.Blue)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorBlue;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorBlue;
             dashDistanceMultiplicator = playerStats.DashMultiplicatorBlue;
         }
         else if (playerStats.currentChain == ELC_PlayerStatManager.Chain.Orange)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorOrange;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorOrange;
             dashDistanceMultiplicator = playerStats.DashMultiplicatorOrange;
         }
         else if (playerStats.currentChain == ELC_PlayerStatManager.Chain.Red)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorRed;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorRed;
             dashDistanceMultiplicator = playerStats.DashMultiplicatorRed;
         }
         StartCoroutine(PlayAnimation("SponkAttack", playerStats.AnimationSponkTime, false, false));
