@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1049,6 +1049,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1860452410747611866, guid: 441fb169c3471264288ba1618e66546f,
         type: 3}
+    - target: {fileID: 2289528245598647201, guid: 0e5bb8edd80cd77489edfc726525c6f9,
+        type: 3}
+      propertyPath: chooseRandomPowerUp
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2289528245598647202, guid: 0e5bb8edd80cd77489edfc726525c6f9,
         type: 3}
       propertyPath: m_Name
@@ -10366,6 +10371,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Archer
       objectReference: {fileID: 0}
+    - target: {fileID: 2761936931067423410, guid: 7e25a7f60c29ae94b8dc46dd02edc1c1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e25a7f60c29ae94b8dc46dd02edc1c1, type: 3}
 --- !u!1 &1785581975 stripped
@@ -10730,8 +10740,13 @@ PrefabInstance:
         type: 3}
       propertyPath: PowerUp
       value: 
-      objectReference: {fileID: 1860452410747611866, guid: 441fb169c3471264288ba1618e66546f,
+      objectReference: {fileID: 7391949015416354207, guid: f9b5e39cf03dc9646a77d7e0d7ae5674,
         type: 3}
+    - target: {fileID: 2289528245598647201, guid: 0e5bb8edd80cd77489edfc726525c6f9,
+        type: 3}
+      propertyPath: chooseRandomPowerUp
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2289528245598647202, guid: 0e5bb8edd80cd77489edfc726525c6f9,
         type: 3}
       propertyPath: m_Name
@@ -12223,6 +12238,16 @@ PrefabInstance:
       propertyPath: SwitchChainSwlowMotionDuration
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 397678874362256133, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: lifeThreshold
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 397678874362256133, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: healingRate
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 1107614495702916056, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12592,6 +12617,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hoplite
       objectReference: {fileID: 0}
+    - target: {fileID: 2148857145838052542, guid: e92a72e0dcedde944886188f85b5d608,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2148857145838052543, guid: e92a72e0dcedde944886188f85b5d608,
         type: 3}
       propertyPath: fieldOfViewLayerMask.m_Bits
@@ -12830,6 +12860,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Oiseau
+      objectReference: {fileID: 0}
+    - target: {fileID: 3456645754019736596, guid: 690e085c5fac56248b4bf550d707dd5a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 690e085c5fac56248b4bf550d707dd5a, type: 3}

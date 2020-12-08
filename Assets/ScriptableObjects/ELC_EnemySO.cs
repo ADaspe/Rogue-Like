@@ -45,6 +45,7 @@ public class ELC_EnemySO : ScriptableObject
     public float DistanceToRun;
     public float DashStrenght;
     public bool DashStun;
+    public float DashColliderWidth;
 
     [Header("Spawn Entities")]
     public bool SpawnEntitiesRegulary;

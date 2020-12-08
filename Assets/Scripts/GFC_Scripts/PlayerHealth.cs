@@ -32,16 +32,17 @@ public class PlayerHealth : MonoBehaviour
     }
 
     //ça c'est comment il prend des dégâts, et ça synchronise en live la barre de vie pour être sûr qu'elle suive 
-    void GetHit(int damage, float knockack = 0, float stun = 0)
+    public void GetHit(int damage, float knockack = 0, float stun = 0)
     {
         if (!playerStats.invulnerability)
         {
             playerStats.currentHealth = healthSlider.value;
-            playerStats.currentHealth -= damage;
+            playerStats.currentHealth -= damage / playerStats.DefenseMultiplicatorPU;
             SetHealth(playerStats.currentHealth);
             if(playerStats.currentHealth <= 0)
             {
                 isDead = true;
+                Destroy(this.gameObject);
             }
         }
     }

@@ -22,6 +22,7 @@ public class ELC_Enemy : MonoBehaviour
     public Vector3 movesTowardPlayer;
     private Vector3 fleePlayer;
     private Vector3 directionToDash;
+    private Vector3 lastDirection;
 
     private Vector3 currentDashDirection;
     private float currentDashDistance;
@@ -110,11 +111,13 @@ public class ELC_Enemy : MonoBehaviour
             if (distanceFromPlayer == EnemyDistance.TooFar)
             {
                 transform.Translate(movesTowardPlayer);
+                lastDirection = movesTowardPlayer;
                 CalculateDirectionForAnimator(movesTowardPlayer);
             }
             else if(distanceFromPlayer == EnemyDistance.TooClose)
             {
                 transform.Translate(fleePlayer);
+                lastDirection = fleePlayer;
                 CalculateDirectionForAnimator(fleePlayer);
             }
         }
@@ -124,6 +127,7 @@ public class ELC_Enemy : MonoBehaviour
             if (distanceFromPlayer == EnemyDistance.TooClose)
             {
                 transform.Translate(fleePlayer);
+                lastDirection = fleePlayer;
                 CalculateDirectionForAnimator(fleePlayer);
             }
         }
@@ -285,8 +289,15 @@ public class ELC_Enemy : MonoBehaviour
         //Debug.Log(enemyStats.name + " attaque !");
         enemyAnimator.SetBool("IsPreparingForAttack", false);
         enemyAnimator.SetBool("IsAttacking", true);
-        if (enemyStats.DistanceAttack) DistanceAttack();
-        if (enemyStats.DashOnPlayer) Dash(directionToDash, enemyStats.DashTime, enemyStats.DistanceToRun);
+
+        if (enemyStats.DashOnPlayer)
+        {
+            Dash(directionToDash, enemyStats.DashTime, enemyStats.DistanceToRun);
+            HitPlayer(true);
+        }
+        else if (enemyStats.DistanceAttack) DistanceAttack();
+        else HitPlayer();
+
         canMove = true;
         yield return new WaitForSeconds(enemyStats.AttackAnimationTime);
         enemyAnimator.SetBool("IsAttacking", false);
@@ -419,4 +430,50 @@ public class ELC_Enemy : MonoBehaviour
             
         }
     }
+
+    public void HitPlayer(bool dashAttack = false)
+    {
+        Collider2D[] hitColliders = null;
+
+        if (dashAttack == false) //basic attack
+        {
+            hitColliders = Physics2D.OverlapCircleAll(this.transform.position + lastDirection.normalized * enemyStats.AttackRange, enemyStats.AttackRange, LayerMask.GetMask("Player"));
+            if (hitColliders != null && hitColliders.Length > 0)
+            {
+                hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)enemyStats.AttackStrenght);
+                Debug.Log("Corpse Hit");
+            }
+        }
+        else //dashAttack
+        {
+            StartCoroutine("DashAttack");
+        }
+    }
+
+    private IEnumerator DashAttack()
+    {
+        Collider2D[] hitColliders = null;
+        bool hitPlayer = false;
+
+        while (Time.time >= stopDashing || hitPlayer == false)
+        {
+            hitColliders = null;
+            hitColliders = Physics2D.OverlapBoxAll(this.transform.position + directionToDash.normalized, new Vector2(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth), Vector2.Angle(Vector2.up, directionToDash), LayerMask.GetMask("Player"));
+            if (hitColliders != null && hitColliders.Length > 0)
+            {
+                hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)enemyStats.AttackStrenght);
+                Debug.Log("Dash Hit");
+                hitPlayer = true;
+            }
+            yield return null;
+        }
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(this.transform.position + lastDirection.normalized * enemyStats.AttackRange, enemyStats.AttackRange);
+        Gizmos.DrawCube(this.transform.position + directionToDash.normalized * 0.5f, new Vector3(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth, 0));
+    }
+
 }
