@@ -250,6 +250,11 @@ PrefabInstance:
       propertyPath: moneycount
       value: 
       objectReference: {fileID: 3309051800045009204}
+    - target: {fileID: 6171825858470314011, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: passivesList
+      value: 
+      objectReference: {fileID: 7469097467536029269}
     - target: {fileID: 7407932525945116823, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: m_Layer
@@ -347,6 +352,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1107614495140986406}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7469097467536029269 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7563963873329580147, guid: c582c890f15ac5345a4f3c531ee31b90,
+    type: 3}
+  m_PrefabInstance: {fileID: 1107614495140986406}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 253fb4863e6cef24498fe6d2ddeec13d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4960410694947244276
 PrefabInstance:
   m_ObjectHideFlags: 0
