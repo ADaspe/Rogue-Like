@@ -18,4 +18,7 @@ public class ELC_PowerUpSO : ScriptableObject
 
     //Durée du PowerUp
     public float duration;
+
+    //sprite affiché sur le HUD
+    public Sprite HUDSprite;
 }

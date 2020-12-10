@@ -20,6 +20,7 @@ MonoBehaviour:
   NeedTimeToTurn: 0
   TurnSpeed: 0
   EnemyWidth: 1
+  noStunTime: 1
   FriendlyFire: 0
   DistanceAttack: 0
   Projectile: {fileID: 0}
