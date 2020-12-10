@@ -80,6 +80,8 @@ public class ELC_PlayerMoves : MonoBehaviour
         playerAnimator.SetFloat("DirectionAxeX", 0);
         playerAnimator.SetFloat("DirectionAxeY", -1);
         DashParticles.GetComponent<ParticleSystem>().Stop();
+
+        ResetChain();
     }
 
     private void Update()

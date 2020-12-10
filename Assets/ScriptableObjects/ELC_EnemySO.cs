@@ -18,6 +18,7 @@ public class ELC_EnemySO : ScriptableObject
     public float LimitDistanceToStay;
     public bool NeedTimeToTurn;
     public float TurnSpeed;
+    public float EnemyWidth;
 
     [Header("Attack Capacity")]
 
