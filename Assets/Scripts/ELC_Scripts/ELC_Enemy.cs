@@ -24,6 +24,7 @@ public class ELC_Enemy : MonoBehaviour
     private Vector3 directionToDash;
     private Vector3 lastDirection;
     private Vector3 MoveAwayOtherEnemies;
+    private bool isPreparingAttack;
 
     private Vector3 currentDashDirection;
     private float currentDashDistance;
@@ -31,6 +32,7 @@ public class ELC_Enemy : MonoBehaviour
 
     private const float knockbackTime = 0.2f;
     public bool isStun;
+    private bool canBeStun = true;
     public bool isInvulnerable = false;
     private bool isTouchingRight;
     private bool isTouchingLeft;
@@ -413,6 +415,7 @@ public class ELC_Enemy : MonoBehaviour
 
     IEnumerator Stun(float time, bool invulnerable = false)
     {
+        canBeStun = false;
         isStun = true;
         if (invulnerable)
         {
@@ -425,6 +428,9 @@ public class ELC_Enemy : MonoBehaviour
         }
         isStun = false;
 
+        yield return new WaitForSeconds(enemyStats.noStunTime);
+
+        canBeStun = true;
     }
     public void GetHit(int Damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0, bool invulnerable = false)
     {
@@ -433,7 +439,7 @@ public class ELC_Enemy : MonoBehaviour
             currentHealth -= Damage;
 
             Dash(-directionToFlee, knockbackTime, knockbackDistance);
-            if (!isStun)
+            if (!isStun && !isPreparingAttack && canBeStun == true)
             {
                 StartCoroutine(Stun(stunTime, invulnerable));
                 StopCoroutine("Attack");
