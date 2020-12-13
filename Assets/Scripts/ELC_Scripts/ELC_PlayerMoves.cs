@@ -80,6 +80,8 @@ public class ELC_PlayerMoves : MonoBehaviour
         playerAnimator.SetFloat("DirectionAxeX", 0);
         playerAnimator.SetFloat("DirectionAxeY", -1);
         DashParticles.GetComponent<ParticleSystem>().Stop();
+
+        ResetChain();
     }
 
     private void Update()
@@ -120,9 +122,10 @@ public class ELC_PlayerMoves : MonoBehaviour
             StartCoroutine("SponkAttackAnimation");
         }
 
-        if (Input.GetAxisRaw("Heal") != 0)
+        if (Input.GetAxis("Heal") != 0)
         {
-            playerHealth.Heal(playerStats.healingRate * Input.GetAxisRaw("Heal"));
+            playerHealth.Heal(playerStats.healingRate * Input.GetAxis("Heal"));
+            Debug.Log(Input.GetAxis("Heal"));
         }
 
         if (canMove) Walk();

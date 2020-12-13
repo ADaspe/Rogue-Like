@@ -37,8 +37,7 @@ public class ELC_PassivesProperties : MonoBehaviour
 
     private void UpdateValues() //Se lance une seule fois après l'obtention d'un passif un changement de passif
     {
-        if(ActualPassiveScriptableObject.PassiveName == "Appétit De Lycaon") AppetitDeLycaon();
-        
+        if (ActualPassiveScriptableObject.PassiveName == "Appétit De Lycaon") AppetitDeLycaon();
     }
 
     private void AppetitDeLycaon()
@@ -47,7 +46,6 @@ public class ELC_PassivesProperties : MonoBehaviour
         AttackScript.AppetitDeLycaonHealPerEnemies = LycaonMainEnemyHeal;
         AttackScript.AppetitDeLycaonHealPerCollateral = LycaonCollateralEnemyHeal;
     }
-
 
 
 }
