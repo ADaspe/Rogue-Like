@@ -42,6 +42,7 @@ public class PlayerHealth : MonoBehaviour
             if(playerStats.currentHealth <= 0)
             {
                 isDead = true;
+                Destroy(this.gameObject);
             }
         }
     }
