@@ -22,7 +22,7 @@ public class ELC_RoomProperties : MonoBehaviour
 
     public Tilemap tileMap;
     public List<RuleTile> WallTiles = null; //La 1ère wallTile est celle du toit et la seconde est le mur
-    private Vector3 actualTile;
+    private Vector3Int actualTile;
 
     public int WavesLimit = 2;
     public int ActualWave;
@@ -63,7 +63,7 @@ public class ELC_RoomProperties : MonoBehaviour
                 }
 
 
-                if (Input.GetKeyDown(KeyCode.F)) DoorsState(!RoomIsClosed);
+                //if (Input.GetKeyDown(KeyCode.F)) DoorsState(!RoomIsClosed);
             }
         }
     }
@@ -147,8 +147,7 @@ public class ELC_RoomProperties : MonoBehaviour
         enemiesGenerators = GetAllChilds(roomObject.transform.Find("EnemiesGenerators").gameObject);
         powerUpsGenerators = GetAllChilds(roomObject.transform.Find("PowerUps").gameObject);
 
-
-        
+        tileMap = this.transform.GetComponentInChildren<Tilemap>();
 
         doors.Add(LeftDoor);
         doors.Add(RightDoor);
@@ -214,32 +213,75 @@ public class ELC_RoomProperties : MonoBehaviour
         openSides.Add(openTopDoor);
         openSides.Add(openDownDoor);
 
-        for (int i = 0; i < openSides.Count; i++)
+        if (!openSides[0])
         {
-            DrawWalls(doorsDirections.Left);
+            LeftDoor.SetActive(false);
+            DrawWalls(LeftDoor);
         }
+        if (!openSides[1])
+        {
+            RightDoor.SetActive(false);
+            DrawWalls(RightDoor);
+        }
+        if (!openSides[2])
+        {
+            TopDoor.SetActive(false);
+            DrawWalls(TopDoor);
+        }
+        if (!openSides[3])
+        {
+            DownDoor.SetActive(false);
+            DrawWalls(DownDoor);
+        }
+
+
 
         DoorsState(false);
 
     }
 
-    private void DrawWalls(doorsDirections dir)
+    private void DrawWalls(GameObject door)
     {
-        if(dir == doorsDirections.Left)
+        float xCoordinates = door.transform.GetChild(0).transform.position.x;
+        float yCoordinates = door.transform.GetChild(0).transform.position.y;
+
+        int length = 0; //Pour calculer la longueur horizontale du couloir
+
+        if (door == LeftDoor) length = Mathf.FloorToInt(FindObjectOfType<ELC_RoomsGenerator>().distanceBtwRoomsX / 2 - (this.transform.position.x - xCoordinates)) + 1;
+        else if (door == RightDoor) length = Mathf.FloorToInt(FindObjectOfType<ELC_RoomsGenerator>().distanceBtwRoomsX / 2 - (xCoordinates - this.transform.position.x)) + 1;
+        else if (door == DownDoor) length = Mathf.FloorToInt(FindObjectOfType<ELC_RoomsGenerator>().distanceBtwRoomsY / 2 - (this.transform.position.y - yCoordinates)) + 1; //Pour calculer la longueur verticale du couloir
+        else if (door == TopDoor) length = Mathf.FloorToInt(FindObjectOfType<ELC_RoomsGenerator>().distanceBtwRoomsY / 2 - (yCoordinates - this.transform.position.y)) + 1;
+
+        int corridorWidth = 0;
+        if (door == LeftDoor || door == RightDoor) corridorWidth = 4;
+        else corridorWidth = 2;
+
+
+        for (int i = 0; i < corridorWidth; i++)
         {
-            float xCoordinates = LeftDoor.transform.GetChild(1).transform.position.x;
-            int length = (int)(FindObjectOfType<ELC_RoomsGenerator>().distanceBtwRoomsX / 2 - (this.transform.position.x - xCoordinates)) - 1; //Pour calculer la longueur du couloir
-            Debug.Log(length); //ça marche bien
-
-            for (int i = 0; i < length; i++)
+            if (door == LeftDoor || door == RightDoor)
             {
-                //Mettre les tiles sur la ligne du bas
+                if (door.transform.GetChild(0).transform.position.y < door.transform.GetChild(1).transform.position.y) actualTile = tileMap.WorldToCell(door.transform.GetChild(0).transform.position) + new Vector3Int(0, i, 0); //On cherche à prendre la porte la plus en bas comme point de départ du dessin
+                else actualTile = tileMap.WorldToCell(door.transform.GetChild(1).transform.position) + new Vector3Int(0, i, 0);
             }
-            for (int i = 0; i < length; i++)
+            else
             {
-                //Mettre les tiles sur la ligne du haut
+                if (door.transform.GetChild(0).transform.position.x < door.transform.GetChild(1).transform.position.x) actualTile = tileMap.WorldToCell(door.transform.GetChild(0).transform.position) + new Vector3Int(i, 0, 0); //On cherche à prendre la porte la plus en bas comme point de départ du dessin
+                else actualTile = tileMap.WorldToCell(door.transform.GetChild(1).transform.position) + new Vector3Int(i, 0, 0);
             }
 
+            for (int e = 0; e < length; e++)
+            {
+                int tileIndex = 0;
+                if (door == TopDoor && e < 2) tileIndex = 1;
+                
+                tileMap.SetTile(actualTile, WallTiles[tileIndex]);
+
+                if (door == LeftDoor) actualTile.x--;
+                else if (door == RightDoor) actualTile.x++;
+                else if (door == DownDoor) actualTile.y--;
+                else if(door == TopDoor) actualTile.y++;
+            }
         }
     }
 
