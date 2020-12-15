@@ -118,6 +118,7 @@ MonoBehaviour:
   chooseRandomPassive: 0
   passivesList:
   - {fileID: 11400000, guid: e8365aef04281bd45b3471d2fc5b1fb6, type: 2}
+  - {fileID: 11400000, guid: b2b1f17a4f0c8684bbbb88cd65efa86c, type: 2}
 --- !u!114 &2289528245598647197
 MonoBehaviour:
   m_ObjectHideFlags: 0

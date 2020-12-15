@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7893656655430122814}
   - component: {fileID: 9015936277933386134}
   - component: {fileID: 5156303645830310060}
+  - component: {fileID: 3586854465273595281}
   m_Layer: 0
   m_Name: Game Manager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,3 +74,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937086faf25253f41b4c1a595afc66a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3586854465273595281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4165126470697718512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3211e744f4221e42bd7362c43bc953b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basicCamera: {fileID: 0}
+  destroyerRadius: 10

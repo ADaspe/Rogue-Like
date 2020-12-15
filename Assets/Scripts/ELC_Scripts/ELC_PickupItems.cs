@@ -35,18 +35,19 @@ public class ELC_PickupItems : MonoBehaviour
 
         if(chooseRandomPowerUp)
         {
-            int randomNumber = Random.Range(0, PowerUpsList.Count - 1);
+            int randomNumber = Random.Range(0, PowerUpsList.Count);
             PowerUp = PowerUpsList[randomNumber];
 
         }
         if(chooseRandomObject)
         {
-            int randomNumber = Random.Range(0, ObjectsList.Count - 1);
+            int randomNumber = Random.Range(0, ObjectsList.Count);
             Object = ObjectsList[randomNumber];
         }
         if(chooseRandomPassive)
         {
-            int randomNumber = Random.Range(0, passivesList.Count - 1);
+            int randomNumber = Random.Range(0, passivesList.Count);
+            Debug.Log(randomNumber);
             Passive = passivesList[randomNumber];
         }
     }

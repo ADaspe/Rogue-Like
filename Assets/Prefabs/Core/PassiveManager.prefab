@@ -49,6 +49,8 @@ MonoBehaviour:
   InventoryScript: {fileID: 0}
   LycaonMainEnemyHeal: 0
   LycaonCollateralEnemyHeal: 0
+  FilAresBerserkMultiplicator: 1.5
+  FilAresDamageTakenMultiplicator: 1.5
 --- !u!114 &7064135163168353771
 MonoBehaviour:
   m_ObjectHideFlags: 0
