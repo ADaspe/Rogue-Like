@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.Security.Policy;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class ELC_RoomProperties : MonoBehaviour
 {
+    enum doorsDirections {Left, Right, Top, Down};
+    doorsDirections directions = doorsDirections.Left;
+
     public bool openLeftDoor;
     public bool openRightDoor;
     public bool openTopDoor;
@@ -15,6 +19,10 @@ public class ELC_RoomProperties : MonoBehaviour
     public bool RoomIsClosed;
     public bool HasBeenInitialised;
     public bool Loaded;
+
+    public Tilemap tileMap;
+    public List<RuleTile> WallTiles = null; //La 1ère wallTile est celle du toit et la seconde est le mur
+    private Vector3 actualTile;
 
     public int WavesLimit = 2;
     public int ActualWave;
@@ -27,6 +35,8 @@ public class ELC_RoomProperties : MonoBehaviour
     public float DoorPlayerDetectionDistance;
 
     public Vector2 positionNumber;
+
+    
 
     public GameObject roomObject, corridorsObject, areaObject;
     public GameObject LeftDoor, RightDoor, TopDoor, DownDoor;
@@ -145,6 +155,7 @@ public class ELC_RoomProperties : MonoBehaviour
         doors.Add(TopDoor);
         doors.Add(DownDoor);
 
+        
 
         HasBeenInitialised = true;
     }
@@ -203,7 +214,33 @@ public class ELC_RoomProperties : MonoBehaviour
         openSides.Add(openTopDoor);
         openSides.Add(openDownDoor);
 
+        for (int i = 0; i < openSides.Count; i++)
+        {
+            DrawWalls(doorsDirections.Left);
+        }
+
         DoorsState(false);
 
     }
+
+    private void DrawWalls(doorsDirections dir)
+    {
+        if(dir == doorsDirections.Left)
+        {
+            float xCoordinates = LeftDoor.transform.GetChild(1).transform.position.x;
+            int length = (int)(FindObjectOfType<ELC_RoomsGenerator>().distanceBtwRoomsX / 2 - (this.transform.position.x - xCoordinates)) - 1; //Pour calculer la longueur du couloir
+            Debug.Log(length); //ça marche bien
+
+            for (int i = 0; i < length; i++)
+            {
+                //Mettre les tiles sur la ligne du bas
+            }
+            for (int i = 0; i < length; i++)
+            {
+                //Mettre les tiles sur la ligne du haut
+            }
+
+        }
+    }
+
 }
