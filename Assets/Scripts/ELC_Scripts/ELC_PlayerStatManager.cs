@@ -104,4 +104,8 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float SpeedMultiplicatorPU = 1;
     public float DefenseMultiplicatorPU = 1;
     public float MoneyMultiplicatorPU = 1;
+
+    [Header("Passives")]
+    public float FilAresDamagesTakenMultiplicator;
+    public float FilAresBerserkMultiplicator;
 }
