@@ -31,5 +31,6 @@ MonoBehaviour:
   explodeOnDestruct: 0
   actionArea: 5
   ObjectsScript: {fileID: 0}
-  HUDSprite: {fileID: 0}
+  HUDSprite: {fileID: 4064152122867878886, guid: f36e4e3271c20924592ee58e3eec936d,
+    type: 3}
   Animator: {fileID: 0}

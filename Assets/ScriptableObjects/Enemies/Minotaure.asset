@@ -16,7 +16,7 @@ MonoBehaviour:
   MaxHealth: 35
   MovementSpeed: 2
   EnemyPath: 0
-  LimitDistanceToStay: 2
+  LimitDistanceToStay: 1
   NeedTimeToTurn: 1
   TurnSpeed: 1
   FriendlyFire: 0
@@ -27,13 +27,13 @@ MonoBehaviour:
   CorpseAttack: 1
   AttackCooldown: 5
   AttackRange: 0
-  WaitBeforeAttack: 1
+  WaitBeforeAttack: 0.5
   AttackStrenght: 0
   AttackStun: 0
   AttackAnimationTime: 0
   DashOnPlayer: 1
-  DashTime: 0.3
-  DistanceToRun: 6
+  DashTime: 0.5
+  DistanceToRun: 4
   DashStrenght: 0
   DashStun: 0
   SpawnEntitiesRegulary: 0

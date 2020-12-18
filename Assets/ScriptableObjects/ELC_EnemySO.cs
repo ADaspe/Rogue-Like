@@ -18,6 +18,8 @@ public class ELC_EnemySO : ScriptableObject
     public float LimitDistanceToStay;
     public bool NeedTimeToTurn;
     public float TurnSpeed;
+    public float EnemyWidth;
+    public float noStunTime;
 
     [Header("Attack Capacity")]
 
@@ -27,6 +29,9 @@ public class ELC_EnemySO : ScriptableObject
     public GameObject Projectile; //Le projectile doit avoir un ScriptableObject
     public float DistanceAttackArea;
     public float DistanceCooldown;
+    public float ProjectileSpeed;
+    public float ProjectileDurability;
+    public float ProjectileStrenght;
 
     public bool CorpseAttack;
     public float AttackCooldown;
@@ -42,6 +47,7 @@ public class ELC_EnemySO : ScriptableObject
     public float DistanceToRun;
     public float DashStrenght;
     public bool DashStun;
+    public float DashColliderWidth;
 
     [Header("Spawn Entities")]
     public bool SpawnEntitiesRegulary;
@@ -60,4 +66,7 @@ public class ELC_EnemySO : ScriptableObject
     public Sprite sprite;
     //public MonoBehaviour AIScript;
     public Animator Animator;
+
+    [Header("Related Achivements")]
+    public List<AXD_AchievementSO> achievements;
 }

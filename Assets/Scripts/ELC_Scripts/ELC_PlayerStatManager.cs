@@ -19,6 +19,8 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float maxStock;
     public float currentStock;
     public float healingRate;
+    public bool losingLife;
+    public float lifeThreshold;
 
     [Header ("Dash Stats")]
     public float DashDistance;
@@ -39,7 +41,8 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float SponkStunTime;
     public float SponkSlowMotionValue;
     public float SponkSlowMotionDuration;
-    public float AttackMultiplicator;
+    public float AttackMultiplicatorChain;
+    public float BerserkMultiplicator;
     public float CurrentCombo;
     public float MaxCombo;
     public float ComboResetTime;
@@ -96,6 +99,13 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float AnimationSwichTime;
     public float AnimationSponkTime;
 
+    [Header("Power Ups")]
+    public float AttackMultiplicatorPU = 1;
+    public float SpeedMultiplicatorPU = 1;
+    public float DefenseMultiplicatorPU = 1;
+    public float MoneyMultiplicatorPU = 1;
 
-
+    [Header("Passives")]
+    public float FilAresDamagesTakenMultiplicator;
+    public float FilAresBerserkMultiplicator;
 }

@@ -22,6 +22,9 @@ public class ELC_Enemy : MonoBehaviour
     public Vector3 movesTowardPlayer;
     private Vector3 fleePlayer;
     private Vector3 directionToDash;
+    private Vector3 lastDirection;
+    private Vector3 MoveAwayOtherEnemies;
+    private bool isPreparingAttack;
 
     private Vector3 currentDashDirection;
     private float currentDashDistance;
@@ -29,7 +32,8 @@ public class ELC_Enemy : MonoBehaviour
 
     private const float knockbackTime = 0.2f;
     public bool isStun;
-    public bool isInvulnerable;
+    private bool canBeStun = true;
+    public bool isInvulnerable = false;
     private bool isTouchingRight;
     private bool isTouchingLeft;
     private bool isTouchingTop;
@@ -60,6 +64,7 @@ public class ELC_Enemy : MonoBehaviour
         enemyCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyAnimator = GetComponent<Animator>();
+        isInvulnerable = false;
 
         currentHealth = enemyStats.MaxHealth;
         speed = enemyStats.MovementSpeed;
@@ -109,12 +114,14 @@ public class ELC_Enemy : MonoBehaviour
             //Raycasts();
             if (distanceFromPlayer == EnemyDistance.TooFar)
             {
-                transform.Translate(movesTowardPlayer);
+                transform.Translate(movesTowardPlayer + MoveAwayOtherEnemies);
+                lastDirection = movesTowardPlayer;
                 CalculateDirectionForAnimator(movesTowardPlayer);
             }
             else if(distanceFromPlayer == EnemyDistance.TooClose)
             {
                 transform.Translate(fleePlayer);
+                lastDirection = fleePlayer;
                 CalculateDirectionForAnimator(fleePlayer);
             }
         }
@@ -124,6 +131,7 @@ public class ELC_Enemy : MonoBehaviour
             if (distanceFromPlayer == EnemyDistance.TooClose)
             {
                 transform.Translate(fleePlayer);
+                lastDirection = fleePlayer;
                 CalculateDirectionForAnimator(fleePlayer);
             }
         }
@@ -142,16 +150,19 @@ public class ELC_Enemy : MonoBehaviour
         playerIsInWall = true;
         Debug.Log(enemyStats.Name + " is trying to escape from a wall.");
         Vector3 vectorDirection = new Vector3(0,0);
-        if (isTouchingRight) vectorDirection.x = -speed;
-        if (isTouchingLeft) vectorDirection.x = speed;
-        if (isTouchingTop) vectorDirection.y = -speed;
-        if (isTouchingDown) vectorDirection.y = speed;
+        //if (isTouchingRight) vectorDirection.x = -speed;
+        //if (isTouchingLeft) vectorDirection.x = speed;
+        //if (isTouchingTop) vectorDirection.y = -speed;
+        //if (isTouchingDown) vectorDirection.y = speed;
 
-        if (isTouchingTop && isTouchingLeft && isTouchingRight) vectorDirection = new Vector3(0, speed);
-        if (isTouchingDown && isTouchingLeft && isTouchingRight) vectorDirection = new Vector3(0, speed);
-        if (isTouchingLeft && isTouchingDown && isTouchingTop) vectorDirection = new Vector3(speed, 0);
-        if (isTouchingRight && isTouchingDown && isTouchingTop) vectorDirection = new Vector3(-speed, 0);
-        transform.Translate(vectorDirection * Time.deltaTime);
+        //if (isTouchingTop && isTouchingLeft && isTouchingRight) vectorDirection = new Vector3(0, speed);
+        //if (isTouchingDown && isTouchingLeft && isTouchingRight) vectorDirection = new Vector3(0, speed);
+        //if (isTouchingLeft && isTouchingDown && isTouchingTop) vectorDirection = new Vector3(speed, 0);
+        //if (isTouchingRight && isTouchingDown && isTouchingTop) vectorDirection = new Vector3(-speed, 0);
+
+        CalculateVectorTowardPlayer();
+
+        transform.Translate(movesTowardPlayer /** Time.deltaTime*/);
     }
 
     void EnemyAttackCheck()
@@ -267,11 +278,18 @@ public class ELC_Enemy : MonoBehaviour
         movesTowardPlayer.x = playerTransform.position.x - this.transform.position.x;
         movesTowardPlayer.y = playerTransform.position.y - this.transform.position.y;
         movesTowardPlayer.Normalize();
+        
         movesTowardPlayer = movesTowardPlayer * speed * Time.deltaTime;
+
+        CheckDistanceFromOtherEnemies();
 
         fleePlayer = -movesTowardPlayer;
 
-        movesTowardPlayer = ClampIfTouchSomething(movesTowardPlayer, speed);
+        if (!playerIsInWall)
+        {
+            movesTowardPlayer = ClampIfTouchSomething(movesTowardPlayer, speed);
+            
+        }
         fleePlayer = ClampIfTouchSomething(fleePlayer, speed);
     }
 
@@ -282,10 +300,30 @@ public class ELC_Enemy : MonoBehaviour
         //Debug.Log(enemyStats.name + " attaque !");
         enemyAnimator.SetBool("IsPreparingForAttack", false);
         enemyAnimator.SetBool("IsAttacking", true);
-        if (enemyStats.DashOnPlayer) Dash(directionToDash, enemyStats.DashTime, enemyStats.DistanceToRun);
+
+        if (enemyStats.DashOnPlayer)
+        {
+            Dash(directionToDash, enemyStats.DashTime, enemyStats.DistanceToRun);
+            HitPlayer(true);
+        }
+        else if (enemyStats.DistanceAttack) DistanceAttack();
+        else HitPlayer();
+
         canMove = true;
         yield return new WaitForSeconds(enemyStats.AttackAnimationTime);
         enemyAnimator.SetBool("IsAttacking", false);
+    }
+
+    private void DistanceAttack()
+    {
+        CalculateVectorTowardPlayer();
+        GameObject projectile;
+        projectile = Instantiate(enemyStats.Projectile, this.transform.position, Quaternion.identity);
+        projectile.GetComponent<ELC_Projectiles>().direction = movesTowardPlayer;
+        projectile.GetComponent<ELC_Projectiles>().lifeDuration = enemyStats.ProjectileDurability;
+        projectile.GetComponent<ELC_Projectiles>().strenght = enemyStats.ProjectileStrenght;
+        projectile.GetComponent<ELC_Projectiles>().speed = enemyStats.ProjectileSpeed;
+        projectile.GetComponent<ELC_Projectiles>().StartCoroutine("LifeDuration");
     }
 
     private void VerifyIfIsAtDistance()
@@ -298,6 +336,22 @@ public class ELC_Enemy : MonoBehaviour
         if (distance < minDistance) distanceFromPlayer = EnemyDistance.TooClose;
         else if (distance > maxDistance) distanceFromPlayer = EnemyDistance.TooFar;
         else distanceFromPlayer = EnemyDistance.AtDistance;
+    }
+
+    private void CheckDistanceFromOtherEnemies()
+    {
+        Collider2D[] hitColliders = null;
+        MoveAwayOtherEnemies = Vector3.zero;
+        hitColliders = Physics2D.OverlapCircleAll(this.transform.position, enemyStats.EnemyWidth, LayerMask.GetMask("Enemies"));
+        if(hitColliders != null && hitColliders.Length > 0)
+        {
+            foreach(Collider2D collider in hitColliders)
+            {
+                MoveAwayOtherEnemies += this.transform.position - collider.gameObject.transform.position;
+            }
+            MoveAwayOtherEnemies = MoveAwayOtherEnemies.normalized * speed * Time.deltaTime;
+            MoveAwayOtherEnemies = ClampIfTouchSomething(MoveAwayOtherEnemies, speed);
+        }
     }
 
     private void Dash(Vector3 direction, float dashTime, float dashDistance)
@@ -361,6 +415,7 @@ public class ELC_Enemy : MonoBehaviour
 
     IEnumerator Stun(float time, bool invulnerable = false)
     {
+        canBeStun = false;
         isStun = true;
         if (invulnerable)
         {
@@ -373,6 +428,9 @@ public class ELC_Enemy : MonoBehaviour
         }
         isStun = false;
 
+        yield return new WaitForSeconds(enemyStats.noStunTime);
+
+        canBeStun = true;
     }
     public void GetHit(int Damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0, bool invulnerable = false)
     {
@@ -381,7 +439,7 @@ public class ELC_Enemy : MonoBehaviour
             currentHealth -= Damage;
 
             Dash(-directionToFlee, knockbackTime, knockbackDistance);
-            if (!isStun)
+            if (!isStun && !isPreparingAttack && canBeStun == true)
             {
                 StartCoroutine(Stun(stunTime, invulnerable));
                 StopCoroutine("Attack");
@@ -392,8 +450,62 @@ public class ELC_Enemy : MonoBehaviour
         }
         if(currentHealth <= 0)
         {
+            if(enemyStats.achievements!=null && enemyStats.achievements.Count >= 0)
+            {
+                foreach(AXD_AchievementSO achivement in enemyStats.achievements)
+                {
+                    achivement.AddDefeated();
+                }
+            }
             Destroy(this.gameObject);
             
         }
     }
+
+    public void HitPlayer(bool dashAttack = false)
+    {
+        Collider2D[] hitColliders = null;
+
+        if (dashAttack == false) //basic attack
+        {
+            hitColliders = Physics2D.OverlapCircleAll(this.transform.position + lastDirection.normalized * enemyStats.AttackRange, enemyStats.AttackRange, LayerMask.GetMask("Player"));
+            if (hitColliders != null && hitColliders.Length > 0)
+            {
+                ELC_PlayerStatManager playerStats =  FindObjectOfType<ELC_PlayerStatManager>();
+                hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)(enemyStats.AttackStrenght *  (1 / playerStats.DefenseMultiplicatorPU) * playerStats.FilAresDamagesTakenMultiplicator));
+                Debug.Log("Corpse Hit");
+            }
+        }
+        else //dashAttack
+        {
+            StartCoroutine("DashAttack");
+        }
+    }
+
+    private IEnumerator DashAttack()
+    {
+        Collider2D[] hitColliders = null;
+        bool hitPlayer = false;
+
+        while (Time.time >= stopDashing || hitPlayer == false)
+        {
+            hitColliders = null;
+            hitColliders = Physics2D.OverlapBoxAll(this.transform.position + directionToDash.normalized * 0.5f, new Vector2(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth), Vector2.Angle(Vector2.up, directionToDash), LayerMask.GetMask("Player"));
+            if (hitColliders != null && hitColliders.Length > 0)
+            {
+                hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)enemyStats.DashStrenght);
+                Debug.Log("Dash Hit");
+                hitPlayer = true;
+            }
+            yield return null;
+        }
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(this.transform.position + lastDirection.normalized * enemyStats.AttackRange, enemyStats.AttackRange);
+        Gizmos.DrawCube(this.transform.position + directionToDash.normalized * 0.5f, new Vector3(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth, 0));
+    }
+
 }
