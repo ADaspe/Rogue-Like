@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public ELC_PlayerStatManager playerStats;
+    public GameObject playerInventory;
 
     public bool isDead = false;
     public Slider healthSlider;
@@ -44,6 +45,7 @@ public class PlayerHealth : MonoBehaviour
                 isDead = true;
                 Destroy(this.gameObject);
             }
+            playerInventory.GetComponent<ELC_ObjectsInventory>().GetHitCrates();
         }
     }
     public void AddStock(int stockToAdd)

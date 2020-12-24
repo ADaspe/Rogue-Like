@@ -56,7 +56,7 @@ public class ELC_PickupItems : MonoBehaviour
     {
         if (detector.playerIsInside && this.gameObject.CompareTag("Collectible") && Input.GetButtonDown("Interact"))
         {
-            if(Type == CollectibleTypes.Object) ObjectsInv.AddObject(Object, Object.GetComponent<ELC_ObjectsUse>().ObjectsScriptableObject.quantity);
+            if(Type == CollectibleTypes.Object) ObjectsInv.AddObject(Object);
 
             if (Type == CollectibleTypes.PowerUp) PUManager.AddPowerUp(PowerUp);
 

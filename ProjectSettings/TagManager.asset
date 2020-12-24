@@ -10,6 +10,7 @@ TagManager:
   - Object
   - Collectible
   - GameManager
+  - Crate
   layers:
   - Default
   - TransparentFX
