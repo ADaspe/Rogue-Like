@@ -11,6 +11,7 @@ public class AXD_Attack : MonoBehaviour
     public AXD_PlayerMoney playerMoney;
     public PlayerHealth playerHealth;
     public GameObject GameManager;
+    public GameObject playerInventory;
 
     public bool AppetitDeLycaonIsActive;
     public float AppetitDeLycaonHealPerEnemies;
@@ -136,13 +137,15 @@ public class AXD_Attack : MonoBehaviour
         if (CalculateDamage(AttackType.Swich) >= enemy.currentHealth || CalculateDamage(AttackType.Sponk) >= enemy.currentHealth)
         {
             int moneyEarn = (int)(enemy.enemyStats.MoneyEarnWhenDead * playerStats.MoneyMultiplicatorPU);//Pour arrondir en int
-            playerMoney.AddMoney(moneyEarn);
+            //playerMoney.AddMoney(moneyEarn);
+            playerInventory.GetComponent<ELC_ObjectsInventory>().AddMoneyToCrates(moneyEarn);
             playerHealth.AddStock(enemy.enemyStats.ambrosiaEarnedWhenDead);
         }
         else
         {
-            int moneyEarn = (int)(enemy.enemyStats.MoneyEarnWhenHit * playerStats.MoneyMultiplicatorPU); 
-            playerMoney.AddMoney( moneyEarn);
+            int moneyEarn = (int)(enemy.enemyStats.MoneyEarnWhenHit * playerStats.MoneyMultiplicatorPU);
+            //playerMoney.AddMoney( moneyEarn);
+            playerInventory.GetComponent<ELC_ObjectsInventory>().AddMoneyToCrates(moneyEarn);
         }
     }
 }
