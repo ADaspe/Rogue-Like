@@ -338,6 +338,7 @@ MonoBehaviour:
   playerMoney: {fileID: 6115952892813048268}
   playerHealth: {fileID: 8934949276138899172}
   GameManager: {fileID: 0}
+  playerInventory: {fileID: 0}
   AppetitDeLycaonIsActive: 0
   AppetitDeLycaonHealPerEnemies: 0
   AppetitDeLycaonHealPerCollateral: 0
@@ -355,6 +356,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 782464527650891043}
+  playerMovesScript: {fileID: 3081472017539436263}
+  playerInventory: {fileID: 0}
   isDead: 0
   healthSlider: {fileID: 0}
   bouteille: {fileID: 0}

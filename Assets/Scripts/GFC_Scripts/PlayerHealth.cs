@@ -7,13 +7,14 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public ELC_PlayerStatManager playerStats;
+    public ELC_PlayerMoves playerMovesScript;
     public GameObject playerInventory;
 
     public bool isDead = false;
     public Slider healthSlider;
     public Bouteille bouteille;
     
-
+    
     private void Update()
     {
         if (playerStats.losingLife && playerStats.currentHealth > playerStats.MaxHealth*playerStats.LifeStopDecrease/100 )
@@ -43,7 +44,8 @@ public class PlayerHealth : MonoBehaviour
             if(playerStats.currentHealth <= 0)
             {
                 isDead = true;
-                Destroy(this.gameObject);
+                StartCoroutine(playerMovesScript.PlayAnimation("isDead", 1.5f, false, false, true));
+                Debug.Log("Passe ici");
             }
             playerInventory.GetComponent<ELC_ObjectsInventory>().GetHitCrates();
         }
