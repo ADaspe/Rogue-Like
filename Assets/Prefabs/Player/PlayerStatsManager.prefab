@@ -71,7 +71,8 @@ MonoBehaviour:
   SponkStunTime: 0.7
   SponkSlowMotionValue: 0.3
   SponkSlowMotionDuration: 0.5
-  AttackMultiplicator: 1
+  AttackMultiplicatorChain: 0
+  BerserkMultiplicator: 0
   CurrentCombo: 0
   MaxCombo: 200
   ComboResetTime: 15
@@ -104,3 +105,5 @@ MonoBehaviour:
   SpeedMultiplicatorPU: 1
   DefenseMultiplicatorPU: 1
   MoneyMultiplicatorPU: 1
+  FilAresDamagesTakenMultiplicator: 1
+  FilAresBerserkMultiplicator: 1

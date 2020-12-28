@@ -1250,6 +1250,16 @@ PrefabInstance:
       propertyPath: DashMultiplicatorOrange
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: lifeThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: losingLife
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6958aa080a4c5439913b983ac56050, type: 3}
 --- !u!4 &782464527650891042 stripped

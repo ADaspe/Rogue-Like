@@ -471,7 +471,8 @@ public class ELC_Enemy : MonoBehaviour
             hitColliders = Physics2D.OverlapCircleAll(this.transform.position + lastDirection.normalized * enemyStats.AttackRange, enemyStats.AttackRange, LayerMask.GetMask("Player"));
             if (hitColliders != null && hitColliders.Length > 0)
             {
-                hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)enemyStats.AttackStrenght);
+                ELC_PlayerStatManager playerStats =  FindObjectOfType<ELC_PlayerStatManager>();
+                hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)(enemyStats.AttackStrenght *  (1 / playerStats.DefenseMultiplicatorPU) * playerStats.FilAresDamagesTakenMultiplicator));
                 Debug.Log("Corpse Hit");
             }
         }
