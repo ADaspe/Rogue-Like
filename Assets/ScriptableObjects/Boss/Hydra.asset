@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc5c939dae870b43ac5cdc19097ac56, type: 3}
   m_Name: Hydra
   m_EditorClassIdentifier: 
-  invunerable: 0
-  maxHealth: 0
-  currentHealth: 0
-  healthPhase: 000000000000000000000000
+  invulnerable: 1
+  maxHealth: 10000
+  healthPhase: 581b0000a00f000000000000
+  vulnerableTime: 0

@@ -6,24 +6,26 @@ public class AXD_Hydra : MonoBehaviour
 {
     public enum BossPhase { Phase1, Phase2, Phase3}
     public BossPhase currentPhase;
-    public AXD_BossSO stats;
+    public ELC_EnemySO stats;
     public AXD_HydraHead headPrefab;
     public List<AXD_HydraHead> heads;
     public List<GameObject> spawnPoints;
+    public bool invulnerable;
     public int currentHealth;
     public float timeToBeVulnerable;
     public bool headsToSpawn;
     public int maxHealthHead;
     public float healthPercentageHeadPhase2;
     public float healthPercentageHeadPhase3;
+    public int[] healthPhase;
 
 
     private void Start()
     {
         currentPhase = BossPhase.Phase1;
-        stats.invulnerable = true;
+        invulnerable = true;
         headsToSpawn = true;
-        currentHealth = stats.maxHealth;
+        currentHealth = stats.MaxHealth;
     }
 
     public void SpawnHeads()
@@ -59,7 +61,7 @@ public class AXD_Hydra : MonoBehaviour
 
     private void Update()
     {
-        if (!stats.invulnerable)
+        if (!invulnerable)
         {
             VulnerablePhase();
         }else if (headsToSpawn)
@@ -73,7 +75,7 @@ public class AXD_Hydra : MonoBehaviour
         heads.Remove(head);
         if(heads.Count == 0)
         {
-            stats.invulnerable = false;
+            invulnerable = false;
             headsToSpawn = true;
         }
     }
@@ -83,7 +85,7 @@ public class AXD_Hydra : MonoBehaviour
         Debug.Log("Attack me !");
         if(Time.time > timeToBeVulnerable)
         {
-            stats.invulnerable = true;
+            invulnerable = true;
             ChangePhase();
             SpawnHeads();
         }
@@ -99,17 +101,21 @@ public class AXD_Hydra : MonoBehaviour
         SpawnHeads();
     }
 
-    public void GetHit(int damage)
+    public void GetHit(int damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0, bool invulnerable = false)
     {
-        if (!stats.invulnerable) {
+        if (invulnerable) {
             currentHealth -= damage;
             Debug.Log("Hydra : Ouch");
-            if (currentHealth <= stats.healthPhase[(int)currentPhase-1])
+            if (currentHealth <= healthPhase[(int)currentPhase-1])
             {
-                stats.invulnerable = true;
+                invulnerable = true;
                 ChangePhase();
                 
             }
+        }
+        else
+        {
+            Debug.Log("Hydra : Pas Ouch");
         }
     }
 }
