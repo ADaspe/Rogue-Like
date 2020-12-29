@@ -35,7 +35,7 @@ MonoBehaviour:
   WaitBeforeAttack: 0.5
   AttackStrenght: 8
   AttackStun: 0
-  AttackAnimationTime: 0.25
+  AttackAnimationTime: 0.5
   DashOnPlayer: 0
   DashTime: 0
   DistanceToRun: 0

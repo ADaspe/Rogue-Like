@@ -20,6 +20,7 @@ MonoBehaviour:
   NeedTimeToTurn: 0
   TurnSpeed: 0
   EnemyWidth: 0.5
+  noStunTime: 0
   FriendlyFire: 0
   DistanceAttack: 0
   Projectile: {fileID: 0}
@@ -34,7 +35,7 @@ MonoBehaviour:
   WaitBeforeAttack: 0.2
   AttackStrenght: 0
   AttackStun: 0
-  AttackAnimationTime: 0
+  AttackAnimationTime: 0.2
   DashOnPlayer: 1
   DashTime: 0.2
   DistanceToRun: 4
