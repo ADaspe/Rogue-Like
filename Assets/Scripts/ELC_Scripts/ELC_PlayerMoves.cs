@@ -80,6 +80,8 @@ public class ELC_PlayerMoves : MonoBehaviour
         playerAnimator.SetFloat("DirectionAxeX", 0);
         playerAnimator.SetFloat("DirectionAxeY", -1);
         DashParticles.GetComponent<ParticleSystem>().Stop();
+
+        ResetChain();
     }
 
     private void Update()
@@ -270,8 +272,9 @@ public class ELC_PlayerMoves : MonoBehaviour
         }
     }
 
-    public IEnumerator PlayAnimation(string name, float time, bool canMoveDuringIt, bool canTurnDuringIt)
+    public IEnumerator PlayAnimation(string name, float time, bool canMoveDuringIt, bool canTurnDuringIt, bool death = false)
     {
+        Debug.Log("Passe ici aussi");
         playerAnimator.SetBool(name, true);
         canMove = canMoveDuringIt;
         canTurn = canTurnDuringIt;
@@ -292,10 +295,17 @@ public class ELC_PlayerMoves : MonoBehaviour
         {
             yield return new WaitForSeconds(time);
         }
-
-        playerAnimator.SetBool(name, false);
-        canMove = true;
-        canTurn = true;
+        if (!death)
+        {
+            playerAnimator.SetBool(name, false);
+            canMove = true;
+            canTurn = true;
+        }
+        else
+        {
+            playerSpriteRenderer.enabled = false;
+            gameManager.GetComponent<ELC_TimeScale>().PauseGame();
+        }
     }
 
     public void StopAnimation(string name)

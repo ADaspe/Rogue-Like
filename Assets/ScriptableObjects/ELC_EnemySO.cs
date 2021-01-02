@@ -9,7 +9,7 @@ public class ELC_EnemySO : ScriptableObject
     public string Name;
 
     [Header("Health")]
-    public float MaxHealth;
+    public int MaxHealth;
 
     [Header("Movements")]
     public float MovementSpeed;
@@ -18,6 +18,8 @@ public class ELC_EnemySO : ScriptableObject
     public float LimitDistanceToStay;
     public bool NeedTimeToTurn;
     public float TurnSpeed;
+    public float EnemyWidth;
+    public float noStunTime;
 
     [Header("Attack Capacity")]
 

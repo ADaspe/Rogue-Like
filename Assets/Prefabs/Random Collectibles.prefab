@@ -114,10 +114,11 @@ MonoBehaviour:
   - {fileID: 7391949015416354207, guid: f9b5e39cf03dc9646a77d7e0d7ae5674, type: 3}
   chooseRandomObject: 0
   ObjectsList:
-  - {fileID: 7198654539912871029, guid: 8b9b79f4ff7ea434396316881642c91c, type: 3}
+  - {fileID: 2185526170687435304, guid: 01e4cb7c4d2549d45807b900cfdf0a15, type: 3}
   chooseRandomPassive: 0
   passivesList:
   - {fileID: 11400000, guid: e8365aef04281bd45b3471d2fc5b1fb6, type: 2}
+  - {fileID: 11400000, guid: b2b1f17a4f0c8684bbbb88cd65efa86c, type: 2}
 --- !u!114 &2289528245598647197
 MonoBehaviour:
   m_ObjectHideFlags: 0

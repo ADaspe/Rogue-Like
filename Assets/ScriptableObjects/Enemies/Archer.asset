@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Archer
   m_EditorClassIdentifier: 
   Name: "Arch\xE9"
-  MaxHealth: 10
+  MaxHealth: 1000
   MovementSpeed: 3
   EnemyPath: 0
   LimitDistanceToStay: 5
   NeedTimeToTurn: 0
   TurnSpeed: 0
+  EnemyWidth: 0.5
   FriendlyFire: 0
   DistanceAttack: 1
   Projectile: {fileID: 5799528179822313380, guid: 8434fb21e7d94a54fb47d57f6e3b81ff,

@@ -9,6 +9,8 @@ TagManager:
   - PowerUp
   - Object
   - Collectible
+  - GameManager
+  - Crate
   layers:
   - Default
   - TransparentFX
