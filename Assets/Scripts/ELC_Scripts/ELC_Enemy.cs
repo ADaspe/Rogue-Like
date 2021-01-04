@@ -25,6 +25,9 @@ public class ELC_Enemy : MonoBehaviour
     private Vector3 lastDirection;
     private Vector3 MoveAwayOtherEnemies;
     private bool isPreparingAttack;
+    public bool isAttacking;
+    public bool isDistanceAttacking;
+    public bool isHit;
 
     private Vector3 currentDashDirection;
     private float currentDashDistance;
@@ -304,6 +307,7 @@ public class ELC_Enemy : MonoBehaviour
         enemyAnimator.SetBool("IsPreparingForAttack", false);
         Debug.Log("4");
         enemyAnimator.SetBool("IsAttacking", true);
+        isAttacking = true;
         Debug.Log("Attack");
 
         if (enemyStats.DashOnPlayer)
@@ -311,12 +315,18 @@ public class ELC_Enemy : MonoBehaviour
             Dash(directionToDash, enemyStats.DashTime, enemyStats.DistanceToRun);
             HitPlayer(true);
         }
-        else if (enemyStats.DistanceAttack) DistanceAttack();
+        else if (enemyStats.DistanceAttack)
+        {
+            DistanceAttack();
+            isDistanceAttacking = true;      
+        }
         else HitPlayer();
 
         canMove = true;
         yield return new WaitForSeconds(enemyStats.AttackAnimationTime);
         enemyAnimator.SetBool("IsAttacking", false);
+        isAttacking = false;
+        isDistanceAttacking = false;
     }
 
     private void DistanceAttack()
@@ -421,6 +431,9 @@ public class ELC_Enemy : MonoBehaviour
     IEnumerator Stun(float time, bool invulnerable = false)
     {
         canBeStun = false;
+        
+        yield return new WaitForSeconds(enemyStats.noStunTime);
+        
         isStun = true;
         if (invulnerable)
         {
@@ -432,21 +445,29 @@ public class ELC_Enemy : MonoBehaviour
             isInvulnerable = false;
         }
         isStun = false;
-
+        
         yield return new WaitForSeconds(enemyStats.noStunTime);
-
+        
         canBeStun = true;
+    }
+
+    IEnumerator HitSound()
+    {
+        isHit = true;
+        yield return new WaitForSeconds(0.01f);
+        isHit = false;
     }
     public void GetHit(int Damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0, bool invulnerable = false)
     {
         if (!isInvulnerable)
         {
             currentHealth -= Damage;
-
+            StartCoroutine(HitSound());
             Dash(-directionToFlee, knockbackTime, knockbackDistance);
             if (!isStun && !isPreparingAttack && canBeStun == true)
             {
                 StartCoroutine(Stun(stunTime, invulnerable));
+                
                 StopCoroutine("Attack");
                 enemyAnimator.SetBool("IsPreparingForAttack", false);
                 enemyAnimator.SetBool("IsAttacking", false);
@@ -470,6 +491,7 @@ public class ELC_Enemy : MonoBehaviour
     public void HitPlayer(bool dashAttack = false)
     {
         Collider2D[] hitColliders = null;
+
 
         if (dashAttack == false) //basic attack
         {
