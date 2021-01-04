@@ -43,6 +43,7 @@ public class AXD_Attack : MonoBehaviour
         //Get all enemies to attack
         if (hitEnemies != null && hitEnemies.Length != 0)
         {
+            StartCoroutine(GameManager.GetComponent<ELC_ScreenShakes>().ScreenShakes(playerStats.AttackShakeIntensity, playerStats.AttackShakeFrequency, playerStats.AttackShakeDuration));
             player.attackLanded = true;
             List<ELC_Enemy> colateralVictims = new List<ELC_Enemy>();
             ELC_Enemy closestEnemy = null;

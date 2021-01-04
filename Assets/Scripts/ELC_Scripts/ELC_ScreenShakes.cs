@@ -21,6 +21,7 @@ public class ELC_ScreenShakes : MonoBehaviour
 
     public IEnumerator ScreenShakes(float intensity, float frequency, float duration)
     {
+        isScreenShaking = false;
         CamOffset = CinemachineCam.GetComponent<CinemachineCameraOffset>();
         originOffset = CamOffset.m_Offset;
 

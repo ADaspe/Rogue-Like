@@ -107,3 +107,9 @@ MonoBehaviour:
   MoneyMultiplicatorPU: 1
   FilAresDamagesTakenMultiplicator: 1
   FilAresBerserkMultiplicator: 1
+  AttackShakeIntensity: 0.1
+  AttackShakeFrequency: 0.06
+  AttackShakeDuration: 0.1
+  GetHitShakeIntensity: 0.15
+  GetHitShakeFrequency: 0.05
+  GetHitShakeDuration: 0.2
