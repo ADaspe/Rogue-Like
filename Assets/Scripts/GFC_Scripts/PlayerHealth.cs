@@ -8,8 +8,9 @@ public class PlayerHealth : MonoBehaviour
 {
     public ELC_PlayerStatManager playerStats;
     public ELC_PlayerMoves playerMovesScript;
+    public GFC_Footsteps sound;
     public GameObject playerInventory;
-
+    public bool gettingHit = false;
     public bool isDead = false;
     public Slider healthSlider;
     public Bouteille bouteille;
@@ -47,8 +48,9 @@ public class PlayerHealth : MonoBehaviour
                 StartCoroutine(playerMovesScript.PlayAnimation("isDead", 1.5f, false, false, true));
                 Debug.Log("Passe ici");
             }
-            playerInventory.GetComponent<ELC_ObjectsInventory>().GetHitCrates();
+            playerInventory.GetComponent<ELC_ObjectsInventory>().GetHitCrates();            
         }
+        
     }
     public void AddStock(int stockToAdd)
     {
@@ -88,5 +90,10 @@ public class PlayerHealth : MonoBehaviour
     public void SetHealth(float health)
     {
         healthSlider.value = health;
+        if (sound.dammage.isPlaying == false && sound.death.isPlaying == false && isDead == false && Input.GetAxisRaw("Heal") == 0)
+        {
+            sound.dammage.Play();
+        }
     }
+    
 }
