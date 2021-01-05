@@ -7,13 +7,16 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     public ELC_PlayerStatManager playerStats;
+    private ELC_ScreenShakes screenShakeScript;
+    public ELC_PlayerMoves playerMovesScript;
+    public GFC_Footsteps sound;
     public GameObject playerInventory;
-
+    public bool gettingHit = false;
     public bool isDead = false;
     public Slider healthSlider;
     public Bouteille bouteille;
     
-
+    
     private void Update()
     {
         if (playerStats.losingLife && playerStats.currentHealth > playerStats.MaxHealth*playerStats.LifeStopDecrease/100 )
@@ -30,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
         playerStats.currentHealth = playerStats.MaxHealth;
         SetMaxHealth(playerStats.MaxHealth);
         playerStats.currentStock = playerStats.maxStock;
+        screenShakeScript = FindObjectOfType<ELC_ScreenShakes>();
     }
 
     //ça c'est comment il prend des dégâts, et ça synchronise en live la barre de vie pour être sûr qu'elle suive 
@@ -37,16 +41,19 @@ public class PlayerHealth : MonoBehaviour
     {
         if (!playerStats.invulnerability)
         {
+            StartCoroutine(screenShakeScript.ScreenShakes(playerStats.GetHitShakeIntensity, playerStats.GetHitShakeFrequency, playerStats.GetHitShakeDuration));
             playerStats.currentHealth = healthSlider.value;
             playerStats.currentHealth -= damage / playerStats.DefenseMultiplicatorPU;
             SetHealth(playerStats.currentHealth);
             if(playerStats.currentHealth <= 0)
             {
                 isDead = true;
-                Destroy(this.gameObject);
+                StartCoroutine(playerMovesScript.PlayAnimation("isDead", 1.5f, false, false, true));
+                Debug.Log("Passe ici");
             }
-            playerInventory.GetComponent<ELC_ObjectsInventory>().GetHitCrates();
+            playerInventory.GetComponent<ELC_ObjectsInventory>().GetHitCrates();            
         }
+        
     }
     public void AddStock(int stockToAdd)
     {
@@ -86,5 +93,10 @@ public class PlayerHealth : MonoBehaviour
     public void SetHealth(float health)
     {
         healthSlider.value = health;
+        if (sound.dammage.isPlaying == false && sound.death.isPlaying == false && isDead == false && Input.GetAxisRaw("Heal") == 0)
+        {
+            sound.dammage.Play();
+        }
     }
+    
 }
