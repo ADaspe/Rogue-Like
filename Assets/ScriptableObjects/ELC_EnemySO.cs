@@ -33,7 +33,7 @@ public class ELC_EnemySO : ScriptableObject
     public float ProjectileDurability;
     public float ProjectileStrenght;
 
-    public bool CorpseAttack;
+    public bool CloseCombatAttack;
     public float AttackCooldown;
     public float AttackRange;
     public float WaitBeforeAttack;

@@ -6,7 +6,7 @@ public class AXD_Hydra : MonoBehaviour
 {
     public enum BossPhase { Phase1, Phase2, Phase3}
     public BossPhase currentPhase;
-    public ELC_EnemySO stats;
+    public AXD_BossSO stats;
     public AXD_HydraHead headPrefab;
     public List<AXD_HydraHead> heads;
     public List<GameObject> spawnPoints;
@@ -25,7 +25,6 @@ public class AXD_Hydra : MonoBehaviour
         currentPhase = BossPhase.Phase1;
         invulnerable = true;
         headsToSpawn = true;
-        currentHealth = stats.MaxHealth;
     }
 
     public void SpawnHeads()
@@ -34,26 +33,25 @@ public class AXD_Hydra : MonoBehaviour
         switch (currentPhase) {
             case BossPhase.Phase1:
                 AXD_HydraHead temp1 = Instantiate(headPrefab, this.gameObject.transform.GetChild(0));
-                //Mettre la max health comme sur le GDD sur toutes les instanciations
-                temp1.currentHealth = temp1.headStats.MaxHealth = maxHealthHead;
+                temp1.enemyScript.currentHealth = temp1.headStats.MaxHealth = maxHealthHead;
                 break;
 
             case BossPhase.Phase2:
                 AXD_HydraHead temp2 = Instantiate(headPrefab, this.gameObject.transform.GetChild(1));
-                temp2.headStats.MaxHealth = temp2.currentHealth = Mathf.RoundToInt(maxHealthHead*healthPercentageHeadPhase2 / 100);
+                temp2.headStats.MaxHealth = temp2.enemyScript.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase2 / 100);
                 AXD_HydraHead temp3 = Instantiate(headPrefab, this.gameObject.transform.GetChild(2));
-                temp2.headStats.MaxHealth = temp2.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase2 / 100);
+                temp2.headStats.MaxHealth = temp2.enemyScript.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase2 / 100);
                 break;
 
             case BossPhase.Phase3:
                 AXD_HydraHead temp4 = Instantiate(headPrefab, this.gameObject.transform.GetChild(3));
-                temp4.headStats.MaxHealth = temp4.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase3 / 100);
+                temp4.headStats.MaxHealth = temp4.enemyScript.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase3 / 100);
                 AXD_HydraHead temp5 = Instantiate(headPrefab, this.gameObject.transform.GetChild(4));
-                temp5.headStats.MaxHealth = temp5.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase3 / 100);
+                temp5.headStats.MaxHealth = temp5.enemyScript.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase3 / 100);
                 AXD_HydraHead temp6 = Instantiate(headPrefab, this.gameObject.transform.GetChild(5));
-                temp6.headStats.MaxHealth = temp6.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase3 / 100);
+                temp6.headStats.MaxHealth = temp6.enemyScript.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase3 / 100);
                 AXD_HydraHead temp7 = Instantiate(headPrefab, this.gameObject.transform.GetChild(6));
-                temp7.headStats.MaxHealth = temp7.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase3 / 100);
+                temp7.headStats.MaxHealth = temp7.enemyScript.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase3 / 100);
                 break;
         }
         headsToSpawn = false;
@@ -110,7 +108,6 @@ public class AXD_Hydra : MonoBehaviour
             {
                 invulnerable = true;
                 ChangePhase();
-                
             }
         }
         else

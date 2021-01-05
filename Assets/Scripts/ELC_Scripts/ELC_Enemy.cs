@@ -13,7 +13,7 @@ public class ELC_Enemy : MonoBehaviour
     private Animator enemyAnimator;
 
     [SerializeField]
-    public float currentHealth;
+    public int currentHealth;
     private float speed;
     private bool canMove = true;
     private bool isDashing;
@@ -65,7 +65,11 @@ public class ELC_Enemy : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyAnimator = GetComponent<Animator>();
         isInvulnerable = false;
-
+        if(enemyStats == null)
+        {
+            Debug.Log("Null null");
+        }
+        //problème de timing d'instancitation
         currentHealth = enemyStats.MaxHealth;
         speed = enemyStats.MovementSpeed;
         distanceToStay = enemyStats.LimitDistanceToStay;
@@ -295,14 +299,10 @@ public class ELC_Enemy : MonoBehaviour
 
     private IEnumerator Attack()
     {
-        Debug.Log("1");
         enemyAnimator.SetBool("IsPreparingForAttack", true);
-        Debug.Log("2");
         yield return new WaitForSeconds(enemyStats.WaitBeforeAttack);
-        Debug.Log("3");
         //Debug.Log(enemyStats.name + " attaque !");
         enemyAnimator.SetBool("IsPreparingForAttack", false);
-        Debug.Log("4");
         enemyAnimator.SetBool("IsAttacking", true);
         Debug.Log("Attack");
 
@@ -478,7 +478,7 @@ public class ELC_Enemy : MonoBehaviour
             {
                 ELC_PlayerStatManager playerStats =  FindObjectOfType<ELC_PlayerStatManager>();
                 hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)(enemyStats.AttackStrenght *  (1 / playerStats.DefenseMultiplicatorPU) * playerStats.FilAresDamagesTakenMultiplicator));
-                Debug.Log("Corpse Hit");
+                Debug.Log("Close combat Hit");
             }
         }
         else //dashAttack
@@ -509,8 +509,8 @@ public class ELC_Enemy : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(this.transform.position + lastDirection.normalized * enemyStats.AttackRange, enemyStats.AttackRange);
-        Gizmos.DrawCube(this.transform.position + directionToDash.normalized * 0.5f, new Vector3(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth, 0));
+        //Gizmos.DrawWireSphere(this.transform.position + lastDirection.normalized * enemyStats.AttackRange, enemyStats.AttackRange);
+        //Gizmos.DrawCube(this.transform.position + directionToDash.normalized * 0.5f, new Vector3(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth, 0));
     }
 
 }

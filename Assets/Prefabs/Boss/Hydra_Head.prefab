@@ -120,7 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 502c7acea783cc744ba957fee37832ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
+  projectile: {fileID: 5799528179822313380, guid: 8434fb21e7d94a54fb47d57f6e3b81ff,
+    type: 3}
   headStats: {fileID: 11400000, guid: 218f85137d8fda14f93146860a658d92, type: 2}
   currentHealth: 0
 --- !u!61 &4596816765237111783
