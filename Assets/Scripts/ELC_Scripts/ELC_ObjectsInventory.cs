@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ELC_ObjectsInventory : MonoBehaviour
 {
+    public enum hands { LeftHand, RightHand};
+    public hands selectedHand = hands.LeftHand;
     public GameObject RightHandObject;
     public GameObject RightHandHUD;
     //public int quantityObject1;
@@ -27,6 +29,9 @@ public class ELC_ObjectsInventory : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetButtonDown("RightHandUse")) selectedHand = hands.RightHand;
+        else if (Input.GetButtonDown("LeftHandUse")) selectedHand = hands.LeftHand;
+
         //if (Input.GetButtonDown("RightHandUse") && RightHandObject != null && quantityObject1 > 0) //Lorsqu'on clique pour utiliser l'object de main droite
         //{
         //    GameObject InstantiatedObject = Instantiate(RightHandObject, player.transform.position, Quaternion.identity);
@@ -70,13 +75,13 @@ public class ELC_ObjectsInventory : MonoBehaviour
 
     public void AddObject(GameObject Object)
     {
-        if (RightHandObject == null)
+        if (selectedHand == hands.RightHand)
         {
             RightHandObject = InstantiateCrates(Object);
             //quantityObject1 = quantity;
             UpdateDisplay();
         }
-        else if (LeftHandObject == null)
+        else if (selectedHand == hands.LeftHand)
         {
             LeftHandObject = InstantiateCrates(Object);
             //quantityObject2 = quantity;
@@ -89,42 +94,62 @@ public class ELC_ObjectsInventory : MonoBehaviour
         ELC_CrateProperties leftCrateProp; 
         ELC_CrateProperties rightCrateProp;
 
-        if (LeftHandObject != null && RightHandObject != null)
-        {
-            leftCrateProp = LeftHandObject.GetComponent<ELC_CrateProperties>();
-            rightCrateProp = RightHandObject.GetComponent<ELC_CrateProperties>();
+        //if (LeftHandObject != null && RightHandObject != null)
+        //{
+        //    leftCrateProp = LeftHandObject.GetComponent<ELC_CrateProperties>();
+        //    rightCrateProp = RightHandObject.GetComponent<ELC_CrateProperties>();
 
-            int remainingMoneyToStock = money;
+        //    int remainingMoneyToStock = money;
 
-            if (leftCrateProp.actualMoneyStockCapacity >= Mathf.CeilToInt(money / 2))
-            {
-                leftCrateProp.actualMoney += Mathf.CeilToInt(money / 2);
-                remainingMoneyToStock -= Mathf.CeilToInt(money / 2);
-            }
-            else
-            {
-                leftCrateProp.actualMoney += leftCrateProp.actualMoneyStockCapacity;
-                remainingMoneyToStock -= leftCrateProp.actualMoneyStockCapacity;
-            }
+        //    if (leftCrateProp.actualMoneyStockCapacity >= Mathf.CeilToInt(money / 2))
+        //    {
+        //        leftCrateProp.actualMoney += Mathf.CeilToInt(money / 2);
+        //        remainingMoneyToStock -= Mathf.CeilToInt(money / 2);
+        //    }
+        //    else
+        //    {
+        //        leftCrateProp.actualMoney += leftCrateProp.actualMoneyStockCapacity;
+        //        remainingMoneyToStock -= leftCrateProp.actualMoneyStockCapacity;
+        //    }
 
-            if (rightCrateProp.actualMoneyStockCapacity >= remainingMoneyToStock) rightCrateProp.actualMoney += remainingMoneyToStock;
-            else rightCrateProp.actualMoney += rightCrateProp.actualMoneyStockCapacity;
-            Debug.Log("Caisse gauche = " + leftCrateProp.actualMoney);
-            Debug.Log("Caisse droite = " + rightCrateProp.actualMoney);
-        }
-        else if (LeftHandObject != null)
-        {
-            leftCrateProp = LeftHandObject.GetComponent<ELC_CrateProperties>();
-            if (leftCrateProp.actualMoneyStockCapacity >= money) leftCrateProp.actualMoney += money;
-            else leftCrateProp.actualMoney += leftCrateProp.actualMoneyStockCapacity;
-            Debug.Log("Caisse gauche = " + leftCrateProp.actualMoney);
-        }
-        else if (RightHandObject != null)
+        //    if (rightCrateProp.actualMoneyStockCapacity >= remainingMoneyToStock) rightCrateProp.actualMoney += remainingMoneyToStock;
+        //    else rightCrateProp.actualMoney += rightCrateProp.actualMoneyStockCapacity;
+        //    Debug.Log("Caisse gauche = " + leftCrateProp.actualMoney);
+        //    Debug.Log("Caisse droite = " + rightCrateProp.actualMoney);
+        //}
+        //else if (LeftHandObject != null)
+        //{
+        //    leftCrateProp = LeftHandObject.GetComponent<ELC_CrateProperties>();
+        //    if (leftCrateProp.actualMoneyStockCapacity >= money) leftCrateProp.actualMoney += money;
+        //    else leftCrateProp.actualMoney += leftCrateProp.actualMoneyStockCapacity;
+        //    Debug.Log("Caisse gauche = " + leftCrateProp.actualMoney);
+        //}
+        //else if (RightHandObject != null)
+        //{
+        
+        //}
+
+        if(RightHandObject != null && (selectedHand == hands.RightHand || LeftHandObject == null))
         {
             rightCrateProp = RightHandObject.GetComponent<ELC_CrateProperties>();
             if (rightCrateProp.actualMoneyStockCapacity >= money) rightCrateProp.actualMoney += money;
-            else rightCrateProp.actualMoney += rightCrateProp.actualMoneyStockCapacity;
+            else
+            {
+                rightCrateProp.actualMoney += rightCrateProp.actualMoneyStockCapacity;
+                Debug.Log("Caisse gauche full !");
+            }
             Debug.Log("Caisse droite = " + rightCrateProp.actualMoney);
+        }
+        else if(LeftHandObject != null && (selectedHand == hands.LeftHand || RightHandObject == null))
+        {
+            leftCrateProp = LeftHandObject.GetComponent<ELC_CrateProperties>();
+            if (leftCrateProp.actualMoneyStockCapacity >= money) leftCrateProp.actualMoney += money;
+            else
+            {
+                leftCrateProp.actualMoney += leftCrateProp.actualMoneyStockCapacity;
+                Debug.Log("Caisse gauche full !");
+            }
+            Debug.Log("Caisse gauche = " + leftCrateProp.actualMoney);
         }
         else Debug.Log("Pas de caisses pour stocker l'argent");
     }

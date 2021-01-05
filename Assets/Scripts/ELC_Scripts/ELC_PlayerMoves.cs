@@ -274,7 +274,6 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     public IEnumerator PlayAnimation(string name, float time, bool canMoveDuringIt, bool canTurnDuringIt, bool death = false)
     {
-        Debug.Log("Passe ici aussi");
         playerAnimator.SetBool(name, true);
         canMove = canMoveDuringIt;
         canTurn = canTurnDuringIt;
