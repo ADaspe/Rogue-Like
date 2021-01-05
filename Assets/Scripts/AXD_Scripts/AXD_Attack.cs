@@ -147,6 +147,7 @@ public class AXD_Attack : MonoBehaviour
             int moneyEarn = (int)(enemy.enemyStats.MoneyEarnWhenHit * playerStats.MoneyMultiplicatorPU);
             //playerMoney.AddMoney( moneyEarn);
             playerInventory.GetComponent<ELC_ObjectsInventory>().AddMoneyToCrates(moneyEarn);
+            Debug.Log("Death reward !");
         }
     }
 }

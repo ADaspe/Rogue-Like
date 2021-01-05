@@ -43,7 +43,6 @@ public class ELC_ScreenShakes : MonoBehaviour
             float newY = Random.Range(-intensity, intensity);
 
             Vector3 newPosition = new Vector3(originOffset.x + newX, originOffset.y + newY, originOffset.z);
-            Debug.Log(CamOffset.name);
             CamOffset.m_Offset.Set(newPosition.x, newPosition.y, newPosition.z);
             yield return new WaitForSeconds(frequencyInSeconds);
             yield return null;

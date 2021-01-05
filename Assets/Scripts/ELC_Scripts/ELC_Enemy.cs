@@ -298,14 +298,14 @@ public class ELC_Enemy : MonoBehaviour
 
     private IEnumerator Attack()
     {
-        Debug.Log("1");
+        //Debug.Log("1");
         enemyAnimator.SetBool("IsPreparingForAttack", true);
-        Debug.Log("2");
+        //Debug.Log("2");
         yield return new WaitForSeconds(enemyStats.WaitBeforeAttack);
-        Debug.Log("3");
+        //Debug.Log("3");
         //Debug.Log(enemyStats.name + " attaque !");
         enemyAnimator.SetBool("IsPreparingForAttack", false);
-        Debug.Log("4");
+        //Debug.Log("4");
         enemyAnimator.SetBool("IsAttacking", true);
         isAttacking = true;
         Debug.Log("Attack");
