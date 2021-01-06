@@ -29,7 +29,7 @@ public class ELC_CrateProperties : MonoBehaviour
         {
             if (actualMoney > CratesSO.steps[i])
             {
-                if (i == CratesSO.steps.Count) securedMoney = CratesSO.steps[i];
+                if (i == CratesSO.steps.Count - 1) securedMoney = CratesSO.steps[i];
                 else if (actualMoney < CratesSO.steps[i + 1])
                 {
                     securedMoney = CratesSO.steps[i];
