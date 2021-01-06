@@ -106,7 +106,8 @@ public class ELC_Enemy : MonoBehaviour
 
         if (isDashing) Dash(currentDashDirection, currentDashTime, currentDashDistance);
 
-
+        if (lastDirection.x > 0) spriteRenderer.flipX = true;
+        else spriteRenderer.flipX = false;
     }
 
     void EnemyMoves(string EnemyPathBehaviour)
