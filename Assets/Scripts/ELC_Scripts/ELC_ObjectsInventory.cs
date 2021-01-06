@@ -170,4 +170,18 @@ public class ELC_ObjectsInventory : MonoBehaviour
         GO.transform.SetParent(this.transform);
         return GO;
     }
+
+    public void TransferMoney(bool transferByDeath)
+    {
+        if (transferByDeath)
+        {
+            if (RightHandObject != null) FindObjectOfType<AXD_PlayerMoney>().AddMoney(RightHandObject.GetComponent<ELC_CrateProperties>().securedMoney);
+            if (LeftHandObject != null) FindObjectOfType<AXD_PlayerMoney>().AddMoney(LeftHandObject.GetComponent<ELC_CrateProperties>().securedMoney);
+        }
+        else
+        {
+            if (RightHandObject != null) FindObjectOfType<AXD_PlayerMoney>().AddMoney(RightHandObject.GetComponent<ELC_CrateProperties>().actualMoney);
+            if(LeftHandObject != null) FindObjectOfType<AXD_PlayerMoney>().AddMoney(LeftHandObject.GetComponent<ELC_CrateProperties>().actualMoney);
+        }
+    }
 }
