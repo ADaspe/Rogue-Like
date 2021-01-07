@@ -9,6 +9,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     private Vector3 playerMoves;
     public Vector3 lastDirection = new Vector3(0, -1);
     public Vector3 attackPoint;
+    public float attackPointDistance;
     public const float animationTime = 0.4f;
     public ELC_PlayerStatManager playerStats;
     public PlayerHealth playerHealth;
@@ -90,7 +91,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         {
             ResetChain();
         }
-        attackPoint = transform.position + lastDirection.normalized * playerStats.SwichAreaRadius;
+        attackPoint = transform.position + (lastDirection.normalized*attackPointDistance) * playerStats.SwichAreaRadius;
         if (Input.GetAxisRaw("Dash") != 1)
         {
             dashButtonDown = false;
