@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4626830702766705406}
   - component: {fileID: 5380620958479213453}
-  - component: {fileID: 2354318920522866430}
   - component: {fileID: 5317746332933155564}
+  - component: {fileID: 2354318920522866430}
   - component: {fileID: 4596816765237111783}
   - component: {fileID: -3185217171588511211}
   m_Layer: 10
@@ -85,6 +85,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5317746332933155564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5071840276493583477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502c7acea783cc744ba957fee37832ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 5799528179822313380, guid: 8434fb21e7d94a54fb47d57f6e3b81ff,
+    type: 3}
+  headStats: {fileID: 11400000, guid: 218f85137d8fda14f93146860a658d92, type: 2}
+  enemyScript: {fileID: 0}
 --- !u!114 &2354318920522866430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,7 +115,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: 218f85137d8fda14f93146860a658d92, type: 2}
   currentHealth: 0
+  speed: 0
   movesTowardPlayer: {x: 0, y: 0, z: 0}
+  isAttacking: 0
+  isDistanceAttacking: 0
+  isHit: 0
   isStun: 0
   isInvulnerable: 0
   isTouchingSomething: 0
@@ -108,21 +128,7 @@ MonoBehaviour:
   obstaclesLayerMask:
     serializedVersion: 2
     m_Bits: 0
---- !u!114 &5317746332933155564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5071840276493583477}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 502c7acea783cc744ba957fee37832ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
-  headStats: {fileID: 11400000, guid: 218f85137d8fda14f93146860a658d92, type: 2}
-  currentHealth: 0
+  distanceToStay: 0
 --- !u!61 &4596816765237111783
 BoxCollider2D:
   m_ObjectHideFlags: 0

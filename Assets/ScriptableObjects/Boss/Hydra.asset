@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   invulnerable: 1
   maxHealth: 10000
-  healthPhase: 581b0000a00f000000000000
+  healthPhase: 581b0000a00f0000
   vulnerableTime: 0
