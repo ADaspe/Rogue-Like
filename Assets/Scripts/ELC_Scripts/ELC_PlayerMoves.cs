@@ -295,7 +295,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         {
             yield return new WaitForSeconds(time);
         }
-        if (!death)
+        if (!playerHealth.isDead)
         {
             playerAnimator.SetBool(name, false);
             canMove = true;
@@ -305,6 +305,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         {
             playerSpriteRenderer.enabled = false;
             gameManager.GetComponent<ELC_TimeScale>().PauseGame();
+            FindObjectOfType<ELC_ObjectsInventory>().TransferMoney(true);
         }
     }
 
