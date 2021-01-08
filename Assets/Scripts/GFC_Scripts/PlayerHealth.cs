@@ -49,7 +49,6 @@ public class PlayerHealth : MonoBehaviour
             {
                 isDead = true;
                 StartCoroutine(playerMovesScript.PlayAnimation("isDead", 1.5f, false, false, true));
-                Debug.Log("Passe ici");
             }
             playerInventory.GetComponent<ELC_ObjectsInventory>().GetHitCrates();            
         }

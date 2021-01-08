@@ -14,7 +14,7 @@ public class ELC_Enemy : MonoBehaviour
 
     [SerializeField]
     public int currentHealth;
-    private float speed;
+    public float speed;
     private bool canMove = true;
     private bool isDashing;
     private float stopDashing;
@@ -57,7 +57,7 @@ public class ELC_Enemy : MonoBehaviour
 
 
     [Header ("StayAtDistanceFromPlayer")]
-    private float distanceToStay;
+    public float distanceToStay;
     private float marginForDistanceToStay = 0.02f; //La marge dans laquelle peut être l'ennemi avant de s'approcher ou de reculer
     private enum EnemyDistance { TooFar, AtDistance, TooClose };
     private EnemyDistance distanceFromPlayer;
@@ -68,14 +68,17 @@ public class ELC_Enemy : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyAnimator = GetComponent<Animator>();
         isInvulnerable = false;
-        if(enemyStats == null)
+        if(enemyStats != null)
         {
-            Debug.Log("Null null");
+            currentHealth = enemyStats.MaxHealth;
+            speed = enemyStats.MovementSpeed;
+            distanceToStay = enemyStats.LimitDistanceToStay;
         }
-        //problème de timing d'instancitation
-        currentHealth = enemyStats.MaxHealth;
-        speed = enemyStats.MovementSpeed;
-        distanceToStay = enemyStats.LimitDistanceToStay;
+        else
+        {
+            Debug.Log("Enemy Stats null on " + this.gameObject.name);
+        }
+        
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
@@ -103,6 +106,10 @@ public class ELC_Enemy : MonoBehaviour
             }
             else if (canMove && !isDashing)
             {
+                if(enemyStats == null)
+                {
+                    Debug.Log("Encore un bug ici tiens");
+                }
                 EnemyMoves(enemyStats.EnemyPath.ToString());
                 playerIsInWall = false;
             }

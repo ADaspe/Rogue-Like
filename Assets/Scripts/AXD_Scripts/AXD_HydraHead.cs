@@ -8,12 +8,21 @@ public class AXD_HydraHead : MonoBehaviour
     public GameObject projectile;
     public ELC_EnemySO headStats;
     //[HideInInspector]
+    public AXD_Hydra hydra;
+    //[HideInInspector]
     public ELC_Enemy enemyScript;
     private void Awake()
     {
+
         enemyScript = GetComponent<ELC_Enemy>();
-        
-        headStats = enemyScript.enemyStats;
+        //enemyScript.enemyStats = headStats;
+        if(headStats == null)
+        {
+            Debug.Log("C'est la merde chef");
+        }
+        enemyScript.currentHealth = enemyScript.enemyStats.MaxHealth;
+        enemyScript.speed = enemyScript.enemyStats.MovementSpeed;
+        enemyScript.distanceToStay = enemyScript.enemyStats.LimitDistanceToStay;
         enemyScript.currentHealth = headStats.MaxHealth;
     }
 
@@ -41,6 +50,15 @@ public class AXD_HydraHead : MonoBehaviour
         headStats.DashOnPlayer = false;
     }
 
+    public void GetHydraRef(AXD_Hydra hydraArg)
+    {
+        hydra = hydraArg;
+    }
+
+    private void OnDestroy()
+    {
+        hydra.LoseHead(this);
+    }
     /*public void GetHit(int damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0, bool invulnerable = false)
     {
         enemyScript.currentHealth -= damage;
