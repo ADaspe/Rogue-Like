@@ -5790,21 +5790,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.41
       objectReference: {fileID: 0}
-    - target: {fileID: 3046702277071266625, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8,
-        type: 3}
-      propertyPath: healthPercentageHeadPhase2
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 3046702277071266625, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8,
-        type: 3}
-      propertyPath: healthPercentageHeadPhase3
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 3046702277071266625, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8,
-        type: 3}
-      propertyPath: maxHealthHead
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 3361884480771778099, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8,
         type: 3}
       propertyPath: m_LocalPosition.x

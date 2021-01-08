@@ -13,16 +13,16 @@ MonoBehaviour:
   m_Name: HydraHead
   m_EditorClassIdentifier: 
   Name: 
-  MaxHealth: 200
+  MaxHealth: 5000
   MovementSpeed: 5
-  EnemyPath: 0
-  LimitDistanceToStay: 2
+  EnemyPath: 2
+  LimitDistanceToStay: 6
   NeedTimeToTurn: 0
   TurnSpeed: 0
   EnemyWidth: 0
   noStunTime: 0
   FriendlyFire: 0
-  DistanceAttack: 0
+  DistanceAttack: 1
   Projectile: {fileID: 5799528179822313380, guid: 8434fb21e7d94a54fb47d57f6e3b81ff,
     type: 3}
   DistanceAttackArea: 10

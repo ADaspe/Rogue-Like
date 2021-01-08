@@ -11,6 +11,7 @@ public class AXD_Hydra : MonoBehaviour
     public List<AXD_HydraHead> heads;
     public List<GameObject> spawnPoints;
     public ELC_Enemy enemy;
+    public float timeToChangeStrat;
     public float timeToBeVulnerable;
     public bool headsToSpawn;
     public int maxHealthHead;
@@ -23,9 +24,26 @@ public class AXD_Hydra : MonoBehaviour
         enemy = GetComponent<ELC_Enemy>();
         currentPhase = BossPhase.Phase1;
         enemy.isInvulnerable = true;
-        headsToSpawn = true;
+        LetsFight();
     }
+    private void Update()
+    {
+        if(Time.time >= timeToChangeStrat && timeToChangeStrat > 0)
+        {
+            Debug.Log("Change Start");
+            ChangeStratRandom();
+        }
 
+
+        if (!enemy.isInvulnerable)
+        {
+            VulnerablePhase();
+        }
+        else if (headsToSpawn)
+        {
+            SpawnHeads();
+        }
+    }
     public void SpawnHeads()
     {
         Debug.Log("Spawning heads");
@@ -67,23 +85,11 @@ public class AXD_Hydra : MonoBehaviour
                 heads.Add(temp7);
                 break;
         }
+        timeToChangeStrat = Time.time + stats.stratTime;
         headsToSpawn = false;
     }
 
-    private void Update()
-    {
-        if (enemy.currentHealth <= stats.healthPhase[(int)currentPhase])
-        {
-            enemy.currentHealth = stats.healthPhase[(int)currentPhase]; 
-        }
-        if (!enemy.isInvulnerable)
-        {
-            VulnerablePhase();
-        }else if (headsToSpawn)
-        {
-            SpawnHeads();
-        }
-    }
+
 
     public void LoseHead(AXD_HydraHead head)
     {
@@ -98,8 +104,12 @@ public class AXD_Hydra : MonoBehaviour
     public void VulnerablePhase()
     {
         Debug.Log("Attack me !");
-        if (Time.time > timeToBeVulnerable || enemy.currentHealth <= stats.healthPhase[(int)currentPhase])
+        if (Time.time > timeToBeVulnerable || enemy.currentHealth < stats.healthPhase[(int)currentPhase])
         {
+            if (enemy.currentHealth < stats.healthPhase[(int)currentPhase])
+            {
+                enemy.currentHealth = stats.healthPhase[(int)currentPhase];
+            }
             enemy.isInvulnerable = true;
             headsToSpawn = true;
             ChangePhase();
@@ -113,6 +123,33 @@ public class AXD_Hydra : MonoBehaviour
             Debug.Log("Changing phase");
             currentPhase++;
         }
-        SpawnHeads();
+    }
+
+    public void ChangeStratRandom()
+    {
+        
+        int ran;
+        foreach(AXD_HydraHead head in heads)
+        {
+            ran = Mathf.RoundToInt(Random.Range(0, 2));
+            switch (ran)
+            {
+                case 0:
+                    head.Charge();
+                    break;
+                case 1:
+                    head.Shoot();
+                    break;
+                case 2:
+                    head.Attack();
+                    break;
+            }
+        }
+        timeToChangeStrat = Time.time + stats.stratTime;
+    }
+
+    public void LetsFight()
+    {
+        headsToSpawn = true;
     }
 }
