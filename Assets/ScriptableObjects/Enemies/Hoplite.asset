@@ -29,7 +29,7 @@ MonoBehaviour:
   ProjectileSpeed: 0
   ProjectileDurability: 0
   ProjectileStrenght: 0
-  CorpseAttack: 1
+  CloseCombatAttack: 1
   AttackCooldown: 1.5
   AttackRange: 0.8
   WaitBeforeAttack: 0.5

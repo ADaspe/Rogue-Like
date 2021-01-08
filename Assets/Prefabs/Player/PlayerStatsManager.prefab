@@ -93,11 +93,11 @@ MonoBehaviour:
   DashMultiplicatorRed: 2
   SwitchChainSlowMotionValue: 0.3
   SwitchChainSlowMotionDuration: 0.3
-  SwichDamage: 200
-  SwichAreaRadius: 1.2
-  SponkDamage: 350
-  SponkWidth: 0
-  Sponklength: 0
+  SwichDamage: 100
+  SwichAreaRadius: 1
+  SponkDamage: 1000
+  SponkWidth: 0.5
+  Sponklength: 1.45
   AnimationDashTime: 0.4
   AnimationSwichTime: 0.4
   AnimationSponkTime: 1.5

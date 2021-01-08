@@ -13,8 +13,8 @@ public class ELC_Enemy : MonoBehaviour
     private Animator enemyAnimator;
 
     [SerializeField]
-    public float currentHealth;
-    private float speed;
+    public int currentHealth;
+    public float speed;
     private bool canMove = true;
     private bool isDashing;
     private float stopDashing;
@@ -29,6 +29,7 @@ public class ELC_Enemy : MonoBehaviour
     public bool isDistanceAttacking;
     public bool isHit;
 
+
     private Vector3 currentDashDirection;
     private float currentDashDistance;
     private float currentDashTime;
@@ -36,6 +37,7 @@ public class ELC_Enemy : MonoBehaviour
     private const float knockbackTime = 0.2f;
     public bool isStun;
     private bool canBeStun = true;
+    public bool isTmpInvulnerable = false;
     public bool isInvulnerable = false;
     private bool isTouchingRight;
     private bool isTouchingLeft;
@@ -57,7 +59,7 @@ public class ELC_Enemy : MonoBehaviour
 
 
     [Header ("StayAtDistanceFromPlayer")]
-    private float distanceToStay;
+    public float distanceToStay;
     private float marginForDistanceToStay = 0.02f; //La marge dans laquelle peut être l'ennemi avant de s'approcher ou de reculer
     private enum EnemyDistance { TooFar, AtDistance, TooClose };
     private EnemyDistance distanceFromPlayer;
@@ -67,11 +69,18 @@ public class ELC_Enemy : MonoBehaviour
         enemyCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyAnimator = GetComponent<Animator>();
-        isInvulnerable = false;
-
-        currentHealth = enemyStats.MaxHealth;
-        speed = enemyStats.MovementSpeed;
-        distanceToStay = enemyStats.LimitDistanceToStay;
+        isTmpInvulnerable = false;
+        if(enemyStats != null)
+        {
+            currentHealth = enemyStats.MaxHealth;
+            speed = enemyStats.MovementSpeed;
+            distanceToStay = enemyStats.LimitDistanceToStay;
+        }
+        else
+        {
+            Debug.Log("Enemy Stats null on " + this.gameObject.name);
+        }
+        
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
@@ -99,6 +108,10 @@ public class ELC_Enemy : MonoBehaviour
             }
             else if (canMove && !isDashing)
             {
+                if(enemyStats == null)
+                {
+                    Debug.Log("Encore un bug ici tiens");
+                }
                 EnemyMoves(enemyStats.EnemyPath.ToString());
                 playerIsInWall = false;
             }
@@ -106,7 +119,8 @@ public class ELC_Enemy : MonoBehaviour
 
         if (isDashing) Dash(currentDashDirection, currentDashTime, currentDashDistance);
 
-
+        if (lastDirection.x > 0) spriteRenderer.flipX = true;
+        else spriteRenderer.flipX = false;
     }
 
     void EnemyMoves(string EnemyPathBehaviour)
@@ -298,17 +312,13 @@ public class ELC_Enemy : MonoBehaviour
 
     private IEnumerator Attack()
     {
-        //Debug.Log("1");
         enemyAnimator.SetBool("IsPreparingForAttack", true);
-        //Debug.Log("2");
         yield return new WaitForSeconds(enemyStats.WaitBeforeAttack);
-        //Debug.Log("3");
         //Debug.Log(enemyStats.name + " attaque !");
         enemyAnimator.SetBool("IsPreparingForAttack", false);
-        //Debug.Log("4");
         enemyAnimator.SetBool("IsAttacking", true);
         isAttacking = true;
-        Debug.Log("Attack");
+        //Debug.Log("Attack");
 
         if (enemyStats.DashOnPlayer)
         {
@@ -437,12 +447,12 @@ public class ELC_Enemy : MonoBehaviour
         isStun = true;
         if (invulnerable)
         {
-            isInvulnerable = true;
+            isTmpInvulnerable = true;
         }
         yield return new WaitForSeconds(time);
-        if (isInvulnerable)
+        if (isTmpInvulnerable)
         {
-            isInvulnerable = false;
+            isTmpInvulnerable = false;
         }
         isStun = false;
         
@@ -459,7 +469,7 @@ public class ELC_Enemy : MonoBehaviour
     }
     public void GetHit(int Damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0, bool invulnerable = false)
     {
-        if (!isInvulnerable)
+        if (!isTmpInvulnerable && !isInvulnerable)
         {
             currentHealth -= Damage;
             StartCoroutine(HitSound());
@@ -500,7 +510,7 @@ public class ELC_Enemy : MonoBehaviour
             {
                 ELC_PlayerStatManager playerStats =  FindObjectOfType<ELC_PlayerStatManager>();
                 hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)(enemyStats.AttackStrenght *  (1 / playerStats.DefenseMultiplicatorPU) * playerStats.FilAresDamagesTakenMultiplicator));
-                Debug.Log("Corpse Hit");
+                Debug.Log("Close combat Hit");
             }
         }
         else //dashAttack
@@ -531,8 +541,8 @@ public class ELC_Enemy : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(this.transform.position + lastDirection.normalized * enemyStats.AttackRange, enemyStats.AttackRange);
-        Gizmos.DrawCube(this.transform.position + directionToDash.normalized * 0.5f, new Vector3(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth, 0));
+        //Gizmos.DrawWireSphere(this.transform.position + lastDirection.normalized * enemyStats.AttackRange, enemyStats.AttackRange);
+        //Gizmos.DrawCube(this.transform.position + directionToDash.normalized * 0.5f, new Vector3(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth, 0));
     }
 
 }
