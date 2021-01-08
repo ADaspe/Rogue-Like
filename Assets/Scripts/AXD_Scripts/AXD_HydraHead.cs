@@ -28,6 +28,7 @@ public class AXD_HydraHead : MonoBehaviour
 
     public void Charge()
     {
+        Debug.Log("Charge !");
         headStats.EnemyPath = ELC_EnemySO.PathBehaviour.FollowPlayer;
         headStats.DistanceAttack = false;
         headStats.CloseCombatAttack = false;
@@ -36,6 +37,7 @@ public class AXD_HydraHead : MonoBehaviour
 
     public void Attack()
     {
+        Debug.Log("Attack !");
         headStats.EnemyPath = ELC_EnemySO.PathBehaviour.FollowPlayer;
         headStats.DistanceAttack = false;
         headStats.CloseCombatAttack = true;
@@ -44,6 +46,7 @@ public class AXD_HydraHead : MonoBehaviour
 
     public void Shoot()
     {
+        Debug.Log("Shoot !");
         headStats.EnemyPath = ELC_EnemySO.PathBehaviour.StayAtDistance;
         headStats.DistanceAttack = true;
         headStats.CloseCombatAttack = false;

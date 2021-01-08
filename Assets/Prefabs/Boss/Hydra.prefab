@@ -111,14 +111,12 @@ MonoBehaviour:
   heads: []
   spawnPoints:
   - {fileID: 0}
-  invulnerable: 0
-  currentHealth: 0
+  enemy: {fileID: 0}
   timeToBeVulnerable: 0
   headsToSpawn: 0
-  maxHealthHead: 3000
-  healthPercentageHeadPhase2: 75
-  healthPercentageHeadPhase3: 45
-  healthPhase: 
+  maxHealthHead: 5000
+  healthPercentageHeadPhase2: 85
+  healthPercentageHeadPhase3: 70
 --- !u!61 &838614985989882433
 BoxCollider2D:
   m_ObjectHideFlags: 0

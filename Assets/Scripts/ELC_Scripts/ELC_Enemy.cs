@@ -29,6 +29,7 @@ public class ELC_Enemy : MonoBehaviour
     public bool isDistanceAttacking;
     public bool isHit;
 
+
     private Vector3 currentDashDirection;
     private float currentDashDistance;
     private float currentDashTime;
@@ -36,6 +37,7 @@ public class ELC_Enemy : MonoBehaviour
     private const float knockbackTime = 0.2f;
     public bool isStun;
     private bool canBeStun = true;
+    public bool isTmpInvulnerable = false;
     public bool isInvulnerable = false;
     private bool isTouchingRight;
     private bool isTouchingLeft;
@@ -67,7 +69,7 @@ public class ELC_Enemy : MonoBehaviour
         enemyCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyAnimator = GetComponent<Animator>();
-        isInvulnerable = false;
+        isTmpInvulnerable = false;
         if(enemyStats != null)
         {
             currentHealth = enemyStats.MaxHealth;
@@ -316,7 +318,7 @@ public class ELC_Enemy : MonoBehaviour
         enemyAnimator.SetBool("IsPreparingForAttack", false);
         enemyAnimator.SetBool("IsAttacking", true);
         isAttacking = true;
-        Debug.Log("Attack");
+        //Debug.Log("Attack");
 
         if (enemyStats.DashOnPlayer)
         {
@@ -445,12 +447,12 @@ public class ELC_Enemy : MonoBehaviour
         isStun = true;
         if (invulnerable)
         {
-            isInvulnerable = true;
+            isTmpInvulnerable = true;
         }
         yield return new WaitForSeconds(time);
-        if (isInvulnerable)
+        if (isTmpInvulnerable)
         {
-            isInvulnerable = false;
+            isTmpInvulnerable = false;
         }
         isStun = false;
         
@@ -467,7 +469,7 @@ public class ELC_Enemy : MonoBehaviour
     }
     public void GetHit(int Damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0, bool invulnerable = false)
     {
-        if (!isInvulnerable)
+        if (!isTmpInvulnerable && !isInvulnerable)
         {
             currentHealth -= Damage;
             StartCoroutine(HitSound());
