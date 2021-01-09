@@ -31,17 +31,21 @@ MonoBehaviour:
   ProjectileStrenght: 0
   CloseCombatAttack: 1
   AttackCooldown: 5
-  AttackRange: 0
+  AttackRange: 0.8
   WaitBeforeAttack: 0.5
-  AttackStrenght: 0
+  AttackStrenght: 2
   AttackStun: 0
-  AttackAnimationTime: 0
+  AttackAnimationTime: 1
   DashOnPlayer: 1
-  DashTime: 0.5
-  DistanceToRun: 4
-  DashStrenght: 0
+  DashTime: 1
+  DistanceToRun: 10
+  DashStrenght: 1
   DashStun: 0
-  DashColliderWidth: 0
+  DashColliderWidth: 1
+  DashAndCorpseAttack: 1
+  DashCooldown: 15
+  MinDistanceToTriggerDash: 4
+  MaxDistanceToTriggerDash: 5
   SpawnEntitiesRegulary: 0
   SpawnEntitiesAtDeath: 0
   SpawnCooldown: 0
