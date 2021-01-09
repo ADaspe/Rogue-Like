@@ -16,9 +16,11 @@ public class ELC_Enemy : MonoBehaviour
     public int currentHealth;
     public float speed;
     private bool canMove = true;
-    private bool isDashing;
-    private float stopDashing;
+    public bool isDashing;
+    public float stopDashing;
     private float attackCooldown; // le cooldown entre chaque attaque
+    public float dashCooldown; //Valable que pour les ennemis qui ont l'attaque de base + l'attaque à distance
+    public bool canDashAttack; //Valable que pour les ennemis qui ont l'attaque de base + l'attaque à distance
     public Vector3 movesTowardPlayer;
     private Vector3 fleePlayer;
     private Vector3 directionToDash;
@@ -70,7 +72,8 @@ public class ELC_Enemy : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyAnimator = GetComponent<Animator>();
         isTmpInvulnerable = false;
-        if(enemyStats != null)
+        dashCooldown = Time.time + enemyStats.DashCooldown;
+        if (enemyStats != null)
         {
             currentHealth = enemyStats.MaxHealth;
             speed = enemyStats.MovementSpeed;
@@ -184,15 +187,25 @@ public class ELC_Enemy : MonoBehaviour
 
     void EnemyAttackCheck()
     {
-        if((distanceFromPlayer == EnemyDistance.AtDistance || distanceFromPlayer == EnemyDistance.TooClose) && Time.time >= attackCooldown && canSeePlayer)
+        if (!isAttacking)
         {
-            canMove = false;
-            attackCooldown = Time.time + enemyStats.AttackCooldown;
-            //Debug.Log(enemyStats.Name + " charge son attaque");
-            StartCoroutine("Attack");
+            if ((distanceFromPlayer == EnemyDistance.AtDistance || distanceFromPlayer == EnemyDistance.TooClose) && Time.time >= attackCooldown && canSeePlayer)
+            {
+                canMove = false;
+                attackCooldown = Time.time + enemyStats.AttackCooldown;
+                //Debug.Log(enemyStats.Name + " charge son attaque");
+                StartCoroutine(Attack(false));
 
-            if(enemyStats.DashOnPlayer) directionToDash = movesTowardPlayer;
+                if (enemyStats.DashOnPlayer) directionToDash = movesTowardPlayer;
+            }
+            else if (canDashAttack)
+            {
+                dashCooldown = Time.time + enemyStats.DashCooldown;
+                StartCoroutine(Attack(true));
+                directionToDash = movesTowardPlayer;
+            }
         }
+        
     }
 
     Vector3 ClampIfTouchSomething(Vector3 vectorToClamp, float speed)
@@ -310,7 +323,7 @@ public class ELC_Enemy : MonoBehaviour
         fleePlayer = ClampIfTouchSomething(fleePlayer, speed);
     }
 
-    private IEnumerator Attack()
+    private IEnumerator Attack(bool isDashing = false)
     {
         enemyAnimator.SetBool("IsPreparingForAttack", true);
         yield return new WaitForSeconds(enemyStats.WaitBeforeAttack);
@@ -319,8 +332,7 @@ public class ELC_Enemy : MonoBehaviour
         enemyAnimator.SetBool("IsAttacking", true);
         isAttacking = true;
         //Debug.Log("Attack");
-
-        if (enemyStats.DashOnPlayer)
+        if((enemyStats.DashAndCorpseAttack && isDashing) || (enemyStats.DashOnPlayer && !enemyStats.DashAndCorpseAttack))
         {
             Dash(directionToDash, enemyStats.DashTime, enemyStats.DistanceToRun);
             HitPlayer(true);
@@ -333,7 +345,8 @@ public class ELC_Enemy : MonoBehaviour
         else HitPlayer();
 
         canMove = true;
-        yield return new WaitForSeconds(enemyStats.AttackAnimationTime);
+        if (enemyStats.DashAndCorpseAttack && isDashing) yield return new WaitForSeconds(enemyStats.DashTime);
+        else yield return new WaitForSeconds(enemyStats.AttackAnimationTime);
         enemyAnimator.SetBool("IsAttacking", false);
         isAttacking = false;
         isDistanceAttacking = false;
@@ -361,6 +374,9 @@ public class ELC_Enemy : MonoBehaviour
         if (distance < minDistance) distanceFromPlayer = EnemyDistance.TooClose;
         else if (distance > maxDistance) distanceFromPlayer = EnemyDistance.TooFar;
         else distanceFromPlayer = EnemyDistance.AtDistance;
+
+        if (enemyStats.DashAndCorpseAttack && distanceFromPlayer == EnemyDistance.TooFar && distance < enemyStats.MaxDistanceToTriggerDash && distance > enemyStats.MinDistanceToTriggerDash && Time.time > dashCooldown) canDashAttack = true;
+        else canDashAttack = false;
     }
 
     private void CheckDistanceFromOtherEnemies()
