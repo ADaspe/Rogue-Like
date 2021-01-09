@@ -308,6 +308,7 @@ MonoBehaviour:
   player: {fileID: 3282318346991483595}
   lastDirection: {x: 0, y: 0, z: 0}
   attackPoint: {x: 0, y: 0, z: 0}
+  attackPointDistance: 0.6
   playerStats: {fileID: 782464527650891043}
   playerHealth: {fileID: 8934949276138899172}
   attack: {fileID: 1478753435661380681}

@@ -15,4 +15,5 @@ MonoBehaviour:
   invulnerable: 1
   maxHealth: 10000
   healthPhase: 581b0000a00f000000000000
-  vulnerableTime: 0
+  vulnerableTime: 15
+  stratTime: 10

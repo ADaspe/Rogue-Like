@@ -20,6 +20,7 @@ MonoBehaviour:
   NeedTimeToTurn: 0
   TurnSpeed: 0
   EnemyWidth: 0.5
+  noStunTime: 0
   FriendlyFire: 0
   DistanceAttack: 1
   Projectile: {fileID: 5799528179822313380, guid: 8434fb21e7d94a54fb47d57f6e3b81ff,
@@ -29,7 +30,7 @@ MonoBehaviour:
   ProjectileSpeed: 8
   ProjectileDurability: 4
   ProjectileStrenght: 5
-  CorpseAttack: 0
+  CloseCombatAttack: 1
   AttackCooldown: 1
   AttackRange: 1
   WaitBeforeAttack: 0.5
