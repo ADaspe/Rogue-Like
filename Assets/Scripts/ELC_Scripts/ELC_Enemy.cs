@@ -31,6 +31,10 @@ public class ELC_Enemy : MonoBehaviour
     public bool isDistanceAttacking;
     public bool isHit;
 
+    //private Material basicMat;
+    public Material dissolveMaterial;
+    public Material getHitMaterial;
+    public float spawnDuration = 1;
 
     private Vector3 currentDashDirection;
     private float currentDashDistance;
@@ -69,11 +73,13 @@ public class ELC_Enemy : MonoBehaviour
 
     void Start()
     {
+        //basicMat = spriteRenderer.material;
         enemyCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyAnimator = GetComponent<Animator>();
         isTmpInvulnerable = false;
         dashCooldown = Time.time + enemyStats.DashCooldown;
+        //StartCoroutine("Spawn");
         if (enemyStats != null)
         {
             currentHealth = enemyStats.MaxHealth;
@@ -126,6 +132,15 @@ public class ELC_Enemy : MonoBehaviour
         if (lastDirection.x > 0) spriteRenderer.flipX = true;
         else spriteRenderer.flipX = false;
     }
+
+    //IEnumerator Spawn()
+    //{
+    //    spriteRenderer.material = dissolveMaterial;
+    //    canMove = false;
+    //    yield return new WaitForSeconds(spawnDuration);
+    //    spriteRenderer.material = basicMat;
+    //    canMove = true;
+    //}
 
     void EnemyMoves(string EnemyPathBehaviour)
     {
@@ -457,6 +472,7 @@ public class ELC_Enemy : MonoBehaviour
 
     IEnumerator Stun(float time, bool invulnerable = false)
     {
+        //spriteRenderer.material = getHitMaterial;
         canBeStun = false;
         if (invulnerable)
         {
@@ -472,7 +488,8 @@ public class ELC_Enemy : MonoBehaviour
             isTmpInvulnerable = false;
         }
         isStun = false;
-        
+        //spriteRenderer.material = basicMat;
+
         yield return new WaitForSeconds(enemyStats.noStunTime);
         
         canBeStun = true;
@@ -486,6 +503,7 @@ public class ELC_Enemy : MonoBehaviour
     }
     public void GetHit(int Damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0, bool invulnerable = false)
     {
+        
         Debug.Log("Enemy hit");
         if (!isTmpInvulnerable && !isInvulnerable)
         {

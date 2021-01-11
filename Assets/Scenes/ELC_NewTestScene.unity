@@ -2018,6 +2018,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1775749699373023050, guid: 31a8c89326ffe3c48b0146c030fd5abe,
+        type: 3}
+      propertyPath: spawnDuration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3537662657935540702, guid: 31a8c89326ffe3c48b0146c030fd5abe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6603,6 +6608,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148857145838052543, guid: e92a72e0dcedde944886188f85b5d608,
+        type: 3}
+      propertyPath: spawnDuration
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e92a72e0dcedde944886188f85b5d608, type: 3}
@@ -12976,6 +12986,16 @@ PrefabInstance:
       propertyPath: fieldOfViewLayerMask.m_Bits
       value: 512
       objectReference: {fileID: 0}
+    - target: {fileID: 3456645754019736586, guid: 690e085c5fac56248b4bf550d707dd5a,
+        type: 3}
+      propertyPath: spawnDuration
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3456645754019736586, guid: 690e085c5fac56248b4bf550d707dd5a,
+        type: 3}
+      propertyPath: getHitMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a99d921524399049a40d04865cd06f2, type: 2}
     - target: {fileID: 3456645754019736587, guid: 690e085c5fac56248b4bf550d707dd5a,
         type: 3}
       propertyPath: m_LocalPosition.x
