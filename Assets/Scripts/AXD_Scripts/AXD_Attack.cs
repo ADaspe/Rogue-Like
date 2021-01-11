@@ -65,25 +65,23 @@ public class AXD_Attack : MonoBehaviour
                     colateralVictims.Add(tempEnemy);
                 }
 
-                if(type.Equals(AttackType.Sponk.ToString()))
-                {
-                    Debug.Log("oui");
                     GameObject vfx = Instantiate(hitVFX, enemy.transform);
-                    switch (playerStats.currentChain)
-                    {
-                        case ELC_PlayerStatManager.Chain.Blue:
-                            vfx.GetComponent<ELC_HitVFX>().playerPhase = 1;
-                            break;
-                        case ELC_PlayerStatManager.Chain.Orange:
-                            vfx.GetComponent<ELC_HitVFX>().playerPhase = 2;
-                            break;
-                        case ELC_PlayerStatManager.Chain.Red:
-                            vfx.GetComponent<ELC_HitVFX>().playerPhase = 3;
-                            break;
-                        default:
-                            break;
-                    }
-                    
+                if (type.Equals(AttackType.Sponk.ToString())) vfx.GetComponent<ELC_HitVFX>().attackType = "Sponk";
+                else vfx.GetComponent<ELC_HitVFX>().attackType = "Swich";
+
+                switch (playerStats.currentChain)
+                {
+                    case ELC_PlayerStatManager.Chain.Blue:
+                        vfx.GetComponent<ELC_HitVFX>().playerPhase = 1;
+                        break;
+                    case ELC_PlayerStatManager.Chain.Orange:
+                        vfx.GetComponent<ELC_HitVFX>().playerPhase = 2;
+                        break;
+                    case ELC_PlayerStatManager.Chain.Red:
+                        vfx.GetComponent<ELC_HitVFX>().playerPhase = 3;
+                        break;
+                    default:
+                        break;
                 }
             }
             //Attack main target
