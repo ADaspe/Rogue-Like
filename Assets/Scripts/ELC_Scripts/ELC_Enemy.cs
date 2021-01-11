@@ -457,14 +457,14 @@ public class ELC_Enemy : MonoBehaviour
     IEnumerator Stun(float time, bool invulnerable = false)
     {
         canBeStun = false;
-        
-        yield return new WaitForSeconds(enemyStats.noStunTime);
-        
-        isStun = true;
         if (invulnerable)
         {
             isTmpInvulnerable = true;
         }
+        yield return new WaitForSeconds(enemyStats.noStunTime);
+        
+        isStun = true;
+        
         yield return new WaitForSeconds(time);
         if (isTmpInvulnerable)
         {
@@ -485,6 +485,7 @@ public class ELC_Enemy : MonoBehaviour
     }
     public void GetHit(int Damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0, bool invulnerable = false)
     {
+        Debug.Log("Enemy hit");
         if (!isTmpInvulnerable && !isInvulnerable)
         {
             currentHealth -= Damage;
