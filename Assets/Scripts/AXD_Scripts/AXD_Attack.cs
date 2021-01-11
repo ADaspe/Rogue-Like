@@ -12,6 +12,7 @@ public class AXD_Attack : MonoBehaviour
     public PlayerHealth playerHealth;
     public GameObject GameManager;
     public GameObject playerInventory;
+    public GameObject hitVFX;
 
     public bool AppetitDeLycaonIsActive;
     public float AppetitDeLycaonHealPerEnemies;
@@ -56,6 +57,7 @@ public class AXD_Attack : MonoBehaviour
                 ELC_Enemy tempEnemy = enemy.GetComponent<ELC_Enemy>();
                 if (closestEnemy == null || (Vector3.Distance(player.transform.position, tempEnemy.transform.position) < Vector3.Distance(player.transform.position, closestEnemy.transform.position)))
                 {
+                    if (closestEnemy != null) colateralVictims.Add(closestEnemy);
                     closestEnemy = tempEnemy;
                 }
                 else
@@ -63,6 +65,24 @@ public class AXD_Attack : MonoBehaviour
                     colateralVictims.Add(tempEnemy);
                 }
 
+                    GameObject vfx = Instantiate(hitVFX, enemy.transform);
+                if (type.Equals(AttackType.Sponk.ToString())) vfx.GetComponent<ELC_HitVFX>().attackType = "Sponk";
+                else vfx.GetComponent<ELC_HitVFX>().attackType = "Swich";
+
+                switch (playerStats.currentChain)
+                {
+                    case ELC_PlayerStatManager.Chain.Blue:
+                        vfx.GetComponent<ELC_HitVFX>().playerPhase = 1;
+                        break;
+                    case ELC_PlayerStatManager.Chain.Orange:
+                        vfx.GetComponent<ELC_HitVFX>().playerPhase = 2;
+                        break;
+                    case ELC_PlayerStatManager.Chain.Red:
+                        vfx.GetComponent<ELC_HitVFX>().playerPhase = 3;
+                        break;
+                    default:
+                        break;
+                }
             }
             //Attack main target
             if (closestEnemy != null)
@@ -76,7 +96,11 @@ public class AXD_Attack : MonoBehaviour
                 else if (type.Equals(AttackType.Sponk.ToString()))
                 {
                     GameManager.GetComponent<ELC_TimeScale>().ScaleTime(playerStats.SponkSlowMotionValue, playerStats.SponkSlowMotionDuration);
-                    closestEnemy.GetHit(CalculateDamage(AttackType.Sponk), closestEnemy.movesTowardPlayer, playerStats.SponkKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SponkStunTime, true);
+                    if (!closestEnemy.isInvulnerable && !closestEnemy.isTmpInvulnerable)
+                    {
+                        closestEnemy.GetHit(CalculateDamage(AttackType.Sponk), closestEnemy.movesTowardPlayer, playerStats.SponkKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SponkStunTime, true);
+                        
+                    }
                 }
                 
             }
