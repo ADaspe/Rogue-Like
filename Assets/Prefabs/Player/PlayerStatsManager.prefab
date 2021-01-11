@@ -60,17 +60,17 @@ MonoBehaviour:
   SwichDashDistance: 1
   SwichDashTime: 0.1
   SponkDashDistance: 5
-  SponkDashTime: 0.1
+  SponkDashTime: 0.15
   SwichAttackRate: 4
   SponkAttackRate: 0.5
   SwichKnockbackDistance: 1
   SwichStunTime: 0.7
-  SwichSlowMotionValue: 0
-  SwichSlowMotionDuration: 0
+  SwichSlowMotionValue: 0.4
+  SwichSlowMotionDuration: 0.2
   SponkKnockbackDistance: 3
   SponkStunTime: 0.7
-  SponkSlowMotionValue: 0.3
-  SponkSlowMotionDuration: 0.5
+  SponkSlowMotionValue: 0.4
+  SponkSlowMotionDuration: 0.2
   AttackMultiplicatorChain: 0
   BerserkMultiplicator: 0
   CurrentCombo: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
   SwitchChainSlowMotionDuration: 0.3
   SwichDamage: 100
   SwichAreaRadius: 1
-  SponkDamage: 1000
+  SponkDamage: 300
   SponkWidth: 0.5
   Sponklength: 1.45
   AnimationDashTime: 0.4
@@ -107,9 +107,9 @@ MonoBehaviour:
   MoneyMultiplicatorPU: 1
   FilAresDamagesTakenMultiplicator: 1
   FilAresBerserkMultiplicator: 1
-  AttackShakeIntensity: 0.1
+  AttackShakeIntensity: 0.15
   AttackShakeFrequency: 0.06
   AttackShakeDuration: 0.1
-  GetHitShakeIntensity: 0.15
+  GetHitShakeIntensity: 0.3
   GetHitShakeFrequency: 0.05
   GetHitShakeDuration: 0.2
