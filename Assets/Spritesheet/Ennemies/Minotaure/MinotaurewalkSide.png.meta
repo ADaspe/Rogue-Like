@@ -1,49 +1,31 @@
 fileFormatVersion: 2
-guid: b3c7600a61419814c9a8b0ae4f101b59
+guid: a5959108d54d05e449842384bbc80717
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -965354265237013297
-    second: Sponk Rose FX_0
+      213: 4740783378816029341
+    second: MinotaurewalkSide_0
   - first:
-      213: 3740082305692300983
-    second: Sponk Rose FX_1
+      213: 5409663616109998163
+    second: MinotaurewalkSide_1
   - first:
-      213: 6755112680669111697
-    second: Sponk Rose FX_2
+      213: -5184321791007859546
+    second: MinotaurewalkSide_2
   - first:
-      213: 4694404093370968684
-    second: Sponk Rose FX_3
+      213: -7720668716323898927
+    second: MinotaurewalkSide_3
   - first:
-      213: -455216098409851236
-    second: Sponk Rose FX_4
+      213: -8592507497716366713
+    second: MinotaurewalkSide_4
   - first:
-      213: 2880927197282671533
-    second: Sponk Rose FX_5
+      213: 8073633656254382743
+    second: MinotaurewalkSide_5
   - first:
-      213: -7528292847466592628
-    second: Sponk Rose FX_6
+      213: 3901251544909837463
+    second: MinotaurewalkSide_6
   - first:
-      213: -5437291922874358165
-    second: Sponk Rose FX_7
-  - first:
-      213: -1557878281152098209
-    second: Sponk Rose FX_0
-  - first:
-      213: 3613869182562482064
-    second: Sponk Rose FX_1
-  - first:
-      213: -5756740154523910088
-    second: Sponk Rose FX_2
-  - first:
-      213: -4861097264261231647
-    second: Sponk Rose FX_3
-  - first:
-      213: 5682866324884023246
-    second: Sponk Rose FX_4
-  - first:
-      213: -4430638281739361337
-    second: Sponk Rose FX_5
+      213: 4074120680692459253
+    second: MinotaurewalkSide_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -83,7 +65,7 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
+  spriteExtrude: 0
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
@@ -165,55 +147,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sponk Rose FX_6
-      rect:
-        serializedVersion: 2
-        x: 342
-        y: 0
-        width: 57
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c86c3a5ba81268790800000000000000
-      internalID: -7528292847466592628
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sponk Rose FX_7
-      rect:
-        serializedVersion: 2
-        x: 399
-        y: 0
-        width: 57
-        height: 58
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b6629fcddcbda84b0800000000000000
-      internalID: -5437291922874358165
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sponk Rose FX_0
+      name: MinotaurewalkSide_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 57
-        height: 58
+        width: 41
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5012a015fd416ae0800000000000000
-      internalID: -1557878281152098209
+      spriteID: d92d7638d55aac140800000000000000
+      internalID: 4740783378816029341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sponk Rose FX_1
+      name: MinotaurewalkSide_1
       rect:
         serializedVersion: 2
-        x: 57
+        x: 41
         y: 0
-        width: 57
-        height: 58
+        width: 41
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0973e5bdfda072230800000000000000
-      internalID: 3613869182562482064
+      spriteID: 3507790b56cf21b40800000000000000
+      internalID: 5409663616109998163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sponk Rose FX_2
+      name: MinotaurewalkSide_2
       rect:
         serializedVersion: 2
-        x: 114
+        x: 82
         y: 0
-        width: 57
-        height: 58
+        width: 41
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83000697453fb10b0800000000000000
-      internalID: -5756740154523910088
+      spriteID: 6acd8ad7cc69d08b0800000000000000
+      internalID: -5184321791007859546
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sponk Rose FX_3
+      name: MinotaurewalkSide_3
       rect:
         serializedVersion: 2
-        x: 171
+        x: 123
         y: 0
-        width: 57
-        height: 58
+        width: 41
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1eb06191bc9e98cb0800000000000000
-      internalID: -4861097264261231647
+      spriteID: 1d9fa0755bcaad490800000000000000
+      internalID: -7720668716323898927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sponk Rose FX_4
+      name: MinotaurewalkSide_4
       rect:
         serializedVersion: 2
-        x: 228
+        x: 164
         y: 0
-        width: 57
-        height: 58
+        width: 41
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,20 +245,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec7edb830d89dde40800000000000000
-      internalID: 5682866324884023246
+      spriteID: 7824cb4b4f741c880800000000000000
+      internalID: -8592507497716366713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sponk Rose FX_5
+      name: MinotaurewalkSide_5
       rect:
         serializedVersion: 2
-        x: 285
+        x: 205
         y: 0
-        width: 57
-        height: 58
+        width: 41
+        height: 57
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,8 +266,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c3ada015f53382c0800000000000000
-      internalID: -4430638281739361337
+      spriteID: 7924eafc80f4b0070800000000000000
+      internalID: 8073633656254382743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MinotaurewalkSide_6
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 0
+        width: 41
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7947bc14c97042630800000000000000
+      internalID: 3901251544909837463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MinotaurewalkSide_7
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 0
+        width: 41
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f62fb86c2f2a8830800000000000000
+      internalID: 4074120680692459253
       vertices: []
       indices: 
       edges: []
@@ -335,7 +317,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 9c4e346270f1b0d4087956a3d62829ae
+    spriteID: 8d2456725a2a4794faf5380d19b7df03
     internalID: 0
     vertices: []
     indices: 
