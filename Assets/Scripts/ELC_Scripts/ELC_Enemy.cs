@@ -39,6 +39,7 @@ public class ELC_Enemy : MonoBehaviour
     private const float knockbackTime = 0.2f;
     public bool isStun;
     private bool canBeStun = true;
+    private bool stopDashDamage = false;
     public bool isTmpInvulnerable = false;
     public bool isInvulnerable = false;
     private bool isTouchingRight;
@@ -539,20 +540,25 @@ public class ELC_Enemy : MonoBehaviour
     private IEnumerator DashAttack()
     {
         Collider2D[] hitColliders = null;
+        
         bool hitPlayer = false;
-
-        while (Time.time >= stopDashing || hitPlayer == false)
+        if (!stopDashDamage)
         {
-            hitColliders = null;
-            hitColliders = Physics2D.OverlapBoxAll(this.transform.position + directionToDash.normalized * 0.5f, new Vector2(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth), Vector2.Angle(Vector2.up, directionToDash), LayerMask.GetMask("Player"));
-            if (hitColliders != null && hitColliders.Length > 0)
+            while (Time.time >= stopDashing || hitPlayer == false || !stopDashDamage)
             {
-                hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)enemyStats.DashStrenght);
-                Debug.Log("Dash Hit");
-                hitPlayer = true;
+                hitColliders = null;
+                hitColliders = Physics2D.OverlapBoxAll(this.transform.position + directionToDash.normalized * 0.5f, new Vector2(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth), Vector2.Angle(Vector2.up, directionToDash), LayerMask.GetMask("Player"));
+                if (hitColliders != null && hitColliders.Length > 0)
+                {
+                    hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)enemyStats.DashStrenght);
+                    Debug.Log("Dash Hit");
+                    hitPlayer = true;
+                    stopDashDamage = true;
+                }
+                yield return null;
             }
-            yield return null;
         }
+        stopDashDamage = false;
     }
 
 
