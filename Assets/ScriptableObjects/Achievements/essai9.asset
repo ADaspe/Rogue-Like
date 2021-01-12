@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c99466daf154f84ea59a9527c63b153, type: 3}
-  m_Name: essai2
+  m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
+  m_Name: essai9
   m_EditorClassIdentifier: 
-  PassiveName: "App\xE9tit De Lycaon"
-  PassiveDescription: slkofjuiesjces
-  PassivePrice: 23
-  isUnlock: 0
-  HUDSprite: {fileID: 21300000, guid: ecf1b51a09f4d8b47a9782885db39ef5, type: 3}
+  achievementName: essai 9
+  achievementTier: 0
+  ennemyToDefeat: {fileID: 0}
+  numberToDefeat: 0
+  numberDefeated: 0
+  isUnlocked: 0
+  passifToUnlock: {fileID: 0}
+  achievementManager: {fileID: 0}

@@ -6,6 +6,7 @@ using UnityEngine;
 public class ELC_PassiveSO : ScriptableObject
 {
     public string PassiveName;
+    public string PassiveDescription;
     public float PassivePrice;
     public bool isUnlock;
     public Sprite HUDSprite;
