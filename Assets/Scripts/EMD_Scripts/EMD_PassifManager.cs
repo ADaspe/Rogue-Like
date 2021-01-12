@@ -112,18 +112,15 @@ public class EMD_PassifManager : MonoBehaviour
 
     public void ChoosenPassive()
     {
-
-        ELC_ObjectsInventory.ActivePassif = SelectedPassive;
-        if (currentMoneyScript == null)
-        {
-            Debug.Log("coucou");
-        }
-        if (currentMoneyScript.currentMoney < (int)SelectedPassive.PassivePrice)
+        if (currentMoneyScript.currentMoney >= (int)SelectedPassive.PassivePrice)
         {
             currentMoneyScript.currentMoney -= (int)SelectedPassive.PassivePrice;
+            Debug.Log("acheté");
+            ELC_ObjectsInventory.ActivePassif = SelectedPassive;
         }
         else
         {
+            Debug.Log("pas assez de thunes");
             textDisplay.text = null;
             textDisplay.text = "Vous n'avez pas assez d'argent";
         }

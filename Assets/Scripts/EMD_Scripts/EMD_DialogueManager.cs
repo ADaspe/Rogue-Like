@@ -24,7 +24,7 @@ public class EMD_DialogueManager : MonoBehaviour
     public GameObject ValidateButton;
     public GameObject AchievementCanvas;
     public List<EMD_NPCIsTrigger> NPCsList;
-    public string[] sentences;
+    public string[] sentences = new string[3];
     public GameObject ActualNPC;
     public ELC_PassiveSO SelectedPassive; //le ramener du passifmanager
     public string PNJName;
@@ -98,7 +98,7 @@ public class EMD_DialogueManager : MonoBehaviour
         index = 0;
         textDisplay.text = "";
         DialogueIsActive = false;
-        PlayerMovesScript.canMove = true;
+        PlayerMovesScript.ToggleMenu();
         //besoin de remettre les inputs du joueur
     }
 
@@ -130,8 +130,12 @@ public class EMD_DialogueManager : MonoBehaviour
     {
         IsAchievement = true;
         sentences[0] = "Nom : " + AchievementManagerScript.SelectedAchievement.achievementName;
+        Debug.Log("Phrase 1 : "+ sentences[0]);
         sentences[1] = AchievementManagerScript.SelectedAchievement.ennemyToDefeat.name + " : " + AchievementManagerScript.SelectedAchievement.numberDefeated + " / " + AchievementManagerScript.SelectedAchievement.numberToDefeat;
+        Debug.Log("Phrase 2 : " + sentences[1]);
+        Debug.Log(AchievementManagerScript.SelectedAchievement.passifToUnlock.name);
         sentences[2] = "Nom Passif : " + AchievementManagerScript.SelectedAchievement.passifToUnlock.name;
+        Debug.Log("Phrase 1 : " + sentences[2]);
         StartCoroutine("Type");
     } 
 
@@ -143,10 +147,10 @@ public class EMD_DialogueManager : MonoBehaviour
         PassiveButton.SetActive(false);
         ValidateButton.SetActive(false);
         DialogueCanvas.SetActive(true);
-        PlayerMovesScript.canMove = false;
+        PlayerMovesScript.ToggleMenu();
         IsAchievement = false;
         PNJName = ActualNPC.GetComponent<EMD_Sentences>().PNJName;
-        sentences = ActualNPC.GetComponent<EMD_Sentences>().sentences; //Ne se remet pas quand on quitte et rejoin une conv
+        SentencesUpdate(ActualNPC.GetComponent<EMD_Sentences>().sentences); //Ne se remet pas quand on quitte et rejoin une conv
         ContinueButton.SetActive(true);
         if (PNJName == "PassiveMerchant") 
         {
@@ -161,5 +165,12 @@ public class EMD_DialogueManager : MonoBehaviour
         IsWriting = true;
         //yield return new WaitWhile(() => IsWriting == true);
         yield return null;
+    }
+    public void SentencesUpdate(string[] sentencesToAdd)
+    {
+        for (int i = 0; i < sentencesToAdd.Length; i++)
+        {
+            sentences[i] = sentencesToAdd[i];
+        }
     }
 }
