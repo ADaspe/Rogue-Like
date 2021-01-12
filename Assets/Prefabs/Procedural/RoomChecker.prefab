@@ -47,9 +47,15 @@ MonoBehaviour:
   openRightDoor: 0
   openTopDoor: 0
   openDownDoor: 0
+  IsStartRoom: 0
+  IsEndRoom: 0
   RoomIsClosed: 0
   HasBeenInitialised: 0
   Loaded: 0
+  tileMap: {fileID: 0}
+  WallTiles:
+  - {fileID: 11400000, guid: 0b3d0eb0510f11b45a7ceacb3d31e094, type: 2}
+  - {fileID: 11400000, guid: 8cbd0ec472c1a544c886dc03545a8a56, type: 2}
   WavesLimit: 2
   ActualWave: 0
   isAnAngleRoom: 0

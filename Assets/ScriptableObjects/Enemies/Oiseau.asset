@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Oiseau
   m_EditorClassIdentifier: 
   Name: Oiso
-  MaxHealth: 1000
+  MaxHealth: 700
   MovementSpeed: 3
   EnemyPath: 0
   LimitDistanceToStay: 3
   NeedTimeToTurn: 0
   TurnSpeed: 0
+  EnemyWidth: 0.5
+  noStunTime: 0
   FriendlyFire: 0
   DistanceAttack: 0
   Projectile: {fileID: 0}
@@ -30,12 +32,13 @@ MonoBehaviour:
   PrepareAttack: 0
   AttackDamage: 0
   AttackStun: 0
-  AttackAnimationTime: 0
+  AttackAnimationTime: 0.2
   DashOnPlayer: 1
   DashTime: 0.2
   DistanceToDash: 3
   DashStrenght: 0
   DashStun: 0
+  DashColliderWidth: 0.5
   SpawnEntitiesRegulary: 0
   SpawnEntitiesAtDeath: 0
   SpawnCooldown: 0
@@ -43,6 +46,7 @@ MonoBehaviour:
   EntitiesToSpawn: {fileID: 0}
   MoneyEarnWhenHit: 50
   MoneyEarnWhenDead: 200
-  ambrosiaEarnedWhenDead: 0
+  ambrosiaEarnedWhenDead: 15
   sprite: {fileID: 0}
   Animator: {fileID: 0}
+  achievements: []

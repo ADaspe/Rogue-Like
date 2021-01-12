@@ -1,55 +1,31 @@
 fileFormatVersion: 2
-guid: 5f6d98316a6c3384a939c608a9615e12
+guid: 543be6b8616d09e4ca6c6b8b65a0e5ec
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7114055467822902434
-    second: hoplitewalkfront_0
+      213: 3084529555560959747
+    second: hoplitewalkside_0
   - first:
-      213: 563826187842612148
-    second: hoplitewalkfront_1
+      213: -5800547904568558063
+    second: hoplitewalkside_1
   - first:
-      213: 8560435987491164624
-    second: hoplitewalkfront_2
+      213: 4676847171402703955
+    second: hoplitewalkside_2
   - first:
-      213: -7409407113728773901
-    second: hoplitewalkfront_3
+      213: 6098348508536695787
+    second: hoplitewalkside_3
   - first:
-      213: -2090946374021322771
-    second: hoplitewalkfront_4
+      213: -6168456160786219439
+    second: hoplitewalkside_4
   - first:
-      213: -2971284813136960069
-    second: hoplitewalkfront_5
+      213: 6156849963538488261
+    second: hoplitewalkside_5
   - first:
-      213: -9015617717154083663
-    second: hoplitewalkfront_6
+      213: 8662180449114392071
+    second: hoplitewalkside_6
   - first:
-      213: 7515949154674627943
-    second: hoplitewalkfront_7
-  - first:
-      213: -6690314336022398994
-    second: hoplitewalkfront_0
-  - first:
-      213: 2724760036968067143
-    second: hoplitewalkfront_1
-  - first:
-      213: 1890515357411561979
-    second: hoplitewalkfront_2
-  - first:
-      213: -6176449166387652295
-    second: hoplitewalkfront_3
-  - first:
-      213: 8679115166244044095
-    second: hoplitewalkfront_4
-  - first:
-      213: 2591363576674652305
-    second: hoplitewalkfront_5
-  - first:
-      213: -1905482126589620712
-    second: hoplitewalkfront_6
-  - first:
-      213: -4191189493027060905
-    second: hoplitewalkfront_7
+      213: -4803710319003472257
+    second: hoplitewalkside_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -80,11 +56,11 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: 2
+    aniso: -1
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 0
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -93,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,11 +81,11 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -121,46 +97,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 8192
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 8192
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 8192
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -171,7 +111,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hoplitewalkfront_0
+      name: hoplitewalkside_0
       rect:
         serializedVersion: 2
         x: 0
@@ -185,14 +125,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee77ea5ee8a3723a0800000000000000
-      internalID: -6690314336022398994
+      spriteID: 30f876ac9437eca20800000000000000
+      internalID: 3084529555560959747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hoplitewalkfront_1
+      name: hoplitewalkside_1
       rect:
         serializedVersion: 2
         x: 215
@@ -206,14 +146,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74079a531da40d520800000000000000
-      internalID: 2724760036968067143
+      spriteID: 11efd85d960508fa0800000000000000
+      internalID: -5800547904568558063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hoplitewalkfront_2
+      name: hoplitewalkside_2
       rect:
         serializedVersion: 2
         x: 430
@@ -227,14 +167,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf1dfe083b57c3a10800000000000000
-      internalID: 1890515357411561979
+      spriteID: 354af3039bf77e040800000000000000
+      internalID: 4676847171402703955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hoplitewalkfront_3
+      name: hoplitewalkside_3
       rect:
         serializedVersion: 2
         x: 645
@@ -248,14 +188,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 939d4381538d84aa0800000000000000
-      internalID: -6176449166387652295
+      spriteID: bebecd778afa1a450800000000000000
+      internalID: 6098348508536695787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hoplitewalkfront_4
+      name: hoplitewalkside_4
       rect:
         serializedVersion: 2
         x: 860
@@ -269,14 +209,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3d7ea08249627870800000000000000
-      internalID: 8679115166244044095
+      spriteID: 15e74cbbdcd356aa0800000000000000
+      internalID: -6168456160786219439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hoplitewalkfront_5
+      name: hoplitewalkside_5
       rect:
         serializedVersion: 2
         x: 1075
@@ -290,14 +230,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 190149f717f56f320800000000000000
-      internalID: 2591363576674652305
+      spriteID: 5cb9614eb66817550800000000000000
+      internalID: 6156849963538488261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hoplitewalkfront_6
+      name: hoplitewalkside_6
       rect:
         serializedVersion: 2
         x: 1290
@@ -311,14 +251,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81e05cef91e5e85e0800000000000000
-      internalID: -1905482126589620712
+      spriteID: 7060cc9693f363870800000000000000
+      internalID: 8662180449114392071
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hoplitewalkfront_7
+      name: hoplitewalkside_7
       rect:
         serializedVersion: 2
         x: 1505
@@ -332,8 +272,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 753c5c9ac57e5d5c0800000000000000
-      internalID: -4191189493027060905
+      spriteID: f7e6bef7aeac55db0800000000000000
+      internalID: -4803710319003472257
       vertices: []
       indices: 
       edges: []
@@ -341,7 +281,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5841b0f4701209e40891bad7f92775ce
+    spriteID: f2543b09302241d428254ada7b89c9ee
     internalID: 0
     vertices: []
     indices: 

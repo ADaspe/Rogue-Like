@@ -9,6 +9,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     private Vector3 playerMoves;
     public Vector3 lastDirection = new Vector3(0, -1);
     public Vector3 attackPoint;
+    public float attackPointDistance;
     public const float animationTime = 0.4f;
     public ELC_PlayerStatManager playerStats;
     public PlayerHealth playerHealth;
@@ -80,6 +81,8 @@ public class ELC_PlayerMoves : MonoBehaviour
         playerAnimator.SetFloat("DirectionAxeX", 0);
         playerAnimator.SetFloat("DirectionAxeY", -1);
         DashParticles.GetComponent<ParticleSystem>().Stop();
+
+        ResetChain();
     }
 
     private void Update()
@@ -88,7 +91,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         {
             ResetChain();
         }
-        attackPoint = transform.position + lastDirection.normalized * playerStats.SwichAreaRadius;
+        attackPoint = transform.position + (lastDirection.normalized*attackPointDistance) * playerStats.SwichAreaRadius;
         if (Input.GetAxisRaw("Dash") != 1)
         {
             dashButtonDown = false;
@@ -120,9 +123,10 @@ public class ELC_PlayerMoves : MonoBehaviour
             StartCoroutine("SponkAttackAnimation");
         }
 
-        if (Input.GetAxisRaw("Heal") != 0)
+        if (Input.GetAxis("Heal") != 0)
         {
-            playerHealth.Heal(playerStats.healingRate * Input.GetAxisRaw("Heal"));
+            playerHealth.Heal(playerStats.healingRate * Input.GetAxis("Heal"));
+            Debug.Log(Input.GetAxis("Heal"));
         }
 
         if (canMove) Walk();
@@ -134,8 +138,8 @@ public class ELC_PlayerMoves : MonoBehaviour
     private void Walk()
     {
         //détecte les inputs
-        playerMoves.x = Input.GetAxis("Horizontal") * playerStats.Speed;
-        playerMoves.y = Input.GetAxis("Vertical") * playerStats.Speed;
+        playerMoves.x = Input.GetAxis("Horizontal") * playerStats.Speed * playerStats.SpeedMultiplicatorPU;
+        playerMoves.y = Input.GetAxis("Vertical") * playerStats.Speed * playerStats.SpeedMultiplicatorPU;
 
         //traite la vitesse
         playerMoves = Vector3.ClampMagnitude(playerMoves, playerStats.Speed * playerStats.SpeedMultiplicatorPU);
@@ -269,7 +273,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         }
     }
 
-    public IEnumerator PlayAnimation(string name, float time, bool canMoveDuringIt, bool canTurnDuringIt)
+    public IEnumerator PlayAnimation(string name, float time, bool canMoveDuringIt, bool canTurnDuringIt, bool death = false)
     {
         playerAnimator.SetBool(name, true);
         canMove = canMoveDuringIt;
@@ -291,10 +295,18 @@ public class ELC_PlayerMoves : MonoBehaviour
         {
             yield return new WaitForSeconds(time);
         }
-
-        playerAnimator.SetBool(name, false);
-        canMove = true;
-        canTurn = true;
+        if (!playerHealth.isDead)
+        {
+            playerAnimator.SetBool(name, false);
+            canMove = true;
+            canTurn = true;
+        }
+        else
+        {
+            playerSpriteRenderer.enabled = false;
+            gameManager.GetComponent<ELC_TimeScale>().PauseGame();
+            FindObjectOfType<ELC_ObjectsInventory>().TransferMoney(true);
+        }
     }
 
     public void StopAnimation(string name)
@@ -345,15 +357,15 @@ public class ELC_PlayerMoves : MonoBehaviour
         playerStats.currentChain = chain;
         if (chain == ELC_PlayerStatManager.Chain.Blue)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorBlue;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorBlue;
         }
         else if (chain == ELC_PlayerStatManager.Chain.Orange)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorOrange;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorOrange;
         }
         else if (chain == ELC_PlayerStatManager.Chain.Red)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorRed;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorRed;
         }
         playerStats.currentHitChain = 0;
     }
@@ -363,17 +375,17 @@ public class ELC_PlayerMoves : MonoBehaviour
         float dashDistanceMultiplicator = 1;
         if (playerStats.currentChain == ELC_PlayerStatManager.Chain.Blue)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorBlue;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorBlue;
             dashDistanceMultiplicator = playerStats.DashMultiplicatorBlue;
         }
         else if (playerStats.currentChain == ELC_PlayerStatManager.Chain.Orange)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorOrange;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorOrange;
             dashDistanceMultiplicator = playerStats.DashMultiplicatorOrange;
         }
         else if (playerStats.currentChain == ELC_PlayerStatManager.Chain.Red)
         {
-            playerStats.AttackMultiplicator = playerStats.damageMultiplicatorRed;
+            playerStats.AttackMultiplicatorChain = playerStats.damageMultiplicatorRed;
             dashDistanceMultiplicator = playerStats.DashMultiplicatorRed;
         }
         StartCoroutine(PlayAnimation("SponkAttack", playerStats.AnimationSponkTime, false, false));

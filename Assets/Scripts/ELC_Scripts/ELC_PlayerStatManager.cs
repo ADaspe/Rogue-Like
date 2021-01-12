@@ -41,7 +41,8 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float SponkStunTime;
     public float SponkSlowMotionValue;
     public float SponkSlowMotionDuration;
-    public float AttackMultiplicator;
+    public float AttackMultiplicatorChain;
+    public float BerserkMultiplicator;
     public float CurrentCombo;
     public float MaxCombo;
     public float ComboResetTime;
@@ -103,4 +104,16 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float SpeedMultiplicatorPU = 1;
     public float DefenseMultiplicatorPU = 1;
     public float MoneyMultiplicatorPU = 1;
+
+    [Header("Passives")]
+    public float FilAresDamagesTakenMultiplicator;
+    public float FilAresBerserkMultiplicator;
+
+    [Header("ScreenShakes")]
+    public float AttackShakeIntensity;
+    public float AttackShakeFrequency;
+    public float AttackShakeDuration;
+    public float GetHitShakeIntensity;
+    public float GetHitShakeFrequency;
+    public float GetHitShakeDuration;
 }

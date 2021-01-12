@@ -20,4 +20,14 @@ public class ELC_Projectiles : MonoBehaviour
         yield return new WaitForSeconds(lifeDuration);
         Destroy(this.gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player"))
+        {
+            collision.GetComponent<PlayerHealth>().GetHit((int)strenght);
+            Destroy(this.gameObject);
+        }
+    }
+
 }

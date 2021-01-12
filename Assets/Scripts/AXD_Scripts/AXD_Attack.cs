@@ -11,6 +11,7 @@ public class AXD_Attack : MonoBehaviour
     public AXD_PlayerMoney playerMoney;
     public PlayerHealth playerHealth;
     public GameObject GameManager;
+    public GameObject playerInventory;
 
     public bool AppetitDeLycaonIsActive;
     public float AppetitDeLycaonHealPerEnemies;
@@ -42,6 +43,7 @@ public class AXD_Attack : MonoBehaviour
         //Get all enemies to attack
         if (hitEnemies != null && hitEnemies.Length != 0)
         {
+            StartCoroutine(GameManager.GetComponent<ELC_ScreenShakes>().ScreenShakes(playerStats.AttackShakeIntensity, playerStats.AttackShakeFrequency, playerStats.AttackShakeDuration));
             player.attackLanded = true;
             List<ELC_Enemy> colateralVictims = new List<ELC_Enemy>();
             ELC_Enemy closestEnemy = null;
@@ -106,20 +108,20 @@ public class AXD_Attack : MonoBehaviour
         {
             if (colateral == false)
             {
-                totalDamage = Mathf.RoundToInt((playerStats.SwichDamage + (playerStats.SwichDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator);
+                totalDamage = Mathf.RoundToInt((playerStats.SwichDamage + (playerStats.SwichDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicatorChain *playerStats.BerserkMultiplicator * playerStats.FilAresBerserkMultiplicator * playerStats.AttackMultiplicatorPU);
             }else if(colateral == true)
             {
-                totalDamage = Mathf.RoundToInt(((playerStats.SwichDamage + (playerStats.SwichDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator)*playerStats.colateralDamage/100);
+                totalDamage = Mathf.RoundToInt(((playerStats.SwichDamage + (playerStats.SwichDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicatorChain * playerStats.BerserkMultiplicator * playerStats.FilAresBerserkMultiplicator * playerStats.AttackMultiplicatorPU) * playerStats.colateralDamage/100);
             }
         }
         else if (type == AttackType.Sponk)
         {
             if (colateral == false) {
-                totalDamage = Mathf.RoundToInt((playerStats.SponkDamage + (playerStats.SponkDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator);
+                totalDamage = Mathf.RoundToInt((playerStats.SponkDamage + (playerStats.SponkDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicatorChain * playerStats.BerserkMultiplicator * playerStats.FilAresBerserkMultiplicator * playerStats.AttackMultiplicatorPU);
                 if (AppetitDeLycaonIsActive) playerStats.currentHealth += AppetitDeLycaonHealPerEnemies; //Rend de la vie avec le passif de Lycaon
             } else if (colateral == true)
             {
-                totalDamage = Mathf.RoundToInt(((playerStats.SponkDamage + (playerStats.SponkDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicator)*playerStats.colateralDamage/100);
+                totalDamage = Mathf.RoundToInt(((playerStats.SponkDamage + (playerStats.SponkDamage * (playerStats.CurrentCombo / 100))) * playerStats.AttackMultiplicatorChain * playerStats.BerserkMultiplicator * playerStats.FilAresBerserkMultiplicator * playerStats.AttackMultiplicatorPU) * playerStats.colateralDamage/100);
                 if (AppetitDeLycaonIsActive) playerStats.currentHealth += AppetitDeLycaonHealPerCollateral; //Rend de la vie avec le passif de Lycaon
             }
         }
@@ -133,14 +135,19 @@ public class AXD_Attack : MonoBehaviour
             playerStats.CurrentCombo++;
             nextResetCombo = Time.time + playerStats.ComboResetTime;
         }
-        if (CalculateDamage(AttackType.Swich) >= enemy.currentHealth)
+        if (CalculateDamage(AttackType.Swich) >= enemy.currentHealth || CalculateDamage(AttackType.Sponk) >= enemy.currentHealth)
         {
-            playerMoney.AddMoney(enemy.enemyStats.MoneyEarnWhenDead);
+            int moneyEarn = (int)(enemy.enemyStats.MoneyEarnWhenDead * playerStats.MoneyMultiplicatorPU);//Pour arrondir en int
+            //playerMoney.AddMoney(moneyEarn);
+            playerInventory.GetComponent<ELC_ObjectsInventory>().AddMoneyToCrates(moneyEarn);
             playerHealth.AddStock(enemy.enemyStats.ambrosiaEarnedWhenDead);
         }
         else
         {
-            playerMoney.AddMoney(enemy.enemyStats.MoneyEarnWhenHit);
+            int moneyEarn = (int)(enemy.enemyStats.MoneyEarnWhenHit * playerStats.MoneyMultiplicatorPU);
+            //playerMoney.AddMoney( moneyEarn);
+            playerInventory.GetComponent<ELC_ObjectsInventory>().AddMoneyToCrates(moneyEarn);
+            Debug.Log("Death reward !");
         }
     }
 }

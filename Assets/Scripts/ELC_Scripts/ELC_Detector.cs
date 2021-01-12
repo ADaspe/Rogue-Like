@@ -8,11 +8,11 @@ public class ELC_Detector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        playerIsInside = true;
+        if(collision.CompareTag("Player")) playerIsInside = true;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        playerIsInside = false;
+        if (collision.CompareTag("Player")) playerIsInside = false;
     }
 
 

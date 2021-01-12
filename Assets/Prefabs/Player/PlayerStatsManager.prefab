@@ -71,7 +71,8 @@ MonoBehaviour:
   SponkStunTime: 0.7
   SponkSlowMotionValue: 0.3
   SponkSlowMotionDuration: 0.5
-  AttackMultiplicator: 1
+  AttackMultiplicatorChain: 0
+  BerserkMultiplicator: 0
   CurrentCombo: 0
   MaxCombo: 200
   ComboResetTime: 15
@@ -92,11 +93,11 @@ MonoBehaviour:
   DashMultiplicatorRed: 2
   SwitchChainSlowMotionValue: 0.3
   SwitchChainSlowMotionDuration: 0.3
-  SwichDamage: 200
-  SwichAreaRadius: 1.2
-  SponkDamage: 350
-  SponkWidth: 0
-  Sponklength: 0
+  SwichDamage: 100
+  SwichAreaRadius: 1
+  SponkDamage: 1000
+  SponkWidth: 0.5
+  Sponklength: 1.45
   AnimationDashTime: 0.4
   AnimationSwichTime: 0.4
   AnimationSponkTime: 1.5
@@ -104,3 +105,11 @@ MonoBehaviour:
   SpeedMultiplicatorPU: 1
   DefenseMultiplicatorPU: 1
   MoneyMultiplicatorPU: 1
+  FilAresDamagesTakenMultiplicator: 1
+  FilAresBerserkMultiplicator: 1
+  AttackShakeIntensity: 0.1
+  AttackShakeFrequency: 0.06
+  AttackShakeDuration: 0.1
+  GetHitShakeIntensity: 0.15
+  GetHitShakeFrequency: 0.05
+  GetHitShakeDuration: 0.2

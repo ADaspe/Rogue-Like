@@ -13,12 +13,14 @@ MonoBehaviour:
   m_Name: Archer
   m_EditorClassIdentifier: 
   Name: "Arch\xE9"
-  MaxHealth: 10
+  MaxHealth: 1000
   MovementSpeed: 3
   EnemyPath: 0
   LimitDistanceToStay: 5
   NeedTimeToTurn: 0
   TurnSpeed: 0
+  EnemyWidth: 0.5
+  noStunTime: 0
   FriendlyFire: 0
   DistanceAttack: 1
   Projectile: {fileID: 5799528179822313380, guid: 8434fb21e7d94a54fb47d57f6e3b81ff,
@@ -27,8 +29,8 @@ MonoBehaviour:
   DistanceCooldown: 1
   ProjectileSpeed: 8
   ProjectileDurability: 4
-  ProjectileStrenght: 2
-  CorpseAttack: 0
+  ProjectileStrenght: 5
+  CloseCombatAttack: 1
   AttackCooldown: 1
   AttackRange: 1
   WaitBeforeAttack: 0.5
@@ -40,6 +42,7 @@ MonoBehaviour:
   DistanceToRun: 0
   DashStrenght: 0
   DashStun: 0
+  DashColliderWidth: 0
   SpawnEntitiesRegulary: 0
   SpawnEntitiesAtDeath: 0
   SpawnCooldown: 0
@@ -47,6 +50,7 @@ MonoBehaviour:
   EntitiesToSpawn: {fileID: 0}
   MoneyEarnWhenHit: 35
   MoneyEarnWhenDead: 125
-  ambrosiaEarnedWhenDead: 0
+  ambrosiaEarnedWhenDead: 10
   sprite: {fileID: 0}
   Animator: {fileID: 0}
+  achievements: []

@@ -21,7 +21,6 @@ public class ELC_PowerUpManager : MonoBehaviour
                 if (PowerUps[i].GetComponent<ELC_PowerUpProperties>().LifeDuration <= 0)
                 {
                     DeletePowerUp(i);
-                    Debug.Log("passe ici");
                     return;
                 }
                 else
@@ -43,7 +42,7 @@ public class ELC_PowerUpManager : MonoBehaviour
         if (PUSO.type == ELC_PowerUpSO.Type.Attack) playerStatsScript.AttackMultiplicatorPU = 1;
         else if (PUSO.type == ELC_PowerUpSO.Type.Heal) playerStatsScript.DefenseMultiplicatorPU = 1;
         else if (PUSO.type == ELC_PowerUpSO.Type.MoneyEarn) playerStatsScript.MoneyMultiplicatorPU = 1;
-        else if (PUSO.type == ELC_PowerUpSO.Type.Speed) playerStatsScript.MoneyMultiplicatorPU = 1;
+        else if (PUSO.type == ELC_PowerUpSO.Type.Speed) playerStatsScript.SpeedMultiplicatorPU = 1;
 
         Destroy(PowerUps[index]);
         PowerUps.Remove(PowerUps[index]);
@@ -62,8 +61,6 @@ public class ELC_PowerUpManager : MonoBehaviour
         GO.AddComponent<ELC_PowerUpProperties>();
         GO.GetComponent<ELC_PowerUpProperties>().LifeDuration = PU.LifeDuration;
         GO.GetComponent<ELC_PowerUpProperties>().PowerUpSO = PU.PowerUpSO;
-
-        Debug.Log("passe");
         if (PowerUps.Count > 0)
         {
             for (int i = 0; i < PowerUps.Count; i++)
@@ -103,7 +100,7 @@ public class ELC_PowerUpManager : MonoBehaviour
         if (PUSO.type == ELC_PowerUpSO.Type.Attack) playerStatsScript.AttackMultiplicatorPU = multiplicatorToApply;
         else if (PUSO.type == ELC_PowerUpSO.Type.Heal) playerStatsScript.DefenseMultiplicatorPU = multiplicatorToApply;
         else if (PUSO.type == ELC_PowerUpSO.Type.MoneyEarn) playerStatsScript.MoneyMultiplicatorPU = multiplicatorToApply;
-        else if (PUSO.type == ELC_PowerUpSO.Type.Speed) playerStatsScript.MoneyMultiplicatorPU = multiplicatorToApply;
+        else if (PUSO.type == ELC_PowerUpSO.Type.Speed) playerStatsScript.SpeedMultiplicatorPU = multiplicatorToApply;
 
 
     }
