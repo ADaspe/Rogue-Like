@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
-  m_Name: essai6
+  m_Name: HopliteLvl3
   m_EditorClassIdentifier: 
-  achievementName: essai 6
-  achievementTier: 0
-  ennemyToDefeat: {fileID: 0}
-  numberToDefeat: 0
+  achievementName: Hoplite Lvl 3
+  achievementTier: 3
+  ennemyToDefeat: {fileID: 7470156072006172387, guid: 7e25a7f60c29ae94b8dc46dd02edc1c1,
+    type: 3}
+  numberToDefeat: 100
   numberDefeated: 0
   isUnlocked: 0
   passifToUnlock: {fileID: 0}
   achievementManager: {fileID: 0}
+  HUDSprite: {fileID: 5362418608464252480, guid: 7ac621a34b56a5c4e822754252721543,
+    type: 3}

@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
-  m_Name: HopliteLvl2
+  m_Name: HydreLvl3
   m_EditorClassIdentifier: 
-  achievementName: Hoplite Lvl 2
-  achievementTier: 2
-  ennemyToDefeat: {fileID: 2148857145838052543, guid: e92a72e0dcedde944886188f85b5d608,
+  achievementName: Hydre Lvl 3
+  achievementTier: 3
+  ennemyToDefeat: {fileID: 2098346433007527121, guid: 4b4915f0c67061e45a7af3b85f8507c1,
     type: 3}
-  numberToDefeat: 50
-  numberDefeated: 7
+  numberToDefeat: 7
+  numberDefeated: 0
   isUnlocked: 0
-  passifToUnlock: {fileID: 11400000, guid: e8365aef04281bd45b3471d2fc5b1fb6, type: 2}
+  passifToUnlock: {fileID: 0}
   achievementManager: {fileID: 0}
-  HUDSprite: {fileID: 5532252130563662704, guid: 7ac621a34b56a5c4e822754252721543,
-    type: 3}
+  HUDSprite: {fileID: 21300000, guid: 3f2e249dc22a40a4cbf37c169a1c3bee, type: 3}

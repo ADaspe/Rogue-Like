@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
-  m_Name: HopliteLvl2
+  m_Name: OiseauDeStymphaleLvl3
   m_EditorClassIdentifier: 
-  achievementName: Hoplite Lvl 2
-  achievementTier: 2
-  ennemyToDefeat: {fileID: 2148857145838052543, guid: e92a72e0dcedde944886188f85b5d608,
+  achievementName: Oiseau Du Lac Stymphale Lvl 3
+  achievementTier: 3
+  ennemyToDefeat: {fileID: 3456645754019736586, guid: 690e085c5fac56248b4bf550d707dd5a,
     type: 3}
-  numberToDefeat: 50
-  numberDefeated: 7
+  numberToDefeat: 100
+  numberDefeated: 0
   isUnlocked: 0
-  passifToUnlock: {fileID: 11400000, guid: e8365aef04281bd45b3471d2fc5b1fb6, type: 2}
+  passifToUnlock: {fileID: 11400000, guid: aac9847a1489cf9409c34d21747fb894, type: 2}
   achievementManager: {fileID: 0}
-  HUDSprite: {fileID: 5532252130563662704, guid: 7ac621a34b56a5c4e822754252721543,
+  HUDSprite: {fileID: 3971525657487976126, guid: 92938380e49f3114bb35522084772bce,
     type: 3}

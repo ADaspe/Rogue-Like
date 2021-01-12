@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
-  m_Name: essai3
+  m_Name: ArcherLvl3
   m_EditorClassIdentifier: 
-  achievementName: essai 3
-  achievementTier: 0
+  achievementName: Archer Lvl 3
+  achievementTier: 3
   ennemyToDefeat: {fileID: 7470156072006172387, guid: 7e25a7f60c29ae94b8dc46dd02edc1c1,
     type: 3}
-  numberToDefeat: 50
-  numberDefeated: 12
+  numberToDefeat: 100
+  numberDefeated: 0
   isUnlocked: 0
   passifToUnlock: {fileID: 0}
   achievementManager: {fileID: 0}
+  HUDSprite: {fileID: 7832809215036211624, guid: d899f1af6e162f5468388f1205cf6309,
+    type: 3}

@@ -42,7 +42,7 @@ public class EMD_DialogueManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Dash"))
+        if (DialogueIsActive && (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Dash")))
         {
             QuitDialogue();
         }
@@ -57,6 +57,9 @@ public class EMD_DialogueManager : MonoBehaviour
     IEnumerator Type()
     {
         textDisplay.text = null;
+        AchievementName.text = null;
+        EnnemyToDestroy.text = null;
+        PassiveToUnlock.text = null;
         if (IsAchievement == true)
         {
             foreach (char letter in sentences[0].ToCharArray())
@@ -69,10 +72,13 @@ public class EMD_DialogueManager : MonoBehaviour
                 EnnemyToDestroy.text += letter;
                 yield return new WaitForSeconds(DelayTime);
             }
-            foreach (char letter in sentences[2].ToCharArray())
+            if (AchievementManagerScript.SelectedAchievement.passifToUnlock != null)
             {
-                PassiveToUnlock.text += letter;
-                yield return new WaitForSeconds(DelayTime);
+                foreach (char letter in sentences[2].ToCharArray())
+                {
+                    PassiveToUnlock.text += letter;
+                    yield return new WaitForSeconds(DelayTime);
+                }
             }
         }
         else
@@ -99,6 +105,8 @@ public class EMD_DialogueManager : MonoBehaviour
         textDisplay.text = "";
         DialogueIsActive = false;
         PlayerMovesScript.ToggleMenu();
+        AchievementManagerScript.NumeroPage = 0;
+
         //besoin de remettre les inputs du joueur
     }
 
@@ -129,13 +137,18 @@ public class EMD_DialogueManager : MonoBehaviour
     public void ChangeAchievements()
     {
         IsAchievement = true;
+        sentences[0] = null;
         sentences[0] = "Nom : " + AchievementManagerScript.SelectedAchievement.achievementName;
         Debug.Log("Phrase 1 : "+ sentences[0]);
+        sentences[1] = null;
         sentences[1] = AchievementManagerScript.SelectedAchievement.ennemyToDefeat.name + " : " + AchievementManagerScript.SelectedAchievement.numberDefeated + " / " + AchievementManagerScript.SelectedAchievement.numberToDefeat;
         Debug.Log("Phrase 2 : " + sentences[1]);
-        Debug.Log(AchievementManagerScript.SelectedAchievement.passifToUnlock.name);
-        sentences[2] = "Nom Passif : " + AchievementManagerScript.SelectedAchievement.passifToUnlock.name;
-        Debug.Log("Phrase 1 : " + sentences[2]);
+        sentences[2] = null;
+        if (AchievementManagerScript.SelectedAchievement.passifToUnlock != null)
+        {
+            sentences[2] = "Nom Passif : " + AchievementManagerScript.SelectedAchievement.passifToUnlock.name;
+            Debug.Log("Phrase 1 : " + sentences[2]);
+        }
         StartCoroutine("Type");
     } 
 

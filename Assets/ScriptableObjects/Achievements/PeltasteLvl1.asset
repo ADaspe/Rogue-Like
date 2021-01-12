@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
-  m_Name: essai7
+  m_Name: PeltasteLvl1
   m_EditorClassIdentifier: 
-  achievementName: essai 7
+  achievementName: Peltaste Lvl 1
   achievementTier: 0
-  ennemyToDefeat: {fileID: 0}
-  numberToDefeat: 0
+  ennemyToDefeat: {fileID: 1939825889337146307, guid: 4a803f5fac93e99449631d6e2cef9781,
+    type: 3}
+  numberToDefeat: 25
   numberDefeated: 0
   isUnlocked: 0
   passifToUnlock: {fileID: 0}
   achievementManager: {fileID: 0}
+  HUDSprite: {fileID: -7201951876132618205, guid: a5978d5f7a7cae04c9b93056e51b4b4a,
+    type: 3}

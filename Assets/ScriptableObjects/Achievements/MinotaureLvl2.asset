@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
-  m_Name: essai4
+  m_Name: MinotaureLvl2
   m_EditorClassIdentifier: 
-  achievementName: essai 4
-  achievementTier: 0
-  ennemyToDefeat: {fileID: 3456645754019736586, guid: 690e085c5fac56248b4bf550d707dd5a,
+  achievementName: Minotaure Lvl 2
+  achievementTier: 2
+  ennemyToDefeat: {fileID: 1775749699373023050, guid: 31a8c89326ffe3c48b0146c030fd5abe,
     type: 3}
-  numberToDefeat: 40
-  numberDefeated: 3
+  numberToDefeat: 30
+  numberDefeated: 0
   isUnlocked: 0
   passifToUnlock: {fileID: 0}
   achievementManager: {fileID: 0}
+  HUDSprite: {fileID: -450617808955742572, guid: 94a0de2b9a9bb214b95c9cde5562d093,
+    type: 3}

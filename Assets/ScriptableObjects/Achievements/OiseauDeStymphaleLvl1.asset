@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
-  m_Name: essai8
+  m_Name: OiseauDeStymphaleLvl1
   m_EditorClassIdentifier: 
-  achievementName: essai 8
-  achievementTier: 0
-  ennemyToDefeat: {fileID: 0}
-  numberToDefeat: 0
+  achievementName: Oiseau Du Lac Stymphale Lvl 1
+  achievementTier: 1
+  ennemyToDefeat: {fileID: 3456645754019736586, guid: 690e085c5fac56248b4bf550d707dd5a,
+    type: 3}
+  numberToDefeat: 20
   numberDefeated: 0
   isUnlocked: 0
   passifToUnlock: {fileID: 0}
   achievementManager: {fileID: 0}
+  HUDSprite: {fileID: -8350770223128786854, guid: 534b8ae3ad8011940b66db8a78160d34,
+    type: 3}
