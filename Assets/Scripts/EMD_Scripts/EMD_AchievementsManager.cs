@@ -107,8 +107,4 @@ public class EMD_AchievementsManager : MonoBehaviour
         ListAchievements.RemoveRange(1, LimitePage);
         AfficherAchievements();
     }
-    public void UnlockPassive()
-    {
-        //SelectedAchievement.passifToUnlock.isUnlock == true;
-    }
 }
