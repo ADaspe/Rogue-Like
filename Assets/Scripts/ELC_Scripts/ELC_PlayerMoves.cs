@@ -15,6 +15,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     public PlayerHealth playerHealth;
     public AXD_Attack attack;
     public GameObject gameManager;
+    public bool isInMenu = false;
 
     [SerializeField]
     private GameObject DashParticles;
@@ -87,52 +88,56 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time >= timeToResetChain && playerStats.currentChain != ELC_PlayerStatManager.Chain.Blue)
+        if (!isInMenu)
         {
-            ResetChain();
-        }
-        attackPoint = transform.position + (lastDirection.normalized*attackPointDistance) * playerStats.SwichAreaRadius;
-        if (Input.GetAxisRaw("Dash") != 1)
-        {
-            dashButtonDown = false;
-        }
-        if (Input.GetAxisRaw("Swich") != 1)
-        {
-            swichButtonDown = false;
-        }
-        if (Input.GetAxisRaw("Sponk") != 1)
-        {
-            sponkButtonDown = false;
-        }
+            if (Time.time >= timeToResetChain && playerStats.currentChain != ELC_PlayerStatManager.Chain.Blue)
+            {
+                ResetChain();
+            }
+            attackPoint = transform.position + (lastDirection.normalized * attackPointDistance) * playerStats.SwichAreaRadius;
+            if (Input.GetAxisRaw("Dash") != 1)
+            {
+                dashButtonDown = false;
+            }
+            if (Input.GetAxisRaw("Swich") != 1)
+            {
+                swichButtonDown = false;
+            }
+            if (Input.GetAxisRaw("Sponk") != 1)
+            {
+                sponkButtonDown = false;
+            }
 
-        if ((Input.GetAxisRaw("Dash") == 1 && !isDashing && !dashButtonDown) || isDashing)
-        {
-            Dash(playerStats.DashDistance, playerStats.DashTime); // Utilise l'input manager bordel à couille O'Clavier
-            dashButtonDown = true;
-        }
-        if (Input.GetAxisRaw("Swich") == 1 && Time.time > nextSwichAttackTime && !swichButtonDown)
-        {
-            swichButtonDown = true;
-            Dash(playerStats.SwichDashDistance, playerStats.SwichDashTime);
-            StartCoroutine(PlayAnimation("SwishAttack", playerStats.AnimationSwichTime, false, false));
-            nextSwichAttackTime = Time.time + 1f / playerStats.SwichAttackRate;
-        }
-        else if (Input.GetAxisRaw("Sponk") == 1 && Time.time > nextSponkAttackTime && !sponkButtonDown)
-        {
-            sponkButtonDown = true;
-            StartCoroutine("SponkAttackAnimation");
-        }
+            if ((Input.GetAxisRaw("Dash") == 1 && !isDashing && !dashButtonDown) || isDashing)
+            {
+                Dash(playerStats.DashDistance, playerStats.DashTime); // Utilise l'input manager bordel à couille O'Clavier
+                dashButtonDown = true;
+            }
+            if (Input.GetAxisRaw("Swich") == 1 && Time.time > nextSwichAttackTime && !swichButtonDown)
+            {
+                swichButtonDown = true;
+                Dash(playerStats.SwichDashDistance, playerStats.SwichDashTime);
+                StartCoroutine(PlayAnimation("SwishAttack", playerStats.AnimationSwichTime, false, false));
+                nextSwichAttackTime = Time.time + 1f / playerStats.SwichAttackRate;
+            }
+            else if (Input.GetAxisRaw("Sponk") == 1 && Time.time > nextSponkAttackTime && !sponkButtonDown)
+            {
+                sponkButtonDown = true;
+                StartCoroutine("SponkAttackAnimation");
+            }
 
-        if (Input.GetAxis("Heal") != 0)
-        {
-            playerHealth.Heal(playerStats.healingRate * Input.GetAxis("Heal"));
-            Debug.Log(Input.GetAxis("Heal"));
+            if (Input.GetAxis("Heal") != 0)
+            {
+                playerHealth.Heal(playerStats.healingRate * Input.GetAxis("Heal"));
+                Debug.Log(Input.GetAxis("Heal"));
+            }
+
+            if (canMove) Walk();
+
+            PlayerTurnDetector();
+            AnimationsManagement();
         }
-
-        if (canMove) Walk();
-
-        PlayerTurnDetector();
-        AnimationsManagement();
+        
     }
 
     private void Walk()
@@ -422,5 +427,9 @@ public class ELC_PlayerMoves : MonoBehaviour
             //Gizmos.DrawWireCube(attackPoint, new Vector3(playerStats.SponkWidth, playerStats.Sponklength, 0));
             Gizmos.DrawWireSphere(attackPoint, playerStats.SwichAreaRadius);
         }
+    }
+    public void ToggleMenu()
+    {
+        isInMenu = !isInMenu;
     }
 }

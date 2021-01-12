@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
-  m_Name: HopliteLvl1
+  m_Name: HopliteLvl3
   m_EditorClassIdentifier: 
-  achievementName: Hoplite Lvl 1
-  achievementTier: 1
+  achievementName: Hoplite Lvl 3
+  achievementTier: 3
   ennemyToDefeat: {fileID: 2148857145838052543, guid: e92a72e0dcedde944886188f85b5d608,
     type: 3}
-  numberToDefeat: 30
+  numberToDefeat: 150
   numberDefeated: 0
   isUnlocked: 0
   passifToUnlock: {fileID: 0}
   achievementManager: {fileID: 0}
-  HUDSprite: {fileID: 6458670844827099797, guid: 267f0c44b9e8cd043afd6f114677a0a5,
+  HUDSprite: {fileID: 1775444486983994093, guid: 2954d65e79c669b4bb41c7056f05f267,
     type: 3}
