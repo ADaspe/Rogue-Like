@@ -23,8 +23,17 @@ public class ELC_RoomsGenerator : MonoBehaviour
     public GameObject startRoom;
     public GameObject endRoom;
 
-    public List<GameObject> roomsList;
-    public List<GameObject> testsRoomsList;
+    //public List<GameObject> roomsList;
+    //public List<GameObject> testsRoomsList;
+    public List<GameObject> easyRoomsList;
+    public List<GameObject> MediumRoomsList;
+    public List<GameObject> HardRoomsList;
+    public List<GameObject> ObjectsRoomsList;
+
+    public int EasyFloors; //A partir de quel étage commence les salles easy
+    public int MediumFloors; //A partir de quel étage commence les salles easy
+    public int HardFloors; //A partir de quel étage commence les salles easy
+    public int ObjectRoomPercentChanceToSpawn;
 
     public GameObject[,] checkersArray; //Liste des checkers et leur position
 
@@ -65,16 +74,31 @@ public class ELC_RoomsGenerator : MonoBehaviour
         for (int i = 0; i < randomPoints.Count; i++) //Sur chacun des points on créé une salle
         {
             yield return new WaitForSeconds(timeToWait);
-            SpawnRandomRoom(checkersArray[randomPoints[i], i], roomsList, true, true, true, true, true);
+            if (arrayDimentionY - EasyFloors < i + 1)
+            {
+                SpawnRandomRoom(checkersArray[randomPoints[i], i], easyRoomsList, true, true, true, true, true);
+                Debug.Log("facile");
+            }
+            else if (arrayDimentionY - EasyFloors - MediumFloors < i + 1)
+            {
+                SpawnRandomRoom(checkersArray[randomPoints[i], i], MediumRoomsList, true, true, true, true, true);
+                Debug.Log("moyen");
+            }
+            else
+            {
+                SpawnRandomRoom(checkersArray[randomPoints[i], i], easyRoomsList, true, true, true, true, true);
+                Debug.Log("difficile");
+            }
+
             if (i == 0) //La première room
             {
-                startRoom = checkersArray[randomPoints[i], i]; //On assigne la première room en tant que startRoom
-                startRoom.GetComponent<ELC_RoomProperties>().IsStartRoom = true;
+                endRoom = checkersArray[randomPoints[i], i]; //On assigne la première room en tant que startRoom
+                endRoom.GetComponent<ELC_RoomProperties>().IsStartRoom = true;
             }
             else if(i == randomPoints.Count -1)
             {
-                endRoom = checkersArray[randomPoints[i], i];
-                endRoom.GetComponent<ELC_RoomProperties>().IsEndRoom = true;
+                startRoom = checkersArray[randomPoints[i], i];
+                startRoom.GetComponent<ELC_RoomProperties>().IsEndRoom = true;
             }
         }
 
@@ -90,7 +114,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
         StartCoroutine("DoorsCheck");
 
         yield return new WaitWhile(() => isInACoroutine == true);
-        Instantiate(CoreElements, startRoom.transform.position + new Vector3(0, distanceBtwRoomsY / 2), Quaternion.identity);
+        Instantiate(CoreElements, startRoom.transform.position - new Vector3(0, distanceBtwRoomsY / 2), Quaternion.identity);
         Debug.Log("Finish !");
     }
 
@@ -128,7 +152,9 @@ public class ELC_RoomsGenerator : MonoBehaviour
             for (int e = 0; e < numberOfRoomsToInstanciate; e++) //On fait cette action jusqu'à ce qu'on ait atteint le nombre de rooms à instancier
             {
                 yield return new WaitForSeconds(timeToWait);
-                SpawnRandomRoom(checkersArray[randomPoints[i] + direction * (e + 1), i], testsRoomsList, true, true, true, true, false); //On fait spawner une salle sur le checker qui a en x : le random point (qui constitue le point de départ), auquel on ajoute e pour avancer de 1 case à chaque fois (et il nous faut décaler de 1 case au début pour éviter d'instancier sur la room déjà existante d'où le (e+1)) et on multiplie par la valeur direction pour indiquer si on se déplace d'une case vers la gauche ou la droite
+                if(arrayDimentionY - EasyFloors < i + 1) SpawnRandomRoom(checkersArray[randomPoints[i] + direction * (e + 1), i], easyRoomsList, true, true, true, true, false); //On fait spawner une salle sur le checker qui a en x : le random point (qui constitue le point de départ), auquel on ajoute e pour avancer de 1 case à chaque fois (et il nous faut décaler de 1 case au début pour éviter d'instancier sur la room déjà existante d'où le (e+1)) et on multiplie par la valeur direction pour indiquer si on se déplace d'une case vers la gauche ou la droite
+                else if(arrayDimentionY - EasyFloors - MediumFloors < i + 1) SpawnRandomRoom(checkersArray[randomPoints[i] + direction * (e + 1), i], MediumRoomsList, true, true, true, true, false);
+                else SpawnRandomRoom(checkersArray[randomPoints[i] + direction * (e + 1), i], HardRoomsList, true, true, true, true, false);
             }
         }
 
@@ -154,7 +180,9 @@ public class ELC_RoomsGenerator : MonoBehaviour
                 if (!checkersArray[secondaryRandomPoints[i] + dir * (e + 1), i].GetComponent<ELC_RoomProperties>().thereIsRoom)
                 {
                     yield return new WaitForSeconds(timeToWait);
-                    SpawnRandomRoom(checkersArray[secondaryRandomPoints[i] + dir * (e + 1), i], testsRoomsList, true, true, true, true, false);
+                    if (arrayDimentionY - EasyFloors < i + 1) SpawnRandomRoom(checkersArray[secondaryRandomPoints[i] + dir * (e + 1), i], easyRoomsList, true, true, true, true, false, true);
+                    else if(arrayDimentionY - EasyFloors - MediumFloors < i + 1) SpawnRandomRoom(checkersArray[secondaryRandomPoints[i] + dir * (e + 1), i], MediumRoomsList, true, true, true, true, false, true);
+                    else SpawnRandomRoom(checkersArray[secondaryRandomPoints[i] + dir * (e + 1), i], HardRoomsList, true, true, true, true, false, true);
                 }
             }
 
@@ -185,7 +213,9 @@ public class ELC_RoomsGenerator : MonoBehaviour
                     }
                     checkPositionX += 1;
                 }
-                SpawnRandomRoom(checkersArray[secondaryRandomPoints[i], i], roomsList, true, true, true, true, false);
+                if(arrayDimentionY - EasyFloors < i + 1) SpawnRandomRoom(checkersArray[secondaryRandomPoints[i], i], easyRoomsList, true, true, true, true, false, true);
+                else if(arrayDimentionY - EasyFloors - MediumFloors < i + 1) SpawnRandomRoom(checkersArray[secondaryRandomPoints[i], i], MediumRoomsList, true, true, true, true, false, true);
+                else SpawnRandomRoom(checkersArray[secondaryRandomPoints[i], i], HardRoomsList, true, true, true, true, false, true);
             }
             else secondaryRandomPoints.Add(-1);
             
@@ -194,7 +224,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
         
     }
 
-    private void SpawnRandomRoom(GameObject checkerObject, List<GameObject> rl, bool openRight, bool openLeft, bool openTop, bool openDown, bool isRoomFromRandomNumber)
+    private void SpawnRandomRoom(GameObject checkerObject, List<GameObject> rl, bool openRight, bool openLeft, bool openTop, bool openDown, bool isRoomFromRandomNumber, bool secondaryPath = false)
     {
         int arrayX = (int)checkerObject.GetComponent<ELC_RoomProperties>().positionNumber.x;
         int arrayY = (int)checkerObject.GetComponent<ELC_RoomProperties>().positionNumber.y;
@@ -203,9 +233,18 @@ public class ELC_RoomsGenerator : MonoBehaviour
         if (!roomScript.thereIsRoom) //vérifie si une salle n'a pas déjà été enregistrée ici
         {
             numberOfEmptyRooms[arrayY]--;
+            int chances = UnityEngine.Random.Range(0, 100);
 
-            int randomNumber = UnityEngine.Random.Range(0, rl.Count); //prend un nombre aléatoire dans la List
-            GameObject.Instantiate(rl[randomNumber], checkerObject.transform).transform.SetParent(checkerObject.transform); //Met la salle aléatoire en fonction du nombre donné, et la fait enfant du checker
+            if (secondaryPath && chances < ObjectRoomPercentChanceToSpawn)
+            {
+                int randomNumber = UnityEngine.Random.Range(0, ObjectsRoomsList.Count); //prend un nombre aléatoire dans la List des objectRooms
+                GameObject.Instantiate(ObjectsRoomsList[randomNumber], checkerObject.transform).transform.SetParent(checkerObject.transform);
+            }
+            else
+            {
+                int randomNumber = UnityEngine.Random.Range(0, rl.Count); //prend un nombre aléatoire dans la List
+                GameObject.Instantiate(rl[randomNumber], checkerObject.transform).transform.SetParent(checkerObject.transform); //Met la salle aléatoire en fonction du nombre donné, et la fait enfant du checker
+            }
             roomScript.thereIsRoom = true; //Dit au checker de l'emplacement de la salle qu'il y a une salle maintenant
             roomScript.isAnAngleRoom = isRoomFromRandomNumber;
 
@@ -214,6 +253,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
             roomScript.openTopDoor = openTop;
             roomScript.openLeftDoor = openLeft;
             roomScript.openRightDoor = openRight;
+            
         }
         //else Debug.Log("Script is trying to create a room at " + arrayX + ", " + arrayY + " but a room already exist here.");
     } //Pour faire spawner une room prise aléatoirement dans une List, à un emplacement défini

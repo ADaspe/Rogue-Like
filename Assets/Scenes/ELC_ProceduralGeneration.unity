@@ -520,12 +520,12 @@ PrefabInstance:
     - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
         type: 3}
       propertyPath: roomsList.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
         type: 3}
       propertyPath: testsRoomsList.Array.size
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
         type: 3}
@@ -601,6 +601,41 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1643720113629917897, guid: 68be1923841bcc04d91ca6611b74b8ef,
         type: 3}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: numberOfEasyFloors
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: numberOfMediumFloors
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: numberOfHardFloors
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: EasyFloors
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: MediumFloors
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: HardFloors
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: ObjectRoomPercentChanceToSpawn
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 7843894060409563433, guid: 96964a2b1920f9a469b78a90ac676262,
         type: 3}
       propertyPath: m_Name
