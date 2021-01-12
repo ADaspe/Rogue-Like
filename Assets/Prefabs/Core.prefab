@@ -364,15 +364,10 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1107614495140986406}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
 --- !u!1 &3031215543003267451 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2688090400881246045, guid: c582c890f15ac5345a4f3c531ee31b90,
-=======
---- !u!1 &3083873734013047290 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2707533440373419996, guid: c582c890f15ac5345a4f3c531ee31b90,
->>>>>>> Stashed changes
+
     type: 3}
   m_PrefabInstance: {fileID: 1107614495140986406}
   m_PrefabAsset: {fileID: 0}

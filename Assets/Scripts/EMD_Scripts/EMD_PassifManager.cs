@@ -120,9 +120,6 @@ public class EMD_PassifManager : MonoBehaviour
         }
         if (currentMoneyScript.currentMoney < (int)SelectedPassive.PassivePrice)
         {
-            PassiveCanvas.SetActive(false);
-            DialogueCanvas.SetActive(false);
-            ValidateButton.SetActive(false);
             currentMoneyScript.currentMoney -= (int)SelectedPassive.PassivePrice;
         }
         else
