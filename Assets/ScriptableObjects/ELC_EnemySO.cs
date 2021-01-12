@@ -9,7 +9,7 @@ public class ELC_EnemySO : ScriptableObject
     public string Name;
 
     [Header("Health")]
-    public float MaxHealth;
+    public int MaxHealth;
 
     [Header("Movements")]
     public float MovementSpeed;
@@ -33,7 +33,7 @@ public class ELC_EnemySO : ScriptableObject
     public float ProjectileDurability;
     public float ProjectileStrenght;
 
-    public bool CorpseAttack;
+    public bool CloseCombatAttack;
     public float AttackCooldown;
     public float AttackRange;
     public float WaitBeforeAttack;
@@ -48,6 +48,13 @@ public class ELC_EnemySO : ScriptableObject
     public float DashStrenght;
     public bool DashStun;
     public float DashColliderWidth;
+
+    [Header ("Dash & CorpseAttack properties")]
+    public bool DashAndCorpseAttack;
+    public float DashCooldown;
+    public float MinDistanceToTriggerDash;
+    public float MaxDistanceToTriggerDash;
+
 
     [Header("Spawn Entities")]
     public bool SpawnEntitiesRegulary;

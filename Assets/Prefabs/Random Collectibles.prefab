@@ -114,7 +114,9 @@ MonoBehaviour:
   - {fileID: 7391949015416354207, guid: f9b5e39cf03dc9646a77d7e0d7ae5674, type: 3}
   chooseRandomObject: 0
   ObjectsList:
-  - {fileID: 7198654539912871029, guid: 8b9b79f4ff7ea434396316881642c91c, type: 3}
+  - {fileID: 2185526170687435304, guid: 01e4cb7c4d2549d45807b900cfdf0a15, type: 3}
+  - {fileID: 5799073900831331155, guid: 61ead40fd9be8d241bedcaf20ed9808c, type: 3}
+  - {fileID: 6618332470376472214, guid: 966d535555f27c44995cc8a015241f1a, type: 3}
   chooseRandomPassive: 0
   passivesList:
   - {fileID: 11400000, guid: e8365aef04281bd45b3471d2fc5b1fb6, type: 2}

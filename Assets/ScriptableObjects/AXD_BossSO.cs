@@ -7,7 +7,7 @@ public class AXD_BossSO : ScriptableObject
 {
     public bool invulnerable;
     public int maxHealth;
-    public int currentHealth;
     public int[] healthPhase;
     public float vulnerableTime;
+    public float stratTime;
 }

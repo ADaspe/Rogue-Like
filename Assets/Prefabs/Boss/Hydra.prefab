@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 5111883720773540794}
   - component: {fileID: 8335727250911175007}
   - component: {fileID: 3046702277071266625}
+  - component: {fileID: 838614985989882433}
+  - component: {fileID: 5700113035729362853}
+  - component: {fileID: 7264622435919248767}
   m_Layer: 0
   m_Name: Hydra
   m_TagString: Untagged
@@ -108,6 +111,85 @@ MonoBehaviour:
   heads: []
   spawnPoints:
   - {fileID: 0}
+  enemy: {fileID: 0}
+  timeToBeVulnerable: 0
+  headsToSpawn: 0
+  maxHealthHead: 5000
+  healthPercentageHeadPhase2: 85
+  healthPercentageHeadPhase3: 70
+--- !u!61 &838614985989882433
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4695540129941599299}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &5700113035729362853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4695540129941599299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca4bacb913d16c4fae472192b14127b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyStats: {fileID: 11400000, guid: a373fa2f6700a08438102f9bef885a03, type: 2}
+  currentHealth: 0
+  speed: 0
+  movesTowardPlayer: {x: 0, y: 0, z: 0}
+  isAttacking: 0
+  isDistanceAttacking: 0
+  isHit: 0
+  isStun: 0
+  isInvulnerable: 0
+  isTouchingSomething: 0
+  canSeePlayer: 0
+  tryToGo: 4
+  obstaclesLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  distanceToStay: 0
+--- !u!95 &7264622435919248767
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4695540129941599299}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &401420257198507896
 PrefabInstance:
   m_ObjectHideFlags: 0
