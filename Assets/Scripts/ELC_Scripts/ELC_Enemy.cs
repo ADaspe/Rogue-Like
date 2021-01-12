@@ -16,9 +16,11 @@ public class ELC_Enemy : MonoBehaviour
     public int currentHealth;
     public float speed;
     private bool canMove = true;
-    private bool isDashing;
-    private float stopDashing;
+    public bool isDashing;
+    public float stopDashing;
     private float attackCooldown; // le cooldown entre chaque attaque
+    public float dashCooldown; //Valable que pour les ennemis qui ont l'attaque de base + l'attaque à distance
+    public bool canDashAttack; //Valable que pour les ennemis qui ont l'attaque de base + l'attaque à distance
     public Vector3 movesTowardPlayer;
     private Vector3 fleePlayer;
     private Vector3 directionToDash;
@@ -29,6 +31,10 @@ public class ELC_Enemy : MonoBehaviour
     public bool isDistanceAttacking;
     public bool isHit;
 
+    //private Material basicMat;
+    public Material dissolveMaterial;
+    public Material getHitMaterial;
+    public float spawnDuration = 1;
 
     private Vector3 currentDashDirection;
     private float currentDashDistance;
@@ -37,6 +43,7 @@ public class ELC_Enemy : MonoBehaviour
     private const float knockbackTime = 0.2f;
     public bool isStun;
     private bool canBeStun = true;
+    private bool stopDashDamage = false;
     public bool isTmpInvulnerable = false;
     public bool isInvulnerable = false;
     private bool isTouchingRight;
@@ -66,11 +73,14 @@ public class ELC_Enemy : MonoBehaviour
 
     void Start()
     {
+        //basicMat = spriteRenderer.material;
         enemyCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyAnimator = GetComponent<Animator>();
         isTmpInvulnerable = false;
-        if(enemyStats != null)
+        dashCooldown = Time.time + enemyStats.DashCooldown;
+        //StartCoroutine("Spawn");
+        if (enemyStats != null)
         {
             currentHealth = enemyStats.MaxHealth;
             speed = enemyStats.MovementSpeed;
@@ -122,6 +132,15 @@ public class ELC_Enemy : MonoBehaviour
         if (lastDirection.x > 0) spriteRenderer.flipX = true;
         else spriteRenderer.flipX = false;
     }
+
+    //IEnumerator Spawn()
+    //{
+    //    spriteRenderer.material = dissolveMaterial;
+    //    canMove = false;
+    //    yield return new WaitForSeconds(spawnDuration);
+    //    spriteRenderer.material = basicMat;
+    //    canMove = true;
+    //}
 
     void EnemyMoves(string EnemyPathBehaviour)
     {
@@ -184,15 +203,25 @@ public class ELC_Enemy : MonoBehaviour
 
     void EnemyAttackCheck()
     {
-        if((distanceFromPlayer == EnemyDistance.AtDistance || distanceFromPlayer == EnemyDistance.TooClose) && Time.time >= attackCooldown && canSeePlayer)
+        if (!isAttacking)
         {
-            canMove = false;
-            attackCooldown = Time.time + enemyStats.AttackCooldown;
-            //Debug.Log(enemyStats.Name + " charge son attaque");
-            StartCoroutine("Attack");
+            if ((distanceFromPlayer == EnemyDistance.AtDistance || distanceFromPlayer == EnemyDistance.TooClose) && Time.time >= attackCooldown && canSeePlayer)
+            {
+                canMove = false;
+                attackCooldown = Time.time + enemyStats.AttackCooldown;
+                //Debug.Log(enemyStats.Name + " charge son attaque");
+                StartCoroutine(Attack(false));
 
-            if(enemyStats.DashOnPlayer) directionToDash = movesTowardPlayer;
+                if (enemyStats.DashOnPlayer) directionToDash = movesTowardPlayer;
+            }
+            else if (canDashAttack)
+            {
+                dashCooldown = Time.time + enemyStats.DashCooldown;
+                StartCoroutine(Attack(true));
+                directionToDash = movesTowardPlayer;
+            }
         }
+        
     }
 
     Vector3 ClampIfTouchSomething(Vector3 vectorToClamp, float speed)
@@ -310,7 +339,7 @@ public class ELC_Enemy : MonoBehaviour
         fleePlayer = ClampIfTouchSomething(fleePlayer, speed);
     }
 
-    private IEnumerator Attack()
+    private IEnumerator Attack(bool isDashing = false)
     {
         enemyAnimator.SetBool("IsPreparingForAttack", true);
         yield return new WaitForSeconds(enemyStats.WaitBeforeAttack);
@@ -319,8 +348,7 @@ public class ELC_Enemy : MonoBehaviour
         enemyAnimator.SetBool("IsAttacking", true);
         isAttacking = true;
         //Debug.Log("Attack");
-
-        if (enemyStats.DashOnPlayer)
+        if((enemyStats.DashAndCorpseAttack && isDashing) || (enemyStats.DashOnPlayer && !enemyStats.DashAndCorpseAttack))
         {
             Dash(directionToDash, enemyStats.DashTime, enemyStats.DistanceToRun);
             HitPlayer(true);
@@ -333,7 +361,8 @@ public class ELC_Enemy : MonoBehaviour
         else HitPlayer();
 
         canMove = true;
-        yield return new WaitForSeconds(enemyStats.AttackAnimationTime);
+        if (enemyStats.DashAndCorpseAttack && isDashing) yield return new WaitForSeconds(enemyStats.DashTime);
+        else yield return new WaitForSeconds(enemyStats.AttackAnimationTime);
         enemyAnimator.SetBool("IsAttacking", false);
         isAttacking = false;
         isDistanceAttacking = false;
@@ -361,6 +390,9 @@ public class ELC_Enemy : MonoBehaviour
         if (distance < minDistance) distanceFromPlayer = EnemyDistance.TooClose;
         else if (distance > maxDistance) distanceFromPlayer = EnemyDistance.TooFar;
         else distanceFromPlayer = EnemyDistance.AtDistance;
+
+        if (enemyStats.DashAndCorpseAttack && distanceFromPlayer == EnemyDistance.TooFar && distance < enemyStats.MaxDistanceToTriggerDash && distance > enemyStats.MinDistanceToTriggerDash && Time.time > dashCooldown) canDashAttack = true;
+        else canDashAttack = false;
     }
 
     private void CheckDistanceFromOtherEnemies()
@@ -440,22 +472,24 @@ public class ELC_Enemy : MonoBehaviour
 
     IEnumerator Stun(float time, bool invulnerable = false)
     {
+        //spriteRenderer.material = getHitMaterial;
         canBeStun = false;
-        
-        yield return new WaitForSeconds(enemyStats.noStunTime);
-        
-        isStun = true;
         if (invulnerable)
         {
             isTmpInvulnerable = true;
         }
+        yield return new WaitForSeconds(enemyStats.noStunTime);
+        
+        isStun = true;
+        
         yield return new WaitForSeconds(time);
         if (isTmpInvulnerable)
         {
             isTmpInvulnerable = false;
         }
         isStun = false;
-        
+        //spriteRenderer.material = basicMat;
+
         yield return new WaitForSeconds(enemyStats.noStunTime);
         
         canBeStun = true;
@@ -469,6 +503,8 @@ public class ELC_Enemy : MonoBehaviour
     }
     public void GetHit(int Damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0, bool invulnerable = false)
     {
+        
+        Debug.Log("Enemy hit");
         if (!isTmpInvulnerable && !isInvulnerable)
         {
             currentHealth -= Damage;
@@ -522,20 +558,25 @@ public class ELC_Enemy : MonoBehaviour
     private IEnumerator DashAttack()
     {
         Collider2D[] hitColliders = null;
+        
         bool hitPlayer = false;
-
-        while (Time.time >= stopDashing || hitPlayer == false)
+        if (!stopDashDamage)
         {
-            hitColliders = null;
-            hitColliders = Physics2D.OverlapBoxAll(this.transform.position + directionToDash.normalized * 0.5f, new Vector2(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth), Vector2.Angle(Vector2.up, directionToDash), LayerMask.GetMask("Player"));
-            if (hitColliders != null && hitColliders.Length > 0)
+            while (Time.time >= stopDashing || hitPlayer == false || !stopDashDamage)
             {
-                hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)enemyStats.DashStrenght);
-                Debug.Log("Dash Hit");
-                hitPlayer = true;
+                hitColliders = null;
+                hitColliders = Physics2D.OverlapBoxAll(this.transform.position + directionToDash.normalized * 0.5f, new Vector2(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth), Vector2.Angle(Vector2.up, directionToDash), LayerMask.GetMask("Player"));
+                if (hitColliders != null && hitColliders.Length > 0)
+                {
+                    hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)enemyStats.DashStrenght);
+                    Debug.Log("Dash Hit");
+                    hitPlayer = true;
+                    stopDashDamage = true;
+                }
+                yield return null;
             }
-            yield return null;
         }
+        stopDashDamage = false;
     }
 
 

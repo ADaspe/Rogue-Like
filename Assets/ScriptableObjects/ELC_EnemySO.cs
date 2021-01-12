@@ -49,6 +49,13 @@ public class ELC_EnemySO : ScriptableObject
     public bool DashStun;
     public float DashColliderWidth;
 
+    [Header ("Dash & CorpseAttack properties")]
+    public bool DashAndCorpseAttack;
+    public float DashCooldown;
+    public float MinDistanceToTriggerDash;
+    public float MaxDistanceToTriggerDash;
+
+
     [Header("Spawn Entities")]
     public bool SpawnEntitiesRegulary;
     public bool SpawnEntitiesAtDeath;

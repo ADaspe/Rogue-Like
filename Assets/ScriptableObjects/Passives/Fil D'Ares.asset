@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Fil D'Ares
   m_EditorClassIdentifier: 
   PassiveName: Fil D'Ares
-  PassivePrice: 0
+  PassiveDescription: Je suis le fils d'ares
+  PassivePrice: 32
   isUnlock: 0
-  HUDSprite: {fileID: 0}
+  HUDSprite: {fileID: -8350770223128786854, guid: 534b8ae3ad8011940b66db8a78160d34,
+    type: 3}

@@ -101,11 +101,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: 3a47d63f525412842b3b283ae186080a, type: 2}
   currentHealth: 0
+  speed: 0
+  isDashing: 0
+  stopDashing: 0
+  dashCooldown: 0
+  canDashAttack: 0
   movesTowardPlayer: {x: 0, y: 0, z: 0}
   isAttacking: 0
   isDistanceAttacking: 0
   isHit: 0
+  dissolveMaterial: {fileID: 2100000, guid: 516b86d5c836f83458f383ef44b5fea3, type: 2}
+  spawnDuration: 0
   isStun: 0
+  isTmpInvulnerable: 0
   isInvulnerable: 0
   isTouchingSomething: 0
   canSeePlayer: 0
@@ -113,6 +121,7 @@ MonoBehaviour:
   obstaclesLayerMask:
     serializedVersion: 2
     m_Bits: 512
+  distanceToStay: 0
 --- !u!61 &7378249948707067900
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -187,7 +196,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: badda47fe12779f499325595ebcc2099, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.827
+  m_Volume: 0.272
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -282,7 +291,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9c24585693c4ee84fb028b8620b9a5b6, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.644
   m_Pitch: 1
   Loop: 0
