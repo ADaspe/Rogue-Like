@@ -12,16 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c99466daf154f84ea59a9527c63b153, type: 3}
   m_Name: Fil D'Ares
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream:Assets/ScriptableObjects/Passives/Fil D'Ares.asset
   PassiveName: Fil D'Ares
-  PassivePrice: 0
+  PassiveDescription: Je suis le fils d'ares
+  PassivePrice: 32
   isUnlock: 0
-  HUDSprite: {fileID: 0}
-=======
-  PassiveName: "App\xE9tit De Lycaon"
-  PassiveDescription: ksfdjlkfuidjfk
-  PassivePrice: 123
-  isUnlock: 0
-  HUDSprite: {fileID: 2878610390900632331, guid: 8eca3fc33291c8246951cd5071a8dca0,
+  HUDSprite: {fileID: -8350770223128786854, guid: 534b8ae3ad8011940b66db8a78160d34,
     type: 3}
->>>>>>> Stashed changes:Assets/ScriptableObjects/Passives/essai1.asset
