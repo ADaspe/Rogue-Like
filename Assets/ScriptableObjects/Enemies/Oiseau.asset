@@ -22,18 +22,18 @@ MonoBehaviour:
   FriendlyFire: 0
   DistanceAttack: 0
   Projectile: {fileID: 0}
-  DistanceAttackArea: 0
+  DistanceMaxToShoot: 0
   DistanceCooldown: 0
-  CorpseAttack: 1
+  CloseCombatAttack: 0
   AttackCooldown: 3
   AttackRange: 0
-  WaitBeforeAttack: 0.2
-  AttackStrenght: 0
+  PrepareAttack: 0
+  AttackDamage: 0
   AttackStun: 0
   AttackAnimationTime: 0
   DashOnPlayer: 1
   DashTime: 0.2
-  DistanceToRun: 4
+  DistanceToDash: 3
   DashStrenght: 0
   DashStun: 0
   SpawnEntitiesRegulary: 0

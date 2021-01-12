@@ -25,24 +25,24 @@ public class ELC_EnemySO : ScriptableObject
 
     public bool DistanceAttack;
     public GameObject Projectile; //Le projectile doit avoir un ScriptableObject
-    public float DistanceAttackArea;
+    public float DistanceMaxToShoot; // distance à laquelle le personnage attaque
     public float DistanceCooldown;
     public float ProjectileSpeed;
     public float ProjectileDurability;
     public float ProjectileStrenght;
 
-    public bool CorpseAttack;
+    public bool CloseCombatAttack;
     public float AttackCooldown;
     public float AttackRange;
-    public float WaitBeforeAttack;
-    public float AttackStrenght;
+    public float PrepareAttack;
+    public float AttackDamage;
     public bool AttackStun;
     public float AttackAnimationTime;
 
     [Header("Dash")]
     public bool DashOnPlayer;
     public float DashTime;
-    public float DistanceToRun;
+    public float DistanceToDash;
     public float DashStrenght;
     public bool DashStun;
 
