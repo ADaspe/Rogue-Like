@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 397409409}
   - component: {fileID: 397409408}
   m_Layer: 0
-  m_Name: Sound
+  m_Name: Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

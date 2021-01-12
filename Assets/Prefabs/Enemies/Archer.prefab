@@ -102,6 +102,10 @@ MonoBehaviour:
   enemyStats: {fileID: 11400000, guid: 3a47d63f525412842b3b283ae186080a, type: 2}
   currentHealth: 0
   speed: 0
+  isDashing: 0
+  stopDashing: 0
+  dashCooldown: 0
+  canDashAttack: 0
   movesTowardPlayer: {x: 0, y: 0, z: 0}
   isAttacking: 0
   isDistanceAttacking: 0
@@ -190,7 +194,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: badda47fe12779f499325595ebcc2099, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.299
+  m_Volume: 0.272
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -285,7 +289,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9c24585693c4ee84fb028b8620b9a5b6, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.644
   m_Pitch: 1
   Loop: 0

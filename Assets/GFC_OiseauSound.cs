@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class GFC_OiseauSound : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public ELC_Enemy enemy;
+    public AudioSource attaque;
+    public AudioSource death;
+    public AudioSource dammage;
+    public bool deathAlreadyPlayed = false;
+
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (enemy.isAttacking == true && attaque.isPlaying == false)
+        {
+            attaque.Play();
+        }
+        if (enemy.currentHealth <= 0 && death.isPlaying == false && deathAlreadyPlayed == false)
+        {
+            death.Play();
+            deathAlreadyPlayed = true;
+        }
+        if (enemy.isHit == true && dammage.isPlaying == false)
+        {
+            dammage.Play();
+        }
     }
 }
