@@ -19,23 +19,33 @@ MonoBehaviour:
   LimitDistanceToStay: 1
   NeedTimeToTurn: 1
   TurnSpeed: 1
+  EnemyWidth: 3
+  noStunTime: 0
   FriendlyFire: 0
   DistanceAttack: 0
   Projectile: {fileID: 0}
   DistanceAttackArea: 0
   DistanceCooldown: 0
-  CorpseAttack: 1
+  ProjectileSpeed: 0
+  ProjectileDurability: 0
+  ProjectileStrenght: 0
+  CloseCombatAttack: 1
   AttackCooldown: 5
-  AttackRange: 0
+  AttackRange: 0.8
   WaitBeforeAttack: 0.5
-  AttackStrenght: 0
+  AttackStrenght: 2
   AttackStun: 0
-  AttackAnimationTime: 0
+  AttackAnimationTime: 1
   DashOnPlayer: 1
-  DashTime: 0.5
-  DistanceToRun: 4
-  DashStrenght: 0
+  DashTime: 1
+  DistanceToRun: 10
+  DashStrenght: 1
   DashStun: 0
+  DashColliderWidth: 1
+  DashAndCorpseAttack: 1
+  DashCooldown: 15
+  MinDistanceToTriggerDash: 4
+  MaxDistanceToTriggerDash: 5
   SpawnEntitiesRegulary: 0
   SpawnEntitiesAtDeath: 0
   SpawnCooldown: 0
@@ -46,3 +56,4 @@ MonoBehaviour:
   ambrosiaEarnedWhenDead: 0
   sprite: {fileID: 0}
   Animator: {fileID: 0}
+  achievements: []

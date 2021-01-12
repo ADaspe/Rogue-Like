@@ -2,41 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class EMD_PassifManager : MonoBehaviour
 {
     bool IsDone = false;
     public List<ELC_PassiveSO> ListPassive = new List<ELC_PassiveSO>();
-    ELC_PassiveSO[] passifs = new ELC_PassiveSO[3];
-    /*ELC_PassiveSO Passif1;
-    ELC_PassiveSO Passif2;
-    ELC_PassiveSO Passif3;*/
-    ELC_PassiveSO ActualPassiveScriptableObject;
+    ELC_PassiveSO[] passive = new ELC_PassiveSO[3];
+    public ELC_PassiveSO SelectedPassive;
+    public AXD_PlayerMoney currentMoneyScript;
     public GameObject ContinueButton;
-    public GameObject QuitButton;
-    public GameObject PassifButton;
-    public GameObject PassifCanvas;
+    public GameObject PassiveButton;
+    public GameObject PassiveCanvas;
+    public GameObject ValidateButton;
+    public GameObject DialogueCanvas;
+    public GameObject QuittButton;
+    public TextMeshProUGUI PassivePrice;
     public TextMeshProUGUI textDisplay;
-
-    public SpriteRenderer image1;
-    public SpriteRenderer image2;
-    public SpriteRenderer image3;
-    int nbOfPassives = 3;
+    //public GameObject passif1;
+    public Image image1;
+    public Image image2;
+    public Image image3;
 
 
     void Start()
     {
-        //RandomPick();
-        takePassiveAndCreateArray();
-        //afficherPassif();
-        Debug.Log(passifs[0]);
-        Debug.Log(passifs[1]);
-        Debug.Log(passifs[2]);
+        RandomPick();
     }
 
-    void takePassiveAndCreateArray()
+    /*void takePassiveAndCreateArray()
     {
-        passifs = new ELC_PassiveSO[3];
+        passive = new ELC_PassiveSO[3];
 
         for (int i = 0; i < nbOfPassives + 1; i++)
         {
@@ -47,7 +43,7 @@ public class EMD_PassifManager : MonoBehaviour
                 int rdInt = Random.Range(0, nbOfPassives - 1);
                 print(rdInt);
 
-                foreach (ELC_PassiveSO passive in passifs)
+                foreach (ELC_PassiveSO passive in passive)
                 {
                     if (passive == ListPassive[rdInt])
                     {
@@ -55,82 +51,85 @@ public class EMD_PassifManager : MonoBehaviour
                     }
                 }
                 print(rdInt + " " + ListPassive[rdInt]);
-                passifs[i] = ListPassive[rdInt];
+                passive[i] = ListPassive[rdInt];
             } while (isAlreadyThere);
-        }
-    }
+        }*/
     void RandomPick()
     {
-        /*int nombre = 0;
-        while (IsDone == false)
-        {
-            int Index = Random.Range(0, ListPassive.Count + 1);
-            passifs[nombre] = ListPassive[Index];
-            
-            nombre++;
-        }
         for (int i = 0; i < 3; i++)
         {
-            int Index = Random.Range(0, ListPassive.Count + 1);
+            int Index = Random.Range(0, ListPassive.Count);
             Debug.Log(i);
             if (i == 0)
             {
-                
-                passifs[i] = ListPassive[Index];
+                passive[i] = ListPassive[Index];
             }
             else if (i == 1)
             {
-                passifs[i] = ListPassive[Index];
-                if (passifs[i] == passifs[i-1])
+                passive[i] = ListPassive[Index];
+                if (passive[i] == passive[i-1])
                 {
                     i --;
                 }
             }
            else
             {
-                passifs[i] = ListPassive[Index]; 
-                if (passifs[i] == passifs[i-1] || passifs[i] == passifs[i-2])
+                passive[i] = ListPassive[Index]; 
+                if (passive[i] == passive[i-1] || passive[i] == passive[i-2])
                 {
                     i --;
                 }
             }
-        }*/
+        }
     }
 
     public void afficherPassif()
     {
-        //Afficher les images des passifs
+        image1.sprite = passive[0].HUDSprite;
+        image2.sprite = passive[1].HUDSprite;
+        image3.sprite = passive[2].HUDSprite;
+        PassiveButton.SetActive(false);
         ContinueButton.SetActive(false);
-        image1.sprite = passifs[0].HUDSprite;
-        image2.sprite = passifs[1].HUDSprite;
-        image3.sprite = passifs[2].HUDSprite;
-        PassifCanvas.SetActive(true);
+        PassiveCanvas.SetActive(true);
+        ValidateButton.SetActive(true);        
     }
 
-        //Selon passif séléctionné: afficher le nom et le descriptif légé
-        /*if (selected(jysépa))
+    public void Selected1()
+    {
+        SelectedPassive = passive[0];
+        PassivePrice.text = passive[0].PassivePrice.ToString();
+    }
+    public void Selected2()
+    {
+        SelectedPassive = passive[1];
+        PassivePrice.text = passive[1].PassivePrice.ToString();
+    }
+    public void Selected3()
+    {
+        SelectedPassive = passive[2];
+        PassivePrice.text = passive[2].PassivePrice.ToString();
+    }
+
+    public void ChoosenPassive()
+    {
+
+        ELC_ObjectsInventory.ActivePassif = SelectedPassive;
+        if (currentMoneyScript == null)
         {
-            
+            Debug.Log("coucou");
+        }
+        if (currentMoneyScript.currentMoney < (int)SelectedPassive.PassivePrice)
+        {
+            PassiveCanvas.SetActive(false);
+            DialogueCanvas.SetActive(false);
+            ValidateButton.SetActive(false);
+            currentMoneyScript.currentMoney -= (int)SelectedPassive.PassivePrice;
+        }
+        else
+        {
+            textDisplay.text = null;
+            textDisplay.text = "Vous n'avez pas assez d'argent";
         }
     }
-    public void PassifChoisie1()
-    {
-        PassifCanvas.SetActive(false);
-        //gérer l'argent par rapport au prix du passif
-        ActualPassiveScriptableObject = Passif1;
-    }
-    public void PassifChoisie2()
-    {
-        PassifCanvas.SetActive(false);
-        //gérer l'argent par rapport au prix du passif
-        ActualPassiveScriptableObject = Passif2;
-    }
-    public void PassifChoisie3()
-    {
-        PassifCanvas.SetActive(false);
-        //gérer l'argent par rapport au prix du passif
-        //remplacer par le passif choisi
-        ActualPassiveScriptableObject = Passif3;
-    }*/
 }
 

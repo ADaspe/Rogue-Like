@@ -19,7 +19,8 @@ MonoBehaviour:
   LimitDistanceToStay: 3
   NeedTimeToTurn: 0
   TurnSpeed: 0
-  EnemyWidth: 0.5
+  EnemyWidth: 1
+  noStunTime: 0
   FriendlyFire: 0
   DistanceAttack: 0
   Projectile: {fileID: 0}
@@ -28,19 +29,23 @@ MonoBehaviour:
   ProjectileSpeed: 0
   ProjectileDurability: 0
   ProjectileStrenght: 0
-  CorpseAttack: 0
+  CloseCombatAttack: 0
   AttackCooldown: 3
   AttackRange: 0
   WaitBeforeAttack: 0.2
   AttackStrenght: 0
   AttackStun: 0
-  AttackAnimationTime: 0
+  AttackAnimationTime: 0.2
   DashOnPlayer: 1
   DashTime: 0.2
   DistanceToRun: 4
   DashStrenght: 5
   DashStun: 0
   DashColliderWidth: 0.5
+  DashAndCorpseAttack: 0
+  DashCooldown: 0
+  MinDistanceToTriggerDash: 0
+  MaxDistanceToTriggerDash: 0
   SpawnEntitiesRegulary: 0
   SpawnEntitiesAtDeath: 0
   SpawnCooldown: 0

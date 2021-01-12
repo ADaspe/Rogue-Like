@@ -9,6 +9,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     private Vector3 playerMoves;
     public Vector3 lastDirection = new Vector3(0, -1);
     public Vector3 attackPoint;
+    public float attackPointDistance;
     public const float animationTime = 0.4f;
     public ELC_PlayerStatManager playerStats;
     public PlayerHealth playerHealth;
@@ -90,7 +91,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         {
             ResetChain();
         }
-        attackPoint = transform.position + lastDirection.normalized * playerStats.SwichAreaRadius;
+        attackPoint = transform.position + (lastDirection.normalized*attackPointDistance) * playerStats.SwichAreaRadius;
         if (Input.GetAxisRaw("Dash") != 1)
         {
             dashButtonDown = false;
@@ -272,7 +273,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         }
     }
 
-    public IEnumerator PlayAnimation(string name, float time, bool canMoveDuringIt, bool canTurnDuringIt)
+    public IEnumerator PlayAnimation(string name, float time, bool canMoveDuringIt, bool canTurnDuringIt, bool death = false)
     {
         playerAnimator.SetBool(name, true);
         canMove = canMoveDuringIt;
@@ -294,10 +295,18 @@ public class ELC_PlayerMoves : MonoBehaviour
         {
             yield return new WaitForSeconds(time);
         }
-
-        playerAnimator.SetBool(name, false);
-        canMove = true;
-        canTurn = true;
+        if (!playerHealth.isDead)
+        {
+            playerAnimator.SetBool(name, false);
+            canMove = true;
+            canTurn = true;
+        }
+        else
+        {
+            playerSpriteRenderer.enabled = false;
+            gameManager.GetComponent<ELC_TimeScale>().PauseGame();
+            FindObjectOfType<ELC_ObjectsInventory>().TransferMoney(true);
+        }
     }
 
     public void StopAnimation(string name)

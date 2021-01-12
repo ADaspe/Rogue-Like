@@ -29,37 +29,40 @@ public class ELC_PickupItems : MonoBehaviour
 
     private void Start()
     {
-        ObjectsInv = GameObject.Find("PlayerInventory").GetComponent<ELC_ObjectsInventory>();
-        PUManager = GameObject.Find("PowerUpsManager").GetComponent<ELC_PowerUpManager>();
+        
         detector = this.gameObject.GetComponent<ELC_Detector>();
 
         if(chooseRandomPowerUp)
         {
-            int randomNumber = Random.Range(0, PowerUpsList.Count - 1);
+            int randomNumber = Random.Range(0, PowerUpsList.Count);
             PowerUp = PowerUpsList[randomNumber];
 
         }
         if(chooseRandomObject)
         {
-            int randomNumber = Random.Range(0, ObjectsList.Count - 1);
+            int randomNumber = Random.Range(0, ObjectsList.Count);
             Object = ObjectsList[randomNumber];
         }
         if(chooseRandomPassive)
         {
-            int randomNumber = Random.Range(0, passivesList.Count - 1);
+            int randomNumber = Random.Range(0, passivesList.Count);
             Passive = passivesList[randomNumber];
         }
     }
 
     private void Update()
     {
+        if(ObjectsInv == null) ObjectsInv = GameObject.Find("PlayerInventory").GetComponent<ELC_ObjectsInventory>();
+        if(PUManager == null) PUManager = GameObject.Find("PowerUpsManager").GetComponent<ELC_PowerUpManager>();
         if (detector.playerIsInside && this.gameObject.CompareTag("Collectible") && Input.GetButtonDown("Interact"))
         {
-            if(Type == CollectibleTypes.Object) ObjectsInv.AddObject(Object, Object.GetComponent<ELC_ObjectsUse>().ObjectsScriptableObject.quantity);
+            if(Type == CollectibleTypes.Object) ObjectsInv.AddObject(Object);
 
-            if (Type == CollectibleTypes.PowerUp) PUManager.AddPowerUp(PowerUp);
+            if (Type == CollectibleTypes.PowerUp ) PUManager.AddPowerUp(PowerUp);
 
             if (Type == CollectibleTypes.Passive) ELC_ObjectsInventory.ActivePassif = Passive;
+
+            Destroy(this.gameObject);
         }
         
     }
