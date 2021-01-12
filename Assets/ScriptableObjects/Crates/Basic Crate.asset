@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7c9242b503af94ebb349ee2e6cddf8, type: 3}
+  m_Name: Basic Crate
+  m_EditorClassIdentifier: 
+  Name: BasicCrate
+  spawnFrequency: 0
+  stockLimit: 1000
+  steps: 64000000f401000020030000
+  startingMinMoney: 0
+  startingMaxMoney: 300
+  isBreakable: 0
+  health: 300
+  percentageOfMoneyLostWhenHit: 5
+  HUDSprite: {fileID: 8304822080450189310, guid: 0f240e57d99723c47ba838026e88cdcc,
+    type: 3}

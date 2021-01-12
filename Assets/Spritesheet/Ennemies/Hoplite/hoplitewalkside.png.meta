@@ -1,17 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-<<<<<<< HEAD
 guid: 543be6b8616d09e4ca6c6b8b65a0e5ec
-=======
-guid: 5f6d98316a6c3384a939c608a9615e12
->>>>>>> master
-=======
-guid: 289448152322e854884dc97080eff8db
->>>>>>> Stashed changes
-=======
-guid: 543be6b8616d09e4ca6c6b8b65a0e5ec
->>>>>>> master
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -68,7 +56,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: 1
+    aniso: -1
     mipBias: -100
     wrapU: 1
     wrapV: 1
@@ -293,7 +281,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e69d900413d1afa4796670ba19fdd0f0
+    spriteID: f2543b09302241d428254ada7b89c9ee
     internalID: 0
     vertices: []
     indices: 

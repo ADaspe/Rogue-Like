@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c99466daf154f84ea59a9527c63b153, type: 3}
+  m_Name: Fil D'Ares
+  m_EditorClassIdentifier: 
+<<<<<<< Updated upstream:Assets/ScriptableObjects/Passives/Fil D'Ares.asset
+  PassiveName: Fil D'Ares
+  PassivePrice: 0
+  isUnlock: 0
+  HUDSprite: {fileID: 0}
+=======
+  PassiveName: "App\xE9tit De Lycaon"
+  PassiveDescription: ksfdjlkfuidjfk
+  PassivePrice: 123
+  isUnlock: 0
+  HUDSprite: {fileID: 2878610390900632331, guid: 8eca3fc33291c8246951cd5071a8dca0,
+    type: 3}
+>>>>>>> Stashed changes:Assets/ScriptableObjects/Passives/essai1.asset

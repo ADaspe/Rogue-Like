@@ -9,9 +9,17 @@ public class ELC_PassivesProperties : MonoBehaviour
     public AXD_Attack AttackScript;
     public ELC_ObjectsInventory InventoryScript;
 
+    private ELC_PlayerStatManager statsManager;
 
+    
+
+    [Header ("Appetit de Lycaon")]
     public float LycaonMainEnemyHeal;
     public float LycaonCollateralEnemyHeal;
+
+    [Header("Fil D'Ares")]
+    public float FilAresBerserkMultiplicator;
+    public float FilAresDamageTakenMultiplicator;
 
     private void Start()
     {
@@ -20,6 +28,8 @@ public class ELC_PassivesProperties : MonoBehaviour
             UpdateValues();
             InventoryScript.UpdateDisplay();
         }
+
+        statsManager = FindObjectOfType<ELC_PlayerStatManager>();
     }
 
     private void Update()
@@ -38,6 +48,7 @@ public class ELC_PassivesProperties : MonoBehaviour
     private void UpdateValues() //Se lance une seule fois après l'obtention d'un passif un changement de passif
     {
         if (ActualPassiveScriptableObject.PassiveName == "Appétit De Lycaon") AppetitDeLycaon();
+        else if (ActualPassiveScriptableObject.PassiveName == "Fil D'Ares") FilAres();
     }
 
     private void AppetitDeLycaon()
@@ -45,6 +56,13 @@ public class ELC_PassivesProperties : MonoBehaviour
         AttackScript.AppetitDeLycaonIsActive = true;
         AttackScript.AppetitDeLycaonHealPerEnemies = LycaonMainEnemyHeal;
         AttackScript.AppetitDeLycaonHealPerCollateral = LycaonCollateralEnemyHeal;
+    }
+
+    private void FilAres()
+    {
+        statsManager.losingLife = false;
+        statsManager.FilAresBerserkMultiplicator = FilAresBerserkMultiplicator;
+        statsManager.FilAresDamagesTakenMultiplicator = FilAresDamageTakenMultiplicator;
     }
 
 
