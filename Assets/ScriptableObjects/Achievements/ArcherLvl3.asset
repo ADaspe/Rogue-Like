@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
-  m_Name: HopliteLvl1
+  m_Name: ArcherLvl3
   m_EditorClassIdentifier: 
-  achievementName: Hoplite Lvl 1
-  achievementTier: 1
-  ennemyToDefeat: {fileID: 2148857145838052543, guid: e92a72e0dcedde944886188f85b5d608,
+  achievementName: Archer Lvl 3
+  achievementTier: 3
+  ennemyToDefeat: {fileID: 7470156072006172387, guid: 7e25a7f60c29ae94b8dc46dd02edc1c1,
     type: 3}
-  numberToDefeat: 30
+  numberToDefeat: 100
   numberDefeated: 0
   isUnlocked: 0
   passifToUnlock: {fileID: 0}
   achievementManager: {fileID: 0}
-  HUDSprite: {fileID: 6458670844827099797, guid: 267f0c44b9e8cd043afd6f114677a0a5,
+  HUDSprite: {fileID: 4741614879237883795, guid: 8f2f0148a937ba54596685060e72f03e,
     type: 3}

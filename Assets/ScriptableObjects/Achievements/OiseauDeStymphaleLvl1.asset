@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
-  m_Name: HopliteLvl1
+  m_Name: OiseauDeStymphaleLvl1
   m_EditorClassIdentifier: 
-  achievementName: Hoplite Lvl 1
+  achievementName: Oiseau de Stymphale Lvl 1
   achievementTier: 1
-  ennemyToDefeat: {fileID: 2148857145838052543, guid: e92a72e0dcedde944886188f85b5d608,
+  ennemyToDefeat: {fileID: 3456645754019736586, guid: 690e085c5fac56248b4bf550d707dd5a,
     type: 3}
   numberToDefeat: 30
   numberDefeated: 0
   isUnlocked: 0
   passifToUnlock: {fileID: 0}
   achievementManager: {fileID: 0}
-  HUDSprite: {fileID: 6458670844827099797, guid: 267f0c44b9e8cd043afd6f114677a0a5,
+  HUDSprite: {fileID: -8350770223128786854, guid: 534b8ae3ad8011940b66db8a78160d34,
     type: 3}
