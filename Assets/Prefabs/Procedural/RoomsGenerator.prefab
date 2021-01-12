@@ -54,8 +54,21 @@ MonoBehaviour:
   roomChecker: {fileID: 8046243752104760217, guid: cdad448189e8fb74b9793710f61815ed,
     type: 3}
   startRoom: {fileID: 0}
+  endRoom: {fileID: 0}
   roomsList: []
   testsRoomsList: []
+  easyRoomsList:
+  - {fileID: 4585266563572156792, guid: a8974dfe10d605941a4a5f72349237f6, type: 3}
+  MediumRoomsList:
+  - {fileID: 8016669876711721645, guid: d430637bff79d07499d330f94ff00ab6, type: 3}
+  HardRoomsList:
+  - {fileID: 2627324928097260012, guid: 358b98ddc8078934788a1d4e8562816d, type: 3}
+  ObjectsRoomsList:
+  - {fileID: 1643720113629917897, guid: 68be1923841bcc04d91ca6611b74b8ef, type: 3}
+  EasyFloors: 0
+  MediumFloors: 0
+  HardFloors: 0
+  ObjectRoomPercentChanceToSpawn: 0
   randomPoints: 
   secondaryRandomPoints: 
   numberOfEmptyRooms: 
