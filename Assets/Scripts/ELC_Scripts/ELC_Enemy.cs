@@ -31,6 +31,10 @@ public class ELC_Enemy : MonoBehaviour
     public bool isDistanceAttacking;
     public bool isHit;
 
+    //private Material basicMat;
+    public Material dissolveMaterial;
+    public Material getHitMaterial;
+    public float spawnDuration = 1;
 
     private Vector3 currentDashDirection;
     private float currentDashDistance;
@@ -39,6 +43,7 @@ public class ELC_Enemy : MonoBehaviour
     private const float knockbackTime = 0.2f;
     public bool isStun;
     private bool canBeStun = true;
+    private bool stopDashDamage = false;
     public bool isTmpInvulnerable = false;
     public bool isInvulnerable = false;
     private bool isTouchingRight;
@@ -68,11 +73,13 @@ public class ELC_Enemy : MonoBehaviour
 
     void Start()
     {
+        //basicMat = spriteRenderer.material;
         enemyCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyAnimator = GetComponent<Animator>();
         isTmpInvulnerable = false;
         dashCooldown = Time.time + enemyStats.DashCooldown;
+        //StartCoroutine("Spawn");
         if (enemyStats != null)
         {
             currentHealth = enemyStats.MaxHealth;
@@ -125,6 +132,15 @@ public class ELC_Enemy : MonoBehaviour
         if (lastDirection.x > 0) spriteRenderer.flipX = true;
         else spriteRenderer.flipX = false;
     }
+
+    //IEnumerator Spawn()
+    //{
+    //    spriteRenderer.material = dissolveMaterial;
+    //    canMove = false;
+    //    yield return new WaitForSeconds(spawnDuration);
+    //    spriteRenderer.material = basicMat;
+    //    canMove = true;
+    //}
 
     void EnemyMoves(string EnemyPathBehaviour)
     {
@@ -456,6 +472,7 @@ public class ELC_Enemy : MonoBehaviour
 
     IEnumerator Stun(float time, bool invulnerable = false)
     {
+        //spriteRenderer.material = getHitMaterial;
         canBeStun = false;
         if (invulnerable)
         {
@@ -471,7 +488,8 @@ public class ELC_Enemy : MonoBehaviour
             isTmpInvulnerable = false;
         }
         isStun = false;
-        
+        //spriteRenderer.material = basicMat;
+
         yield return new WaitForSeconds(enemyStats.noStunTime);
         
         canBeStun = true;
@@ -485,6 +503,7 @@ public class ELC_Enemy : MonoBehaviour
     }
     public void GetHit(int Damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0, bool invulnerable = false)
     {
+        
         Debug.Log("Enemy hit");
         if (!isTmpInvulnerable && !isInvulnerable)
         {
@@ -539,20 +558,25 @@ public class ELC_Enemy : MonoBehaviour
     private IEnumerator DashAttack()
     {
         Collider2D[] hitColliders = null;
+        
         bool hitPlayer = false;
-
-        while (Time.time >= stopDashing || hitPlayer == false)
+        if (!stopDashDamage)
         {
-            hitColliders = null;
-            hitColliders = Physics2D.OverlapBoxAll(this.transform.position + directionToDash.normalized * 0.5f, new Vector2(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth), Vector2.Angle(Vector2.up, directionToDash), LayerMask.GetMask("Player"));
-            if (hitColliders != null && hitColliders.Length > 0)
+            while (Time.time >= stopDashing || hitPlayer == false || !stopDashDamage)
             {
-                hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)enemyStats.DashStrenght);
-                Debug.Log("Dash Hit");
-                hitPlayer = true;
+                hitColliders = null;
+                hitColliders = Physics2D.OverlapBoxAll(this.transform.position + directionToDash.normalized * 0.5f, new Vector2(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth), Vector2.Angle(Vector2.up, directionToDash), LayerMask.GetMask("Player"));
+                if (hitColliders != null && hitColliders.Length > 0)
+                {
+                    hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)enemyStats.DashStrenght);
+                    Debug.Log("Dash Hit");
+                    hitPlayer = true;
+                    stopDashDamage = true;
+                }
+                yield return null;
             }
-            yield return null;
         }
+        stopDashDamage = false;
     }
 
 

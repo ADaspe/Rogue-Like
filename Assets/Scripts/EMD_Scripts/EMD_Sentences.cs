@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class EMD_Sentences : MonoBehaviour
 {
-    public string name;
+    public string PNJName;
 
     [TextArea(3,10)]
     public string[] sentences;

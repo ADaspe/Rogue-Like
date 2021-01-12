@@ -19,7 +19,7 @@ MonoBehaviour:
   LimitDistanceToStay: 1
   NeedTimeToTurn: 1
   TurnSpeed: 1
-  EnemyWidth: 0
+  EnemyWidth: 3
   noStunTime: 0
   FriendlyFire: 0
   DistanceAttack: 0

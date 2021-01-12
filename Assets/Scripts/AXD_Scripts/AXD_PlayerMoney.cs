@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class AXD_PlayerMoney : MonoBehaviour
 {
     public Text moneycount;
-    public int currentMoney = 0;
+    public int currentMoney;
 
     private void Start()
     {
