@@ -529,6 +529,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
         type: 3}
+      propertyPath: easyRoomsList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: HardRoomsList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
       propertyPath: entryPosition.x
       value: 1
       objectReference: {fileID: 0}
@@ -636,6 +646,48 @@ PrefabInstance:
       propertyPath: ObjectRoomPercentChanceToSpawn
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: easyRoomsList.Array.data[1]
+      value: 
+      objectReference: {fileID: 6722103527221844316, guid: 83f31428074b89947b9959e27a6497f9,
+        type: 3}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: easyRoomsList.Array.data[2]
+      value: 
+      objectReference: {fileID: 3627668831802546656, guid: f6e578f0c8e049e4888104f749f31f9d,
+        type: 3}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: easyRoomsList.Array.data[3]
+      value: 
+      objectReference: {fileID: 8016669876711721645, guid: d430637bff79d07499d330f94ff00ab6,
+        type: 3}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: easyRoomsList.Array.data[4]
+      value: 
+      objectReference: {fileID: 2627324928097260012, guid: f4f19ab80755a4a469e3c11f0fef5b24,
+        type: 3}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: easyRoomsList.Array.data[5]
+      value: 
+      objectReference: {fileID: 2627324928097260012, guid: b64f27c586ae2e44a83535a7638ebcc0,
+        type: 3}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: easyRoomsList.Array.data[6]
+      value: 
+      objectReference: {fileID: 4585266563572156792, guid: a8974dfe10d605941a4a5f72349237f6,
+        type: 3}
+    - target: {fileID: 1291383028972995184, guid: 96964a2b1920f9a469b78a90ac676262,
+        type: 3}
+      propertyPath: HardRoomsList.Array.data[1]
+      value: 
+      objectReference: {fileID: 2627324928097260012, guid: 3c2b9d98711a00b48a93fd4429783c0c,
+        type: 3}
     - target: {fileID: 7843894060409563433, guid: 96964a2b1920f9a469b78a90ac676262,
         type: 3}
       propertyPath: m_Name
