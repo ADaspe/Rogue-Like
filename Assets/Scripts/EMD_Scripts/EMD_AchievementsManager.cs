@@ -13,6 +13,9 @@ public class EMD_AchievementsManager : MonoBehaviour
     public GameObject AchievementsCanvas;
     public GameObject DialogueCanvas;
     public GameObject QuittButton;
+    public GameObject Ach4;
+    public GameObject Ach5;
+    public GameObject Ach6;
     public Image image1;
     public Image image2;
     public Image image3;
@@ -33,9 +36,12 @@ public class EMD_AchievementsManager : MonoBehaviour
         image1.sprite = ListAchievements[0 + NumeroPage * 6].HUDSprite;
         image2.sprite = ListAchievements[1 + NumeroPage * 6].HUDSprite;
         image3.sprite = ListAchievements[2 + NumeroPage * 6].HUDSprite;
-        image4.sprite = ListAchievements[3 + NumeroPage * 6].HUDSprite;
-        image5.sprite = ListAchievements[4 + NumeroPage * 6].HUDSprite;
-        image6.sprite = ListAchievements[5 + NumeroPage * 6].HUDSprite;
+        if (NumeroPage < 3)
+        {
+            image4.sprite = ListAchievements[3 + NumeroPage * 6].HUDSprite;
+            image5.sprite = ListAchievements[4 + NumeroPage * 6].HUDSprite;
+            image6.sprite = ListAchievements[5 + NumeroPage * 6].HUDSprite;
+        }
         AchievementsButton.SetActive(false);
         ContinueButton.SetActive(false);
         AchivementsContinueButton.SetActive(true);
@@ -66,21 +72,30 @@ public class EMD_AchievementsManager : MonoBehaviour
     {
         if (DialogueManagerScript.IsWriting == false)
         {
-            SelectedAchievement = ListAchievements[3 + NumeroPage * 6];
+            if (NumeroPage <= 3)
+            {
+                SelectedAchievement = ListAchievements[3 + NumeroPage * 6];
+            }
         }
     }
     public void Selected5()
     {
         if (DialogueManagerScript.IsWriting == false)
         {
-            SelectedAchievement = ListAchievements[4 + NumeroPage * 6];
+            if (NumeroPage <= 3)
+            {
+                SelectedAchievement = ListAchievements[4 + NumeroPage * 6];
+            }
         }
     }
     public void Selected6()
     {
         if (DialogueManagerScript.IsWriting == false)
         {
-            SelectedAchievement = ListAchievements[5 + NumeroPage * 6];
+            if (NumeroPage <= 3)
+            {
+                SelectedAchievement = ListAchievements[5 + NumeroPage * 6];
+            }
         }
     }
     public void PageSuivante()
@@ -89,12 +104,21 @@ public class EMD_AchievementsManager : MonoBehaviour
         {
             NumeroPage++;
             AfficherAchievements();
+            if (NumeroPage == 3)
+            {
+                Ach4.SetActive(false);
+                Ach5.SetActive(false);
+                Ach6.SetActive(false);
+            }
         }
     }
     public void PagePrecedente()
     {
         if (NumeroPage > 0)
         {
+            Ach4.SetActive(true);
+            Ach5.SetActive(true);
+            Ach6.SetActive(true);
             NumeroPage--;
             AfficherAchievements();
         }
