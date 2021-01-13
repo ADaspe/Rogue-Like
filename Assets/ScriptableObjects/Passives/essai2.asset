@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PassiveName: Essai 2
   PassiveDescription: Un bon passif
-  PassivePrice: 100
+  PassivePrice: 2700
   isUnlock: 0
   HUDSprite: {fileID: 1775444486983994093, guid: 2954d65e79c669b4bb41c7056f05f267,
     type: 3}
