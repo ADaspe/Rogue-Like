@@ -11,11 +11,13 @@ public class ELC_Enemy : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Transform playerTransform;
     private Animator enemyAnimator;
+    public GameObject Coins;
 
     [SerializeField]
     public int currentHealth;
     public float speed;
     private bool canMove = true;
+    public bool isDead;
     public bool isDashing;
     public float stopDashing;
     private float attackCooldown; // le cooldown entre chaque attaque
@@ -31,10 +33,10 @@ public class ELC_Enemy : MonoBehaviour
     public bool isDistanceAttacking;
     public bool isHit;
 
-    //private Material basicMat;
+    public Material basicMat;
     public Material dissolveMaterial;
     public Material getHitMaterial;
-    public float spawnDuration = 1;
+    public Material deathMaterial;
 
     private Vector3 currentDashDirection;
     private float currentDashDistance;
@@ -73,13 +75,13 @@ public class ELC_Enemy : MonoBehaviour
 
     void Start()
     {
-        //basicMat = spriteRenderer.material;
+        
         enemyCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyAnimator = GetComponent<Animator>();
         isTmpInvulnerable = false;
         dashCooldown = Time.time + enemyStats.DashCooldown;
-        //StartCoroutine("Spawn");
+        
         if (enemyStats != null)
         {
             currentHealth = enemyStats.MaxHealth;
@@ -92,6 +94,7 @@ public class ELC_Enemy : MonoBehaviour
         }
         
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        StartCoroutine("Spawn");
     }
 
 
@@ -100,7 +103,7 @@ public class ELC_Enemy : MonoBehaviour
         VerifyIfIsAtDistance();
         
 
-        if (!isStun)
+        if (!isStun && !isDead)
         {
             EnemyAttackCheck();
 
@@ -127,20 +130,19 @@ public class ELC_Enemy : MonoBehaviour
             }
         }
 
-        if (isDashing) Dash(currentDashDirection, currentDashTime, currentDashDistance);
+        if (isDashing && !isDead) Dash(currentDashDirection, currentDashTime, currentDashDistance);
 
         if (lastDirection.x > 0) spriteRenderer.flipX = true;
         else spriteRenderer.flipX = false;
     }
 
-    //IEnumerator Spawn()
-    //{
-    //    spriteRenderer.material = dissolveMaterial;
-    //    canMove = false;
-    //    yield return new WaitForSeconds(spawnDuration);
-    //    spriteRenderer.material = basicMat;
-    //    canMove = true;
-    //}
+    IEnumerator Spawn()
+    {
+        //StartCoroutine(ApplyShader(spawnDuration, dissolveMaterial));
+        canMove = false;
+        yield return new WaitForSeconds(enemyStats.SpawnTime);
+        canMove = true;
+    }
 
     void EnemyMoves(string EnemyPathBehaviour)
     {
@@ -472,7 +474,7 @@ public class ELC_Enemy : MonoBehaviour
 
     IEnumerator Stun(float time, bool invulnerable = false)
     {
-        //spriteRenderer.material = getHitMaterial;
+        
         canBeStun = false;
         if (invulnerable)
         {
@@ -488,11 +490,20 @@ public class ELC_Enemy : MonoBehaviour
             isTmpInvulnerable = false;
         }
         isStun = false;
-        //spriteRenderer.material = basicMat;
 
         yield return new WaitForSeconds(enemyStats.noStunTime);
         
         canBeStun = true;
+    }
+
+    IEnumerator ApplyShader(float time, Material mat)
+    {
+        //spriteRenderer.material = mat;
+        spriteRenderer.material.shader = mat.shader;
+        yield return new WaitForSeconds(time);
+        spriteRenderer.material = basicMat;
+        //spriteRenderer.material.shader = basicMat.shader;
+
     }
 
     IEnumerator HitSound()
@@ -503,7 +514,7 @@ public class ELC_Enemy : MonoBehaviour
     }
     public void GetHit(int Damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0, bool invulnerable = false)
     {
-        
+        //DropCoins(5);
         Debug.Log("Enemy hit");
         if (!isTmpInvulnerable && !isInvulnerable)
         {
@@ -529,8 +540,30 @@ public class ELC_Enemy : MonoBehaviour
                     achivement.AddDefeated();
                 }
             }
-            Destroy(this.gameObject);
+            StartCoroutine("Death");
             
+        }
+        //else StartCoroutine(ApplyShader(0.5f, getHitMaterial));
+    }
+
+    IEnumerator Death()
+    {
+        enemyCollider.enabled = false;
+        isDead = true;
+        //StartCoroutine(ApplyShader(enemyStats.DeathTime, deathMaterial));
+        //yield return new WaitForSeconds(enemyStats.DeathTime);
+        DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemyStats.MoneyEarnWhenDead);
+        Destroy(this.gameObject);
+        yield return null;
+    }
+
+    void DropCoins(int moneyValue)
+    {
+        int numberToDrop = Mathf.FloorToInt(moneyValue / Coins.GetComponent<ELC_Coins>().value);
+
+        for (int i = 0; i < numberToDrop; i++)
+        {
+            Instantiate(Coins, this.transform.position, Quaternion.identity);
         }
     }
 
