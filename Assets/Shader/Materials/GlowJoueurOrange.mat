@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GlowPerso
+  m_Name: GlowJoueurOrange
   m_Shader: {fileID: -6465566751694194690, guid: 464201b9ac606b04e9609d6811091b57,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA

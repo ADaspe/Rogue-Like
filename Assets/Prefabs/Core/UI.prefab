@@ -455,6 +455,7 @@ GameObject:
   - component: {fileID: 4456712452970152590}
   - component: {fileID: 6929214588892127516}
   - component: {fileID: 5404424062043896448}
+  - component: {fileID: 7025083434945753943}
   m_Layer: 5
   m_Name: Cadre Vie
   m_TagString: Untagged
@@ -518,6 +519,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &7025083434945753943
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3697431940064959086}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f4be11f175420a4ea40dd0c767a5a83, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3997206403108073080
 GameObject:
   m_ObjectHideFlags: 0
