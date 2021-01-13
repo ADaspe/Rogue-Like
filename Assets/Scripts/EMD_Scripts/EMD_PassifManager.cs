@@ -23,6 +23,7 @@ public class EMD_PassifManager : MonoBehaviour
     public Image image1;
     public Image image2;
     public Image image3;
+    public AudioSource achatSound;
 
 
     void Start()
@@ -116,6 +117,7 @@ public class EMD_PassifManager : MonoBehaviour
         {
             currentMoneyScript.currentMoney -= (int)SelectedPassive.PassivePrice;
             Debug.Log("acheté");
+            achatSound.Play();
             ELC_ObjectsInventory.ActivePassif = SelectedPassive;
         }
         else
