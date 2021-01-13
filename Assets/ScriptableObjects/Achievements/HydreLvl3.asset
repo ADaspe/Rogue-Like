@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   achievementName: Hydre Lvl 3
   achievementTier: 3
-  ennemyToDefeat: {fileID: 0}
+  ennemyToDefeat: {fileID: 2098346433007527121, guid: 4b4915f0c67061e45a7af3b85f8507c1,
+    type: 3}
   numberToDefeat: 7
   numberDefeated: 0
   isUnlocked: 0

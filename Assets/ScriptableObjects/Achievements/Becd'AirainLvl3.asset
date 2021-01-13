@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
-  m_Name: OiseauDeStymphaleLvl3
+  m_Name: Becd'AirainLvl3
   m_EditorClassIdentifier: 
-  achievementName: Oiseau de Stymphale Lvl 3
+  achievementName: Bec d'Airain Lvl 3
   achievementTier: 3
   ennemyToDefeat: {fileID: 3456645754019736586, guid: 690e085c5fac56248b4bf550d707dd5a,
     type: 3}
