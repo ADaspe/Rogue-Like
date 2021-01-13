@@ -10,6 +10,8 @@ public class ELC_EnemySO : ScriptableObject
 
     [Header("Health")]
     public int MaxHealth;
+    public float DeathTime;
+    public float SpawnTime = 1;
 
     [Header("Movements")]
     public float MovementSpeed;

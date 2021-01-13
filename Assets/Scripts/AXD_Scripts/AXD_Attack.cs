@@ -87,7 +87,7 @@ public class AXD_Attack : MonoBehaviour
             //Attack main target
             if (closestEnemy != null)
             {
-                CalculateReward(closestEnemy);
+                CalculateReward(closestEnemy, type);
                 if (type.Equals(AttackType.Swich.ToString()))
                 {
                     GameManager.GetComponent<ELC_TimeScale>().ScaleTime(playerStats.SwichSlowMotionValue, playerStats.SwichSlowMotionDuration);
@@ -109,7 +109,7 @@ public class AXD_Attack : MonoBehaviour
             {
                 foreach (ELC_Enemy enemy in colateralVictims)
                 {
-                    CalculateReward(enemy);
+                    CalculateReward(enemy, type);
                     //Debug.Log(enemy.name+" est une victime colatérale");
                     
                     if (type.Equals(AttackType.Swich.ToString()))
@@ -152,26 +152,27 @@ public class AXD_Attack : MonoBehaviour
         return totalDamage;
     }
 
-    private void CalculateReward(ELC_Enemy enemy)
+    private void CalculateReward(ELC_Enemy enemy, string type)
     {
         if (playerStats.CurrentCombo < playerStats.MaxCombo)
         {
             playerStats.CurrentCombo++;
             nextResetCombo = Time.time + playerStats.ComboResetTime;
         }
-        if (CalculateDamage(AttackType.Swich) >= enemy.currentHealth || CalculateDamage(AttackType.Sponk) >= enemy.currentHealth)
+        if ((type == "Swich" && CalculateDamage(AttackType.Swich) >= enemy.currentHealth) || (type == "Sponk" && CalculateDamage(AttackType.Sponk) >= enemy.currentHealth))
         {
             int moneyEarn = (int)(enemy.enemyStats.MoneyEarnWhenDead * playerStats.MoneyMultiplicatorPU);//Pour arrondir en int
             //playerMoney.AddMoney(moneyEarn);
-            playerInventory.GetComponent<ELC_ObjectsInventory>().AddMoneyToCrates(moneyEarn);
+            //playerInventory.GetComponent<ELC_ObjectsInventory>().AddMoneyToCrates(moneyEarn);
             playerHealth.AddStock(enemy.enemyStats.ambrosiaEarnedWhenDead);
+            Debug.Log("Death reward !");
         }
         else
         {
             int moneyEarn = (int)(enemy.enemyStats.MoneyEarnWhenHit * playerStats.MoneyMultiplicatorPU);
             //playerMoney.AddMoney( moneyEarn);
-            playerInventory.GetComponent<ELC_ObjectsInventory>().AddMoneyToCrates(moneyEarn);
-            Debug.Log("Death reward !");
+            //playerInventory.GetComponent<ELC_ObjectsInventory>().AddMoneyToCrates(moneyEarn);
+            
         }
     }
 }

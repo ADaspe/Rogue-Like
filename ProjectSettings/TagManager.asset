@@ -11,6 +11,8 @@ TagManager:
   - Collectible
   - GameManager
   - Crate
+  - NPC
+  - Coin
   layers:
   - Default
   - TransparentFX
