@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PassiveName: Fil D'Ares
   PassiveDescription: Le fils du dieu de la guerre
-  PassivePrice: 45
+  PassivePrice: 1400
   isUnlock: 0
   HUDSprite: {fileID: -476157149848039442, guid: 801b241746662c040b08daa4748bdfaa,
     type: 3}
