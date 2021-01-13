@@ -514,7 +514,7 @@ public class ELC_Enemy : MonoBehaviour
     }
     public void GetHit(int Damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0, bool invulnerable = false)
     {
-        
+        //DropCoins(5);
         Debug.Log("Enemy hit");
         if (!isTmpInvulnerable && !isInvulnerable)
         {

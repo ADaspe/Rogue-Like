@@ -12825,6 +12825,11 @@ PrefabInstance:
       propertyPath: SwitchChainSwlowMotionDuration
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 397678874362256133, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: SwichKnockbackDistance
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1107614495702916056, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_LocalPosition.x

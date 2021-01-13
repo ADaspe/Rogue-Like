@@ -141,8 +141,8 @@ MonoBehaviour:
   attractDistance: 2
   speed: 2
   value: 5
-  initialDropSpeed: 5
-  decreaseSpeedOnDrop: 0.05
+  initialDropSpeed: 7
+  decreaseSpeedOnDrop: 0.1
 --- !u!50 &3438627847694550344
 Rigidbody2D:
   serializedVersion: 4
