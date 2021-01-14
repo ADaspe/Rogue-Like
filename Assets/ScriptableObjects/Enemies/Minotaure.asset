@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Minotaure
   MaxHealth: 5000
+  DeathTime: 2
+  SpawnTime: 1
   MovementSpeed: 2
   EnemyPath: 0
   LimitDistanceToStay: 1

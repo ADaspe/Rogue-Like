@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Hoplite
   MaxHealth: 2000
   DeathTime: 2
-  SpawnTime: 5
+  SpawnTime: 1
   MovementSpeed: 3
   EnemyPath: 0
   LimitDistanceToStay: 1.2

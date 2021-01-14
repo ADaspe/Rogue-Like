@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Hydra
   MaxHealth: 10000
+  DeathTime: 1
+  SpawnTime: 1
   MovementSpeed: 0
   EnemyPath: 4
   LimitDistanceToStay: 0

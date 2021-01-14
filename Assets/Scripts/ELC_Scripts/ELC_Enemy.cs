@@ -21,6 +21,7 @@ public class ELC_Enemy : MonoBehaviour
     public bool isDead;
     public bool isDashing;
     public bool isSpawning;
+    public bool isDying;
     public float stopDashing;
     private float attackCooldown; // le cooldown entre chaque attaque
     public float dashCooldown; //Valable que pour les ennemis qui ont l'attaque de base + l'attaque à distance
@@ -78,7 +79,7 @@ public class ELC_Enemy : MonoBehaviour
 
     void Start()
     {
-        dissolveValue = 1;
+        dissolveValue = 0;
         passiveScript = FindObjectOfType<ELC_PassivesProperties>();
         enemyCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -109,6 +110,11 @@ public class ELC_Enemy : MonoBehaviour
         if(isSpawning) // pour le shader de spawn
         {
             dissolveValue += Time.deltaTime * 5 / enemyStats.SpawnTime;
+            spriteRenderer.material.SetFloat("_DissolveLevel", dissolveValue);
+        }
+        else if(isDying)
+        {
+            dissolveValue -= Time.deltaTime * 5 / enemyStats.DeathTime;
             spriteRenderer.material.SetFloat("_DissolveLevel", dissolveValue);
         }
 
@@ -563,6 +569,9 @@ public class ELC_Enemy : MonoBehaviour
 
     IEnumerator Death()
     {
+        Debug.Log("Oui");
+        isDying = true;
+        dissolveValue = 5;
         enemyCollider.enabled = false;
         isDead = true;
         StartCoroutine(ApplyShader(enemyStats.DeathTime, deathMaterial));

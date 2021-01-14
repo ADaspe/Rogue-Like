@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   MaxHealth: 4250
+  DeathTime: 1
+  SpawnTime: 1
   MovementSpeed: 5
   EnemyPath: 2
   LimitDistanceToStay: 6
