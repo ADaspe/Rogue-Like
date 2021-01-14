@@ -16,4 +16,5 @@ MonoBehaviour:
   PassiveDescription: Les ennemis ont des chances de drop des Power Ups
   PassivePrice: 0
   isUnlock: 0
-  HUDSprite: {fileID: 0}
+  HUDSprite: {fileID: 3575065135639279086, guid: d2d062ff307f81d4e836ccc9ea347700,
+    type: 3}
