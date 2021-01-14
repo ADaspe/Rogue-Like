@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: "App\xE9tit De Lycaron"
   m_EditorClassIdentifier: 
   PassiveName: "App\xE9tit De Lycaon"
-  PassivePrice: 0
-  HUDSprite: {fileID: 0}
+  PassiveDescription: Le bon toutou
+  PassivePrice: 2000
+  isUnlock: 0
+  HUDSprite: {fileID: 5906929228654268113, guid: d25e53161c58d994e93b90a17df06e39,
+    type: 3}

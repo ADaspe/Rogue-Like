@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Minotaure
   m_EditorClassIdentifier: 
   Name: Minotaure
-  MaxHealth: 35
+  MaxHealth: 5000
   MovementSpeed: 2
   EnemyPath: 0
   LimitDistanceToStay: 1
   NeedTimeToTurn: 1
   TurnSpeed: 1
-  EnemyWidth: 0
+  EnemyWidth: 3
   noStunTime: 0
   FriendlyFire: 0
   DistanceAttack: 0
@@ -51,8 +51,8 @@ MonoBehaviour:
   SpawnCooldown: 0
   NumberOfEntitiesToSpawn: 0
   EntitiesToSpawn: {fileID: 0}
-  MoneyEarnWhenHit: 25
-  MoneyEarnWhenDead: 200
+  MoneyEarnWhenHit: 5
+  MoneyEarnWhenDead: 30
   ambrosiaEarnedWhenDead: 0
   sprite: {fileID: 0}
   Animator: {fileID: 0}

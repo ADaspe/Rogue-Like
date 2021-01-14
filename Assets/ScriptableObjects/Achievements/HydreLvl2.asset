@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
+  m_Name: HydreLvl2
+  m_EditorClassIdentifier: 
+  achievementName: Hydre Lvl 2
+  achievementTier: 2
+  ennemyToDefeat: {fileID: 7470156072006172387, guid: 7e25a7f60c29ae94b8dc46dd02edc1c1,
+    type: 3}
+  numberToDefeat: 3
+  numberDefeated: 0
+  isUnlocked: 0
+  passifToUnlock: {fileID: 0}
+  achievementManager: {fileID: 0}
+  HUDSprite: {fileID: -476157149848039442, guid: 801b241746662c040b08daa4748bdfaa,
+    type: 3}

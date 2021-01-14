@@ -11,6 +11,9 @@ TagManager:
   - Collectible
   - GameManager
   - Crate
+  - NPC
+  - Coin
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -24,7 +27,7 @@ TagManager:
   - Obstacles
   - Enemies
   - Collectibles
-  - 
+  - Projectile
   - 
   - 
   - 

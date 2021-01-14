@@ -6,16 +6,19 @@ public class ELC_Enemy : MonoBehaviour
 {
     [SerializeField]
     public ELC_EnemySO enemyStats;
+    public ELC_PassivesProperties passiveScript;
 
     private Collider2D enemyCollider;
     private SpriteRenderer spriteRenderer;
     private Transform playerTransform;
     private Animator enemyAnimator;
+    public GameObject Coins;
 
     [SerializeField]
     public int currentHealth;
     public float speed;
     private bool canMove = true;
+    public bool isDead;
     public bool isDashing;
     public float stopDashing;
     private float attackCooldown; // le cooldown entre chaque attaque
@@ -31,6 +34,10 @@ public class ELC_Enemy : MonoBehaviour
     public bool isDistanceAttacking;
     public bool isHit;
 
+    public Material basicMat;
+    public Material dissolveMaterial;
+    public Material getHitMaterial;
+    public Material deathMaterial;
 
     private Vector3 currentDashDirection;
     private float currentDashDistance;
@@ -39,6 +46,7 @@ public class ELC_Enemy : MonoBehaviour
     private const float knockbackTime = 0.2f;
     public bool isStun;
     private bool canBeStun = true;
+    private bool stopDashDamage = false;
     public bool isTmpInvulnerable = false;
     public bool isInvulnerable = false;
     private bool isTouchingRight;
@@ -68,11 +76,13 @@ public class ELC_Enemy : MonoBehaviour
 
     void Start()
     {
+        passiveScript = FindObjectOfType<ELC_PassivesProperties>();
         enemyCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyAnimator = GetComponent<Animator>();
         isTmpInvulnerable = false;
         dashCooldown = Time.time + enemyStats.DashCooldown;
+        
         if (enemyStats != null)
         {
             currentHealth = enemyStats.MaxHealth;
@@ -85,6 +95,7 @@ public class ELC_Enemy : MonoBehaviour
         }
         
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        StartCoroutine("Spawn");
     }
 
 
@@ -93,7 +104,7 @@ public class ELC_Enemy : MonoBehaviour
         VerifyIfIsAtDistance();
         
 
-        if (!isStun)
+        if (!isStun && !isDead)
         {
             EnemyAttackCheck();
 
@@ -120,10 +131,18 @@ public class ELC_Enemy : MonoBehaviour
             }
         }
 
-        if (isDashing) Dash(currentDashDirection, currentDashTime, currentDashDistance);
+        if (isDashing && !isDead) Dash(currentDashDirection, currentDashTime, currentDashDistance);
 
         if (lastDirection.x > 0) spriteRenderer.flipX = true;
         else spriteRenderer.flipX = false;
+    }
+
+    IEnumerator Spawn()
+    {
+        //StartCoroutine(ApplyShader(spawnDuration, dissolveMaterial));
+        canMove = false;
+        yield return new WaitForSeconds(enemyStats.SpawnTime);
+        canMove = true;
     }
 
     void EnemyMoves(string EnemyPathBehaviour)
@@ -456,6 +475,7 @@ public class ELC_Enemy : MonoBehaviour
 
     IEnumerator Stun(float time, bool invulnerable = false)
     {
+        
         canBeStun = false;
         if (invulnerable)
         {
@@ -471,10 +491,20 @@ public class ELC_Enemy : MonoBehaviour
             isTmpInvulnerable = false;
         }
         isStun = false;
-        
+
         yield return new WaitForSeconds(enemyStats.noStunTime);
         
         canBeStun = true;
+    }
+
+    IEnumerator ApplyShader(float time, Material mat)
+    {
+        //spriteRenderer.material = mat;
+        spriteRenderer.material.shader = mat.shader;
+        yield return new WaitForSeconds(time);
+        spriteRenderer.material = basicMat;
+        //spriteRenderer.material.shader = basicMat.shader;
+
     }
 
     IEnumerator HitSound()
@@ -485,6 +515,7 @@ public class ELC_Enemy : MonoBehaviour
     }
     public void GetHit(int Damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0, bool invulnerable = false)
     {
+        //DropCoins(5);
         Debug.Log("Enemy hit");
         if (!isTmpInvulnerable && !isInvulnerable)
         {
@@ -510,8 +541,36 @@ public class ELC_Enemy : MonoBehaviour
                     achivement.AddDefeated();
                 }
             }
-            Destroy(this.gameObject);
+            StartCoroutine("Death");
             
+        }
+        //else StartCoroutine(ApplyShader(0.5f, getHitMaterial));
+    }
+
+    IEnumerator Death()
+    {
+        enemyCollider.enabled = false;
+        isDead = true;
+        //StartCoroutine(ApplyShader(enemyStats.DeathTime, deathMaterial));
+        //yield return new WaitForSeconds(enemyStats.DeathTime);
+        DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemyStats.MoneyEarnWhenDead);
+
+        if (passiveScript.ActualPassiveScriptableObject != null)
+        {
+            if (passiveScript.ActualPassiveScriptableObject.PassiveName == "Corne D'Abondance" && Random.Range(0, 101) < passiveScript.CorneAbondancePercentageChanceDropPowerUp) Instantiate(passiveScript.PowerUpsGenerator, this.transform.position, Quaternion.identity);
+            else if (passiveScript.ActualPassiveScriptableObject.PassiveName == "Faux De Chronos") FindObjectOfType<ELC_PowerUpManager>().StopFlow();
+        }
+        Destroy(this.gameObject);
+        yield return null;
+    }
+
+    void DropCoins(int moneyValue)
+    {
+        int numberToDrop = Mathf.FloorToInt(moneyValue / Coins.GetComponent<ELC_Coins>().value);
+
+        for (int i = 0; i < numberToDrop; i++)
+        {
+            Instantiate(Coins, this.transform.position, Quaternion.identity);
         }
     }
 
@@ -539,20 +598,25 @@ public class ELC_Enemy : MonoBehaviour
     private IEnumerator DashAttack()
     {
         Collider2D[] hitColliders = null;
+        
         bool hitPlayer = false;
-
-        while (Time.time >= stopDashing || hitPlayer == false)
+        if (!stopDashDamage)
         {
-            hitColliders = null;
-            hitColliders = Physics2D.OverlapBoxAll(this.transform.position + directionToDash.normalized * 0.5f, new Vector2(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth), Vector2.Angle(Vector2.up, directionToDash), LayerMask.GetMask("Player"));
-            if (hitColliders != null && hitColliders.Length > 0)
+            while (Time.time >= stopDashing || hitPlayer == false || !stopDashDamage)
             {
-                hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)enemyStats.DashStrenght);
-                Debug.Log("Dash Hit");
-                hitPlayer = true;
+                hitColliders = null;
+                hitColliders = Physics2D.OverlapBoxAll(this.transform.position + directionToDash.normalized * 0.5f, new Vector2(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth), Vector2.Angle(Vector2.up, directionToDash), LayerMask.GetMask("Player"));
+                if (hitColliders != null && hitColliders.Length > 0)
+                {
+                    hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)enemyStats.DashStrenght);
+                    Debug.Log("Dash Hit");
+                    hitPlayer = true;
+                    stopDashDamage = true;
+                }
+                yield return null;
             }
-            yield return null;
         }
+        stopDashDamage = false;
     }
 
 

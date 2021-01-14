@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Hoplite
   MaxHealth: 2000
+  DeathTime: 2
+  SpawnTime: 1
   MovementSpeed: 3
   EnemyPath: 0
   LimitDistanceToStay: 1.2
   NeedTimeToTurn: 0
   TurnSpeed: 0
-  EnemyWidth: 1
+  EnemyWidth: 3.5
   noStunTime: 1
   FriendlyFire: 0
   DistanceAttack: 0
@@ -42,13 +44,17 @@ MonoBehaviour:
   DashStrenght: 0
   DashStun: 0
   DashColliderWidth: 0
+  DashAndCorpseAttack: 0
+  DashCooldown: 0
+  MinDistanceToTriggerDash: 0
+  MaxDistanceToTriggerDash: 0
   SpawnEntitiesRegulary: 0
   SpawnEntitiesAtDeath: 0
   SpawnCooldown: 0
   NumberOfEntitiesToSpawn: 0
   EntitiesToSpawn: {fileID: 0}
-  MoneyEarnWhenHit: 35
-  MoneyEarnWhenDead: 125
+  MoneyEarnWhenHit: 5
+  MoneyEarnWhenDead: 20
   ambrosiaEarnedWhenDead: 10
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   Animator: {fileID: 0}

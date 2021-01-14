@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c99466daf154f84ea59a9527c63b153, type: 3}
   m_Name: essai2
   m_EditorClassIdentifier: 
-  PassiveName: "App\xE9tit De Lycaon"
-  PassivePrice: 0
-  HUDSprite: {fileID: 0}
+  PassiveName: Essai 2
+  PassiveDescription: Un bon passif
+  PassivePrice: 2700
+  isUnlock: 0
+  HUDSprite: {fileID: 1775444486983994093, guid: 2954d65e79c669b4bb41c7056f05f267,
+    type: 3}

@@ -97,9 +97,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: d3c1881bd3ea3284fa2422f149df54bd, type: 2}
+  Coins: {fileID: 3438627847694550386, guid: df331dfca8d120d408a7b692cef7d637, type: 3}
   currentHealth: 0
+  speed: 0
+  isDead: 0
+  isDashing: 0
+  stopDashing: 0
+  dashCooldown: 0
+  canDashAttack: 0
   movesTowardPlayer: {x: 0, y: 0, z: 0}
+  isAttacking: 0
+  isDistanceAttacking: 0
+  isHit: 0
+  basicMat: {fileID: 0}
+  dissolveMaterial: {fileID: 2100000, guid: 516b86d5c836f83458f383ef44b5fea3, type: 2}
+  getHitMaterial: {fileID: 0}
+  deathMaterial: {fileID: 0}
   isStun: 0
+  isTmpInvulnerable: 0
   isInvulnerable: 0
   isTouchingSomething: 0
   canSeePlayer: 0
@@ -107,6 +122,7 @@ MonoBehaviour:
   obstaclesLayerMask:
     serializedVersion: 2
     m_Bits: 512
+  distanceToStay: 0
 --- !u!61 &8299163185299727935
 BoxCollider2D:
   m_ObjectHideFlags: 0

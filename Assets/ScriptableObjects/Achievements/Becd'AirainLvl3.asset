@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
+  m_Name: Becd'AirainLvl3
+  m_EditorClassIdentifier: 
+  achievementName: Bec d'Airain Lvl 3
+  achievementTier: 3
+  ennemyToDefeat: {fileID: 3456645754019736586, guid: 690e085c5fac56248b4bf550d707dd5a,
+    type: 3}
+  numberToDefeat: 150
+  numberDefeated: 0
+  isUnlocked: 0
+  passifToUnlock: {fileID: 0}
+  achievementManager: {fileID: 0}
+  HUDSprite: {fileID: 5906929228654268113, guid: d25e53161c58d994e93b90a17df06e39,
+    type: 3}

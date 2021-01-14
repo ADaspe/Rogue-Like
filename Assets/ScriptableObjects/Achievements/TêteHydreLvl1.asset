@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
+  m_Name: "T\xEAteHydreLvl1"
+  m_EditorClassIdentifier: 
+  achievementName: "T\xEAte d'Hydre Lvl 1"
+  achievementTier: 1
+  ennemyToDefeat: {fileID: 2253084279791419850, guid: 51fd13485ecb443498e36ea6aa23a574,
+    type: 3}
+  numberToDefeat: 5
+  numberDefeated: 0
+  isUnlocked: 0
+  passifToUnlock: {fileID: 0}
+  achievementManager: {fileID: 0}
+  HUDSprite: {fileID: -5741717483247419182, guid: 70c989a94c01ef5469dabb5e2b5e5da2,
+    type: 3}
