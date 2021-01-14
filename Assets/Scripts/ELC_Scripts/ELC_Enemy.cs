@@ -139,7 +139,7 @@ public class ELC_Enemy : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        //StartCoroutine(ApplyShader(spawnDuration, dissolveMaterial));
+        //StartCoroutine(ApplyShader(enemyStats.SpawnTime, dissolveMaterial));
         canMove = false;
         yield return new WaitForSeconds(enemyStats.SpawnTime);
         canMove = true;
@@ -345,6 +345,8 @@ public class ELC_Enemy : MonoBehaviour
     private IEnumerator Attack(bool isDashing = false)
     {
         enemyAnimator.SetBool("IsPreparingForAttack", true);
+        if(isDashing) enemyAnimator.SetBool("DashAttack", true);
+        else enemyAnimator.SetBool("BasicAttack", true);
         yield return new WaitForSeconds(enemyStats.WaitBeforeAttack);
         //Debug.Log(enemyStats.name + " attaque !");
         enemyAnimator.SetBool("IsPreparingForAttack", false);
@@ -367,6 +369,8 @@ public class ELC_Enemy : MonoBehaviour
         if (enemyStats.DashAndCorpseAttack && isDashing) yield return new WaitForSeconds(enemyStats.DashTime);
         else yield return new WaitForSeconds(enemyStats.AttackAnimationTime);
         enemyAnimator.SetBool("IsAttacking", false);
+        if (isDashing) enemyAnimator.SetBool("DashAttack", false);
+        else enemyAnimator.SetBool("BasicAttack", false);
         isAttacking = false;
         isDistanceAttacking = false;
     }
@@ -499,8 +503,8 @@ public class ELC_Enemy : MonoBehaviour
 
     IEnumerator ApplyShader(float time, Material mat)
     {
-        //spriteRenderer.material = mat;
-        spriteRenderer.material.shader = mat.shader;
+        spriteRenderer.material = mat;
+        //spriteRenderer.material.shader = mat.shader;
         yield return new WaitForSeconds(time);
         spriteRenderer.material = basicMat;
         //spriteRenderer.material.shader = basicMat.shader;

@@ -230,16 +230,6 @@ PrefabInstance:
       propertyPath: InventoryScript
       value: 
       objectReference: {fileID: 8969764475921178503}
-    - target: {fileID: 6055657034655676927, guid: c582c890f15ac5345a4f3c531ee31b90,
-        type: 3}
-      propertyPath: LycaonMainEnemyHeal
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6055657034655676927, guid: c582c890f15ac5345a4f3c531ee31b90,
-        type: 3}
-      propertyPath: LycaonCollateralEnemyHeal
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6115952892813048268, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: moneycount
