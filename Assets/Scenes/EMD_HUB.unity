@@ -9460,6 +9460,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: EMD_MenuScene
       objectReference: {fileID: 0}
+    - target: {fileID: 145596053270668010, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
+      objectReference: {fileID: 0}
     - target: {fileID: 151966779401909424, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9489,6 +9494,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 475869937773686117, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
       objectReference: {fileID: 0}
     - target: {fileID: 537839604482878246, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -9609,6 +9619,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Core
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282607825486242569, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538304156364572868, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538304156364572868, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_ForceModuleActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1705904875442709084, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -10206,10 +10231,25 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3396445421022565156, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
+      objectReference: {fileID: 0}
+    - target: {fileID: 3556972691700798046, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
+      objectReference: {fileID: 0}
     - target: {fileID: 3638685505228750631, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724478063161707427, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
       objectReference: {fileID: 0}
     - target: {fileID: 3729842993791577614, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -10381,6 +10421,11 @@ PrefabInstance:
       propertyPath: QuitButton
       value: 
       objectReference: {fileID: 162887042}
+    - target: {fileID: 4352583628519404012, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
+      objectReference: {fileID: 0}
     - target: {fileID: 4556650331774823419, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -10440,6 +10485,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_margin.w
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913433207710321752, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
       objectReference: {fileID: 0}
     - target: {fileID: 6022246145414444388, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -10810,6 +10860,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298018300330734790, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
       objectReference: {fileID: 0}
     - target: {fileID: 8449903965630584760, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
