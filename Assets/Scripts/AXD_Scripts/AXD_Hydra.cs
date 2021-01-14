@@ -34,7 +34,6 @@ public class AXD_Hydra : MonoBehaviour
     {
         if(Time.time >= timeToChangeStrat && timeToChangeStrat > 0)
         {
-            Debug.Log("Change Start");
             ChangeStratRandom();
         }
 
@@ -140,7 +139,6 @@ public class AXD_Hydra : MonoBehaviour
         foreach(AXD_HydraHead head in heads)
         {
             ran = Mathf.RoundToInt(Random.Range(0, 3));
-            Debug.Log("Ran : " + ran);
             switch (ran)
             {
                 case 0:
