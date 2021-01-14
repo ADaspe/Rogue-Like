@@ -22,6 +22,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     public Material blueMat;
     public Material orangeMat;
     public Material pinkMat;
+    public float glowTime;
 
 
 
@@ -311,11 +312,11 @@ public class ELC_PlayerMoves : MonoBehaviour
                     {
                         case ELC_PlayerStatManager.Chain.Orange:
                             Debug.Log("Orange Material");
-                            StartCoroutine(ApplyShader(0.1f,orangeMat));
+                            StartCoroutine(ApplyShader(glowTime,orangeMat));
                             break;
                         case ELC_PlayerStatManager.Chain.Red:
                             Debug.Log("Pink Material");
-                            StartCoroutine(ApplyShader(0.1f, pinkMat));
+                            StartCoroutine(ApplyShader(glowTime, pinkMat));
                             break;
                     }
                 }
