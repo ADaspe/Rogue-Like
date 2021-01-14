@@ -15,7 +15,7 @@ MonoBehaviour:
   PassiveName: Egide
   PassiveDescription: "L'attaque de taille a 70% de chance de d\xE9truire les projectiles
     et 30% de les renvoyer"
-  PassivePrice: 0
+  PassivePrice: 2750
   isUnlock: 0
   HUDSprite: {fileID: 4141919740282896512, guid: d2d062ff307f81d4e836ccc9ea347700,
     type: 3}
