@@ -106,12 +106,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPhase: 0
   stats: {fileID: 11400000, guid: b5a764cff37b15543962426e3fc54140, type: 2}
-  headPrefab: {fileID: 5317746332933155564, guid: a382834fe291a9c4db21602cb4e6543e,
+  head1Prefab: {fileID: 5317746332933155564, guid: cfab9a84001e22d42afb3ffda1f2f0da,
+    type: 3}
+  head2Prefab: {fileID: 5317746332933155564, guid: 8e424bc7b9f2f904197a5fe8c11b1a5f,
+    type: 3}
+  head3Prefab: {fileID: 5317746332933155564, guid: aff26d884bb9dba4abab2fbde2b18e4e,
+    type: 3}
+  head4Prefab: {fileID: 5317746332933155564, guid: 5b6d22ba65ab74f49ba738fc409e680a,
     type: 3}
   heads: []
   spawnPoints:
   - {fileID: 0}
   enemy: {fileID: 0}
+  distances:
+  - 4
+  - 0.75
+  - 6
+  timeToChangeStrat: 0
   timeToBeVulnerable: 0
   headsToSpawn: 0
   maxHealthHead: 5000
@@ -158,11 +169,16 @@ MonoBehaviour:
   enemyStats: {fileID: 11400000, guid: a373fa2f6700a08438102f9bef885a03, type: 2}
   currentHealth: 0
   speed: 0
+  isDashing: 0
+  stopDashing: 0
+  dashCooldown: 0
+  canDashAttack: 0
   movesTowardPlayer: {x: 0, y: 0, z: 0}
   isAttacking: 0
   isDistanceAttacking: 0
   isHit: 0
   isStun: 0
+  isTmpInvulnerable: 0
   isInvulnerable: 0
   isTouchingSomething: 0
   canSeePlayer: 0
