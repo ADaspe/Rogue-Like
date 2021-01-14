@@ -67,7 +67,7 @@ public class AXD_Attack : MonoBehaviour
                     colateralVictims.Add(tempEnemy);
                 }
 
-                    GameObject vfx = Instantiate(hitVFX, enemy.transform);
+                GameObject vfx = Instantiate(hitVFX, enemy.gameObject.transform);
                 if (type.Equals(AttackType.Sponk.ToString())) vfx.GetComponent<ELC_HitVFX>().attackType = "Sponk";
                 else vfx.GetComponent<ELC_HitVFX>().attackType = "Swich";
 
