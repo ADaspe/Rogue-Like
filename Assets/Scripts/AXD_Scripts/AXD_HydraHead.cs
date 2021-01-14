@@ -17,10 +17,6 @@ public class AXD_HydraHead : MonoBehaviour
 
         enemyScript = GetComponent<ELC_Enemy>();
         //enemyScript.enemyStats = headStats;
-        if(headStats == null)
-        {
-            Debug.Log("C'est la merde chef");
-        }
         enemyScript.currentHealth = enemyScript.enemyStats.MaxHealth;
         enemyScript.speed = enemyScript.enemyStats.MovementSpeed;
         enemyScript.distanceToStay = enemyScript.enemyStats.LimitDistanceToStay;
@@ -29,7 +25,6 @@ public class AXD_HydraHead : MonoBehaviour
 
     public void Charge()
     {
-        Debug.Log("Charge !");
         headStats.EnemyPath = ELC_EnemySO.PathBehaviour.FollowPlayer;
         headStats.DistanceAttack = false;
         headStats.CloseCombatAttack = false;
@@ -39,7 +34,6 @@ public class AXD_HydraHead : MonoBehaviour
 
     public void Attack()
     {
-        Debug.Log("Attack !");
         headStats.EnemyPath = ELC_EnemySO.PathBehaviour.FollowPlayer;
         headStats.DistanceAttack = false;
         headStats.CloseCombatAttack = true;
@@ -49,7 +43,6 @@ public class AXD_HydraHead : MonoBehaviour
 
     public void Shoot()
     {
-        Debug.Log("Shoot !");
         headStats.EnemyPath = ELC_EnemySO.PathBehaviour.StayAtDistance;
         headStats.DistanceAttack = true;
         headStats.CloseCombatAttack = false;
@@ -66,14 +59,4 @@ public class AXD_HydraHead : MonoBehaviour
     {
         hydra.LoseHead(this);
     }
-    /*public void GetHit(int damage, Vector3 directionToFlee, float knockbackDistance = 0, float stunTime = 0, bool invulnerable = false)
-    {
-        enemyScript.currentHealth -= damage;
-        Debug.Log("Head : Ouch !");
-        if(enemyScript.currentHealth <= 0)
-        {
-            Destroy(this);
-        }
-
-    }*/
 }
