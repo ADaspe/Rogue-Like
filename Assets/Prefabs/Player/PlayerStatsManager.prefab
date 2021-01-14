@@ -63,7 +63,7 @@ MonoBehaviour:
   SponkDashTime: 0.15
   SwichAttackRate: 4
   SponkAttackRate: 0.5
-  SwichKnockbackDistance: 1
+  SwichKnockbackDistance: 1.5
   SwichStunTime: 0.7
   SwichSlowMotionValue: 0.4
   SwichSlowMotionDuration: 0.2

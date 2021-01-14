@@ -16,3 +16,5 @@ MonoBehaviour:
   level: 1
   multiplicator: 2
   duration: 20
+  HUDSprite: {fileID: 2357910575680116264, guid: dd25c52f422edcb4b89596e7b684b173,
+    type: 3}

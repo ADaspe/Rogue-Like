@@ -102,7 +102,7 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     private void Update()
     {
-        if (!isInMenu)
+        if (!isInMenu && !playerHealth.isDead)
         {
             if (Time.time >= timeToResetChain && playerStats.currentChain != ELC_PlayerStatManager.Chain.Blue)
             {
@@ -332,12 +332,22 @@ public class ELC_PlayerMoves : MonoBehaviour
             canMove = true;
             canTurn = true;
         }
-        else
-        {
-            playerSpriteRenderer.enabled = false;
-            gameManager.GetComponent<ELC_TimeScale>().PauseGame();
-            FindObjectOfType<ELC_ObjectsInventory>().TransferMoney(true);
-        }
+        //else
+        //{
+        //    playerSpriteRenderer.enabled = false;
+        //    gameManager.GetComponent<ELC_TimeScale>().PauseGame();
+        //    FindObjectOfType<ELC_ObjectsInventory>().TransferMoney(true);
+        //}
+    }
+
+    public IEnumerator Death(float time)
+    {
+        playerAnimator.SetBool("isDead", true);
+        canMove = false;
+        yield return new WaitForSeconds(time);
+        playerSpriteRenderer.enabled = false;
+        gameManager.GetComponent<ELC_TimeScale>().PauseGame();
+        FindObjectOfType<ELC_ObjectsInventory>().TransferMoney(true);
     }
     IEnumerator ApplyShader(float time, Material mat)
     {

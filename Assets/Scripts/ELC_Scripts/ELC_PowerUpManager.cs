@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ELC_PowerUpManager : MonoBehaviour
 {
     public List<GameObject> PowerUps = new List<GameObject>();
     public ELC_PlayerStatManager playerStatsScript;
+    public GameObject PowerUpsDisplay;
 
     public bool FauxDeChronos;
     public bool StopPUFlow;
@@ -13,7 +15,16 @@ public class ELC_PowerUpManager : MonoBehaviour
 
     [SerializeField]
     private List<float> durations = new List<float>();
-    
+
+    public List<GameObject> PUEmplacementsUI;
+
+    private void Start()
+    {
+        for (int i = 0; i < PowerUpsDisplay.transform.childCount; i++)
+        {
+            PUEmplacementsUI.Add(PowerUpsDisplay.transform.GetChild(i).gameObject);
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -28,12 +39,17 @@ public class ELC_PowerUpManager : MonoBehaviour
                     DeletePowerUp(i);
                     return;
                 }
-                else if(!StopPUFlow)
+                else 
                 {
-                    PowerUps[i].GetComponent<ELC_PowerUpProperties>().LifeDuration -= Time.deltaTime;
-                    durations[i] = PowerUps[i].GetComponent<ELC_PowerUpProperties>().LifeDuration;
-                    //Debug.Log(PU.LifeDuration);
-                    ApplyPowerUp(PowerUps[i]);
+                    if (!StopPUFlow)
+                    {
+                        PowerUps[i].GetComponent<ELC_PowerUpProperties>().LifeDuration -= Time.deltaTime;
+                        durations[i] = PowerUps[i].GetComponent<ELC_PowerUpProperties>().LifeDuration;
+                        //Debug.Log(PU.LifeDuration);
+                        ApplyPowerUp(PowerUps[i]);
+                    }
+                    PUEmplacementsUI[i].SetActive(true);
+                    PUEmplacementsUI[i].GetComponent<Image>().sprite = PowerUps[i].GetComponent<ELC_PowerUpProperties>().PowerUpSO.HUDSprite;
                 }
             }
         }
@@ -51,7 +67,7 @@ public class ELC_PowerUpManager : MonoBehaviour
     private void DeletePowerUp(int index)
     {
         ELC_PowerUpSO PUSO = PowerUps[index].GetComponent<ELC_PowerUpProperties>().PowerUpSO;
-
+        PUEmplacementsUI[index].SetActive(false);
 
         if (PUSO.type == ELC_PowerUpSO.Type.Attack) playerStatsScript.AttackMultiplicatorPU = 1;
         else if (PUSO.type == ELC_PowerUpSO.Type.Heal) playerStatsScript.DefenseMultiplicatorPU = 1;

@@ -20,6 +20,7 @@ public class ELC_Enemy : MonoBehaviour
     private bool canMove = true;
     public bool isDead;
     public bool isDashing;
+    public bool isSpawning;
     public float stopDashing;
     private float attackCooldown; // le cooldown entre chaque attaque
     public float dashCooldown; //Valable que pour les ennemis qui ont l'attaque de base + l'attaque à distance
@@ -38,6 +39,7 @@ public class ELC_Enemy : MonoBehaviour
     public Material dissolveMaterial;
     public Material getHitMaterial;
     public Material deathMaterial;
+    private float dissolveValue = 1;
 
     private Vector3 currentDashDirection;
     private float currentDashDistance;
@@ -76,6 +78,7 @@ public class ELC_Enemy : MonoBehaviour
 
     void Start()
     {
+        dissolveValue = -1;
         passiveScript = FindObjectOfType<ELC_PassivesProperties>();
         enemyCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -103,6 +106,11 @@ public class ELC_Enemy : MonoBehaviour
     {
         VerifyIfIsAtDistance();
         
+        if(isSpawning) // pour le shader de spawn
+        {
+            dissolveValue += Time.deltaTime * 2 / enemyStats.SpawnTime;
+            spriteRenderer.material.SetFloat("_DissolveLevel", dissolveValue);
+        }
 
         if (!isStun && !isDead)
         {
@@ -139,10 +147,12 @@ public class ELC_Enemy : MonoBehaviour
 
     IEnumerator Spawn()
     {
-        //StartCoroutine(ApplyShader(spawnDuration, dissolveMaterial));
+        isSpawning = true;
+        StartCoroutine(ApplyShader(enemyStats.SpawnTime, dissolveMaterial));
         canMove = false;
         yield return new WaitForSeconds(enemyStats.SpawnTime);
         canMove = true;
+        isSpawning = false;
     }
 
     void EnemyMoves(string EnemyPathBehaviour)
@@ -345,6 +355,8 @@ public class ELC_Enemy : MonoBehaviour
     private IEnumerator Attack(bool isDashing = false)
     {
         enemyAnimator.SetBool("IsPreparingForAttack", true);
+        if(isDashing) enemyAnimator.SetBool("DashAttack", true);
+        else enemyAnimator.SetBool("BasicAttack", true);
         yield return new WaitForSeconds(enemyStats.WaitBeforeAttack);
         //Debug.Log(enemyStats.name + " attaque !");
         enemyAnimator.SetBool("IsPreparingForAttack", false);
@@ -367,6 +379,8 @@ public class ELC_Enemy : MonoBehaviour
         if (enemyStats.DashAndCorpseAttack && isDashing) yield return new WaitForSeconds(enemyStats.DashTime);
         else yield return new WaitForSeconds(enemyStats.AttackAnimationTime);
         enemyAnimator.SetBool("IsAttacking", false);
+        if (isDashing) enemyAnimator.SetBool("DashAttack", false);
+        else enemyAnimator.SetBool("BasicAttack", false);
         isAttacking = false;
         isDistanceAttacking = false;
     }
@@ -499,8 +513,8 @@ public class ELC_Enemy : MonoBehaviour
 
     IEnumerator ApplyShader(float time, Material mat)
     {
-        //spriteRenderer.material = mat;
-        spriteRenderer.material.shader = mat.shader;
+        spriteRenderer.material = mat;
+        //spriteRenderer.material.shader = mat.shader;
         yield return new WaitForSeconds(time);
         spriteRenderer.material = basicMat;
         //spriteRenderer.material.shader = basicMat.shader;
@@ -544,15 +558,15 @@ public class ELC_Enemy : MonoBehaviour
             StartCoroutine("Death");
             
         }
-        //else StartCoroutine(ApplyShader(0.5f, getHitMaterial));
+        else StartCoroutine(ApplyShader(0.5f, getHitMaterial));
     }
 
     IEnumerator Death()
     {
         enemyCollider.enabled = false;
         isDead = true;
-        //StartCoroutine(ApplyShader(enemyStats.DeathTime, deathMaterial));
-        //yield return new WaitForSeconds(enemyStats.DeathTime);
+        StartCoroutine(ApplyShader(enemyStats.DeathTime, deathMaterial));
+        yield return new WaitForSeconds(enemyStats.DeathTime);
         DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemyStats.MoneyEarnWhenDead);
 
         if (passiveScript.ActualPassiveScriptableObject != null)

@@ -58,7 +58,11 @@ public class ELC_PickupItems : MonoBehaviour
         {
             if(Type == CollectibleTypes.Object) ObjectsInv.AddObject(Object);
 
-            if (Type == CollectibleTypes.PowerUp ) PUManager.AddPowerUp(PowerUp);
+            if (Type == CollectibleTypes.PowerUp)
+            {
+                PUManager.AddPowerUp(PowerUp);
+                this.GetComponent<SpriteRenderer>().sprite = PowerUp.GetComponent<ELC_PowerUpProperties>().PowerUpSO.HUDSprite;
+            }
 
             if (Type == CollectibleTypes.Passive) ELC_ObjectsInventory.ActivePassif = Passive;
 
