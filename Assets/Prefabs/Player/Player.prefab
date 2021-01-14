@@ -313,8 +313,14 @@ MonoBehaviour:
   playerStats: {fileID: 782464527650891043}
   playerHealth: {fileID: 8934949276138899172}
   attack: {fileID: 1478753435661380681}
+  passiveManagerScript: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   gameManager: {fileID: 0}
   isInMenu: 0
+  defaultMat: {fileID: 0}
+  blueMat: {fileID: 0}
+  orangeMat: {fileID: 0}
+  pinkMat: {fileID: 0}
   DashParticles: {fileID: 7084529617503343625}
   bodyHitMask:
     serializedVersion: 2
@@ -337,6 +343,9 @@ MonoBehaviour:
   currentTime: 0
   timeToResetChain: 0
   attackLanded: 0
+  DonAtalante: 0
+  DonAtalanteSpeedAdd: 0
+  BottesHermes: 0
 --- !u!114 &1478753435661380681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,6 +368,7 @@ MonoBehaviour:
   AppetitDeLycaonIsActive: 0
   AppetitDeLycaonHealPerEnemies: 0
   AppetitDeLycaonHealPerCollateral: 0
+  Egide: 0
   nextResetCombo: 0
 --- !u!114 &8934949276138899172
 MonoBehaviour:
@@ -2485,6 +2495,11 @@ PrefabInstance:
         type: 3}
       propertyPath: healingRate
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: SponkKnockbackDistance
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6958aa080a4c5439913b983ac56050, type: 3}

@@ -15,8 +15,15 @@ public class ELC_PlayerMoves : MonoBehaviour
     public PlayerHealth playerHealth;
     public AXD_Attack attack;
     public ELC_PassivesProperties passiveManagerScript;
+    public SpriteRenderer spriteRenderer;
     public GameObject gameManager;
     public bool isInMenu = false;
+    public Material defaultMat;
+    public Material blueMat;
+    public Material orangeMat;
+    public Material pinkMat;
+
+
 
     [SerializeField]
     private GameObject DashParticles;
@@ -89,6 +96,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         playerAnimator.SetFloat("DirectionAxeY", -1);
         DashParticles.GetComponent<ParticleSystem>().Stop();
         passiveManagerScript = FindObjectOfType<ELC_PassivesProperties>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         ResetChain();
     }
 
@@ -299,6 +307,17 @@ public class ELC_PlayerMoves : MonoBehaviour
                 {
                     gameManager.GetComponent<ELC_TimeScale>().ScaleTime(playerStats.SwitchChainSlowMotionValue, playerStats.SwitchChainSlowMotionDuration);
                     playerStats.currentChain++;
+                    switch (playerStats.currentChain)
+                    {
+                        case ELC_PlayerStatManager.Chain.Orange:
+                            Debug.Log("Orange Material");
+                            StartCoroutine(ApplyShader(50f,orangeMat));
+                            break;
+                        case ELC_PlayerStatManager.Chain.Red:
+                            Debug.Log("Pink Material");
+                            StartCoroutine(ApplyShader(50f, pinkMat));
+                            break;
+                    }
                 }
                 attackLanded = false;
             }
@@ -320,7 +339,15 @@ public class ELC_PlayerMoves : MonoBehaviour
             FindObjectOfType<ELC_ObjectsInventory>().TransferMoney(true);
         }
     }
+    IEnumerator ApplyShader(float time, Material mat)
+    {
+        //spriteRenderer.material = mat;
+        spriteRenderer.material.shader = mat.shader;
+        yield return new WaitForSeconds(time);
+        spriteRenderer.material = defaultMat;
+        //spriteRenderer.material.shader = basicMat.shader;
 
+    }
     public void StopAnimation(string name)
     {
         playerAnimator.SetBool(name, false);

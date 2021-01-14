@@ -37,7 +37,6 @@ public class AXD_Hydra : MonoBehaviour
             ChangeStratRandom();
         }
 
-
         if (!enemy.isInvulnerable)
         {
             VulnerablePhase();
@@ -146,9 +145,6 @@ public class AXD_Hydra : MonoBehaviour
                     break;
                 case 1:
                     head.Shoot();
-                    break;
-                case 2:
-                    head.Attack();
                     break;
             }
         }
