@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: "Arch\xE9"
   MaxHealth: 1000
+  DeathTime: 1
+  SpawnTime: 1
   MovementSpeed: 3
   EnemyPath: 0
   LimitDistanceToStay: 5

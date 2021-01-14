@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Oiso
   MaxHealth: 700
-  DeathTime: 0
+  DeathTime: 1
   SpawnTime: 1
   MovementSpeed: 3
   EnemyPath: 0

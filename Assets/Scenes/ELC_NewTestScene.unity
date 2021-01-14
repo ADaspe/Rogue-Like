@@ -968,31 +968,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 2289528245598647198, guid: 0e5bb8edd80cd77489edfc726525c6f9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2289528245598647198, guid: 0e5bb8edd80cd77489edfc726525c6f9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2289528245598647198, guid: 0e5bb8edd80cd77489edfc726525c6f9,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2289528245598647198, guid: 0e5bb8edd80cd77489edfc726525c6f9,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2289528245598647198, guid: 0e5bb8edd80cd77489edfc726525c6f9,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2289528245598647199, guid: 0e5bb8edd80cd77489edfc726525c6f9,
         type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
@@ -1043,12 +1018,6 @@ PrefabInstance:
       propertyPath: Type
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2289528245598647201, guid: 0e5bb8edd80cd77489edfc726525c6f9,
-        type: 3}
-      propertyPath: PowerUp
-      value: 
-      objectReference: {fileID: 1860452410747611866, guid: 441fb169c3471264288ba1618e66546f,
-        type: 3}
     - target: {fileID: 2289528245598647201, guid: 0e5bb8edd80cd77489edfc726525c6f9,
         type: 3}
       propertyPath: chooseRandomPowerUp
@@ -11232,16 +11201,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2289528245598647198, guid: 0e5bb8edd80cd77489edfc726525c6f9,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2289528245598647198, guid: 0e5bb8edd80cd77489edfc726525c6f9,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2289528245598647199, guid: 0e5bb8edd80cd77489edfc726525c6f9,
         type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
@@ -11294,14 +11253,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2289528245598647201, guid: 0e5bb8edd80cd77489edfc726525c6f9,
         type: 3}
-      propertyPath: PowerUp
-      value: 
-      objectReference: {fileID: 7391949015416354207, guid: f9b5e39cf03dc9646a77d7e0d7ae5674,
-        type: 3}
-    - target: {fileID: 2289528245598647201, guid: 0e5bb8edd80cd77489edfc726525c6f9,
-        type: 3}
       propertyPath: chooseRandomPowerUp
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2289528245598647202, guid: 0e5bb8edd80cd77489edfc726525c6f9,
         type: 3}
