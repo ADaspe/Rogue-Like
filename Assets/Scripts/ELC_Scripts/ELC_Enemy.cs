@@ -6,6 +6,7 @@ public class ELC_Enemy : MonoBehaviour
 {
     [SerializeField]
     public ELC_EnemySO enemyStats;
+    public ELC_PassivesProperties passiveScript;
 
     private Collider2D enemyCollider;
     private SpriteRenderer spriteRenderer;
@@ -75,7 +76,7 @@ public class ELC_Enemy : MonoBehaviour
 
     void Start()
     {
-        
+        passiveScript = FindObjectOfType<ELC_PassivesProperties>();
         enemyCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         enemyAnimator = GetComponent<Animator>();
@@ -553,6 +554,12 @@ public class ELC_Enemy : MonoBehaviour
         //StartCoroutine(ApplyShader(enemyStats.DeathTime, deathMaterial));
         //yield return new WaitForSeconds(enemyStats.DeathTime);
         DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemyStats.MoneyEarnWhenDead);
+
+        if (passiveScript.ActualPassiveScriptableObject != null)
+        {
+            if (passiveScript.ActualPassiveScriptableObject.PassiveName == "Corne D'Abondance" && Random.Range(0, 101) < passiveScript.CorneAbondancePercentageChanceDropPowerUp) Instantiate(passiveScript.PowerUpsGenerator, this.transform.position, Quaternion.identity);
+            else if (passiveScript.ActualPassiveScriptableObject.PassiveName == "Faux De Chronos") FindObjectOfType<ELC_PowerUpManager>().StopFlow();
+        }
         Destroy(this.gameObject);
         yield return null;
     }

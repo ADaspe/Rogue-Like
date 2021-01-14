@@ -8,6 +8,7 @@ public class ELC_PassivesProperties : MonoBehaviour
 
     public AXD_Attack AttackScript;
     public ELC_ObjectsInventory InventoryScript;
+    ELC_PlayerMoves playerMovesScript;
 
     private ELC_PlayerStatManager statsManager;
 
@@ -21,8 +22,33 @@ public class ELC_PassivesProperties : MonoBehaviour
     public float FilAresBerserkMultiplicator;
     public float FilAresDamageTakenMultiplicator;
 
+
+    [Header("Don D'Atalante")]
+    public float AtalanteMaxSpeedAdd;
+
+    [Header("Bottes D'Hermes")]
+    public float HermesKnockback;
+    public float HermesStunTime;
+
+    [Header("Corne D'Abondance")]
+    public int CorneAbondancePercentageChanceDropPowerUp;
+    public GameObject PowerUpsGenerator;
+
+    //[Header("Sang De Gorgonne")]
+    //public float GorgonneStrengthBonusMultiplicator;
+
+    [Header("Faux De Chronos")]
+    public float ChronosStopPowerUpFlowDuration; //Cb de temps les power ups vont arrêter de découler
+
+    [Header("Egide")]
+    public float EgidePercentageChanceToSendBackProjectile;
+
+
+
+
     private void Start()
     {
+        playerMovesScript = FindObjectOfType<ELC_PlayerMoves>();
         if (ActualPassiveScriptableObject != null)
         {
             UpdateValues();
@@ -49,6 +75,10 @@ public class ELC_PassivesProperties : MonoBehaviour
     {
         if (ActualPassiveScriptableObject.PassiveName == "Appétit De Lycaon") AppetitDeLycaon();
         else if (ActualPassiveScriptableObject.PassiveName == "Fil D'Ares") FilAres();
+        else if (ActualPassiveScriptableObject.PassiveName == "Don D'Atalante") DonAtalante();
+        else if (ActualPassiveScriptableObject.PassiveName == "Bottes D'Hermes") BottesHermes();
+        else if (ActualPassiveScriptableObject.PassiveName == "Faux De Chronos") FauxDeChronos();
+        else if (ActualPassiveScriptableObject.PassiveName == "Egide") Egide();
     }
 
     private void AppetitDeLycaon()
@@ -65,5 +95,25 @@ public class ELC_PassivesProperties : MonoBehaviour
         statsManager.FilAresDamagesTakenMultiplicator = FilAresDamageTakenMultiplicator;
     }
 
+    private void DonAtalante()
+    {
+        playerMovesScript.DonAtalante = true;
+        playerMovesScript.DonAtalanteSpeedAdd = AtalanteMaxSpeedAdd;
+    }
+
+    private void BottesHermes()
+    {
+        playerMovesScript.BottesHermes = true;
+    }
+
+    private void FauxDeChronos()
+    {
+        FindObjectOfType<ELC_PowerUpManager>().FauxDeChronos = true;
+    }
+
+    private void Egide()
+    {
+        AttackScript.Egide = true;
+    }
 
 }

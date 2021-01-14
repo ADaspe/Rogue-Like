@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detectorScript: {fileID: 3438627847694550388}
-  attractDistance: 2
-  speed: 2
+  attractDistance: 3
+  speed: 3
   value: 5
   initialDropSpeed: 7
   decreaseSpeedOnDrop: 0.1

@@ -18,6 +18,8 @@ public class AXD_Attack : MonoBehaviour
     public float AppetitDeLycaonHealPerEnemies;
     public float AppetitDeLycaonHealPerCollateral;
 
+    public bool Egide;
+
     public float nextResetCombo;
     public enum AttackType { Swich, Sponk }
 
@@ -123,6 +125,20 @@ public class AXD_Attack : MonoBehaviour
                 }
             }
 
+
+        }
+
+        if(Egide && type == "Swich")
+        {
+            Collider2D[] bullets = null;
+            bullets = Physics2D.OverlapCircleAll(player.attackPoint, playerStats.SwichAreaRadius, LayerMask.GetMask("Projectile"));
+            if(bullets != null)
+            {
+                foreach (Collider2D col in bullets)
+                {
+                    col.gameObject.GetComponent<ELC_Projectiles>().EgideEffect();
+                }
+            }
         }
     }
     private int CalculateDamage(AttackType type, bool colateral = false)

@@ -7,6 +7,10 @@ public class ELC_PowerUpManager : MonoBehaviour
     public List<GameObject> PowerUps = new List<GameObject>();
     public ELC_PlayerStatManager playerStatsScript;
 
+    public bool FauxDeChronos;
+    public bool StopPUFlow;
+    public float TimeToRestartPUFlow;
+
     [SerializeField]
     private List<float> durations = new List<float>();
     
@@ -14,6 +18,7 @@ public class ELC_PowerUpManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (FauxDeChronos && TimeToRestartPUFlow < Time.time && StopPUFlow == true) StopPUFlow = false;
         if (PowerUps.Count > 0)
         {
             for (int i = 0; i < PowerUps.Count; i++)
@@ -23,7 +28,7 @@ public class ELC_PowerUpManager : MonoBehaviour
                     DeletePowerUp(i);
                     return;
                 }
-                else
+                else if(!StopPUFlow)
                 {
                     PowerUps[i].GetComponent<ELC_PowerUpProperties>().LifeDuration -= Time.deltaTime;
                     durations[i] = PowerUps[i].GetComponent<ELC_PowerUpProperties>().LifeDuration;
@@ -31,6 +36,15 @@ public class ELC_PowerUpManager : MonoBehaviour
                     ApplyPowerUp(PowerUps[i]);
                 }
             }
+        }
+    }
+
+    public void StopFlow()
+    {
+        if(FauxDeChronos)
+        {
+            StopPUFlow = true;
+            TimeToRestartPUFlow = Time.time + FindObjectOfType<ELC_PassivesProperties>().ChronosStopPowerUpFlowDuration;
         }
     }
 

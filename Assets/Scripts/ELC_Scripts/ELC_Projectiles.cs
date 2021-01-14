@@ -9,6 +9,8 @@ public class ELC_Projectiles : MonoBehaviour
     public float lifeDuration;
     public float strenght;
 
+    public bool IsFriendly;
+
 
     void Update()
     {
@@ -27,6 +29,24 @@ public class ELC_Projectiles : MonoBehaviour
         {
             collision.GetComponent<PlayerHealth>().GetHit((int)strenght);
             Destroy(this.gameObject);
+        }
+        if(IsFriendly && collision.CompareTag("Enemy"))
+        {
+            collision.GetComponent<ELC_Enemy>().GetHit((int)strenght, collision.GetComponent<ELC_Enemy>().movesTowardPlayer);
+        }
+    }
+
+    public void EgideEffect()
+    {
+        if (!IsFriendly)
+        {
+            int randomNumber = Random.Range(0, 101);
+            if (randomNumber < FindObjectOfType<ELC_PassivesProperties>().EgidePercentageChanceToSendBackProjectile)
+            {
+                IsFriendly = true;
+                direction = -direction;
+            }
+            else Destroy(this.gameObject);
         }
     }
 
