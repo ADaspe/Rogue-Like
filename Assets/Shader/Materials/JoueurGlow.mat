@@ -51,9 +51,9 @@ Material:
     m_Floats:
     - _EnableExternalAlpha: 0
     m_Colors:
-    - Color_6FE6D485: {r: 19.905565, g: 0, b: 51.377876, a: 0}
-    - Color_844298C3: {r: 0, g: 3.549399, b: 8.47419, a: 0}
-    - Color_8F6B2BC: {r: 19.698313, g: 1.9831436, b: 0, a: 0}
+    - Color_6FE6D485: {r: 445.72195, g: 3.4958587, b: 89.144394, a: 1}
+    - Color_844298C3: {r: 0, g: 2.1740067, b: 8.47419, a: 1}
+    - Color_8F6B2BC: {r: 253.0143, g: 2.6493645, b: 0, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
