@@ -60,6 +60,16 @@ PrefabInstance:
       propertyPath: AnimationSponkTime
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: SponkWidth
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 782464527650891043, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: Sponklength
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 956150124270750358, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -190,6 +200,26 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 6591578456805706473}
+    - target: {fileID: 3081472017539436263, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: defaultMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 371aae5aebc177b47a7036ab2df2517b, type: 2}
+    - target: {fileID: 3081472017539436263, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: blueMat
+      value: 
+      objectReference: {fileID: 2100000, guid: b35264067fc46964a807e13abf36e910, type: 2}
+    - target: {fileID: 3081472017539436263, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: orangeMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 9df17de44f84480499167cb5c01074b0, type: 2}
+    - target: {fileID: 3081472017539436263, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: pinkMat
+      value: 
+      objectReference: {fileID: 2100000, guid: 13246f962d35ecc4d92d7f949f505b20, type: 2}
     - target: {fileID: 3282318346991483589, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: m_Name

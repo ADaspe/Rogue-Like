@@ -32,14 +32,6 @@ public class AXD_HydraHead : MonoBehaviour
         enemyScript.distanceToStay = hydra.distances[0];
     }
 
-    public void Attack()
-    {
-        headStats.EnemyPath = ELC_EnemySO.PathBehaviour.FollowPlayer;
-        headStats.DistanceAttack = false;
-        headStats.CloseCombatAttack = true;
-        headStats.DashOnPlayer = false;
-        enemyScript.distanceToStay= hydra.distances[1];
-    }
 
     public void Shoot()
     {
@@ -47,7 +39,7 @@ public class AXD_HydraHead : MonoBehaviour
         headStats.DistanceAttack = true;
         headStats.CloseCombatAttack = false;
         headStats.DashOnPlayer = false;
-        enemyScript.distanceToStay = hydra.distances[2];
+        enemyScript.distanceToStay = hydra.distances[1];
     }
 
     public void GetHydraRef(AXD_Hydra hydraArg)

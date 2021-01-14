@@ -133,7 +133,7 @@ MonoBehaviour:
   getHitMaterial: {fileID: 0}
   deathMaterial: {fileID: 0}
   isStun: 0
-  isTmpInvulnerable: 0
+  isTmpInvulnerable: 1
   isInvulnerable: 0
   isTouchingSomething: 0
   canSeePlayer: 0
@@ -178,7 +178,7 @@ Animator:
   m_GameObject: {fileID: 5071840276493583477}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1620cf21665858e43986020ff2e49542, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
