@@ -9432,7 +9432,7 @@ PrefabInstance:
     - target: {fileID: 7921254329499762887, guid: a27a923a2b8d1c046a4881a09ff57d3d,
         type: 3}
       propertyPath: sentences.Array.data[2]
-      value: Appuie sur le boutton "achievements" pour en savoir plus
+      value: Appuie sur le boutton "Exploits" pour en savoir plus
       objectReference: {fileID: 0}
     - target: {fileID: 7921254329499762887, guid: a27a923a2b8d1c046a4881a09ff57d3d,
         type: 3}
@@ -10219,12 +10219,12 @@ PrefabInstance:
     - target: {fileID: 3729842993791577614, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 184.2142
+      value: 190
       objectReference: {fileID: 0}
     - target: {fileID: 3729842993791577614, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -75.64
+      value: -67.9
       objectReference: {fileID: 0}
     - target: {fileID: 3729842993791577614, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -11174,7 +11174,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ListPassive:
   - {fileID: 11400000, guid: e8365aef04281bd45b3471d2fc5b1fb6, type: 2}
-  - {fileID: 11400000, guid: aac9847a1489cf9409c34d21747fb894, type: 2}
+  - {fileID: 11400000, guid: 1f6508be9a869994db164a2e8114c13e, type: 2}
+  - {fileID: 11400000, guid: 4629b48fa0494054680a76ce30d10721, type: 2}
+  - {fileID: 11400000, guid: 8716d47b37b21d247813c62f9d4c1ed6, type: 2}
+  - {fileID: 11400000, guid: c2647eda660911a46a182e3408d08b08, type: 2}
+  - {fileID: 11400000, guid: 5caa60c0371d0654287a2c6ba0ab0d42, type: 2}
   - {fileID: 11400000, guid: b2b1f17a4f0c8684bbbb88cd65efa86c, type: 2}
   SelectedPassive: {fileID: 0}
   currentMoneyScript: {fileID: 700055817}

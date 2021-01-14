@@ -61,7 +61,6 @@ public class EMD_PassifManager : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             int Index = Random.Range(0, ListPassive.Count);
-            Debug.Log(i);
             if (i == 0)
             {
                 passive[i] = ListPassive[Index];
@@ -98,7 +97,6 @@ public class EMD_PassifManager : MonoBehaviour
 
     public void Selected1()
     {
-        Debug.Log(DialogueManagerScript.IsWriting);
         if (DialogueManagerScript.IsWriting == false)
         {
             SelectedPassive = passive[0];
@@ -127,12 +125,10 @@ public class EMD_PassifManager : MonoBehaviour
         if (currentMoneyScript.currentMoney >= (int)SelectedPassive.PassivePrice)
         {
             currentMoneyScript.currentMoney -= (int)SelectedPassive.PassivePrice;
-            Debug.Log("acheté");
             ELC_ObjectsInventory.ActivePassif = SelectedPassive;
         }
         else
         {
-            Debug.Log("pas assez de thunes");
             textDisplay.text = null;
             textDisplay.text = "Vous n'avez pas assez d'argent";
         }
