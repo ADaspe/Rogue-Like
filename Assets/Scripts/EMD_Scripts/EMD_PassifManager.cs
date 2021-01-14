@@ -19,6 +19,7 @@ public class EMD_PassifManager : MonoBehaviour
     public GameObject QuittButton;
     public TextMeshProUGUI PassivePrice;
     public TextMeshProUGUI textDisplay;
+    private EMD_DialogueManager DialogueManagerScript;
     //public GameObject passif1;
     public Image image1;
     public Image image2;
@@ -28,6 +29,7 @@ public class EMD_PassifManager : MonoBehaviour
     void Start()
     {
         RandomPick();
+        DialogueManagerScript = FindObjectOfType<EMD_DialogueManager>();
     }
 
     /*void takePassiveAndCreateArray()
@@ -96,34 +98,41 @@ public class EMD_PassifManager : MonoBehaviour
 
     public void Selected1()
     {
-        SelectedPassive = passive[0];
-        PassivePrice.text = passive[0].PassivePrice.ToString();
+        Debug.Log(DialogueManagerScript.IsWriting);
+        if (DialogueManagerScript.IsWriting == false)
+        {
+            SelectedPassive = passive[0];
+            PassivePrice.text = "Prix : " + passive[0].PassivePrice.ToString();
+        }
     }
     public void Selected2()
     {
-        SelectedPassive = passive[1];
-        PassivePrice.text = passive[1].PassivePrice.ToString();
+        if (DialogueManagerScript.IsWriting == false)
+        {
+            SelectedPassive = passive[1];
+            PassivePrice.text = "Prix : " + passive[1].PassivePrice.ToString();
+        }
     }
     public void Selected3()
     {
-        SelectedPassive = passive[2];
-        PassivePrice.text = passive[2].PassivePrice.ToString();
+        if (DialogueManagerScript.IsWriting == false)
+        {
+            SelectedPassive = passive[2];
+            PassivePrice.text = "Prix : " + passive[2].PassivePrice.ToString();
+        }
     }
 
     public void ChoosenPassive()
     {
-
-        ELC_ObjectsInventory.ActivePassif = SelectedPassive;
-        if (currentMoneyScript == null)
-        {
-            Debug.Log("coucou");
-        }
-        if (currentMoneyScript.currentMoney < (int)SelectedPassive.PassivePrice)
+        if (currentMoneyScript.currentMoney >= (int)SelectedPassive.PassivePrice)
         {
             currentMoneyScript.currentMoney -= (int)SelectedPassive.PassivePrice;
+            Debug.Log("acheté");
+            ELC_ObjectsInventory.ActivePassif = SelectedPassive;
         }
         else
         {
+            Debug.Log("pas assez de thunes");
             textDisplay.text = null;
             textDisplay.text = "Vous n'avez pas assez d'argent";
         }

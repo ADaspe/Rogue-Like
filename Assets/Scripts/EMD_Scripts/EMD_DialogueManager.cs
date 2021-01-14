@@ -14,7 +14,7 @@ public class EMD_DialogueManager : MonoBehaviour
     // récuperer les données du npc (phrase et nom)
     public float DelayTime;
     // récuperer la variable DialogueOn du script trigger
-    private bool IsWriting;
+    public bool IsWriting;
     public GameObject PassiveCanvas;
     public GameObject DialogueCanvas;
     public GameObject ContinueButton;
@@ -24,7 +24,7 @@ public class EMD_DialogueManager : MonoBehaviour
     public GameObject ValidateButton;
     public GameObject AchievementCanvas;
     public List<EMD_NPCIsTrigger> NPCsList;
-    public string[] sentences;
+    public string[] sentences = new string[3];
     public GameObject ActualNPC;
     public ELC_PassiveSO SelectedPassive; //le ramener du passifmanager
     public string PNJName;
@@ -42,7 +42,7 @@ public class EMD_DialogueManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Dash"))
+        if (DialogueIsActive && (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Dash")))
         {
             QuitDialogue();
         }
@@ -56,7 +56,11 @@ public class EMD_DialogueManager : MonoBehaviour
 
     IEnumerator Type()
     {
+        IsWriting = true;
         textDisplay.text = null;
+        AchievementName.text = null;
+        EnnemyToDestroy.text = null;
+        PassiveToUnlock.text = null;
         if (IsAchievement == true)
         {
             foreach (char letter in sentences[0].ToCharArray())
@@ -69,10 +73,13 @@ public class EMD_DialogueManager : MonoBehaviour
                 EnnemyToDestroy.text += letter;
                 yield return new WaitForSeconds(DelayTime);
             }
-            foreach (char letter in sentences[2].ToCharArray())
+            if (AchievementManagerScript.SelectedAchievement.passifToUnlock != null)
             {
-                PassiveToUnlock.text += letter;
-                yield return new WaitForSeconds(DelayTime);
+                foreach (char letter in sentences[2].ToCharArray())
+                {
+                    PassiveToUnlock.text += letter;
+                    yield return new WaitForSeconds(DelayTime);
+                }
             }
         }
         else
@@ -98,7 +105,9 @@ public class EMD_DialogueManager : MonoBehaviour
         index = 0;
         textDisplay.text = "";
         DialogueIsActive = false;
-        PlayerMovesScript.canMove = true;
+        PlayerMovesScript.ToggleMenu();
+        AchievementManagerScript.NumeroPage = 0;
+
         //besoin de remettre les inputs du joueur
     }
 
@@ -122,17 +131,33 @@ public class EMD_DialogueManager : MonoBehaviour
     }
     public void ChangePassive()
     {
-        sentences[0] = PassiveManagerScript.SelectedPassive.PassiveDescription;
-        StartCoroutine("Type");
+        if (!IsWriting)
+        {
+            sentences[0] = PassiveManagerScript.SelectedPassive.PassiveDescription;
+            StartCoroutine("Type");
+        }
+
         //IsWriting = true;
     }
     public void ChangeAchievements()
     {
-        IsAchievement = true;
-        sentences[0] = "Nom : " + AchievementManagerScript.SelectedAchievement.achievementName;
-        sentences[1] = AchievementManagerScript.SelectedAchievement.ennemyToDefeat.name + " : " + AchievementManagerScript.SelectedAchievement.numberDefeated + " / " + AchievementManagerScript.SelectedAchievement.numberToDefeat;
-        sentences[2] = "Nom Passif : " + AchievementManagerScript.SelectedAchievement.passifToUnlock.name;
-        StartCoroutine("Type");
+        if (!IsWriting)
+        {
+            IsAchievement = true;
+            sentences[0] = null;
+            sentences[0] = "Nom : " + AchievementManagerScript.SelectedAchievement.achievementName;
+            Debug.Log("Phrase 1 : " + sentences[0]);
+            sentences[1] = null;
+            sentences[1] = AchievementManagerScript.SelectedAchievement.ennemyToDefeat.name + " : " + AchievementManagerScript.SelectedAchievement.numberDefeated + " / " + AchievementManagerScript.SelectedAchievement.numberToDefeat;
+            Debug.Log("Phrase 2 : " + sentences[1]);
+            sentences[2] = null;
+            if (AchievementManagerScript.SelectedAchievement.passifToUnlock != null)
+            {
+                sentences[2] = "Nom Passif : " + AchievementManagerScript.SelectedAchievement.passifToUnlock.name;
+                Debug.Log("Phrase 1 : " + sentences[2]);
+            }
+            StartCoroutine("Type");
+        }
     } 
 
     public IEnumerator StartDialogue()
@@ -143,10 +168,11 @@ public class EMD_DialogueManager : MonoBehaviour
         PassiveButton.SetActive(false);
         ValidateButton.SetActive(false);
         DialogueCanvas.SetActive(true);
-        PlayerMovesScript.canMove = false;
+        PlayerMovesScript.ToggleMenu();
         IsAchievement = false;
         PNJName = ActualNPC.GetComponent<EMD_Sentences>().PNJName;
-        sentences = ActualNPC.GetComponent<EMD_Sentences>().sentences; //Ne se remet pas quand on quitte et rejoin une conv
+        sentences = ActualNPC.GetComponent<EMD_Sentences>().sentences;
+        //SentencesUpdate(ActualNPC.GetComponent<EMD_Sentences>().sentences); //Ne se remet pas quand on quitte et rejoin une conv
         ContinueButton.SetActive(true);
         if (PNJName == "PassiveMerchant") 
         {
@@ -158,8 +184,14 @@ public class EMD_DialogueManager : MonoBehaviour
         }
         DialogueIsActive = true;
         StartCoroutine("Type");
-        IsWriting = true;
         //yield return new WaitWhile(() => IsWriting == true);
         yield return null;
     }
+    /*public void SentencesUpdate(string[] sentencesToAdd)
+    {
+        for (int i = 0; i < sentencesToAdd.Length - 1; i++)
+        {
+            sentences[i] = sentencesToAdd[i];
+        }
+    }*/
 }

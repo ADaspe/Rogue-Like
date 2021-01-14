@@ -102,8 +102,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: 40e568c928ed24c438e6880663168aea, type: 2}
+  Coins: {fileID: 3438627847694550386, guid: df331dfca8d120d408a7b692cef7d637, type: 3}
   currentHealth: 0
   speed: 0
+  isDead: 0
   isDashing: 0
   stopDashing: 0
   dashCooldown: 0
@@ -112,8 +114,10 @@ MonoBehaviour:
   isAttacking: 0
   isDistanceAttacking: 0
   isHit: 0
+  basicMat: {fileID: 0}
   dissolveMaterial: {fileID: 2100000, guid: 516b86d5c836f83458f383ef44b5fea3, type: 2}
-  spawnDuration: 0
+  getHitMaterial: {fileID: 2100000, guid: 0a99d921524399049a40d04865cd06f2, type: 2}
+  deathMaterial: {fileID: 0}
   isStun: 0
   isTmpInvulnerable: 0
   isInvulnerable: 0

@@ -11,9 +11,11 @@ public class EMD_AchievementsManager : MonoBehaviour
     public GameObject AchivementsContinueButton;
     public GameObject AchievementsButton;
     public GameObject AchievementsCanvas;
-    public GameObject ValidateButton;
     public GameObject DialogueCanvas;
     public GameObject QuittButton;
+    public GameObject Ach4;
+    public GameObject Ach5;
+    public GameObject Ach6;
     public Image image1;
     public Image image2;
     public Image image3;
@@ -21,21 +23,25 @@ public class EMD_AchievementsManager : MonoBehaviour
     public Image image5;
     public Image image6;
     int LimitePage = 6;
-    private EMD_PassifManager PassiveManagerScript;
+    private EMD_DialogueManager DialogueManagerScript;
+    public int NumeroPage = 0;
 
     private void Start()
     {
-        PassiveManagerScript = FindObjectOfType<EMD_PassifManager>();
+        DialogueManagerScript = FindObjectOfType<EMD_DialogueManager>();
     }
     // Update is called once per frame
     public void AfficherAchievements()
     {
-        /*image1.sprite = ListAchievements[0].HUDSprite;        Add Images
-        image2.sprite = ListAchievements[1].HUDSprite;
-        image3.sprite = ListAchievements[2].HUDSprite;
-        image1.sprite = ListAchievements[3].HUDSprite;
-        image2.sprite = ListAchievements[4].HUDSprite;
-        image3.sprite = ListAchievements[5].HUDSprite;*/
+        image1.sprite = ListAchievements[0 + NumeroPage * 6].HUDSprite;
+        image2.sprite = ListAchievements[1 + NumeroPage * 6].HUDSprite;
+        image3.sprite = ListAchievements[2 + NumeroPage * 6].HUDSprite;
+        if (NumeroPage < 3)
+        {
+            image4.sprite = ListAchievements[3 + NumeroPage * 6].HUDSprite;
+            image5.sprite = ListAchievements[4 + NumeroPage * 6].HUDSprite;
+            image6.sprite = ListAchievements[5 + NumeroPage * 6].HUDSprite;
+        }
         AchievementsButton.SetActive(false);
         ContinueButton.SetActive(false);
         AchivementsContinueButton.SetActive(true);
@@ -43,72 +49,78 @@ public class EMD_AchievementsManager : MonoBehaviour
     }
     public void Selected1()
     {
-        ValidateButton.SetActive(false);
-        SelectedAchievement = ListAchievements[0];
-        /*if (SelectedAchievement.canUnlockPassif == true)
+        if (DialogueManagerScript.IsWriting == false)
         {
-            AchivementsContinueButton.SetActive(false);
-            ValidateButton.SetActive(true);
-        }*/
+            SelectedAchievement = ListAchievements[0 + NumeroPage * 6];
+        }        
     }
     public void Selected2()
     {
-        ValidateButton.SetActive(false);
-        SelectedAchievement = ListAchievements[1];
-        /*if (SelectedAchievement.canUnlockPassif == true)
+        if (DialogueManagerScript.IsWriting == false)
         {
-            AchivementsContinueButton.SetActive(false);
-            ValidateButton.SetActive(true);
-        }*/
+            SelectedAchievement = ListAchievements[1 + NumeroPage * 6];
+        }
     }
     public void Selected3()
     {
-        ValidateButton.SetActive(false);
-        SelectedAchievement = ListAchievements[2];
-        /*if (SelectedAchievement.canUnlockPassif == true)
+        if (DialogueManagerScript.IsWriting == false)
         {
-            AchivementsContinueButton.SetActive(false);
-            ValidateButton.SetActive(true);
-        }*/
+            SelectedAchievement = ListAchievements[2 + NumeroPage * 6];
+        }
     }
     public void Selected4()
     {
-        ValidateButton.SetActive(false);
-        SelectedAchievement = ListAchievements[3];
-        /*if (SelectedAchievement.canUnlockPassif == true)
+        if (DialogueManagerScript.IsWriting == false)
         {
-            AchivementsContinueButton.SetActive(false);
-            ValidateButton.SetActive(true);
-        }*/
+            if (NumeroPage <= 3)
+            {
+                SelectedAchievement = ListAchievements[3 + NumeroPage * 6];
+            }
+        }
     }
     public void Selected5()
     {
-        ValidateButton.SetActive(false);
-        ValidateButton.SetActive(false);
-        SelectedAchievement = ListAchievements[4];
-        /*if (SelectedAchievement.canUnlockPassif == true)
+        if (DialogueManagerScript.IsWriting == false)
         {
-            AchivementsContinueButton.SetActive(false);
-            ValidateButton.SetActive(true);
-        }*/
+            if (NumeroPage <= 3)
+            {
+                SelectedAchievement = ListAchievements[4 + NumeroPage * 6];
+            }
+        }
     }
     public void Selected6()
     {
-        ValidateButton.SetActive(false);
-        SelectedAchievement = ListAchievements[5];
-        /*if (SelectedAchievement.canUnlockPassif == true)
+        if (DialogueManagerScript.IsWriting == false)
         {
-            AchivementsContinueButton.SetActive(false);
-            ValidateButton.SetActive(true);
-        }*/
+            if (NumeroPage <= 3)
+            {
+                SelectedAchievement = ListAchievements[5 + NumeroPage * 6];
+            }
+        }
     }
-    public void Page2()
+    public void PageSuivante()
     {
-        ListAchievements.RemoveRange(1, LimitePage);
-        AfficherAchievements();
+        if (NumeroPage < 3)
+        {
+            NumeroPage++;
+            AfficherAchievements();
+            if (NumeroPage == 3)
+            {
+                Ach4.SetActive(false);
+                Ach5.SetActive(false);
+                Ach6.SetActive(false);
+            }
+        }
     }
-    public void UnlockPassive()
+    public void PagePrecedente()
     {
-        //SelectedAchievement.passifToUnlock.isUnlock == true;
+        if (NumeroPage > 0)
+        {
+            Ach4.SetActive(true);
+            Ach5.SetActive(true);
+            Ach6.SetActive(true);
+            NumeroPage--;
+            AfficherAchievements();
+        }
     }
 }

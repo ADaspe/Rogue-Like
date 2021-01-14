@@ -14,6 +14,7 @@ public class AXD_AchievementSO : ScriptableObject
     public ELC_PassiveSO passifToUnlock;
     [SerializeField]
     private AXD_AchievementManager achievementManager;
+    public Sprite HUDSprite;
 
 
     public void AddDefeated(int defeated = 1)

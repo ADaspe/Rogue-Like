@@ -51,6 +51,14 @@ MonoBehaviour:
   LycaonCollateralEnemyHeal: 0
   FilAresBerserkMultiplicator: 1.5
   FilAresDamageTakenMultiplicator: 1.5
+  AtalanteMaxSpeedAdd: 1.5
+  HermesKnockback: 1
+  HermesStunTime: 1.5
+  CorneAbondancePercentageChanceDropPowerUp: 5
+  PowerUpsGenerator: {fileID: 2517728837806518400, guid: 01636bbc29341e445beadd8d7b6fe2c5,
+    type: 3}
+  ChronosStopPowerUpFlowDuration: 1
+  EgidePercentageChanceToSendBackProjectile: 30
 --- !u!114 &7064135163168353771
 MonoBehaviour:
   m_ObjectHideFlags: 0
