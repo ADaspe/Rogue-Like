@@ -36,6 +36,7 @@ public class ELC_PickupItems : MonoBehaviour
         {
             int randomNumber = Random.Range(0, PowerUpsList.Count);
             PowerUp = PowerUpsList[randomNumber];
+            this.GetComponent<SpriteRenderer>().sprite = PowerUp.GetComponent<ELC_PowerUpProperties>().PowerUpSO.HUDSprite;
 
         }
         if(chooseRandomObject)
@@ -61,7 +62,6 @@ public class ELC_PickupItems : MonoBehaviour
             if (Type == CollectibleTypes.PowerUp)
             {
                 PUManager.AddPowerUp(PowerUp);
-                this.GetComponent<SpriteRenderer>().sprite = PowerUp.GetComponent<ELC_PowerUpProperties>().PowerUpSO.HUDSprite;
             }
 
             if (Type == CollectibleTypes.Passive) ELC_ObjectsInventory.ActivePassif = Passive;
