@@ -10,13 +10,13 @@
             "typeInfo": {
                 "fullName": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty"
             },
-            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"2b739a3e-65fb-4c90-8614-a66c4f919a45\"\n    },\n    \"m_Name\": \"Color Degat\",\n    \"m_DefaultReferenceName\": \"Color_A55E994E\",\n    \"m_OverrideReferenceName\": \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": {\n        \"r\": 0.8313726186752319,\n        \"g\": 0.19215688109397889,\n        \"b\": 0.2392157018184662,\n        \"a\": 1.0\n    },\n    \"m_ColorMode\": 0\n}"
+            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"2b739a3e-65fb-4c90-8614-a66c4f919a45\"\n    },\n    \"m_Name\": \"Color Degat\",\n    \"m_DefaultReferenceName\": \"Color_A55E994E\",\n    \"m_OverrideReferenceName\": \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": {\n        \"r\": 0.8313726186752319,\n        \"g\": 0.19215688109397889,\n        \"b\": 0.2392157018184662,\n        \"a\": 1.0\n    },\n    \"m_ColorMode\": 1\n}"
         },
         {
             "typeInfo": {
                 "fullName": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty"
             },
-            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"c2c35f44-d96e-440a-942f-90036c04c2dc\"\n    },\n    \"m_Name\": \"Color From\",\n    \"m_DefaultReferenceName\": \"Color_F9AB4CC2\",\n    \"m_OverrideReferenceName\": \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": {\n        \"r\": 0.14509804546833039,\n        \"g\": 0.14509804546833039,\n        \"b\": 0.22352942824363709,\n        \"a\": 1.0\n    },\n    \"m_ColorMode\": 0\n}"
+            "JSONnodeData": "{\n    \"m_Guid\": {\n        \"m_GuidSerialized\": \"c2c35f44-d96e-440a-942f-90036c04c2dc\"\n    },\n    \"m_Name\": \"Color From\",\n    \"m_DefaultReferenceName\": \"Color_F9AB4CC2\",\n    \"m_OverrideReferenceName\": \"\",\n    \"m_GeneratePropertyBlock\": true,\n    \"m_Precision\": 0,\n    \"m_GPUInstanced\": false,\n    \"m_Hidden\": false,\n    \"m_Value\": {\n        \"r\": 0.14509804546833039,\n        \"g\": 0.14509804546833039,\n        \"b\": 0.22352942824363709,\n        \"a\": 1.0\n    },\n    \"m_ColorMode\": 1\n}"
         },
         {
             "typeInfo": {
