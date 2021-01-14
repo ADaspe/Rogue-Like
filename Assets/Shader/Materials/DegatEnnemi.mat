@@ -43,7 +43,7 @@ Material:
     - Vector1_73F7D7D5: 0.5
     - _EnableExternalAlpha: 0
     m_Colors:
-    - Color_11339E3B: {r: 0, g: 8.810581, b: 11.447212, a: 1}
+    - Color_11339E3B: {r: 0, g: 1.0105215, b: 1.3041189, a: 1}
     - Color_A55E994E: {r: 0.5019608, g: 1, b: 1, a: 1}
     - Color_A8D9E3D9: {r: 0.07450979, g: 1, b: 0.9137256, a: 1}
     - Color_AF868959: {r: 0.854902, g: 0.058823504, b: 0.37254897, a: 1}

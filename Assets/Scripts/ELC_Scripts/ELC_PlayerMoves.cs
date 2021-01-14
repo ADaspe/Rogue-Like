@@ -311,11 +311,11 @@ public class ELC_PlayerMoves : MonoBehaviour
                     {
                         case ELC_PlayerStatManager.Chain.Orange:
                             Debug.Log("Orange Material");
-                            StartCoroutine(ApplyShader(50f,orangeMat));
+                            StartCoroutine(ApplyShader(0.1f,orangeMat));
                             break;
                         case ELC_PlayerStatManager.Chain.Red:
                             Debug.Log("Pink Material");
-                            StartCoroutine(ApplyShader(50f, pinkMat));
+                            StartCoroutine(ApplyShader(0.1f, pinkMat));
                             break;
                     }
                 }
@@ -352,7 +352,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     IEnumerator ApplyShader(float time, Material mat)
     {
         //spriteRenderer.material = mat;
-        spriteRenderer.material.shader = mat.shader;
+        spriteRenderer.material = mat;
         yield return new WaitForSeconds(time);
         spriteRenderer.material = defaultMat;
         //spriteRenderer.material.shader = basicMat.shader;

@@ -78,7 +78,7 @@ public class ELC_Enemy : MonoBehaviour
 
     void Start()
     {
-        dissolveValue = -1;
+        dissolveValue = 1;
         passiveScript = FindObjectOfType<ELC_PassivesProperties>();
         enemyCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -108,7 +108,7 @@ public class ELC_Enemy : MonoBehaviour
         
         if(isSpawning) // pour le shader de spawn
         {
-            dissolveValue += Time.deltaTime * 2 / enemyStats.SpawnTime;
+            dissolveValue += Time.deltaTime * 5 / enemyStats.SpawnTime;
             spriteRenderer.material.SetFloat("_DissolveLevel", dissolveValue);
         }
 
@@ -558,7 +558,7 @@ public class ELC_Enemy : MonoBehaviour
             StartCoroutine("Death");
             
         }
-        else StartCoroutine(ApplyShader(0.5f, getHitMaterial));
+        else StartCoroutine(ApplyShader(0.1f, getHitMaterial));
     }
 
     IEnumerator Death()
