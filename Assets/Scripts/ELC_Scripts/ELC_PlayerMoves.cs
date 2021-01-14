@@ -14,6 +14,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     public ELC_PlayerStatManager playerStats;
     public PlayerHealth playerHealth;
     public AXD_Attack attack;
+    public ELC_PassivesProperties passiveManagerScript;
     public GameObject gameManager;
     public bool isInMenu = false;
 
@@ -73,6 +74,11 @@ public class ELC_PlayerMoves : MonoBehaviour
 
     public bool attackLanded;
 
+    [Header("Passive Properties")]
+    public bool DonAtalante;
+    public float DonAtalanteSpeedAdd;
+    public bool BottesHermes;
+
     private void Start()
     {
         playerAnimator = this.GetComponent<Animator>();
@@ -82,7 +88,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         playerAnimator.SetFloat("DirectionAxeX", 0);
         playerAnimator.SetFloat("DirectionAxeY", -1);
         DashParticles.GetComponent<ParticleSystem>().Stop();
-
+        passiveManagerScript = FindObjectOfType<ELC_PassivesProperties>();
         ResetChain();
     }
 
@@ -110,7 +116,8 @@ public class ELC_PlayerMoves : MonoBehaviour
 
             if ((Input.GetAxisRaw("Dash") == 1 && !isDashing && !dashButtonDown) || isDashing)
             {
-                Dash(playerStats.DashDistance, playerStats.DashTime); // Utilise l'input manager bordel à couille O'Clavier
+                if(BottesHermes) Dash(playerStats.DashDistance, playerStats.DashTime);
+                else Dash(playerStats.DashDistance, playerStats.DashTime); // Utilise l'input manager bordel à couille O'Clavier
                 dashButtonDown = true;
             }
             if (Input.GetAxisRaw("Swich") == 1 && Time.time > nextSwichAttackTime && !swichButtonDown)
@@ -137,7 +144,7 @@ public class ELC_PlayerMoves : MonoBehaviour
             PlayerTurnDetector();
             AnimationsManagement();
         }
-        
+        if (DonAtalante) playerStats.Speed += DonAtalanteSpeedAdd * ((playerStats.MaxHealth - playerStats.currentHealth) / playerStats.MaxHealth);
     }
 
     private void Walk()
@@ -321,7 +328,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         canTurn = true;
     }
 
-    public void Dash(float distance, float time)
+    public void Dash(float distance, float time, bool stun = false)
     {
         //On règle la durée du dash ici, cette valeur sera enclenchée qu'une fois par appel de la fonction
         if (!isDashing)
@@ -334,6 +341,15 @@ public class ELC_PlayerMoves : MonoBehaviour
             stopDash = Time.time + time;
             isDashing = true;
             canMove = false;
+        }
+        if (stun)
+        {
+            Collider2D[] ennemies = null;
+            ennemies = Physics2D.OverlapBoxAll(attackPoint, new Vector2(playerStats.SponkWidth, playerStats.Sponklength), Vector2.Angle(Vector2.up, lastDirection), LayerMask.GetMask("Enemies"));
+            foreach (Collider2D col in ennemies)
+            {
+                col.gameObject.GetComponent<ELC_Enemy>().GetHit(0, col.gameObject.GetComponent<ELC_Enemy>().movesTowardPlayer, passiveManagerScript.HermesKnockback, passiveManagerScript.HermesStunTime);
+            }
         }
 
         //Calcul du vecteur du dash
