@@ -579,7 +579,7 @@ public class ELC_Enemy : MonoBehaviour
         enemyAnimator.SetBool("IsPreparingForAttack", false);
         enemyAnimator.SetBool("IsAttacking", false);
         StartCoroutine(ApplyShader(enemyStats.DeathTime, deathMaterial));
-        yield return new WaitForSeconds(enemyStats.DeathTime);
+        yield return new WaitForSeconds(enemyStats.DeathTime - 0.3f);
         DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemyStats.MoneyEarnWhenDead);
 
         if (passiveScript.ActualPassiveScriptableObject != null)
