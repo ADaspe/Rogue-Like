@@ -312,11 +312,11 @@ public class ELC_PlayerMoves : MonoBehaviour
                     {
                         case ELC_PlayerStatManager.Chain.Orange:
                             Debug.Log("Orange Material");
-                            StartCoroutine(ApplyShader(glowTime,orangeMat));
+                            StartCoroutine(ApplyShader(0.1f,orangeMat));
                             break;
                         case ELC_PlayerStatManager.Chain.Red:
                             Debug.Log("Pink Material");
-                            StartCoroutine(ApplyShader(glowTime, pinkMat));
+                            StartCoroutine(ApplyShader(0.1f, pinkMat));
                             break;
                     }
                 }
