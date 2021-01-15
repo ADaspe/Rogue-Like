@@ -110,7 +110,6 @@ public class PlayerHealth : MonoBehaviour
     
     public void GlitchUI()
     {
-        Debug.Log("Glitching");
         foreach (AXD_UiGlitch uiGlitch in uiToGlitch)
         {
             uiGlitch.Glitch(timeToGlitchUiOnHit);
