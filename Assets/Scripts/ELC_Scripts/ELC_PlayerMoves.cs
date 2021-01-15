@@ -23,6 +23,8 @@ public class ELC_PlayerMoves : MonoBehaviour
     public Material orangeMat;
     public Material pinkMat;
     public float glowTime;
+    public Material damageMat;
+    public float damageMatTime;
 
 
 
@@ -311,11 +313,11 @@ public class ELC_PlayerMoves : MonoBehaviour
                     switch (playerStats.currentChain)
                     {
                         case ELC_PlayerStatManager.Chain.Orange:
-                            Debug.Log("Orange Material");
+                            //Debug.Log("Orange Material");
                             StartCoroutine(ApplyShader(0.1f,orangeMat));
                             break;
                         case ELC_PlayerStatManager.Chain.Red:
-                            Debug.Log("Pink Material");
+                            //Debug.Log("Pink Material");
                             StartCoroutine(ApplyShader(0.1f, pinkMat));
                             break;
                     }
@@ -350,9 +352,10 @@ public class ELC_PlayerMoves : MonoBehaviour
         gameManager.GetComponent<ELC_TimeScale>().PauseGame();
         FindObjectOfType<ELC_ObjectsInventory>().TransferMoney(true);
     }
-    IEnumerator ApplyShader(float time, Material mat)
+    public IEnumerator ApplyShader(float time, Material mat)
     {
         //spriteRenderer.material = mat;
+        Debug.Log("Applying " + mat.name);
         spriteRenderer.material = mat;
         yield return new WaitForSeconds(time);
         spriteRenderer.material = defaultMat;

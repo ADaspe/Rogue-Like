@@ -39,8 +39,11 @@ public class PlayerHealth : MonoBehaviour
     //ça c'est comment il prend des dégâts, et ça synchronise en live la barre de vie pour être sûr qu'elle suive 
     public void GetHit(int damage, float knockack = 0, float stun = 0)
     {
+        
         if (!playerStats.invulnerability)
         {
+            Debug.Log("Get Hit Player");
+            StartCoroutine(playerMovesScript.ApplyShader(playerMovesScript.damageMatTime, playerMovesScript.damageMat));
             StartCoroutine(screenShakeScript.ScreenShakes(playerStats.GetHitShakeIntensity, playerStats.GetHitShakeFrequency, playerStats.GetHitShakeDuration));
             playerStats.currentHealth = healthSlider.value;
             playerStats.currentHealth -= damage / playerStats.DefenseMultiplicatorPU;
