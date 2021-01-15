@@ -579,7 +579,7 @@ public class ELC_Enemy : MonoBehaviour
         enemyAnimator.SetBool("IsPreparingForAttack", false);
         enemyAnimator.SetBool("IsAttacking", false);
         StartCoroutine(ApplyShader(enemyStats.DeathTime, deathMaterial));
-        yield return new WaitForSeconds(enemyStats.DeathTime);
+        yield return new WaitForSeconds(enemyStats.DeathTime - 0.3f);
         DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemyStats.MoneyEarnWhenDead);
 
         if (passiveScript.ActualPassiveScriptableObject != null)
@@ -613,7 +613,7 @@ public class ELC_Enemy : MonoBehaviour
             {
                 ELC_PlayerStatManager playerStats =  FindObjectOfType<ELC_PlayerStatManager>();
                 hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)(enemyStats.AttackStrenght *  (1 / playerStats.DefenseMultiplicatorPU) * playerStats.FilAresDamagesTakenMultiplicator));
-                Debug.Log("Close combat Hit");
+                //Debug.Log("Close combat Hit");
             }
         }
         else //dashAttack
