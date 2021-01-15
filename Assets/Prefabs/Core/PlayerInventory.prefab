@@ -43,10 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb91b4ceb344aed459371880399b671b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingCrate: {fileID: 2185526170687435304, guid: 01e4cb7c4d2549d45807b900cfdf0a15,
+    type: 3}
+  selectedHand: 0
   RightHandObject: {fileID: 0}
   RightHandHUD: {fileID: 0}
-  quantityObject1: 0
   LeftHandObject: {fileID: 0}
   LeftHandHUD: {fileID: 0}
-  quantityObject2: 0
   PassiveHUD: {fileID: 0}

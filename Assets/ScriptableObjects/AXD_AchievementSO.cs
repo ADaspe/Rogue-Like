@@ -7,10 +7,11 @@ public class AXD_AchievementSO : ScriptableObject
 {
     public string achievementName;
     public int achievementTier;
-    public ELC_Enemy ennemyToDefeat;
+    public List<ELC_Enemy> ennemyToDefeat;
     public int numberToDefeat;
     public int numberDefeated;
     public bool isUnlocked;
+    public string ennemyToDefeatName;
     public ELC_PassiveSO passifToUnlock;
     [SerializeField]
     private AXD_AchievementManager achievementManager;

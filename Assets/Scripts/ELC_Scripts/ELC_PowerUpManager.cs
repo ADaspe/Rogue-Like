@@ -67,7 +67,7 @@ public class ELC_PowerUpManager : MonoBehaviour
     private void DeletePowerUp(int index)
     {
         ELC_PowerUpSO PUSO = PowerUps[index].GetComponent<ELC_PowerUpProperties>().PowerUpSO;
-        PUEmplacementsUI[index].SetActive(false);
+        
 
         if (PUSO.type == ELC_PowerUpSO.Type.Attack) playerStatsScript.AttackMultiplicatorPU = 1;
         else if (PUSO.type == ELC_PowerUpSO.Type.Heal) playerStatsScript.DefenseMultiplicatorPU = 1;
@@ -78,6 +78,7 @@ public class ELC_PowerUpManager : MonoBehaviour
         PowerUps.Remove(PowerUps[index]);
         durations.Remove(durations[index]);
         Debug.Log("PowerUp Destroyed at " + index);
+        PUEmplacementsUI[PowerUps.Count].SetActive(false);
     }
 
     public void AddPowerUp(GameObject PUObject)

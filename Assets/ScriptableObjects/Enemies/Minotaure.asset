@@ -18,7 +18,7 @@ MonoBehaviour:
   SpawnTime: 1
   MovementSpeed: 2
   EnemyPath: 0
-  LimitDistanceToStay: 1
+  LimitDistanceToStay: 1.5
   NeedTimeToTurn: 1
   TurnSpeed: 1
   EnemyWidth: 3
@@ -40,14 +40,14 @@ MonoBehaviour:
   AttackAnimationTime: 1
   DashOnPlayer: 1
   DashTime: 1
-  DistanceToRun: 10
-  DashStrenght: 1
+  DistanceToRun: 12
+  DashStrenght: 25
   DashStun: 0
   DashColliderWidth: 1
   DashAndCorpseAttack: 1
   DashCooldown: 15
-  MinDistanceToTriggerDash: 4
-  MaxDistanceToTriggerDash: 5
+  MinDistanceToTriggerDash: 5
+  MaxDistanceToTriggerDash: 7
   SpawnEntitiesRegulary: 0
   SpawnEntitiesAtDeath: 0
   SpawnCooldown: 0

@@ -23,6 +23,8 @@ public class ELC_PlayerMoves : MonoBehaviour
     public Material orangeMat;
     public Material pinkMat;
     public float glowTime;
+    public Material damageMat;
+    public float damageMatTime;
 
 
 
@@ -125,14 +127,14 @@ public class ELC_PlayerMoves : MonoBehaviour
 
             if ((Input.GetAxisRaw("Dash") == 1 && !isDashing && !dashButtonDown) || isDashing)
             {
-                if(BottesHermes) Dash(playerStats.DashDistance, playerStats.DashTime);
-                else Dash(playerStats.DashDistance, playerStats.DashTime); // Utilise l'input manager bordel à couille O'Clavier
+                if(BottesHermes) Dash(playerStats.DashDistance, playerStats.DashTime, true, true);
+                else Dash(playerStats.DashDistance, playerStats.DashTime, false, true); // Utilise l'input manager bordel à couille O'Clavier
                 dashButtonDown = true;
             }
             if (Input.GetAxisRaw("Swich") == 1 && Time.time > nextSwichAttackTime && !swichButtonDown)
             {
                 swichButtonDown = true;
-                Dash(playerStats.SwichDashDistance, playerStats.SwichDashTime);
+                Dash(playerStats.SwichDashDistance, playerStats.SwichDashTime, false, false);
                 StartCoroutine(PlayAnimation("SwishAttack", playerStats.AnimationSwichTime, false, false));
                 nextSwichAttackTime = Time.time + 1f / playerStats.SwichAttackRate;
             }
@@ -311,12 +313,12 @@ public class ELC_PlayerMoves : MonoBehaviour
                     switch (playerStats.currentChain)
                     {
                         case ELC_PlayerStatManager.Chain.Orange:
-                            Debug.Log("Orange Material");
-                            StartCoroutine(ApplyShader(glowTime,orangeMat));
+                            //Debug.Log("Orange Material");
+                            StartCoroutine(ApplyShader(0.1f,orangeMat));
                             break;
                         case ELC_PlayerStatManager.Chain.Red:
-                            Debug.Log("Pink Material");
-                            StartCoroutine(ApplyShader(glowTime, pinkMat));
+                            //Debug.Log("Pink Material");
+                            StartCoroutine(ApplyShader(0.1f, pinkMat));
                             break;
                     }
                 }
@@ -350,9 +352,10 @@ public class ELC_PlayerMoves : MonoBehaviour
         gameManager.GetComponent<ELC_TimeScale>().PauseGame();
         FindObjectOfType<ELC_ObjectsInventory>().TransferMoney(true);
     }
-    IEnumerator ApplyShader(float time, Material mat)
+    public IEnumerator ApplyShader(float time, Material mat)
     {
         //spriteRenderer.material = mat;
+        Debug.Log("Applying " + mat.name);
         spriteRenderer.material = mat;
         yield return new WaitForSeconds(time);
         spriteRenderer.material = defaultMat;
@@ -366,13 +369,13 @@ public class ELC_PlayerMoves : MonoBehaviour
         canTurn = true;
     }
 
-    public void Dash(float distance, float time, bool stun = false)
+    public void Dash(float distance, float time, bool stun = false, bool dashParticles = false)
     {
         //On règle la durée du dash ici, cette valeur sera enclenchée qu'une fois par appel de la fonction
         if (!isDashing)
         {
             StartCoroutine(PlayAnimation("isDashing", playerStats.AnimationDashTime, false, false));
-            DashParticles.GetComponent<ParticleSystem>().Play();
+            if(dashParticles) DashParticles.GetComponent<ParticleSystem>().Play();
             playerStats.invulnerability = true;
             currentDistance = distance;
             currentTime = time;
@@ -451,7 +454,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         nextSponkAttackTime = Time.time + 1f / playerStats.SponkAttackRate;
         yield return new WaitForSeconds(playerAnimator.GetCurrentAnimatorStateInfo(0).length * 1 / 4);
         float timeToStopSponk = Time.time + playerStats.SponkDashTime; 
-        Dash(playerStats.SponkDashDistance * dashDistanceMultiplicator, playerStats.SponkDashTime);
+        Dash(playerStats.SponkDashDistance * dashDistanceMultiplicator, playerStats.SponkDashTime, false, false);
 
         //Tant que le dash time n'est pas expirer, taper tous les ennemis devant
         

@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
   m_Name: PeltasteLvl1
   m_EditorClassIdentifier: 
-  achievementName: Peltaste Lvl 1
+  achievementName: Assassin d'Artemis Lvl 1
   achievementTier: 1
-  ennemyToDefeat: {fileID: 1939825889337146307, guid: 4a803f5fac93e99449631d6e2cef9781,
-    type: 3}
+  ennemyToDefeat:
+  - {fileID: 1939825889337146307, guid: 4a803f5fac93e99449631d6e2cef9781, type: 3}
   numberToDefeat: 20
   numberDefeated: 0
   isUnlocked: 0
+  ennemyToDefeatName: Sentinelle Mk.Artemis
   passifToUnlock: {fileID: 0}
   achievementManager: {fileID: 0}
   HUDSprite: {fileID: 7178557760618795008, guid: 6dfa6ef7ef9ffc043aae850d500bc208,

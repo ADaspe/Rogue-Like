@@ -15,17 +15,10 @@ public class PlayerHealth : MonoBehaviour
     public bool isDead = false;
     public Slider healthSlider;
     public Bouteille bouteille;
+    public AXD_UiGlitch[] uiToGlitch;
+    public float timeToGlitchUiOnHit;
     
-    
-    private void Update()
-    {
-        if (playerStats.losingLife && playerStats.currentHealth > playerStats.MaxHealth*playerStats.LifeStopDecrease/100 )
-        {
-            playerStats.currentHealth -= playerStats.LifeDecreaseSpeed * Time.deltaTime;
-        }
-        healthSlider.value = playerStats.currentHealth;
-        playerStats.BerserkMultiplicator = (1-(playerStats.currentHealth / playerStats.MaxHealth))+1;
-    }
+
 
     // ça c'est pour dire que la vie commence au max (pour le joueur et sur la barre de vie
     void Start()
@@ -34,13 +27,30 @@ public class PlayerHealth : MonoBehaviour
         SetMaxHealth(playerStats.MaxHealth);
         playerStats.currentStock = playerStats.maxStock;
         screenShakeScript = FindObjectOfType<ELC_ScreenShakes>();
+        uiToGlitch = FindObjectsOfType<AXD_UiGlitch>();
     }
-
+    private void Update()
+    {
+        if (playerStats.losingLife && playerStats.currentHealth > playerStats.MaxHealth * playerStats.LifeStopDecrease / 100)
+        {
+            playerStats.currentHealth -= playerStats.LifeDecreaseSpeed * Time.deltaTime;
+        }
+        else if(playerStats.currentHealth <= playerStats.MaxHealth * playerStats.LifeStopDecrease / 100)
+        {
+            GlitchUI();
+        }
+        healthSlider.value = playerStats.currentHealth;
+        playerStats.BerserkMultiplicator = (1 - (playerStats.currentHealth / playerStats.MaxHealth)) + 1;
+    }
     //ça c'est comment il prend des dégâts, et ça synchronise en live la barre de vie pour être sûr qu'elle suive 
     public void GetHit(int damage, float knockack = 0, float stun = 0)
     {
+        
         if (!playerStats.invulnerability)
         {
+            Debug.Log("Get Hit Player");
+            GlitchUI();
+            StartCoroutine(playerMovesScript.ApplyShader(playerMovesScript.damageMatTime, playerMovesScript.damageMat));
             StartCoroutine(screenShakeScript.ScreenShakes(playerStats.GetHitShakeIntensity, playerStats.GetHitShakeFrequency, playerStats.GetHitShakeDuration));
             playerStats.currentHealth = healthSlider.value;
             playerStats.currentHealth -= damage / playerStats.DefenseMultiplicatorPU;
@@ -98,4 +108,12 @@ public class PlayerHealth : MonoBehaviour
         }
     }
     
+    public void GlitchUI()
+    {
+        Debug.Log("Glitching");
+        foreach (AXD_UiGlitch uiGlitch in uiToGlitch)
+        {
+            uiGlitch.Glitch(timeToGlitchUiOnHit);
+        }
+    }
 }

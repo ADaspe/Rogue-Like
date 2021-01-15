@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ELC_ObjectsInventory : MonoBehaviour
 {
+    public GameObject startingCrate;
     public enum hands { LeftHand, RightHand};
     public hands selectedHand = hands.LeftHand;
     public GameObject RightHandObject;
@@ -25,6 +26,7 @@ public class ELC_ObjectsInventory : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player");
+        if(LeftHandObject == null) AddObject(startingCrate);
     }
 
     private void Update()
