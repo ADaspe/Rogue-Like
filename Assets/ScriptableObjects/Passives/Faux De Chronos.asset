@@ -15,6 +15,7 @@ MonoBehaviour:
   PassiveName: Faux De Chronos
   PassiveDescription: "Arr\xEAte temporairement l'\xE9coulement du temps pour les
     power Ups \xE0 chaque fois que vous tuez un ennemi"
-  PassivePrice: 0
+  PassivePrice: 3000
   isUnlock: 0
-  HUDSprite: {fileID: 0}
+  HUDSprite: {fileID: 3046305507954764050, guid: d2d062ff307f81d4e836ccc9ea347700,
+    type: 3}

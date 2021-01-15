@@ -47,8 +47,8 @@ MonoBehaviour:
   ActualPassiveScriptableObject: {fileID: 0}
   AttackScript: {fileID: 0}
   InventoryScript: {fileID: 0}
-  LycaonMainEnemyHeal: 0
-  LycaonCollateralEnemyHeal: 0
+  LycaonMainEnemyHeal: 2
+  LycaonCollateralEnemyHeal: 1
   FilAresBerserkMultiplicator: 1.5
   FilAresDamageTakenMultiplicator: 1.5
   AtalanteMaxSpeedAdd: 1.5

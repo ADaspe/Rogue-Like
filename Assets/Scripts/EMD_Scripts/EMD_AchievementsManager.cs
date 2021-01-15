@@ -38,6 +38,9 @@ public class EMD_AchievementsManager : MonoBehaviour
         image3.sprite = ListAchievements[2 + NumeroPage * 6].HUDSprite;
         if (NumeroPage < 3)
         {
+            Ach4.SetActive(true);
+            Ach5.SetActive(true);
+            Ach6.SetActive(true);
             image4.sprite = ListAchievements[3 + NumeroPage * 6].HUDSprite;
             image5.sprite = ListAchievements[4 + NumeroPage * 6].HUDSprite;
             image6.sprite = ListAchievements[5 + NumeroPage * 6].HUDSprite;

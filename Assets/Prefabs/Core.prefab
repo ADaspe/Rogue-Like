@@ -100,6 +100,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 1081086039024157598, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: PowerUpsDisplay
+      value: 
+      objectReference: {fileID: 9032077772291789128}
     - target: {fileID: 1154282071691469226, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: m_SortingOrder
@@ -260,16 +265,6 @@ PrefabInstance:
       propertyPath: InventoryScript
       value: 
       objectReference: {fileID: 8969764475921178503}
-    - target: {fileID: 6055657034655676927, guid: c582c890f15ac5345a4f3c531ee31b90,
-        type: 3}
-      propertyPath: LycaonMainEnemyHeal
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6055657034655676927, guid: c582c890f15ac5345a4f3c531ee31b90,
-        type: 3}
-      propertyPath: LycaonCollateralEnemyHeal
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6115952892813048268, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: moneycount
@@ -691,6 +686,12 @@ GameObject:
 --- !u!1 &5704805626521240326 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 863953644269325298, guid: 374aac9d3ae2f844ea0fa95b440229d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 4960410694947244276}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9032077772291789128 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4147403900498368956, guid: 374aac9d3ae2f844ea0fa95b440229d6,
     type: 3}
   m_PrefabInstance: {fileID: 4960410694947244276}
   m_PrefabAsset: {fileID: 0}

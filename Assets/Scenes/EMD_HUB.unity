@@ -9432,7 +9432,7 @@ PrefabInstance:
     - target: {fileID: 7921254329499762887, guid: a27a923a2b8d1c046a4881a09ff57d3d,
         type: 3}
       propertyPath: sentences.Array.data[2]
-      value: Appuie sur le boutton "achievements" pour en savoir plus
+      value: Appuie sur le boutton "Exploits" pour en savoir plus
       objectReference: {fileID: 0}
     - target: {fileID: 7921254329499762887, guid: a27a923a2b8d1c046a4881a09ff57d3d,
         type: 3}
@@ -9459,6 +9459,11 @@ PrefabInstance:
     - target: {fileID: 888043853153299, guid: f523f809c561ee54dac7c3e8ae7438f8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: EMD_MenuScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 145596053270668010, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
       objectReference: {fileID: 0}
     - target: {fileID: 151966779401909424, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -9489,6 +9494,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 475869937773686117, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
       objectReference: {fileID: 0}
     - target: {fileID: 537839604482878246, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -9609,6 +9619,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Core
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282607825486242569, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538304156364572868, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
+      objectReference: {fileID: 0}
+    - target: {fileID: 1538304156364572868, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_ForceModuleActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1705904875442709084, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -10206,10 +10231,25 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3396445421022565156, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
+      objectReference: {fileID: 0}
+    - target: {fileID: 3556972691700798046, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
+      objectReference: {fileID: 0}
     - target: {fileID: 3638685505228750631, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724478063161707427, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
       objectReference: {fileID: 0}
     - target: {fileID: 3729842993791577614, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -10219,12 +10259,12 @@ PrefabInstance:
     - target: {fileID: 3729842993791577614, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 184.2142
+      value: 190
       objectReference: {fileID: 0}
     - target: {fileID: 3729842993791577614, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -75.64
+      value: -67.9
       objectReference: {fileID: 0}
     - target: {fileID: 3729842993791577614, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -10381,6 +10421,11 @@ PrefabInstance:
       propertyPath: QuitButton
       value: 
       objectReference: {fileID: 162887042}
+    - target: {fileID: 4352583628519404012, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
+      objectReference: {fileID: 0}
     - target: {fileID: 4556650331774823419, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -10440,6 +10485,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_margin.w
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913433207710321752, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
       objectReference: {fileID: 0}
     - target: {fileID: 6022246145414444388, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -10811,6 +10861,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8298018300330734790, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SubmitButton
+      value: Interact
+      objectReference: {fileID: 0}
     - target: {fileID: 8449903965630584760, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -11174,7 +11229,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ListPassive:
   - {fileID: 11400000, guid: e8365aef04281bd45b3471d2fc5b1fb6, type: 2}
-  - {fileID: 11400000, guid: aac9847a1489cf9409c34d21747fb894, type: 2}
+  - {fileID: 11400000, guid: 1f6508be9a869994db164a2e8114c13e, type: 2}
+  - {fileID: 11400000, guid: 4629b48fa0494054680a76ce30d10721, type: 2}
+  - {fileID: 11400000, guid: 8716d47b37b21d247813c62f9d4c1ed6, type: 2}
+  - {fileID: 11400000, guid: c2647eda660911a46a182e3408d08b08, type: 2}
+  - {fileID: 11400000, guid: 5caa60c0371d0654287a2c6ba0ab0d42, type: 2}
   - {fileID: 11400000, guid: b2b1f17a4f0c8684bbbb88cd65efa86c, type: 2}
   SelectedPassive: {fileID: 0}
   currentMoneyScript: {fileID: 700055817}
