@@ -22,7 +22,7 @@ MonoBehaviour:
   numberToDefeat: 5
   numberDefeated: 0
   isUnlocked: 0
-  ennemyToDefeatName: "T\xEAte d'Hydre"
+  ennemyToDefeatName: HyDrone
   passifToUnlock: {fileID: 0}
   achievementManager: {fileID: 0}
   HUDSprite: {fileID: -5741717483247419182, guid: 70c989a94c01ef5469dabb5e2b5e5da2,
