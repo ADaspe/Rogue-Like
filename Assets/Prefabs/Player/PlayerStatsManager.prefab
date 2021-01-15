@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   invulnerability: 0
+  invulnerabilityTime: 0
   LifeDecreaseSpeed: 1
   LifeStopDecrease: 10
   MaxHealth: 100
@@ -57,7 +58,7 @@ MonoBehaviour:
   lifeThreshold: 0
   DashDistance: 5
   DashTime: 0.2
-  SwichDashDistance: 1
+  SwichDashDistance: 0.5
   SwichDashTime: 0.1
   SponkDashDistance: 5
   SponkDashTime: 0.15

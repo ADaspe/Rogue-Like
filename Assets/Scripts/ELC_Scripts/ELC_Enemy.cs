@@ -105,7 +105,7 @@ public class ELC_Enemy : MonoBehaviour
 
     void Update()
     {
-        VerifyIfIsAtDistance();
+        if(!isDead) VerifyIfIsAtDistance();
         
         if(isSpawning) // pour le shader de spawn
         {
@@ -116,6 +116,7 @@ public class ELC_Enemy : MonoBehaviour
         {
             dissolveValue -= Time.deltaTime * 5 / enemyStats.DeathTime;
             spriteRenderer.material.SetFloat("_DissolveLevel", dissolveValue);
+            Debug.Log(dissolveValue);
         }
 
         if (!isStun && !isDead)
@@ -564,7 +565,7 @@ public class ELC_Enemy : MonoBehaviour
             StartCoroutine("Death");
             
         }
-        else StartCoroutine(ApplyShader(0.1f, getHitMaterial));
+        else StartCoroutine(ApplyShader(0.05f, getHitMaterial));
     }
 
     IEnumerator Death()
@@ -574,6 +575,9 @@ public class ELC_Enemy : MonoBehaviour
         dissolveValue = 5;
         enemyCollider.enabled = false;
         isDead = true;
+        StopCoroutine("Attack");
+        enemyAnimator.SetBool("IsPreparingForAttack", false);
+        enemyAnimator.SetBool("IsAttacking", false);
         StartCoroutine(ApplyShader(enemyStats.DeathTime, deathMaterial));
         yield return new WaitForSeconds(enemyStats.DeathTime);
         DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemyStats.MoneyEarnWhenDead);
@@ -620,12 +624,13 @@ public class ELC_Enemy : MonoBehaviour
 
     private IEnumerator DashAttack()
     {
+        //Debug.Log("DashAttack");
         Collider2D[] hitColliders = null;
         
         bool hitPlayer = false;
         if (!stopDashDamage)
         {
-            while (Time.time >= stopDashing || hitPlayer == false || !stopDashDamage)
+            while (Time.time <= stopDashing && hitPlayer == false && !stopDashDamage)
             {
                 hitColliders = null;
                 hitColliders = Physics2D.OverlapBoxAll(this.transform.position + directionToDash.normalized * 0.5f, new Vector2(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth), Vector2.Angle(Vector2.up, directionToDash), LayerMask.GetMask("Player"));
