@@ -19,8 +19,10 @@ public class AXD_Hydra : MonoBehaviour
     public float timeToBeVulnerable;
     public bool headsToSpawn;
     public int maxHealthHead;
+    public Material glowHeadPhase3;
     public float healthPercentageHeadPhase2;
     public float healthPercentageHeadPhase3;
+    public GameObject forceField;
 
 
     private void Start()
@@ -28,6 +30,7 @@ public class AXD_Hydra : MonoBehaviour
         enemy = GetComponent<ELC_Enemy>();
         currentPhase = BossPhase.Phase1;
         enemy.isInvulnerable = true;
+        forceField = this.gameObject.transform.GetChild(7).gameObject;
         LetsFight();
     }
     private void Update()
@@ -72,18 +75,22 @@ public class AXD_Hydra : MonoBehaviour
                 AXD_HydraHead temp4 = Instantiate(head1Prefab, this.gameObject.transform.GetChild(3));
                 temp4.headStats.MaxHealth = temp4.enemyScript.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase3 / 100);
                 temp4.GetHydraRef(this);
+                temp4.GetComponent<SpriteRenderer>().material = glowHeadPhase3;
                 heads.Add(temp4);
                 AXD_HydraHead temp5 = Instantiate(head2Prefab, this.gameObject.transform.GetChild(4));
                 temp5.headStats.MaxHealth = temp5.enemyScript.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase3 / 100);
                 temp5.GetHydraRef(this);
+                temp4.GetComponent<SpriteRenderer>().material = glowHeadPhase3;
                 heads.Add(temp5);
                 AXD_HydraHead temp6 = Instantiate(head3Prefab, this.gameObject.transform.GetChild(5));
                 temp6.headStats.MaxHealth = temp6.enemyScript.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase3 / 100);
                 temp6.GetHydraRef(this);
+                temp4.GetComponent<SpriteRenderer>().material = glowHeadPhase3;
                 heads.Add(temp6);
                 AXD_HydraHead temp7 = Instantiate(head4Prefab, this.gameObject.transform.GetChild(6));
                 temp7.headStats.MaxHealth = temp7.enemyScript.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase3 / 100);
                 temp7.GetHydraRef(this);
+                temp4.GetComponent<SpriteRenderer>().material = glowHeadPhase3;
                 heads.Add(temp7);
                 break;
         }
@@ -110,15 +117,15 @@ public class AXD_Hydra : MonoBehaviour
     public void VulnerablePhase()
     {
         Debug.Log("Attack me !");
+        forceField.SetActive(false);
         if (Time.time > timeToBeVulnerable || enemy.currentHealth < stats.healthPhase[(int)currentPhase])
         {
             if (enemy.currentHealth < stats.healthPhase[(int)currentPhase])
             {
                 enemy.currentHealth = stats.healthPhase[(int)currentPhase];
             }
-            enemy.isInvulnerable = true;
-            headsToSpawn = true;
-            ChangePhase();
+            StartCoroutine(BecomeInvunerable());
+            
         }
     }
 
@@ -154,5 +161,15 @@ public class AXD_Hydra : MonoBehaviour
     public void LetsFight()
     {
         headsToSpawn = true;
+    }
+
+    IEnumerator BecomeInvunerable()
+    {
+        FindObjectOfType<PlayerHealth>().GetHit(0, 15, 0);
+        yield return new WaitForSeconds(1);
+        forceField.SetActive(true); ;
+        enemy.isInvulnerable = true;
+        headsToSpawn = true;
+        ChangePhase();
     }
 }
