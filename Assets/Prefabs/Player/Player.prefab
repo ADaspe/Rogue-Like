@@ -321,6 +321,9 @@ MonoBehaviour:
   blueMat: {fileID: 0}
   orangeMat: {fileID: 0}
   pinkMat: {fileID: 0}
+  glowTime: 0.75
+  damageMat: {fileID: 2100000, guid: 4e2557665d0b01f418aa2ba7c90152b0, type: 2}
+  damageMatTime: 0.75
   DashParticles: {fileID: 7084529617503343625}
   bodyHitMask:
     serializedVersion: 2

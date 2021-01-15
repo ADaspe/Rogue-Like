@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PassiveName: Bottes D'Hermes
   PassiveDescription: Le Dash stun les ennemis
-  PassivePrice: 0
+  PassivePrice: 2750
   isUnlock: 0
   HUDSprite: {fileID: 6968084936573196748, guid: d2d062ff307f81d4e836ccc9ea347700,
     type: 3}

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: "App\xE9tit De Lycaron"
   m_EditorClassIdentifier: 
   PassiveName: "App\xE9tit De Lycaon"
-  PassiveDescription: Le bon toutou
+  PassiveDescription: "Les attaques d'estoc rendent de la vie en fonction du nombre
+    d'ennemis touch\xE9s"
   PassivePrice: 2000
   isUnlock: 0
   HUDSprite: {fileID: 5127041399917441057, guid: d2d062ff307f81d4e836ccc9ea347700,
