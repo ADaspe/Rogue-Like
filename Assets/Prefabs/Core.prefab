@@ -225,6 +225,11 @@ PrefabInstance:
       propertyPath: pinkMat
       value: 
       objectReference: {fileID: 2100000, guid: 13246f962d35ecc4d92d7f949f505b20, type: 2}
+    - target: {fileID: 3081472017539436263, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: damageMatTime
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3282318346991483589, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: m_Name
