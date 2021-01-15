@@ -393,6 +393,8 @@ MonoBehaviour:
   isDead: 0
   healthSlider: {fileID: 0}
   bouteille: {fileID: 0}
+  uiToGlitch: []
+  timeToGlitchUiOnHit: 0.2
 --- !u!114 &6115952892813048268
 MonoBehaviour:
   m_ObjectHideFlags: 0
