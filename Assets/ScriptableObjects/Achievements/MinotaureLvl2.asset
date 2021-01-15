@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
   m_Name: MinotaureLvl2
   m_EditorClassIdentifier: 
-  achievementName: Minotaure Lvl 2
+  achievementName: "Lib\xE9rateur de Cr\xE8te Lvl 2"
   achievementTier: 2
-  ennemyToDefeat: {fileID: 1775749699373023050, guid: 31a8c89326ffe3c48b0146c030fd5abe,
-    type: 3}
+  ennemyToDefeat:
+  - {fileID: 1775749699373023050, guid: 31a8c89326ffe3c48b0146c030fd5abe, type: 3}
   numberToDefeat: 30
   numberDefeated: 0
   isUnlocked: 0
+  ennemyToDefeatName: Minotaure
   passifToUnlock: {fileID: 0}
   achievementManager: {fileID: 0}
   HUDSprite: {fileID: 4740783378816029341, guid: a5959108d54d05e449842384bbc80717,

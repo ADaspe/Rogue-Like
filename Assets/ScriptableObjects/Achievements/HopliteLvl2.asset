@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
   m_Name: HopliteLvl2
   m_EditorClassIdentifier: 
-  achievementName: Hoplite Lvl 2
+  achievementName: Massacreur de Hoplite Lvl 2
   achievementTier: 2
-  ennemyToDefeat: {fileID: 2148857145838052543, guid: e92a72e0dcedde944886188f85b5d608,
-    type: 3}
+  ennemyToDefeat:
+  - {fileID: 2148857145838052543, guid: e92a72e0dcedde944886188f85b5d608, type: 3}
   numberToDefeat: 70
   numberDefeated: 0
   isUnlocked: 0
+  ennemyToDefeatName: Hoplite
   passifToUnlock: {fileID: 11400000, guid: e8365aef04281bd45b3471d2fc5b1fb6, type: 2}
   achievementManager: {fileID: 0}
   HUDSprite: {fileID: -5082979250979548698, guid: ff9ef1e9a14bf104e9dd5f7afb0d3d69,

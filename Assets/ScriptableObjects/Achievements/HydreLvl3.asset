@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
   m_Name: HydreLvl3
   m_EditorClassIdentifier: 
-  achievementName: Hydre Lvl 3
+  achievementName: "D\xE9capiteur d'Hydre Lvl 3"
   achievementTier: 3
-  ennemyToDefeat: {fileID: 5700113035729362853, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8,
-    type: 3}
+  ennemyToDefeat:
+  - {fileID: 5700113035729362853, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8, type: 3}
   numberToDefeat: 7
   numberDefeated: 0
   isUnlocked: 0
+  ennemyToDefeatName: Hydre de L3ern
   passifToUnlock: {fileID: 0}
   achievementManager: {fileID: 0}
   HUDSprite: {fileID: 3076839679539683063, guid: 8eca3fc33291c8246951cd5071a8dca0,

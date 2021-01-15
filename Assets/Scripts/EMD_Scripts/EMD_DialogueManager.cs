@@ -188,7 +188,7 @@ public class EMD_DialogueManager : MonoBehaviour
         {
             IsAchievement = true;
             Achsentences[0] = "Nom : " + AchievementManagerScript.SelectedAchievement.achievementName;
-            Achsentences[1] = AchievementManagerScript.SelectedAchievement.ennemyToDefeat.name + " : " + AchievementManagerScript.SelectedAchievement.numberDefeated + " / " + AchievementManagerScript.SelectedAchievement.numberToDefeat;
+            Achsentences[1] = AchievementManagerScript.SelectedAchievement.ennemyToDefeatName + " : " + AchievementManagerScript.SelectedAchievement.numberDefeated + " / " + AchievementManagerScript.SelectedAchievement.numberToDefeat;
             if (AchievementManagerScript.SelectedAchievement.passifToUnlock != null)
             {
                 Achsentences[2] = "Nom Passif : " + AchievementManagerScript.SelectedAchievement.passifToUnlock.name;

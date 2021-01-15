@@ -12,13 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
   m_Name: "T\xEAteHydreLvl3"
   m_EditorClassIdentifier: 
-  achievementName: "T\xEAte d'Hydre Lvl 3"
+  achievementName: "Chasseur de t\xEAte Lvl 3"
   achievementTier: 3
-  ennemyToDefeat: {fileID: 2253084279791419850, guid: 51fd13485ecb443498e36ea6aa23a574,
-    type: 3}
+  ennemyToDefeat:
+  - {fileID: 2354318920522866430, guid: cfab9a84001e22d42afb3ffda1f2f0da, type: 3}
+  - {fileID: 2354318920522866430, guid: 8e424bc7b9f2f904197a5fe8c11b1a5f, type: 3}
+  - {fileID: 2354318920522866430, guid: aff26d884bb9dba4abab2fbde2b18e4e, type: 3}
+  - {fileID: 2354318920522866430, guid: 5b6d22ba65ab74f49ba738fc409e680a, type: 3}
   numberToDefeat: 40
   numberDefeated: 0
   isUnlocked: 0
+  ennemyToDefeatName: "T\xEAte d'Hydre"
   passifToUnlock: {fileID: 0}
   achievementManager: {fileID: 0}
   HUDSprite: {fileID: 4625889729168729911, guid: 70c989a94c01ef5469dabb5e2b5e5da2,
