@@ -20,7 +20,7 @@ MonoBehaviour:
   numberDefeated: 0
   isUnlocked: 0
   ennemyToDefeatName: Sentinelle Mk.Artemis
-  passifToUnlock: {fileID: 0}
+  passifToUnlock: {fileID: 11400000, guid: 1f6508be9a869994db164a2e8114c13e, type: 2}
   achievementManager: {fileID: 0}
   HUDSprite: {fileID: 3549022090326863534, guid: cb210a5b7308e71449a6423fa38deabb,
     type: 3}
