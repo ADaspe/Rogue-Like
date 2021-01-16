@@ -16,6 +16,6 @@ MonoBehaviour:
   PassiveDescription: "Les attaques d'estoc rendent de la vie en fonction du nombre
     d'ennemis touch\xE9s"
   PassivePrice: 2000
-  isUnlock: 0
+  isUnlock: 1
   HUDSprite: {fileID: 5127041399917441057, guid: d2d062ff307f81d4e836ccc9ea347700,
     type: 3}
