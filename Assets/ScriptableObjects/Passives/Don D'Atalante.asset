@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PassiveName: Don D'Atalante
   PassiveDescription: Augmente la vitesse du joueur en mode berzerk
-  PassivePrice: 2135
-  isUnlock: 0
+  PassivePrice: 1935
+  isUnlock: 1
   HUDSprite: {fileID: 3575065135639279086, guid: d2d062ff307f81d4e836ccc9ea347700,
     type: 3}

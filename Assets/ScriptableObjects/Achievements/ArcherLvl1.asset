@@ -20,7 +20,7 @@ MonoBehaviour:
   numberDefeated: 0
   isUnlocked: 0
   ennemyToDefeatName: Sentinelle Mk.Apollon
-  passifToUnlock: {fileID: 11400000, guid: e8365aef04281bd45b3471d2fc5b1fb6, type: 2}
+  passifToUnlock: {fileID: 0}
   achievementManager: {fileID: 0}
   HUDSprite: {fileID: 7832809215036211624, guid: d899f1af6e162f5468388f1205cf6309,
     type: 3}
