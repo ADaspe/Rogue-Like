@@ -1,58 +1,43 @@
 fileFormatVersion: 2
-guid: 6086bc0939af1934dbfe0a3720ac6e1c
+guid: c5c2a07e87720094ab27b7534caa95c4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3098243646441515751
-    second: hopliteSwishside_0
+      213: -6550276704723965075
+    second: P1 cpu idle_0
   - first:
-      213: 7935218047851069675
-    second: hopliteSwishside_1
+      213: -1486113371504125645
+    second: P1 cpu idle_1
   - first:
-      213: 5663529445839751098
-    second: hopliteSwishside_2
+      213: 3089443602937094718
+    second: P1 cpu idle_2
   - first:
-      213: -8056995067358278170
-    second: hopliteSwishside_3
+      213: -5079114412225546876
+    second: P1 cpu idle_3
   - first:
-      213: -8432368908556685700
-    second: hopliteSwishside_4
+      213: -1968719482831424831
+    second: P1 cpu idle_4
   - first:
-      213: 2924473580080099171
-    second: hopliteSwishside_5
+      213: -7720394944775915663
+    second: P1 cpu idle_5
   - first:
-      213: 3050750231787287347
-    second: hopliteSwishside_6
+      213: 3072110462319072351
+    second: P1 cpu idle_6
   - first:
-      213: -183131813532628481
-    second: hopliteSwishside_7
+      213: -7878591832172622959
+    second: P1 cpu idle_7
   - first:
-      213: -979243859933614871
-    second: hopliteSwishside_0
+      213: 4564083710869410141
+    second: P1 cpu idle_8
   - first:
-      213: 7601191570102738721
-    second: hopliteSwishside_1
+      213: -2728613090462884763
+    second: P1 cpu idle_9
   - first:
-      213: 5797941665756630349
-    second: hopliteSwishside_2
+      213: -1857831076740206101
+    second: P1 cpu idle_10
   - first:
-      213: -1549127924090782458
-    second: hopliteSwishside_3
-  - first:
-      213: 2364881273308617466
-    second: hopliteSwishside_4
-  - first:
-      213: -8340310275798468233
-    second: hopliteSwishside_5
-  - first:
-      213: 5620650688384918570
-    second: hopliteSwishside_6
-  - first:
-      213: 5242702064385976477
-    second: hopliteSwishside_7
-  - first:
-      213: -2658879947005608389
-    second: hopliteSwishside_8
+      213: -4780913636772425486
+    second: P1 cpu idle_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -174,13 +159,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hopliteSwishside_0
+      name: P1 cpu idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 215
-        height: 215
+        width: 144
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ecac2cc5e60962f0800000000000000
-      internalID: -979243859933614871
+      spriteID: d6b696aba0eb815a0800000000000000
+      internalID: -6550276704723965075
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishside_1
+      name: P1 cpu idle_1
       rect:
         serializedVersion: 2
-        x: 215
+        x: 144
         y: 0
-        width: 215
-        height: 215
+        width: 144
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12fdaadc57bdc7960800000000000000
-      internalID: 7601191570102738721
+      spriteID: 339d98b23c3406be0800000000000000
+      internalID: -1486113371504125645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishside_2
+      name: P1 cpu idle_2
       rect:
         serializedVersion: 2
-        x: 430
+        x: 288
         y: 0
-        width: 215
-        height: 215
+        width: 144
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4d4cd7e93d667050800000000000000
-      internalID: 5797941665756630349
+      spriteID: e322baa9698efda20800000000000000
+      internalID: 3089443602937094718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishside_3
+      name: P1 cpu idle_3
       rect:
         serializedVersion: 2
-        x: 645
+        x: 432
         y: 0
-        width: 215
-        height: 215
+        width: 144
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60d3ee45c54608ae0800000000000000
-      internalID: -1549127924090782458
+      spriteID: 485bab53a5c5389b0800000000000000
+      internalID: -5079114412225546876
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishside_4
+      name: P1 cpu idle_4
       rect:
         serializedVersion: 2
-        x: 860
+        x: 576
         y: 0
-        width: 215
-        height: 215
+        width: 144
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,20 +257,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afa98870dfeb1d020800000000000000
-      internalID: 2364881273308617466
+      spriteID: 1c23173af04bda4e0800000000000000
+      internalID: -1968719482831424831
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishside_5
+      name: P1 cpu idle_5
       rect:
         serializedVersion: 2
-        x: 1075
+        x: 720
         y: 0
-        width: 215
-        height: 215
+        width: 144
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,20 +278,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 779fd763ef3414c80800000000000000
-      internalID: -8340310275798468233
+      spriteID: 177f8eeb3b5abd490800000000000000
+      internalID: -7720394944775915663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishside_6
+      name: P1 cpu idle_6
       rect:
         serializedVersion: 2
-        x: 1290
+        x: 864
         y: 0
-        width: 215
-        height: 215
+        width: 144
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,20 +299,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a24ecb78500900e40800000000000000
-      internalID: 5620650688384918570
+      spriteID: f541a41503452aa20800000000000000
+      internalID: 3072110462319072351
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishside_7
+      name: P1 cpu idle_7
       rect:
         serializedVersion: 2
-        x: 1505
+        x: 1008
         y: 0
-        width: 215
-        height: 215
+        width: 144
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,20 +320,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d98eee220c1d1c840800000000000000
-      internalID: 5242702064385976477
+      spriteID: 19b8e01a87e99a290800000000000000
+      internalID: -7878591832172622959
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishside_8
+      name: P1 cpu idle_8
       rect:
         serializedVersion: 2
-        x: 1720
+        x: 1152
         y: 0
-        width: 215
-        height: 215
+        width: 144
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,8 +341,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b3e325a86c2c91bd0800000000000000
-      internalID: -2658879947005608389
+      spriteID: d51948714f1e65f30800000000000000
+      internalID: 4564083710869410141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1 cpu idle_9
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 0
+        width: 144
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56c9a7dd9d4022ad0800000000000000
+      internalID: -2728613090462884763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1 cpu idle_10
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 144
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1f73a9a78a736e0800000000000000
+      internalID: -1857831076740206101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P1 cpu idle_11
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 0
+        width: 144
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f0db52b068c6adb0800000000000000
+      internalID: -4780913636772425486
       vertices: []
       indices: 
       edges: []
@@ -365,7 +413,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1d89f814b1120ce498442588d53405e0
+    spriteID: 64980b7bd9f5a144c8afc3922ec707db
     internalID: 0
     vertices: []
     indices: 

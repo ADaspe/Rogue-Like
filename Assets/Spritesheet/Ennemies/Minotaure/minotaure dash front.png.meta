@@ -1,85 +1,64 @@
 fileFormatVersion: 2
-guid: 9c2b91e7507837f42ab0a6b322654051
+guid: 26a134d79452d6c4d82386e0ab7771cd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -768031429961073
-    second: minotaure attaque front_0
+      213: -4098561616346585317
+    second: minotaure dash front_0
   - first:
-      213: -6683053639978185888
-    second: minotaure attaque front_1
+      213: -1484862178753989804
+    second: minotaure dash front_1
   - first:
-      213: -1056625696811007423
-    second: minotaure attaque front_2
+      213: 7637116146494908254
+    second: minotaure dash front_2
   - first:
-      213: -5788298280990643822
-    second: minotaure attaque front_3
+      213: -1427639990658674576
+    second: minotaure dash front_3
   - first:
-      213: 6950881816827623478
-    second: minotaure attaque front_4
+      213: -3425974131984465808
+    second: minotaure dash front_4
   - first:
-      213: -5829025344831861361
-    second: minotaure attaque front_5
+      213: 6289399231512444302
+    second: minotaure dash front_5
   - first:
-      213: -2978202516860794949
-    second: minotaure attaque front_6
+      213: -8332375298595351299
+    second: minotaure dash front_6
   - first:
-      213: 4682720313322343020
-    second: minotaure attaque front_7
+      213: 3277732804472729552
+    second: minotaure dash front_7
   - first:
-      213: -8727597714989385988
-    second: minotaure attaque front_8
+      213: 9116795249816823508
+    second: minotaure dash front_8
   - first:
-      213: -6311378070829201976
-    second: minotaure attaque front_9
+      213: 2091748254142524745
+    second: minotaure dash front_9
   - first:
-      213: 5071983133770585636
-    second: minotaure attaque front_10
+      213: -7682036697507123516
+    second: minotaure dash front_10
   - first:
-      213: 731832169205457261
-    second: minotaure attaque front_11
+      213: -8757973059629744293
+    second: minotaure dash front_11
   - first:
-      213: 1057767146339048358
-    second: minotaure attaque front_0
+      213: 9169904501790370521
+    second: minotaure dash front_12
   - first:
-      213: 533981956377570602
-    second: minotaure attaque front_1
+      213: 5249514250162007769
+    second: minotaure dash front_13
   - first:
-      213: 1531300989876098523
-    second: minotaure attaque front_2
+      213: -3633465122717598096
+    second: minotaure dash front_14
   - first:
-      213: -4697810807639546329
-    second: minotaure attaque front_3
+      213: -3342900978485679322
+    second: minotaure dash front_15
   - first:
-      213: -9211566270881476016
-    second: minotaure attaque front_4
+      213: -3357457421860596004
+    second: minotaure dash front_16
   - first:
-      213: -1041244405062455071
-    second: minotaure attaque front_5
+      213: 775328118470197634
+    second: minotaure dash front_17
   - first:
-      213: 6917651224608435298
-    second: minotaure attaque front_6
-  - first:
-      213: 1365527191870169936
-    second: minotaure attaque front_7
-  - first:
-      213: 601700516613601089
-    second: minotaure attaque front_8
-  - first:
-      213: -67086691470371089
-    second: minotaure attaque front_9
-  - first:
-      213: 4316559879950675617
-    second: minotaure attaque front_10
-  - first:
-      213: -1001057705717846966
-    second: minotaure attaque front_11
-  - first:
-      213: 6608372790601470215
-    second: minotaure attaque front_12
-  - first:
-      213: -4819485795124361843
-    second: minotaure attaque front_13
+      213: -5562092856936352410
+    second: minotaure dash front_18
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -201,7 +180,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: minotaure attaque front_0
+      name: minotaure dash front_0
       rect:
         serializedVersion: 2
         x: 0
@@ -215,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ab1e948d91fdae00800000000000000
-      internalID: 1057767146339048358
+      spriteID: b176c9fccebfe17c0800000000000000
+      internalID: -4098561616346585317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minotaure attaque front_1
+      name: minotaure dash front_1
       rect:
         serializedVersion: 2
         x: 100
@@ -236,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2d6a5a92c5196700800000000000000
-      internalID: 533981956377570602
+      spriteID: 453b4fe27b5b46be0800000000000000
+      internalID: -1484862178753989804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minotaure attaque front_2
+      name: minotaure dash front_2
       rect:
         serializedVersion: 2
         x: 200
@@ -257,14 +236,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd5d4c91326404510800000000000000
-      internalID: 1531300989876098523
+      spriteID: e57aa3c0cac7cf960800000000000000
+      internalID: 7637116146494908254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minotaure attaque front_3
+      name: minotaure dash front_3
       rect:
         serializedVersion: 2
         x: 300
@@ -278,14 +257,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72667a4e5f50eceb0800000000000000
-      internalID: -4697810807639546329
+      spriteID: 070d5a11ef0003ce0800000000000000
+      internalID: -1427639990658674576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minotaure attaque front_4
+      name: minotaure dash front_4
       rect:
         serializedVersion: 2
         x: 400
@@ -299,14 +278,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 052d3271841f92080800000000000000
-      internalID: -9211566270881476016
+      spriteID: 0708365bdae7470d0800000000000000
+      internalID: -3425974131984465808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minotaure attaque front_5
+      name: minotaure dash front_5
       rect:
         serializedVersion: 2
         x: 500
@@ -320,14 +299,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e0b3e7fab1cc81f0800000000000000
-      internalID: -1041244405062455071
+      spriteID: e8df9e4474f684750800000000000000
+      internalID: 6289399231512444302
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minotaure attaque front_6
+      name: minotaure dash front_6
       rect:
         serializedVersion: 2
         x: 600
@@ -341,14 +320,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26ce4d2332f600060800000000000000
-      internalID: 6917651224608435298
+      spriteID: df41cff00d47d5c80800000000000000
+      internalID: -8332375298595351299
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minotaure attaque front_7
+      name: minotaure dash front_7
       rect:
         serializedVersion: 2
         x: 700
@@ -362,14 +341,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 053ee820fb353f210800000000000000
-      internalID: 1365527191870169936
+      spriteID: 0dfed379e98dc7d20800000000000000
+      internalID: 3277732804472729552
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minotaure attaque front_8
+      name: minotaure dash front_8
       rect:
         serializedVersion: 2
         x: 800
@@ -383,14 +362,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1473ce19e6ba95800800000000000000
-      internalID: 601700516613601089
+      spriteID: 4d6ec431afc558e70800000000000000
+      internalID: 9116795249816823508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minotaure attaque front_9
+      name: minotaure dash front_9
       rect:
         serializedVersion: 2
         x: 900
@@ -404,14 +383,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe690c17209a11ff0800000000000000
-      internalID: -67086691470371089
+      spriteID: 94d65bf54f1670d10800000000000000
+      internalID: 2091748254142524745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minotaure attaque front_10
+      name: minotaure dash front_10
       rect:
         serializedVersion: 2
         x: 1000
@@ -425,14 +404,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1aea928375087eb30800000000000000
-      internalID: 4316559879950675617
+      spriteID: 4cea295235ce36590800000000000000
+      internalID: -7682036697507123516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minotaure attaque front_11
+      name: minotaure dash front_11
       rect:
         serializedVersion: 2
         x: 1100
@@ -446,14 +425,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4c250b02578b12f0800000000000000
-      internalID: -1001057705717846966
+      spriteID: b5ff35c67ed657680800000000000000
+      internalID: -8757973059629744293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minotaure attaque front_12
+      name: minotaure dash front_12
       rect:
         serializedVersion: 2
         x: 1200
@@ -467,14 +446,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70158275a08a5bb50800000000000000
-      internalID: 6608372790601470215
+      spriteID: 9da68756f8b024f70800000000000000
+      internalID: 9169904501790370521
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: minotaure attaque front_13
+      name: minotaure dash front_13
       rect:
         serializedVersion: 2
         x: 1300
@@ -488,8 +467,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d85429d343fbd1db0800000000000000
-      internalID: -4819485795124361843
+      spriteID: 9dee14cb5650ad840800000000000000
+      internalID: 5249514250162007769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minotaure dash front_14
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e75a8c8b6539dc0800000000000000
+      internalID: -3633465122717598096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minotaure dash front_15
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b2e028541ab91d0800000000000000
+      internalID: -3342900978485679322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minotaure dash front_16
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd6108d634ae761d0800000000000000
+      internalID: -3357457421860596004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minotaure dash front_17
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 281c9cdd0d482ca00800000000000000
+      internalID: 775328118470197634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minotaure dash front_18
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 665329e040a7fc2b0800000000000000
+      internalID: -5562092856936352410
       vertices: []
       indices: 
       edges: []
@@ -497,7 +581,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: dc4bfcead5bfcae4aaa9b749197f1932
+    spriteID: 89f566f66d86677498561f58adff5dc2
     internalID: 0
     vertices: []
     indices: 

@@ -14,6 +14,7 @@ TagManager:
   - NPC
   - Coin
   - Projectile
+  - Door
   layers:
   - Default
   - TransparentFX
