@@ -8,6 +8,7 @@ public class ELC_RoomProperties : MonoBehaviour
 {
     enum doorsDirections {Left, Right, Top, Down};
     doorsDirections directions = doorsDirections.Left;
+    private ELC_RoomsGenerator generatorScript;
 
     public bool openLeftDoor;
     public bool openRightDoor;
@@ -49,6 +50,11 @@ public class ELC_RoomProperties : MonoBehaviour
     public List<GameObject> powerUpsGenerators = new List<GameObject>();
 
 
+    private void Start()
+    {
+        generatorScript = FindObjectOfType<ELC_RoomsGenerator>();
+    }
+
     private void Update()
     {
         if (thereIsRoom)
@@ -72,10 +78,40 @@ public class ELC_RoomProperties : MonoBehaviour
     {
         for (int i = 0; i < doors.Count ; i++)
         {
-            if (openSides[i]) doors[i].SetActive(close);
+            if (openSides[i])
+            {
+                doors[i].transform.GetChild(0).gameObject.SetActive(false);
+                doors[i].transform.GetChild(1).gameObject.SetActive(false);
+                if (close) doors[i].transform.GetChild(2).gameObject.GetComponent<Collider2D>().enabled = true;
+                else doors[i].transform.GetChild(2).gameObject.GetComponent<Collider2D>().enabled = false;
+                StartCoroutine(DoorsAnimations(doors[i].transform.GetChild(2).gameObject, close));
+            }
+            
         }
 
         RoomIsClosed = close;
+    }
+
+    IEnumerator DoorsAnimations(GameObject door, bool close)
+    {
+        if (close) 
+        {
+            door.GetComponent<Animator>().SetBool("isClosing", true);
+            door.GetComponent<SpriteRenderer>().enabled = true;
+        }
+        else
+        {
+            door.GetComponent<Animator>().SetBool("isOpening", true);
+        }
+        yield return new WaitForSeconds(0.75f);
+        if (close) door.GetComponent<Animator>().SetBool("isClosing", false);
+        else
+        {
+            door.GetComponent<Animator>().SetBool("isOpening", false);
+            door.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
+
     }
     
     void PlayerEnterInRoom()
@@ -218,25 +254,68 @@ public class ELC_RoomProperties : MonoBehaviour
             LeftDoor.SetActive(false);
             DrawWalls(LeftDoor);
         }
+        else ReplaceDoors(LeftDoor, doorsDirections.Left);
+
         if (!openSides[1])
         {
             RightDoor.SetActive(false);
             DrawWalls(RightDoor);
         }
+        else ReplaceDoors(RightDoor, doorsDirections.Right);
+
         if (!openSides[2])
         {
             TopDoor.SetActive(false);
             DrawWalls(TopDoor);
         }
+        else ReplaceDoors(TopDoor, doorsDirections.Top);
+
         if (!openSides[3])
         {
             DownDoor.SetActive(false);
             DrawWalls(DownDoor);
         }
+        else ReplaceDoors(DownDoor, doorsDirections.Down);
 
 
 
         DoorsState(false);
+
+    }
+
+    private void ReplaceDoors(GameObject doorToReplace, doorsDirections direction)
+    {
+        float frontDoorsHeight = 0.89f;
+        float lateralDoorsPositionAdjustement = 0.5f;
+
+        Vector3 newDoorPosition = Vector3.zero;
+
+        GameObject doorFirstPart = doorToReplace.transform.GetChild(0).gameObject;
+        GameObject doorSecondPart = doorToReplace.transform.GetChild(1).gameObject;
+
+        if(direction == doorsDirections.Left || direction == doorsDirections.Right)
+        {
+            if(doorFirstPart.transform.position.y > doorSecondPart.transform.position.y)
+            {
+                newDoorPosition = new Vector3(doorFirstPart.transform.position.x, doorFirstPart.transform.position.y - Vector3.Distance(doorFirstPart.transform.position, doorSecondPart.transform.position) / 2);
+            }
+            else newDoorPosition = new Vector3(doorSecondPart.transform.position.x, doorSecondPart.transform.position.y - Vector3.Distance(doorFirstPart.transform.position, doorSecondPart.transform.position) / 2);
+            newDoorPosition.y += lateralDoorsPositionAdjustement;
+            Instantiate(generatorScript.LateralDoors, newDoorPosition ,Quaternion.identity, doorToReplace.transform);
+            
+        }
+        else if(direction == doorsDirections.Top || direction == doorsDirections.Down)
+        {
+            if(doorFirstPart.transform.position.x > doorSecondPart.transform.position.x)
+            {
+                newDoorPosition = new Vector3(doorFirstPart.transform.position.x - Vector3.Distance(doorFirstPart.transform.position, doorSecondPart.transform.position) / 2, doorFirstPart.transform.position.y);
+            }
+            else newDoorPosition = new Vector3(doorSecondPart.transform.position.x - Vector3.Distance(doorFirstPart.transform.position, doorSecondPart.transform.position) / 2, doorFirstPart.transform.position.y);
+
+            if (direction == doorsDirections.Down) frontDoorsHeight = -frontDoorsHeight + 0.15f;
+            newDoorPosition.y += frontDoorsHeight;
+            Instantiate(generatorScript.FrontDoors, newDoorPosition, Quaternion.identity, doorToReplace.transform);
+        }
 
     }
 
