@@ -143,7 +143,7 @@ MonoBehaviour:
   speed: 3
   value: 5
   initialDropSpeed: 7
-  decreaseSpeedOnDrop: 0.1
+  decreaseSpeedOnDrop: 0.2
 --- !u!50 &3438627847694550344
 Rigidbody2D:
   serializedVersion: 4

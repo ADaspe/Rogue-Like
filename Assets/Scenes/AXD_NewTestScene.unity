@@ -5736,6 +5736,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -7.88
       objectReference: {fileID: 0}
+    - target: {fileID: 4121677859852615785, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
+      value: -2.7068992
+      objectReference: {fileID: 0}
+    - target: {fileID: 4121677859852615785, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
+      value: 1.5932494
+      objectReference: {fileID: 0}
     - target: {fileID: 4337284999762799077, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8,
         type: 3}
       propertyPath: m_Layer
@@ -5745,16 +5755,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Hydra
-      objectReference: {fileID: 0}
-    - target: {fileID: 4695540129941599299, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4695540129941599299, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4695540129941599299, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8,
         type: 3}
@@ -5826,6 +5826,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 7.72
       objectReference: {fileID: 0}
+    - target: {fileID: 5371919931568356947, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 516b86d5c836f83458f383ef44b5fea3, type: 2}
     - target: {fileID: 5873769437211169138, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8,
         type: 3}
       propertyPath: m_Layer
