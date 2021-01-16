@@ -1,58 +1,19 @@
 fileFormatVersion: 2
-guid: 6086bc0939af1934dbfe0a3720ac6e1c
+guid: e92ea1dcc8989524ab61733e6f2ea351
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3098243646441515751
-    second: hopliteSwishside_0
+      213: -2325189707845235567
+    second: bouteille augmente_0
   - first:
-      213: 7935218047851069675
-    second: hopliteSwishside_1
+      213: -1204651981720732454
+    second: bouteille augmente_1
   - first:
-      213: 5663529445839751098
-    second: hopliteSwishside_2
+      213: 1477817101551804965
+    second: bouteille augmente_2
   - first:
-      213: -8056995067358278170
-    second: hopliteSwishside_3
-  - first:
-      213: -8432368908556685700
-    second: hopliteSwishside_4
-  - first:
-      213: 2924473580080099171
-    second: hopliteSwishside_5
-  - first:
-      213: 3050750231787287347
-    second: hopliteSwishside_6
-  - first:
-      213: -183131813532628481
-    second: hopliteSwishside_7
-  - first:
-      213: -979243859933614871
-    second: hopliteSwishside_0
-  - first:
-      213: 7601191570102738721
-    second: hopliteSwishside_1
-  - first:
-      213: 5797941665756630349
-    second: hopliteSwishside_2
-  - first:
-      213: -1549127924090782458
-    second: hopliteSwishside_3
-  - first:
-      213: 2364881273308617466
-    second: hopliteSwishside_4
-  - first:
-      213: -8340310275798468233
-    second: hopliteSwishside_5
-  - first:
-      213: 5620650688384918570
-    second: hopliteSwishside_6
-  - first:
-      213: 5242702064385976477
-    second: hopliteSwishside_7
-  - first:
-      213: -2658879947005608389
-    second: hopliteSwishside_8
+      213: -8200021347600630534
+    second: bouteille augmente_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -82,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 2
     mipBias: -100
     wrapU: 1
@@ -174,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hopliteSwishside_0
+      name: bouteille augmente_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 215
-        height: 215
+        width: 73
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ecac2cc5e60962f0800000000000000
-      internalID: -979243859933614871
+      spriteID: 19c8d74b7444bbfd0800000000000000
+      internalID: -2325189707845235567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishside_1
+      name: bouteille augmente_1
       rect:
         serializedVersion: 2
-        x: 215
+        x: 73
         y: 0
-        width: 215
-        height: 215
+        width: 73
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +170,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12fdaadc57bdc7960800000000000000
-      internalID: 7601191570102738721
+      spriteID: adcb097b767384fe0800000000000000
+      internalID: -1204651981720732454
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishside_2
+      name: bouteille augmente_2
       rect:
         serializedVersion: 2
-        x: 430
+        x: 146
         y: 0
-        width: 215
-        height: 215
+        width: 73
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,20 +191,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4d4cd7e93d667050800000000000000
-      internalID: 5797941665756630349
+      spriteID: 5222ef4f2d2428410800000000000000
+      internalID: 1477817101551804965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: hopliteSwishside_3
+      name: bouteille augmente_3
       rect:
         serializedVersion: 2
-        x: 645
+        x: 219
         y: 0
-        width: 215
-        height: 215
+        width: 73
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,113 +212,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60d3ee45c54608ae0800000000000000
-      internalID: -1549127924090782458
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hopliteSwishside_4
-      rect:
-        serializedVersion: 2
-        x: 860
-        y: 0
-        width: 215
-        height: 215
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afa98870dfeb1d020800000000000000
-      internalID: 2364881273308617466
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hopliteSwishside_5
-      rect:
-        serializedVersion: 2
-        x: 1075
-        y: 0
-        width: 215
-        height: 215
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 779fd763ef3414c80800000000000000
-      internalID: -8340310275798468233
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hopliteSwishside_6
-      rect:
-        serializedVersion: 2
-        x: 1290
-        y: 0
-        width: 215
-        height: 215
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a24ecb78500900e40800000000000000
-      internalID: 5620650688384918570
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hopliteSwishside_7
-      rect:
-        serializedVersion: 2
-        x: 1505
-        y: 0
-        width: 215
-        height: 215
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d98eee220c1d1c840800000000000000
-      internalID: 5242702064385976477
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hopliteSwishside_8
-      rect:
-        serializedVersion: 2
-        x: 1720
-        y: 0
-        width: 215
-        height: 215
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b3e325a86c2c91bd0800000000000000
-      internalID: -2658879947005608389
+      spriteID: afcf4a9a70ca33e80800000000000000
+      internalID: -8200021347600630534
       vertices: []
       indices: 
       edges: []
@@ -365,7 +221,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1d89f814b1120ce498442588d53405e0
+    spriteID: c02eef3c9a687024a878037a7e21e515
     internalID: 0
     vertices: []
     indices: 
