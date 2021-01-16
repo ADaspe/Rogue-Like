@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -9674,7 +9674,7 @@ PrefabInstance:
     - target: {fileID: 1815747221515009442, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1815747221515009442, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -9701,6 +9701,12 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1815747221515009442, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3547967652488494224, guid: 62af6e446e70a3c4c98a541723061092,
+        type: 2}
     - target: {fileID: 1983901468678269055, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -9930,6 +9936,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_SelectedColor.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2662385898955845721, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2662385898955845721, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2662385898955845721, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 114
+      objectReference: {fileID: 0}
+    - target: {fileID: 2662385898955845721, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2662385898955845721, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2697829030872089478, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -10274,7 +10305,7 @@ PrefabInstance:
     - target: {fileID: 3838971736114296411, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3941173820851570318, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -11206,6 +11237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultMat: {fileID: 0}
   glitchMat: {fileID: 2100000, guid: 3e27e7d59e85fdc45a9088137a6123ab, type: 2}
+  canGlitch: 0
 --- !u!1 &802945467 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7404685080683745098, guid: f523f809c561ee54dac7c3e8ae7438f8,
@@ -11258,6 +11290,7 @@ MonoBehaviour:
   ValidateButton: {fileID: 700055823}
   DialogueCanvas: {fileID: 700055833}
   QuittButton: {fileID: 700055822}
+  PassivesList: []
   PassivePrice: {fileID: 700055818}
   textDisplay: {fileID: 700055826}
   image1: {fileID: 700055821}
@@ -11457,7 +11490,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.88, y: 9.6}
+    oldSize: {x: 10.28, y: 9.4}
     newSize: {x: 5.88, y: 9.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
