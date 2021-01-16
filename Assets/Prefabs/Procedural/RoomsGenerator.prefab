@@ -76,3 +76,7 @@ MonoBehaviour:
   randomPoints: 
   secondaryRandomPoints: 
   numberOfEmptyRooms: 
+  LateralDoors: {fileID: 6137752656806909894, guid: ed6cdbf7f6408b24d9cd553d079f1e65,
+    type: 3}
+  FrontDoors: {fileID: 6067892434916540415, guid: 180e243ccdb7b10449031f187e058b88,
+    type: 3}
