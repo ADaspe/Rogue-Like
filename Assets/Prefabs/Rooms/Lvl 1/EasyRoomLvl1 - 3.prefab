@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4177127742557127223
 Transform:
   m_ObjectHideFlags: 0
@@ -12806,6 +12806,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Walls Generator (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8825023804348920984, guid: 02c52e6c23a1e214eb01a73a6074a303,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8825023804348920986, guid: 02c52e6c23a1e214eb01a73a6074a303,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17025,6 +17030,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Walls Generator (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8825023804348920984, guid: 02c52e6c23a1e214eb01a73a6074a303,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8825023804348920986, guid: 02c52e6c23a1e214eb01a73a6074a303,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17259,6 +17269,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Walls Generator (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8825023804348920984, guid: 02c52e6c23a1e214eb01a73a6074a303,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8825023804348920986, guid: 02c52e6c23a1e214eb01a73a6074a303,
         type: 3}
@@ -18874,6 +18889,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Walls Generator (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8825023804348920984, guid: 02c52e6c23a1e214eb01a73a6074a303,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8825023804348920986, guid: 02c52e6c23a1e214eb01a73a6074a303,
         type: 3}
