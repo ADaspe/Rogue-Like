@@ -138,9 +138,9 @@ public class ELC_ObjectsInventory : MonoBehaviour
             else
             {
                 rightCrateProp.actualMoney += rightCrateProp.actualMoneyStockCapacity;
-                Debug.Log("Caisse gauche full !");
+                //Debug.Log("Caisse gauche full !");
             }
-            Debug.Log("Caisse droite = " + rightCrateProp.actualMoney);
+            //Debug.Log("Caisse droite = " + rightCrateProp.actualMoney);
         }
         else if(LeftHandObject != null && (selectedHand == hands.LeftHand || RightHandObject == null))
         {
@@ -149,9 +149,9 @@ public class ELC_ObjectsInventory : MonoBehaviour
             else
             {
                 leftCrateProp.actualMoney += leftCrateProp.actualMoneyStockCapacity;
-                Debug.Log("Caisse gauche full !");
+                //Debug.Log("Caisse gauche full !");
             }
-            Debug.Log("Caisse gauche = " + leftCrateProp.actualMoney);
+            //Debug.Log("Caisse gauche = " + leftCrateProp.actualMoney);
         }
         else Debug.Log("Pas de caisses pour stocker l'argent");
     }
