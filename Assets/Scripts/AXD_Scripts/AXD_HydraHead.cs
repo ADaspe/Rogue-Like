@@ -35,7 +35,7 @@ public class AXD_HydraHead : MonoBehaviour
 
     public void Shoot()
     {
-        headStats.EnemyPath = ELC_EnemySO.PathBehaviour.StayAtDistance;
+        headStats.EnemyPath = ELC_EnemySO.PathBehaviour.FollowPlayer;
         headStats.DistanceAttack = true;
         headStats.CloseCombatAttack = false;
         headStats.DashOnPlayer = false;
