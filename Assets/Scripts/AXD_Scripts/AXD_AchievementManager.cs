@@ -19,4 +19,16 @@ public class AXD_AchievementManager : MonoBehaviour
             achievement.setAchievementManager(this);
         }
     }
+
+    public void FulfillList(AXD_AchievementSO achievement)
+    {
+        if (achievement.isUnlocked)
+        {
+            achievementsUnlocked.Add(achievement);
+        }
+        else
+        {
+            achievementsLocked.Add(achievement);
+        }
+    }
 }
