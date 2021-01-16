@@ -17,7 +17,7 @@ public class EMD_PassifManager : MonoBehaviour
     public GameObject ValidateButton;
     public GameObject DialogueCanvas;
     public GameObject QuittButton;
-    public List<ELC_PassivesList> PassivesList;
+    public List<ELC_PassiveSO> PassivesList;
     public TextMeshProUGUI PassivePrice;
     public TextMeshProUGUI textDisplay;
     private EMD_DialogueManager DialogueManagerScript;
@@ -63,14 +63,14 @@ public class EMD_PassifManager : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
-            int Index = Random.Range(0, PassiveListScript.PassivesList.Count);
+            int Index = Random.Range(0, PassivesList.Count);
             if (i == 0)
             {
-                passive[i] = PassiveListScript.PassivesList[Index];
+                passive[i] = PassivesList[Index];
             }
             else if (i == 1)
             {
-                passive[i] = PassiveListScript.PassivesList[Index];
+                passive[i] = PassivesList[Index];
                 if (passive[i] == passive[i-1])
                 {
                     i --;
@@ -78,7 +78,7 @@ public class EMD_PassifManager : MonoBehaviour
             }
            else
             {
-                passive[i] = PassiveListScript.PassivesList[Index]; 
+                passive[i] = PassivesList[Index]; 
                 if (passive[i] == passive[i-1] || passive[i] == passive[i-2])
                 {
                     i --;
