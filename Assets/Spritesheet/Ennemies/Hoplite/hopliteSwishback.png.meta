@@ -50,6 +50,12 @@ TextureImporter:
   - first:
       213: -931475666252812167
     second: hopliteSwishback_7
+  - first:
+      213: -3685660283512050529
+    second: hopliteSwishback_8
+  - first:
+      213: -6324192469853044011
+    second: hopliteSwishback_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -334,6 +340,27 @@ TextureImporter:
       bones: []
       spriteID: 970b41411dbb213f0800000000000000
       internalID: -931475666252812167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hopliteSwishback_8
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 0
+        width: 215
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9caf76ef77e9dcc0800000000000000
+      internalID: -3685660283512050529
       vertices: []
       indices: 
       edges: []
