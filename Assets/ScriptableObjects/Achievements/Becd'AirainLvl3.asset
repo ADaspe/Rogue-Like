@@ -20,7 +20,7 @@ MonoBehaviour:
   numberDefeated: 0
   isUnlocked: 0
   ennemyToDefeatName: Bec d'Airain
-  passifToUnlock: {fileID: 0}
+  passifToUnlock: {fileID: 11400000, guid: c2647eda660911a46a182e3408d08b08, type: 2}
   achievementManager: {fileID: 0}
   HUDSprite: {fileID: 5906929228654268113, guid: d25e53161c58d994e93b90a17df06e39,
     type: 3}

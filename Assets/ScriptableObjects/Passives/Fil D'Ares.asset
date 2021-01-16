@@ -15,7 +15,7 @@ MonoBehaviour:
   PassiveName: Fil D'Ares
   PassiveDescription: "Les bonus d'attaque du mode berserker augmentent, les d\xE9g\xE0ts
     re\xE7u aussi. la jauge de vie ne diminue plus avec le temps."
-  PassivePrice: 1400
+  PassivePrice: 2150
   isUnlock: 0
   HUDSprite: {fileID: -6497817145159819769, guid: d2d062ff307f81d4e836ccc9ea347700,
     type: 3}
