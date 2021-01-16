@@ -225,7 +225,10 @@ MonoBehaviour:
   glowHeadPhase3: {fileID: 2100000, guid: b72e1ee8539a53444a738d536c37e38a, type: 2}
   healthPercentageHeadPhase2: 85
   healthPercentageHeadPhase3: 70
-  forceField: {fileID: 0}
+  forceField: {fileID: 1479866914419482675}
+  glowEnviro1: {fileID: 2100000, guid: e1c62fe6113e63c4a8e1ef7f47937c7c, type: 2}
+  glowEnviro2: {fileID: 2100000, guid: 01d80b92fbd395a46a7fdd0d49bcf1ef, type: 2}
+  glowEnviro3: {fileID: 2100000, guid: 5f68dc52e00765146875dadcef6e9c88, type: 2}
 --- !u!61 &838614985989882433
 BoxCollider2D:
   m_ObjectHideFlags: 0

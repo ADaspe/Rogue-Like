@@ -2211,6 +2211,137 @@ PrefabInstance:
       propertyPath: m_Name
       value: Achievement Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.size
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 25d8fb4748deb8548945f55f76dc070b,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: b38193ec914eb8e4ea63197a92e5f330,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 690d60f85f317de4a822a4e93b86a034,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2616be8e0ac42cd48b055b861461f8c1,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: fb8db85f1b1f4ad478d2172ac23d1ca1,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 76a8469a3d427a748bc36f93474ca4e5,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5de44d980255f4e459702a7f7ad87689,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f848a0035745844bacb2e24a89e5664,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: c4c345c73615a414380fa89b1eb4b943,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: c5848f4eec8bd964dbb17b5493f9ecd5,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: c996048be5a66294ead3c08b1ee57082,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: dbfc609ac99813b4a9bd5e25abab91df,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[12]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d5ff14cd4adab44fa0458b9d146b1f8,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[13]
+      value: 
+      objectReference: {fileID: 11400000, guid: b9da6da3fd9648f4fa8f68a0845a45ec,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[14]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7e17aa50863a2eb45bf8cb38843c0ca7,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[15]
+      value: 
+      objectReference: {fileID: 11400000, guid: df58b379a0e473c4f920e78f108cca36,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[16]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2df8bf1c472dbd642bea42af3e4b71c9,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[17]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0694127db87d26745b7b8beb368f5fa4,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[18]
+      value: 
+      objectReference: {fileID: 11400000, guid: af6db06bfdf5e8e4fafdd6d57ec84785,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[19]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5b8370c64bbd2084aae3f107b65cb9ad,
+        type: 2}
+    - target: {fileID: 8251750107087826446, guid: 2d763fe03846b894f9797b420c88a6f5,
+        type: 3}
+      propertyPath: allAchievements.Array.data[20]
+      value: 
+      objectReference: {fileID: 11400000, guid: 61d15ca860ca7e44ea2cb9db90448411,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d763fe03846b894f9797b420c88a6f5, type: 3}
 --- !u!4 &3919323111068211998 stripped

@@ -17,10 +17,6 @@ public class AXD_AchievementSO : ScriptableObject
     private AXD_AchievementManager achievementManager;
     public Sprite HUDSprite;
 
-    private void Awake()
-    {
-        achievementManager.FulfillList(this);
-    }
     public void AddDefeated(int defeated = 1)
     {
         if (!isUnlocked)
