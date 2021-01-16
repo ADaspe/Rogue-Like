@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class AXD_Hydra : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class AXD_Hydra : MonoBehaviour
     public float healthPercentageHeadPhase2;
     public float healthPercentageHeadPhase3;
     public GameObject forceField;
+    private TilemapRenderer tmr;
+    public Material glowEnviro1;
+    public Material glowEnviro2;
+    public Material glowEnviro3;
     private bool vulnerableCoroutine = false;
 
 
@@ -32,6 +37,8 @@ public class AXD_Hydra : MonoBehaviour
         currentPhase = BossPhase.Phase1;
         enemy.isInvulnerable = true;
         forceField = this.gameObject.transform.GetChild(7).gameObject;
+        tmr = FindObjectOfType<TilemapRenderer>();
+        tmr.material = glowEnviro1;
         LetsFight();
     }
     private void Update()
@@ -99,8 +106,6 @@ public class AXD_Hydra : MonoBehaviour
         headsToSpawn = false;
     }
 
-
-
     public void LoseHead(AXD_HydraHead head)
     {
         heads.Remove(head);
@@ -139,6 +144,14 @@ public class AXD_Hydra : MonoBehaviour
         {
             Debug.Log("Changing phase");
             currentPhase++;
+            if(currentPhase == BossPhase.Phase2)
+            {
+                tmr.material = glowEnviro2;
+            }
+            else if(currentPhase == BossPhase.Phase3)
+            {
+                tmr.material = glowEnviro3;
+            }
         }
     }
 
