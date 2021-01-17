@@ -203,13 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPhase: 0
   stats: {fileID: 11400000, guid: b5a764cff37b15543962426e3fc54140, type: 2}
-  head1Prefab: {fileID: 5317746332933155564, guid: cfab9a84001e22d42afb3ffda1f2f0da,
-    type: 3}
-  head2Prefab: {fileID: 5317746332933155564, guid: 8e424bc7b9f2f904197a5fe8c11b1a5f,
-    type: 3}
-  head3Prefab: {fileID: 5317746332933155564, guid: aff26d884bb9dba4abab2fbde2b18e4e,
-    type: 3}
-  head4Prefab: {fileID: 5317746332933155564, guid: 5b6d22ba65ab74f49ba738fc409e680a,
+  headPrefab: {fileID: 5317746332933155564, guid: cfab9a84001e22d42afb3ffda1f2f0da,
     type: 3}
   heads: []
   spawnPoints:
@@ -223,8 +217,8 @@ MonoBehaviour:
   headsToSpawn: 0
   maxHealthHead: 5000
   glowHeadPhase3: {fileID: 2100000, guid: b72e1ee8539a53444a738d536c37e38a, type: 2}
-  healthPercentageHeadPhase2: 85
-  healthPercentageHeadPhase3: 70
+  healthPercentageHeadPhase2: 80
+  healthPercentageHeadPhase3: 60
   forceField: {fileID: 1479866914419482675}
   glowEnviro1: {fileID: 2100000, guid: e1c62fe6113e63c4a8e1ef7f47937c7c, type: 2}
   glowEnviro2: {fileID: 2100000, guid: 01d80b92fbd395a46a7fdd0d49bcf1ef, type: 2}
