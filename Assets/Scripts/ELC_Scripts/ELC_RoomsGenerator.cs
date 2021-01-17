@@ -41,7 +41,8 @@ public class ELC_RoomsGenerator : MonoBehaviour
     public List<int> secondaryRandomPoints = new List<int>();//L'index correspond au Y et le nombre dans cet index correspond au X
     public List<int> numberOfEmptyRooms = new List<int>();//L'index correspond au Y et le nombre dans cet index correspond au X, si le nombre est -1 alors c'est que la room peut pas être posée
 
-
+    public GameObject LateralDoors;
+    public GameObject FrontDoors;
 
     void Start()
     {

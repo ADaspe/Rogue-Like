@@ -38,6 +38,48 @@ TextureImporter:
   - first:
       213: -9085203034613299679
     second: minotaure attaque back_11
+  - first:
+      213: -3046466036328056663
+    second: minotaure attaque back_0
+  - first:
+      213: -3077757226760482281
+    second: minotaure attaque back_1
+  - first:
+      213: 3367319455651341023
+    second: minotaure attaque back_2
+  - first:
+      213: 6677952414061714034
+    second: minotaure attaque back_3
+  - first:
+      213: 8256318257524182185
+    second: minotaure attaque back_4
+  - first:
+      213: 5833216325549237188
+    second: minotaure attaque back_5
+  - first:
+      213: -6472814860593125474
+    second: minotaure attaque back_6
+  - first:
+      213: 8286693030447163375
+    second: minotaure attaque back_7
+  - first:
+      213: -4465991305108469875
+    second: minotaure attaque back_8
+  - first:
+      213: 3283253379707011144
+    second: minotaure attaque back_9
+  - first:
+      213: -679335623023870957
+    second: minotaure attaque back_10
+  - first:
+      213: -486943948800813401
+    second: minotaure attaque back_11
+  - first:
+      213: -5581169128178608725
+    second: minotaure attaque back_12
+  - first:
+      213: 4057826755736166438
+    second: minotaure attaque back_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -173,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e8c3ee1d7acd1960800000000000000
-      internalID: 7574432787045009633
+      spriteID: 9a8bf54e747c8b5d0800000000000000
+      internalID: -3046466036328056663
       vertices: []
       indices: 
       edges: []
@@ -194,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed572dcde8d1d1060800000000000000
-      internalID: 6925724301393032670
+      spriteID: 712dc02eb1c9945d0800000000000000
+      internalID: -3077757226760482281
       vertices: []
       indices: 
       edges: []
@@ -215,8 +257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7814f065aae0a1f50800000000000000
-      internalID: 6852805907748700551
+      spriteID: fd22c5f343f1bbe20800000000000000
+      internalID: 3367319455651341023
       vertices: []
       indices: 
       edges: []
@@ -236,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3c50d96864a37710800000000000000
-      internalID: 1689875053552884799
+      spriteID: 27a5c1bd65adcac50800000000000000
+      internalID: 6677952414061714034
       vertices: []
       indices: 
       edges: []
@@ -257,8 +299,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b26e696fea1f6fed0800000000000000
-      internalID: -2380449619255040469
+      spriteID: 9ac0d4c16b5549270800000000000000
+      internalID: 8256318257524182185
       vertices: []
       indices: 
       edges: []
@@ -278,8 +320,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d38dc96694a354b0800000000000000
-      internalID: -5452833757888412713
+      spriteID: 4c32f56a75fb3f050800000000000000
+      internalID: 5833216325549237188
       vertices: []
       indices: 
       edges: []
@@ -299,8 +341,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2991b2dff99c2f680800000000000000
-      internalID: -8722687839278786158
+      spriteID: e972a71cd21fb26a0800000000000000
+      internalID: -6472814860593125474
       vertices: []
       indices: 
       edges: []
@@ -320,8 +362,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed7150826c1186210800000000000000
-      internalID: 1326329633033230302
+      spriteID: fe7228a086f300370800000000000000
+      internalID: 8286693030447163375
       vertices: []
       indices: 
       edges: []
@@ -341,8 +383,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 351899c47451c9f50800000000000000
-      internalID: 6889404925942006099
+      spriteID: d87c601e19c9502c0800000000000000
+      internalID: -4465991305108469875
       vertices: []
       indices: 
       edges: []
@@ -362,8 +404,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: abd28788dd95f5b70800000000000000
-      internalID: 8889922997464870330
+      spriteID: 840890dad85709d20800000000000000
+      internalID: 3283253379707011144
       vertices: []
       indices: 
       edges: []
@@ -383,8 +425,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f303efb5a8e30a10800000000000000
-      internalID: 1874597668502832121
+      spriteID: 31cb462a9d38296f0800000000000000
+      internalID: -679335623023870957
       vertices: []
       indices: 
       edges: []
@@ -404,8 +446,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 126c299b9ffdae180800000000000000
-      internalID: -9085203034613299679
+      spriteID: 7a6933afe070e39f0800000000000000
+      internalID: -486943948800813401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minotaure attaque back_12
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5998b8f34bb82b0800000000000000
+      internalID: -5581169128178608725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: minotaure attaque back_13
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 620eabf5feb405830800000000000000
+      internalID: 4057826755736166438
       vertices: []
       indices: 
       edges: []
