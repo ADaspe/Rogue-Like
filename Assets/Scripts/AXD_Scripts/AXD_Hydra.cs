@@ -11,6 +11,7 @@ public class AXD_Hydra : MonoBehaviour
     public AXD_HydraHead headPrefab;
     public List<AXD_HydraHead> heads;
     public List<GameObject> spawnPoints;
+    public Animator anim;
     public ELC_Enemy enemy;
     public float[] distances;
     public float timeToChangeStrat;
@@ -26,6 +27,7 @@ public class AXD_Hydra : MonoBehaviour
     public Material glowEnviro2;
     public Material glowEnviro3;
     private bool vulnerableCoroutine = false;
+    public float ExplosionDuration;
 
 
     private void Start()
@@ -36,6 +38,7 @@ public class AXD_Hydra : MonoBehaviour
         forceField = this.gameObject.transform.GetChild(7).gameObject;
         tmr = FindObjectOfType<TilemapRenderer>();
         tmr.material = glowEnviro1;
+        anim = GetComponent<Animator>();
         LetsFight();
     }
     private void Update()
@@ -111,7 +114,8 @@ public class AXD_Hydra : MonoBehaviour
 
     public void VulnerablePhase()
     {
-        Debug.Log("Attack me !");
+
+        AnimatorBooleans();
         forceField.SetActive(false);
         if (Time.time > timeToBeVulnerable || enemy.currentHealth < stats.healthPhase[(int)currentPhase])
         {
@@ -140,6 +144,7 @@ public class AXD_Hydra : MonoBehaviour
             {
                 tmr.material = glowEnviro3;
             }
+            AnimatorBooleans();
         }
     }
 
@@ -158,5 +163,55 @@ public class AXD_Hydra : MonoBehaviour
         headsToSpawn = true;
         ChangePhase();
         vulnerableCoroutine = true;
+    }
+
+    public void AnimatorBooleans()
+    {
+        if(currentPhase == BossPhase.Phase1)
+        {
+            anim.SetBool("Phase1", true);
+            anim.SetBool("Phase2", false);
+            anim.SetBool("Phase3", false);
+        }
+        else if(currentPhase == BossPhase.Phase2)
+        {
+            anim.SetBool("Phase1", false);
+            anim.SetBool("Phase2", true);
+            anim.SetBool("Phase3", false);
+        }
+        else if(currentPhase == BossPhase.Phase3)
+        {
+            anim.SetBool("Phase1", false);
+            anim.SetBool("Phase2", false);
+            anim.SetBool("Phase3", true);
+        }
+
+        if (enemy.isInvulnerable)
+        {
+            anim.SetBool("Vulnerable", false);
+        }
+        else
+        {
+            anim.SetBool("Vulnerable", true);
+        }
+    }
+
+    public IEnumerator Death()
+    {
+        enemy.isDying = true;
+        enemy.enemyCollider.enabled = false;
+        enemy.isDead = true;
+        //forceField.SetActive(false);
+        anim.SetBool("Explosion", true);
+        yield return new WaitForSeconds(ExplosionDuration);
+        enemy.DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemy.enemyStats.MoneyEarnWhenDead);
+
+        if (enemy.passiveScript.ActualPassiveScriptableObject != null)
+        {
+            if (enemy.passiveScript.ActualPassiveScriptableObject.PassiveName == "Corne D'Abondance" && Random.Range(0, 101) < enemy.passiveScript.CorneAbondancePercentageChanceDropPowerUp) Instantiate(enemy.passiveScript.PowerUpsGenerator, this.transform.position, Quaternion.identity);
+            else if (enemy.passiveScript.ActualPassiveScriptableObject.PassiveName == "Faux De Chronos") FindObjectOfType<ELC_PowerUpManager>().StopFlow();
+        }
+        Destroy(this.gameObject);
+        yield return null;
     }
 }

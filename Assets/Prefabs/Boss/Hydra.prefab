@@ -208,6 +208,7 @@ MonoBehaviour:
   heads: []
   spawnPoints:
   - {fileID: 0}
+  anim: {fileID: 0}
   enemy: {fileID: 0}
   distances:
   - 3
@@ -223,6 +224,7 @@ MonoBehaviour:
   glowEnviro1: {fileID: 2100000, guid: e1c62fe6113e63c4a8e1ef7f47937c7c, type: 2}
   glowEnviro2: {fileID: 2100000, guid: 01d80b92fbd395a46a7fdd0d49bcf1ef, type: 2}
   glowEnviro3: {fileID: 2100000, guid: 5f68dc52e00765146875dadcef6e9c88, type: 2}
+  ExplosionDuration: 0
 --- !u!61 &838614985989882433
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -263,6 +265,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: a373fa2f6700a08438102f9bef885a03, type: 2}
   passiveScript: {fileID: 0}
+  enemyCollider: {fileID: 0}
+  enemyAnimator: {fileID: 0}
   Coins: {fileID: 0}
   currentHealth: 0
   speed: 0
@@ -280,7 +284,8 @@ MonoBehaviour:
   basicMat: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   dissolveMaterial: {fileID: 2100000, guid: 516b86d5c836f83458f383ef44b5fea3, type: 2}
   getHitMaterial: {fileID: 2100000, guid: 0a99d921524399049a40d04865cd06f2, type: 2}
-  deathMaterial: {fileID: 2100000, guid: bffc9ff9e5352e345816ddd51c81ba27, type: 2}
+  deathMaterial: {fileID: 0}
+  dissolveValue: 1
   isStun: 0
   isTmpInvulnerable: 0
   isInvulnerable: 0
@@ -301,7 +306,7 @@ Animator:
   m_GameObject: {fileID: 4695540129941599299}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 809421d081b44e9469ee1266d986691a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

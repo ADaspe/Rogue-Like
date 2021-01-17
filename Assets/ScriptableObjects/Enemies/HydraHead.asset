@@ -10,45 +10,45 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e1e575d17b71b948acad78b5eb5db09, type: 3}
-  m_Name: HydraHead 1
+  m_Name: HydraHead
   m_EditorClassIdentifier: 
   Name: 
-  MaxHealth: 5000
+  MaxHealth: 4000
   DeathTime: 1
   SpawnTime: 1
   MovementSpeed: 5
   EnemyPath: 0
-  LimitDistanceToStay: 6
+  LimitDistanceToStay: 4
   NeedTimeToTurn: 0
   TurnSpeed: 0
   EnemyWidth: 2
   noStunTime: 0
   FriendlyFire: 0
-  DistanceAttack: 0
+  DistanceAttack: 1
   Projectile: {fileID: 5799528179822313380, guid: 8434fb21e7d94a54fb47d57f6e3b81ff,
     type: 3}
-  DistanceAttackArea: 10
-  DistanceCooldown: 0.5
-  ProjectileSpeed: 10
+  DistanceAttackArea: 15
+  DistanceCooldown: 0.75
+  ProjectileSpeed: 12
   ProjectileDurability: 6
-  ProjectileStrenght: 6
+  ProjectileStrenght: 4
   CloseCombatAttack: 0
   AttackCooldown: 1.2
   AttackRange: 1
   WaitBeforeAttack: 0.3
   AttackStrenght: 9
   AttackStun: 0
-  AttackAnimationTime: 0.5
+  AttackAnimationTime: 0.3
   DashOnPlayer: 1
   DashTime: 0.2
   DistanceToRun: 5
-  DashStrenght: 7
+  DashStrenght: 10
   DashStun: 0
   DashColliderWidth: 0.5
-  DashAndCorpseAttack: 0
-  DashCooldown: 0
-  MinDistanceToTriggerDash: 0
-  MaxDistanceToTriggerDash: 0
+  DashAndCloseCombatAttack: 1
+  DashCooldown: 5
+  MinDistanceToTriggerDash: 1
+  MaxDistanceToTriggerDash: 6
   SpawnEntitiesRegulary: 0
   SpawnEntitiesAtDeath: 0
   SpawnCooldown: 0

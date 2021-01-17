@@ -7,11 +7,12 @@ public class ELC_Enemy : MonoBehaviour
     [SerializeField]
     public ELC_EnemySO enemyStats;
     public ELC_PassivesProperties passiveScript;
-
-    private Collider2D enemyCollider;
+    [HideInInspector]
+    public Collider2D enemyCollider;
     private SpriteRenderer spriteRenderer;
     private Transform playerTransform;
-    private Animator enemyAnimator;
+    [HideInInspector]
+    public Animator enemyAnimator;
     public GameObject Coins;
 
     [SerializeField]
@@ -40,7 +41,7 @@ public class ELC_Enemy : MonoBehaviour
     public Material dissolveMaterial;
     public Material getHitMaterial;
     public Material deathMaterial;
-    private float dissolveValue = 1;
+    public float dissolveValue = 1;
 
     private Vector3 currentDashDirection;
     private float currentDashDistance;
@@ -592,7 +593,14 @@ public class ELC_Enemy : MonoBehaviour
                     achivement.AddDefeated();
                 }
             }
-            StartCoroutine("Death");
+            AXD_Hydra tmpHydra = GetComponent<AXD_Hydra>();
+            if (tmpHydra == null){
+                StartCoroutine(Death());
+            }
+            else
+            {
+                StartCoroutine(tmpHydra.Death());
+            }
             
         }
         else StartCoroutine(ApplyShader(0.05f, getHitMaterial));
@@ -621,7 +629,7 @@ public class ELC_Enemy : MonoBehaviour
         yield return null;
     }
 
-    void DropCoins(int moneyValue)
+    public void DropCoins(int moneyValue)
     {
         int numberToDrop = Mathf.FloorToInt(moneyValue / Coins.GetComponent<ELC_Coins>().value);
 
