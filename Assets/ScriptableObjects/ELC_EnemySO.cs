@@ -52,7 +52,7 @@ public class ELC_EnemySO : ScriptableObject
     public float DashColliderWidth;
 
     [Header ("Dash & CorpseAttack properties")]
-    public bool DashAndCorpseAttack;
+    public bool DashAndCloseCombatAttack;
     public float DashCooldown;
     public float MinDistanceToTriggerDash;
     public float MaxDistanceToTriggerDash;
