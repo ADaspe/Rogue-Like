@@ -55,10 +55,6 @@ MonoBehaviour:
     type: 3}
   startRoom: {fileID: 0}
   endRoom: {fileID: 0}
-  BossRoom:
-  - {fileID: 2627324928097260012, guid: b6e2978d9db3359488c2c9507bcdce95, type: 3}
-  startingRoom:
-  - {fileID: 1956491874530507917, guid: e03d23b5dbcd6b94a8c6d60e353f53c6, type: 3}
   easyRoomsList:
   - {fileID: 4585266563572156792, guid: a8974dfe10d605941a4a5f72349237f6, type: 3}
   - {fileID: 6722103527221844316, guid: 83f31428074b89947b9959e27a6497f9, type: 3}

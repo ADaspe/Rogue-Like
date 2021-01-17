@@ -22,8 +22,6 @@ public class ELC_RoomsGenerator : MonoBehaviour
     public GameObject roomChecker;
     public GameObject startRoom;
     public GameObject endRoom;
-    public List<GameObject> BossRoom;
-    public List<GameObject> startingRoom;
 
     //public List<GameObject> roomsList;
     //public List<GameObject> testsRoomsList;
@@ -73,7 +71,6 @@ public class ELC_RoomsGenerator : MonoBehaviour
         }
 
         PlaceRandomPoints(); //On calcule les points randoms à prendre
-        
 
         for (int i = 0; i < randomPoints.Count; i++) //Sur chacun des points on créé une salle
         {
@@ -118,18 +115,8 @@ public class ELC_RoomsGenerator : MonoBehaviour
         StartCoroutine("DoorsCheck");
 
         yield return new WaitWhile(() => isInACoroutine == true);
-        placeBossRoom();
-        Instantiate(CoreElements, startRoom.transform.position - new Vector3(0, distanceBtwRoomsY), Quaternion.identity);
-        
+        Instantiate(CoreElements, startRoom.transform.position - new Vector3(0, distanceBtwRoomsY / 2), Quaternion.identity);
         Debug.Log("Finish !");
-    }
-
-    private void placeBossRoom()
-    {
-        GameObject bossChecker = Instantiate(roomChecker, endRoom.transform.position + new Vector3(0, distanceBtwRoomsY), Quaternion.identity);
-        SpawnRandomRoom(bossChecker, BossRoom, false, false, false, true, true);
-        GameObject startChecker = Instantiate(roomChecker, startRoom.transform.position - new Vector3(0, distanceBtwRoomsY), Quaternion.identity);
-        SpawnRandomRoom(startChecker, startingRoom, false, false, true, false, true);
     }
 
     private void PlaceRandomPoints()
@@ -246,7 +233,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
 
         if (!roomScript.thereIsRoom) //vérifie si une salle n'a pas déjà été enregistrée ici
         {
-            if(!(rl == BossRoom)) numberOfEmptyRooms[arrayY]--;
+            numberOfEmptyRooms[arrayY]--;
             int chances = UnityEngine.Random.Range(0, 100);
 
             if (secondaryPath && chances < ObjectRoomPercentChanceToSpawn)
