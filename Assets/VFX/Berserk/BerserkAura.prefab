@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2175136976685697461}
   - component: {fileID: 1173241425819650256}
-  - component: {fileID: 1259036337937760212}
   m_Layer: 0
   m_Name: BerserkAura
   m_TagString: Untagged
@@ -74,23 +73,6 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!114 &1259036337937760212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2480491485958551458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c3e50510799fef4d8e94399131902ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxLightIntensity: 40
-  emissionMax: 30
-  particleSys: {fileID: 757648574608817925}
-  light2D: {fileID: 1173241425819650256}
-  playerStats: {fileID: 0}
 --- !u!1 &3895651291916923875
 GameObject:
   m_ObjectHideFlags: 0

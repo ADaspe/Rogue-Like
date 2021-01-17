@@ -44,7 +44,7 @@ MonoBehaviour:
   DashStrenght: 25
   DashStun: 0
   DashColliderWidth: 1
-  DashAndCloseCombatAttack: 1
+  DashAndCorpseAttack: 1
   DashCooldown: 15
   MinDistanceToTriggerDash: 5
   MaxDistanceToTriggerDash: 7
