@@ -21,7 +21,6 @@ public class EMD_PassifManager : MonoBehaviour
     public TextMeshProUGUI PassivePrice;
     public TextMeshProUGUI textDisplay;
     private EMD_DialogueManager DialogueManagerScript;
-    private ELC_PassivesList PassiveListScript;
     //public GameObject passif1;
     public Image image1;
     public Image image2;
@@ -30,9 +29,7 @@ public class EMD_PassifManager : MonoBehaviour
 
     void Start()
     {
-        RandomPick();
         DialogueManagerScript = FindObjectOfType<EMD_DialogueManager>();
-        PassiveListScript = FindObjectOfType<ELC_PassivesList>();
     }
 
     /*void takePassiveAndCreateArray()
@@ -59,11 +56,12 @@ public class EMD_PassifManager : MonoBehaviour
                 passive[i] = ListPassive[rdInt];
             } while (isAlreadyThere);
         }*/
-    void RandomPick()
+    public void RandomPick()
     {
         for (int i = 0; i < 3; i++)
         {
             int Index = Random.Range(0, PassivesList.PassivesList.Count);
+            Debug.Log(i);
             if (i == 0)
             {
                 passive[i] = PassivesList.PassivesList[Index];
@@ -85,6 +83,9 @@ public class EMD_PassifManager : MonoBehaviour
                 }
             }
         }
+        Debug.Log(passive[0]);
+        Debug.Log(passive[1]);
+        Debug.Log(passive[3]);
     }
 
     public void afficherPassif()

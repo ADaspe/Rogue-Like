@@ -12,31 +12,20 @@ public class AXD_AchievementManager : MonoBehaviour
     {
         foreach (AXD_AchievementSO achievement in allAchievements)
         {
+            achievement.setAchievementManager(this);
             if (achievement.isUnlocked)
             {
                 achievementsUnlocked.Add(achievement);
+                if(achievement.passifToUnlock != null)
+                {
+                    passivesList.PassivesList.Add(achievement.passifToUnlock);
+                }
             }
             else
             {
                 achievementsLocked.Add(achievement);
             }
             Debug.Log("Achievement added");
-        }
-        foreach (AXD_AchievementSO achievement in achievementsLocked)
-        {
-            achievement.setAchievementManager(this);
-        }
-        foreach (AXD_AchievementSO achievement in achievementsUnlocked)
-        {
-            achievement.setAchievementManager(this);
-        }
-
-        foreach(AXD_AchievementSO achievement in achievementsUnlocked)
-        {
-            if (achievement.isUnlocked)
-            {
-                passivesList.PassivesList.Add(achievement.passifToUnlock);
-            }
         }
     }
 }
