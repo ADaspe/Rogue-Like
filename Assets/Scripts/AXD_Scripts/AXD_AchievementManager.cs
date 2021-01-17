@@ -4,12 +4,24 @@ using UnityEngine;
 
 public class AXD_AchievementManager : MonoBehaviour
 {
+    public List<AXD_AchievementSO> allAchievements;
     public List<AXD_AchievementSO> achievementsLocked;
     public List<AXD_AchievementSO> achievementsUnlocked;
     public ELC_PassivesList passivesList;
     private void Start()
     {
-
+        foreach (AXD_AchievementSO achievement in allAchievements)
+        {
+            if (achievement.isUnlocked)
+            {
+                achievementsUnlocked.Add(achievement);
+            }
+            else
+            {
+                achievementsLocked.Add(achievement);
+            }
+            Debug.Log("Achievement added");
+        }
         foreach (AXD_AchievementSO achievement in achievementsLocked)
         {
             achievement.setAchievementManager(this);
@@ -18,17 +30,13 @@ public class AXD_AchievementManager : MonoBehaviour
         {
             achievement.setAchievementManager(this);
         }
-    }
 
-    public void FulfillList(AXD_AchievementSO achievement)
-    {
-        if (achievement.isUnlocked)
+        foreach(AXD_AchievementSO achievement in achievementsUnlocked)
         {
-            achievementsUnlocked.Add(achievement);
-        }
-        else
-        {
-            achievementsLocked.Add(achievement);
+            if (achievement.isUnlocked)
+            {
+                passivesList.PassivesList.Add(achievement.passifToUnlock);
+            }
         }
     }
 }

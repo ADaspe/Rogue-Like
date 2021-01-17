@@ -50,6 +50,9 @@ TextureImporter:
   - first:
       213: 5242702064385976477
     second: hopliteSwishside_7
+  - first:
+      213: -2658879947005608389
+    second: hopliteSwishside_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -334,6 +337,27 @@ TextureImporter:
       bones: []
       spriteID: d98eee220c1d1c840800000000000000
       internalID: 5242702064385976477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hopliteSwishside_8
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 0
+        width: 215
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e325a86c2c91bd0800000000000000
+      internalID: -2658879947005608389
       vertices: []
       indices: 
       edges: []

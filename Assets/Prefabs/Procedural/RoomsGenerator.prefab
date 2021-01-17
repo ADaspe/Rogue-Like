@@ -60,13 +60,16 @@ MonoBehaviour:
   - {fileID: 6722103527221844316, guid: 83f31428074b89947b9959e27a6497f9, type: 3}
   - {fileID: 3627668831802546656, guid: f6e578f0c8e049e4888104f749f31f9d, type: 3}
   - {fileID: 8016669876711721645, guid: d430637bff79d07499d330f94ff00ab6, type: 3}
-  - {fileID: 2627324928097260012, guid: f4f19ab80755a4a469e3c11f0fef5b24, type: 3}
-  - {fileID: 2627324928097260012, guid: b64f27c586ae2e44a83535a7638ebcc0, type: 3}
   MediumRoomsList:
-  - {fileID: 8016669876711721645, guid: d430637bff79d07499d330f94ff00ab6, type: 3}
+  - {fileID: 2627324928097260012, guid: f4f19ab80755a4a469e3c11f0fef5b24, type: 3}
+  - {fileID: 7170404061016110172, guid: 42f1ca6e331e44445ac97333873c63c0, type: 3}
+  - {fileID: 6726388294328555495, guid: 36eaa996a95473d49baa7b422afd0b7b, type: 3}
+  - {fileID: 1923572381540197616, guid: 3009d6271037c5546b5b117b764e7437, type: 3}
   HardRoomsList:
   - {fileID: 2627324928097260012, guid: 358b98ddc8078934788a1d4e8562816d, type: 3}
   - {fileID: 2627324928097260012, guid: 3c2b9d98711a00b48a93fd4429783c0c, type: 3}
+  - {fileID: 2627324928097260012, guid: b64f27c586ae2e44a83535a7638ebcc0, type: 3}
+  - {fileID: 2801891500621755051, guid: cfcd7f0e23a677449a67a0a8ec0025f4, type: 3}
   ObjectsRoomsList:
   - {fileID: 1643720113629917897, guid: 68be1923841bcc04d91ca6611b74b8ef, type: 3}
   EasyFloors: 0
@@ -76,3 +79,7 @@ MonoBehaviour:
   randomPoints: 
   secondaryRandomPoints: 
   numberOfEmptyRooms: 
+  LateralDoors: {fileID: 6137752656806909894, guid: ed6cdbf7f6408b24d9cd553d079f1e65,
+    type: 3}
+  FrontDoors: {fileID: 6067892434916540415, guid: 180e243ccdb7b10449031f187e058b88,
+    type: 3}
