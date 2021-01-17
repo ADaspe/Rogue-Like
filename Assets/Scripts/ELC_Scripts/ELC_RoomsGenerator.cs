@@ -22,6 +22,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
     public GameObject roomChecker;
     public GameObject startRoom;
     public GameObject endRoom;
+    public List<GameObject> BossRoom;
 
     //public List<GameObject> roomsList;
     //public List<GameObject> testsRoomsList;
@@ -75,7 +76,11 @@ public class ELC_RoomsGenerator : MonoBehaviour
         for (int i = 0; i < randomPoints.Count; i++) //Sur chacun des points on créé une salle
         {
             yield return new WaitForSeconds(timeToWait);
-            if (arrayDimentionY - EasyFloors < i + 1)
+            if(i == 0)
+            {
+                SpawnRandomRoom(checkersArray[randomPoints[i], i], BossRoom, true, true, true, true, true);
+            }
+            else if (arrayDimentionY - EasyFloors < i + 1)
             {
                 SpawnRandomRoom(checkersArray[randomPoints[i], i], easyRoomsList, true, true, true, true, true);
                 Debug.Log("facile");
