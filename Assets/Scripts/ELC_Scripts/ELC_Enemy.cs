@@ -30,7 +30,7 @@ public class ELC_Enemy : MonoBehaviour
     public Vector3 movesTowardPlayer;
     private Vector3 fleePlayer;
     private Vector3 directionToDash;
-    private Vector3 lastDirection;
+    public Vector3 lastDirection;
     private Vector3 MoveAwayOtherEnemies;
     private bool isPreparingAttack;
     public bool isAttacking;
@@ -592,6 +592,7 @@ public class ELC_Enemy : MonoBehaviour
                 {
                     achivement.AddDefeated();
                 }
+                FindObjectOfType<ELC_DataStore>().SaveData();
             }
             AXD_Hydra tmpHydra = GetComponent<AXD_Hydra>();
             if (tmpHydra == null){
