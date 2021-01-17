@@ -561,6 +561,7 @@ public class ELC_Enemy : MonoBehaviour
                 {
                     achivement.AddDefeated();
                 }
+                FindObjectOfType<ELC_DataStore>().SaveData();
             }
             StartCoroutine("Death");
             
