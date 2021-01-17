@@ -29,7 +29,6 @@ public class AXD_HydraHead : MonoBehaviour
         headStats.DistanceAttack = false;
         headStats.CloseCombatAttack = false;
         headStats.DashOnPlayer = true;
-        enemyScript.distanceToStay = hydra.distances[0];
     }
 
 
@@ -39,7 +38,6 @@ public class AXD_HydraHead : MonoBehaviour
         headStats.DistanceAttack = true;
         headStats.CloseCombatAttack = false;
         headStats.DashOnPlayer = false;
-        enemyScript.distanceToStay = hydra.distances[1];
     }
 
     public void GetHydraRef(AXD_Hydra hydraArg)

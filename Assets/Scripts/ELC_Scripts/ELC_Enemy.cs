@@ -9,7 +9,7 @@ public class ELC_Enemy : MonoBehaviour
     public ELC_PassivesProperties passiveScript;
     [HideInInspector]
     public Collider2D enemyCollider;
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     private Transform playerTransform;
     [HideInInspector]
     public Animator enemyAnimator;
