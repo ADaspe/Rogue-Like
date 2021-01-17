@@ -7,11 +7,12 @@ public class ELC_Enemy : MonoBehaviour
     [SerializeField]
     public ELC_EnemySO enemyStats;
     public ELC_PassivesProperties passiveScript;
-
-    private Collider2D enemyCollider;
+    [HideInInspector]
+    public Collider2D enemyCollider;
     private SpriteRenderer spriteRenderer;
     private Transform playerTransform;
-    private Animator enemyAnimator;
+    [HideInInspector]
+    public Animator enemyAnimator;
     public GameObject Coins;
 
     [SerializeField]
@@ -40,7 +41,7 @@ public class ELC_Enemy : MonoBehaviour
     public Material dissolveMaterial;
     public Material getHitMaterial;
     public Material deathMaterial;
-    private float dissolveValue = 1;
+    public float dissolveValue = 1;
 
     private Vector3 currentDashDirection;
     private float currentDashDistance;
@@ -362,15 +363,45 @@ public class ELC_Enemy : MonoBehaviour
     private IEnumerator Attack(bool isDashing = false)
     {
         enemyAnimator.SetBool("IsPreparingForAttack", true);
-        if(isDashing) enemyAnimator.SetBool("DashAttack", true);
-        else enemyAnimator.SetBool("BasicAttack", true);
+        if (isDashing)
+        {
+            enemyAnimator.SetBool("DashAttack", true);
+            enemyAnimator.SetBool("BasicAttack", false);
+        }
+        else
+        {
+            enemyAnimator.SetBool("BasicAttack", true);
+            enemyAnimator.SetBool("DashAttack", false);
+        }
         yield return new WaitForSeconds(enemyStats.WaitBeforeAttack);
         //Debug.Log(enemyStats.name + " attaque !");
         enemyAnimator.SetBool("IsPreparingForAttack", false);
         enemyAnimator.SetBool("IsAttacking", true);
         isAttacking = true;
         //Debug.Log("Attack");
-        if((enemyStats.DashAndCorpseAttack && isDashing) || (enemyStats.DashOnPlayer && !enemyStats.DashAndCorpseAttack))
+        AXD_HydraHead head = GetComponent<AXD_HydraHead>();
+        if(head != null)
+        {
+            if (head.hydra.currentPhase == AXD_Hydra.BossPhase.Phase1)
+            {
+                enemyAnimator.SetBool("Phase1", true);
+                enemyAnimator.SetBool("Phase2", false);
+                enemyAnimator.SetBool("Phase3", false);
+            }
+            else if (head.hydra.currentPhase == AXD_Hydra.BossPhase.Phase2)
+            {
+                enemyAnimator.SetBool("Phase1", false);
+                enemyAnimator.SetBool("Phase2", true);
+                enemyAnimator.SetBool("Phase3", false);
+            }
+            else if (head.hydra.currentPhase == AXD_Hydra.BossPhase.Phase3)
+            {
+                enemyAnimator.SetBool("Phase1", false);
+                enemyAnimator.SetBool("Phase2", false);
+                enemyAnimator.SetBool("Phase3", true);
+            }
+        }
+        if((enemyStats.DashAndCloseCombatAttack && isDashing) || (enemyStats.DashOnPlayer && !enemyStats.DashAndCloseCombatAttack))
         {
             Dash(directionToDash, enemyStats.DashTime, enemyStats.DistanceToRun);
             HitPlayer(true);
@@ -383,7 +414,7 @@ public class ELC_Enemy : MonoBehaviour
         else HitPlayer();
 
         canMove = true;
-        if (enemyStats.DashAndCorpseAttack && isDashing) yield return new WaitForSeconds(enemyStats.DashTime);
+        if (enemyStats.DashAndCloseCombatAttack && isDashing) yield return new WaitForSeconds(enemyStats.DashTime);
         else yield return new WaitForSeconds(enemyStats.AttackAnimationTime);
         enemyAnimator.SetBool("IsAttacking", false);
         if (isDashing) enemyAnimator.SetBool("DashAttack", false);
@@ -415,7 +446,7 @@ public class ELC_Enemy : MonoBehaviour
         else if (distance > maxDistance) distanceFromPlayer = EnemyDistance.TooFar;
         else distanceFromPlayer = EnemyDistance.AtDistance;
 
-        if (enemyStats.DashAndCorpseAttack && distanceFromPlayer == EnemyDistance.TooFar && distance < enemyStats.MaxDistanceToTriggerDash && distance > enemyStats.MinDistanceToTriggerDash && Time.time > dashCooldown) canDashAttack = true;
+        if (enemyStats.DashAndCloseCombatAttack && distanceFromPlayer == EnemyDistance.TooFar && distance < enemyStats.MaxDistanceToTriggerDash && distance > enemyStats.MinDistanceToTriggerDash && Time.time > dashCooldown) canDashAttack = true;
         else canDashAttack = false;
     }
 
@@ -562,7 +593,14 @@ public class ELC_Enemy : MonoBehaviour
                     achivement.AddDefeated();
                 }
             }
-            StartCoroutine("Death");
+            AXD_Hydra tmpHydra = GetComponent<AXD_Hydra>();
+            if (tmpHydra == null){
+                StartCoroutine(Death());
+            }
+            else
+            {
+                StartCoroutine(tmpHydra.Death());
+            }
             
         }
         else StartCoroutine(ApplyShader(0.05f, getHitMaterial));
@@ -591,7 +629,7 @@ public class ELC_Enemy : MonoBehaviour
         yield return null;
     }
 
-    void DropCoins(int moneyValue)
+    public void DropCoins(int moneyValue)
     {
         int numberToDrop = Mathf.FloorToInt(moneyValue / Coins.GetComponent<ELC_Coins>().value);
 
