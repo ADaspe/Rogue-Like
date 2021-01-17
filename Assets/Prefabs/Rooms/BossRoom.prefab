@@ -81,20 +81,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2187213115058632019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2569253391975697503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e141709aeaa4244893efe5de2275439, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  detection: {fileID: 1707500765068352605}
-  Hydra: {fileID: 7915382641439613176}
 --- !u!1 &2605459911114883907
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,9 +478,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 126837755677654789}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4844109710257971021 stripped
+--- !u!4 &7004616950081360593 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4826489193716015176, guid: 11884b1f09969f1418e22a33a22e3cb4,
+  m_CorrespondingSourceObject: {fileID: 6987326323232452052, guid: 11884b1f09969f1418e22a33a22e3cb4,
     type: 3}
   m_PrefabInstance: {fileID: 126837755677654789}
   m_PrefabAsset: {fileID: 0}
@@ -516,15 +502,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 126837755677654789}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &3700518793351889690 stripped
+--- !u!4 &4625858279602440067 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3645800756568898591, guid: 11884b1f09969f1418e22a33a22e3cb4,
+  m_CorrespondingSourceObject: {fileID: 4751517358781560966, guid: 11884b1f09969f1418e22a33a22e3cb4,
     type: 3}
   m_PrefabInstance: {fileID: 126837755677654789}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4401122007139694887 stripped
+--- !u!4 &6389278319788811723 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4382410776949884450, guid: 11884b1f09969f1418e22a33a22e3cb4,
+  m_CorrespondingSourceObject: {fileID: 6442918802930522830, guid: 11884b1f09969f1418e22a33a22e3cb4,
     type: 3}
   m_PrefabInstance: {fileID: 126837755677654789}
   m_PrefabAsset: {fileID: 0}
@@ -7395,11 +7381,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hydra
       objectReference: {fileID: 0}
-    - target: {fileID: 4695540129941599299, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5111883720773540794, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7477,12 +7458,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8, type: 3}
---- !u!1 &7915382641439613176 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4695540129941599299, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8,
-    type: 3}
-  m_PrefabInstance: {fileID: 3238367742730933435}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7638651859363729153 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5111883720773540794, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8,
@@ -20391,15 +20366,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8990699534333177662}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1707500765068352605 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7743697053895209827, guid: c1718dbf33741a14c93345c7f7a78830,
-    type: 3}
-  m_PrefabInstance: {fileID: 8990699534333177662}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2569253391975697503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76e799dadece6b4eb2539c1efea0513, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
