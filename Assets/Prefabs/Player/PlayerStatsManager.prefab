@@ -43,9 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ad867dd064cf844b7bafb45355bfb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartingRunScene:
+    m_Handle: 0
+  HubScene:
+    m_Handle: 0
   Speed: 5
   invulnerability: 0
   invulnerabilityTime: 0
+  gameTimer: 0
+  startTimer: 0
   LifeDecreaseSpeed: 1
   LifeStopDecrease: 10
   MaxHealth: 100
@@ -75,6 +81,7 @@ MonoBehaviour:
   AttackMultiplicatorChain: 0
   BerserkMultiplicator: 0
   CurrentCombo: 0
+  MaxRunCombo: 0
   MaxCombo: 200
   ComboResetTime: 15
   colateralDamage: 30
