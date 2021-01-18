@@ -177,7 +177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TUE PAR: MINOTAURE'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 62af6e446e70a3c4c98a541723061092, type: 2}
   m_sharedMaterial: {fileID: -3547967652488494224, guid: 62af6e446e70a3c4c98a541723061092,
@@ -827,7 +827,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TEMPS DE LA RUN:   6m 21sec'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 62af6e446e70a3c4c98a541723061092, type: 2}
   m_sharedMaterial: {fileID: -3547967652488494224, guid: 62af6e446e70a3c4c98a541723061092,
@@ -2050,7 +2050,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TU AS RECUPERE:  3000 PIECES'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 62af6e446e70a3c4c98a541723061092, type: 2}
   m_sharedMaterial: {fileID: -3547967652488494224, guid: 62af6e446e70a3c4c98a541723061092,
@@ -2163,6 +2163,7 @@ MonoBehaviour:
   PlusGrosComboGO: {fileID: 1487851581}
   ThunesGO: {fileID: 1323984410}
   PassifUsedGO: {fileID: 1654691581}
+  AchGO: {fileID: 1306536195}
   GameOver: {fileID: 1427034632}
   MonsterWhoKilled: {fileID: 56207826}
   RunTime: {fileID: 955608209}
@@ -2170,6 +2171,7 @@ MonoBehaviour:
   Thunes: {fileID: 1744985513}
   PassifUsed: {fileID: 398248592}
   DelayTime: 2
+  MoneyHarvested: 0
   HUB: EMD_HUB
   MainMenu: EMD_MenuScene
 --- !u!4 &1751451086
@@ -2242,7 +2244,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'LE PLUS GROS COMBO: 227'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 62af6e446e70a3c4c98a541723061092, type: 2}
   m_sharedMaterial: {fileID: -3547967652488494224, guid: 62af6e446e70a3c4c98a541723061092,
