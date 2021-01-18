@@ -18,3 +18,5 @@ MonoBehaviour:
   duration: 15
   HUDSprite: {fileID: 8333857153671470244, guid: dd25c52f422edcb4b89596e7b684b173,
     type: 3}
+  GroundSprite: {fileID: -1615591449214129068, guid: cbbbd9f56ac68d542a8536a13a67ef12,
+    type: 3}

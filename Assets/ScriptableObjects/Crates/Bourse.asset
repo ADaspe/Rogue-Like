@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7c9242b503af94ebb349ee2e6cddf8, type: 3}
+  m_Name: Bourse
+  m_EditorClassIdentifier: 
+  Name: Bourse
+  spawnFrequency: 0
+  stockLimit: 1500
+  steps: 960000002c010000c201000058020000ee020000840300001a040000b004000046050000
+  startingMinMoney: 0
+  startingMaxMoney: 0
+  isBreakable: 0
+  health: 0
+  percentageOfMoneyLostWhenHit: 2
+  HUDSprite: {fileID: 0}
+  GroundSprite: {fileID: 7632538616172658304, guid: e8009cb3ec52cf94d84785fa3c3fd8be,
+    type: 3}
