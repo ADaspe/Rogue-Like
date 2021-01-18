@@ -11,6 +11,7 @@ public class ELC_Coins : MonoBehaviour
     public float speed;
     public int value;
     float distanceSpeedMultiplicator;
+    public AudioSource coinSound;
 
     public float initialDropSpeed = 1;
     public float decreaseSpeedOnDrop;
@@ -49,8 +50,17 @@ public class ELC_Coins : MonoBehaviour
         if (!isFalling && detectorScript.playerIsInside)
         {
             FindObjectOfType<ELC_ObjectsInventory>().AddMoneyToCrates(value);
-            Destroy(this.gameObject);
+            StartCoroutine(Audio());            
         }
+    }
+    IEnumerator Audio()
+    {
+        if (!coinSound.isPlaying)
+        {
+            coinSound.Play();
+            yield return new WaitForSeconds(0.6f);
+            Destroy(this.gameObject);
+        }        
     }
 
 
