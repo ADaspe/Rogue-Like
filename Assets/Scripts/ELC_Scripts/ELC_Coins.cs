@@ -57,6 +57,7 @@ public class ELC_Coins : MonoBehaviour
     {
         if (!coinSound.isPlaying)
         {
+            this.GetComponent<SpriteRenderer>().enabled = false;
             coinSound.Play();
             yield return new WaitForSeconds(0.6f);
             Destroy(this.gameObject);

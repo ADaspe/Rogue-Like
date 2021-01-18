@@ -141,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectorScript: {fileID: 3438627847694550388}
   attractDistance: 3
-  speed: 3
+  speed: 5
   value: 5
   coinSound: {fileID: 6826114968273419547}
   initialDropSpeed: 7
