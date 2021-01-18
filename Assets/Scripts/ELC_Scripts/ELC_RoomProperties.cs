@@ -286,7 +286,7 @@ public class ELC_RoomProperties : MonoBehaviour
     private void ReplaceDoors(GameObject doorToReplace, doorsDirections direction)
     {
         float frontDoorsHeight = 0.89f;
-        float lateralDoorsPositionAdjustement = 0.5f;
+        float lateralDoorsPositionAdjustement = 0.7f;
 
         Vector3 newDoorPosition = Vector3.zero;
 
