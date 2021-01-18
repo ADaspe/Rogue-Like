@@ -21,4 +21,5 @@ public class ELC_PowerUpSO : ScriptableObject
 
     //sprite affiché sur le HUD
     public Sprite HUDSprite;
+    public Sprite GroundSprite;
 }

@@ -36,13 +36,14 @@ public class ELC_PickupItems : MonoBehaviour
         {
             int randomNumber = Random.Range(0, PowerUpsList.Count);
             PowerUp = PowerUpsList[randomNumber];
-            this.GetComponent<SpriteRenderer>().sprite = PowerUp.GetComponent<ELC_PowerUpProperties>().PowerUpSO.HUDSprite;
+            this.GetComponent<SpriteRenderer>().sprite = PowerUp.GetComponent<ELC_PowerUpProperties>().PowerUpSO.GroundSprite;
 
         }
         if(chooseRandomObject)
         {
             int randomNumber = Random.Range(0, ObjectsList.Count);
             Object = ObjectsList[randomNumber];
+            this.GetComponent<SpriteRenderer>().sprite = Object.GetComponent<ELC_CrateProperties>().CratesSO.GroundSprite;
         }
         if(chooseRandomPassive)
         {
