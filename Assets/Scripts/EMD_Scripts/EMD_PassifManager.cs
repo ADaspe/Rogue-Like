@@ -29,7 +29,11 @@ public class EMD_PassifManager : MonoBehaviour
 
     void Start()
     {
+        RandomPick();
         DialogueManagerScript = FindObjectOfType<EMD_DialogueManager>();
+        Debug.Log(passive[0]);
+        Debug.Log(passive[1]);
+        Debug.Log(passive[2]);
     }
 
     /*void takePassiveAndCreateArray()
@@ -83,9 +87,6 @@ public class EMD_PassifManager : MonoBehaviour
                 }
             }
         }
-        Debug.Log(passive[0]);
-        Debug.Log(passive[1]);
-        Debug.Log(passive[2]);
     }
 
     public void afficherPassif()

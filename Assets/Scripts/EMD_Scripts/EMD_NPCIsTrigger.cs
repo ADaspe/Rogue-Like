@@ -20,12 +20,15 @@ public class EMD_NPCIsTrigger : MonoBehaviour
     {
         DialogueIsAlreadyActive = DialogueManagerScript.DialogueIsActive;
         //Si le player est près du npc et qu'il appuie sur "e" le dialogue démarre 
-        if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Interact")) && IsInRange == true && !DialogueIsAlreadyActive)
+        if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("Interact")) && IsInRange == true && !DialogueIsAlreadyActive && DialogueManagerScript.DialogueEnding == false)
         {
             DialogueManagerScript.ActualNPC = this.gameObject;
             DialogueManagerScript.StartCoroutine("StartDialogue");
         }
-
+        else if (DialogueManagerScript.DialogueEnding == true)
+        {
+            DialogueManagerScript.DialogueEnding = false;
+        }
         if (DialogueIsAlreadyActive && DialogueManagerScript.ActualNPC == this.gameObject && IsInRange == false) DialogueManagerScript.QuitDialogue();
     }
 
