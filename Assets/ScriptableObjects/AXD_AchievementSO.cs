@@ -17,7 +17,6 @@ public class AXD_AchievementSO : ScriptableObject
     private AXD_AchievementManager achievementManager;
     public Sprite HUDSprite;
 
-
     public void AddDefeated(int defeated = 1)
     {
         if (!isUnlocked)
@@ -27,12 +26,14 @@ public class AXD_AchievementSO : ScriptableObject
             if(numberDefeated >= numberToDefeat)
             {
                 isUnlocked = true;
-                passifToUnlock.isUnlock = true;
-                if (!achievementManager.passivesList.PassivesList.Contains(passifToUnlock))
+                if (passifToUnlock != null)
                 {
-                    achievementManager.passivesList.PassivesList.Add(passifToUnlock);
+                    passifToUnlock.isUnlock = true;
+                    if (!achievementManager.passivesList.PassivesList.Contains(passifToUnlock))
+                    {
+                        achievementManager.passivesList.PassivesList.Add(passifToUnlock);
+                    }
                 }
-                
             }
         }
     }

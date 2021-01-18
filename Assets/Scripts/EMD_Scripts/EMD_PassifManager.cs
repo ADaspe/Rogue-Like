@@ -17,11 +17,10 @@ public class EMD_PassifManager : MonoBehaviour
     public GameObject ValidateButton;
     public GameObject DialogueCanvas;
     public GameObject QuittButton;
-    public List<ELC_PassivesList> PassivesList;
+    public ELC_PassivesList PassivesList;
     public TextMeshProUGUI PassivePrice;
     public TextMeshProUGUI textDisplay;
     private EMD_DialogueManager DialogueManagerScript;
-    private ELC_PassivesList PassiveListScript;
     //public GameObject passif1;
     public Image image1;
     public Image image2;
@@ -32,7 +31,9 @@ public class EMD_PassifManager : MonoBehaviour
     {
         RandomPick();
         DialogueManagerScript = FindObjectOfType<EMD_DialogueManager>();
-        PassiveListScript = FindObjectOfType<ELC_PassivesList>();
+        Debug.Log(passive[0]);
+        Debug.Log(passive[1]);
+        Debug.Log(passive[2]);
     }
 
     /*void takePassiveAndCreateArray()
@@ -59,18 +60,19 @@ public class EMD_PassifManager : MonoBehaviour
                 passive[i] = ListPassive[rdInt];
             } while (isAlreadyThere);
         }*/
-    void RandomPick()
+    public void RandomPick()
     {
         for (int i = 0; i < 3; i++)
         {
-            int Index = Random.Range(0, PassiveListScript.PassivesList.Count);
+            int Index = Random.Range(0, PassivesList.PassivesList.Count);
+            Debug.Log(i);
             if (i == 0)
             {
-                passive[i] = PassiveListScript.PassivesList[Index];
+                passive[i] = PassivesList.PassivesList[Index];
             }
             else if (i == 1)
             {
-                passive[i] = PassiveListScript.PassivesList[Index];
+                passive[i] = PassivesList.PassivesList[Index];
                 if (passive[i] == passive[i-1])
                 {
                     i --;
@@ -78,7 +80,7 @@ public class EMD_PassifManager : MonoBehaviour
             }
            else
             {
-                passive[i] = PassiveListScript.PassivesList[Index]; 
+                passive[i] = PassivesList.PassivesList[Index]; 
                 if (passive[i] == passive[i-1] || passive[i] == passive[i-2])
                 {
                     i --;

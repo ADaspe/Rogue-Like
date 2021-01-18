@@ -1,20 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class AXD_Hydra : MonoBehaviour
 {
     public enum BossPhase { Phase1, Phase2, Phase3}
     public BossPhase currentPhase;
     public AXD_BossSO stats;
-    public AXD_HydraHead head1Prefab;
-    public AXD_HydraHead head2Prefab;
-    public AXD_HydraHead head3Prefab;
-    public AXD_HydraHead head4Prefab;
+    public AXD_HydraHead headPrefab;
     public List<AXD_HydraHead> heads;
     public List<GameObject> spawnPoints;
+    public Animator anim;
     public ELC_Enemy enemy;
-    public float[] distances;
     public float timeToChangeStrat;
     public float timeToBeVulnerable;
     public bool headsToSpawn;
@@ -23,7 +21,14 @@ public class AXD_Hydra : MonoBehaviour
     public float healthPercentageHeadPhase2;
     public float healthPercentageHeadPhase3;
     public GameObject forceField;
-
+    private TilemapRenderer tmr;
+    public Material glowEnviro1;
+    public Material glowEnviro2;
+    public Material glowEnviro3;
+    private bool vulnerableCoroutine = false;
+    public float ExplosionDuration;
+    public ELC_Detector Area;
+    public bool fighting = false;
 
     private void Start()
     {
@@ -31,15 +36,17 @@ public class AXD_Hydra : MonoBehaviour
         currentPhase = BossPhase.Phase1;
         enemy.isInvulnerable = true;
         forceField = this.gameObject.transform.GetChild(7).gameObject;
-        LetsFight();
+        tmr = FindObjectOfType<TilemapRenderer>();
+        tmr.material = glowEnviro1;
+        anim = GetComponent<Animator>();
+        
     }
     private void Update()
     {
-        if(Time.time >= timeToChangeStrat && timeToChangeStrat > 0)
+        if(!fighting && Area.playerIsInside)
         {
-            ChangeStratRandom();
+            LetsFight();
         }
-
         if (!enemy.isInvulnerable)
         {
             VulnerablePhase();
@@ -54,43 +61,43 @@ public class AXD_Hydra : MonoBehaviour
         Debug.Log("Spawning heads");
         switch (currentPhase) {
             case BossPhase.Phase1:
-                AXD_HydraHead temp1 = Instantiate(head1Prefab, this.gameObject.transform.GetChild(0));
+                AXD_HydraHead temp1 = Instantiate(headPrefab, this.gameObject.transform.GetChild(0));
                 temp1.enemyScript.currentHealth = temp1.headStats.MaxHealth = maxHealthHead;
                 temp1.GetHydraRef(this);
                 heads.Add(temp1);
                 break;
 
             case BossPhase.Phase2:
-                AXD_HydraHead temp2 = Instantiate(head1Prefab, this.gameObject.transform.GetChild(1));
+                AXD_HydraHead temp2 = Instantiate(headPrefab, this.gameObject.transform.GetChild(1));
                 temp2.headStats.MaxHealth = temp2.enemyScript.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase2 / 100);
                 temp2.GetHydraRef(this);
                 heads.Add(temp2);
-                AXD_HydraHead temp3 = Instantiate(head2Prefab, this.gameObject.transform.GetChild(2));
+                AXD_HydraHead temp3 = Instantiate(headPrefab, this.gameObject.transform.GetChild(2));
                 temp3.headStats.MaxHealth = temp3.enemyScript.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase2 / 100);
                 temp3.GetHydraRef(this);
                 heads.Add(temp3);
                 break;
 
             case BossPhase.Phase3:
-                AXD_HydraHead temp4 = Instantiate(head1Prefab, this.gameObject.transform.GetChild(3));
+                AXD_HydraHead temp4 = Instantiate(headPrefab, this.gameObject.transform.GetChild(3));
                 temp4.headStats.MaxHealth = temp4.enemyScript.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase3 / 100);
                 temp4.GetHydraRef(this);
-                temp4.GetComponent<SpriteRenderer>().material = glowHeadPhase3;
+                temp4.GetComponent<ELC_Enemy>().basicMat= glowHeadPhase3;
                 heads.Add(temp4);
-                AXD_HydraHead temp5 = Instantiate(head2Prefab, this.gameObject.transform.GetChild(4));
+                AXD_HydraHead temp5 = Instantiate(headPrefab, this.gameObject.transform.GetChild(4));
                 temp5.headStats.MaxHealth = temp5.enemyScript.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase3 / 100);
                 temp5.GetHydraRef(this);
-                temp4.GetComponent<SpriteRenderer>().material = glowHeadPhase3;
+                temp5.GetComponent<ELC_Enemy>().basicMat = glowHeadPhase3;
                 heads.Add(temp5);
-                AXD_HydraHead temp6 = Instantiate(head3Prefab, this.gameObject.transform.GetChild(5));
+                AXD_HydraHead temp6 = Instantiate(headPrefab, this.gameObject.transform.GetChild(5));
                 temp6.headStats.MaxHealth = temp6.enemyScript.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase3 / 100);
                 temp6.GetHydraRef(this);
-                temp4.GetComponent<SpriteRenderer>().material = glowHeadPhase3;
+                temp6.GetComponent<ELC_Enemy>().basicMat = glowHeadPhase3;
                 heads.Add(temp6);
-                AXD_HydraHead temp7 = Instantiate(head4Prefab, this.gameObject.transform.GetChild(6));
+                AXD_HydraHead temp7 = Instantiate(headPrefab, this.gameObject.transform.GetChild(6));
                 temp7.headStats.MaxHealth = temp7.enemyScript.currentHealth = Mathf.RoundToInt(maxHealthHead * healthPercentageHeadPhase3 / 100);
                 temp7.GetHydraRef(this);
-                temp4.GetComponent<SpriteRenderer>().material = glowHeadPhase3;
+                temp7.GetComponent<ELC_Enemy>().basicMat = glowHeadPhase3;
                 heads.Add(temp7);
                 break;
         }
@@ -98,25 +105,20 @@ public class AXD_Hydra : MonoBehaviour
         headsToSpawn = false;
     }
 
-
-
     public void LoseHead(AXD_HydraHead head)
     {
         heads.Remove(head);
         if(heads.Count == 0)
         {
             enemy.isInvulnerable = false;
+            vulnerableCoroutine = true;
             timeToBeVulnerable = Time.time + stats.vulnerableTime;
-        }
-        else
-        {
-            ChangeStratRandom();
         }
     }
 
     public void VulnerablePhase()
     {
-        Debug.Log("Attack me !");
+        AnimatorBooleans();
         forceField.SetActive(false);
         if (Time.time > timeToBeVulnerable || enemy.currentHealth < stats.healthPhase[(int)currentPhase])
         {
@@ -124,8 +126,10 @@ public class AXD_Hydra : MonoBehaviour
             {
                 enemy.currentHealth = stats.healthPhase[(int)currentPhase];
             }
-            StartCoroutine(BecomeInvunerable());
-            
+            if (vulnerableCoroutine && enemy.currentHealth > 0 )
+            {
+                StartCoroutine(BecomeInvunerable());
+            } 
         }
     }
 
@@ -135,41 +139,96 @@ public class AXD_Hydra : MonoBehaviour
         {
             Debug.Log("Changing phase");
             currentPhase++;
-        }
-    }
-
-    public void ChangeStratRandom()
-    {
-        
-        int ran;
-        foreach(AXD_HydraHead head in heads)
-        {
-            ran = Mathf.RoundToInt(Random.Range(0, 3));
-            switch (ran)
+            if(currentPhase == BossPhase.Phase2)
             {
-                case 0:
-                    head.Charge();
-                    break;
-                case 1:
-                    head.Shoot();
-                    break;
+                tmr.material = glowEnviro2;
             }
+            else if(currentPhase == BossPhase.Phase3)
+            {
+                tmr.material = glowEnviro3;
+            }
+            AnimatorBooleans();
         }
-        timeToChangeStrat = Time.time + stats.stratTime;
     }
 
     public void LetsFight()
     {
+        fighting = true;
         headsToSpawn = true;
     }
 
     IEnumerator BecomeInvunerable()
     {
+        vulnerableCoroutine = false;
         FindObjectOfType<PlayerHealth>().GetHit(0, 15, 0);
         yield return new WaitForSeconds(1);
         forceField.SetActive(true); ;
         enemy.isInvulnerable = true;
         headsToSpawn = true;
         ChangePhase();
+        vulnerableCoroutine = true;
+    }
+
+    public void AnimatorBooleans()
+    {
+        if (enemy.isDead)
+        {
+            anim.SetBool("Phase1", false);
+            anim.SetBool("Phase2", false);
+            anim.SetBool("Phase3", false);
+            anim.SetBool("Vulnerable", false);
+            anim.SetBool("Explosion", true);
+        }
+        else 
+        { 
+
+            if (currentPhase == BossPhase.Phase1)
+            {
+                anim.SetBool("Phase1", true);
+                anim.SetBool("Phase2", false);
+                anim.SetBool("Phase3", false);
+            }
+            else if (currentPhase == BossPhase.Phase2)
+            {
+                anim.SetBool("Phase1", false);
+                anim.SetBool("Phase2", true);
+                anim.SetBool("Phase3", false);
+            }
+            else if (currentPhase == BossPhase.Phase3)
+            {
+                anim.SetBool("Phase1", false);
+                anim.SetBool("Phase2", false);
+                anim.SetBool("Phase3", true);
+            }
+
+            if (enemy.isInvulnerable)
+            {
+                anim.SetBool("Vulnerable", false);
+            }
+            else
+            {
+                anim.SetBool("Vulnerable", true);
+            }
+        }
+    }
+
+    public IEnumerator Death()
+    {
+        Debug.Log("Coucou t mor");
+        enemy.isDying = true;
+        enemy.enemyCollider.enabled = false;
+        enemy.isDead = true;
+        AnimatorBooleans();
+        yield return new WaitForSeconds(ExplosionDuration);
+        enemy.spriteRenderer.enabled = false;
+        enemy.DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemy.enemyStats.MoneyEarnWhenDead);
+
+        if (enemy.passiveScript.ActualPassiveScriptableObject != null)
+        {
+            if (enemy.passiveScript.ActualPassiveScriptableObject.PassiveName == "Corne D'Abondance" && Random.Range(0, 101) < enemy.passiveScript.CorneAbondancePercentageChanceDropPowerUp) Instantiate(enemy.passiveScript.PowerUpsGenerator, this.transform.position, Quaternion.identity);
+            else if (enemy.passiveScript.ActualPassiveScriptableObject.PassiveName == "Faux De Chronos") FindObjectOfType<ELC_PowerUpManager>().StopFlow();
+        }
+        this.gameObject.SetActive(false);
+        yield return null;
     }
 }
