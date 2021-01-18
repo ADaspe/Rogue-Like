@@ -12,22 +12,38 @@ public class EMD_GameOver : MonoBehaviour
     public GameObject PlusGrosComboGO;
     public GameObject ThunesGO;
     public GameObject PassifUsedGO;
+    public GameObject AchGO;
     public TextMeshProUGUI GameOver;
     public TextMeshProUGUI MonsterWhoKilled;
     public TextMeshProUGUI RunTime;
     public TextMeshProUGUI PlusGrosCombo;
     public TextMeshProUGUI Thunes;
     public TextMeshProUGUI PassifUsed;
-    int length = 6;
+    int length = 7;
     public float DelayTime;
-
-    // Start is called before the first frame update
+    private ELC_PlayerStatManager PlayerStatManagerScript;
+    private PlayerHealth PlayerHealthScript;
+    private AXD_AchievementManager AchievementManagerScript;
+    private ELC_ObjectsInventory ObjectinventoryScript;
+    public int MoneyHarvested;
+    int TimerMin;
+    int TimerSec;
 
     public string HUB;
     public string MainMenu;
   
     private void Start()
     {
+        PlayerStatManagerScript = FindObjectOfType<ELC_PlayerStatManager>();
+        AchievementManagerScript = FindObjectOfType<AXD_AchievementManager>();
+        ObjectinventoryScript = FindObjectOfType<ELC_ObjectsInventory>();
+        GameOverGO.SetActive(false);
+        MonsterWhoKilledGO.SetActive(false);
+        RunTimeGO.SetActive(false);
+        PlusGrosComboGO.SetActive(false);
+        ThunesGO.SetActive(false);
+        PassifUsedGO.SetActive(false);
+        AchGO.SetActive(false);
         StartCoroutine("OneByOne");
     }
 
@@ -42,25 +58,36 @@ public class EMD_GameOver : MonoBehaviour
             }
             if (i == 1)
             {
-                //MonsterWhoKilled.text = "TUE PAR: " + PlayerHealth.lastHitEnnemy.Name;
+                MonsterWhoKilled.text = "TUE PAR: " + PlayerHealth.lastHitEnnemy.Name;
                 MonsterWhoKilledGO.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);
             }
             if (i == 2)
             {
-                //RunTime.text = "TEMPS DE LA RUN:    " + Timer;
+                TimerMin = (int)PlayerStatManagerScript.gameTimer / 60;
+                TimerSec = (int)PlayerStatManagerScript.gameTimer % 60;
+                RunTime.text = "TEMPS DE LA RUN:    " + TimerMin + "min " + TimerSec + "sec ";
                 RunTimeGO.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);
             }
             if (i == 3)
             {
-                //PluGrosCombo.text = "LE PLUS GROS COMBO:    " + la variable du combo;
+                PlusGrosCombo.text = "LE PLUS GROS COMBO:    " + PlayerStatManagerScript.MaxCombo;
                 PlusGrosComboGO.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);
             }
             if (i == 4)
             {
-                //Thunes.text = "ARGENT RECOLTE:    " + L'argent des caisses;
+                if (ObjectinventoryScript.RightHandObject != null)
+                {
+                    MoneyHarvested = ObjectinventoryScript.RightHandObject.GetComponent<ELC_CrateProperties>().securedMoney + ObjectinventoryScript.LeftHandObject.GetComponent<ELC_CrateProperties>().securedMoney;
+                }
+                else
+                {
+                    MoneyHarvested = ObjectinventoryScript.LeftHandObject.GetComponent<ELC_CrateProperties>().securedMoney;
+                }
+                
+                Thunes.text = "ARGENT RECOLTE:    " + MoneyHarvested;
                 ThunesGO.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);
             }
@@ -68,6 +95,11 @@ public class EMD_GameOver : MonoBehaviour
             {
                 PassifUsed.text = "PASSIF UTILISE : " + ELC_ObjectsInventory.ActivePassif;
                 PassifUsedGO.SetActive(true);
+                yield return new WaitForSeconds(DelayTime);
+            }
+            if (i == 6 && AchievementManagerScript.hasUnlockedAchievement == true)
+            {
+                AchGO.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);
             }
         }

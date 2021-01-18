@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc7c9242b503af94ebb349ee2e6cddf8, type: 3}
-  m_Name: Solid Crate
+  m_Name: Portefeuille
   m_EditorClassIdentifier: 
-  Name: Solid Crate
+  Name: Portefeuille
   spawnFrequency: 0
-  stockLimit: 3000
-  steps: ee020000e8030000dc050000d0070000c4090000
+  stockLimit: 500
+  steps: 
   startingMinMoney: 0
-  startingMaxMoney: 50
+  startingMaxMoney: 300
   isBreakable: 0
   health: 0
-  percentageOfMoneyLostWhenHit: 2
+  percentageOfMoneyLostWhenHit: 1
   HUDSprite: {fileID: 0}
+  GroundSprite: {fileID: -7402037114677673065, guid: e8009cb3ec52cf94d84785fa3c3fd8be,
+    type: 3}

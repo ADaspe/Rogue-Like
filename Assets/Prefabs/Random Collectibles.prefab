@@ -114,9 +114,12 @@ MonoBehaviour:
   - {fileID: 7391949015416354207, guid: f9b5e39cf03dc9646a77d7e0d7ae5674, type: 3}
   chooseRandomObject: 0
   ObjectsList:
-  - {fileID: 2185526170687435304, guid: 01e4cb7c4d2549d45807b900cfdf0a15, type: 3}
-  - {fileID: 5799073900831331155, guid: 61ead40fd9be8d241bedcaf20ed9808c, type: 3}
   - {fileID: 6618332470376472214, guid: 966d535555f27c44995cc8a015241f1a, type: 3}
+  - {fileID: 285864425703863803, guid: b362c43121199b847ab2d79fc4dab916, type: 3}
+  - {fileID: 2185526170687435304, guid: 01e4cb7c4d2549d45807b900cfdf0a15, type: 3}
+  - {fileID: 851207650812391357, guid: eca1a7731bd193a4a8c34a81ead9adbe, type: 3}
+  - {fileID: 5799073900831331155, guid: 61ead40fd9be8d241bedcaf20ed9808c, type: 3}
+  - {fileID: 2860630919178201563, guid: 85af97a89fdfb6a4aa3bec45b78e1619, type: 3}
   chooseRandomPassive: 0
   passivesList:
   - {fileID: 11400000, guid: e8365aef04281bd45b3471d2fc5b1fb6, type: 2}
@@ -157,7 +160,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -179,7 +182,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.24705884, g: 0.34901962, b: 0.7568628, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

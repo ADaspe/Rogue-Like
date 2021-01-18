@@ -432,7 +432,9 @@ public class ELC_Enemy : MonoBehaviour
         projectile.GetComponent<ELC_Projectiles>().lifeDuration = enemyStats.ProjectileDurability;
         projectile.GetComponent<ELC_Projectiles>().strenght = enemyStats.ProjectileStrenght;
         projectile.GetComponent<ELC_Projectiles>().speed = enemyStats.ProjectileSpeed;
+        projectile.GetComponent<ELC_Projectiles>().enemy = enemyStats;
         projectile.GetComponent<ELC_Projectiles>().StartCoroutine("LifeDuration");
+
     }
 
     private void VerifyIfIsAtDistance()
@@ -644,14 +646,13 @@ public class ELC_Enemy : MonoBehaviour
     {
         Collider2D[] hitColliders = null;
 
-
         if (dashAttack == false) //basic attack
         {
             hitColliders = Physics2D.OverlapCircleAll(this.transform.position + lastDirection.normalized * enemyStats.AttackRange, enemyStats.AttackRange, LayerMask.GetMask("Player"));
             if (hitColliders != null && hitColliders.Length > 0)
             {
                 ELC_PlayerStatManager playerStats =  FindObjectOfType<ELC_PlayerStatManager>();
-                hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)(enemyStats.AttackStrenght *  (1 / playerStats.DefenseMultiplicatorPU) * playerStats.FilAresDamagesTakenMultiplicator));
+                hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit(this.enemyStats,(int)(enemyStats.AttackStrenght *  (1 / playerStats.DefenseMultiplicatorPU) * playerStats.FilAresDamagesTakenMultiplicator));
                 //Debug.Log("Close combat Hit");
             }
         }
@@ -675,7 +676,7 @@ public class ELC_Enemy : MonoBehaviour
                 hitColliders = Physics2D.OverlapBoxAll(this.transform.position + directionToDash.normalized * 0.5f, new Vector2(enemyStats.DashColliderWidth, enemyStats.DashColliderWidth), Vector2.Angle(Vector2.up, directionToDash), LayerMask.GetMask("Player"));
                 if (hitColliders != null && hitColliders.Length > 0)
                 {
-                    hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit((int)enemyStats.DashStrenght);
+                    hitColliders[0].gameObject.GetComponent<PlayerHealth>().GetHit(this.enemyStats, (int)enemyStats.DashStrenght);
                     //Debug.Log("Dash Hit");
                     hitPlayer = true;
                     stopDashDamage = true;
