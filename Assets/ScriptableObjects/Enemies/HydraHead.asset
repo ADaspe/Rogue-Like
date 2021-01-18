@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HydraHead
   m_EditorClassIdentifier: 
   Name: 
-  MaxHealth: 4000
+  MaxHealth: 5000
   DeathTime: 1
   SpawnTime: 1
   MovementSpeed: 5
@@ -35,7 +35,7 @@ MonoBehaviour:
   CloseCombatAttack: 0
   AttackCooldown: 1.2
   AttackRange: 1
-  WaitBeforeAttack: 0.3
+  WaitBeforeAttack: 0.17
   AttackStrenght: 9
   AttackStun: 0
   AttackAnimationTime: 0.3
