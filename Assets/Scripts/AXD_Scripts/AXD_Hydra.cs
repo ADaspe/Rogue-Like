@@ -160,7 +160,6 @@ public class AXD_Hydra : MonoBehaviour
     IEnumerator BecomeInvunerable()
     {
         vulnerableCoroutine = false;
-        FindObjectOfType<PlayerHealth>().GetHit(0, 15, 0);
         yield return new WaitForSeconds(1);
         forceField.SetActive(true); ;
         enemy.isInvulnerable = true;
@@ -219,7 +218,11 @@ public class AXD_Hydra : MonoBehaviour
         enemy.enemyCollider.enabled = false;
         enemy.isDead = true;
         AnimatorBooleans();
+
+
         yield return new WaitForSeconds(ExplosionDuration);
+
+
         enemy.spriteRenderer.enabled = false;
         enemy.DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemy.enemyStats.MoneyEarnWhenDead);
 
