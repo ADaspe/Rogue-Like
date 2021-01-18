@@ -47,10 +47,10 @@ public class EMD_DialogueManager : MonoBehaviour
         {
             QuitDialogue();
         }
-        if ( DialogueIsActive && Input.GetButtonDown("Interact"))
-        {
-            NextSentence();
-        }
+        //if ( DialogueIsActive && Input.GetButtonDown("Interact"))
+        //{
+        //    NextSentence();
+        //}
     }
 
 
