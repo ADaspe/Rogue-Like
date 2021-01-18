@@ -23,5 +23,6 @@ public class ELC_CratesSO : ScriptableObject
 
     [Header("Visual Properties")]
     public Sprite HUDSprite;
+    public Sprite GroundSprite;
 
 }

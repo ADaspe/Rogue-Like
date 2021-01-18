@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc7c9242b503af94ebb349ee2e6cddf8, type: 3}
-  m_Name: Great Crate
+  m_Name: Tonneau
   m_EditorClassIdentifier: 
-  Name: Great Crate
+  Name: Tonneau
   spawnFrequency: 0
-  stockLimit: 5000
-  steps: e8030000d0070000ac0d0000
+  stockLimit: 4800
+  steps: 40060000800c0000
   startingMinMoney: 0
-  startingMaxMoney: 500
+  startingMaxMoney: 800
   isBreakable: 0
   health: 0
-  percentageOfMoneyLostWhenHit: 8
+  percentageOfMoneyLostWhenHit: 6
   HUDSprite: {fileID: 0}
+  GroundSprite: {fileID: 7791584170219435731, guid: e8009cb3ec52cf94d84785fa3c3fd8be,
+    type: 3}

@@ -173,6 +173,10 @@ public class AXD_Attack : MonoBehaviour
         if (playerStats.CurrentCombo < playerStats.MaxCombo)
         {
             playerStats.CurrentCombo++;
+            if(playerStats.CurrentCombo > playerStats.MaxRunCombo)
+            {
+                playerStats.MaxRunCombo = playerStats.CurrentCombo;
+            }
             nextResetCombo = Time.time + playerStats.ComboResetTime;
         }
         if ((type == "Swich" && CalculateDamage(AttackType.Swich) >= enemy.currentHealth) || (type == "Sponk" && CalculateDamage(AttackType.Sponk) >= enemy.currentHealth))

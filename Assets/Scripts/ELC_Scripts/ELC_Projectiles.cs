@@ -8,6 +8,7 @@ public class ELC_Projectiles : MonoBehaviour
     public float speed;
     public float lifeDuration;
     public float strenght;
+    public ELC_EnemySO enemy;
 
     public bool IsFriendly;
 
@@ -27,7 +28,7 @@ public class ELC_Projectiles : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerHealth>().GetHit((int)strenght);
+            collision.GetComponent<PlayerHealth>().GetHit(enemy, (int)strenght);
             Destroy(this.gameObject);
         }
         if(IsFriendly && collision.CompareTag("Enemy"))
