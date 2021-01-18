@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ELC_PlayerStatManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public bool invulnerability;
     public float invulnerabilityTime;
     public float gameTimer;
+    public bool startTimer;
     [Header ("Life Stats")]
     public float LifeDecreaseSpeed;
     public float LifeStopDecrease;
@@ -118,4 +120,17 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float GetHitShakeIntensity;
     public float GetHitShakeFrequency;
     public float GetHitShakeDuration;
+
+    private void Awake()
+    {
+        if (SceneManager.GetActiveScene().name == "ELC_ProceduralGeneration")
+        {
+            losingLife = true;
+            startTimer = true;
+        }else if (SceneManager.GetActiveScene().name == "EMD_HUB")
+        {
+            losingLife = false;
+            startTimer = false;
+        }
+    }
 }

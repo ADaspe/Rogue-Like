@@ -12,22 +12,27 @@ public class EMD_GameOver : MonoBehaviour
     public GameObject PlusGrosComboGO;
     public GameObject ThunesGO;
     public GameObject PassifUsedGO;
+    public GameObject AchGO;
     public TextMeshProUGUI GameOver;
     public TextMeshProUGUI MonsterWhoKilled;
     public TextMeshProUGUI RunTime;
     public TextMeshProUGUI PlusGrosCombo;
     public TextMeshProUGUI Thunes;
     public TextMeshProUGUI PassifUsed;
-    int length = 6;
+    int length = 7;
     public float DelayTime;
-
-    // Start is called before the first frame update
+    private ELC_PlayerStatManager PlayerStatManagerScript;
+    private PlayerHealth PlayerHealthScript;
+    private AXD_AchievementManager AchievementManagerScript;
 
     public string HUB;
     public string MainMenu;
   
     private void Start()
     {
+        PlayerStatManagerScript = FindObjectOfType<ELC_PlayerStatManager>();
+        PlayerHealthScript = FindObjectOfType<PlayerHealth>();
+        AchievementManagerScript = FindObjectOfType<AXD_AchievementManager>();
         StartCoroutine("OneByOne");
     }
 
@@ -42,19 +47,19 @@ public class EMD_GameOver : MonoBehaviour
             }
             if (i == 1)
             {
-                //MonsterWhoKilled.text = "TUE PAR: " + PlayerHealth.lastHitEnnemy.Name;
+                //MonsterWhoKilled.text = "TUE PAR: " + PlayerHealthScript.lastHitEnnemy.Name;
                 MonsterWhoKilledGO.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);
             }
             if (i == 2)
             {
-                //RunTime.text = "TEMPS DE LA RUN:    " + Timer;
+                //RunTime.text = "TEMPS DE LA RUN:    " + PlayerStatManagerScript.Timer;
                 RunTimeGO.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);
             }
             if (i == 3)
             {
-                //PluGrosCombo.text = "LE PLUS GROS COMBO:    " + la variable du combo;
+                PlusGrosCombo.text = "LE PLUS GROS COMBO:    " + PlayerStatManagerScript.MaxCombo;
                 PlusGrosComboGO.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);
             }
@@ -70,6 +75,11 @@ public class EMD_GameOver : MonoBehaviour
                 PassifUsedGO.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);
             }
+            /*if (i == 6 && AchievementManagerScript.hasUnlockedAchievement == true)
+            {
+                AchGO.SetActive(true);
+                yield return new WaitForSeconds(DelayTime);
+            }*/
         }
     }
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GFC_OiseauSound : MonoBehaviour
+public class GFC_MinotaureSound : MonoBehaviour
 {
     public ELC_Enemy enemy;
     public AudioSource attaque;
