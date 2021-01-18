@@ -26,6 +26,7 @@ public class AXD_AchievementSO : ScriptableObject
             if(numberDefeated >= numberToDefeat)
             {
                 isUnlocked = true;
+                achievementManager.hasUnlockedAchievement = true;
                 if (passifToUnlock != null)
                 {
                     passifToUnlock.isUnlock = true;
