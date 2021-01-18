@@ -33,6 +33,7 @@ public class EMD_DialogueManager : MonoBehaviour
     private ELC_PlayerMoves PlayerMovesScript;
     bool IsAchievement = false;
     bool IsPassive = false;
+    public bool DialogueEnding = false;
 
 
     private void Start()
@@ -153,6 +154,7 @@ public class EMD_DialogueManager : MonoBehaviour
         DialogueIsActive = false;
         PlayerMovesScript.ToggleMenu();
         AchievementManagerScript.NumeroPage = 0;
+        DialogueEnding = true;
     }
 
     public void NextSentence()
