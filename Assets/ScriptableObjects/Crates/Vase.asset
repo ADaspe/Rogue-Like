@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc7c9242b503af94ebb349ee2e6cddf8, type: 3}
+  m_Name: Vase
+  m_EditorClassIdentifier: 
+  Name: Vase
+  spawnFrequency: 0
+  stockLimit: 1500
+  steps: c8000000b0040000
+  startingMinMoney: 0
+  startingMaxMoney: 0
+  isBreakable: 0
+  health: 0
+  percentageOfMoneyLostWhenHit: 4
+  HUDSprite: {fileID: 0}
+  GroundSprite: {fileID: 9131495655444160319, guid: e8009cb3ec52cf94d84785fa3c3fd8be,
+    type: 3}

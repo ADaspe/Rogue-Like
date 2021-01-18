@@ -10,16 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc7c9242b503af94ebb349ee2e6cddf8, type: 3}
-  m_Name: Basic Crate
+  m_Name: CaisseMilitaire
   m_EditorClassIdentifier: 
-  Name: BasicCrate
+  Name: CaisseMilitaire
   spawnFrequency: 0
-  stockLimit: 1000
-  steps: 64000000f401000020030000
+  stockLimit: 2000
+  steps: f4010000e8030000dc050000
   startingMinMoney: 0
   startingMaxMoney: 0
   isBreakable: 0
   health: 300
   percentageOfMoneyLostWhenHit: 5
   HUDSprite: {fileID: 8304822080450189310, guid: 0f240e57d99723c47ba838026e88cdcc,
+    type: 3}
+  GroundSprite: {fileID: 8147027620416327883, guid: e8009cb3ec52cf94d84785fa3c3fd8be,
     type: 3}
