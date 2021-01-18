@@ -85,7 +85,7 @@ public class EMD_PassifManager : MonoBehaviour
         }
         Debug.Log(passive[0]);
         Debug.Log(passive[1]);
-        Debug.Log(passive[3]);
+        Debug.Log(passive[2]);
     }
 
     public void afficherPassif()
