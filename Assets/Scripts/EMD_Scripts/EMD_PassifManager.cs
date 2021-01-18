@@ -21,6 +21,7 @@ public class EMD_PassifManager : MonoBehaviour
     public TextMeshProUGUI PassivePrice;
     public TextMeshProUGUI textDisplay;
     private EMD_DialogueManager DialogueManagerScript;
+    public AudioSource achatSound;
     //public GameObject passif1;
     public Image image1;
     public Image image2;
@@ -29,7 +30,11 @@ public class EMD_PassifManager : MonoBehaviour
 
     void Start()
     {
+        RandomPick();
         DialogueManagerScript = FindObjectOfType<EMD_DialogueManager>();
+        Debug.Log(passive[0]);
+        Debug.Log(passive[1]);
+        Debug.Log(passive[2]);
     }
 
     /*void takePassiveAndCreateArray()
@@ -83,9 +88,6 @@ public class EMD_PassifManager : MonoBehaviour
                 }
             }
         }
-        Debug.Log(passive[0]);
-        Debug.Log(passive[1]);
-        Debug.Log(passive[3]);
     }
 
     public void afficherPassif()
@@ -128,6 +130,7 @@ public class EMD_PassifManager : MonoBehaviour
     {
         if (currentMoneyScript.currentMoney >= (int)SelectedPassive.PassivePrice)
         {
+            achatSound.Play();
             currentMoneyScript.currentMoney -= (int)SelectedPassive.PassivePrice;
             ELC_ObjectsInventory.ActivePassif = SelectedPassive;
         }

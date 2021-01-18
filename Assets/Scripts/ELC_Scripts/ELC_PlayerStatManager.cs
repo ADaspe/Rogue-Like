@@ -10,7 +10,7 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float Speed;
     public bool invulnerability;
     public float invulnerabilityTime;
-
+    public float gameTimer;
     [Header ("Life Stats")]
     public float LifeDecreaseSpeed;
     public float LifeStopDecrease;
@@ -45,6 +45,7 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float AttackMultiplicatorChain;
     public float BerserkMultiplicator;
     public float CurrentCombo;
+    public float MaxRunCombo;
     public float MaxCombo;
     public float ComboResetTime;
     [Range(0, 100)]
