@@ -104,15 +104,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyStats: {fileID: 11400000, guid: af37899cb8f689d4a83254235ca84dfd, type: 2}
+  passiveScript: {fileID: 0}
+  enemyCollider: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  enemyAnimator: {fileID: 0}
   Coins: {fileID: 3438627847694550386, guid: df331dfca8d120d408a7b692cef7d637, type: 3}
   currentHealth: 0
   speed: 0
   isDead: 0
   isDashing: 0
+  isSpawning: 0
+  isDying: 0
   stopDashing: 0
   dashCooldown: 0
   canDashAttack: 0
   movesTowardPlayer: {x: 0, y: 0, z: 0}
+  lastDirection: {x: 0, y: 0, z: 0}
   isAttacking: 0
   isDistanceAttacking: 0
   isHit: 0
@@ -120,6 +127,7 @@ MonoBehaviour:
   dissolveMaterial: {fileID: 2100000, guid: 516b86d5c836f83458f383ef44b5fea3, type: 2}
   getHitMaterial: {fileID: 2100000, guid: 0a99d921524399049a40d04865cd06f2, type: 2}
   deathMaterial: {fileID: 2100000, guid: bffc9ff9e5352e345816ddd51c81ba27, type: 2}
+  dissolveValue: 1
   isStun: 0
   isTmpInvulnerable: 0
   isInvulnerable: 0
