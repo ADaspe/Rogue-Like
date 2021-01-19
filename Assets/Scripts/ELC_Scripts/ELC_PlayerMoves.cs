@@ -17,6 +17,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     public ELC_PassivesProperties passiveManagerScript;
     public SpriteRenderer spriteRenderer;
     public GameObject gameManager;
+    public GameObject canvasGameOver; 
     public bool isInMenu = false;
     public Material defaultMat;
     public Material blueMat;
@@ -25,6 +26,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     public float glowTime;
     public Material damageMat;
     public float damageMatTime;
+    private EMD_GameOver GameOverScript;
 
 
 
@@ -100,6 +102,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         DashParticles.GetComponent<ParticleSystem>().Stop();
         passiveManagerScript = FindObjectOfType<ELC_PassivesProperties>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        GameOverScript = FindObjectOfType<EMD_GameOver>();
         ResetChain();
     }
 
@@ -354,7 +357,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         Debug.Log("Dégats moyens : " + attack.degatsMoyen);
         yield return new WaitForSeconds(time);
         playerSpriteRenderer.enabled = false;
-        gameManager.GetComponent<ELC_TimeScale>().PauseGame();
+        canvasGameOver.SetActive(true);
         FindObjectOfType<ELC_ObjectsInventory>().TransferMoney(true);
     }
     public IEnumerator ApplyShader(float time, Material mat)
