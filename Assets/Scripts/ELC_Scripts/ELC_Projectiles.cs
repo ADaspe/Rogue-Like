@@ -26,6 +26,7 @@ public class ELC_Projectiles : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Wall")) Destroy(this.gameObject);
         if(collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerHealth>().GetHit(enemy, (int)strenght);

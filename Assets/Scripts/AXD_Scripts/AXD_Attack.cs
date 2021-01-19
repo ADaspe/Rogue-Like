@@ -46,7 +46,32 @@ public class AXD_Attack : MonoBehaviour
         //Get all enemies to attack
         if (hitEnemies != null && hitEnemies.Length != 0)
         {
-            StartCoroutine(GameManager.GetComponent<ELC_ScreenShakes>().ScreenShakes(playerStats.AttackShakeIntensity, playerStats.AttackShakeFrequency, playerStats.AttackShakeDuration));
+            float currentShakeIntensity = 0;
+            float currentShakeFrequency = 0;
+            float currentShakeDuration = 0;
+            switch (playerStats.currentChain)
+            {
+                case ELC_PlayerStatManager.Chain.Blue:
+                    currentShakeIntensity = playerStats.AttackShakeIntensity * playerStats.ScreenShakesMultiplicatorBlue;
+                    currentShakeFrequency = playerStats.AttackShakeFrequency * playerStats.ScreenShakesMultiplicatorBlue;
+                    currentShakeDuration = playerStats.AttackShakeDuration * playerStats.ScreenShakesMultiplicatorBlue;
+                    break;
+                case ELC_PlayerStatManager.Chain.Orange:
+                    currentShakeIntensity = playerStats.AttackShakeIntensity * playerStats.ScreenShakesMultiplicatorOrange;
+                    currentShakeFrequency = playerStats.AttackShakeFrequency * playerStats.ScreenShakesMultiplicatorOrange;
+                    currentShakeDuration = playerStats.AttackShakeDuration * playerStats.ScreenShakesMultiplicatorOrange;
+                    break;
+                case ELC_PlayerStatManager.Chain.Red:
+                    currentShakeIntensity = playerStats.AttackShakeIntensity * playerStats.ScreenShakesMultiplicatorRed;
+                    currentShakeFrequency = playerStats.AttackShakeFrequency * playerStats.ScreenShakesMultiplicatorRed;
+                    currentShakeDuration = playerStats.AttackShakeDuration * playerStats.ScreenShakesMultiplicatorRed;
+
+                    break;
+                default:
+                    currentShakeIntensity = playerStats.AttackShakeIntensity;
+                    break;
+            }
+            StartCoroutine(GameManager.GetComponent<ELC_ScreenShakes>().ScreenShakes(currentShakeIntensity, playerStats.AttackShakeFrequency, playerStats.AttackShakeDuration));
             player.attackLanded = true;
             List<ELC_Enemy> colateralVictims = new List<ELC_Enemy>();
             ELC_Enemy closestEnemy = null;
@@ -101,10 +126,10 @@ public class AXD_Attack : MonoBehaviour
                     if (!closestEnemy.isInvulnerable && !closestEnemy.isTmpInvulnerable)
                     {
                         closestEnemy.GetHit(CalculateDamage(AttackType.Sponk), closestEnemy.movesTowardPlayer, playerStats.SponkKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SponkStunTime, true);
-                        
+
                     }
                 }
-                
+
             }
             //Attack all secondary targets
             if (colateralVictims.Count > 0)
@@ -113,7 +138,7 @@ public class AXD_Attack : MonoBehaviour
                 {
                     CalculateReward(enemy, type);
                     //Debug.Log(enemy.name+" est une victime colatérale");
-                    
+
                     if (type.Equals(AttackType.Swich.ToString()))
                     {
                         enemy.GetHit(CalculateDamage(AttackType.Swich, true), enemy.movesTowardPlayer, playerStats.SwichKnockbackDistance);

@@ -14,6 +14,7 @@ public class ELC_Enemy : MonoBehaviour
     [HideInInspector]
     public Animator enemyAnimator;
     public GameObject Coins;
+    public GameObject EnemyShadow;
 
     [SerializeField]
     public int currentHealth;
@@ -149,16 +150,18 @@ public class ELC_Enemy : MonoBehaviour
 
         if (isDashing && !isDead) Dash(currentDashDirection, currentDashTime, currentDashDistance);
 
-        if (lastDirection.x > 0) spriteRenderer.flipX = true;
+        if (movesTowardPlayer.x > 0) spriteRenderer.flipX = true;
         else spriteRenderer.flipX = false;
     }
 
     IEnumerator Spawn()
     {
+        if (EnemyShadow != null) EnemyShadow.SetActive(false);
         isSpawning = true;
         StartCoroutine(ApplyShader(enemyStats.SpawnTime, dissolveMaterial));
         canMove = false;
         yield return new WaitForSeconds(enemyStats.SpawnTime);
+        if (EnemyShadow != null) EnemyShadow.SetActive(true);
         canMove = true;
         isSpawning = false;
     }
@@ -175,11 +178,16 @@ public class ELC_Enemy : MonoBehaviour
                 lastDirection = movesTowardPlayer;
                 CalculateDirectionForAnimator(movesTowardPlayer);
             }
-            else if(distanceFromPlayer == EnemyDistance.TooClose)
+            else if (distanceFromPlayer == EnemyDistance.TooClose)
             {
                 transform.Translate(fleePlayer);
                 lastDirection = fleePlayer;
                 CalculateDirectionForAnimator(fleePlayer);
+            }
+            else
+            {
+                lastDirection = movesTowardPlayer;
+                CalculateDirectionForAnimator(movesTowardPlayer);
             }
         }
         else if (EnemyPathBehaviour == "FleePlayer")
@@ -196,8 +204,20 @@ public class ELC_Enemy : MonoBehaviour
 
     void CalculateDirectionForAnimator(Vector3 vectorToUse)
     {
-        enemyAnimator.SetFloat("MovesX", Mathf.Clamp(vectorToUse.x, -1, 1));
-        enemyAnimator.SetFloat("MovesY", Mathf.Clamp(vectorToUse.y, -1, 1));
+        if (!canSeePlayer)
+        {
+            enemyAnimator.SetFloat("MovesX", Mathf.Clamp(vectorToUse.x, -1, 1));
+            enemyAnimator.SetFloat("MovesY", Mathf.Clamp(vectorToUse.y, -1, 1));
+        }
+        else
+        {
+            Vector3 direction = Vector3.zero;
+            direction.x = playerTransform.position.x - this.transform.position.x;
+            direction.y = playerTransform.position.y - this.transform.position.y;
+            direction.Normalize();
+            enemyAnimator.SetFloat("MovesX", Mathf.Clamp(direction.x, -1, 1));
+            enemyAnimator.SetFloat("MovesY", Mathf.Clamp(direction.y, -1, 1));
+        }
 
     }
 

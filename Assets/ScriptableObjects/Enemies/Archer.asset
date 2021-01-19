@@ -16,7 +16,7 @@ MonoBehaviour:
   MaxHealth: 1000
   DeathTime: 1
   SpawnTime: 1
-  MovementSpeed: 3
+  MovementSpeed: 2
   EnemyPath: 0
   LimitDistanceToStay: 5
   NeedTimeToTurn: 0
@@ -28,12 +28,12 @@ MonoBehaviour:
   Projectile: {fileID: 5799528179822313380, guid: 8434fb21e7d94a54fb47d57f6e3b81ff,
     type: 3}
   DistanceAttackArea: 4
-  DistanceCooldown: 1
+  DistanceCooldown: 0
   ProjectileSpeed: 8
   ProjectileDurability: 4
   ProjectileStrenght: 5
   CloseCombatAttack: 1
-  AttackCooldown: 1
+  AttackCooldown: 2.5
   AttackRange: 1
   WaitBeforeAttack: 0.5
   AttackStrenght: 5
@@ -45,7 +45,7 @@ MonoBehaviour:
   DashStrenght: 0
   DashStun: 0
   DashColliderWidth: 0
-  DashAndCorpseAttack: 0
+  DashAndCloseCombatAttack: 0
   DashCooldown: 0
   MinDistanceToTriggerDash: 0
   MaxDistanceToTriggerDash: 0
