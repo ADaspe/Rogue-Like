@@ -351,6 +351,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     {
         playerAnimator.SetBool("isDead", true);
         canMove = false;
+        Debug.Log("Dégats moyens : " + attack.degatsMoyen);
         yield return new WaitForSeconds(time);
         playerSpriteRenderer.enabled = false;
         gameManager.GetComponent<ELC_TimeScale>().PauseGame();

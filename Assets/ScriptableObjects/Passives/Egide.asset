@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Egide
   m_EditorClassIdentifier: 
   PassiveName: Egide
-  PassiveDescription: "L'attaque de taille a 70% de chance de d\xE9truire les projectiles
-    et 30% de les renvoyer"
+  PassiveDescription: "Frappe les balles \xE0 plasma pour les d\xE9truire ! Tu arriveras
+    peut \xEAtre \xE0 les renvoyer, qui sait ?"
   PassivePrice: 2750
   isUnlock: 0
   HUDSprite: {fileID: 4141919740282896512, guid: d2d062ff307f81d4e836ccc9ea347700,
