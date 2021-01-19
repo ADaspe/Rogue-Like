@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Corne D'Abondance
   m_EditorClassIdentifier: 
   PassiveName: Corne D'Abondance
-  PassiveDescription: Les ennemis ont des chances de drop des Power Ups
+  PassiveDescription: "Tu peux t\xE9l\xE9charger des am\xE9liorations sur le cadavre
+    de tes ennemis."
   PassivePrice: 1800
   isUnlock: 1
   HUDSprite: {fileID: 106658650327613608, guid: d2d062ff307f81d4e836ccc9ea347700,

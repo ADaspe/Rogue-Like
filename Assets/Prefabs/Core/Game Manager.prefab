@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicCamera: {fileID: 0}
-  destroyerRadius: 10
+  destroyerRadius: 5
 --- !u!114 &8024009306814544187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,10 +102,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   passiveList:
-  - {fileID: 11400000, guid: e8365aef04281bd45b3471d2fc5b1fb6, type: 2}
-  - {fileID: 11400000, guid: 1f6508be9a869994db164a2e8114c13e, type: 2}
-  - {fileID: 11400000, guid: 4629b48fa0494054680a76ce30d10721, type: 2}
-  - {fileID: 11400000, guid: 8716d47b37b21d247813c62f9d4c1ed6, type: 2}
-  - {fileID: 11400000, guid: c2647eda660911a46a182e3408d08b08, type: 2}
-  - {fileID: 11400000, guid: 5caa60c0371d0654287a2c6ba0ab0d42, type: 2}
-  - {fileID: 11400000, guid: b2b1f17a4f0c8684bbbb88cd65efa86c, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

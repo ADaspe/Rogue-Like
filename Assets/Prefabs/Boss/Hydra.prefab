@@ -266,6 +266,7 @@ MonoBehaviour:
   heads: []
   spawnPoints:
   - {fileID: 0}
+  collider: {fileID: 0}
   anim: {fileID: 0}
   enemy: {fileID: 0}
   timeToChangeStrat: 0
@@ -279,7 +280,7 @@ MonoBehaviour:
   glowEnviro1: {fileID: 2100000, guid: e1c62fe6113e63c4a8e1ef7f47937c7c, type: 2}
   glowEnviro2: {fileID: 2100000, guid: 01d80b92fbd395a46a7fdd0d49bcf1ef, type: 2}
   glowEnviro3: {fileID: 2100000, guid: 5f68dc52e00765146875dadcef6e9c88, type: 2}
-  ExplosionDuration: 0
+  ExplosionDuration: 5
   Area: {fileID: 0}
   fighting: 0
 --- !u!61 &838614985989882433
@@ -326,6 +327,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   enemyAnimator: {fileID: 0}
   Coins: {fileID: 0}
+  EnemyShadow: {fileID: 0}
+  hitNumberToKillMe: 0
   currentHealth: 0
   speed: 0
   isDead: 0
@@ -336,6 +339,7 @@ MonoBehaviour:
   dashCooldown: 0
   canDashAttack: 0
   movesTowardPlayer: {x: 0, y: 0, z: 0}
+  lastDirection: {x: 0, y: 0, z: 0}
   isAttacking: 0
   isDistanceAttacking: 0
   isHit: 0
@@ -354,6 +358,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   distanceToStay: 0
+  marginForDistanceToStay: 0.02
 --- !u!95 &7264622435919248767
 Animator:
   serializedVersion: 3

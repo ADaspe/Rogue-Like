@@ -1572,7 +1572,7 @@ PrefabInstance:
         type: 3}
       propertyPath: NPCsList.Array.data[1]
       value: 
-      objectReference: {fileID: 1693836322}
+      objectReference: {fileID: 7921254330152988834}
     - target: {fileID: 3184069571230056857, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2257,6 +2257,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 6555467996020751933, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: hasUnlockedAchievement
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6611059142030739434, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: currentMoney
@@ -2455,7 +2460,7 @@ PrefabInstance:
     - target: {fileID: 7469097467536029269, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: PassivesList.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7469097467536029269, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -2498,6 +2503,12 @@ PrefabInstance:
       propertyPath: PassivesList.Array.data[6]
       value: 
       objectReference: {fileID: 11400000, guid: b2b1f17a4f0c8684bbbb88cd65efa86c,
+        type: 2}
+    - target: {fileID: 7469097467536029269, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: PassivesList.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9b0cffa35151d504482414949fc48e73,
         type: 2}
     - target: {fileID: 7758817022516347812, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -4342,12 +4353,12 @@ PrefabInstance:
     - target: {fileID: 2178316276508724123, guid: eeec6de608430f14295388896e77d9e0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.14
       objectReference: {fileID: 0}
     - target: {fileID: 2178316276508724123, guid: eeec6de608430f14295388896e77d9e0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 2178316276508724123, guid: eeec6de608430f14295388896e77d9e0,
         type: 3}

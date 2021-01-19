@@ -63,28 +63,31 @@ public class EMD_PassifManager : MonoBehaviour
         }*/
     public void RandomPick()
     {
-        for (int i = 0; i < 3; i++)
+        if (PassivesList.PassivesList.Count != 0)
         {
-            int Index = Random.Range(0, PassivesList.PassivesList.Count);
-            Debug.Log(i);
-            if (i == 0)
+            for (int i = 0; i < 3; i++)
             {
-                passive[i] = PassivesList.PassivesList[Index];
-            }
-            else if (i == 1)
-            {
-                passive[i] = PassivesList.PassivesList[Index];
-                if (passive[i] == passive[i-1])
+                int Index = Random.Range(0, PassivesList.PassivesList.Count);
+
+                if (i == 0)
                 {
-                    i --;
+                    passive[i] = PassivesList.PassivesList[Index];
                 }
-            }
-           else
-            {
-                passive[i] = PassivesList.PassivesList[Index]; 
-                if (passive[i] == passive[i-1] || passive[i] == passive[i-2])
+                else if (i == 1)
                 {
-                    i --;
+                    passive[i] = PassivesList.PassivesList[Index];
+                    if (passive[i] == passive[i - 1])
+                    {
+                        i--;
+                    }
+                }
+                else
+                {
+                    passive[i] = PassivesList.PassivesList[Index];
+                    if (passive[i] == passive[i - 1] || passive[i] == passive[i - 2])
+                    {
+                        i--;
+                    }
                 }
             }
         }
@@ -92,9 +95,18 @@ public class EMD_PassifManager : MonoBehaviour
 
     public void afficherPassif()
     {
-        image1.sprite = passive[0].HUDSprite;
-        image2.sprite = passive[1].HUDSprite;
-        image3.sprite = passive[2].HUDSprite;
+        if (passive[0] != null)
+        {
+            image1.sprite = passive[0].HUDSprite;
+        }
+        if (passive[1] != null)
+        {
+            image2.sprite = passive[1].HUDSprite; 
+        }
+        if (passive[2] != null)
+        {
+            image3.sprite = passive[2].HUDSprite;
+        }
         PassiveButton.SetActive(false);
         ContinueButton.SetActive(false);
         PassiveCanvas.SetActive(true);
