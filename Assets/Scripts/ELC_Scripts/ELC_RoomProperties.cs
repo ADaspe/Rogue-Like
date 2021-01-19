@@ -32,6 +32,7 @@ public class ELC_RoomProperties : MonoBehaviour
     public bool isAnAngleRoom; //Si c'est une room qui correspond aux rooms aléatoires du début, ce sont les seules qui permettent de relier avec la ligne d'au dessus
 
     public bool thereIsRoom;
+    public bool bossRoom;
 
     public float DoorPlayerDetectionDistance;
 
@@ -76,6 +77,7 @@ public class ELC_RoomProperties : MonoBehaviour
 
     void DoorsState(bool close) //Permet d'ouvrir/fermer les portes qui ont un couloir
     {
+        //if (bossRoom) Debug.Log(close);
         for (int i = 0; i < doors.Count ; i++)
         {
             if (openSides[i])
@@ -139,7 +141,7 @@ public class ELC_RoomProperties : MonoBehaviour
         else
         {
             EnemiesCheck();
-            if(enemiesAlive.Count == 0 && !roomIsClear)
+            if(enemiesAlive.Count == 0 && !roomIsClear && !bossRoom)
             {
                 Debug.Log("Room clear !");
                 DoorsState(false);
@@ -249,31 +251,35 @@ public class ELC_RoomProperties : MonoBehaviour
         openSides.Add(openTopDoor);
         openSides.Add(openDownDoor);
 
-        if (!openSides[0])
+        if (!bossRoom)
         {
-            LeftDoor.SetActive(false);
-            DrawWalls(LeftDoor);
-        }
-        else ReplaceDoors(LeftDoor, doorsDirections.Left);
+            if (!openSides[0])
+            {
+                LeftDoor.SetActive(false);
+                DrawWalls(LeftDoor);
+            }
+            else ReplaceDoors(LeftDoor, doorsDirections.Left);
 
-        if (!openSides[1])
-        {
-            RightDoor.SetActive(false);
-            DrawWalls(RightDoor);
-        }
-        else ReplaceDoors(RightDoor, doorsDirections.Right);
+            if (!openSides[1])
+            {
+                RightDoor.SetActive(false);
+                DrawWalls(RightDoor);
+            }
+            else ReplaceDoors(RightDoor, doorsDirections.Right);
 
-        if (!openSides[2])
-        {
-            TopDoor.SetActive(false);
-            DrawWalls(TopDoor);
-        }
-        else ReplaceDoors(TopDoor, doorsDirections.Top);
+            if (!openSides[2])
+            {
+                TopDoor.SetActive(false);
+                DrawWalls(TopDoor);
+            }
+            else ReplaceDoors(TopDoor, doorsDirections.Top);
 
-        if (!openSides[3])
-        {
-            DownDoor.SetActive(false);
-            DrawWalls(DownDoor);
+            if (!openSides[3])
+            {
+                DownDoor.SetActive(false);
+                DrawWalls(DownDoor);
+            }
+            else ReplaceDoors(DownDoor, doorsDirections.Down);
         }
         else ReplaceDoors(DownDoor, doorsDirections.Down);
 
@@ -286,7 +292,7 @@ public class ELC_RoomProperties : MonoBehaviour
     private void ReplaceDoors(GameObject doorToReplace, doorsDirections direction)
     {
         float frontDoorsHeight = 0.89f;
-        float lateralDoorsPositionAdjustement = 0.7f;
+        float lateralDoorsPositionAdjustement = 0.9f;
 
         Vector3 newDoorPosition = Vector3.zero;
 

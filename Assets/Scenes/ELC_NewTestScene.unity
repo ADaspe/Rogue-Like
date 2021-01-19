@@ -10493,21 +10493,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7470156072006172387, guid: 7e25a7f60c29ae94b8dc46dd02edc1c1,
-        type: 3}
-      propertyPath: basicMat
-      value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: 7470156072006172387, guid: 7e25a7f60c29ae94b8dc46dd02edc1c1,
-        type: 3}
-      propertyPath: getHitMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 0a99d921524399049a40d04865cd06f2, type: 2}
-    - target: {fileID: 7470156072006172387, guid: 7e25a7f60c29ae94b8dc46dd02edc1c1,
-        type: 3}
-      propertyPath: deathMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: bffc9ff9e5352e345816ddd51c81ba27, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e25a7f60c29ae94b8dc46dd02edc1c1, type: 3}
 --- !u!1001 &1669087153
@@ -13102,11 +13087,6 @@ PrefabInstance:
         type: 3}
       propertyPath: field of view
       value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 4794816433160009578, guid: f523f809c561ee54dac7c3e8ae7438f8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4986747907010184211, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
