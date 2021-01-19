@@ -42,7 +42,7 @@ public class ELC_Projectiles : MonoBehaviour
     {
         if (!IsFriendly)
         {
-            int randomNumber = Random.Range(0, 101);
+            int randomNumber = Random.Range(0, 100);
             if (randomNumber < FindObjectOfType<ELC_PassivesProperties>().EgidePercentageChanceToSendBackProjectile)
             {
                 IsFriendly = true;
