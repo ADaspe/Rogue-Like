@@ -56,6 +56,11 @@ public class ELC_PickupItems : MonoBehaviour
     {
         if(ObjectsInv == null) ObjectsInv = GameObject.Find("PlayerInventory").GetComponent<ELC_ObjectsInventory>();
         if(PUManager == null) PUManager = GameObject.Find("PowerUpsManager").GetComponent<ELC_PowerUpManager>();
+        if (detector.playerIsInside && this.gameObject.CompareTag("Collectible") && Type == CollectibleTypes.PowerUp)
+        { 
+            PUManager.AddPowerUp(PowerUp);
+            Destroy(this.gameObject);
+        }
         if (detector.playerIsInside && this.gameObject.CompareTag("Collectible") && Input.GetButtonDown("Interact"))
         {
             if(Type == CollectibleTypes.Object) ObjectsInv.AddObject(Object);

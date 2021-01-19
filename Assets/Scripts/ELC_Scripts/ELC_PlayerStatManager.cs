@@ -68,6 +68,8 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float KnockbackMultiplicatorBlue;
     [Range(1, 5)]
     public float DashMultiplicatorBlue;
+    [Range(1, 5)]
+    public float ScreenShakesMultiplicatorBlue;
     [Header("Orange")]
     [Range(1, 5)]
     public float damageMultiplicatorOrange;
@@ -75,6 +77,8 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float KnockbackMultiplicatorOrange;
     [Range(1, 5)]
     public float DashMultiplicatorOrange;
+    [Range(1, 5)]
+    public float ScreenShakesMultiplicatorOrange;
     [Header("Red")]
     [Range(1, 5)]
     public float damageMultiplicatorRed;   
@@ -82,6 +86,8 @@ public class ELC_PlayerStatManager : MonoBehaviour
     public float KnockbackMultiplicatorRed;
     [Range(1, 5)]
     public float DashMultiplicatorRed;
+    [Range(1, 5)]
+    public float ScreenShakesMultiplicatorRed;
     public float SwitchChainSlowMotionValue;
     public float SwitchChainSlowMotionDuration;
 

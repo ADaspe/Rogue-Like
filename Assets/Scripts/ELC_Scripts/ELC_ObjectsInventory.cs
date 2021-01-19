@@ -10,6 +10,7 @@ public class ELC_ObjectsInventory : MonoBehaviour
     public hands selectedHand = hands.LeftHand;
     public GameObject RightHandObject;
     public GameObject RightHandHUD;
+    public int totalSecuredMoney;
     //public int quantityObject1;
 
     public GameObject LeftHandObject;
@@ -34,6 +35,9 @@ public class ELC_ObjectsInventory : MonoBehaviour
         if (Input.GetButtonDown("RightHandUse")) selectedHand = hands.RightHand;
         else if (Input.GetButtonDown("LeftHandUse")) selectedHand = hands.LeftHand;
 
+        if (RightHandObject != null) totalSecuredMoney = RightHandObject.GetComponent<ELC_CrateProperties>().securedMoney + LeftHandObject.GetComponent<ELC_CrateProperties>().securedMoney;
+        else totalSecuredMoney = LeftHandObject.GetComponent<ELC_CrateProperties>().securedMoney;
+
         //if (Input.GetButtonDown("RightHandUse") && RightHandObject != null && quantityObject1 > 0) //Lorsqu'on clique pour utiliser l'object de main droite
         //{
         //    GameObject InstantiatedObject = Instantiate(RightHandObject, player.transform.position, Quaternion.identity);
@@ -48,7 +52,7 @@ public class ELC_ObjectsInventory : MonoBehaviour
         //    quantityObject2--;
         //    UpdateDisplay();
         //}
-        
+
     }
 
     public void UpdateDisplay()
