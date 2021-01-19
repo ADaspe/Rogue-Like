@@ -382,6 +382,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2178316275577731285}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &116854010 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2178316277454328158, guid: eeec6de608430f14295388896e77d9e0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2178316275577731285}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b71fd024db7ad9e45951f528da97f109, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &135828392 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3514901997083479576, guid: f523f809c561ee54dac7c3e8ae7438f8,
@@ -1932,12 +1944,12 @@ PrefabInstance:
         type: 3}
       propertyPath: NPCsList.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1693836322}
     - target: {fileID: 3083873734013047291, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: NPCsList.Array.data[1]
       value: 
-      objectReference: {fileID: 7921254330152988834}
+      objectReference: {fileID: 116854010}
     - target: {fileID: 3184069571230056857, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -5060,6 +5072,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 2178316275530278763, guid: eeec6de608430f14295388896e77d9e0,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2178316275882264258, guid: eeec6de608430f14295388896e77d9e0,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5131,6 +5148,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2178316277128813815, guid: eeec6de608430f14295388896e77d9e0,
+        type: 3}
+      propertyPath: DialogueManager
+      value: 
+      objectReference: {fileID: 1346262901}
+    - target: {fileID: 2178316277454328153, guid: eeec6de608430f14295388896e77d9e0,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2178316277454328158, guid: eeec6de608430f14295388896e77d9e0,
         type: 3}
       propertyPath: DialogueManager
       value: 
