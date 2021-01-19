@@ -50,6 +50,7 @@ public class PlayerHealth : MonoBehaviour
         
         if (!playerStats.invulnerability)
         {
+            lastHitEnnemy = enemyLastHit;
             Debug.Log("Get Hit Player");
             GlitchUI();
             StartCoroutine(playerMovesScript.ApplyShader(playerMovesScript.damageMatTime, playerMovesScript.damageMat));
