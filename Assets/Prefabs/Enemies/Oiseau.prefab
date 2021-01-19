@@ -110,6 +110,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   enemyAnimator: {fileID: 0}
   Coins: {fileID: 3438627847694550386, guid: df331dfca8d120d408a7b692cef7d637, type: 3}
+  EnemyShadow: {fileID: 4869824334544120090}
   currentHealth: 0
   speed: 0
   isDead: 0

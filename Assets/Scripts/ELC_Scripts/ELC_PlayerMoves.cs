@@ -148,7 +148,7 @@ public class ELC_PlayerMoves : MonoBehaviour
                 StartCoroutine("SponkAttackAnimation");
             }
 
-            if (Input.GetAxis("Heal") != 0)
+            if (Input.GetAxis("Heal") != 0 && !gameManager.GetComponent<ELC_TimeScale>().isPaused)
             {
                 playerHealth.Heal(playerStats.healingRate * Input.GetAxis("Heal"));
                 Debug.Log(Input.GetAxis("Heal"));
