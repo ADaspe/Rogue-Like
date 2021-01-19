@@ -16,11 +16,11 @@ MonoBehaviour:
   achievementTier: 2
   ennemyToDefeat:
   - {fileID: 2148857145838052543, guid: e92a72e0dcedde944886188f85b5d608, type: 3}
-  numberToDefeat: 70
-  numberDefeated: 14
+  numberToDefeat: 60
+  numberDefeated: 0
   isUnlocked: 0
   ennemyToDefeatName: Hoplite
-  passifToUnlock: {fileID: 11400000, guid: c2647eda660911a46a182e3408d08b08, type: 2}
+  passifToUnlock: {fileID: 11400000, guid: 9b0cffa35151d504482414949fc48e73, type: 2}
   achievementManager: {fileID: 0}
   HUDSprite: {fileID: -5082979250979548698, guid: ff9ef1e9a14bf104e9dd5f7afb0d3d69,
     type: 3}

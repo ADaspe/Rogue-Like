@@ -120,6 +120,10 @@ public class AXD_Attack : MonoBehaviour
                 {
                     GameManager.GetComponent<ELC_TimeScale>().ScaleTime(playerStats.SwichSlowMotionValue, playerStats.SwichSlowMotionDuration);
                     closestEnemy.GetHit(CalculateDamage(AttackType.Swich), closestEnemy.movesTowardPlayer, playerStats.SwichKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SwichStunTime);
+                    if (!closestEnemy.isInvulnerable)
+                    {
+                        playerStats.CurrentCombo++;
+                    }
                 }
                 else if (type.Equals(AttackType.Sponk.ToString()))
                 {
@@ -127,7 +131,10 @@ public class AXD_Attack : MonoBehaviour
                     if (!closestEnemy.isInvulnerable && !closestEnemy.isTmpInvulnerable)
                     {
                         closestEnemy.GetHit(CalculateDamage(AttackType.Sponk), closestEnemy.movesTowardPlayer, playerStats.SponkKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SponkStunTime, true);
-
+                        if (!closestEnemy.isInvulnerable)
+                        {
+                            playerStats.CurrentCombo++;
+                        }
                     }
                 }
 
@@ -143,10 +150,18 @@ public class AXD_Attack : MonoBehaviour
                     if (type.Equals(AttackType.Swich.ToString()))
                     {
                         enemy.GetHit(CalculateDamage(AttackType.Swich, true), enemy.movesTowardPlayer, playerStats.SwichKnockbackDistance);
+                        if (!enemy.isInvulnerable)
+                        {
+                            playerStats.CurrentCombo++;
+                        } 
                     }
                     else if (type.Equals(AttackType.Sponk.ToString()))
                     {
                         enemy.GetHit(CalculateDamage(AttackType.Sponk, true), enemy.movesTowardPlayer, playerStats.SponkKnockbackDistance);
+                        if (!enemy.isInvulnerable)
+                        {
+                            playerStats.CurrentCombo++;
+                        }
                     }
                 }
             }
