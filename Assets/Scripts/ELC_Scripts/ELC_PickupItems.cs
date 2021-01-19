@@ -26,6 +26,10 @@ public class ELC_PickupItems : MonoBehaviour
     public bool chooseRandomPassive;
     public List<ELC_PassiveSO> passivesList = null;
 
+    private int commonPercentageChanceObject = 100;
+    private int rarePercentageChanceObject = 50;
+    private int epicPercentageChanceObject = 30;
+
 
     private void Start()
     {
@@ -41,14 +45,33 @@ public class ELC_PickupItems : MonoBehaviour
         }
         if(chooseRandomObject)
         {
-            int randomNumber = Random.Range(0, ObjectsList.Count);
-            Object = ObjectsList[randomNumber];
+            chooseRandomObjectFunction();
             this.GetComponent<SpriteRenderer>().sprite = Object.GetComponent<ELC_CrateProperties>().CratesSO.GroundSprite;
         }
         if(chooseRandomPassive)
         {
             int randomNumber = Random.Range(0, passivesList.Count);
             Passive = passivesList[randomNumber];
+        }
+    }
+
+    private void chooseRandomObjectFunction()
+    {
+        int randomNumber = Random.Range(0, ObjectsList.Count);
+        if (ObjectsList[randomNumber].GetComponent<ELC_CrateProperties>().CratesSO.spawnFrequency.ToString() == "Common")
+        {
+            if (Random.Range(0, 101) <= commonPercentageChanceObject) Object = ObjectsList[randomNumber];
+            else chooseRandomObjectFunction();
+        }
+        else if (ObjectsList[randomNumber].GetComponent<ELC_CrateProperties>().CratesSO.spawnFrequency.ToString() == "Rare")
+        {
+            if (Random.Range(0, 101) <= rarePercentageChanceObject) Object = ObjectsList[randomNumber];
+            else chooseRandomObjectFunction();
+        }
+        else
+        {
+            if (Random.Range(0, 101) <= epicPercentageChanceObject) Object = ObjectsList[randomNumber];
+            else chooseRandomObjectFunction();
         }
     }
 

@@ -11,6 +11,7 @@ public class AXD_Hydra : MonoBehaviour
     public AXD_HydraHead headPrefab;
     public List<AXD_HydraHead> heads;
     public List<GameObject> spawnPoints;
+    public BoxCollider2D collider;
     public Animator anim;
     public ELC_Enemy enemy;
     public float timeToChangeStrat;
@@ -39,6 +40,8 @@ public class AXD_Hydra : MonoBehaviour
         tmr = FindObjectOfType<TilemapRenderer>();
         tmr.material = glowEnviro1;
         anim = GetComponent<Animator>();
+        collider = GetComponent<BoxCollider2D>();
+        collider.enabled = false;
         
     }
     private void Update()
@@ -118,6 +121,7 @@ public class AXD_Hydra : MonoBehaviour
 
     public void VulnerablePhase()
     {
+        collider.enabled = true;
         AnimatorBooleans();
         forceField.SetActive(false);
         if (Time.time > timeToBeVulnerable || enemy.currentHealth < stats.healthPhase[(int)currentPhase])
@@ -163,6 +167,7 @@ public class AXD_Hydra : MonoBehaviour
         yield return new WaitForSeconds(1);
         forceField.SetActive(true); ;
         enemy.isInvulnerable = true;
+        collider.enabled = false;
         headsToSpawn = true;
         ChangePhase();
         vulnerableCoroutine = true;

@@ -16,7 +16,7 @@ MonoBehaviour:
   achievementTier: 3
   ennemyToDefeat:
   - {fileID: 5700113035729362853, guid: 77a5e5b0aee5fc848b07d0980ab5a3b8, type: 3}
-  numberToDefeat: 7
+  numberToDefeat: 5
   numberDefeated: 0
   isUnlocked: 0
   ennemyToDefeatName: Hydre de L3ern

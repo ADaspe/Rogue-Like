@@ -17,6 +17,8 @@ public class ELC_ArcherLegsController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (enemyScript.isSpawning) this.GetComponent<SpriteRenderer>().enabled = false;
+        else this.GetComponent<SpriteRenderer>().enabled = true;
         thisAnimator.SetFloat("MovesX", mainObjectAnimator.GetFloat("MovesX"));
         thisAnimator.SetFloat("MovesY", mainObjectAnimator.GetFloat("MovesY"));
 

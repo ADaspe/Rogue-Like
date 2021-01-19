@@ -66,10 +66,10 @@ public class ELC_PlayerMoves : MonoBehaviour
     public float nextSponkAttackTime;
 
     //Anti spam variables
-    private bool dashButtonDown;
+    public bool dashButtonDown;
 
-    private bool swichButtonDown;
-    private bool sponkButtonDown;
+    public bool swichButtonDown;
+    public bool sponkButtonDown;
 
     [Header("Dash Characteristics")]
     public bool isDashing;
@@ -354,6 +354,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     {
         playerAnimator.SetBool("isDead", true);
         canMove = false;
+        Debug.Log("Dégats moyens : " + attack.degatsMoyen);
         yield return new WaitForSeconds(time);
         playerSpriteRenderer.enabled = false;
         canvasGameOver.SetActive(true);

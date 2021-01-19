@@ -87,3 +87,4 @@ MonoBehaviour:
     type: 3}
   FrontDoors: {fileID: 6067892434916540415, guid: 180e243ccdb7b10449031f187e058b88,
     type: 3}
+  Music: {fileID: 0}

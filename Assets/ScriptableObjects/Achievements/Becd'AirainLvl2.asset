@@ -16,7 +16,7 @@ MonoBehaviour:
   achievementTier: 2
   ennemyToDefeat:
   - {fileID: 3456645754019736586, guid: 690e085c5fac56248b4bf550d707dd5a, type: 3}
-  numberToDefeat: 70
+  numberToDefeat: 30
   numberDefeated: 0
   isUnlocked: 0
   ennemyToDefeatName: Bec d'Airain

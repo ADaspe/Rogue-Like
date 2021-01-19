@@ -10098,6 +10098,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 921379819377701471, guid: b6e2978d9db3359488c2c9507bcdce95,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2627324928097260012, guid: b6e2978d9db3359488c2c9507bcdce95,
         type: 3}
       propertyPath: m_Name
@@ -12181,11 +12186,6 @@ PrefabInstance:
         type: 3}
       propertyPath: field of view
       value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 6013269748705271176, guid: f523f809c561ee54dac7c3e8ae7438f8,
-        type: 3}
-      propertyPath: destroyerRadius
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7858297173920115247, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}

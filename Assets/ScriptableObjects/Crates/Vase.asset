@@ -17,7 +17,7 @@ MonoBehaviour:
   stockLimit: 1500
   steps: c8000000b0040000
   startingMinMoney: 0
-  startingMaxMoney: 0
+  startingMaxMoney: 1000
   isBreakable: 0
   health: 0
   percentageOfMoneyLostWhenHit: 4

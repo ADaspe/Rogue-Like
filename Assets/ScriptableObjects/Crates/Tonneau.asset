@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tonneau
   m_EditorClassIdentifier: 
   Name: Tonneau
-  spawnFrequency: 0
+  spawnFrequency: 2
   stockLimit: 4800
   steps: 40060000800c0000
   startingMinMoney: 0

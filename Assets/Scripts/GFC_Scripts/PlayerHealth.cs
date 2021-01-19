@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     public AXD_UiGlitch[] uiToGlitch;
     public float timeToGlitchUiOnHit;
     public static ELC_EnemySO lastHitEnnemy;
+    public bool sangGorgonne;
 
 
 
@@ -49,6 +50,7 @@ public class PlayerHealth : MonoBehaviour
         
         if (!playerStats.invulnerability)
         {
+            lastHitEnnemy = enemyLastHit;
             Debug.Log("Get Hit Player");
             GlitchUI();
             StartCoroutine(playerMovesScript.ApplyShader(playerMovesScript.damageMatTime, playerMovesScript.damageMat));

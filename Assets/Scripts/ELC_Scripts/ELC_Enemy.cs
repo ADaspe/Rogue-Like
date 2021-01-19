@@ -16,6 +16,8 @@ public class ELC_Enemy : MonoBehaviour
     public GameObject Coins;
     public GameObject EnemyShadow;
 
+    public int hitNumberToKillMe;
+
     [SerializeField]
     public int currentHealth;
     public float speed;
@@ -75,7 +77,7 @@ public class ELC_Enemy : MonoBehaviour
 
     [Header ("StayAtDistanceFromPlayer")]
     public float distanceToStay;
-    private float marginForDistanceToStay = 0.02f; //La marge dans laquelle peut être l'ennemi avant de s'approcher ou de reculer
+    public float marginForDistanceToStay = 0.02f; //La marge dans laquelle peut être l'ennemi avant de s'approcher ou de reculer
     private enum EnemyDistance { TooFar, AtDistance, TooClose };
     private EnemyDistance distanceFromPlayer;
 
@@ -118,7 +120,6 @@ public class ELC_Enemy : MonoBehaviour
         {
             dissolveValue -= Time.deltaTime * 5 / enemyStats.DeathTime;
             spriteRenderer.material.SetFloat("_DissolveLevel", dissolveValue);
-            //Debug.Log(dissolveValue);
         }
 
         if (!isStun && !isDead)
@@ -591,6 +592,7 @@ public class ELC_Enemy : MonoBehaviour
     {
         //DropCoins(5);
         Debug.Log("Enemy hit");
+        hitNumberToKillMe++;
         if (!isTmpInvulnerable && !isInvulnerable)
         {
             currentHealth -= Damage;
@@ -624,14 +626,14 @@ public class ELC_Enemy : MonoBehaviour
             {
                 StartCoroutine(tmpHydra.Death());
             }
-            
+            Debug.Log("Je suis " + enemyStats.Name + " et je suis mort en " + hitNumberToKillMe + " coups.");
         }
         else StartCoroutine(ApplyShader(0.05f, getHitMaterial));
     }
 
     IEnumerator Death()
     {
-        Debug.Log("Oui");
+        if (EnemyShadow != null) EnemyShadow.SetActive(false);
         isDying = true;
         dissolveValue = 5;
         enemyCollider.enabled = false;
@@ -640,7 +642,7 @@ public class ELC_Enemy : MonoBehaviour
         enemyAnimator.SetBool("IsPreparingForAttack", false);
         enemyAnimator.SetBool("IsAttacking", false);
         StartCoroutine(ApplyShader(enemyStats.DeathTime, deathMaterial));
-        yield return new WaitForSeconds(enemyStats.DeathTime - 0.3f);
+        yield return new WaitForSeconds(enemyStats.DeathTime - 0.7f);
         DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemyStats.MoneyEarnWhenDead);
 
         if (passiveScript.ActualPassiveScriptableObject != null)
@@ -654,6 +656,7 @@ public class ELC_Enemy : MonoBehaviour
 
     public void DropCoins(int moneyValue)
     {
+        Debug.Log("Je suis " + enemyStats.Name + " et j'ai laché " + moneyValue + " pesetas");
         int numberToDrop = Mathf.FloorToInt(moneyValue / Coins.GetComponent<ELC_Coins>().value);
 
         for (int i = 0; i < numberToDrop; i++)

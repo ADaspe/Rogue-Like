@@ -114,6 +114,7 @@ MonoBehaviour:
   MoneyMultiplicatorPU: 1
   FilAresDamagesTakenMultiplicator: 1
   FilAresBerserkMultiplicator: 1
+  GorgonneAttackMultiplicator: 1
   AttackShakeIntensity: 0.15
   AttackShakeFrequency: 0.06
   AttackShakeDuration: 0.1
