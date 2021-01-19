@@ -16,7 +16,7 @@ MonoBehaviour:
   achievementTier: 1
   ennemyToDefeat:
   - {fileID: 1939825889337146307, guid: 4a803f5fac93e99449631d6e2cef9781, type: 3}
-  numberToDefeat: 20
+  numberToDefeat: 10
   numberDefeated: 0
   isUnlocked: 0
   ennemyToDefeatName: Sentinelle Mk.Artemis

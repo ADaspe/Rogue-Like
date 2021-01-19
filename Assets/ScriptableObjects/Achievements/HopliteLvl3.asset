@@ -16,7 +16,7 @@ MonoBehaviour:
   achievementTier: 3
   ennemyToDefeat:
   - {fileID: 2148857145838052543, guid: e92a72e0dcedde944886188f85b5d608, type: 3}
-  numberToDefeat: 150
+  numberToDefeat: 120
   numberDefeated: 0
   isUnlocked: 0
   ennemyToDefeatName: Hoplite

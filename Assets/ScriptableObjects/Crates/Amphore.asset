@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Amphore
   m_EditorClassIdentifier: 
   Name: Amphore
-  spawnFrequency: 0
+  spawnFrequency: 1
   stockLimit: 3000
   steps: 9001000040060000d0070000
   startingMinMoney: 0
-  startingMaxMoney: 50
+  startingMaxMoney: 250
   isBreakable: 0
   health: 0
   percentageOfMoneyLostWhenHit: 3
