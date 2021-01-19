@@ -118,6 +118,7 @@ public class ELC_PlayerStatManager : MonoBehaviour
     [Header("Passives")]
     public float FilAresDamagesTakenMultiplicator;
     public float FilAresBerserkMultiplicator;
+    public float GorgonneAttackMultiplicator;
 
     [Header("ScreenShakes")]
     public float AttackShakeIntensity;

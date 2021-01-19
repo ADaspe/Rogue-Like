@@ -120,7 +120,7 @@ public class ELC_Enemy : MonoBehaviour
         {
             dissolveValue -= Time.deltaTime * 5 / enemyStats.DeathTime;
             spriteRenderer.material.SetFloat("_DissolveLevel", dissolveValue);
-            //Debug.Log(dissolveValue);
+            Debug.Log(dissolveValue);
         }
 
         if (!isStun && !isDead)
@@ -634,6 +634,7 @@ public class ELC_Enemy : MonoBehaviour
 
     IEnumerator Death()
     {
+        if (EnemyShadow != null) EnemyShadow.SetActive(false);
         Debug.Log("Oui");
         isDying = true;
         dissolveValue = 5;
