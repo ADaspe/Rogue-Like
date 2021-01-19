@@ -44,6 +44,10 @@ public class EMD_GameOver : MonoBehaviour
         ThunesGO.SetActive(false);
         PassifUsedGO.SetActive(false);
         AchGO.SetActive(false);
+    }
+
+    public void death()
+    {
         StartCoroutine("OneByOne");
     }
 

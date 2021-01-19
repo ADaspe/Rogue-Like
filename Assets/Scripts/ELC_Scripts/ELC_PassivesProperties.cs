@@ -43,6 +43,9 @@ public class ELC_PassivesProperties : MonoBehaviour
     [Header("Egide")]
     public float EgidePercentageChanceToSendBackProjectile;
 
+    [Header("Sang De Gorgonne")]
+    public float GorgonneAttackMultiplicator;
+
 
 
 
@@ -79,6 +82,7 @@ public class ELC_PassivesProperties : MonoBehaviour
         else if (ActualPassiveScriptableObject.PassiveName == "Bottes D'Hermes") BottesHermes();
         else if (ActualPassiveScriptableObject.PassiveName == "Faux De Chronos") FauxDeChronos();
         else if (ActualPassiveScriptableObject.PassiveName == "Egide") Egide();
+        else if (ActualPassiveScriptableObject.PassiveName == "Sang De Gorgonne") SangGorgonne();
     }
 
     private void AppetitDeLycaon()
@@ -114,6 +118,14 @@ public class ELC_PassivesProperties : MonoBehaviour
     private void Egide()
     {
         AttackScript.Egide = true;
+    }
+
+    private void SangGorgonne()
+    {
+        statsManager.GorgonneAttackMultiplicator = GorgonneAttackMultiplicator;
+        FindObjectOfType<PlayerHealth>().sangGorgonne = true;
+        statsManager.MaxHealth = statsManager.MaxHealth / 2;
+        statsManager.currentHealth = statsManager.MaxHealth;
     }
 
 }

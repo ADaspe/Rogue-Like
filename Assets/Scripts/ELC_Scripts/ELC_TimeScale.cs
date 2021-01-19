@@ -38,11 +38,13 @@ public class ELC_TimeScale : MonoBehaviour
         if (isPaused)
         {
             PauseButtons.SetActive(true);
+            FindObjectOfType<AudioListener>().enabled = false;
             Time.timeScale = 0;
         }
         else
         {
             PauseButtons.SetActive(false);
+            FindObjectOfType<AudioListener>().enabled = true;
             Time.timeScale = 1;
         }
     }

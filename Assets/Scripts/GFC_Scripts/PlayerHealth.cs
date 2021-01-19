@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     public AXD_UiGlitch[] uiToGlitch;
     public float timeToGlitchUiOnHit;
     public static ELC_EnemySO lastHitEnnemy;
+    public bool sangGorgonne;
 
 
 

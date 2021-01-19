@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 4634888610540058185, guid: 267f0c44b9e8cd043afd6f114677a0a5,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -109,6 +109,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   enemyAnimator: {fileID: 0}
   Coins: {fileID: 3438627847694550386, guid: df331dfca8d120d408a7b692cef7d637, type: 3}
+  EnemyShadow: {fileID: 5399330878609042532}
   currentHealth: 0
   speed: 0
   isDead: 0

@@ -16,6 +16,7 @@ public class ELC_Coins : MonoBehaviour
     public float initialDropSpeed = 1;
     public float decreaseSpeedOnDrop;
 
+    bool hurtingWall;
     bool isFalling;
 
 
@@ -33,7 +34,7 @@ public class ELC_Coins : MonoBehaviour
     
     void Update()
     {
-        if(isFalling)
+        if(isFalling && !hurtingWall)
         {
             this.transform.Translate(direction * Time.deltaTime * initialDropSpeed);
             if (initialDropSpeed > 0) initialDropSpeed -= decreaseSpeedOnDrop;
@@ -57,10 +58,19 @@ public class ELC_Coins : MonoBehaviour
     {
         if (!coinSound.isPlaying)
         {
+            this.GetComponent<SpriteRenderer>().enabled = false;
             coinSound.Play();
             yield return new WaitForSeconds(0.6f);
             Destroy(this.gameObject);
         }        
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            hurtingWall = true;
+            isFalling = false;
+        }
     }
 
 
