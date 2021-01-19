@@ -396,6 +396,7 @@ MonoBehaviour:
   bouteille: {fileID: 0}
   uiToGlitch: []
   timeToGlitchUiOnHit: 0.2
+  sangGorgonne: 0
 --- !u!114 &6115952892813048268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2724,11 +2725,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BerserkAura
-      objectReference: {fileID: 0}
-    - target: {fileID: 2480491485958551458, guid: 58b09fa5f8efeb14690bd9857eab0212,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58b09fa5f8efeb14690bd9857eab0212, type: 3}

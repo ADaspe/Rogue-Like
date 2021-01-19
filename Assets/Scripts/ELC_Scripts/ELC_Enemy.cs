@@ -118,7 +118,6 @@ public class ELC_Enemy : MonoBehaviour
         {
             dissolveValue -= Time.deltaTime * 5 / enemyStats.DeathTime;
             spriteRenderer.material.SetFloat("_DissolveLevel", dissolveValue);
-            Debug.Log(dissolveValue);
         }
 
         if (!isStun && !isDead)
@@ -632,7 +631,6 @@ public class ELC_Enemy : MonoBehaviour
     IEnumerator Death()
     {
         if (EnemyShadow != null) EnemyShadow.SetActive(false);
-        Debug.Log("Oui");
         isDying = true;
         dissolveValue = 5;
         enemyCollider.enabled = false;
@@ -641,7 +639,7 @@ public class ELC_Enemy : MonoBehaviour
         enemyAnimator.SetBool("IsPreparingForAttack", false);
         enemyAnimator.SetBool("IsAttacking", false);
         StartCoroutine(ApplyShader(enemyStats.DeathTime, deathMaterial));
-        yield return new WaitForSeconds(enemyStats.DeathTime - 0.3f);
+        yield return new WaitForSeconds(enemyStats.DeathTime - 0.7f);
         DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemyStats.MoneyEarnWhenDead);
 
         if (passiveScript.ActualPassiveScriptableObject != null)

@@ -64,10 +64,10 @@ public class ELC_PlayerMoves : MonoBehaviour
     public float nextSponkAttackTime;
 
     //Anti spam variables
-    private bool dashButtonDown;
+    public bool dashButtonDown;
 
-    private bool swichButtonDown;
-    private bool sponkButtonDown;
+    public bool swichButtonDown;
+    public bool sponkButtonDown;
 
     [Header("Dash Characteristics")]
     public bool isDashing;
