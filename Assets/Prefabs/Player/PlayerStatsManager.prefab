@@ -43,10 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ad867dd064cf844b7bafb45355bfb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingRunScene:
-    m_Handle: 0
-  HubScene:
-    m_Handle: 0
   Speed: 5
   invulnerability: 0
   invulnerabilityTime: 0
@@ -70,7 +66,7 @@ MonoBehaviour:
   SponkDashTime: 0.15
   SwichAttackRate: 4
   SponkAttackRate: 0.5
-  SwichKnockbackDistance: 1.5
+  SwichKnockbackDistance: 2
   SwichStunTime: 0.7
   SwichSlowMotionValue: 0.4
   SwichSlowMotionDuration: 0.2
@@ -93,17 +89,20 @@ MonoBehaviour:
   damageMultiplicatorBlue: 1
   KnockbackMultiplicatorBlue: 1
   DashMultiplicatorBlue: 1
+  ScreenShakesMultiplicatorBlue: 1
   damageMultiplicatorOrange: 2
   KnockbackMultiplicatorOrange: 2
-  DashMultiplicatorOrange: 2
+  DashMultiplicatorOrange: 1.3
+  ScreenShakesMultiplicatorOrange: 1.5
   damageMultiplicatorRed: 2
   KnockbackMultiplicatorRed: 2
-  DashMultiplicatorRed: 2
+  DashMultiplicatorRed: 1.6
+  ScreenShakesMultiplicatorRed: 2
   SwitchChainSlowMotionValue: 0.3
   SwitchChainSlowMotionDuration: 0.3
   SwichDamage: 100
   SwichAreaRadius: 1
-  SponkDamage: 300
+  SponkDamage: 150
   SponkWidth: 0.5
   Sponklength: 1.45
   AnimationDashTime: 0.4
