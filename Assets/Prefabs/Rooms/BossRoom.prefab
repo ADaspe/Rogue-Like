@@ -620,6 +620,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Musique Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 53630405086854116, guid: e98cec2734edefa42888688f8513fae6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3143779406410766341, guid: e98cec2734edefa42888688f8513fae6,
         type: 3}
       propertyPath: m_LocalPosition.x
