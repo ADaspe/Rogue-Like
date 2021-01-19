@@ -34,8 +34,8 @@ public class ELC_PassivesProperties : MonoBehaviour
     public int CorneAbondancePercentageChanceDropPowerUp;
     public GameObject PowerUpsGenerator;
 
-    //[Header("Sang De Gorgonne")]
-    //public float GorgonneStrengthBonusMultiplicator;
+    [Header("Sang De Gorgonne")]
+    public float GorgonneStrengthBonusMultiplicator;
 
     [Header("Faux De Chronos")]
     public float ChronosStopPowerUpFlowDuration; //Cb de temps les power ups vont arrêter de découler

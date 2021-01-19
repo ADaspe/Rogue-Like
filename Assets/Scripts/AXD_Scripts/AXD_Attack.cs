@@ -13,7 +13,8 @@ public class AXD_Attack : MonoBehaviour
     public GameObject GameManager;
     public GameObject playerInventory;
     public GameObject hitVFX;
-
+    public List<int> allDamagesDealt;
+    public int degatsMoyen;
     public bool AppetitDeLycaonIsActive;
     public float AppetitDeLycaonHealPerEnemies;
     public float AppetitDeLycaonHealPerCollateral;
@@ -190,6 +191,8 @@ public class AXD_Attack : MonoBehaviour
                 if (AppetitDeLycaonIsActive) playerStats.currentHealth += AppetitDeLycaonHealPerCollateral; //Rend de la vie avec le passif de Lycaon
             }
         }
+        allDamagesDealt.Add(totalDamage);
+        CalculateMoyenneDamage();
         return totalDamage;
     }
 
@@ -219,5 +222,15 @@ public class AXD_Attack : MonoBehaviour
             //playerInventory.GetComponent<ELC_ObjectsInventory>().AddMoneyToCrates(moneyEarn);
             
         }
+    }
+
+    public void CalculateMoyenneDamage()
+    {
+        int allDamages=0;
+        foreach(int damage in allDamagesDealt)
+        {
+            allDamages += damage;
+        }
+        degatsMoyen = allDamages / allDamagesDealt.Count;
     }
 }

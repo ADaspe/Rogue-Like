@@ -16,6 +16,8 @@ public class ELC_Enemy : MonoBehaviour
     public GameObject Coins;
     public GameObject EnemyShadow;
 
+    public int hitNumberToKillMe;
+
     [SerializeField]
     public int currentHealth;
     public float speed;
@@ -591,6 +593,7 @@ public class ELC_Enemy : MonoBehaviour
     {
         //DropCoins(5);
         Debug.Log("Enemy hit");
+        hitNumberToKillMe++;
         if (!isTmpInvulnerable && !isInvulnerable)
         {
             currentHealth -= Damage;
@@ -624,7 +627,7 @@ public class ELC_Enemy : MonoBehaviour
             {
                 StartCoroutine(tmpHydra.Death());
             }
-            
+            Debug.Log("Je suis " + enemyStats.Name + " et je suis mort en " + hitNumberToKillMe + " coups.");
         }
         else StartCoroutine(ApplyShader(0.05f, getHitMaterial));
     }
@@ -654,6 +657,7 @@ public class ELC_Enemy : MonoBehaviour
 
     public void DropCoins(int moneyValue)
     {
+        Debug.Log("Je suis " + enemyStats.Name + " et j'ai laché " + moneyValue + " pesetas");
         int numberToDrop = Mathf.FloorToInt(moneyValue / Coins.GetComponent<ELC_Coins>().value);
 
         for (int i = 0; i < numberToDrop; i++)

@@ -369,6 +369,8 @@ MonoBehaviour:
   GameManager: {fileID: 0}
   playerInventory: {fileID: 0}
   hitVFX: {fileID: 5844956189329065208, guid: dc63b30c749211d459826bf9a98e902a, type: 3}
+  allDamagesDealt: 
+  degatsMoyen: 0
   AppetitDeLycaonIsActive: 0
   AppetitDeLycaonHealPerEnemies: 0
   AppetitDeLycaonHealPerCollateral: 0
@@ -2031,6 +2033,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6843856719013174375, guid: 64bf3b5c2a5874f49b884cc04526bdbc,
+        type: 3}
+      propertyPath: FilAresBerserkMultiplicator
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843856719013174375, guid: 64bf3b5c2a5874f49b884cc04526bdbc,
+        type: 3}
+      propertyPath: FilAresDamageTakenMultiplicator
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843856719013174375, guid: 64bf3b5c2a5874f49b884cc04526bdbc,
+        type: 3}
+      propertyPath: AtalanteMaxSpeedAdd
+      value: 1.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843856719013174375, guid: 64bf3b5c2a5874f49b884cc04526bdbc,
+        type: 3}
+      propertyPath: GorgonneStrengthBonusMultiplicator
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843856719013174375, guid: 64bf3b5c2a5874f49b884cc04526bdbc,
+        type: 3}
+      propertyPath: HermesStunTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843856719013174375, guid: 64bf3b5c2a5874f49b884cc04526bdbc,
+        type: 3}
+      propertyPath: CorneAbondancePercentageChanceDropPowerUp
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6843856719013174375, guid: 64bf3b5c2a5874f49b884cc04526bdbc,
+        type: 3}
+      propertyPath: ChronosStopPowerUpFlowDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8407103025333050807, guid: 64bf3b5c2a5874f49b884cc04526bdbc,
         type: 3}
       propertyPath: m_Name
@@ -2632,6 +2669,21 @@ PrefabInstance:
         type: 3}
       propertyPath: SponkKnockbackDistance
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: chainTime
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: ComboResetTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675984205208501007, guid: 9d6958aa080a4c5439913b983ac56050,
+        type: 3}
+      propertyPath: MaxCombo
+      value: 999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6958aa080a4c5439913b983ac56050, type: 3}
