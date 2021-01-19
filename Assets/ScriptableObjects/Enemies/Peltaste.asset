@@ -17,27 +17,28 @@ MonoBehaviour:
   DeathTime: 1
   SpawnTime: 1
   MovementSpeed: 3
-  EnemyPath: 2
+  EnemyPath: 0
   LimitDistanceToStay: 3
   NeedTimeToTurn: 0
   TurnSpeed: 0
-  EnemyWidth: 0
+  EnemyWidth: 5
   noStunTime: 0
   FriendlyFire: 0
   DistanceAttack: 1
-  Projectile: {fileID: 0}
-  DistanceAttackArea: 3
+  Projectile: {fileID: 5799528179822313380, guid: 8434fb21e7d94a54fb47d57f6e3b81ff,
+    type: 3}
+  DistanceAttackArea: 6
   DistanceCooldown: 1
-  ProjectileSpeed: 0
-  ProjectileDurability: 0
-  ProjectileStrenght: 0
-  CloseCombatAttack: 1
-  AttackCooldown: 3
+  ProjectileSpeed: 7
+  ProjectileDurability: 4
+  ProjectileStrenght: 7
+  CloseCombatAttack: 0
+  AttackCooldown: 3.5
   AttackRange: 0.5
   WaitBeforeAttack: 0.5
-  AttackStrenght: 1
+  AttackStrenght: 5
   AttackStun: 0
-  AttackAnimationTime: 0
+  AttackAnimationTime: 0.25
   DashOnPlayer: 0
   DashTime: 0
   DistanceToRun: 0

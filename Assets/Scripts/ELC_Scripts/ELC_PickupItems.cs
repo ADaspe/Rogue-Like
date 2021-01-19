@@ -58,12 +58,12 @@ public class ELC_PickupItems : MonoBehaviour
     private void chooseRandomObjectFunction()
     {
         int randomNumber = Random.Range(0, ObjectsList.Count);
-        if (ObjectsList[randomNumber].GetComponent<ELC_CratesSO>().spawnFrequency.ToString() == "Common")
+        if (ObjectsList[randomNumber].GetComponent<ELC_CrateProperties>().CratesSO.spawnFrequency.ToString() == "Common")
         {
             if (Random.Range(0, 101) <= commonPercentageChanceObject) Object = ObjectsList[randomNumber];
             else chooseRandomObjectFunction();
         }
-        else if (ObjectsList[randomNumber].GetComponent<ELC_CratesSO>().spawnFrequency.ToString() == "Rare")
+        else if (ObjectsList[randomNumber].GetComponent<ELC_CrateProperties>().CratesSO.spawnFrequency.ToString() == "Rare")
         {
             if (Random.Range(0, 101) <= rarePercentageChanceObject) Object = ObjectsList[randomNumber];
             else chooseRandomObjectFunction();

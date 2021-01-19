@@ -32,7 +32,7 @@ MonoBehaviour:
   ProjectileSpeed: 8
   ProjectileDurability: 4
   ProjectileStrenght: 5
-  CloseCombatAttack: 1
+  CloseCombatAttack: 0
   AttackCooldown: 2.5
   AttackRange: 1
   WaitBeforeAttack: 0.5
