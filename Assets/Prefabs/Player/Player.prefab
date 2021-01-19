@@ -340,6 +340,9 @@ MonoBehaviour:
   playerIsImmobile: 0
   nextSwichAttackTime: 0
   nextSponkAttackTime: 0
+  dashButtonDown: 0
+  swichButtonDown: 0
+  sponkButtonDown: 0
   isDashing: 0
   dashCooldown: 0.5
   stopDash: 0
@@ -2069,6 +2072,29 @@ PrefabInstance:
       propertyPath: ChronosStopPowerUpFlowDuration
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7064135163168353771, guid: 64bf3b5c2a5874f49b884cc04526bdbc,
+        type: 3}
+      propertyPath: PassivesList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7064135163168353771, guid: 64bf3b5c2a5874f49b884cc04526bdbc,
+        type: 3}
+      propertyPath: PassivesList.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: c2647eda660911a46a182e3408d08b08,
+        type: 2}
+    - target: {fileID: 7064135163168353771, guid: 64bf3b5c2a5874f49b884cc04526bdbc,
+        type: 3}
+      propertyPath: PassivesList.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4629b48fa0494054680a76ce30d10721,
+        type: 2}
+    - target: {fileID: 7064135163168353771, guid: 64bf3b5c2a5874f49b884cc04526bdbc,
+        type: 3}
+      propertyPath: PassivesList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5caa60c0371d0654287a2c6ba0ab0d42,
+        type: 2}
     - target: {fileID: 8407103025333050807, guid: 64bf3b5c2a5874f49b884cc04526bdbc,
         type: 3}
       propertyPath: m_Name

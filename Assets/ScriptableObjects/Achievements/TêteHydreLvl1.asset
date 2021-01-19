@@ -16,10 +16,7 @@ MonoBehaviour:
   achievementTier: 1
   ennemyToDefeat:
   - {fileID: 2354318920522866430, guid: cfab9a84001e22d42afb3ffda1f2f0da, type: 3}
-  - {fileID: 2354318920522866430, guid: 8e424bc7b9f2f904197a5fe8c11b1a5f, type: 3}
-  - {fileID: 2354318920522866430, guid: aff26d884bb9dba4abab2fbde2b18e4e, type: 3}
-  - {fileID: 2354318920522866430, guid: 5b6d22ba65ab74f49ba738fc409e680a, type: 3}
-  numberToDefeat: 5
+  numberToDefeat: 3
   numberDefeated: 0
   isUnlocked: 0
   ennemyToDefeatName: HyDrone
