@@ -137,7 +137,6 @@ public class AXD_Attack : MonoBehaviour
                         }
                     }
                 }
-
             }
             //Attack all secondary targets
             if (colateralVictims.Count > 0)
