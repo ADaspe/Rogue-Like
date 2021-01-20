@@ -25,7 +25,7 @@ MonoBehaviour:
   noStunTime: 0
   FriendlyFire: 0
   DistanceAttack: 1
-  Projectile: {fileID: 5799528179822313380, guid: 8434fb21e7d94a54fb47d57f6e3b81ff,
+  Projectile: {fileID: 7340225479395758184, guid: 0279a59715be1074b96954db813198da,
     type: 3}
   DistanceAttackArea: 15
   DistanceCooldown: 0.75
