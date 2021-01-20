@@ -152,13 +152,16 @@ public class EMD_DialogueManager : MonoBehaviour
 
     public void QuitDialogue()
     {
-        DialogueCanvas.SetActive(false);
-        index = 0;
-        textDisplay.text = "";
-        DialogueIsActive = false;
-        PlayerMovesScript.ToggleMenu();
-        AchievementManagerScript.NumeroPage = 0;
-        DialogueEnding = true;
+        if (IsWriting == false)
+        {
+            DialogueCanvas.SetActive(false);
+            index = 0;
+            textDisplay.text = "";
+            DialogueIsActive = false;
+            PlayerMovesScript.ToggleMenu();
+            AchievementManagerScript.NumeroPage = 0;
+            DialogueEnding = true;
+        }
     }
 
     public void NextSentence()
@@ -172,7 +175,7 @@ public class EMD_DialogueManager : MonoBehaviour
                 PlayerMovesScript.ToggleMenu();
                 StartCoroutine("StartDialogue");
             }
-            else
+            else if (IsWriting == false)
             {
                 QuitDialogue();
             }

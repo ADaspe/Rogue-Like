@@ -32,7 +32,8 @@ public class ELC_ScreenShakes : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         isScreenShaking = false;
-        
+        CamOffset.m_Offset.Set(0, 0, 0);
+
     }
 
     IEnumerator Shakes(float intensity, float frequencyInSeconds)
