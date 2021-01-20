@@ -311,8 +311,8 @@ EdgeCollider2D:
   m_EdgeRadius: 0.1
   m_Points:
   - {x: -2.8566504, y: -1.7571993}
-  - {x: -2.8547602, y: -0.30393517}
-  - {x: -0.49899197, y: -0.3901567}
+  - {x: -2.8547602, y: -0.067207456}
+  - {x: -0.5635538, y: -0.08886665}
   - {x: -0.74032116, y: 3.6221447}
   - {x: 1.0111456, y: 3.6648145}
   - {x: 1.0460386, y: 3.0570002}
@@ -320,18 +320,18 @@ EdgeCollider2D:
   - {x: 6.1059785, y: 3.0338345}
   - {x: 6.180871, y: 4.826454}
   - {x: 7.37996, y: 4.8510084}
-  - {x: 7.3148346, y: 4.3062606}
-  - {x: 8.398466, y: 4.3228383}
-  - {x: 8.490837, y: 4.640596}
-  - {x: 9.956318, y: 4.692561}
-  - {x: 12.578283, y: 7.179433}
-  - {x: 14.960469, y: 7.3467617}
-  - {x: 15.510723, y: 7.926339}
-  - {x: 15.709907, y: 8.147538}
-  - {x: 15.953902, y: 8.37799}
-  - {x: 15.975793, y: 8.404319}
-  - {x: 15.952985, y: 8.439343}
-  - {x: 14.869458, y: 9.937553}
+  - {x: 7.411916, y: 4.500424}
+  - {x: 8.422736, y: 4.5170016}
+  - {x: 8.63646, y: 4.761949}
+  - {x: 9.956318, y: 4.8867245}
+  - {x: 12.663442, y: 7.6052237}
+  - {x: 14.223261, y: 7.6213684}
+  - {x: 15.101738, y: 8.142965}
+  - {x: 15.465556, y: 8.487727}
+  - {x: 15.669542, y: 8.757624}
+  - {x: 15.563195, y: 8.719835}
+  - {x: 16.024391, y: 8.858831}
+  - {x: 14.370967, y: 10.077754}
   - {x: 8.717161, y: 9.956378}
   - {x: 8.710255, y: 12.429758}
   - {x: 10.915591, y: 12.420125}
@@ -340,9 +340,10 @@ EdgeCollider2D:
   - {x: 12.708763, y: 12.450235}
   - {x: 14.855254, y: 12.555313}
   - {x: 14.821361, y: 12.347964}
-  - {x: 14.746514, y: 11.8432665}
-  - {x: 15.727878, y: 12.037552}
-  - {x: 16.90252, y: 9.897922}
+  - {x: 14.940679, y: 11.8432665}
+  - {x: 15.00874, y: 11.835943}
+  - {x: 15.930378, y: 11.264833}
+  - {x: 17.276619, y: 10.482206}
   - {x: 17.98952, y: 9.787231}
   - {x: 17.973703, y: 9.803519}
   - {x: 17.951511, y: 9.139589}
@@ -350,14 +351,17 @@ EdgeCollider2D:
   - {x: 19.303797, y: 9.440543}
   - {x: 19.670599, y: 9.415056}
   - {x: 19.640543, y: 8.183339}
-  - {x: 18.433064, y: 8.233094}
-  - {x: 18.43729, y: 8.16972}
-  - {x: 18.406326, y: 7.588739}
-  - {x: 16.876778, y: 6.648418}
-  - {x: 15.143201, y: 4.891195}
-  - {x: 13.29212, y: 4.894662}
-  - {x: 11.979699, y: 3.8429508}
-  - {x: 15.908541, y: 4.0333695}
+  - {x: 18.744621, y: 8.077316}
+  - {x: 18.390556, y: 7.8425856}
+  - {x: 18.255812, y: 7.7791967}
+  - {x: 17.373533, y: 7.7278843}
+  - {x: 17.357397, y: 7.3953295}
+  - {x: 16.78623, y: 7.3550706}
+  - {x: 16.627531, y: 6.8976636}
+  - {x: 15.096467, y: 5.451998}
+  - {x: 13.398319, y: 5.3514986}
+  - {x: 11.705744, y: 3.8052692}
+  - {x: 15.762918, y: 3.790664}
   - {x: 16.135517, y: 4.4324985}
   - {x: 16.074207, y: 1.2983298}
   - {x: 23.496847, y: 1.2893983}
@@ -1275,6 +1279,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 8a45bc55f0ace534a90954a9e11149b4,
         type: 3}
+    - target: {fileID: 2121222656013469171, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2242321615600341254, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_Sprite
@@ -3775,7 +3784,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultMat: {fileID: 0}
   glitchMat: {fileID: 2100000, guid: 3e27e7d59e85fdc45a9088137a6123ab, type: 2}
+  anim: {fileID: 0}
   canGlitch: 0
+  canStunUI: 0
 --- !u!1 &802945467 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7404685080683745098, guid: f523f809c561ee54dac7c3e8ae7438f8,
@@ -5070,6 +5081,31 @@ MonoBehaviour:
   - {x: 0.37586117, y: 0.4766016, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
   - {x: -0.14806747, y: -0.1889267, z: 0}
+--- !u!1 &2092751078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4793295353203920012, guid: f523f809c561ee54dac7c3e8ae7438f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 700055815}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2092751079
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092751078}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2c9f8b33b62fec4cacbaaf5837547df, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2104834708 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2947022401350543162, guid: f523f809c561ee54dac7c3e8ae7438f8,
@@ -5221,6 +5257,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 12513476844931356, guid: eeec6de608430f14295388896e77d9e0,
+        type: 3}
+      propertyPath: DialogueManager
+      value: 
+      objectReference: {fileID: 1346262901}
+    - target: {fileID: 1174491892953658150, guid: eeec6de608430f14295388896e77d9e0,
+        type: 3}
+      propertyPath: DialogueManager
+      value: 
+      objectReference: {fileID: 1346262901}
     - target: {fileID: 1460549921163619546, guid: eeec6de608430f14295388896e77d9e0,
         type: 3}
       propertyPath: m_Layer
