@@ -18,7 +18,7 @@ public class ELC_Coins : MonoBehaviour
 
     bool hurtingWall;
     bool isFalling;
-
+    bool isDying;
 
     void Start()
     {
@@ -48,8 +48,9 @@ public class ELC_Coins : MonoBehaviour
             this.transform.Translate(direction * Time.deltaTime * speed * distanceSpeedMultiplicator);
         }
 
-        if (!isFalling && detectorScript.playerIsInside)
+        if (!isFalling && detectorScript.playerIsInside && isDying == false)
         {
+            isDying = true;
             FindObjectOfType<ELC_ObjectsInventory>().AddMoneyToCrates(value);
             StartCoroutine(Audio());            
         }
