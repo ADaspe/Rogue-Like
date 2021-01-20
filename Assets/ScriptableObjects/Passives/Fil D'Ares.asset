@@ -15,7 +15,7 @@ MonoBehaviour:
   PassiveName: Fil D'Ares
   PassiveDescription: "Redirige l'\xE9nergie de ton armure vers ton \xE9p\xE9e pour
     un max de d\xE9gats ! D\xE9gats donn\xE9s comme re\xE7us."
-  PassivePrice: 2150
+  PassivePrice: 5250
   isUnlock: 0
   HUDSprite: {fileID: -6497817145159819769, guid: d2d062ff307f81d4e836ccc9ea347700,
     type: 3}

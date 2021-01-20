@@ -15,7 +15,7 @@ MonoBehaviour:
   PassiveName: Faux De Chronos
   PassiveDescription: "Tes logiciels d'am\xE9lioration temporaires gagnent du temps
     d'utilisation \xE0 chaque ennemi abattu."
-  PassivePrice: 3000
+  PassivePrice: 2150
   isUnlock: 0
   HUDSprite: {fileID: 3046305507954764050, guid: d2d062ff307f81d4e836ccc9ea347700,
     type: 3}
