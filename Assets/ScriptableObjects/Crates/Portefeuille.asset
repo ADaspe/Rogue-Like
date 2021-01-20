@@ -21,6 +21,9 @@ MonoBehaviour:
   isBreakable: 0
   health: 0
   percentageOfMoneyLostWhenHit: 1
-  HUDSprite: {fileID: 0}
+  HUDSpriteLeft: {fileID: 8381899988300484924, guid: e47f4872e585e7b44a32f7b284974360,
+    type: 3}
+  HUDSpriteRight: {fileID: -2083973363677762970, guid: e47f4872e585e7b44a32f7b284974360,
+    type: 3}
   GroundSprite: {fileID: -7402037114677673065, guid: e8009cb3ec52cf94d84785fa3c3fd8be,
     type: 3}
