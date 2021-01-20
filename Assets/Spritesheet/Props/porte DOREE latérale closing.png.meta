@@ -1,34 +1,49 @@
 fileFormatVersion: 2
-guid: 801b241746662c040b08daa4748bdfaa
+guid: c8c799184684ec64c9533169791ff3b6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8539060120508419867
-    second: BigLights
+      213: -2596907369877156754
+    second: "porte DOREE lat\xE9rale closing_0"
   - first:
-      213: -8297935981778364857
-    second: GreenTube
+      213: -4237460223569777914
+    second: "porte DOREE lat\xE9rale closing_1"
   - first:
-      213: -4158665924132780856
-    second: FissureMid
+      213: 2597778895151764435
+    second: "porte DOREE lat\xE9rale closing_2"
   - first:
-      213: 2718168973078260035
-    second: Props Deco_3
+      213: -7885722467701548090
+    second: "porte DOREE lat\xE9rale closing_3"
   - first:
-      213: 8533671747868807799
-    second: Colonnes
+      213: -7091415866175196526
+    second: "porte DOREE lat\xE9rale closing_4"
   - first:
-      213: 3744718625705673035
-    second: FissureSmall
+      213: -3357142760591321098
+    second: "porte DOREE lat\xE9rale closing_5"
   - first:
-      213: -5671187292232994978
-    second: Vase
+      213: -6955146851806945898
+    second: "porte DOREE lat\xE9rale closing_6"
   - first:
-      213: 2559410446061408911
-    second: FissureBig
+      213: 957718908711685672
+    second: "porte DOREE lat\xE9rale closing_7"
   - first:
-      213: -476157149848039442
-    second: Broken Statue
+      213: -6987418046066713950
+    second: "porte DOREE lat\xE9rale closing_8"
+  - first:
+      213: -416596468949217817
+    second: "porte DOREE lat\xE9rale closing_9"
+  - first:
+      213: 2538970626077629030
+    second: "porte DOREE lat\xE9rale closing_10"
+  - first:
+      213: 4046694155437471649
+    second: "porte DOREE lat\xE9rale closing_11"
+  - first:
+      213: 6122793682267310038
+    second: "porte DOREE lat\xE9rale closing_12"
+  - first:
+      213: -3586640355818488318
+    second: "porte DOREE lat\xE9rale closing_13"
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -91,7 +106,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,7 +118,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -150,181 +165,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BigLights
+      name: "porte DOREE lat\xE9rale closing_0"
       rect:
         serializedVersion: 2
-        x: 14
-        y: 168
-        width: 128
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e03461ff0a2f7980800000000000000
-      internalID: -8539060120508419867
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GreenTube
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 142
-        width: 52
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7461b2d503fc7dc80800000000000000
-      internalID: -8297935981778364857
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FissureMid
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 88
-        width: 35
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c44b8420637946c0800000000000000
-      internalID: -4158665924132780856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FissureSmall
-      rect:
-        serializedVersion: 2
-        x: 101
-        y: 108
-        width: 26
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b41c9fcefb9e7f330800000000000000
-      internalID: 3744718625705673035
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vase
-      rect:
-        serializedVersion: 2
-        x: 139
-        y: 102
-        width: 25
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5f2eb77435eb41b0800000000000000
-      internalID: -5671187292232994978
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FissureBig
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 70
-        width: 37
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f821ae78d3ad48320800000000000000
-      internalID: 2559410446061408911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Broken Statue
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 22
-        width: 52
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eef8b0258995469f0800000000000000
-      internalID: -476157149848039442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Props Deco_3
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 30
-        width: 35
-        height: 39
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34961df8740e8b520800000000000000
-      internalID: 2718168973078260035
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Colonnes
-      rect:
-        serializedVersion: 2
-        x: 143
-        y: 165
-        width: 25
-        height: 60
+        x: 0
+        y: 0
+        width: 46
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,8 +179,281 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 772d189cd31bd6670800000000000000
-      internalID: 8533671747868807799
+      spriteID: e6cc0ef818ee5fbd0800000000000000
+      internalID: -2596907369877156754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "porte DOREE lat\xE9rale closing_1"
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 0
+        width: 46
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60ba640b0648135c0800000000000000
+      internalID: -4237460223569777914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "porte DOREE lat\xE9rale closing_2"
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 0
+        width: 46
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d3178a342a2d0420800000000000000
+      internalID: 2597778895151764435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "porte DOREE lat\xE9rale closing_3"
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 0
+        width: 46
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb155b2239409290800000000000000
+      internalID: -7885722467701548090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "porte DOREE lat\xE9rale closing_4"
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 0
+        width: 46
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 292fe0677da369d90800000000000000
+      internalID: -7091415866175196526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "porte DOREE lat\xE9rale closing_5"
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 0
+        width: 46
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f71ea632780961d0800000000000000
+      internalID: -3357142760591321098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "porte DOREE lat\xE9rale closing_6"
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 0
+        width: 46
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69dde59c9ca5a7f90800000000000000
+      internalID: -6955146851806945898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "porte DOREE lat\xE9rale closing_7"
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 0
+        width: 46
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e4f64f5408a4d00800000000000000
+      internalID: 957718908711685672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "porte DOREE lat\xE9rale closing_8"
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 0
+        width: 46
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aa1a0bde44b70f90800000000000000
+      internalID: -6987418046066713950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "porte DOREE lat\xE9rale closing_9"
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 0
+        width: 46
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ed899df7b3f73af0800000000000000
+      internalID: -416596468949217817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "porte DOREE lat\xE9rale closing_10"
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 0
+        width: 46
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a1286155c3c3320800000000000000
+      internalID: 2538970626077629030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "porte DOREE lat\xE9rale closing_11"
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 0
+        width: 46
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a7ff71e4eeb82830800000000000000
+      internalID: 4046694155437471649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "porte DOREE lat\xE9rale closing_12"
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 0
+        width: 46
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d78c800a6888f450800000000000000
+      internalID: 6122793682267310038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "porte DOREE lat\xE9rale closing_13"
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 0
+        width: 46
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20ebb566991b93ec0800000000000000
+      internalID: -3586640355818488318
       vertices: []
       indices: 
       edges: []
@@ -341,7 +461,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: dda8d5d83b1e5504c8462580879a71c9
+    spriteID: 363cc4e595e3faa42a2789f4abcfbf35
     internalID: 0
     vertices: []
     indices: 

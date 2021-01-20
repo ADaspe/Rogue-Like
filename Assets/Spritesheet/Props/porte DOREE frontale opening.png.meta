@@ -1,34 +1,37 @@
 fileFormatVersion: 2
-guid: 801b241746662c040b08daa4748bdfaa
+guid: f549366bf6fb001478b1ca1078a69ae2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8539060120508419867
-    second: BigLights
+      213: 5612644891721005878
+    second: porte DOREE frontale opening_0
   - first:
-      213: -8297935981778364857
-    second: GreenTube
+      213: 6689548539166823979
+    second: porte DOREE frontale opening_1
   - first:
-      213: -4158665924132780856
-    second: FissureMid
+      213: 4229339863980719890
+    second: porte DOREE frontale opening_2
   - first:
-      213: 2718168973078260035
-    second: Props Deco_3
+      213: 8287327558821923891
+    second: porte DOREE frontale opening_3
   - first:
-      213: 8533671747868807799
-    second: Colonnes
+      213: -1955300874393307741
+    second: porte DOREE frontale opening_4
   - first:
-      213: 3744718625705673035
-    second: FissureSmall
+      213: 2717986335817688043
+    second: porte DOREE frontale opening_5
   - first:
-      213: -5671187292232994978
-    second: Vase
+      213: -2911114120377301617
+    second: porte DOREE frontale opening_6
   - first:
-      213: 2559410446061408911
-    second: FissureBig
+      213: -3808709632058697750
+    second: porte DOREE frontale opening_7
   - first:
-      213: -476157149848039442
-    second: Broken Statue
+      213: -3868369988472260030
+    second: porte DOREE frontale opening_8
+  - first:
+      213: 2322316672221092350
+    second: porte DOREE frontale opening_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -91,7 +94,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,7 +106,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -150,181 +153,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BigLights
+      name: porte DOREE frontale opening_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 168
-        width: 128
-        height: 15
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e03461ff0a2f7980800000000000000
-      internalID: -8539060120508419867
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: GreenTube
-      rect:
-        serializedVersion: 2
-        x: 30
-        y: 142
-        width: 52
-        height: 5
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7461b2d503fc7dc80800000000000000
-      internalID: -8297935981778364857
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FissureMid
-      rect:
-        serializedVersion: 2
-        x: 54
-        y: 88
-        width: 35
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8c44b8420637946c0800000000000000
-      internalID: -4158665924132780856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FissureSmall
-      rect:
-        serializedVersion: 2
-        x: 101
-        y: 108
-        width: 26
-        height: 25
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b41c9fcefb9e7f330800000000000000
-      internalID: 3744718625705673035
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Vase
-      rect:
-        serializedVersion: 2
-        x: 139
-        y: 102
-        width: 25
-        height: 29
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5f2eb77435eb41b0800000000000000
-      internalID: -5671187292232994978
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FissureBig
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 70
-        width: 37
-        height: 31
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f821ae78d3ad48320800000000000000
-      internalID: 2559410446061408911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Broken Statue
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 22
-        width: 52
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eef8b0258995469f0800000000000000
-      internalID: -476157149848039442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Props Deco_3
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 30
-        width: 35
-        height: 39
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34961df8740e8b520800000000000000
-      internalID: 2718168973078260035
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Colonnes
-      rect:
-        serializedVersion: 2
-        x: 143
-        y: 165
-        width: 25
-        height: 60
+        x: 0
+        y: 0
+        width: 66
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,8 +167,197 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 772d189cd31bd6670800000000000000
-      internalID: 8533671747868807799
+      spriteID: 63bf07dbace14ed40800000000000000
+      internalID: 5612644891721005878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: porte DOREE frontale opening_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 0
+        width: 66
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2695c024fc06dc50800000000000000
+      internalID: 6689548539166823979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: porte DOREE frontale opening_2
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 0
+        width: 66
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21f38f2c232a1ba30800000000000000
+      internalID: 4229339863980719890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: porte DOREE frontale opening_3
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 0
+        width: 66
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33cc2e0b180820370800000000000000
+      internalID: 8287327558821923891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: porte DOREE frontale opening_4
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 0
+        width: 66
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5b6c0e6306dd4e0800000000000000
+      internalID: -1955300874393307741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: porte DOREE frontale opening_5
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 0
+        width: 66
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be367c20c2a38b520800000000000000
+      internalID: 2717986335817688043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: porte DOREE frontale opening_6
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 0
+        width: 66
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f85894a9125a997d0800000000000000
+      internalID: -2911114120377301617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: porte DOREE frontale opening_7
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 0
+        width: 66
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae75880e4ceb42bc0800000000000000
+      internalID: -3808709632058697750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: porte DOREE frontale opening_8
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 66
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a3451bdf9c05ac0800000000000000
+      internalID: -3868369988472260030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: porte DOREE frontale opening_9
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 0
+        width: 66
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef994bf85b68a3020800000000000000
+      internalID: 2322316672221092350
       vertices: []
       indices: 
       edges: []
@@ -341,7 +365,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: dda8d5d83b1e5504c8462580879a71c9
+    spriteID: 74c18d94c1ee17d4b85543846279e807
     internalID: 0
     vertices: []
     indices: 
