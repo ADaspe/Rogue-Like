@@ -17,8 +17,10 @@ public class PlayerHealth : MonoBehaviour
     public Bouteille bouteille;
     public AXD_UiGlitch[] uiToGlitch;
     public AXD_UiGlitch uiToStun;
+    public AXD_UiGlitch uiStock;
     public float timeToGlitchUiOnHit;
     public float timeToStunUi;
+    public float timeUiStock;
     public static ELC_EnemySO lastHitEnnemy;
     public bool sangGorgonne;
     ELC_Eclair eclairScript;
@@ -101,11 +103,13 @@ public class PlayerHealth : MonoBehaviour
         {
             bouteille.bottleSlider.value = bouteille.bottleSlider.maxValue;
             playerStats.currentStock = bouteille.bottleSlider.value;
+            uiStock.AddStockUi(timeUiStock);
         }
         else
         {
             bouteille.bottleSlider.value += stockToAdd;
             playerStats.currentStock = bouteille.bottleSlider.value;
+            uiStock.AddStockUi(timeUiStock);
         }
     }
     //ça c'est la manière dont il se heal, tout en diminuant la réserve d'olives. Et ça se synchronise avec les deux jauges.
