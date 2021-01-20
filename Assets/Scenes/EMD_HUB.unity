@@ -2298,7 +2298,7 @@ PrefabInstance:
     - target: {fileID: 3729842993791577614, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -47.8
+      value: -42.22
       objectReference: {fileID: 0}
     - target: {fileID: 3729842993791577614, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -3818,6 +3818,7 @@ MonoBehaviour:
   canGlitch: 0
   canStunUI: 0
   canAddStockUi: 0
+  canDamageGlitch: 0
 --- !u!1 &802945467 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7404685080683745098, guid: f523f809c561ee54dac7c3e8ae7438f8,

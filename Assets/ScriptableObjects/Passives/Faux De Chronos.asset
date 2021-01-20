@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Faux De Chronos
   m_EditorClassIdentifier: 
   PassiveName: Faux De Chronos
-  PassiveDescription: "Tes logiciels d'am\xE9lioration temporaires gagnent du temps
-    d'utilisation \xE0 chaque ennemi abattu."
+  PassiveDescription: "Faux de Chronos : Ce bijou redirige l'\xE9nergie vitale de
+    tes ennemis pour faire durer tes am\xE9liorations temporaires plus longtemps.  "
   PassivePrice: 2150
-  isUnlock: 0
+  isUnlock: 1
   HUDSprite: {fileID: 3046305507954764050, guid: d2d062ff307f81d4e836ccc9ea347700,
     type: 3}
