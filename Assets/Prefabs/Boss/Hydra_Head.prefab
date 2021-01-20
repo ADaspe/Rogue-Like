@@ -157,7 +157,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   distanceToStay: 0
-  marginForDistanceToStay: 1
+  marginForDistanceToStay: 2
 --- !u!61 &4596816765237111783
 BoxCollider2D:
   m_ObjectHideFlags: 0
