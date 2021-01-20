@@ -39,8 +39,6 @@ public class AXD_Hydra : MonoBehaviour
         enemy.isInvulnerable = true;
         forceField = this.gameObject.transform.GetChild(7).gameObject;
         tmr = FindObjectOfType<TilemapRenderer>();
-        GOScript = FindObjectOfType<EMD_GameOver>();
-        Debug.Log("" + GOScript);
         tmr.material = glowEnviro1;
         anim = GetComponent<Animator>();
         collider = GetComponent<BoxCollider2D>();
@@ -234,6 +232,8 @@ public class AXD_Hydra : MonoBehaviour
         enemy.spriteRenderer.enabled = false;
         //enemy.DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemy.enemyStats.MoneyEarnWhenDead);
         FindObjectOfType<AXD_PlayerMoney>().AddMoney(enemy.enemyStats.MoneyEarnWhenDead);
+        GOScript = FindObjectOfType<EMD_GameOver>();
+        Debug.Log("" + GOScript);
         GOScript.MenuGOHydreMorte();
 
         if (enemy.passiveScript.ActualPassiveScriptableObject != null)
