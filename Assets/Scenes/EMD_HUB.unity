@@ -1471,6 +1471,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 153.00995
       objectReference: {fileID: 0}
+    - target: {fileID: 2710216975825318081, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: canvasGameOver
+      value: 
+      objectReference: {fileID: 1848675364}
     - target: {fileID: 2713690453731785635, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_Enabled
@@ -4828,6 +4833,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1848675364 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2416549020266725885, guid: f523f809c561ee54dac7c3e8ae7438f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 700055815}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1850101421 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9018886752212594932, guid: eeec6de608430f14295388896e77d9e0,
