@@ -15,7 +15,7 @@ MonoBehaviour:
   PassiveName: "App\xE9tit De Lycaon"
   PassiveDescription: Les attaques d'estoc aspirent la vie hors de tes ennemis pour
     te revigorer !
-  PassivePrice: 2000
+  PassivePrice: 4500
   isUnlock: 1
   HUDSprite: {fileID: 5127041399917441057, guid: d2d062ff307f81d4e836ccc9ea347700,
     type: 3}
