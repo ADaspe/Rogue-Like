@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Amphore
   spawnFrequency: 1
   stockLimit: 3000
-  steps: 9001000040060000d0070000
+  steps: 5802000060090000
   startingMinMoney: 0
   startingMaxMoney: 250
   isBreakable: 0
