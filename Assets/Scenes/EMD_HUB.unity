@@ -5157,11 +5157,6 @@ PrefabInstance:
       propertyPath: DialogueManager
       value: 
       objectReference: {fileID: 1346262901}
-    - target: {fileID: 2178316277454328153, guid: eeec6de608430f14295388896e77d9e0,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2178316277454328158, guid: eeec6de608430f14295388896e77d9e0,
         type: 3}
       propertyPath: DialogueManager
