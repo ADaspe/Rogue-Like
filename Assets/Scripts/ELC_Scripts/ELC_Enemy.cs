@@ -647,8 +647,10 @@ public class ELC_Enemy : MonoBehaviour
         enemyAnimator.SetBool("IsAttacking", false);
         StartCoroutine(ApplyShader(enemyStats.DeathTime, deathMaterial));
         yield return new WaitForSeconds(enemyStats.DeathTime - 0.7f);
-        DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemyStats.MoneyEarnWhenDead);
-
+        if (Coins != null)
+        {
+            DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemyStats.MoneyEarnWhenDead);
+        }
         if (passiveScript.ActualPassiveScriptableObject != null)
         {
             if (passiveScript.ActualPassiveScriptableObject.PassiveName == "Corne D'Abondance" && Random.Range(0, 101) < passiveScript.CorneAbondancePercentageChanceDropPowerUp) Instantiate(passiveScript.PowerUpsGenerator, this.transform.position, Quaternion.identity);
