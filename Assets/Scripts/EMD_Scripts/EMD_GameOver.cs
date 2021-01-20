@@ -103,7 +103,14 @@ public class EMD_GameOver : MonoBehaviour
             }
             if (i == 6)
             {
-                PassifUsed.text = "PASSIF UTILISE : " + ELC_ObjectsInventory.ActivePassif.PassiveName;
+                if (ELC_ObjectsInventory.ActivePassif == null)
+                {
+                    PassifUsed.text = "PAS DE PASSIF UTILISE";
+                }
+                else if (ELC_ObjectsInventory.ActivePassif != null)
+                {
+                    PassifUsed.text = "PASSIF UTILISE : " + ELC_ObjectsInventory.ActivePassif.PassiveName;
+                }
                 PassifUsedGO.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);
             }
