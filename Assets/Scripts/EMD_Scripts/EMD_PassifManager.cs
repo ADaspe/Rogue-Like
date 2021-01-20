@@ -143,7 +143,7 @@ public class EMD_PassifManager : MonoBehaviour
         if (currentMoneyScript.currentMoney >= (int)SelectedPassive.PassivePrice)
         {
             achatSound.Play();
-            currentMoneyScript.currentMoney -= (int)SelectedPassive.PassivePrice;
+            currentMoneyScript.AddMoney(-(int)SelectedPassive.PassivePrice);
             ELC_ObjectsInventory.ActivePassif = SelectedPassive;
         }
         else
