@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e1e575d17b71b948acad78b5eb5db09, type: 3}
   m_Name: HydraHead
   m_EditorClassIdentifier: 
-  Name: HyDrones
-  MaxHealth: 4000
+  Name: 
+  MaxHealth: 5000
   DeathTime: 1
   SpawnTime: 1
   MovementSpeed: 5

@@ -20,6 +20,6 @@ MonoBehaviour:
   numberDefeated: 0
   isUnlocked: 0
   ennemyToDefeatName: Hydre de L3ern
-  passifToUnlock: {fileID: 11400000, guid: 5caa60c0371d0654287a2c6ba0ab0d42, type: 2}
+  passifToUnlock: {fileID: 11400000, guid: e8365aef04281bd45b3471d2fc5b1fb6, type: 2}
   achievementManager: {fileID: 0}
   HUDSprite: {fileID: 21300000, guid: 3f2e249dc22a40a4cbf37c169a1c3bee, type: 3}
