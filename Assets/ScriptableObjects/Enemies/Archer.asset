@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Archer
   m_EditorClassIdentifier: 
   Name: Sentinelle Mk.Apollon
-  MaxHealth: 1000
+  MaxHealth: 900
   DeathTime: 1
   SpawnTime: 1
   MovementSpeed: 2
