@@ -23,6 +23,7 @@ public class AXD_Hydra : MonoBehaviour
     public float healthPercentageHeadPhase3;
     public GameObject forceField;
     private TilemapRenderer tmr;
+    private EMD_GameOver GOScript;
     public Material glowEnviro1;
     public Material glowEnviro2;
     public Material glowEnviro3;
@@ -30,7 +31,6 @@ public class AXD_Hydra : MonoBehaviour
     public float ExplosionDuration;
     public ELC_Detector Area;
     public bool fighting = false;
-    public bool EndMenuTime = false;
 
     private void Start()
     {
@@ -39,6 +39,8 @@ public class AXD_Hydra : MonoBehaviour
         enemy.isInvulnerable = true;
         forceField = this.gameObject.transform.GetChild(7).gameObject;
         tmr = FindObjectOfType<TilemapRenderer>();
+        GOScript = FindObjectOfType<EMD_GameOver>();
+        Debug.Log("" + GOScript);
         tmr.material = glowEnviro1;
         anim = GetComponent<Animator>();
         collider = GetComponent<BoxCollider2D>();
@@ -232,7 +234,7 @@ public class AXD_Hydra : MonoBehaviour
         enemy.spriteRenderer.enabled = false;
         //enemy.DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemy.enemyStats.MoneyEarnWhenDead);
         FindObjectOfType<AXD_PlayerMoney>().AddMoney(enemy.enemyStats.MoneyEarnWhenDead);
-        EndMenuTime = true;
+        GOScript.MenuGOHydreMorte();
 
         if (enemy.passiveScript.ActualPassiveScriptableObject != null)
         {

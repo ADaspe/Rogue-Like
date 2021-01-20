@@ -16,7 +16,7 @@ MonoBehaviour:
   level: 1
   multiplicator: 1.5
   duration: 20
-  HUDSprite: {fileID: 1271585140863983061, guid: dd25c52f422edcb4b89596e7b684b173,
+  HUDSprite: {fileID: 5710704479453119184, guid: dd25c52f422edcb4b89596e7b684b173,
     type: 3}
   GroundSprite: {fileID: 4000397768333450911, guid: cbbbd9f56ac68d542a8536a13a67ef12,
     type: 3}

@@ -30,6 +30,7 @@ public class EMD_GameOver : MonoBehaviour
     public int MoneyHarvested;
     int TimerMin;
     int TimerSec;
+    public bool EndTime = false; 
 
     public string HUB;
     public string MainMenu;
@@ -39,7 +40,6 @@ public class EMD_GameOver : MonoBehaviour
         PlayerStatManagerScript = FindObjectOfType<ELC_PlayerStatManager>();
         AchievementManagerScript = FindObjectOfType<AXD_AchievementManager>();
         ObjectinventoryScript = FindObjectOfType<ELC_ObjectsInventory>();
-        HydraScript = FindObjectOfType<AXD_Hydra>();
         GameOverGO.SetActive(false);
         MonsterWhoKilledGO.SetActive(false);
         RunTimeGO.SetActive(false);
@@ -49,12 +49,11 @@ public class EMD_GameOver : MonoBehaviour
         AchGO.SetActive(false);
         GOCanvas.SetActive(false);
     }
-    private void Update()
+
+    public void MenuGOHydreMorte()
     {
-        if (HydraScript.EndMenuTime == true)
-        {
-            StartCoroutine("OneByOne");
-        }
+        EndTime = true; 
+        StartCoroutine("OneByOne");
     }
 
     private void OnEnable()
@@ -77,9 +76,9 @@ public class EMD_GameOver : MonoBehaviour
             }
             if (i == 2)
             {
-                if (HydraScript.EndMenuTime == true)
+                if (EndTime == true)
                 {
-                    MonsterWhoKilled.text = "VOUS AVEZ TUE LE BOSS";
+                    MonsterWhoKilled.text = "LE BOSS A ETE VAINCU!";
                 }
                 else
                 {
