@@ -8,6 +8,7 @@ public class ELC_PickupItems : MonoBehaviour
     private ELC_PowerUpManager PUManager;
     private ELC_Detector detector;
 
+    public AudioSource powerUpSound;
 
     public GameObject Object;
     public GameObject PowerUp;
@@ -82,7 +83,7 @@ public class ELC_PickupItems : MonoBehaviour
         if (detector.playerIsInside && this.gameObject.CompareTag("Collectible") && Type == CollectibleTypes.PowerUp)
         { 
             PUManager.AddPowerUp(PowerUp);
-            Destroy(this.gameObject);
+            StartCoroutine(Audio());
         }
         if (detector.playerIsInside && this.gameObject.CompareTag("Collectible") && Input.GetButtonDown("Interact"))
         {
@@ -98,5 +99,15 @@ public class ELC_PickupItems : MonoBehaviour
             Destroy(this.gameObject);
         }
         
+    }
+    IEnumerator Audio()
+    {
+        if (!powerUpSound.isPlaying)
+        {
+            this.GetComponent<SpriteRenderer>().enabled = false;
+            powerUpSound.Play();
+            yield return new WaitForSeconds(0.4f);
+            Destroy(this.gameObject);
+        }
     }
 }
