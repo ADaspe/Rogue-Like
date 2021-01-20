@@ -172,7 +172,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         isSpawning = true;
         playerAnimator.SetBool("IsSpawning", true);
         canMove = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2.6f);
         isSpawning = false;
         playerAnimator.SetBool("IsSpawning", false);
         canMove = true;
