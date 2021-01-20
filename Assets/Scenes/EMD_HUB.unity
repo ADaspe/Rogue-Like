@@ -4907,7 +4907,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1373962929}
   - component: {fileID: 1373962933}
-  - component: {fileID: 1373962932}
   - component: {fileID: 1373962931}
   - component: {fileID: 1373962930}
   - component: {fileID: 1373962934}
@@ -4960,21 +4959,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIsInside: 0
---- !u!114 &1373962932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1373962928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd24ae656b3e5e24bb14f759e9733fbd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjectToDisplay: {fileID: 0}
-  newPosition: {x: 0, y: 0, z: 0}
-  ButtonDisplay: {fileID: 0}
 --- !u!114 &1373962933
 MonoBehaviour:
   m_ObjectHideFlags: 0
