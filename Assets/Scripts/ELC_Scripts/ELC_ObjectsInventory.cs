@@ -8,6 +8,7 @@ public class ELC_ObjectsInventory : MonoBehaviour
     public GameObject startingCrate;
     public enum hands { LeftHand, RightHand};
     public hands selectedHand = hands.LeftHand;
+    public Sprite EmptyHUD;
     public GameObject RightHandObject;
     public GameObject RightHandHUD;
     public int totalSecuredMoney;
@@ -60,16 +61,16 @@ public class ELC_ObjectsInventory : MonoBehaviour
         if (RightHandObject != null)
         {
             RightHandHUD.GetComponent<Image>().enabled = true;
-            RightHandHUD.GetComponent<Image>().sprite = RightHandObject.GetComponent<ELC_CrateProperties>().CratesSO.HUDSprite;
+            RightHandHUD.GetComponent<Image>().sprite = RightHandObject.GetComponent<ELC_CrateProperties>().CratesSO.HUDSpriteRight;
         }
-        else RightHandHUD.GetComponent<Image>().enabled = false;
+        else RightHandHUD.GetComponent<Image>().sprite = EmptyHUD;
 
         if (LeftHandObject != null)
         {
             LeftHandHUD.GetComponent<Image>().enabled = true;
-            LeftHandHUD.GetComponent<Image>().sprite = LeftHandObject.GetComponent<ELC_CrateProperties>().CratesSO.HUDSprite;
+            LeftHandHUD.GetComponent<Image>().sprite = LeftHandObject.GetComponent<ELC_CrateProperties>().CratesSO.HUDSpriteLeft;
         }
-        else LeftHandHUD.GetComponent<Image>().enabled = false;
+        else LeftHandHUD.GetComponent<Image>().sprite = EmptyHUD;
 
         if (ActivePassif != null)
         {
