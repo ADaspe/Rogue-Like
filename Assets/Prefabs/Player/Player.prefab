@@ -244,7 +244,6 @@ GameObject:
   - component: {fileID: 1478753435661380681}
   - component: {fileID: 8934949276138899172}
   - component: {fileID: 6115952892813048268}
-  - component: {fileID: 1310285015506107349}
   - component: {fileID: 5083334866861958287}
   - component: {fileID: 1154282071691469226}
   - component: {fileID: 207646746971977973}
@@ -418,19 +417,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneycount: {fileID: 0}
   currentMoney: 0
---- !u!114 &1310285015506107349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3282318346991483589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1689caae9902c024198df3883e794330, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  music: {fileID: 0}
 --- !u!95 &5083334866861958287
 Animator:
   serializedVersion: 3
