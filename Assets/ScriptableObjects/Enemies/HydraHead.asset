@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: HydraHead
   m_EditorClassIdentifier: 
   Name: 
-  MaxHealth: 5000
+  MaxHealth: 3000
   DeathTime: 1
   SpawnTime: 1
   MovementSpeed: 5
   EnemyPath: 0
-  LimitDistanceToStay: 6
+  LimitDistanceToStay: 6.5
   NeedTimeToTurn: 0
   TurnSpeed: 0
   EnemyWidth: 2

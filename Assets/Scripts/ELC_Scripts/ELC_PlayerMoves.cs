@@ -272,6 +272,18 @@ public class ELC_PlayerMoves : MonoBehaviour
         {
             playerIsImmobile = false;
             lastDirection = playerMoves; //On enregistre ici la dernière direction du joueur
+            float horizPositiveValue = 0;
+            float verticalPositiveValue = 0;
+
+            if (Input.GetAxis("Horizontal") < 0) horizPositiveValue = -Input.GetAxis("Horizontal");
+            else horizPositiveValue = Input.GetAxis("Horizontal");
+            if (Input.GetAxis("Vertical") < 0) verticalPositiveValue = -Input.GetAxis("Vertical");
+            else verticalPositiveValue = Input.GetAxis("Vertical");
+
+            if (isTouchingLeft && Input.GetAxis("Horizontal") < 0 && horizPositiveValue > verticalPositiveValue) lastDirection = Vector3.left;
+            else if (isTouchingRight && Input.GetAxis("Horizontal") > 0 && horizPositiveValue > verticalPositiveValue) lastDirection = Vector3.right;
+            else if (isTouchingTop && Input.GetAxis("Vertical") > 0 && horizPositiveValue < verticalPositiveValue) lastDirection = Vector3.up;
+            else if (isTouchingDown && Input.GetAxis("Horizontal") < 0 && horizPositiveValue > verticalPositiveValue) lastDirection = Vector3.down;
         }
     }
 

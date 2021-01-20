@@ -61,7 +61,7 @@ public class PlayerHealth : MonoBehaviour
             if(playerStats.currentHealth <= 0)
             {
                 isDead = true;
-                StartCoroutine(playerMovesScript.Death(1.5f));
+                StartCoroutine(playerMovesScript.Death(2f));
             }
             playerInventory.GetComponent<ELC_ObjectsInventory>().GetHitCrates();            
         }
