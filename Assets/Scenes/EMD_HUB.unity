@@ -2110,6 +2110,21 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3309051798996555938, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309051798996555938, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309051798996555938, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3309051798996555941, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -2303,6 +2318,11 @@ PrefabInstance:
     - target: {fileID: 3838971736114296411, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936412103672669196, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3941173820851570318, guid: f523f809c561ee54dac7c3e8ae7438f8,
@@ -3369,6 +3389,11 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8272527108335718597, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8276026791225182998, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3787,6 +3812,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   canGlitch: 0
   canStunUI: 0
+  canAddStockUi: 0
 --- !u!1 &802945467 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7404685080683745098, guid: f523f809c561ee54dac7c3e8ae7438f8,
