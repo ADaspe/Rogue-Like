@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 748001415faad004dbd59e7119708667, type: 3}
   m_Name: "T\xEAteHydreLvl2"
   m_EditorClassIdentifier: 
-  achievementName: "Chasseur de t\xEAte Lvl 2"
+  achievementName: "Chasseur de T\xEAte LVL2"
   achievementTier: 2
   ennemyToDefeat:
   - {fileID: 2354318920522866430, guid: cfab9a84001e22d42afb3ffda1f2f0da, type: 3}
