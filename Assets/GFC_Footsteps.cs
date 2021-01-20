@@ -19,8 +19,8 @@ public class GFC_Footsteps : MonoBehaviour
     public AudioSource orangeSponk;
     public AudioSource redSponk;
     public AudioSource bouteille;
-
     private bool canSwich;
+    public AudioSource lowlife;
     
     bool deathAlreadyPlayed = false;
     public float nextSponkAttackTime;
@@ -102,6 +102,10 @@ public class GFC_Footsteps : MonoBehaviour
         if (Input.GetAxisRaw("Heal") == 0 && bouteille.isPlaying == true)
         {
             bouteille.Stop();
+        }
+        if (!lowlife.isPlaying && statManager.currentHealth <= statManager.MaxHealth * statManager.LifeStopDecrease / 100)
+        {
+            lowlife.Play();
         }
 
         
