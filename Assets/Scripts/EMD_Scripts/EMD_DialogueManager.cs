@@ -15,6 +15,7 @@ public class EMD_DialogueManager : MonoBehaviour
     public bool IsWriting;
     public GameObject PassiveCanvas;
     public GameObject DialogueCanvas;
+    public GameObject PNJInfoCanvas;
     public GameObject ContinueButton;
     public GameObject QuitButton;
     public GameObject PassiveButton;
@@ -207,6 +208,7 @@ public class EMD_DialogueManager : MonoBehaviour
         Text.SetActive(true);
         Image.SetActive(true);
         PNJInfoButton.SetActive(false);
+        PNJInfoCanvas.SetActive(false);
         AchievementCanvas.SetActive(false);
         PassiveCanvas.SetActive(false);
         AchievementsButton.SetActive(false);
