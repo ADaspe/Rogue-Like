@@ -402,9 +402,11 @@ MonoBehaviour:
   uiToGlitch: []
   uiToStun: {fileID: 0}
   uiStock: {fileID: 0}
+  uiDamageGlitch: {fileID: 0}
   timeToGlitchUiOnHit: 0.2
   timeToStunUi: 0.5
   timeUiStock: 0.25
+  timeDamageGlitch: 0.5
   sangGorgonne: 0
 --- !u!114 &6115952892813048268
 MonoBehaviour:

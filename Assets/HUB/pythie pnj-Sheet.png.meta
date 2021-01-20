@@ -1,31 +1,16 @@
 fileFormatVersion: 2
-guid: 733d27577e7b0b84b929960962ac446e
+guid: 1d30a6a151e61b041acb9d6ab312c129
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2539606757267304542
-    second: splash idle._0
+      213: -8593917233197238616
+    second: pythie pnj-Sheet_0
   - first:
-      213: 3614274282569548749
-    second: splash idle._1
+      213: -666810282630256313
+    second: pythie pnj-Sheet_1
   - first:
-      213: -7864484511643067929
-    second: splash idle._2
-  - first:
-      213: -3848203619586068090
-    second: splash idle._3
-  - first:
-      213: 5464804222270947818
-    second: splash idle._4
-  - first:
-      213: 7795421626580471273
-    second: splash idle._5
-  - first:
-      213: 3396664730272057368
-    second: splash idle._6
-  - first:
-      213: -9174197756500136080
-    second: splash idle._7
+      213: -5862372175915008730
+    second: pythie pnj-Sheet_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -44,7 +29,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   grayScaleToAlpha: 0
@@ -56,7 +41,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: 1
+    aniso: 2
     mipBias: -100
     wrapU: 1
     wrapV: 1
@@ -69,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -88,7 +73,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,7 +85,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -147,13 +132,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: splash idle._0
+      name: pythie pnj-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 360
-        height: 202
+        width: 151
+        height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +146,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e50791ce3ee7e3320800000000000000
-      internalID: 2539606757267304542
+      spriteID: 8a6bb261fc54cb880800000000000000
+      internalID: -8593917233197238616
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: splash idle._1
+      name: pythie pnj-Sheet_1
       rect:
         serializedVersion: 2
-        x: 360
+        x: 151
         y: 0
-        width: 360
-        height: 202
+        width: 151
+        height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc3436d8f4b782230800000000000000
-      internalID: 3614274282569548749
+      spriteID: 749ee33b4930fb6f0800000000000000
+      internalID: -666810282630256313
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: splash idle._2
+      name: pythie pnj-Sheet_2
       rect:
         serializedVersion: 2
-        x: 720
+        x: 302
         y: 0
-        width: 360
-        height: 202
+        width: 151
+        height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,113 +188,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e914f5210dbbd290800000000000000
-      internalID: -7864484511643067929
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: splash idle._3
-      rect:
-        serializedVersion: 2
-        x: 1080
-        y: 0
-        width: 360
-        height: 202
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6813337523f689ac0800000000000000
-      internalID: -3848203619586068090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: splash idle._4
-      rect:
-        serializedVersion: 2
-        x: 1440
-        y: 0
-        width: 360
-        height: 202
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae1c3838c72e6db40800000000000000
-      internalID: 5464804222270947818
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: splash idle._5
-      rect:
-        serializedVersion: 2
-        x: 1800
-        y: 0
-        width: 360
-        height: 202
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ed0abedaa6ee2c60800000000000000
-      internalID: 7795421626580471273
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: splash idle._6
-      rect:
-        serializedVersion: 2
-        x: 2160
-        y: 0
-        width: 360
-        height: 202
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 818c6fc6390632f20800000000000000
-      internalID: 3396664730272057368
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: splash idle._7
-      rect:
-        serializedVersion: 2
-        x: 2520
-        y: 0
-        width: 360
-        height: 202
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07faf985fb3bea080800000000000000
-      internalID: -9174197756500136080
+      spriteID: 62db371f09ba4aea0800000000000000
+      internalID: -5862372175915008730
       vertices: []
       indices: 
       edges: []
@@ -317,7 +197,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: fe2ecb66d517b884a93263d8746f5b30
+    spriteID: b9dc39a4a113a0041b9c423e115ead66
     internalID: 0
     vertices: []
     indices: 
