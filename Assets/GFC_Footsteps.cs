@@ -56,7 +56,6 @@ public class GFC_Footsteps : MonoBehaviour
             canSwich = false;
             blueSwich.pitch = Random.Range(0.9f, 1.1f);
             blueSwich.Play();
-            Debug.Log("swich");
             
         }
         if (Input.GetAxisRaw("Swich") != 0 && canSwich &&  statManager.currentChain == ELC_PlayerStatManager.Chain.Orange && orangeSwich.isPlaying == false)
@@ -64,14 +63,13 @@ public class GFC_Footsteps : MonoBehaviour
             canSwich = false;
             orangeSwich.pitch = Random.Range(0.9f, 1.1f);
             orangeSwich.Play();
-            Debug.Log("swich");
         }
         if (Input.GetAxisRaw("Swich") != 0 && canSwich && statManager.currentChain == ELC_PlayerStatManager.Chain.Red && redSwich.isPlaying == false)
         {
             canSwich = false;
             redSwich.pitch = Random.Range(0.9f, 1.1f);
             redSwich.Play();
-            Debug.Log("swich");
+
         }
         if (Input.GetAxisRaw("Sponk") != 0 && statManager.currentChain == ELC_PlayerStatManager.Chain.Blue && blueSponk.isPlaying == false && Time.time > nextSponkAttackTime)
         {

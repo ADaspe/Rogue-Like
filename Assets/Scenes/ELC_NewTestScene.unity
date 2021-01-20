@@ -13093,6 +13093,31 @@ PrefabInstance:
       propertyPath: field of view
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 3936412103672669196, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3936412103672669196, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298462100114485175, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298462100114485175, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4298462100114485175, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 4534504585940605695, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_Enabled
