@@ -109,6 +109,10 @@ public class ELC_Enemy : MonoBehaviour
 
     void Update()
     {
+        if(playerTransform == null)
+        {
+            playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        }
         if(!isDead) VerifyIfIsAtDistance();
         
         if(isSpawning) // pour le shader de spawn
