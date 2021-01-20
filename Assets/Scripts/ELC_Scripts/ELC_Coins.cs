@@ -6,6 +6,7 @@ public class ELC_Coins : MonoBehaviour
 {
     public ELC_Detector detectorScript;
     GameObject player;
+    public GameObject Indicator;
     public float attractDistance;
     private Vector3 direction;
     public float speed;
@@ -51,6 +52,7 @@ public class ELC_Coins : MonoBehaviour
         if (!isFalling && detectorScript.playerIsInside && isDying == false)
         {
             isDying = true;
+            Instantiate(Indicator, player.transform.position + new Vector3(0.3f, 0.5f), Quaternion.identity, player.transform);
             FindObjectOfType<ELC_ObjectsInventory>().AddMoneyToCrates(value);
             StartCoroutine(Audio());            
         }

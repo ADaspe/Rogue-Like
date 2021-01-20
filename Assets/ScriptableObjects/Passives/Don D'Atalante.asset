@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Don D'Atalante
   m_EditorClassIdentifier: 
   PassiveName: Don D'Atalante
-  PassiveDescription: "Plus t'es en danger, plus tu peux d\xE9guerpir vite !"
+  PassiveDescription: "Don d\u2019Atalante : Si t\u2019es en mauvaise posture, cet
+    appareil t\u2019aide \xE0 fuir bien plus vite. "
   PassivePrice: 2400
   isUnlock: 1
   HUDSprite: {fileID: 3575065135639279086, guid: d2d062ff307f81d4e836ccc9ea347700,
