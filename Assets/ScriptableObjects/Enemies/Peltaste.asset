@@ -25,7 +25,7 @@ MonoBehaviour:
   noStunTime: 0
   FriendlyFire: 0
   DistanceAttack: 1
-  Projectile: {fileID: 5799528179822313380, guid: 8434fb21e7d94a54fb47d57f6e3b81ff,
+  Projectile: {fileID: 7340225479395758184, guid: 54383d4401286d240b1f8d7a1d5c26c8,
     type: 3}
   DistanceAttackArea: 6
   DistanceCooldown: 1
@@ -54,8 +54,8 @@ MonoBehaviour:
   SpawnCooldown: 0
   NumberOfEntitiesToSpawn: 0
   EntitiesToSpawn: {fileID: 0}
-  MoneyEarnWhenHit: 5
-  MoneyEarnWhenDead: 25
+  MoneyEarnWhenHit: 20
+  MoneyEarnWhenDead: 100
   ambrosiaEarnedWhenDead: 20
   sprite: {fileID: 0}
   Animator: {fileID: 0}

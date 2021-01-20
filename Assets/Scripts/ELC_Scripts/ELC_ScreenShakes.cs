@@ -11,16 +11,21 @@ public class ELC_ScreenShakes : MonoBehaviour
 
     private bool isScreenShaking;
 
+    private float timeToReplaceCam;
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.B))
         {
             StartCoroutine(ScreenShakes(0.1f, 0.02f, 0.2f));
         }
+        if (isScreenShaking) timeToReplaceCam = Time.time + 4;
+        if(timeToReplaceCam < Time.time && isScreenShaking == false) CamOffset.m_Offset.Set(0, 0, 0);
     }
 
     public IEnumerator ScreenShakes(float intensity, float frequency, float duration)
     {
+        
         isScreenShaking = false;
         CamOffset = CinemachineCam.GetComponent<CinemachineCameraOffset>();
         originOffset = CamOffset.m_Offset;
@@ -32,7 +37,7 @@ public class ELC_ScreenShakes : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         isScreenShaking = false;
-        
+
     }
 
     IEnumerator Shakes(float intensity, float frequencyInSeconds)
