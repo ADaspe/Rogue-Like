@@ -38,14 +38,14 @@ public class EMD_GameOver : MonoBehaviour
         PlayerStatManagerScript = FindObjectOfType<ELC_PlayerStatManager>();
         AchievementManagerScript = FindObjectOfType<AXD_AchievementManager>();
         ObjectinventoryScript = FindObjectOfType<ELC_ObjectsInventory>();
-        /*GameOverGO.SetActive(false);
+        GameOverGO.SetActive(false);
         MonsterWhoKilledGO.SetActive(false);
         RunTimeGO.SetActive(false);
         PlusGrosComboGO.SetActive(false);
         ThunesGO.SetActive(false);
         PassifUsedGO.SetActive(false);
         AchGO.SetActive(false);
-        GOCanvas.SetActive(false);*/
+        GOCanvas.SetActive(false);
     }
 
     private void OnEnable()
