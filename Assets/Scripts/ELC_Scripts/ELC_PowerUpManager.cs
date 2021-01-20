@@ -12,6 +12,7 @@ public class ELC_PowerUpManager : MonoBehaviour
     public bool FauxDeChronos;
     public bool StopPUFlow;
     public float TimeToRestartPUFlow;
+    public AudioSource powerUpSound;
 
     [SerializeField]
     private List<float> durations = new List<float>();
@@ -81,6 +82,7 @@ public class ELC_PowerUpManager : MonoBehaviour
         PUEmplacementsUI[PowerUps.Count].SetActive(false);
     }
 
+    
     public void AddPowerUp(GameObject PUObject)
     {
         GameObject GO;
