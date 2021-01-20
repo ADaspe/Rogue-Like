@@ -4,40 +4,253 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -2172690110833000354
-    second: all powerups_0
+    second: FORCE2
   - first:
       213: 2357910575680116264
-    second: all powerups_1
+    second: SPEED3
   - first:
       213: 5532252130563662704
-    second: all powerups_2
+    second: COIN2
   - first:
       213: 1271585140863983061
-    second: all powerups_3
+    second: SHIELD2
   - first:
       213: 8333857153671470244
-    second: all powerups_4
+    second: FORCE3
   - first:
       213: 9027823192914862096
-    second: all powerups_5
+    second: SPEED2
   - first:
       213: 9173738214557972229
-    second: all powerups_6
+    second: COIN3
   - first:
       213: 4149702056259539432
-    second: all powerups_7
+    second: SHIELD3
   - first:
       213: -8377407185677923418
-    second: all powerups_8
+    second: FORCE1
   - first:
       213: -8469312287586344134
-    second: all powerups_9
+    second: SPEED1
   - first:
       213: 5362418608464252480
-    second: all powerups_10
+    second: COIN1
   - first:
       213: 5710704479453119184
-    second: all powerups_11
+    second: SHIELD1
+  - first:
+      213: -3302824121088910320
+    second: FORCE2
+  - first:
+      213: 1057937183755160998
+    second: SPEED3
+  - first:
+      213: -7471305818223964972
+    second: COIN2
+  - first:
+      213: -7987443862859121572
+    second: SHIELD2
+  - first:
+      213: -5408297427671130358
+    second: FORCE3
+  - first:
+      213: 969086036342371614
+    second: SPEED2
+  - first:
+      213: 6161900753214640934
+    second: COIN3
+  - first:
+      213: -6169243177564201424
+    second: SHIELD3
+  - first:
+      213: 1236832794191277230
+    second: FORCE1
+  - first:
+      213: 8454756505383012176
+    second: SPEED1
+  - first:
+      213: -1066929495328602249
+    second: COIN1
+  - first:
+      213: 6937511230976348657
+    second: SHIELD1
+  - first:
+      213: -5525775672828726531
+    second: all powerups_12
+  - first:
+      213: 6224228978840918721
+    second: all powerups_13
+  - first:
+      213: 4431086796098674862
+    second: all powerups_14
+  - first:
+      213: -5281567797735916666
+    second: all powerups_15
+  - first:
+      213: -1350358694694847508
+    second: all powerups_16
+  - first:
+      213: -2901071135338736754
+    second: all powerups_17
+  - first:
+      213: -4926823412528272549
+    second: all powerups_18
+  - first:
+      213: 3604229225767523704
+    second: all powerups_19
+  - first:
+      213: 8488089475737100208
+    second: all powerups_20
+  - first:
+      213: 6065555711751360831
+    second: all powerups_21
+  - first:
+      213: 2405770705298294831
+    second: all powerups_22
+  - first:
+      213: -3535051725520320916
+    second: all powerups_23
+  - first:
+      213: -6344987679319234755
+    second: all powerups_24
+  - first:
+      213: -4966532427318086170
+    second: all powerups_25
+  - first:
+      213: -2281437453588729340
+    second: all powerups_26
+  - first:
+      213: 1694993674545931058
+    second: all powerups_27
+  - first:
+      213: 8825646494421395327
+    second: all powerups_28
+  - first:
+      213: 1616224867950077019
+    second: all powerups_29
+  - first:
+      213: -665920871795298237
+    second: all powerups_30
+  - first:
+      213: 4220354368348379902
+    second: all powerups_31
+  - first:
+      213: 8910903222022073937
+    second: all powerups_32
+  - first:
+      213: 7843663920189088801
+    second: all powerups_33
+  - first:
+      213: 6412189349205030526
+    second: all powerups_34
+  - first:
+      213: -8185936500283242817
+    second: all powerups_35
+  - first:
+      213: 8556208867956380899
+    second: all powerups_36
+  - first:
+      213: 4526690014549976258
+    second: all powerups_37
+  - first:
+      213: -2470872095637112806
+    second: all powerups_38
+  - first:
+      213: 564344941050115423
+    second: all powerups_39
+  - first:
+      213: 865788154199263814
+    second: all powerups_40
+  - first:
+      213: -5008934556505561299
+    second: all powerups_41
+  - first:
+      213: 544438453017162818
+    second: all powerups_42
+  - first:
+      213: 6392495425996196997
+    second: all powerups_43
+  - first:
+      213: -4250913700718969993
+    second: all powerups_44
+  - first:
+      213: -3998642613464043228
+    second: all powerups_45
+  - first:
+      213: -1132479750641369973
+    second: all powerups_46
+  - first:
+      213: -2912338374108844257
+    second: all powerups_47
+  - first:
+      213: -8153376120798539129
+    second: all powerups_48
+  - first:
+      213: -2820978759720214704
+    second: all powerups_49
+  - first:
+      213: -530534601127227351
+    second: all powerups_50
+  - first:
+      213: 687807192808130729
+    second: all powerups_51
+  - first:
+      213: 6166649109953967925
+    second: all powerups_52
+  - first:
+      213: 508734543963606314
+    second: all powerups_53
+  - first:
+      213: -5723762678917977026
+    second: all powerups_54
+  - first:
+      213: -3189128571067176769
+    second: all powerups_55
+  - first:
+      213: 298699263007781115
+    second: all powerups_56
+  - first:
+      213: -7688353213873808933
+    second: all powerups_57
+  - first:
+      213: 728254000212323964
+    second: all powerups_58
+  - first:
+      213: 1406457788878161807
+    second: all powerups_59
+  - first:
+      213: 2650182371528045324
+    second: all powerups_60
+  - first:
+      213: 888533298858964478
+    second: all powerups_61
+  - first:
+      213: 1688076016612831872
+    second: all powerups_62
+  - first:
+      213: -5491659046904026558
+    second: all powerups_63
+  - first:
+      213: 5727964145149301640
+    second: all powerups_64
+  - first:
+      213: -2106491743589733120
+    second: all powerups_65
+  - first:
+      213: 8079377273376586932
+    second: all powerups_66
+  - first:
+      213: 5226542105108484928
+    second: all powerups_67
+  - first:
+      213: 657499350329921046
+    second: all powerups_68
+  - first:
+      213: 493341816776794193
+    second: all powerups_69
+  - first:
+      213: 8494682101113396056
+    second: all powerups_70
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -159,253 +372,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: all powerups_0
+      name: FORCE2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 51.333336
-        width: 23
-        height: 25.666666
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2
+        y: 29
+        width: 19
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e508bc80bdd09d1e0800000000000000
-      internalID: -2172690110833000354
+      spriteID: 01c57e206f20a22d0800000000000000
+      internalID: -3302824121088910320
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_1
+      name: SPEED3
       rect:
         serializedVersion: 2
-        x: 23
-        y: 51.333336
-        width: 23
-        height: 25.666666
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 25
+        y: 0
+        width: 19
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 826dc830d2bf8b020800000000000000
-      internalID: 2357910575680116264
+      spriteID: 6ad4760734c8eae00800000000000000
+      internalID: 1057937183755160998
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_2
+      name: COIN2
       rect:
         serializedVersion: 2
-        x: 46
-        y: 51.333336
-        width: 23
-        height: 25.666666
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 48
+        y: 29
+        width: 19
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 073252a600286cc40800000000000000
-      internalID: 5532252130563662704
+      spriteID: 4dc837861f6905890800000000000000
+      internalID: -7471305818223964972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_3
+      name: SHIELD2
       rect:
         serializedVersion: 2
-        x: 69
-        y: 51.333336
-        width: 23
-        height: 25.666666
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 71
+        y: 29
+        width: 19
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5dddcdec2f395a110800000000000000
-      internalID: 1271585140863983061
+      spriteID: c5c78e24026e62190800000000000000
+      internalID: -7987443862859121572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_4
+      name: FORCE3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 26.333334
-        width: 23
-        height: 25.666666
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2
+        y: 0
+        width: 19
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ac9f653deec7a370800000000000000
-      internalID: 8333857153671470244
+      spriteID: a0fd008d42ed1f4b0800000000000000
+      internalID: -5408297427671130358
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_5
+      name: SPEED2
       rect:
         serializedVersion: 2
-        x: 23
-        y: 26.333334
-        width: 23
-        height: 25.666666
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 25
+        y: 29
+        width: 19
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01029bccc55494d70800000000000000
-      internalID: 9027823192914862096
+      spriteID: e157af89d92e27d00800000000000000
+      internalID: 969086036342371614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_6
+      name: COIN3
       rect:
         serializedVersion: 2
-        x: 46
-        y: 26.333334
-        width: 23
-        height: 25.666666
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 48
+        y: 0
+        width: 19
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50777253d4aaf4f70800000000000000
-      internalID: 9173738214557972229
+      spriteID: 62312908618738550800000000000000
+      internalID: 6161900753214640934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_7
+      name: SHIELD3
       rect:
         serializedVersion: 2
-        x: 69
-        y: 26.333334
-        width: 23
-        height: 25.666666
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 71
+        y: 0
+        width: 19
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e1de0bb804b69930800000000000000
-      internalID: 4149702056259539432
+      spriteID: 03e984c1402726aa0800000000000000
+      internalID: -6169243177564201424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_8
+      name: FORCE1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1.333334
-        width: 23
-        height: 25.666666
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 2
+        y: 53
+        width: 19
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6abccdecc887dbb80800000000000000
-      internalID: -8377407185677923418
+      spriteID: eac23509fdc1a2110800000000000000
+      internalID: 1236832794191277230
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_9
+      name: SPEED1
       rect:
         serializedVersion: 2
-        x: 23
-        y: 1.333334
-        width: 23
-        height: 25.666666
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 25
+        y: 53
+        width: 19
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a33a096c855f67a80800000000000000
-      internalID: -8469312287586344134
+      spriteID: 05707c51f34555570800000000000000
+      internalID: 8454756505383012176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_10
+      name: COIN1
       rect:
         serializedVersion: 2
-        x: 46
-        y: 1.333334
-        width: 23
-        height: 25.666666
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 48
+        y: 53
+        width: 19
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04ec47620532b6a40800000000000000
-      internalID: 5362418608464252480
+      spriteID: 7774d8ed6418131f0800000000000000
+      internalID: -1066929495328602249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_11
+      name: SHIELD1
       rect:
         serializedVersion: 2
-        x: 69
-        y: 1.333334
-        width: 23
-        height: 25.666666
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 71
+        y: 53
+        width: 19
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0d2090ba77f704f40800000000000000
-      internalID: 5710704479453119184
+      spriteID: 1f1d0a345bdf64060800000000000000
+      internalID: 6937511230976348657
       vertices: []
       indices: 
       edges: []
