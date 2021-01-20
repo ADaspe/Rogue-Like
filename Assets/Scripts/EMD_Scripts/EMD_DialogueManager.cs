@@ -22,6 +22,8 @@ public class EMD_DialogueManager : MonoBehaviour
     public GameObject ValidateButton;
     public GameObject AchievementCanvas;
     public GameObject PNJInfoButton;
+    public GameObject Text;
+    public GameObject Image;
     public List<EMD_NPCIsTrigger> NPCsList;
     public string[] sentences = new string[3];
     public string[] Achsentences = new string[3];
@@ -202,6 +204,8 @@ public class EMD_DialogueManager : MonoBehaviour
 
     public IEnumerator StartDialogue()
     {
+        Text.SetActive(true);
+        Image.SetActive(true);
         PNJInfoButton.SetActive(false);
         AchievementCanvas.SetActive(false);
         PassiveCanvas.SetActive(false);
