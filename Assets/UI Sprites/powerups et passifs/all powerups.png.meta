@@ -4,76 +4,76 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -2172690110833000354
-    second: all powerups_0
+    second: FORCE2
   - first:
       213: 2357910575680116264
-    second: all powerups_1
+    second: SPEED3
   - first:
       213: 5532252130563662704
-    second: all powerups_2
+    second: COIN2
   - first:
       213: 1271585140863983061
-    second: all powerups_3
+    second: SHIELD2
   - first:
       213: 8333857153671470244
-    second: all powerups_4
+    second: FORCE3
   - first:
       213: 9027823192914862096
-    second: all powerups_5
+    second: SPEED2
   - first:
       213: 9173738214557972229
-    second: all powerups_6
+    second: COIN3
   - first:
       213: 4149702056259539432
-    second: all powerups_7
+    second: SHIELD3
   - first:
       213: -8377407185677923418
-    second: all powerups_8
+    second: FORCE1
   - first:
       213: -8469312287586344134
-    second: all powerups_9
+    second: SPEED1
   - first:
       213: 5362418608464252480
-    second: all powerups_10
+    second: COIN1
   - first:
       213: 5710704479453119184
-    second: all powerups_11
+    second: SHIELD1
   - first:
       213: -3302824121088910320
-    second: all powerups_0
+    second: FORCE2
   - first:
       213: 1057937183755160998
-    second: all powerups_1
+    second: SPEED3
   - first:
       213: -7471305818223964972
-    second: all powerups_2
+    second: COIN2
   - first:
       213: -7987443862859121572
-    second: all powerups_3
+    second: SHIELD2
   - first:
       213: -5408297427671130358
-    second: all powerups_4
+    second: FORCE3
   - first:
       213: 969086036342371614
-    second: all powerups_5
+    second: SPEED2
   - first:
       213: 6161900753214640934
-    second: all powerups_6
+    second: COIN3
   - first:
       213: -6169243177564201424
-    second: all powerups_7
+    second: SHIELD3
   - first:
       213: 1236832794191277230
-    second: all powerups_8
+    second: FORCE1
   - first:
       213: 8454756505383012176
-    second: all powerups_9
+    second: SPEED1
   - first:
       213: -1066929495328602249
-    second: all powerups_10
+    second: COIN1
   - first:
       213: 6937511230976348657
-    second: all powerups_11
+    second: SHIELD1
   - first:
       213: -5525775672828726531
     second: all powerups_12
@@ -372,7 +372,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: all powerups_0
+      name: FORCE2
       rect:
         serializedVersion: 2
         x: 2
@@ -393,7 +393,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_1
+      name: SPEED3
       rect:
         serializedVersion: 2
         x: 25
@@ -414,7 +414,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_2
+      name: COIN2
       rect:
         serializedVersion: 2
         x: 48
@@ -435,7 +435,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_3
+      name: SHIELD2
       rect:
         serializedVersion: 2
         x: 71
@@ -456,7 +456,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_4
+      name: FORCE3
       rect:
         serializedVersion: 2
         x: 2
@@ -477,7 +477,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_5
+      name: SPEED2
       rect:
         serializedVersion: 2
         x: 25
@@ -498,7 +498,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_6
+      name: COIN3
       rect:
         serializedVersion: 2
         x: 48
@@ -519,7 +519,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_7
+      name: SHIELD3
       rect:
         serializedVersion: 2
         x: 71
@@ -540,7 +540,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_8
+      name: FORCE1
       rect:
         serializedVersion: 2
         x: 2
@@ -561,7 +561,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_9
+      name: SPEED1
       rect:
         serializedVersion: 2
         x: 25
@@ -582,7 +582,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_10
+      name: COIN1
       rect:
         serializedVersion: 2
         x: 48
@@ -603,7 +603,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: all powerups_11
+      name: SHIELD1
       rect:
         serializedVersion: 2
         x: 71
@@ -619,27 +619,6 @@ TextureImporter:
       bones: []
       spriteID: 1f1d0a345bdf64060800000000000000
       internalID: 6937511230976348657
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: all powerups_12
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 35
-        width: 15
-        height: 2
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df27c886d408053b0800000000000000
-      internalID: -5525775672828726531
       vertices: []
       indices: 
       edges: []
