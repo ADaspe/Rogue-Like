@@ -12,11 +12,13 @@ public class AXD_UiGlitch : MonoBehaviour
     public bool canGlitch;
     public bool canStunUI;
     public bool canAddStockUi;
+    public bool canDamageGlitch;
     private void Start()
     {
         canGlitch = true;
         canStunUI = true;
         canAddStockUi = true;
+        canDamageGlitch = true;
         img = GetComponent<Image>();
     }
     public void Glitch(float time)
@@ -40,6 +42,14 @@ public class AXD_UiGlitch : MonoBehaviour
         if(canAddStockUi && anim != null)
         {
             StartCoroutine(AddStockUiRoutine(time));
+        }
+    }
+
+    public void DamageGlitch(float time)
+    {
+        if (canDamageGlitch && anim != null)
+        {
+            StartCoroutine(DamageGlitchRoutine(time));
         }
     }
 
@@ -69,5 +79,14 @@ public class AXD_UiGlitch : MonoBehaviour
         yield return new WaitForSeconds(time);
         anim.SetBool("AddStock", false);
         canAddStockUi = true;
+    }
+
+    IEnumerator DamageGlitchRoutine(float time)
+    {
+        canDamageGlitch = false;
+        anim.SetBool("Damage", true);
+        yield return new WaitForSeconds(time);
+        anim.SetBool("Damage", false);
+        canDamageGlitch = true;
     }
 }

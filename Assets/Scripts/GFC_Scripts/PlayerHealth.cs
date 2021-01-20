@@ -18,9 +18,11 @@ public class PlayerHealth : MonoBehaviour
     public AXD_UiGlitch[] uiToGlitch;
     public AXD_UiGlitch uiToStun;
     public AXD_UiGlitch uiStock;
+    public AXD_UiGlitch uiDamageGlitch;
     public float timeToGlitchUiOnHit;
     public float timeToStunUi;
     public float timeUiStock;
+    public float timeDamageGlitch;
     public static ELC_EnemySO lastHitEnnemy;
     public bool sangGorgonne;
     ELC_Eclair eclairScript;
@@ -78,6 +80,7 @@ public class PlayerHealth : MonoBehaviour
             lastHitEnnemy = enemyLastHit;
             GlitchUI();
             StunUI();
+
             StartCoroutine(playerMovesScript.ApplyShader(playerMovesScript.damageMatTime, playerMovesScript.damageMat));
             StartCoroutine(screenShakeScript.ScreenShakes(playerStats.GetHitShakeIntensity, playerStats.GetHitShakeFrequency, playerStats.GetHitShakeDuration));
             playerStats.currentHealth = healthSlider.value;
@@ -151,5 +154,10 @@ public class PlayerHealth : MonoBehaviour
     public void StunUI()
     {
         uiToStun.StunUI(timeToStunUi);
+    }
+
+    public void DamageGlitch()
+    {
+        uiDamageGlitch.DamageGlitch(timeDamageGlitch);
     }
 }

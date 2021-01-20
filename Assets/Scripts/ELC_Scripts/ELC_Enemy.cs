@@ -630,7 +630,6 @@ public class ELC_Enemy : MonoBehaviour
             {
                 StartCoroutine(tmpHydra.Death());
             }
-            Debug.Log("Je suis " + enemyStats.Name + " et je suis mort en " + hitNumberToKillMe + " coups.");
         }
         else StartCoroutine(ApplyShader(0.05f, getHitMaterial));
     }
