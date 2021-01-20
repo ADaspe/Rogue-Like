@@ -15,12 +15,16 @@ public class EMD_DialogueManager : MonoBehaviour
     public bool IsWriting;
     public GameObject PassiveCanvas;
     public GameObject DialogueCanvas;
+    public GameObject PNJInfoCanvas;
     public GameObject ContinueButton;
     public GameObject QuitButton;
     public GameObject PassiveButton;
     public GameObject AchievementsButton;
     public GameObject ValidateButton;
     public GameObject AchievementCanvas;
+    public GameObject PNJInfoButton;
+    public GameObject Text;
+    public GameObject Image;
     public List<EMD_NPCIsTrigger> NPCsList;
     public string[] sentences = new string[3];
     public string[] Achsentences = new string[3];
@@ -201,6 +205,10 @@ public class EMD_DialogueManager : MonoBehaviour
 
     public IEnumerator StartDialogue()
     {
+        Text.SetActive(true);
+        Image.SetActive(true);
+        PNJInfoButton.SetActive(false);
+        PNJInfoCanvas.SetActive(false);
         AchievementCanvas.SetActive(false);
         PassiveCanvas.SetActive(false);
         AchievementsButton.SetActive(false);
@@ -221,6 +229,10 @@ public class EMD_DialogueManager : MonoBehaviour
         else if (PNJName == "AchievementsMerchant") 
         {
             AchievementsButton.SetActive(true);
+        }
+        else if (PNJName == "InformationPNJ")
+        {
+            PNJInfoButton.SetActive(true);
         }
         DialogueIsActive = true;
         StartCoroutine("Type");

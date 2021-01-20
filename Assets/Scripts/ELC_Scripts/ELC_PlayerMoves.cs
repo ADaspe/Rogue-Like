@@ -28,6 +28,7 @@ public class ELC_PlayerMoves : MonoBehaviour
     public float damageMatTime;
     private EMD_GameOver GameOverScript;
 
+    public bool isSpawning;
 
 
     [SerializeField]
@@ -104,6 +105,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         GameOverScript = FindObjectOfType<EMD_GameOver>();
         ResetChain();
+        StartCoroutine("Spawn");
     }
 
     private void FixedUpdate()
@@ -163,6 +165,17 @@ public class ELC_PlayerMoves : MonoBehaviour
             AnimationsManagement();
         }
         if (DonAtalante) playerStats.Speed += DonAtalanteSpeedAdd * ((playerStats.MaxHealth - playerStats.currentHealth) / playerStats.MaxHealth);
+    }
+
+    private IEnumerator Spawn()
+    {
+        isSpawning = true;
+        playerAnimator.SetBool("IsSpawning", true);
+        canMove = false;
+        yield return new WaitForSeconds(2.6f);
+        isSpawning = false;
+        playerAnimator.SetBool("IsSpawning", false);
+        canMove = true;
     }
 
     private void Walk()
