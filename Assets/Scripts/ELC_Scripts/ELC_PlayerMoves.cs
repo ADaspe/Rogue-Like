@@ -318,7 +318,7 @@ public class ELC_PlayerMoves : MonoBehaviour
             else if (isTouchingTop && Input.GetAxis("Vertical") > 0 && horizPositiveValue < verticalPositiveValue) lastDirection = Vector3.up;
             else if (isTouchingDown && Input.GetAxis("Horizontal") < 0 && horizPositiveValue > verticalPositiveValue) lastDirection = Vector3.down;
         }
-        lastDirection = playerMoves; //On enregistre ici la dernière direction du joueur
+        //lastDirection = playerMoves; //On enregistre ici la dernière direction du joueur
     }
 
     private void AnimationsManagement()

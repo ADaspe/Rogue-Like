@@ -22,6 +22,9 @@ public class ELC_ObjectsInventory : MonoBehaviour
 
     private GameObject player;
 
+    public Slider LeftMoneySlider;
+    public Slider RightMoneySlider;
+
     
     static public ELC_PassiveSO ActivePassif;
 
@@ -29,15 +32,32 @@ public class ELC_ObjectsInventory : MonoBehaviour
     {
         player = GameObject.Find("Player");
         if(LeftHandObject == null) AddObject(startingCrate);
+
     }
 
     private void Update()
     {
         if (Input.GetButtonDown("RightHandUse")) selectedHand = hands.RightHand;
         else if (Input.GetButtonDown("LeftHandUse")) selectedHand = hands.LeftHand;
+        ELC_CrateProperties leftObject = LeftHandObject.GetComponent<ELC_CrateProperties>();
+        
 
-        if (RightHandObject != null) totalSecuredMoney = RightHandObject.GetComponent<ELC_CrateProperties>().securedMoney + LeftHandObject.GetComponent<ELC_CrateProperties>().securedMoney;
-        else totalSecuredMoney = LeftHandObject.GetComponent<ELC_CrateProperties>().securedMoney;
+        if (RightHandObject != null)
+        {
+            ELC_CrateProperties rightObject = RightHandObject.GetComponent<ELC_CrateProperties>();
+
+            totalSecuredMoney = rightObject.securedMoney + leftObject.securedMoney;
+            RightMoneySlider.value = (float)rightObject.actualMoney / (float)rightObject.CratesSO.stockLimit;
+            LeftMoneySlider.value = (float)leftObject.actualMoney / (float)leftObject.CratesSO.stockLimit;
+        }
+        else if(LeftHandObject != null)
+        {
+            totalSecuredMoney = LeftHandObject.GetComponent<ELC_CrateProperties>().securedMoney;
+            LeftMoneySlider.value = (float)leftObject.actualMoney / (float)leftObject.CratesSO.stockLimit;
+            Debug.Log((float)leftObject.actualMoney / (float)leftObject.CratesSO.stockLimit);
+        }
+
+        
 
         //if (Input.GetButtonDown("RightHandUse") && RightHandObject != null && quantityObject1 > 0) //Lorsqu'on clique pour utiliser l'object de main droite
         //{
@@ -85,12 +105,14 @@ public class ELC_ObjectsInventory : MonoBehaviour
         if (selectedHand == hands.RightHand)
         {
             RightHandObject = InstantiateCrates(Object);
+            RightMoneySlider = RightHandHUD.GetComponentInChildren<Slider>();
             //quantityObject1 = quantity;
             UpdateDisplay();
         }
-        else if (selectedHand == hands.LeftHand)
+        else
         {
             LeftHandObject = InstantiateCrates(Object);
+            LeftMoneySlider = LeftHandHUD.GetComponentInChildren<Slider>();
             //quantityObject2 = quantity;
             UpdateDisplay();
         }
