@@ -73,7 +73,7 @@ public class ELC_Enemy : MonoBehaviour
     [SerializeField]
     private LayerMask obstaclesLayerMask;
 
-
+    private bool playerIsDead;
 
     [Header ("StayAtDistanceFromPlayer")]
     public float distanceToStay;
@@ -113,6 +113,7 @@ public class ELC_Enemy : MonoBehaviour
         {
             playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         }
+        if (playerTransform.gameObject.GetComponent<PlayerHealth>().isDead) playerIsDead = true;
         if(!isDead) VerifyIfIsAtDistance();
         
         if(isSpawning) // pour le shader de spawn
@@ -126,7 +127,7 @@ public class ELC_Enemy : MonoBehaviour
             spriteRenderer.material.SetFloat("_DissolveLevel", dissolveValue);
         }
 
-        if (!isStun && !isDead)
+        if (!isStun && !isDead && !playerIsDead)
         {
             EnemyAttackCheck();
 
