@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 242735336819087879}
   - component: {fileID: 242735336819087875}
   m_Layer: 0
-  m_Name: InfoPNJ
+  m_Name: AchievementPNJ
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,9 +130,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PNJName: AchievementsMerchant
   sentences:
-  - Bonjour jeune aventurier !
-  - "C'est ici que sont enregistr\xE9s tous tes hauts faits."
-  - Appuie sur le boutton "Exploits" pour voir... Ben, tes exploits.
+  - BIENVENUE. JE SUIS LE SUPERORDINATEUR P.T. DE DELPHES, INC.
+  - "ICI SONT ENREGISTR\xC9S LES EXPLOITS DE VOS PR\xC9D\xC9CESSEURS."
+  - "J'AI AUSSI CALCUL\xC9 LES EXPLOITS DE VOS SUCCESSEURS, MAIS JE N'AI PAS LE DROIT
+    DE VOUS EN FAIRE PART."
 --- !u!50 &242735336819087875
 Rigidbody2D:
   serializedVersion: 4

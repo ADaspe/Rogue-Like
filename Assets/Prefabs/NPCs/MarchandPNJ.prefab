@@ -132,9 +132,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PNJName: PassiveMerchant
   sentences:
-  - "Fais attention \xE0 toi mon ami !"
-  - "Le donjon peut \xEAtre tr\xE8s dangereux ces temps ci..."
-  - Viens t'equiper de pouvoirs.... particuliers.
+  - "Bienvenue \xE0 l'Agora !"
+  - "Les meilleures cyber-am\xE9liorations du quartier !"
+  - "Ici, c'est que de la qualit\xE9, alors tu paies sans broncher ou tu d\xE9gages
+    !"
 --- !u!50 &8060980057078641827
 Rigidbody2D:
   serializedVersion: 4

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PassiveName: Faux De Chronos
   PassiveDescription: "Faux de Chronos : Ce bijou redirige l'\xE9nergie vitale de
-    tes ennemis pour faire durer tes am\xE9liorations temporaires plus longtemps. "
+    tes ennemis pour faire durer tes am\xE9liorations temporaires plus longtemps.  "
   PassivePrice: 2150
   isUnlock: 1
   HUDSprite: {fileID: 3046305507954764050, guid: d2d062ff307f81d4e836ccc9ea347700,

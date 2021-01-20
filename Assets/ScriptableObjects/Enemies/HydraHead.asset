@@ -40,7 +40,7 @@ MonoBehaviour:
   AttackStun: 0
   AttackAnimationTime: 0.3
   DashOnPlayer: 1
-  DashTime: 0.2
+  DashTime: 0.4
   DistanceToRun: 5
   DashStrenght: 10
   DashStun: 0
