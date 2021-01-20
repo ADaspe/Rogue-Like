@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Egide
   m_EditorClassIdentifier: 
   PassiveName: Egide
-  PassiveDescription: "Frappe les balles \xE0 plasma pour les d\xE9truire ! Tu arriveras
-    peut \xEAtre \xE0 les renvoyer, qui sait ?"
+  PassiveDescription: "\xC9gide : La meilleure d\xE9fense, c\u2019est l\u2019attaque
+    ! Et avec \xE7a, tu peux frapper les tirs plasma pour les d\xE9truire, et m\xEAme
+    parfois les renvoyer ! "
   PassivePrice: 4500
-  isUnlock: 0
+  isUnlock: 1
   HUDSprite: {fileID: 4141919740282896512, guid: d2d062ff307f81d4e836ccc9ea347700,
     type: 3}
