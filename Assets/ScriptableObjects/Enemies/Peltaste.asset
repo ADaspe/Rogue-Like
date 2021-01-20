@@ -54,7 +54,7 @@ MonoBehaviour:
   SpawnCooldown: 0
   NumberOfEntitiesToSpawn: 0
   EntitiesToSpawn: {fileID: 0}
-  MoneyEarnWhenHit: 5
+  MoneyEarnWhenHit: 20
   MoneyEarnWhenDead: 100
   ambrosiaEarnedWhenDead: 20
   sprite: {fileID: 0}

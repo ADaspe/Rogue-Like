@@ -647,7 +647,7 @@ public class ELC_Enemy : MonoBehaviour
         enemyAnimator.SetBool("IsAttacking", false);
         StartCoroutine(ApplyShader(enemyStats.DeathTime, deathMaterial));
         yield return new WaitForSeconds(enemyStats.DeathTime - 0.7f);
-        if (Coins != null)
+        if (GetComponent<AXD_Hydra>() == null)
         {
             DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemyStats.MoneyEarnWhenDead);
         }
