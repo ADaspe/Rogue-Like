@@ -12,7 +12,7 @@ public class ELC_RandomObjectGenerator : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L)) SpawnEntity();
+        //if (Input.GetKeyDown(KeyCode.L)) SpawnEntity();
     }
 
     public void SpawnEntity()
