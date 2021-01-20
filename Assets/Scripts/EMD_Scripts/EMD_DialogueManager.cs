@@ -21,6 +21,7 @@ public class EMD_DialogueManager : MonoBehaviour
     public GameObject AchievementsButton;
     public GameObject ValidateButton;
     public GameObject AchievementCanvas;
+    public GameObject PNJInfoButton;
     public List<EMD_NPCIsTrigger> NPCsList;
     public string[] sentences = new string[3];
     public string[] Achsentences = new string[3];
@@ -201,6 +202,7 @@ public class EMD_DialogueManager : MonoBehaviour
 
     public IEnumerator StartDialogue()
     {
+        PNJInfoButton.SetActive(false);
         AchievementCanvas.SetActive(false);
         PassiveCanvas.SetActive(false);
         AchievementsButton.SetActive(false);
@@ -221,6 +223,10 @@ public class EMD_DialogueManager : MonoBehaviour
         else if (PNJName == "AchievementsMerchant") 
         {
             AchievementsButton.SetActive(true);
+        }
+        else if (PNJName == "InformationPNJ")
+        {
+            PNJInfoButton.SetActive(true);
         }
         DialogueIsActive = true;
         StartCoroutine("Type");
