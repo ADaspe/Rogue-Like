@@ -244,7 +244,6 @@ GameObject:
   - component: {fileID: 1478753435661380681}
   - component: {fileID: 8934949276138899172}
   - component: {fileID: 6115952892813048268}
-  - component: {fileID: 1310285015506107349}
   - component: {fileID: 5083334866861958287}
   - component: {fileID: 1154282071691469226}
   - component: {fileID: 207646746971977973}
@@ -400,7 +399,9 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   bouteille: {fileID: 0}
   uiToGlitch: []
+  uiToStun: {fileID: 0}
   timeToGlitchUiOnHit: 0.2
+  timeToStunUi: 0.5
   sangGorgonne: 0
 --- !u!114 &6115952892813048268
 MonoBehaviour:
@@ -416,19 +417,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneycount: {fileID: 0}
   currentMoney: 0
---- !u!114 &1310285015506107349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3282318346991483589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1689caae9902c024198df3883e794330, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  music: {fileID: 0}
 --- !u!95 &5083334866861958287
 Animator:
   serializedVersion: 3
@@ -662,7 +650,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d3dc0ecaa470ce34382649f37f44a227, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.59
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -758,7 +746,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ce8118de3f56eaa439c58ba9e291bbb0, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
+  m_Volume: 0.85
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -854,7 +842,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 235e984a46faa6a44ac8543125ed74f6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.748
+  m_Volume: 0.79
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -950,13 +938,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6bfa2693799623c42b17d30a8ead3733, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.888
+  m_Volume: 0.91
   m_Pitch: 2
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 68
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1046,13 +1034,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 46e5030d20de3bf42a756578559c0990, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.888
+  m_Volume: 0.91
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 72
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1142,13 +1130,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: abbdad689a5b33c4b856ae15ee979ad0, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.888
+  m_Volume: 0.91
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 82
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -1525,7 +1513,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 07d2831ebcdbcd6469e7a0c5a3d8b92e, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: -0
   Loop: 1

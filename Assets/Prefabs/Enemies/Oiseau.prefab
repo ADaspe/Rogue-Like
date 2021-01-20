@@ -111,6 +111,7 @@ MonoBehaviour:
   enemyAnimator: {fileID: 0}
   Coins: {fileID: 3438627847694550386, guid: df331dfca8d120d408a7b692cef7d637, type: 3}
   EnemyShadow: {fileID: 4869824334544120090}
+  hitNumberToKillMe: 0
   currentHealth: 0
   speed: 0
   isDead: 0
@@ -140,6 +141,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   distanceToStay: 0
+  marginForDistanceToStay: 0.02
 --- !u!61 &5299041525076958620
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -427,7 +429,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9c24585693c4ee84fb028b8620b9a5b6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.258
+  m_Volume: 0.64
   m_Pitch: 1
   Loop: 0
   Mute: 0

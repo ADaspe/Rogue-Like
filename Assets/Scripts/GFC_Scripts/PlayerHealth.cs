@@ -16,9 +16,12 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthSlider;
     public Bouteille bouteille;
     public AXD_UiGlitch[] uiToGlitch;
+    public AXD_UiGlitch uiToStun;
     public float timeToGlitchUiOnHit;
+    public float timeToStunUi;
     public static ELC_EnemySO lastHitEnnemy;
     public bool sangGorgonne;
+    ELC_Eclair eclairScript;
 
 
 
@@ -30,12 +33,23 @@ public class PlayerHealth : MonoBehaviour
         playerStats.currentStock = playerStats.maxStock;
         screenShakeScript = FindObjectOfType<ELC_ScreenShakes>();
         uiToGlitch = FindObjectsOfType<AXD_UiGlitch>();
+        eclairScript = FindObjectOfType<ELC_Eclair>();
     }
     private void Update()
     {
         if (playerStats.losingLife && playerStats.currentHealth > playerStats.MaxHealth * playerStats.LifeStopDecrease / 100)
         {
+            foreach (int palier in eclairScript.percentagesTriggerBlue)
+            {
+                if (playerStats.currentHealth > palier && playerStats.currentHealth - playerStats.LifeDecreaseSpeed * Time.deltaTime < palier) eclairScript.LaunchEclair("Blue");
+            }
+            foreach (int palier in eclairScript.percentagesTriggerRed)
+            {
+                if (playerStats.currentHealth > palier && playerStats.currentHealth - playerStats.LifeDecreaseSpeed * Time.deltaTime < palier) eclairScript.LaunchEclair("Red");
+            }
+
             playerStats.currentHealth -= playerStats.LifeDecreaseSpeed * Time.deltaTime;
+            
         }
         else if(playerStats.currentHealth <= playerStats.MaxHealth * playerStats.LifeStopDecrease / 100)
         {
@@ -50,9 +64,23 @@ public class PlayerHealth : MonoBehaviour
         
         if (!playerStats.invulnerability)
         {
+            foreach (int palier in eclairScript.percentagesTriggerBlue)
+            {
+                if (playerStats.currentHealth > palier && playerStats.currentHealth - damage / playerStats.DefenseMultiplicatorPU < palier) eclairScript.LaunchEclair("Blue");
+            }
+            foreach (int palier in eclairScript.percentagesTriggerRed)
+            {
+                if (playerStats.currentHealth > palier && playerStats.currentHealth - damage / playerStats.DefenseMultiplicatorPU < palier) eclairScript.LaunchEclair("Red");
+            }
+                
+
+
+
+
             lastHitEnnemy = enemyLastHit;
             Debug.Log("Get Hit Player");
             GlitchUI();
+            StunUI();
             StartCoroutine(playerMovesScript.ApplyShader(playerMovesScript.damageMatTime, playerMovesScript.damageMat));
             StartCoroutine(screenShakeScript.ScreenShakes(playerStats.GetHitShakeIntensity, playerStats.GetHitShakeFrequency, playerStats.GetHitShakeDuration));
             playerStats.currentHealth = healthSlider.value;
@@ -117,5 +145,10 @@ public class PlayerHealth : MonoBehaviour
         {
             uiGlitch.Glitch(timeToGlitchUiOnHit);
         }
+    }
+
+    public void StunUI()
+    {
+        uiToStun.StunUI(timeToStunUi);
     }
 }

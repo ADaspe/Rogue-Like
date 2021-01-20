@@ -133,7 +133,7 @@ MonoBehaviour:
   tryToGo: 4
   obstaclesLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   distanceToStay: 0
   marginForDistanceToStay: 0.02
 --- !u!95 &1542931170498387519
