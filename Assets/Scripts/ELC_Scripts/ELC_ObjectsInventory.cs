@@ -54,7 +54,7 @@ public class ELC_ObjectsInventory : MonoBehaviour
         {
             totalSecuredMoney = LeftHandObject.GetComponent<ELC_CrateProperties>().securedMoney;
             LeftMoneySlider.value = (float)leftObject.actualMoney / (float)leftObject.CratesSO.stockLimit;
-            Debug.Log((float)leftObject.actualMoney / (float)leftObject.CratesSO.stockLimit);
+
         }
 
         
