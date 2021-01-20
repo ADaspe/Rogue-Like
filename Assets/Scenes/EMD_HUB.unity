@@ -5278,6 +5278,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 1640626380354087120, guid: eeec6de608430f14295388896e77d9e0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2178316275530278763, guid: eeec6de608430f14295388896e77d9e0,
         type: 3}
       propertyPath: m_Radius
