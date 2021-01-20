@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Minotaure
   m_EditorClassIdentifier: 
   Name: Minotaure
-  MaxHealth: 5000
+  MaxHealth: 3000
   DeathTime: 2
   SpawnTime: 1
   MovementSpeed: 1.5

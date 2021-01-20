@@ -395,6 +395,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue 90d
       objectReference: {fileID: 0}
+    - target: {fileID: 462749464143164008, guid: a44d63e76a2d6034c8d5c93f33235f74,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6228582520214656706, guid: a44d63e76a2d6034c8d5c93f33235f74,
         type: 3}
       propertyPath: m_Intensity
@@ -758,6 +763,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780946386146991583, guid: a75d429217e2f574c88dcd23b455145b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a75d429217e2f574c88dcd23b455145b, type: 3}
@@ -7395,6 +7405,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigLights
       objectReference: {fileID: 0}
+    - target: {fileID: 610340532438273598, guid: 6f9f1f178cf0bf240b9a6b1582e27f26,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3966509355696845142, guid: 6f9f1f178cf0bf240b9a6b1582e27f26,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9383,6 +9398,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+    - target: {fileID: 5347433856566283227, guid: 5d84515c0c1cf1745b7e8c0710a31d31,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5347433856566283227, guid: 5d84515c0c1cf1745b7e8c0710a31d31,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5347433856566283227, guid: 5d84515c0c1cf1745b7e8c0710a31d31,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6736663044175814382, guid: 5d84515c0c1cf1745b7e8c0710a31d31,
         type: 3}
       propertyPath: m_Tiles.Array.size
@@ -20099,6 +20129,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Tiles.Array.data[391].second.m_AllTileFlags
       value: 1073741826
+      objectReference: {fileID: 0}
+    - target: {fileID: 8981619542057996162, guid: 5d84515c0c1cf1745b7e8c0710a31d31,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d84515c0c1cf1745b7e8c0710a31d31, type: 3}

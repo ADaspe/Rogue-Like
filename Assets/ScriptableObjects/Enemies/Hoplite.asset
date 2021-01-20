@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hoplite
   m_EditorClassIdentifier: 
   Name: Hoplite
-  MaxHealth: 2000
+  MaxHealth: 1500
   DeathTime: 2
   SpawnTime: 1
   MovementSpeed: 3

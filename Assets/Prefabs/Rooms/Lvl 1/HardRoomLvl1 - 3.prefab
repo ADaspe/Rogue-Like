@@ -134,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4173194689585815478}
   m_Layer: 0
-  m_Name: EasyRoomLvl1 - 6
+  m_Name: HardRoomLvl1 - 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -649,7 +649,7 @@ PrefabInstance:
     - target: {fileID: 3880575876079172518, guid: 1f407d72f36f2534b84885b64a5a91db,
         type: 3}
       propertyPath: objectsList.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3880575876079172518, guid: 1f407d72f36f2534b84885b64a5a91db,
         type: 3}
@@ -677,6 +677,12 @@ PrefabInstance:
       propertyPath: spawnChance.Array.data[0]
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3880575876079172518, guid: 1f407d72f36f2534b84885b64a5a91db,
+        type: 3}
+      propertyPath: objectsList.Array.data[3]
+      value: 
+      objectReference: {fileID: 1542931170498387517, guid: 4a803f5fac93e99449631d6e2cef9781,
+        type: 3}
     - target: {fileID: 3880575876079172519, guid: 1f407d72f36f2534b84885b64a5a91db,
         type: 3}
       propertyPath: m_Name
@@ -4599,7 +4605,7 @@ PrefabInstance:
     - target: {fileID: 3880575876079172518, guid: 1f407d72f36f2534b84885b64a5a91db,
         type: 3}
       propertyPath: objectsList.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3880575876079172518, guid: 1f407d72f36f2534b84885b64a5a91db,
         type: 3}
@@ -4627,6 +4633,12 @@ PrefabInstance:
       propertyPath: spawnChance.Array.data[0]
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3880575876079172518, guid: 1f407d72f36f2534b84885b64a5a91db,
+        type: 3}
+      propertyPath: objectsList.Array.data[3]
+      value: 
+      objectReference: {fileID: 1542931170498387517, guid: 4a803f5fac93e99449631d6e2cef9781,
+        type: 3}
     - target: {fileID: 3880575876079172519, guid: 1f407d72f36f2534b84885b64a5a91db,
         type: 3}
       propertyPath: m_Name
@@ -20142,12 +20154,12 @@ PrefabInstance:
     - target: {fileID: 3880575876079172518, guid: 1f407d72f36f2534b84885b64a5a91db,
         type: 3}
       propertyPath: objectsList.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3880575876079172518, guid: 1f407d72f36f2534b84885b64a5a91db,
         type: 3}
       propertyPath: spawnChance.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3880575876079172518, guid: 1f407d72f36f2534b84885b64a5a91db,
         type: 3}
@@ -20170,6 +20182,12 @@ PrefabInstance:
       propertyPath: spawnChance.Array.data[0]
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3880575876079172518, guid: 1f407d72f36f2534b84885b64a5a91db,
+        type: 3}
+      propertyPath: objectsList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1542931170498387517, guid: 4a803f5fac93e99449631d6e2cef9781,
+        type: 3}
     - target: {fileID: 3880575876079172519, guid: 1f407d72f36f2534b84885b64a5a91db,
         type: 3}
       propertyPath: m_Name
