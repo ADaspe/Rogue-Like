@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EMD_HUB.unity
     guid: 9ed4e653997d35b4492382f8471f00e4
+  - enabled: 1
+    path: Assets/Scenes/EMD_SplashScreen.unity
+    guid: a329734e315faca43bab36cfbf95ee1c
   m_configObjects: {}
