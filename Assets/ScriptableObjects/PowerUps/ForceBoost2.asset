@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   level: 2
-  multiplicator: 3
+  multiplicator: 1.6
   duration: 15
   HUDSprite: {fileID: 8333857153671470244, guid: dd25c52f422edcb4b89596e7b684b173,
     type: 3}

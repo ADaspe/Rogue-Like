@@ -6,6 +6,7 @@ using TMPro;
 
 public class EMD_GameOver : MonoBehaviour
 {
+    public GameObject GOCanvas;
     public GameObject GameOverGO;
     public GameObject MonsterWhoKilledGO;
     public GameObject RunTimeGO;
@@ -19,7 +20,7 @@ public class EMD_GameOver : MonoBehaviour
     public TextMeshProUGUI PlusGrosCombo;
     public TextMeshProUGUI Thunes;
     public TextMeshProUGUI PassifUsed;
-    int length = 7;
+    int length = 8;
     public float DelayTime;
     private ELC_PlayerStatManager PlayerStatManagerScript;
     private PlayerHealth PlayerHealthScript;
@@ -37,50 +38,55 @@ public class EMD_GameOver : MonoBehaviour
         PlayerStatManagerScript = FindObjectOfType<ELC_PlayerStatManager>();
         AchievementManagerScript = FindObjectOfType<AXD_AchievementManager>();
         ObjectinventoryScript = FindObjectOfType<ELC_ObjectsInventory>();
-        GameOverGO.SetActive(false);
+        /*GameOverGO.SetActive(false);
         MonsterWhoKilledGO.SetActive(false);
         RunTimeGO.SetActive(false);
         PlusGrosComboGO.SetActive(false);
         ThunesGO.SetActive(false);
         PassifUsedGO.SetActive(false);
         AchGO.SetActive(false);
+        GOCanvas.SetActive(false);*/
     }
 
-    public void death()
+    private void OnEnable()
     {
         StartCoroutine("OneByOne");
     }
-
     IEnumerator OneByOne()
     {
         for (int i = 0; i < length; i++)
         {
             if (i == 0)
             {
-                GameOverGO.SetActive(true);
+                GOCanvas.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);
             }
             if (i == 1)
+            {
+                GameOverGO.SetActive(true);
+                yield return new WaitForSeconds(DelayTime);
+            }
+            if (i == 2)
             {
                 MonsterWhoKilled.text = "TUE PAR: " + PlayerHealth.lastHitEnnemy.Name;
                 MonsterWhoKilledGO.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);
             }
-            if (i == 2)
+            if (i == 3)
             {
                 TimerMin = (int)PlayerStatManagerScript.gameTimer / 60;
                 TimerSec = (int)PlayerStatManagerScript.gameTimer % 60;
-                RunTime.text = "TEMPS DE LA RUN:    " + TimerMin + "min " + TimerSec + "sec ";
+                RunTime.text = "TEMPS DE LA RUN:    " + TimerMin + " min  " + TimerSec + " sec  ";
                 RunTimeGO.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);
             }
-            if (i == 3)
+            if (i == 4)
             {
-                PlusGrosCombo.text = "LE PLUS GROS COMBO:    " + PlayerStatManagerScript.MaxCombo;
+                PlusGrosCombo.text = "LE PLUS GROS COMBO:    " + PlayerStatManagerScript.MaxRunCombo;
                 PlusGrosComboGO.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);
             }
-            if (i == 4)
+            if (i == 5)
             {
                 if (ObjectinventoryScript.RightHandObject != null)
                 {
@@ -95,13 +101,20 @@ public class EMD_GameOver : MonoBehaviour
                 ThunesGO.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);
             }
-            if (i == 5)
+            if (i == 6)
             {
-                PassifUsed.text = "PASSIF UTILISE : " + ELC_ObjectsInventory.ActivePassif;
+                if (ELC_ObjectsInventory.ActivePassif == null)
+                {
+                    PassifUsed.text = "PAS DE PASSIF UTILISE";
+                }
+                else if (ELC_ObjectsInventory.ActivePassif != null)
+                {
+                    PassifUsed.text = "PASSIF UTILISE : " + ELC_ObjectsInventory.ActivePassif.PassiveName;
+                }
                 PassifUsedGO.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);
             }
-            if (i == 6 && AchievementManagerScript.hasUnlockedAchievement == true)
+            if (i == 7 && AchievementManagerScript.hasUnlockedAchievement == true)
             {
                 AchGO.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);

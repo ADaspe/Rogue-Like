@@ -23,6 +23,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
     public GameObject startRoom;
     public GameObject endRoom;
     public List<GameObject> BossRoom;
+    public GameObject bossChecker;
     public List<GameObject> startingRoom;
 
     //public List<GameObject> roomsList;
@@ -116,10 +117,11 @@ public class ELC_RoomsGenerator : MonoBehaviour
         StartCoroutine("JunctionBtwSecondaryPoints");
 
         yield return new WaitWhile(() => isInACoroutine == true); //Tant que isInACoroutine = true, on met la fonction en suspens
+        placeBossRoom();
         StartCoroutine("DoorsCheck");
 
         yield return new WaitWhile(() => isInACoroutine == true);
-        placeBossRoom();
+        
         Instantiate(CoreElements, startRoom.transform.position - new Vector3(0, distanceBtwRoomsY), Quaternion.identity);
         Music.SetActive(true);
         Debug.Log("Finish !");
@@ -127,7 +129,8 @@ public class ELC_RoomsGenerator : MonoBehaviour
 
     private void placeBossRoom()
     {
-        GameObject bossChecker = Instantiate(roomChecker, endRoom.transform.position + new Vector3(0, distanceBtwRoomsY), Quaternion.identity);
+        bossChecker = Instantiate(roomChecker, endRoom.transform.position + new Vector3(0, distanceBtwRoomsY), Quaternion.identity);
+        bossChecker.GetComponent<ELC_RoomProperties>().bossRoom = true;
         SpawnRandomRoom(bossChecker, BossRoom, false, false, false, true, true);
         GameObject startChecker = Instantiate(roomChecker, startRoom.transform.position - new Vector3(0, distanceBtwRoomsY), Quaternion.identity);
         SpawnRandomRoom(startChecker, startingRoom, false, false, true, false, true);
@@ -327,6 +330,8 @@ public class ELC_RoomsGenerator : MonoBehaviour
                 checker.GetComponent<ELC_RoomProperties>().Loaded = true;
             }
         }
+        bossChecker.GetComponent<ELC_RoomProperties>().UpdateCorridors();
+        bossChecker.GetComponent<ELC_RoomProperties>().Loaded = true;
         isInACoroutine = false;
     }
 

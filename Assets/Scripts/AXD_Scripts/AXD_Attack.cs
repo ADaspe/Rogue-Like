@@ -13,7 +13,8 @@ public class AXD_Attack : MonoBehaviour
     public GameObject GameManager;
     public GameObject playerInventory;
     public GameObject hitVFX;
-
+    public List<int> allDamagesDealt;
+    public int degatsMoyen;
     public bool AppetitDeLycaonIsActive;
     public float AppetitDeLycaonHealPerEnemies;
     public float AppetitDeLycaonHealPerCollateral;
@@ -119,6 +120,10 @@ public class AXD_Attack : MonoBehaviour
                 {
                     GameManager.GetComponent<ELC_TimeScale>().ScaleTime(playerStats.SwichSlowMotionValue, playerStats.SwichSlowMotionDuration);
                     closestEnemy.GetHit(CalculateDamage(AttackType.Swich), closestEnemy.movesTowardPlayer, playerStats.SwichKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SwichStunTime);
+                    if (!closestEnemy.isInvulnerable)
+                    {
+                        playerStats.CurrentCombo++;
+                    }
                 }
                 else if (type.Equals(AttackType.Sponk.ToString()))
                 {
@@ -126,10 +131,12 @@ public class AXD_Attack : MonoBehaviour
                     if (!closestEnemy.isInvulnerable && !closestEnemy.isTmpInvulnerable)
                     {
                         closestEnemy.GetHit(CalculateDamage(AttackType.Sponk), closestEnemy.movesTowardPlayer, playerStats.SponkKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SponkStunTime, true);
-
+                        if (!closestEnemy.isInvulnerable)
+                        {
+                            playerStats.CurrentCombo++;
+                        }
                     }
                 }
-
             }
             //Attack all secondary targets
             if (colateralVictims.Count > 0)
@@ -142,10 +149,18 @@ public class AXD_Attack : MonoBehaviour
                     if (type.Equals(AttackType.Swich.ToString()))
                     {
                         enemy.GetHit(CalculateDamage(AttackType.Swich, true), enemy.movesTowardPlayer, playerStats.SwichKnockbackDistance);
+                        if (!enemy.isInvulnerable)
+                        {
+                            playerStats.CurrentCombo++;
+                        } 
                     }
                     else if (type.Equals(AttackType.Sponk.ToString()))
                     {
                         enemy.GetHit(CalculateDamage(AttackType.Sponk, true), enemy.movesTowardPlayer, playerStats.SponkKnockbackDistance);
+                        if (!enemy.isInvulnerable)
+                        {
+                            playerStats.CurrentCombo++;
+                        }
                     }
                 }
             }
@@ -190,6 +205,8 @@ public class AXD_Attack : MonoBehaviour
                 if (AppetitDeLycaonIsActive) playerStats.currentHealth += AppetitDeLycaonHealPerCollateral; //Rend de la vie avec le passif de Lycaon
             }
         }
+        allDamagesDealt.Add(totalDamage);
+        CalculateMoyenneDamage();
         return totalDamage;
     }
 
@@ -219,5 +236,15 @@ public class AXD_Attack : MonoBehaviour
             //playerInventory.GetComponent<ELC_ObjectsInventory>().AddMoneyToCrates(moneyEarn);
             
         }
+    }
+
+    public void CalculateMoyenneDamage()
+    {
+        int allDamages=0;
+        foreach(int damage in allDamagesDealt)
+        {
+            allDamages += damage;
+        }
+        degatsMoyen = allDamages / allDamagesDealt.Count;
     }
 }

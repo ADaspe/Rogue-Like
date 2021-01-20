@@ -18,7 +18,7 @@ MonoBehaviour:
   SpawnTime: 1
   MovementSpeed: 5
   EnemyPath: 0
-  LimitDistanceToStay: 4
+  LimitDistanceToStay: 6
   NeedTimeToTurn: 0
   TurnSpeed: 0
   EnemyWidth: 2
@@ -33,7 +33,7 @@ MonoBehaviour:
   ProjectileDurability: 6
   ProjectileStrenght: 4
   CloseCombatAttack: 0
-  AttackCooldown: 1.2
+  AttackCooldown: 2
   AttackRange: 1
   WaitBeforeAttack: 0.17
   AttackStrenght: 9
@@ -41,7 +41,7 @@ MonoBehaviour:
   AttackAnimationTime: 0.3
   DashOnPlayer: 1
   DashTime: 0.2
-  DistanceToRun: 5
+  DistanceToRun: 2.5
   DashStrenght: 10
   DashStun: 0
   DashColliderWidth: 0.5
@@ -54,7 +54,7 @@ MonoBehaviour:
   SpawnCooldown: 0
   NumberOfEntitiesToSpawn: 0
   EntitiesToSpawn: {fileID: 0}
-  MoneyEarnWhenHit: 50
+  MoneyEarnWhenHit: 5
   MoneyEarnWhenDead: 250
   ambrosiaEarnedWhenDead: 100
   sprite: {fileID: 0}
