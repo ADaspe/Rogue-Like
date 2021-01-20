@@ -131,7 +131,7 @@ public class AXD_Attack : MonoBehaviour
                     if (!closestEnemy.isInvulnerable && !closestEnemy.isTmpInvulnerable)
                     {
                         closestEnemy.GetHit(CalculateDamage(AttackType.Sponk), closestEnemy.movesTowardPlayer, playerStats.SponkKnockbackDistance * (playerStats.mainTargetKnockBack / 100), playerStats.SponkStunTime, true);
-                        if (!closestEnemy.isInvulnerable)
+                        if (!closestEnemy.isTmpInvulnerable)
                         {
                             playerStats.CurrentCombo++;
                         }
@@ -149,7 +149,7 @@ public class AXD_Attack : MonoBehaviour
                     if (type.Equals(AttackType.Swich.ToString()))
                     {
                         enemy.GetHit(CalculateDamage(AttackType.Swich, true), enemy.movesTowardPlayer, playerStats.SwichKnockbackDistance);
-                        if (!enemy.isInvulnerable)
+                        if (!enemy.isTmpInvulnerable)
                         {
                             playerStats.CurrentCombo++;
                         } 
@@ -157,7 +157,7 @@ public class AXD_Attack : MonoBehaviour
                     else if (type.Equals(AttackType.Sponk.ToString()))
                     {
                         enemy.GetHit(CalculateDamage(AttackType.Sponk, true), enemy.movesTowardPlayer, playerStats.SponkKnockbackDistance);
-                        if (!enemy.isInvulnerable)
+                        if (!enemy.isTmpInvulnerable)
                         {
                             playerStats.CurrentCombo++;
                         }
