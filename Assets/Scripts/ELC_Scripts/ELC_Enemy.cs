@@ -473,7 +473,7 @@ public class ELC_Enemy : MonoBehaviour
         else if (distance > maxDistance) distanceFromPlayer = EnemyDistance.TooFar;
         else distanceFromPlayer = EnemyDistance.AtDistance;
 
-        if (enemyStats.DashAndCloseCombatAttack && distanceFromPlayer == EnemyDistance.TooFar && distance < enemyStats.MaxDistanceToTriggerDash && distance > enemyStats.MinDistanceToTriggerDash && Time.time > dashCooldown) canDashAttack = true;
+        if (enemyStats.DashAndCloseCombatAttack /*&& distanceFromPlayer == EnemyDistance.TooFar*/ && distance < enemyStats.MaxDistanceToTriggerDash && distance > enemyStats.MinDistanceToTriggerDash && Time.time > dashCooldown && !isAttacking && !isDistanceAttacking) canDashAttack = true;
         else canDashAttack = false;
     }
 
