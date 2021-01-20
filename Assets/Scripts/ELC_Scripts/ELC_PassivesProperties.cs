@@ -76,6 +76,8 @@ public class ELC_PassivesProperties : MonoBehaviour
 
     private void UpdateValues() //Se lance une seule fois après l'obtention d'un passif un changement de passif
     {
+        DisablePassives();
+
         if (ActualPassiveScriptableObject.PassiveName == "Appétit De Lycaon") AppetitDeLycaon();
         else if (ActualPassiveScriptableObject.PassiveName == "Fil D'Ares") FilAres();
         else if (ActualPassiveScriptableObject.PassiveName == "Don D'Atalante") DonAtalante();
@@ -128,4 +130,29 @@ public class ELC_PassivesProperties : MonoBehaviour
         statsManager.currentHealth = statsManager.MaxHealth;
     }
 
+
+    private void DisablePassives()
+    {
+        AttackScript.AppetitDeLycaonIsActive = false;
+        AttackScript.AppetitDeLycaonHealPerEnemies = 0;
+        AttackScript.AppetitDeLycaonHealPerCollateral = 0;
+
+        statsManager.losingLife = true;
+        statsManager.FilAresBerserkMultiplicator = 1;
+        statsManager.FilAresDamagesTakenMultiplicator = 1;
+
+        playerMovesScript.DonAtalante = false;
+        playerMovesScript.DonAtalanteSpeedAdd = 0;
+
+        playerMovesScript.BottesHermes = false;
+
+        FindObjectOfType<ELC_PowerUpManager>().FauxDeChronos = false;
+        AttackScript.Egide = false;
+
+        statsManager.GorgonneAttackMultiplicator = 1;
+        FindObjectOfType<PlayerHealth>().sangGorgonne = false;
+        statsManager.MaxHealth = 100;
+        statsManager.currentHealth = statsManager.MaxHealth;
+
+    }
 }

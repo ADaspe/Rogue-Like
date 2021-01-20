@@ -51,6 +51,7 @@ MonoBehaviour:
   speed: 0
   lifeDuration: 0
   strenght: 0
+  enemy: {fileID: 0}
   IsFriendly: 0
 --- !u!212 &7710382584286217532
 SpriteRenderer:

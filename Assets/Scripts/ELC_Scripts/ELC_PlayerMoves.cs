@@ -114,7 +114,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         {
             playerStats.gameTimer += Time.deltaTime;
         }
-        if (!isInMenu && !playerHealth.isDead)
+        if (!isInMenu && !playerHealth.isDead && !isSpawning)
         {
             if (Time.time >= timeToResetChain && playerStats.currentChain != ELC_PlayerStatManager.Chain.Blue)
             {
