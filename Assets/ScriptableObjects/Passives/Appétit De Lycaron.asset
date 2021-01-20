@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: "App\xE9tit De Lycaron"
   m_EditorClassIdentifier: 
   PassiveName: "App\xE9tit De Lycaon"
-  PassiveDescription: Les attaques d'estoc aspirent la vie hors de tes ennemis pour
-    te revigorer !
+  PassiveDescription: "App\xE9tit de Lycaon : Tes attaques d\u2019estoc drainent
+    la vie des ennemis pour te soigner. C\u2019est barbare, mais efficace ! "
   PassivePrice: 4500
   isUnlock: 1
   HUDSprite: {fileID: 5127041399917441057, guid: d2d062ff307f81d4e836ccc9ea347700,

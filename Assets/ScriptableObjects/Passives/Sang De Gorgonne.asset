@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Sang De Gorgonne
   m_EditorClassIdentifier: 
   PassiveName: Sang De Gorgonne
-  PassiveDescription: "Moins de vie, plus de d\xE9gats !"
+  PassiveDescription: "Sang de Gorgone : Avec ce produit dopant, la force physique
+    augmente, et l\u2019esp\xE9rance de vie diminue !  "
   PassivePrice: 3750
-  isUnlock: 0
+  isUnlock: 1
   HUDSprite: {fileID: -2255078477789456491, guid: d2d062ff307f81d4e836ccc9ea347700,
     type: 3}

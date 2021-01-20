@@ -2334,7 +2334,7 @@ PrefabInstance:
     - target: {fileID: 3729842993791577614, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -47.8
+      value: -42.22
       objectReference: {fileID: 0}
     - target: {fileID: 3729842993791577614, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -5543,6 +5543,22 @@ PrefabInstance:
       propertyPath: DialogueManager
       value: 
       objectReference: {fileID: 1346262901}
+    - target: {fileID: 1174491892953658149, guid: eeec6de608430f14295388896e77d9e0,
+        type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: "Bienvenue \xE0 l'Agora !"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174491892953658149, guid: eeec6de608430f14295388896e77d9e0,
+        type: 3}
+      propertyPath: sentences.Array.data[1]
+      value: "Les meilleures cyber-am\xE9liorations du quartier ! "
+      objectReference: {fileID: 0}
+    - target: {fileID: 1174491892953658149, guid: eeec6de608430f14295388896e77d9e0,
+        type: 3}
+      propertyPath: sentences.Array.data[2]
+      value: "Ici c\u2019est que de la qualit\xE9, alors tu paies sans broncher ou
+        tu d\xE9gages !\r"
+      objectReference: {fileID: 0}
     - target: {fileID: 1174491892953658150, guid: eeec6de608430f14295388896e77d9e0,
         type: 3}
       propertyPath: DialogueManager

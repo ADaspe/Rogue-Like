@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Fil D'Ares
   m_EditorClassIdentifier: 
   PassiveName: Fil D'Ares
-  PassiveDescription: "Redirige l'\xE9nergie de ton armure vers ton \xE9p\xE9e pour
-    un max de d\xE9gats ! D\xE9gats donn\xE9s comme re\xE7us."
+  PassiveDescription: "Fils d\u2019Ar\xE8s : Toutes les ressources de ton armure
+    sont redirig\xE9es dans ton arme : tu frappes bien plus fort, mais tu prends
+    bien plus cher.  "
   PassivePrice: 5250
-  isUnlock: 0
+  isUnlock: 1
   HUDSprite: {fileID: -6497817145159819769, guid: d2d062ff307f81d4e836ccc9ea347700,
     type: 3}
