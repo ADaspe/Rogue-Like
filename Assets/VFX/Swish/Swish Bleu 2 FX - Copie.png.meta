@@ -1,22 +1,7 @@
 fileFormatVersion: 2
-guid: 0869274ea5241724484a9c44b1d3f06e
+guid: f65da8243681cae4c9fc65f37fb5e566
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -1852288504850681370
-    second: Swish Rose 2 FX_0
-  - first:
-      213: -4969497172855568391
-    second: Swish Rose 2 FX_1
-  - first:
-      213: 7050330164447513712
-    second: Swish Rose 2 FX_2
-  - first:
-      213: 8122722860114730114
-    second: Swish Rose 2 FX_3
-  - first:
-      213: 2510562715667187926
-    second: Swish Rose 2 FX_4
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -136,124 +121,17 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Swish Rose 2 FX_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 68
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6e1f5de2b695b46e0800000000000000
-      internalID: -1852288504850681370
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Swish Rose 2 FX_1
-      rect:
-        serializedVersion: 2
-        x: 68
-        y: 0
-        width: 68
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f7c2ab96acc80bb0800000000000000
-      internalID: -4969497172855568391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Swish Rose 2 FX_2
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 0
-        width: 68
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 07c8d192eedc7d160800000000000000
-      internalID: 7050330164447513712
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Swish Rose 2 FX_3
-      rect:
-        serializedVersion: 2
-        x: 204
-        y: 0
-        width: 68
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 28c551eb765b9b070800000000000000
-      internalID: 8122722860114730114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Swish Rose 2 FX_4
-      rect:
-        serializedVersion: 2
-        x: 272
-        y: 0
-        width: 68
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6d8cea50d7f47d220800000000000000
-      internalID: 2510562715667187926
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: c7a2db85ba1e3724aa43a82ab61f2fbc
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
-    secondaryTextures:
-    - texture: {fileID: 2800000, guid: 7af3da680c394884c8b4e71812a9743f, type: 3}
-      name: _GlowRose
+    secondaryTextures: []
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

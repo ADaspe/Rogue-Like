@@ -276,6 +276,25 @@ MonoBehaviour:
   canStunUI: 0
   canAddStockUi: 0
   canDamageGlitch: 0
+--- !u!114 &816785707401166168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3309051799484068374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd2fa4fcc0b8099479d36963020f0e34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMat: {fileID: 0}
+  glitchMat: {fileID: 2100000, guid: 3e27e7d59e85fdc45a9088137a6123ab, type: 2}
+  anim: {fileID: 0}
+  canGlitch: 0
+  canStunUI: 0
+  canAddStockUi: 0
+  canDamageGlitch: 0
 --- !u!114 &6681682987216425331
 MonoBehaviour:
   m_ObjectHideFlags: 0
