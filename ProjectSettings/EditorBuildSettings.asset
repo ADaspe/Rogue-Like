@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/EMD_SplashScreen.unity
     guid: a329734e315faca43bab36cfbf95ee1c
+  - enabled: 1
+    path: Assets/Scenes/EMD_CreditScene.unity
+    guid: 63d1fbaa115d33e489b0971256618131
   m_configObjects: {}

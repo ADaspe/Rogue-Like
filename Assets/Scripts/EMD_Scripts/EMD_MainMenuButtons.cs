@@ -7,6 +7,7 @@ public class EMD_MainMenuButtons : MonoBehaviour
 {
     public string GameScene;
     public string OptionsScene;
+    public string CreditScene;
 
     public void PlayGame()
     {
@@ -16,6 +17,10 @@ public class EMD_MainMenuButtons : MonoBehaviour
     public void PlayOptions()
     {
         SceneManager.LoadScene(OptionsScene);
+    }
+    public void PlayCredit()
+    {
+        SceneManager.LoadScene(CreditScene);
     }
 
     public void QuitGame()
