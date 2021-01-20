@@ -16,7 +16,9 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthSlider;
     public Bouteille bouteille;
     public AXD_UiGlitch[] uiToGlitch;
+    public AXD_UiGlitch uiToStun;
     public float timeToGlitchUiOnHit;
+    public float timeToStunUi;
     public static ELC_EnemySO lastHitEnnemy;
     public bool sangGorgonne;
 
@@ -53,6 +55,7 @@ public class PlayerHealth : MonoBehaviour
             lastHitEnnemy = enemyLastHit;
             Debug.Log("Get Hit Player");
             GlitchUI();
+            StunUI();
             StartCoroutine(playerMovesScript.ApplyShader(playerMovesScript.damageMatTime, playerMovesScript.damageMat));
             StartCoroutine(screenShakeScript.ScreenShakes(playerStats.GetHitShakeIntensity, playerStats.GetHitShakeFrequency, playerStats.GetHitShakeDuration));
             playerStats.currentHealth = healthSlider.value;
@@ -117,5 +120,10 @@ public class PlayerHealth : MonoBehaviour
         {
             uiGlitch.Glitch(timeToGlitchUiOnHit);
         }
+    }
+
+    public void StunUI()
+    {
+        uiToStun.StunUI(timeToStunUi);
     }
 }

@@ -400,7 +400,9 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   bouteille: {fileID: 0}
   uiToGlitch: []
+  uiToStun: {fileID: 0}
   timeToGlitchUiOnHit: 0.2
+  timeToStunUi: 0.5
   sangGorgonne: 0
 --- !u!114 &6115952892813048268
 MonoBehaviour:
