@@ -140,16 +140,19 @@ public class EMD_PassifManager : MonoBehaviour
 
     public void ChoosenPassive()
     {
-        if (currentMoneyScript.currentMoney >= (int)SelectedPassive.PassivePrice)
+        if (DialogueManagerScript.IsWriting == false)
         {
-            achatSound.Play();
-            currentMoneyScript.AddMoney(-(int)SelectedPassive.PassivePrice);
-            ELC_ObjectsInventory.ActivePassif = SelectedPassive;
-        }
-        else
-        {
-            textDisplay.text = null;
-            textDisplay.text = "Vous n'avez pas assez d'argent";
+            if (currentMoneyScript.currentMoney >= (int)SelectedPassive.PassivePrice)
+            {
+                achatSound.Play();
+                currentMoneyScript.AddMoney(-(int)SelectedPassive.PassivePrice);
+                ELC_ObjectsInventory.ActivePassif = SelectedPassive;
+            }
+            else
+            {
+                textDisplay.text = null;
+                textDisplay.text = "Vous n'avez pas assez d'argent";
+            }
         }
     }
 }
