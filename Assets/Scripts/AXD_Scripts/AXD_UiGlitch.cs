@@ -8,7 +8,9 @@ public class AXD_UiGlitch : MonoBehaviour
     public Material defaultMat;
     public Material glitchMat;
     private Image img;
+    public Animator anim;
     public bool canGlitch;
+    public bool canStunUI;
     private void Start()
     {
         canGlitch = true;
@@ -22,6 +24,14 @@ public class AXD_UiGlitch : MonoBehaviour
         }
     }
 
+    public void StunUI(float time)
+    {
+        if (canStunUI && anim !=null)
+        {
+            StartCoroutine(StunPerso(time));
+        }
+    }
+
     IEnumerator GlitchRoutine(float time)
     {
         canGlitch = false;
@@ -29,5 +39,14 @@ public class AXD_UiGlitch : MonoBehaviour
         yield return new WaitForSeconds(time);
         img.material = defaultMat;
         canGlitch = true;
+    }
+
+    IEnumerator StunPerso(float time)
+    {
+        canStunUI = false;
+        anim.SetBool("Stun", true);
+        yield return new WaitForSeconds(time);
+        anim.SetBool("Stun", false);
+        canStunUI = true;
     }
 }
