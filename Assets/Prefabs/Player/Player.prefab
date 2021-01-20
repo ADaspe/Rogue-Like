@@ -1976,6 +1976,11 @@ PrefabInstance:
       propertyPath: ChronosStopPowerUpFlowDuration
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6843856719013174375, guid: 64bf3b5c2a5874f49b884cc04526bdbc,
+        type: 3}
+      propertyPath: GorgonneAttackMultiplicator
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7064135163168353771, guid: 64bf3b5c2a5874f49b884cc04526bdbc,
         type: 3}
       propertyPath: PassivesList.Array.size
