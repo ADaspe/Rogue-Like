@@ -106,7 +106,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         ResetChain();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(playerStats.startTimer == true)
         {
@@ -179,7 +179,10 @@ public class ELC_PlayerMoves : MonoBehaviour
 
         IsPlayerImmobile();
 
-        transform.Translate(playerMoves * Time.deltaTime);
+        if (!playerIsImmobile)
+        {
+            transform.Translate(playerMoves * Time.deltaTime);
+        }
     }
 
     private void MovementClampIfCollidingWalls(float speed, string vectorToClamp)
@@ -188,10 +191,40 @@ public class ELC_PlayerMoves : MonoBehaviour
 
         if (vectorToClamp == "playerMoves")
         {
-            if (isTouchingLeft) playerMoves.x = Mathf.Clamp(playerMoves.x, 0, speed / 2);
-            if (isTouchingRight) playerMoves.x = Mathf.Clamp(playerMoves.x, -speed / 2, 0);
-            if (isTouchingDown) playerMoves.y = Mathf.Clamp(playerMoves.y, 0, speed / 2);
-            if (isTouchingTop) playerMoves.y = Mathf.Clamp(playerMoves.y, -speed / 2, 0);
+            if (isTouchingLeft)
+            {
+                Debug.Log("Left");
+                playerAnimator.SetFloat("DirectionAxeX", -1);
+                playerAnimator.SetFloat("DirectionAxeY", 0);
+                playerMoves.x = Mathf.Clamp(playerMoves.x, 0, speed / 2);
+                
+            }
+
+            if (isTouchingRight)
+            {
+                Debug.Log("Right");
+                playerAnimator.SetFloat("DirectionAxeX", 1);
+                playerAnimator.SetFloat("DirectionAxeY", 0);
+                playerMoves.x = Mathf.Clamp(playerMoves.x, -speed / 2, 0);
+                
+
+            }
+            if (isTouchingDown) {
+                Debug.Log("Down");
+                playerAnimator.SetFloat("DirectionAxeX", 0);
+                playerAnimator.SetFloat("DirectionAxeY", -1);
+                playerMoves.y = Mathf.Clamp(playerMoves.y, 0, speed / 2);
+                
+
+            }
+            if (isTouchingTop) {
+                Debug.Log("Top");
+                playerAnimator.SetFloat("DirectionAxeX", 0);
+                playerAnimator.SetFloat("DirectionAxeY", 1);
+                playerMoves.y = Mathf.Clamp(playerMoves.y, -speed / 2, 0);
+                
+
+            }
         }
         else if (vectorToClamp == "dashVector")
         {
@@ -285,6 +318,7 @@ public class ELC_PlayerMoves : MonoBehaviour
             else if (isTouchingTop && Input.GetAxis("Vertical") > 0 && horizPositiveValue < verticalPositiveValue) lastDirection = Vector3.up;
             else if (isTouchingDown && Input.GetAxis("Horizontal") < 0 && horizPositiveValue > verticalPositiveValue) lastDirection = Vector3.down;
         }
+        //lastDirection = playerMoves; //On enregistre ici la dernière direction du joueur
     }
 
     private void AnimationsManagement()

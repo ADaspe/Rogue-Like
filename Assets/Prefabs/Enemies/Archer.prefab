@@ -111,6 +111,7 @@ MonoBehaviour:
   enemyAnimator: {fileID: 0}
   Coins: {fileID: 3438627847694550386, guid: df331dfca8d120d408a7b692cef7d637, type: 3}
   EnemyShadow: {fileID: 2784683511016778301}
+  hitNumberToKillMe: 0
   currentHealth: 0
   speed: 0
   isDead: 0
@@ -140,6 +141,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   distanceToStay: 0
+  marginForDistanceToStay: 0.02
 --- !u!61 &7378249948707067900
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -611,7 +613,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2784683511016778301}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: -0.495, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2577926378028774520}
@@ -655,7 +657,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 4093480436322176185, guid: f24b1a2d792158943a9b726b12654fd4,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PassiveName: Bottes D'Hermes
   PassiveDescription: "Fonces sur les ennemis pour les \xE9tourdir."
-  PassivePrice: 2750
+  PassivePrice: 4200
   isUnlock: 0
   HUDSprite: {fileID: 6968084936573196748, guid: d2d062ff307f81d4e836ccc9ea347700,
     type: 3}

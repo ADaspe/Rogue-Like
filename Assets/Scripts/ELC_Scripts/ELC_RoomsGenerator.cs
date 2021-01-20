@@ -47,6 +47,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
     public GameObject LateralDoors;
     public GameObject FrontDoors;
     public GameObject Music;
+    public bool GenerationFinish = false;
 
     void Start()
     {
@@ -125,6 +126,7 @@ public class ELC_RoomsGenerator : MonoBehaviour
         Instantiate(CoreElements, startRoom.transform.position - new Vector3(0, distanceBtwRoomsY), Quaternion.identity);
         Music.SetActive(true);
         Debug.Log("Finish !");
+        GenerationFinish = true;
     }
 
     private void placeBossRoom()

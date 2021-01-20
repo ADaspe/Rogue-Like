@@ -16,7 +16,7 @@ TextureImporter:
     second: Props Deco_3
   - first:
       213: 8533671747868807799
-    second: Props Deco_4
+    second: Colonnes
   - first:
       213: 3744718625705673035
     second: FissureSmall
@@ -305,7 +305,7 @@ TextureImporter:
         width: 35
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -313,6 +313,27 @@ TextureImporter:
       bones: []
       spriteID: 34961df8740e8b520800000000000000
       internalID: 2718168973078260035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Colonnes
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 165
+        width: 25
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 772d189cd31bd6670800000000000000
+      internalID: 8533671747868807799
       vertices: []
       indices: 
       edges: []

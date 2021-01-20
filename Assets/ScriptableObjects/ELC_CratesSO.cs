@@ -22,7 +22,8 @@ public class ELC_CratesSO : ScriptableObject
     public int percentageOfMoneyLostWhenHit;
 
     [Header("Visual Properties")]
-    public Sprite HUDSprite;
+    public Sprite HUDSpriteLeft;
+    public Sprite HUDSpriteRight;
     public Sprite GroundSprite;
 
 }

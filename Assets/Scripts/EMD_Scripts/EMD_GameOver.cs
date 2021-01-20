@@ -26,6 +26,7 @@ public class EMD_GameOver : MonoBehaviour
     private PlayerHealth PlayerHealthScript;
     private AXD_AchievementManager AchievementManagerScript;
     private ELC_ObjectsInventory ObjectinventoryScript;
+    private AXD_Hydra HydraScript;
     public int MoneyHarvested;
     int TimerMin;
     int TimerSec;
@@ -38,14 +39,22 @@ public class EMD_GameOver : MonoBehaviour
         PlayerStatManagerScript = FindObjectOfType<ELC_PlayerStatManager>();
         AchievementManagerScript = FindObjectOfType<AXD_AchievementManager>();
         ObjectinventoryScript = FindObjectOfType<ELC_ObjectsInventory>();
-        /*GameOverGO.SetActive(false);
+        HydraScript = FindObjectOfType<AXD_Hydra>();
+        GameOverGO.SetActive(false);
         MonsterWhoKilledGO.SetActive(false);
         RunTimeGO.SetActive(false);
         PlusGrosComboGO.SetActive(false);
         ThunesGO.SetActive(false);
         PassifUsedGO.SetActive(false);
         AchGO.SetActive(false);
-        GOCanvas.SetActive(false);*/
+        GOCanvas.SetActive(false);
+    }
+    private void Update()
+    {
+        if (HydraScript.EndMenuTime == true)
+        {
+            StartCoroutine("OneByOne");
+        }
     }
 
     private void OnEnable()
@@ -68,7 +77,14 @@ public class EMD_GameOver : MonoBehaviour
             }
             if (i == 2)
             {
-                MonsterWhoKilled.text = "TUE PAR: " + PlayerHealth.lastHitEnnemy.Name;
+                if (HydraScript.EndMenuTime == true)
+                {
+                    MonsterWhoKilled.text = "VOUS AVEZ TUE LE BOSS";
+                }
+                else
+                {
+                    MonsterWhoKilled.text = "TUE PAR: " + PlayerHealth.lastHitEnnemy.Name;
+                }
                 MonsterWhoKilledGO.SetActive(true);
                 yield return new WaitForSeconds(DelayTime);
             }

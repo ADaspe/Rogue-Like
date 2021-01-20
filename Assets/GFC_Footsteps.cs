@@ -19,6 +19,7 @@ public class GFC_Footsteps : MonoBehaviour
     public AudioSource orangeSponk;
     public AudioSource redSponk;
     public AudioSource bouteille;
+    private bool canSwich;
     public AudioSource lowlife;
     
     bool deathAlreadyPlayed = false;
@@ -49,23 +50,26 @@ public class GFC_Footsteps : MonoBehaviour
             deathAlreadyPlayed = true;
         }
 
-        if (Input.GetAxisRaw("Swich") != 0 && !playerMoves.swichButtonDown && statManager.currentChain == ELC_PlayerStatManager.Chain.Blue && blueSwich.isPlaying == false)
+        if (Input.GetAxisRaw("Swich") == 0) canSwich = true;
+        if (Input.GetAxisRaw("Swich") != 0 && canSwich && statManager.currentChain == ELC_PlayerStatManager.Chain.Blue && blueSwich.isPlaying == false)
         {
+            canSwich = false;
             blueSwich.pitch = Random.Range(0.9f, 1.1f);
             blueSwich.Play();
             
         }
-        if (Input.GetAxisRaw("Swich") != 0 && !playerMoves.swichButtonDown &&  statManager.currentChain == ELC_PlayerStatManager.Chain.Orange && orangeSwich.isPlaying == false)
+        if (Input.GetAxisRaw("Swich") != 0 && canSwich &&  statManager.currentChain == ELC_PlayerStatManager.Chain.Orange && orangeSwich.isPlaying == false)
         {
+            canSwich = false;
             orangeSwich.pitch = Random.Range(0.9f, 1.1f);
             orangeSwich.Play();
-            
         }
-        if (Input.GetAxisRaw("Swich") != 0 && !playerMoves.swichButtonDown && statManager.currentChain == ELC_PlayerStatManager.Chain.Red && redSwich.isPlaying == false)
+        if (Input.GetAxisRaw("Swich") != 0 && canSwich && statManager.currentChain == ELC_PlayerStatManager.Chain.Red && redSwich.isPlaying == false)
         {
+            canSwich = false;
             redSwich.pitch = Random.Range(0.9f, 1.1f);
             redSwich.Play();
-            
+
         }
         if (Input.GetAxisRaw("Sponk") != 0 && statManager.currentChain == ELC_PlayerStatManager.Chain.Blue && blueSponk.isPlaying == false && Time.time > nextSponkAttackTime)
         {

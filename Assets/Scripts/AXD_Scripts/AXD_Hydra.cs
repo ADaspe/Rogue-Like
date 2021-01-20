@@ -30,6 +30,7 @@ public class AXD_Hydra : MonoBehaviour
     public float ExplosionDuration;
     public ELC_Detector Area;
     public bool fighting = false;
+    public bool EndMenuTime = false;
 
     private void Start()
     {
@@ -230,6 +231,7 @@ public class AXD_Hydra : MonoBehaviour
 
         enemy.spriteRenderer.enabled = false;
         enemy.DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemy.enemyStats.MoneyEarnWhenDead);
+        EndMenuTime = true;
 
         if (enemy.passiveScript.ActualPassiveScriptableObject != null)
         {

@@ -46,8 +46,11 @@ MonoBehaviour:
   startingCrate: {fileID: 2185526170687435304, guid: 01e4cb7c4d2549d45807b900cfdf0a15,
     type: 3}
   selectedHand: 0
+  EmptyHUD: {fileID: -8142902139206746570, guid: e47f4872e585e7b44a32f7b284974360,
+    type: 3}
   RightHandObject: {fileID: 0}
   RightHandHUD: {fileID: 0}
+  totalSecuredMoney: 0
   LeftHandObject: {fileID: 0}
   LeftHandHUD: {fileID: 0}
   PassiveHUD: {fileID: 0}

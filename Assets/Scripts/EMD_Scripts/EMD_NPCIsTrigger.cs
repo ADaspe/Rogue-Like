@@ -35,10 +35,8 @@ public class EMD_NPCIsTrigger : MonoBehaviour
     //Detecter si le player est près du NPC
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Allo ? "+collision.gameObject.tag);
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Coucou, je suis " + this.name + " et je passe dans cette foutue condition");
             IsInRange = true;
         }
         else
