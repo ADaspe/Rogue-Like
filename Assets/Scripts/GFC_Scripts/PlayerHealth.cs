@@ -74,13 +74,8 @@ public class PlayerHealth : MonoBehaviour
             {
                 if (playerStats.currentHealth > palier && playerStats.currentHealth - damage / playerStats.DefenseMultiplicatorPU < palier) eclairScript.LaunchEclair("Red");
             }
-                
-
-
-
 
             lastHitEnnemy = enemyLastHit;
-            Debug.Log("Get Hit Player");
             GlitchUI();
             StunUI();
             StartCoroutine(playerMovesScript.ApplyShader(playerMovesScript.damageMatTime, playerMovesScript.damageMat));
@@ -99,17 +94,19 @@ public class PlayerHealth : MonoBehaviour
     }
     public void AddStock(int stockToAdd)
     {
+
+        
         if (bouteille.bottleSlider.value + stockToAdd >= bouteille.bottleSlider.maxValue)
         {
+            uiStock.AddStockUi(timeUiStock);
             bouteille.bottleSlider.value = bouteille.bottleSlider.maxValue;
             playerStats.currentStock = bouteille.bottleSlider.value;
-            uiStock.AddStockUi(timeUiStock);
         }
         else
         {
+            uiStock.AddStockUi(timeUiStock);
             bouteille.bottleSlider.value += stockToAdd;
             playerStats.currentStock = bouteille.bottleSlider.value;
-            uiStock.AddStockUi(timeUiStock);
         }
     }
     //ça c'est la manière dont il se heal, tout en diminuant la réserve d'olives. Et ça se synchronise avec les deux jauges.
