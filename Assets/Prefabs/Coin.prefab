@@ -144,7 +144,7 @@ MonoBehaviour:
     type: 3}
   attractDistance: 3
   speed: 5
-  value: 5
+  value: 20
   coinSound: {fileID: 6826114968273419547}
   initialDropSpeed: 7
   decreaseSpeedOnDrop: 0.2
