@@ -22,5 +22,4 @@ MonoBehaviour:
   ennemyToDefeatName: Minotaure
   passifToUnlock: {fileID: 11400000, guid: 1f6508be9a869994db164a2e8114c13e, type: 2}
   achievementManager: {fileID: 0}
-  HUDSprite: {fileID: 4740783378816029341, guid: a5959108d54d05e449842384bbc80717,
-    type: 3}
+  HUDSprite: {fileID: 21300000, guid: 539bb1c41cf048c41a7fff8d7965384f, type: 3}
