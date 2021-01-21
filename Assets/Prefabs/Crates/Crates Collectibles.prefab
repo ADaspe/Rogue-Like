@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 461805487654469447, guid: 0e5bb8edd80cd77489edfc726525c6f9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2289528245598647198, guid: 0e5bb8edd80cd77489edfc726525c6f9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -138,10 +143,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crates Collectibles
       objectReference: {fileID: 0}
+    - target: {fileID: 2378979166886556511, guid: 0e5bb8edd80cd77489edfc726525c6f9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3760681435765154044, guid: 0e5bb8edd80cd77489edfc726525c6f9,
         type: 3}
       propertyPath: m_LightVolumeOpacity
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068215588835447189, guid: 0e5bb8edd80cd77489edfc726525c6f9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068215588835447189, guid: 0e5bb8edd80cd77489edfc726525c6f9,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.918375
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068215588835447189, guid: 0e5bb8edd80cd77489edfc726525c6f9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.44
       objectReference: {fileID: 0}
     - target: {fileID: 5699860423960418132, guid: 0e5bb8edd80cd77489edfc726525c6f9,
         type: 3}
@@ -173,6 +198,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254048937990399711, guid: 0e5bb8edd80cd77489edfc726525c6f9,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6254048937990399711, guid: 0e5bb8edd80cd77489edfc726525c6f9,
+        type: 3}
+      propertyPath: ShapeModule.angle
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 6563851618728609568, guid: 0e5bb8edd80cd77489edfc726525c6f9,
         type: 3}
@@ -218,6 +253,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8112726228430914674, guid: 0e5bb8edd80cd77489edfc726525c6f9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8316778308009771411, guid: 0e5bb8edd80cd77489edfc726525c6f9,
         type: 3}
