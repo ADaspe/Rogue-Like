@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 242735336819087878}
   - component: {fileID: 242735336819087876}
   - component: {fileID: 242735336819087879}
+  - component: {fileID: 887344412308275249}
   - component: {fileID: 242735336819087875}
   m_Layer: 0
   m_Name: AchievementPNJ
@@ -53,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 4909896914fbed84ca0515c990af3e60, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -74,7 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: be7fbd7615f61e341940adcd46b7c787, type: 3}
+  m_Sprite: {fileID: -8593917233197238616, guid: 1d30a6a151e61b041acb9d6ab312c129,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,6 +136,21 @@ MonoBehaviour:
   - "ICI SONT ENREGISTR\xC9S LES EXPLOITS DE VOS PR\xC9D\xC9CESSEURS."
   - "J'AI AUSSI CALCUL\xC9 LES EXPLOITS DE VOS SUCCESSEURS, MAIS JE N'AI PAS LE DROIT
     DE VOUS EN FAIRE PART."
+--- !u!114 &887344412308275249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242735336819087877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b4f8627714d1de4487f643bd8668022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseMaterial: {fileID: 2100000, guid: 4909896914fbed84ca0515c990af3e60, type: 2}
+  notifMaterial: {fileID: 2100000, guid: d8995de6f32e1354688909ff1d43aaf2, type: 2}
+  sr: {fileID: 242735336819087873}
 --- !u!50 &242735336819087875
 Rigidbody2D:
   serializedVersion: 4
