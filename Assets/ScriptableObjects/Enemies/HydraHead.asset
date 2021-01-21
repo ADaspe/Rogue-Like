@@ -16,7 +16,7 @@ MonoBehaviour:
   MaxHealth: 3000
   DeathTime: 1
   SpawnTime: 1
-  MovementSpeed: 5
+  MovementSpeed: 4
   EnemyPath: 0
   LimitDistanceToStay: 6.5
   NeedTimeToTurn: 0
@@ -33,7 +33,7 @@ MonoBehaviour:
   ProjectileDurability: 6
   ProjectileStrenght: 4
   CloseCombatAttack: 0
-  AttackCooldown: 2
+  AttackCooldown: 3
   AttackRange: 1
   WaitBeforeAttack: 0.17
   AttackStrenght: 9
@@ -46,7 +46,7 @@ MonoBehaviour:
   DashStun: 0
   DashColliderWidth: 0.5
   DashAndCloseCombatAttack: 1
-  DashCooldown: 2
+  DashCooldown: 4
   MinDistanceToTriggerDash: 1
   MaxDistanceToTriggerDash: 6
   SpawnEntitiesRegulary: 0

@@ -13,10 +13,15 @@ public class ELC_Display : MonoBehaviour
     private bool buttonIsInDesactivation;
     private bool buttonIsActivated;
 
+    private void OnEnable()
+    {
+        if (ObjectToDisplay != null) objectInstatiate = Instantiate(ObjectToDisplay, this.transform.position + newPosition, Quaternion.identity, this.gameObject.transform);
+    }
+
     private void Start()
     {
         detector = this.gameObject.GetComponent<ELC_Detector>();
-        if(ObjectToDisplay != null) objectInstatiate = Instantiate(ObjectToDisplay, this.transform.position + newPosition, Quaternion.identity, this.gameObject.transform);
+        //if(ObjectToDisplay != null) objectInstatiate = Instantiate(ObjectToDisplay, this.transform.position + newPosition, Quaternion.identity, this.gameObject.transform);
     }
 
     // Update is called once per frame

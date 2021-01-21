@@ -20,6 +20,8 @@ public class ELC_GodMod : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P)) Teleport();
 
         if (Input.GetKeyDown(KeyCode.M)) DestroyEnemies();
+
+        if (Input.GetKeyDown(KeyCode.I)) AddMoney();
     }
 
     private void Teleport()
@@ -28,6 +30,11 @@ public class ELC_GodMod : MonoBehaviour
         Vector2 mouseWorldPosition = basicCamera.GetComponent<Camera>().ScreenToWorldPoint(mousePos);
 
         player.transform.position = mouseWorldPosition;
+    }
+
+    private void AddMoney()
+    {
+        FindObjectOfType<EMD_PassifManager>().cheat = !FindObjectOfType<EMD_PassifManager>().cheat;
     }
 
     private void DestroyEnemies()

@@ -16,7 +16,7 @@ public class AXD_PlayerMoney : MonoBehaviour
 
     public void AddMoney(int moneyToAdd)
     {
-        currentMoney += moneyToAdd;
+        currentMoney = currentMoney + moneyToAdd;
         moneycount.text = currentMoney.ToString();
         FindObjectOfType<ELC_DataStore>().SaveData();
     }

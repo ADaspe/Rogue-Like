@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hydra
   m_EditorClassIdentifier: 
   invulnerable: 1
-  maxHealth: 9000
-  healthPhase: 70170000b80b000000000000
+  maxHealth: 6000
+  healthPhase: a00f0000d007000000000000
   vulnerableTime: 15
   stratTime: 10

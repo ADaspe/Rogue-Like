@@ -138,6 +138,11 @@ PrefabInstance:
       propertyPath: displayer
       value: 
       objectReference: {fileID: 2743386465104394081}
+    - target: {fileID: 2289528245598647201, guid: 0e5bb8edd80cd77489edfc726525c6f9,
+        type: 3}
+      propertyPath: crateSound
+      value: 
+      objectReference: {fileID: 1790179816536244378}
     - target: {fileID: 2289528245598647202, guid: 0e5bb8edd80cd77489edfc726525c6f9,
         type: 3}
       propertyPath: m_Name
@@ -339,6 +344,12 @@ PrefabInstance:
 --- !u!4 &192513186038031667 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2289528245598647198, guid: 0e5bb8edd80cd77489edfc726525c6f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 2120624185557472941}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1790179816536244378 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 412650531643119159, guid: 0e5bb8edd80cd77489edfc726525c6f9,
     type: 3}
   m_PrefabInstance: {fileID: 2120624185557472941}
   m_PrefabAsset: {fileID: 0}

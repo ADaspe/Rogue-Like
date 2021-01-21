@@ -414,6 +414,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         playerSpriteRenderer.enabled = false;
         GameOverScript.MenuGOMort();
         FindObjectOfType<ELC_ObjectsInventory>().TransferMoney(true);
+        passiveManagerScript.clear();
     }
     public IEnumerator ApplyShader(float time, Material mat)
     {

@@ -4133,6 +4133,21 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -25.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2682033744851520317, guid: a476c0ea8ff52c74c81312b054d80a82,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228732030926414768, guid: a476c0ea8ff52c74c81312b054d80a82,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3518082133540286641, guid: a476c0ea8ff52c74c81312b054d80a82,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3935256658404733492, guid: a476c0ea8ff52c74c81312b054d80a82,
         type: 3}
       propertyPath: m_Name
@@ -4141,6 +4156,11 @@ PrefabInstance:
     - target: {fileID: 3935256658404733492, guid: a476c0ea8ff52c74c81312b054d80a82,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204228482680237719, guid: a476c0ea8ff52c74c81312b054d80a82,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7424315364423758894, guid: a476c0ea8ff52c74c81312b054d80a82,
@@ -4253,10 +4273,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Text dial
       objectReference: {fileID: 0}
+    - target: {fileID: 8555716511173259820, guid: a476c0ea8ff52c74c81312b054d80a82,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8995106804201453194, guid: a476c0ea8ff52c74c81312b054d80a82,
         type: 3}
       propertyPath: m_Color.a
       value: 0.64705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 9184478646252132503, guid: a476c0ea8ff52c74c81312b054d80a82,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9188836820026520643, guid: a476c0ea8ff52c74c81312b054d80a82,
         type: 3}

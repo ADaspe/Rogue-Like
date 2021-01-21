@@ -1004,6 +1004,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 542992994166426450, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 558757101813229667, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: orthographic size
@@ -1195,6 +1200,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Core
       objectReference: {fileID: 0}
+    - target: {fileID: 1119944932712357730, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1251726091143385846, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_fontSize
@@ -1325,6 +1335,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1577137608443718368, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1585958154981016926, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_IsActive
@@ -1402,6 +1417,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -3547967652488494224, guid: 62af6e446e70a3c4c98a541723061092,
         type: 2}
+    - target: {fileID: 1872908768429041912, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1983901468678269055, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2590,6 +2610,11 @@ PrefabInstance:
       propertyPath: m_SubmitButton
       value: Interact
       objectReference: {fileID: 0}
+    - target: {fileID: 3396445421022565156, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3435013949296783612, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: DelayTime
@@ -2649,6 +2674,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531950391628185658, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3556972691700798046, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -3461,6 +3491,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5729333426835829843, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5759420987847178121, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_IsActive
@@ -3490,6 +3525,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767633701548482802, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5788302048242526209, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -4535,6 +4575,11 @@ PrefabInstance:
       propertyPath: m_SubmitButton
       value: Interact
       objectReference: {fileID: 0}
+    - target: {fileID: 8298018300330734790, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8308382901217618887, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -4703,7 +4748,7 @@ PrefabInstance:
     - target: {fileID: 8459468426774197827, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8546563163155201384, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -4840,6 +4885,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: QuitDialogue
       objectReference: {fileID: 0}
+    - target: {fileID: 8890061107265791738, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8945121636990047661, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4901,7 +4951,11 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8298018300330734790, guid: f523f809c561ee54dac7c3e8ae7438f8, type: 3}
+    - {fileID: 1577137608443718368, guid: f523f809c561ee54dac7c3e8ae7438f8, type: 3}
+    - {fileID: 8013034097540409287, guid: f523f809c561ee54dac7c3e8ae7438f8, type: 3}
+    - {fileID: 4363728591418203360, guid: f523f809c561ee54dac7c3e8ae7438f8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f523f809c561ee54dac7c3e8ae7438f8, type: 3}
 --- !u!114 &700055816 stripped
 MonoBehaviour:

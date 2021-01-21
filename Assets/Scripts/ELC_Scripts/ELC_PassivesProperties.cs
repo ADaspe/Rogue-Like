@@ -61,6 +61,13 @@ public class ELC_PassivesProperties : MonoBehaviour
         statsManager = FindObjectOfType<ELC_PlayerStatManager>();
     }
 
+    public void clear()
+    {
+        ELC_ObjectsInventory.ActivePassif = null;
+        ActualPassiveScriptableObject = null;
+        DisablePassives();
+    }
+
     private void Update()
     {
         if (ELC_ObjectsInventory.ActivePassif != null)
@@ -137,7 +144,7 @@ public class ELC_PassivesProperties : MonoBehaviour
         AttackScript.AppetitDeLycaonHealPerEnemies = 0;
         AttackScript.AppetitDeLycaonHealPerCollateral = 0;
 
-        statsManager.losingLife = true;
+        
         statsManager.FilAresBerserkMultiplicator = 1;
         statsManager.FilAresDamagesTakenMultiplicator = 1;
 

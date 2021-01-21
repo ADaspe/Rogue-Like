@@ -132,7 +132,7 @@ public class ELC_PlayerStatManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "ELC_ProceduralGeneration")
         {
-            losingLife = true;
+            if (ELC_ObjectsInventory.ActivePassif.PassiveName != "Fil D'Ares")losingLife = true;
             startTimer = true;
         }else if (SceneManager.GetActiveScene().name == "EMD_HUB")
         {

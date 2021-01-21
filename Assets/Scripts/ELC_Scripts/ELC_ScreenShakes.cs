@@ -27,7 +27,7 @@ public class ELC_ScreenShakes : MonoBehaviour
         {
             StartCoroutine(ScreenShakes(0.1f, 0.02f, 0.2f));
         }
-        if (isScreenShaking) timeToReplaceCam = Time.time + 4;
+        if (isScreenShaking) timeToReplaceCam = Time.time + 0.4f;
         if(timeToReplaceCam < Time.time && isScreenShaking == false) CamOffset.m_Offset.Set(0, 0, 0);
     }
 
@@ -45,7 +45,7 @@ public class ELC_ScreenShakes : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         isScreenShaking = false;
-
+        
     }
 
     IEnumerator Shakes(float intensity, float frequencyInSeconds)

@@ -26,6 +26,7 @@ public class EMD_PassifManager : MonoBehaviour
     public Image image1;
     public Image image2;
     public Image image3;
+    public bool cheat;
 
 
     void Start()
@@ -142,10 +143,10 @@ public class EMD_PassifManager : MonoBehaviour
     {
         if (DialogueManagerScript.IsWriting == false)
         {
-            if (currentMoneyScript.currentMoney >= (int)SelectedPassive.PassivePrice)
+            if (currentMoneyScript.currentMoney >= (int)SelectedPassive.PassivePrice || cheat)
             {
                 achatSound.Play();
-                currentMoneyScript.AddMoney(-(int)SelectedPassive.PassivePrice);
+                if(!cheat) currentMoneyScript.AddMoney(-(int)SelectedPassive.PassivePrice);
                 ELC_ObjectsInventory.ActivePassif = SelectedPassive;
             }
             else
