@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Vase
   spawnFrequency: 0
   stockLimit: 1500
-  steps: c8000000b0040000
+  steps: c8000000
   startingMinMoney: 0
   startingMaxMoney: 1000
   isBreakable: 0

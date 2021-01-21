@@ -110,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2688090400881246045}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.92, y: -12.969999, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3282318346991483595}
@@ -290,6 +290,7 @@ Transform:
   - {fileID: 4625633123592877918}
   - {fileID: 2564563970878610716}
   - {fileID: 3919323111068211998}
+  - {fileID: 4984442880127982012}
   - {fileID: 8184817284709955419}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -325,6 +326,7 @@ MonoBehaviour:
   glowTime: 0.75
   damageMat: {fileID: 2100000, guid: 4e2557665d0b01f418aa2ba7c90152b0, type: 2}
   damageMatTime: 0.75
+  isSpawning: 0
   DashParticles: {fileID: 7084529617503343625}
   bodyHitMask:
     serializedVersion: 2
@@ -1969,6 +1971,68 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
+--- !u!1 &8842169689504052166
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4984442880127982012}
+  - component: {fileID: 6787396031236794361}
+  m_Layer: 0
+  m_Name: GOManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4984442880127982012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8842169689504052166}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 997.6241, y: 582.5764, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3282318346991483595}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6787396031236794361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8842169689504052166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e62cf61062cf7b4ebe41d78391f11ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GOCanvas: {fileID: 0}
+  GameOverGO: {fileID: 0}
+  MonsterWhoKilledGO: {fileID: 0}
+  RunTimeGO: {fileID: 0}
+  PlusGrosComboGO: {fileID: 0}
+  ThunesGO: {fileID: 0}
+  PassifUsedGO: {fileID: 0}
+  AchGO: {fileID: 0}
+  GameOver: {fileID: 0}
+  MonsterWhoKilled: {fileID: 0}
+  RunTime: {fileID: 0}
+  PlusGrosCombo: {fileID: 0}
+  Thunes: {fileID: 0}
+  PassifUsed: {fileID: 0}
+  DelayTime: 1
+  MoneyHarvested: 0
+  EndTime: 0
+  HUB: EMD_HUB
+  MainMenu: EMD_MenuScene
 --- !u!1001 &788200929899603352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2781,7 +2845,7 @@ PrefabInstance:
     - target: {fileID: 2175136976685697461, guid: 58b09fa5f8efeb14690bd9857eab0212,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2175136976685697461, guid: 58b09fa5f8efeb14690bd9857eab0212,
         type: 3}
