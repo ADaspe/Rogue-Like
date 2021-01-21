@@ -385,6 +385,11 @@ PrefabInstance:
       propertyPath: powerUpSound
       value: 
       objectReference: {fileID: 6228527793794414319}
+    - target: {fileID: 2289528245598647201, guid: 0e5bb8edd80cd77489edfc726525c6f9,
+        type: 3}
+      propertyPath: chooseRandomPassive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2289528245598647202, guid: 0e5bb8edd80cd77489edfc726525c6f9,
         type: 3}
       propertyPath: m_Name

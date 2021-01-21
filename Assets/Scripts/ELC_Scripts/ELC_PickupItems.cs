@@ -9,6 +9,7 @@ public class ELC_PickupItems : MonoBehaviour
     private ELC_Detector detector;
 
     public AudioSource powerUpSound;
+    public AudioSource crateSound;
 
     public GameObject Object;
     public GameObject PowerUp;
@@ -87,7 +88,9 @@ public class ELC_PickupItems : MonoBehaviour
         }
         if (detector.playerIsInside && this.gameObject.CompareTag("Collectible") && Input.GetButtonDown("Interact"))
         {
-            if(Type == CollectibleTypes.Object) ObjectsInv.AddObject(Object);
+            StartCoroutine(AudioCaisse());
+            
+            if (Type == CollectibleTypes.Object) ObjectsInv.AddObject(Object);
 
             if (Type == CollectibleTypes.PowerUp)
             {
@@ -96,10 +99,21 @@ public class ELC_PickupItems : MonoBehaviour
 
             if (Type == CollectibleTypes.Passive) ELC_ObjectsInventory.ActivePassif = Passive;
 
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
         
     }
+    IEnumerator AudioCaisse()
+    {
+        if (!crateSound.isPlaying)
+        {
+            this.GetComponent<SpriteRenderer>().enabled = false;
+            crateSound.Play();
+            yield return new WaitForSeconds(0.7f);
+            Destroy(this.gameObject);
+        }
+    }
+
     IEnumerator Audio()
     {
         if (!powerUpSound.isPlaying)
