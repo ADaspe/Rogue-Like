@@ -31,6 +31,8 @@ public class ELC_PickupItems : MonoBehaviour
     private int rarePercentageChanceObject = 50;
     private int epicPercentageChanceObject = 30;
 
+    public GameObject displayer;
+
 
     private void Start()
     {
@@ -48,6 +50,7 @@ public class ELC_PickupItems : MonoBehaviour
         {
             chooseRandomObjectFunction();
             this.GetComponent<SpriteRenderer>().sprite = Object.GetComponent<ELC_CrateProperties>().CratesSO.GroundSprite;
+            displayer.GetComponent<ELC_Display>().objectInstatiate.GetComponent<SpriteRenderer>().sprite = Object.GetComponent<ELC_CrateProperties>().CratesSO.InfoPannel;
         }
         if(chooseRandomPassive)
         {
