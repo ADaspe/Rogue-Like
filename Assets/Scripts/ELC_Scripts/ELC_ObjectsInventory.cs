@@ -41,31 +41,6 @@ public class ELC_ObjectsInventory : MonoBehaviour
         else if (Input.GetButtonDown("LeftHandUse")) selectedHand = hands.LeftHand;
         ELC_CrateProperties leftObject = LeftHandObject.GetComponent<ELC_CrateProperties>();
         
-        if(selectedHand == hands.LeftHand)
-        {
-            Image image = RightHandHUD.GetComponent<Image>();
-            var tempColor = image.color;
-            tempColor.a = 0.2f;
-            image.color = tempColor;
-
-            image = LeftHandHUD.GetComponent<Image>();
-            tempColor = image.color;
-            tempColor.a = 1f;
-            image.color = tempColor;
-            
-        }
-        else
-        {
-            Image image = RightHandHUD.GetComponent<Image>();
-            var tempColor = image.color;
-            tempColor.a = 1f;
-            image.color = tempColor;
-
-            image = LeftHandHUD.GetComponent<Image>();
-            tempColor = image.color;
-            tempColor.a = 0.2f;
-            image.color = tempColor;
-        }
 
         if (RightHandObject != null)
         {

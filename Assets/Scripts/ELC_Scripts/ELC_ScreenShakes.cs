@@ -13,17 +13,9 @@ public class ELC_ScreenShakes : MonoBehaviour
 
     private float timeToReplaceCam;
 
-    private void Start()
-    {
-        CamOffset = CinemachineCam.GetComponent<CinemachineCameraOffset>();
-        originOffset = CamOffset.m_Offset;
-
-        timeToReplaceCam = 0;
-        isScreenShaking = false;
-    }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if(Input.GetKeyDown(KeyCode.B))
         {
             StartCoroutine(ScreenShakes(0.1f, 0.02f, 0.2f));
         }

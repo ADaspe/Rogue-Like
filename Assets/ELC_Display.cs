@@ -7,7 +7,7 @@ public class ELC_Display : MonoBehaviour
     ELC_Detector detector;
     public GameObject ObjectToDisplay;
     public Vector3 newPosition;
-    private GameObject objectInstatiate;
+    public GameObject objectInstatiate;
     public GameObject ButtonDisplay;
     private bool buttonIsActive;
     private bool buttonIsInDesactivation;

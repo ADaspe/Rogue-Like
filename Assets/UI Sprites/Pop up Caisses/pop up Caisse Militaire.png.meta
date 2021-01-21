@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: e650e8eff77ac204086cceb0f677ae7e
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4179207816447551459
+    second: pop up Caisse Militaire_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,11 +124,32 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pop up Caisse Militaire_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 6
+        width: 169
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e764eddd578ff930800000000000000
+      internalID: 4179207816447551459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: dc43cd164bed9194fa13088c39a2d377
     internalID: 0
     vertices: []
     indices: 
