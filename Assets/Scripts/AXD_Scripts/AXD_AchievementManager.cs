@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AXD_AchievementManager : MonoBehaviour
 {
     public List<AXD_AchievementSO> allAchievements;
     public List<AXD_AchievementSO> achievementsLocked;
     public List<AXD_AchievementSO> achievementsUnlocked;
+    public List<ELC_PassiveSO> allTimeUnlockedPassives;
     public ELC_PassivesList passivesList;
     public bool reset;
     public bool hasUnlockedAchievement;
@@ -29,6 +31,14 @@ public class AXD_AchievementManager : MonoBehaviour
             }
             Debug.Log("Achievement added");
         }
+        if(SceneManager.GetActiveScene().name == "EMD_HUB")
+        {
+            hasUnlockedAchievement = false;
+        }
+        if (reset)
+        {
+            ResetAchievement();
+        }
     }
 
     public void ResetAchievement()
@@ -37,12 +47,21 @@ public class AXD_AchievementManager : MonoBehaviour
         {
             achievement.isUnlocked = false;
             achievement.numberDefeated = 0;
-                 
-        }
-        foreach(ELC_PassiveSO passif in passivesList.PassivesList)
-        {
-            passif.isUnlock = false;
         }
         passivesList.PassivesList.Clear();
+        foreach (ELC_PassiveSO passif in passivesList.PassivesList)
+        {
+            if (allTimeUnlockedPassives.Contains(passif))
+            {
+                passif.isUnlock = true;
+                passivesList.PassivesList.Add(passif);
+            }
+            else
+            {
+                passif.isUnlock = false;
+            }
+        }
+        PlayerPrefs.SetInt("playerMoney", 0);
+        reset = false;
     }
 }
