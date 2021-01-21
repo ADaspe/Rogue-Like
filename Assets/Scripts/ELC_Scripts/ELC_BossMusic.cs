@@ -12,7 +12,7 @@ public class ELC_BossMusic : MonoBehaviour
         if (detector.playerIsInside)
         {
             bossMusic.SetActive(true);
-            //FindObjectOfType<ELC_RoomsGenerator>().Music.SetActive(false);
+            FindObjectOfType<ELC_RoomsGenerator>().Music.SetActive(false);
         }
     }
 }
