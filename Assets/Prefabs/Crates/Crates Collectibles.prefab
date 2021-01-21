@@ -123,6 +123,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2860630919178201563, guid: 85af97a89fdfb6a4aa3bec45b78e1619,
         type: 3}
+    - target: {fileID: 2289528245598647201, guid: 0e5bb8edd80cd77489edfc726525c6f9,
+        type: 3}
+      propertyPath: cratePannel
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2289528245598647201, guid: 0e5bb8edd80cd77489edfc726525c6f9,
+        type: 3}
+      propertyPath: displayer
+      value: 
+      objectReference: {fileID: 2743386465104394081}
     - target: {fileID: 2289528245598647202, guid: 0e5bb8edd80cd77489edfc726525c6f9,
         type: 3}
       propertyPath: m_Name
@@ -329,5 +339,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1623913580308919235, guid: 3cd5a6d2ec0d8304aa120fc22dbef8d8,
+        type: 3}
+      propertyPath: ObjectToDisplay
+      value: 
+      objectReference: {fileID: 4383661178218494142, guid: 2ef3bfa1186f15e47b7d0a184f27b30e,
+        type: 3}
+    - target: {fileID: 1623913580308919235, guid: 3cd5a6d2ec0d8304aa120fc22dbef8d8,
+        type: 3}
+      propertyPath: newPosition.y
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cd5a6d2ec0d8304aa120fc22dbef8d8, type: 3}
+--- !u!1 &2743386465104394081 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1623913580308919233, guid: 3cd5a6d2ec0d8304aa120fc22dbef8d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3502458798047986848}
+  m_PrefabAsset: {fileID: 0}

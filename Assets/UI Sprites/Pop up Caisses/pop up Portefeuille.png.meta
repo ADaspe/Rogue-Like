@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 37d7bafdc676c52479dd83e53e7795eb
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8665775249224102524
+    second: pop up Portefeuille_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,11 +124,32 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pop up Portefeuille_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 6
+        width: 169
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72ff590da4034870800000000000000
+      internalID: 8665775249224102524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 62dccce1cc79a864cae0ef936e086120
     internalID: 0
     vertices: []
     indices: 
