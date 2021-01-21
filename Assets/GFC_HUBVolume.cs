@@ -9,10 +9,4 @@ public class GFC_HUBVolume : MonoBehaviour
     {
         AudioListener.volume = PlayerPrefs.GetFloat("Volume");
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

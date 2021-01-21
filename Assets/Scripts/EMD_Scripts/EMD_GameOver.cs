@@ -23,10 +23,9 @@ public class EMD_GameOver : MonoBehaviour
     int length = 8;
     public float DelayTime;
     private ELC_PlayerStatManager PlayerStatManagerScript;
-    private PlayerHealth PlayerHealthScript;
     private AXD_AchievementManager AchievementManagerScript;
     private ELC_ObjectsInventory ObjectinventoryScript;
-    private AXD_Hydra HydraScript;
+    private ELC_PlayerMoves PlayerMovesScript;
     public int MoneyHarvested;
     int TimerMin;
     int TimerSec;
@@ -40,6 +39,7 @@ public class EMD_GameOver : MonoBehaviour
         PlayerStatManagerScript = FindObjectOfType<ELC_PlayerStatManager>();
         AchievementManagerScript = FindObjectOfType<AXD_AchievementManager>();
         ObjectinventoryScript = FindObjectOfType<ELC_ObjectsInventory>();
+        PlayerMovesScript = FindObjectOfType<ELC_PlayerMoves>();
         GameOverGO.SetActive(false);
         MonsterWhoKilledGO.SetActive(false);
         RunTimeGO.SetActive(false);
@@ -52,12 +52,14 @@ public class EMD_GameOver : MonoBehaviour
 
     public void MenuGOHydreMorte()
     {
+        PlayerMovesScript.ToggleMenu();
         EndTime = true; 
         StartCoroutine("OneByOne");
     }
 
-    private void OnEnable()
+    public void MenuGOMort()
     {
+        PlayerMovesScript.ToggleMenu();
         StartCoroutine("OneByOne");
     }
     IEnumerator OneByOne()
