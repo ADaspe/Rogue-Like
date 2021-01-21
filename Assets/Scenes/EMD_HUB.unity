@@ -3338,6 +3338,12 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4292345406
       objectReference: {fileID: 0}
+    - target: {fileID: 5643298735287258859, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 609423b7476285d4a87ae04c28618dd0,
+        type: 3}
     - target: {fileID: 5670982478770697613, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_IsActive
@@ -5346,9 +5352,9 @@ MonoBehaviour:
   image: {fileID: 1626779524}
   text: {fileID: 1723628056}
   ImageTuto: {fileID: 2102950246}
-  ImageAAfficher1: {fileID: 0}
-  ImageAAfficher2: {fileID: 0}
-  ImageAAfficher3: {fileID: 0}
+  ImageAAfficher1: {fileID: 21300000, guid: 609423b7476285d4a87ae04c28618dd0, type: 3}
+  ImageAAfficher2: {fileID: 21300000, guid: 9b2cd32d8f69ae8429c85f494ddb044d, type: 3}
+  ImageAAfficher3: {fileID: 21300000, guid: e068874768dd79f43a10b544aebd5ea0, type: 3}
 --- !u!1 &1316089318
 GameObject:
   m_ObjectHideFlags: 0
