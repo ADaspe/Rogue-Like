@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpSound: {fileID: 0}
+  crateSound: {fileID: 0}
   Object: {fileID: 0}
   PowerUp: {fileID: 0}
   Passive: {fileID: 0}
@@ -365,6 +366,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876934409835217800, guid: 37c81223464d54145b5b5ccd725618f4,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37c81223464d54145b5b5ccd725618f4, type: 3}
