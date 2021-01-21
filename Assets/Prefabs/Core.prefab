@@ -788,9 +788,37 @@ PrefabInstance:
       objectReference: {fileID: 3309051800045009204}
     - target: {fileID: 6171825858470314011, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
+      propertyPath: allTimeUnlockedPassives.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6171825858470314011, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
       propertyPath: passivesList
       value: 
       objectReference: {fileID: 7469097467536029269}
+    - target: {fileID: 6171825858470314011, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: allTimeUnlockedPassives.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4629b48fa0494054680a76ce30d10721,
+        type: 2}
+    - target: {fileID: 6171825858470314011, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: allTimeUnlockedPassives.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: c2647eda660911a46a182e3408d08b08,
+        type: 2}
+    - target: {fileID: 6171825858470314011, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: allTimeUnlockedPassives.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5caa60c0371d0654287a2c6ba0ab0d42,
+        type: 2}
+    - target: {fileID: 6171825858470314011, guid: c582c890f15ac5345a4f3c531ee31b90,
+        type: 3}
+      propertyPath: reset
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6787396031236794361, guid: c582c890f15ac5345a4f3c531ee31b90,
         type: 3}
       propertyPath: GOCanvas
