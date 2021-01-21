@@ -57,7 +57,33 @@ public class ELC_ObjectsInventory : MonoBehaviour
 
         }
 
-        
+        if (selectedHand == hands.LeftHand)
+        {
+            Image image = RightHandHUD.GetComponent<Image>();
+            var tempColor = image.color;
+            tempColor.a = 0.2f;
+            image.color = tempColor;
+
+            image = LeftHandHUD.GetComponent<Image>();
+            tempColor = image.color;
+            tempColor.a = 1f;
+            image.color = tempColor;
+
+        }
+        else
+        {
+            Image image = RightHandHUD.GetComponent<Image>();
+            var tempColor = image.color;
+            tempColor.a = 1f;
+            image.color = tempColor;
+
+            image = LeftHandHUD.GetComponent<Image>();
+            tempColor = image.color;
+            tempColor.a = 0.2f;
+            image.color = tempColor;
+        }
+
+
 
         //if (Input.GetButtonDown("RightHandUse") && RightHandObject != null && quantityObject1 > 0) //Lorsqu'on clique pour utiliser l'object de main droite
         //{
