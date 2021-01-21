@@ -22,7 +22,7 @@ public class AXD_Hydra : MonoBehaviour
     public float healthPercentageHeadPhase2;
     public float healthPercentageHeadPhase3;
     public GameObject forceField;
-    private TilemapRenderer tmr;
+    public TilemapRenderer tmr;
     private EMD_GameOver GOScript;
     public Material glowEnviro1;
     public Material glowEnviro2;
@@ -38,7 +38,6 @@ public class AXD_Hydra : MonoBehaviour
         currentPhase = BossPhase.Phase1;
         enemy.isInvulnerable = true;
         forceField = this.gameObject.transform.GetChild(7).gameObject;
-        tmr = FindObjectOfType<TilemapRenderer>();
         tmr.material = glowEnviro1;
         anim = GetComponent<Animator>();
         collider = GetComponent<BoxCollider2D>();
@@ -147,10 +146,12 @@ public class AXD_Hydra : MonoBehaviour
             if(currentPhase == BossPhase.Phase2)
             {
                 tmr.material = glowEnviro2;
+                Debug.Log("Metrial glow 2");
             }
             else if(currentPhase == BossPhase.Phase3)
             {
                 tmr.material = glowEnviro3;
+                Debug.Log("Metrial glow 3");
             }
             AnimatorBooleans();
         }
@@ -158,6 +159,8 @@ public class AXD_Hydra : MonoBehaviour
 
     public void LetsFight()
     {
+        tmr.material = glowEnviro1;
+        Debug.Log("Metrial glow 1");
         fighting = true;
         headsToSpawn = true;
     }
