@@ -9399,7 +9399,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 5347433856566283227, guid: 5d84515c0c1cf1745b7e8c0710a31d31,
         type: 3}
       propertyPath: m_SortingOrder
