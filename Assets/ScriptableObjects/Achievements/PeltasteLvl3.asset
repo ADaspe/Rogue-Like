@@ -22,5 +22,4 @@ MonoBehaviour:
   ennemyToDefeatName: "Sentinelle Mod\xE8le Artemis"
   passifToUnlock: {fileID: 0}
   achievementManager: {fileID: 0}
-  HUDSprite: {fileID: -1728598717202589576, guid: 3369e74137f1961449e78a45458168ba,
-    type: 3}
+  HUDSprite: {fileID: 21300000, guid: b0793d19e6b3dc74d94d28dbda722413, type: 3}

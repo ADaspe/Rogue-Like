@@ -22,5 +22,4 @@ MonoBehaviour:
   ennemyToDefeatName: Hoplite
   passifToUnlock: {fileID: 11400000, guid: 9b0cffa35151d504482414949fc48e73, type: 2}
   achievementManager: {fileID: 0}
-  HUDSprite: {fileID: -5082979250979548698, guid: ff9ef1e9a14bf104e9dd5f7afb0d3d69,
-    type: 3}
+  HUDSprite: {fileID: 21300000, guid: 2845f862c58e56845afea320a2c46dd9, type: 3}
