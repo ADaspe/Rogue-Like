@@ -25,5 +25,6 @@ public class ELC_CratesSO : ScriptableObject
     public Sprite HUDSpriteLeft;
     public Sprite HUDSpriteRight;
     public Sprite GroundSprite;
+    public Sprite InfoPannel;
 
 }

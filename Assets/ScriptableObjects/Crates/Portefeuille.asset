@@ -27,3 +27,5 @@ MonoBehaviour:
     type: 3}
   GroundSprite: {fileID: -7402037114677673065, guid: e8009cb3ec52cf94d84785fa3c3fd8be,
     type: 3}
+  InfoPannel: {fileID: 8665775249224102524, guid: 37d7bafdc676c52479dd83e53e7795eb,
+    type: 3}
