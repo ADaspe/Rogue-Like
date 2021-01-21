@@ -27,6 +27,7 @@ public class AXD_AchievementSO : ScriptableObject
             {
                 isUnlocked = true;
                 achievementManager.hasUnlockedAchievement = true;
+                PlayerPrefs.SetInt("PythieNotif", 1);
                 if (passifToUnlock != null)
                 {
                     passifToUnlock.isUnlock = true;
