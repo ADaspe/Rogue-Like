@@ -206,7 +206,6 @@ public class ELC_PlayerMoves : MonoBehaviour
         {
             if (isTouchingLeft)
             {
-                Debug.Log("Left");
                 playerAnimator.SetFloat("DirectionAxeX", -1);
                 playerAnimator.SetFloat("DirectionAxeY", 0);
                 playerMoves.x = Mathf.Clamp(playerMoves.x, 0, speed / 2);
@@ -215,7 +214,6 @@ public class ELC_PlayerMoves : MonoBehaviour
 
             if (isTouchingRight)
             {
-                Debug.Log("Right");
                 playerAnimator.SetFloat("DirectionAxeX", 1);
                 playerAnimator.SetFloat("DirectionAxeY", 0);
                 playerMoves.x = Mathf.Clamp(playerMoves.x, -speed / 2, 0);
@@ -223,7 +221,6 @@ public class ELC_PlayerMoves : MonoBehaviour
 
             }
             if (isTouchingDown) {
-                Debug.Log("Down");
                 playerAnimator.SetFloat("DirectionAxeX", 0);
                 playerAnimator.SetFloat("DirectionAxeY", -1);
                 playerMoves.y = Mathf.Clamp(playerMoves.y, 0, speed / 2);
@@ -231,7 +228,6 @@ public class ELC_PlayerMoves : MonoBehaviour
 
             }
             if (isTouchingTop) {
-                Debug.Log("Top");
                 playerAnimator.SetFloat("DirectionAxeX", 0);
                 playerAnimator.SetFloat("DirectionAxeY", 1);
                 playerMoves.y = Mathf.Clamp(playerMoves.y, -speed / 2, 0);
