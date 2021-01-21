@@ -4434,6 +4434,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoMainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 5012046800265131793, guid: 459a69517a2d65449bfd266d24633942,
+        type: 3}
+      propertyPath: m_Colors.m_SelectedColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5012046800265131806, guid: 459a69517a2d65449bfd266d24633942,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4828,26 +4833,6 @@ PrefabInstance:
     - target: {fileID: 5012046800265131793, guid: 459a69517a2d65449bfd266d24633942,
         type: 3}
       propertyPath: m_Colors.m_NormalColor.a
-      value: 0.41960785
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012046800265131793, guid: 459a69517a2d65449bfd266d24633942,
-        type: 3}
-      propertyPath: m_Colors.m_SelectedColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012046800265131793, guid: 459a69517a2d65449bfd266d24633942,
-        type: 3}
-      propertyPath: m_Colors.m_SelectedColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012046800265131793, guid: 459a69517a2d65449bfd266d24633942,
-        type: 3}
-      propertyPath: m_Colors.m_SelectedColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012046800265131793, guid: 459a69517a2d65449bfd266d24633942,
-        type: 3}
-      propertyPath: m_Colors.m_SelectedColor.a
       value: 0.41960785
       objectReference: {fileID: 0}
     - target: {fileID: 5012046800265131806, guid: 459a69517a2d65449bfd266d24633942,
