@@ -416,7 +416,7 @@ public class ELC_PlayerMoves : MonoBehaviour
         Debug.Log("Dégats moyens : " + attack.degatsMoyen);
         yield return new WaitForSeconds(time);
         playerSpriteRenderer.enabled = false;
-        GameOverScript.MenuGOMort();
+        canvasGameOver.SetActive(true);
         FindObjectOfType<ELC_ObjectsInventory>().TransferMoney(true);
     }
     public IEnumerator ApplyShader(float time, Material mat)

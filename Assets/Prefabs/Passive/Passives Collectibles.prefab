@@ -77,5 +77,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Passives Collectibles
       objectReference: {fileID: 0}
+    - target: {fileID: 4997598410596977698, guid: 0e5bb8edd80cd77489edfc726525c6f9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e5bb8edd80cd77489edfc726525c6f9, type: 3}
