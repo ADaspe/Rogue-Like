@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1387,11 +1387,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -3547967652488494224, guid: 62af6e446e70a3c4c98a541723061092,
         type: 2}
-    - target: {fileID: 1833254688835427606, guid: f523f809c561ee54dac7c3e8ae7438f8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1983901468678269055, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1594,11 +1589,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 34.800003
       objectReference: {fileID: 0}
-    - target: {fileID: 2575025607373711909, guid: f523f809c561ee54dac7c3e8ae7438f8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2584446389747713906, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1653,11 +1643,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2599230131140201087, guid: f523f809c561ee54dac7c3e8ae7438f8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2604028647710778823, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
@@ -3714,6 +3699,11 @@ PrefabInstance:
       propertyPath: hasUnlockedAchievement
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6555467996020751933, guid: f523f809c561ee54dac7c3e8ae7438f8,
+        type: 3}
+      propertyPath: reset
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6583464500190573964, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_SubmitButton
@@ -4415,21 +4405,11 @@ PrefabInstance:
       propertyPath: m_SubmitButton
       value: Interact
       objectReference: {fileID: 0}
-    - target: {fileID: 9032077772291789128, guid: f523f809c561ee54dac7c3e8ae7438f8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9036014883145087580, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_FirstSelected
       value: 
       objectReference: {fileID: 700055839}
-    - target: {fileID: 9036436276052278317, guid: f523f809c561ee54dac7c3e8ae7438f8,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9118377797503965758, guid: f523f809c561ee54dac7c3e8ae7438f8,
         type: 3}
       propertyPath: m_Material
