@@ -235,7 +235,8 @@ public class AXD_Hydra : MonoBehaviour
         enemy.spriteRenderer.enabled = false;
         //enemy.DropCoins((int)FindObjectOfType<ELC_PlayerStatManager>().MoneyMultiplicatorPU * enemy.enemyStats.MoneyEarnWhenDead);
         FindObjectOfType<AXD_PlayerMoney>().AddMoney(enemy.enemyStats.MoneyEarnWhenDead);
-        GOScript = FindObjectOfType<EMD_GameOver>();
+        GOScript = FindObjectOfType<EMD_GameOver>();
+
         Debug.Log("" + GOScript);
         GOScript.MenuGOHydreMorte();
 
