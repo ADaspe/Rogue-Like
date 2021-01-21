@@ -22,5 +22,4 @@ MonoBehaviour:
   ennemyToDefeatName: "Sentinelle Mod\xE8le Apollo"
   passifToUnlock: {fileID: 0}
   achievementManager: {fileID: 0}
-  HUDSprite: {fileID: 4741614879237883795, guid: 8f2f0148a937ba54596685060e72f03e,
-    type: 3}
+  HUDSprite: {fileID: 21300000, guid: c176639a5db8cc44f97aee63b5456986, type: 3}
