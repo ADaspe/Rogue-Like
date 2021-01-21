@@ -14,9 +14,9 @@ public class EMD_Tuto : MonoBehaviour
     public GameObject image;
     public GameObject text;
     public Image ImageTuto;
-    public Image ImageAAfficher1;
-    public Image ImageAAfficher2;
-    public Image ImageAAfficher3;
+    public Sprite ImageAAfficher1;
+    public Sprite ImageAAfficher2;
+    public Sprite ImageAAfficher3;
 
     // Start is called before the first frame update
     void Start()
@@ -34,15 +34,15 @@ public class EMD_Tuto : MonoBehaviour
     }
     public void Button1()
     {
-        ImageTuto = ImageAAfficher1;
+        ImageTuto.sprite = ImageAAfficher1;
     }
     public void Button2()
     {
-        ImageTuto = ImageAAfficher2;
+        ImageTuto.sprite = ImageAAfficher2;
     }
     public void Button3()
     {
-        ImageTuto = ImageAAfficher3;
+        ImageTuto.sprite = ImageAAfficher3;
     }
 
 }
