@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6836,8 +6836,8 @@ PrefabInstance:
     - target: {fileID: 7562264427249882545, guid: eeec6de608430f14295388896e77d9e0,
         type: 3}
       propertyPath: sentences.Array.data[0]
-      value: "BONJOUR, SOLDAT N\xB0[ERREUR].                   INSCRIVEZ VOUS D\xC8S
-        QUE POSSIBLE \xC0 VOTRE FORMATION ACC\xC9L\xC9R\xC9E"
+      value: "BONJOUR, SOLDAT N\xB0[-ERROR-].                   INSCRIVEZ VOUS D\xC8S
+        QUE POSSIBLE \xC0 VOTRE FORMATION ACC\xC9L\xC9R\xC9E."
       objectReference: {fileID: 0}
     - target: {fileID: 7562264427249882546, guid: eeec6de608430f14295388896e77d9e0,
         type: 3}

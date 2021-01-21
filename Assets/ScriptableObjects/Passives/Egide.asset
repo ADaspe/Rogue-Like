@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PassiveName: Egide
   PassiveDescription: "\xC9gide : La meilleure d\xE9fense, c\u2019est l\u2019attaque
-    ! Et avec \xE7a, tu peux frapper les tirs plasma pour les d\xE9truire, et m\xEAme
+    ! Avec \xE7a, tu peux frapper les tirs plasma pour les d\xE9truire, et m\xEAme
     parfois les renvoyer ! "
   PassivePrice: 4500
   isUnlock: 1
